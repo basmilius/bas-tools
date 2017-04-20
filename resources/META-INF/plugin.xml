@@ -1,0 +1,59 @@
+<idea-plugin>
+	<id>com.basmilius.ps.bastools</id>
+	<name>Bas Tools</name>
+	<version>1.0</version>
+	<vendor email="basmilius@hotmail.com" url="https://www.basmilius.com">Bas Milius</vendor>
+
+	<description><![CDATA[
+		Enter short description for your plugin here.<br>
+		<em>most HTML tags may be used</em>
+	]]></description>
+
+	<change-notes><![CDATA[
+		Bas Tools!
+	]]>
+	</change-notes>
+
+	<idea-version since-build="164.0"/>
+
+	<extensions defaultExtensionNs="com.intellij">
+	</extensions>
+
+	<actions>
+
+		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
+			<add-to-group group-id="MainMenu" anchor="last"/>
+
+			<action id="BasTools.Action.Test" class="com.basmilius.ps.bastools.action.TestAction" text="Test" icon="AllIcons.Nodes.Locked"/>
+
+			<separator/>
+
+			<group id="BasTools.Main.QuickNav" popup="true" text="Quick Actions"/>
+			<group id="BasTools.Main.IdeeMediaTools" popup="true" text="IdeeMedia Tools"/>
+
+			<separator />
+
+			<action id="BasTools.Action.About" class="com.basmilius.ps.bastools.action.AboutAction" text="About Bas Tools" />
+		</group>
+
+		<group id="BasTools.QuickNav" text="Bas Tools Quicklinks" description="Tools by Bas Milius">
+			<add-to-group group-id="NavBarToolBar" anchor="last"/>
+			<add-to-group group-id="BasTools.Main.QuickNav"/>
+
+			<action id="ShowColorPicker" class="com.intellij.ui.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
+		</group>
+
+		<group id="BasTools.IdeeMediaTools" text="IdeeMedia Tools">
+			<add-to-group group-id="BasTools.Main.IdeeMediaTools"/>
+
+			<action id="ShowColorPicker" class="com.intellij.ui.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
+		</group>
+
+	</actions>
+
+	<project-components>
+	</project-components>
+
+	<depends>com.jetbrains.php</depends>
+	<depends>com.intellij.modules.platform</depends>
+</idea-plugin>
