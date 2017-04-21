@@ -4,15 +4,9 @@
 	<version>1.0</version>
 	<vendor email="basmilius@hotmail.com" url="https://www.basmilius.com">Bas Milius</vendor>
 
-	<description><![CDATA[
-		Enter short description for your plugin here.<br>
-		<em>most HTML tags may be used</em>
-	]]></description>
+	<description><![CDATA[]]></description>
 
-	<change-notes><![CDATA[
-		Bas Tools!
-	]]>
-	</change-notes>
+	<change-notes><![CDATA[Bas Tools!]]></change-notes>
 
 	<idea-version since-build="164.0"/>
 
@@ -26,9 +20,9 @@
 			<group id="BasTools.Main.QuickNav" popup="true" text="Quick Actions"/>
 			<group id="BasTools.Main.IdeeMediaTools" popup="true" text="IdeeMedia Tools"/>
 
-			<separator />
+			<separator/>
 
-			<action id="BasTools.Action.About" class="com.basmilius.ps.bastools.action.AboutAction" text="About Bas Tools" />
+			<action id="BasTools.Action.About" class="com.basmilius.ps.bastools.action.AboutAction" text="About Bas Tools"/>
 		</group>
 
 		<group id="BasTools.QuickNav" text="Bas Tools Quicklinks" description="Tools by Bas Milius">
@@ -42,6 +36,16 @@
 			<add-to-group group-id="BasTools.Main.IdeeMediaTools"/>
 
 			<action id="ShowColorPicker" class="com.basmilius.ps.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
+
+			<separator/>
+
+			<group id="BasTools.IdeeMediaTools.Angular" popup="true" text="Angular Tools"/>
+		</group>
+
+		<group id="BasTools.Angular" text="Angular Tools">
+			<add-to-group group-id="BasTools.IdeeMediaTools.Angular"/>
+
+			<action id="BasTools.Angular.Version" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" text="Show Version" icon="AllIcons.General.Information"/>
 		</group>
 
 	</actions>
