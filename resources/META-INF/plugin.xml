@@ -16,17 +16,12 @@
 
 	<idea-version since-build="164.0"/>
 
-	<extensions defaultExtensionNs="com.intellij">
-	</extensions>
+	<extensions defaultExtensionNs="com.intellij"/>
 
 	<actions>
 
 		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
 			<add-to-group group-id="MainMenu" anchor="last"/>
-
-			<action id="BasTools.Action.Test" class="com.basmilius.ps.bastools.action.TestAction" text="Test" icon="AllIcons.Nodes.Locked"/>
-
-			<separator/>
 
 			<group id="BasTools.Main.QuickNav" popup="true" text="Quick Actions"/>
 			<group id="BasTools.Main.IdeeMediaTools" popup="true" text="IdeeMedia Tools"/>
@@ -40,19 +35,18 @@
 			<add-to-group group-id="NavBarToolBar" anchor="last"/>
 			<add-to-group group-id="BasTools.Main.QuickNav"/>
 
-			<action id="ShowColorPicker" class="com.intellij.ui.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
+			<action id="ShowColorPicker" class="com.basmilius.ps.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
 		</group>
 
 		<group id="BasTools.IdeeMediaTools" text="IdeeMedia Tools">
 			<add-to-group group-id="BasTools.Main.IdeeMediaTools"/>
 
-			<action id="ShowColorPicker" class="com.intellij.ui.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
+			<action id="ShowColorPicker" class="com.basmilius.ps.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
 		</group>
 
 	</actions>
 
-	<project-components>
-	</project-components>
+	<project-components/>
 
 	<depends>com.jetbrains.php</depends>
 	<depends>com.intellij.modules.platform</depends>
