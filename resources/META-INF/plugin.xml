@@ -39,19 +39,35 @@
 
 			<separator/>
 
-			<group id="BasTools.IdeeMediaTools.Angular" popup="true" text="Angular Tools"/>
+			<group id="BasTools.IdeeMediaTools.Angular" icon="/icons/angular.png" popup="true" text="Angular Tools"/>
 		</group>
 
 		<group id="BasTools.Angular" text="Angular Tools">
 			<add-to-group group-id="BasTools.IdeeMediaTools.Angular"/>
 
-			<action id="BasTools.Angular.Version" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" text="Show Version" icon="AllIcons.General.Information"/>
+			<action id="BasTools.Angular.Build" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Build"/>
+			<action id="BasTools.Angular.Serve" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Serve"/>
+
+			<separator/>
+
+			<action id="BasTools.Angular.Build.Production" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Build (Production)"/>
+			<action id="BasTools.Angular.Serve.Production" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Serve (Production)"/>
+
+			<separator/>
+
+			<action id="BasTools.Angular.Version" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Show Version"/>
 		</group>
 
 	</actions>
 
-	<project-components/>
+	<project-components>
+		<component>
+			<implementation-class>com.basmilius.ps.bastools.component.DefaultProjectComponent</implementation-class>
+		</component>
+	</project-components>
 
 	<depends>com.jetbrains.php</depends>
 	<depends>com.intellij.modules.platform</depends>
+
+	<application-components/>
 </idea-plugin>

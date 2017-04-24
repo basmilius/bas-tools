@@ -15,7 +15,7 @@ public class VersionAction extends AnAction
 
 	public VersionAction ()
 	{
-		super("Show Version");
+		super();
 	}
 
 	@Override
@@ -28,7 +28,7 @@ public class VersionAction extends AnAction
 			return;
 		}
 
-		CommandUtils.run(project.getBasePath(), "powershell ng version", lines ->
+		CommandUtils.run(project, "powershell ng version", lines ->
 		{
 			final List<String> result = new ArrayList<>();
 
@@ -40,10 +40,7 @@ public class VersionAction extends AnAction
 				}
 			}
 
-			ApplicationManager.getApplication().invokeLater(() ->
-			{
-				Messages.showMessageDialog(project, String.join(System.getProperty("line.separator"), result), "Angular Version", Messages.getInformationIcon());
-			});
+			ApplicationManager.getApplication().invokeLater(() -> Messages.showMessageDialog(project, String.join(System.getProperty("line.separator"), result), "Angular Version", Messages.getInformationIcon()));
 		});
 	}
 
