@@ -17,8 +17,8 @@
 		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
 			<add-to-group group-id="MainMenu" anchor="last"/>
 
-			<group id="BasTools.Main.QuickNav" popup="true" text="Quick Actions"/>
-			<group id="BasTools.Main.IdeeMediaTools" popup="true" text="IdeeMedia Tools"/>
+			<group id="BasTools.Main.QuickNav" icon="AllIcons.General.MoreTabs" popup="true" text="Quick Actions"/>
+			<group id="BasTools.Main.IdeeMediaTools" icon="/icons/rhombus.png" popup="true" text="IdeeMedia Tools"/>
 
 			<separator/>
 
@@ -40,6 +40,7 @@
 			<separator/>
 
 			<group id="BasTools.IdeeMediaTools.Angular" icon="/icons/angular.png" popup="true" text="Angular Tools"/>
+			<group id="BasTools.IdeeMediaTools.Cordova" icon="/icons/cellphone.png" popup="true" text="Cordova Tools"/>
 		</group>
 
 		<group id="BasTools.Angular" text="Angular Tools">
@@ -56,6 +57,27 @@
 			<separator/>
 
 			<action id="BasTools.Angular.Version" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Show Version"/>
+		</group>
+
+		<group id="BasTools.Cordova" text="Cordova Tools">
+			<add-to-group group-id="BasTools.IdeeMediaTools.Cordova"/>
+
+			<action id="BasTools.Cordova.Prepare" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/cellphone.png" text="Prepare App"/>
+			<action id="BasTools.Cordova.Requirements" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/cellphone.png" text="Check Requirements"/>
+
+			<separator/>
+
+			<action id="BasTools.Cordova.Prepare.Android" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/android.png" text="Prepare App for Android"/>
+			<action id="BasTools.Cordova.Build.Android" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/android.png" text="Build App for Android"/>
+			<action id="BasTools.Cordova.Run.Android" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/android.png" text="Run App on Android Device"/>
+
+			<separator/>
+
+			<action id="BasTools.Cordova.Prepare.IOs" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/apple-ios.png" text="Prepare App for iOS"/>
+
+			<separator/>
+
+			<action id="BasTools.Cordova.Prepare.Windows" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/windows.png" text="Prepare App for Windows"/>
 		</group>
 
 	</actions>
