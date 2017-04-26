@@ -22,13 +22,11 @@ public class DefaultProjectComponent implements ProjectComponent
 	@Override
 	public void initComponent ()
 	{
-
 	}
 
 	@Override
 	public void disposeComponent ()
 	{
-		// TODO: insert component disposal logic here
 	}
 
 	@Override

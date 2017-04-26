@@ -8,9 +8,21 @@
 
 	<change-notes><![CDATA[Bas Tools!]]></change-notes>
 
-	<idea-version since-build="164.0"/>
+	<idea-version since-build="171.0"/>
 
-	<extensions defaultExtensionNs="com.intellij"/>
+	<depends>com.jetbrains.php</depends>
+	<depends>com.intellij.modules.platform</depends>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<fileIconProvider implementation="com.basmilius.ps.bastools.identity.provider.IdentityIconProvider"/>
+		<iconProvider implementation="com.basmilius.ps.bastools.identity.provider.IdentityIconProvider"/>
+		<treeStructureProvider implementation="com.basmilius.ps.bastools.identity.provider.IdentityTreeStructureProvider"/>
+	</extensions>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
+		<liveTemplateContext implementation="com.basmilius.ps.bastools.identity.liveTemplates.IdentityLiveTemplatesContext"/>
+	</extensions>
 
 	<actions>
 
@@ -18,7 +30,11 @@
 			<add-to-group group-id="MainMenu" anchor="last"/>
 
 			<group id="BasTools.Main.QuickNav" icon="AllIcons.General.MoreTabs" popup="true" text="Quick Actions"/>
-			<group id="BasTools.Main.IdeeMediaTools" icon="/icons/rhombus.png" popup="true" text="IdeeMedia Tools"/>
+
+			<separator/>
+
+			<group id="BasTools.Main.Angular" icon="/icons/angular.png" popup="true" text="Angular Tools"/>
+			<group id="BasTools.Main.Cordova" icon="/icons/cellphone.png" popup="true" text="Cordova Tools"/>
 
 			<separator/>
 
@@ -32,19 +48,8 @@
 			<action id="ShowColorPicker" class="com.basmilius.ps.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
 		</group>
 
-		<group id="BasTools.IdeeMediaTools" text="IdeeMedia Tools">
-			<add-to-group group-id="BasTools.Main.IdeeMediaTools"/>
-
-			<action id="ShowColorPicker" class="com.basmilius.ps.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
-
-			<separator/>
-
-			<group id="BasTools.IdeeMediaTools.Angular" icon="/icons/angular.png" popup="true" text="Angular Tools"/>
-			<group id="BasTools.IdeeMediaTools.Cordova" icon="/icons/cellphone.png" popup="true" text="Cordova Tools"/>
-		</group>
-
 		<group id="BasTools.Angular" text="Angular Tools">
-			<add-to-group group-id="BasTools.IdeeMediaTools.Angular"/>
+			<add-to-group group-id="BasTools.Main.Angular"/>
 
 			<action id="BasTools.Angular.Build" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Build"/>
 			<action id="BasTools.Angular.Serve" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Serve"/>
@@ -60,7 +65,7 @@
 		</group>
 
 		<group id="BasTools.Cordova" text="Cordova Tools">
-			<add-to-group group-id="BasTools.IdeeMediaTools.Cordova"/>
+			<add-to-group group-id="BasTools.Main.Cordova"/>
 
 			<action id="BasTools.Cordova.Prepare" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/cellphone.png" text="Prepare App"/>
 			<action id="BasTools.Cordova.Requirements" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/cellphone.png" text="Check Requirements"/>
@@ -88,8 +93,10 @@
 		</component>
 	</project-components>
 
-	<depends>com.jetbrains.php</depends>
-	<depends>com.intellij.modules.platform</depends>
+	<application-components>
+		<component>
+			<implementation-class>com.basmilius.ps.bastools.component.BasToolsComponent</implementation-class>
+		</component>
+	</application-components>
 
-	<application-components/>
 </idea-plugin>
