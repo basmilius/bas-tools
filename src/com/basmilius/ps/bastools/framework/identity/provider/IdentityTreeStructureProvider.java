@@ -1,6 +1,6 @@
-package com.basmilius.ps.bastools.identity.provider;
+package com.basmilius.ps.bastools.framework.identity.provider;
 
-import com.basmilius.ps.bastools.identity.IdentityFramework;
+import com.basmilius.ps.bastools.framework.identity.IdentityFramework;
 import com.intellij.ide.projectView.TreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode;

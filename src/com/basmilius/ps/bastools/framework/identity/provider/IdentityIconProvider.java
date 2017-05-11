@@ -1,6 +1,6 @@
-package com.basmilius.ps.bastools.identity.provider;
+package com.basmilius.ps.bastools.framework.identity.provider;
 
-import com.basmilius.ps.bastools.identity.IdentityFramework;
+import com.basmilius.ps.bastools.framework.identity.IdentityFramework;
 import com.basmilius.ps.bastools.resource.Icons;
 import com.intellij.ide.FileIconProvider;
 import com.intellij.ide.IconProvider;

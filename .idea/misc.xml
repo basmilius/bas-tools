@@ -38,7 +38,11 @@
       <property name="caretWidth" class="java.lang.Integer" />
     </properties>
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="PhpStorm PS-171.4424.11" project-jdk-type="IDEA JDK">
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="PhpStorm PS-172.2103.5" project-jdk-type="IDEA JDK">
+>>>>>>> 4012f7e19eff68628b10de17a02efac99fe0ab50
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

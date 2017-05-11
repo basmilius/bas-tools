@@ -10,18 +10,20 @@
 
 	<idea-version since-build="171.0"/>
 
-	<depends>com.jetbrains.php</depends>
-	<depends>com.intellij.modules.platform</depends>
-
 	<extensions defaultExtensionNs="com.intellij">
-		<fileIconProvider implementation="com.basmilius.ps.bastools.identity.provider.IdentityIconProvider"/>
-		<iconProvider implementation="com.basmilius.ps.bastools.identity.provider.IdentityIconProvider"/>
-		<treeStructureProvider implementation="com.basmilius.ps.bastools.identity.provider.IdentityTreeStructureProvider"/>
+		<fileIconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
+		<iconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
+		<treeStructureProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityTreeStructureProvider"/>
 	</extensions>
 
 	<extensions defaultExtensionNs="com.intellij">
-		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
-		<liveTemplateContext implementation="com.basmilius.ps.bastools.identity.liveTemplates.IdentityLiveTemplatesContext"/>
+		<!--<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.identity.completion.CoreCompletionContributor"/>-->
+		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
+		<liveTemplateContext implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesContext"/>
+		<!--<intentionAction>-->
+			<!--<className>com.basmilius.ps.bastools.framework.identity.intention.ReplaceWpActionWithIdentityActionIntention</className>-->
+			<!--<category>PHP</category>-->
+		<!--</intentionAction>-->
 	</extensions>
 
 	<actions>
@@ -45,7 +47,8 @@
 			<add-to-group group-id="NavBarToolBar" anchor="last"/>
 			<add-to-group group-id="BasTools.Main.QuickNav"/>
 
-			<action id="ShowColorPicker" class="com.basmilius.ps.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="AllIcons.Ide.Pipette"/>
+			<action id="BasTools.QuickNav.ShowColorPicker" class="com.basmilius.ps.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="/icons/camera-iris.png"/>
+			<action id="BasTools.QuickNav.ShowColorPipette" class="com.basmilius.ps.bastools.action.editor.ShowColorPipetteAction" text="Show Color Pipette" icon="/icons/eyedropper.png"/>
 		</group>
 
 		<group id="BasTools.Angular" text="Angular Tools">
@@ -98,5 +101,10 @@
 			<implementation-class>com.basmilius.ps.bastools.component.BasToolsComponent</implementation-class>
 		</component>
 	</application-components>
+
+	<depends>com.jetbrains.php</depends>
+	<depends>com.jetbrains.twig</depends>
+	<depends>com.intellij.modules.lang</depends>
+	<depends>com.intellij.modules.platform</depends>
 
 </idea-plugin>
