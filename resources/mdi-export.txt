@@ -1,2 +1,2 @@
-Light Foreground: #455A64
-Dark Foreground:  #ECEFF1
+Light Foreground: #a9b4bb
+Dark Foreground:  #859199

@@ -1,4 +1,4 @@
-package com.basmilius.ps.bastools.identity;
+package com.basmilius.ps.bastools.framework.identity;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
