@@ -17,13 +17,13 @@
 	</extensions>
 
 	<extensions defaultExtensionNs="com.intellij">
-		<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.identity.completion.CoreCompletionContributor"/>
+		<!--<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.identity.completion.CoreCompletionContributor"/>-->
 		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
 		<liveTemplateContext implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesContext"/>
-		<intentionAction>
-			<className>com.basmilius.ps.bastools.framework.identity.intention.ReplaceWpActionWithIdentityActionIntention</className>
-			<category>PHP</category>
-		</intentionAction>
+		<!--<intentionAction>-->
+			<!--<className>com.basmilius.ps.bastools.framework.identity.intention.ReplaceWpActionWithIdentityActionIntention</className>-->
+			<!--<category>PHP</category>-->
+		<!--</intentionAction>-->
 	</extensions>
 
 	<actions>
