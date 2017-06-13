@@ -10,6 +10,17 @@
 
 	<idea-version since-build="171.0"/>
 
+	<depends>com.jetbrains.php</depends>
+	<depends>com.intellij.modules.platform</depends>
+	<depends>com.intellij.modules.lang</depends>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<bundledColorScheme path="/colors/Bas Settings" />
+		<bundledInspectionProfile path="/inspection/Bas Settings" />
+		<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.all.completion.AllCompletionContributor"/>
+		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.all.liveTemplates.AllLiveTemplatesProvider"/>
+	</extensions>
+
 	<extensions defaultExtensionNs="com.intellij">
 		<fileIconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
 		<iconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
@@ -17,17 +28,16 @@
 	</extensions>
 
 	<extensions defaultExtensionNs="com.intellij">
-		<!--<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.identity.completion.CoreCompletionContributor"/>-->
+		<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.identity.completion.CoreCompletionContributor"/>
 		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
 		<liveTemplateContext implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesContext"/>
 		<!--<intentionAction>-->
-			<!--<className>com.basmilius.ps.bastools.framework.identity.intention.ReplaceWpActionWithIdentityActionIntention</className>-->
-			<!--<category>PHP</category>-->
+		<!--<className>com.basmilius.ps.bastools.framework.identity.intention.ReplaceWpActionWithIdentityActionIntention</className>-->
+		<!--<category>PHP</category>-->
 		<!--</intentionAction>-->
 	</extensions>
 
 	<actions>
-
 		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
 			<add-to-group group-id="MainMenu" anchor="last"/>
 
@@ -87,14 +97,7 @@
 
 			<action id="BasTools.Cordova.Prepare.Windows" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/windows.png" text="Prepare App for Windows"/>
 		</group>
-
 	</actions>
-
-	<project-components>
-		<component>
-			<implementation-class>com.basmilius.ps.bastools.component.DefaultProjectComponent</implementation-class>
-		</component>
-	</project-components>
 
 	<application-components>
 		<component>
@@ -102,9 +105,10 @@
 		</component>
 	</application-components>
 
-	<depends>com.jetbrains.php</depends>
-	<depends>com.jetbrains.twig</depends>
-	<depends>com.intellij.modules.lang</depends>
-	<depends>com.intellij.modules.platform</depends>
+	<project-components>
+		<component>
+			<implementation-class>com.basmilius.ps.bastools.component.DefaultProjectComponent</implementation-class>
+		</component>
+	</project-components>
 
 </idea-plugin>

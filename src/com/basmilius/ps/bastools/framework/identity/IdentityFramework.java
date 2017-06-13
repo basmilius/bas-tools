@@ -12,6 +12,12 @@ public class IdentityFramework
 
 	private static List<Project> theseAreIdentityProjects = new ArrayList<>();
 
+	/**
+	 * Checks if a project is an Identity Framework project (And therefore awesome!).
+	 *
+	 * @param project Project instance.
+	 * @return True if it's an Identity Project.
+	 */
 	public static boolean isIdentityFrameworkProject (@NotNull final Project project)
 	{
 		if (theseAreIdentityProjects.contains(project))

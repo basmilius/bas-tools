@@ -1,6 +1,5 @@
 package com.basmilius.ps.bastools.framework.identity.liveTemplates;
 
-import com.basmilius.ps.bastools.framework.identity.IdentityFramework;
 import com.intellij.codeInsight.template.TemplateContextType;
 import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +21,7 @@ public class IdentityLiveTemplatesContext extends TemplateContextType
 	@Override
 	public boolean isInContext (@NotNull final PsiFile psi, final int offset)
 	{
-		return psi.getName().endsWith(".php") && IdentityFramework.isIdentityFrameworkProject(psi.getProject());
+		return psi.getName().endsWith(".php");
 	}
 
 }

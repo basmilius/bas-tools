@@ -24,26 +24,6 @@ public class BasToolsComponent implements ApplicationComponent
 		{
 			e.printStackTrace();
 		}
-
-//		try
-//		{
-//			final Properties properties = new Properties();
-//			properties.load(this.getClass().getClassLoader().getResourceAsStream("laf/bastools.properties"));
-//
-//			for (final Map.Entry<Object, Object> entry : properties.entrySet())
-//			{
-//				if (UIManager.getDefaults().contains(entry.getKey()))
-//				{
-//					UIManager.getDefaults().remove(entry.getKey());
-//				}
-//
-//				UIManager.getDefaults().put(entry.getKey(), entry.getValue());
-//			}
-//		}
-//		catch (Exception e)
-//		{
-//			e.printStackTrace();
-//		}
 	}
 
 	@Override

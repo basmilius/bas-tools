@@ -1,0 +1,8 @@
+<templateSet group="Missing PHP Stuff">
+	<template name="ctor" value="public function __construct($PARAMS_LIST$)&#10;{&#10;&#9;$END$&#10;}" description="Creates a PHP class constructor." toReformat="true" toShortenFQNames="true">
+		<variable name="PARAMS_LIST" expression="" defaultValue="" alwaysStopAt="true" />
+		<context>
+			<option name="PHP Class Member" value="true" />
+		</context>
+	</template>
+</templateSet>

@@ -66,10 +66,11 @@ public class DefaultColorPipette extends ColorPipetteBase
 	@Override
 	public boolean isAvailable ()
 	{
-		if (SystemInfo.isWayland)
-		{
-			return false;
-		}
+//		if (SystemInfo.isWayland)
+//		{
+//			return false;
+//		}
+
 		if (myRobot != null)
 		{
 			myRobot.createScreenCapture(new Rectangle(0, 0, 1, 1));

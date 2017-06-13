@@ -1,8 +1,8 @@
-package com.basmilius.ps.bastools.framework.identity.liveTemplates;
+package com.basmilius.ps.bastools.framework.all.liveTemplates;
 
 import com.intellij.codeInsight.template.impl.DefaultLiveTemplatesProvider;
 
-public class IdentityLiveTemplatesProvider implements DefaultLiveTemplatesProvider
+public class AllLiveTemplatesProvider implements DefaultLiveTemplatesProvider
 {
 
 	/**
@@ -11,7 +11,7 @@ public class IdentityLiveTemplatesProvider implements DefaultLiveTemplatesProvid
 	@Override
 	public final String[] getDefaultLiveTemplateFiles ()
 	{
-		return new String[] { "liveTemplates/IdentityFramework" };
+		return new String[]{"liveTemplates/MissingPhpStuffFramework"};
 	}
 
 	/**

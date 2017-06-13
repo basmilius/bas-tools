@@ -1,9 +1,12 @@
 package com.basmilius.ps.bastools.component;
 
+import com.basmilius.ps.bastools.component.basSettings.BasSettingsCodeStyleScheme;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.codeStyle.CodeStyleScheme;
+import com.intellij.psi.codeStyle.CodeStyleSchemes;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -20,24 +23,24 @@ public class DefaultProjectComponent implements ProjectComponent
 	}
 
 	@Override
-	public void initComponent ()
+	public final void initComponent ()
 	{
 	}
 
 	@Override
-	public void disposeComponent ()
+	public final void disposeComponent ()
 	{
 	}
 
 	@Override
 	@NotNull
-	public String getComponentName ()
+	public final String getComponentName ()
 	{
 		return "Bas Tools Default Project";
 	}
 
 	@Override
-	public void projectOpened ()
+	public final void projectOpened ()
 	{
 		final VirtualFile workspace = project.getWorkspaceFile();
 
@@ -71,10 +74,14 @@ public class DefaultProjectComponent implements ProjectComponent
 				e.printStackTrace();
 			}
 		});
+
+		final CodeStyleScheme bsScheme = new BasSettingsCodeStyleScheme();
+		CodeStyleSchemes.getInstance().addScheme(bsScheme);
+		CodeStyleSchemes.getInstance().setCurrentScheme(bsScheme);
 	}
 
 	@Override
-	public void projectClosed ()
+	public final void projectClosed ()
 	{
 		// called when project is being closed
 	}
