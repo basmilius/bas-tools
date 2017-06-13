@@ -41,12 +41,12 @@
 		<option name="CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES" baseAttributes="DEFAULT_VALID_STRING_ESCAPE"/>
 		<option name="DEFAULT_BRACES">
 			<value>
-				<option name="FOREGROUND" value="505457"/>
+				<option name="FOREGROUND" value="85929A"/>
 			</value>
 		</option>
 		<option name="DEFAULT_BRACKETS">
 			<value>
-				<option name="FOREGROUND" value="505457"/>
+				<option name="FOREGROUND" value="85929A"/>
 			</value>
 		</option>
 		<option name="DEFAULT_COMMA">
@@ -92,7 +92,7 @@
 		</option>
 		<option name="DEFAULT_PARENTHS">
 			<value>
-				<option name="FOREGROUND" value="505457"/>
+				<option name="FOREGROUND" value="85929A"/>
 			</value>
 		</option>
 		<option name="DEFAULT_SEMICOLON">

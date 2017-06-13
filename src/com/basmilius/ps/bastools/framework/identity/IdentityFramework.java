@@ -13,6 +13,19 @@ public class IdentityFramework
 	private static List<Project> theseAreIdentityProjects = new ArrayList<>();
 
 	/**
+	 * Gets the sources root directory for a project.
+	 *
+	 * @param project Project instance.
+	 * @return Directory as virtual file.
+	 */
+	public static VirtualFile getSourcesRoot (@NotNull final Project project)
+	{
+		final VirtualFile projectRoot = project.getBaseDir();
+		final VirtualFile srcDirectory = projectRoot.findChild("src");
+		return srcDirectory != null && srcDirectory.exists() && srcDirectory.isDirectory() ? srcDirectory : projectRoot;
+	}
+
+	/**
 	 * Checks if a project is an Identity Framework project (And therefore awesome!).
 	 *
 	 * @param project Project instance.
@@ -23,7 +36,7 @@ public class IdentityFramework
 		if (theseAreIdentityProjects.contains(project))
 			return true;
 
-		final VirtualFile projectDirectory = project.getBaseDir();
+		final VirtualFile projectRoot = IdentityFramework.getSourcesRoot(project);
 		final String[] identityFiles = {
 				"wp-admin", "wp-content", "wp-includes",
 				"wp-content/themes/idty",
@@ -33,7 +46,7 @@ public class IdentityFramework
 
 		for (final String identityFilePath : identityFiles)
 		{
-			final VirtualFile identityFile = projectDirectory.findFileByRelativePath(identityFilePath);
+			final VirtualFile identityFile = projectRoot.findFileByRelativePath(identityFilePath);
 			if (identityFile != null && identityFile.exists())
 				continue;
 

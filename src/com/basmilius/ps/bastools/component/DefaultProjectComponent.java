@@ -7,6 +7,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.codeStyle.CodeStyleScheme;
 import com.intellij.psi.codeStyle.CodeStyleSchemes;
+import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -42,7 +43,12 @@ public class DefaultProjectComponent implements ProjectComponent
 	@Override
 	public final void projectOpened ()
 	{
-		final VirtualFile workspace = project.getWorkspaceFile();
+		final VirtualFile workspace = this.project.getWorkspaceFile();
+
+		final CodeStyleScheme bsScheme = new BasSettingsCodeStyleScheme();
+		CodeStyleSchemes.getInstance().addScheme(bsScheme);
+		CodeStyleSchemes.getInstance().setCurrentScheme(bsScheme);
+		CodeStyleSettingsManager.getInstance().setTemporarySettings(bsScheme.getCodeStyleSettings());
 
 		if (workspace == null)
 			return;
@@ -74,10 +80,6 @@ public class DefaultProjectComponent implements ProjectComponent
 				e.printStackTrace();
 			}
 		});
-
-		final CodeStyleScheme bsScheme = new BasSettingsCodeStyleScheme();
-		CodeStyleSchemes.getInstance().addScheme(bsScheme);
-		CodeStyleSchemes.getInstance().setCurrentScheme(bsScheme);
 	}
 
 	@Override

@@ -15,6 +15,7 @@
 	<depends>com.intellij.modules.lang</depends>
 
 	<extensions defaultExtensionNs="com.intellij">
+		<applicationConfigurable groupId="root" displayName="Bas Tools Preferences" id="preference.BasTools" instance="com.basmilius.ps.bastools.core.config.BasToolsConfigurable" />
 		<bundledColorScheme path="/colors/Bas Settings" />
 		<bundledInspectionProfile path="/inspection/Bas Settings" />
 		<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.all.completion.AllCompletionContributor"/>
@@ -64,38 +65,38 @@
 		<group id="BasTools.Angular" text="Angular Tools">
 			<add-to-group group-id="BasTools.Main.Angular"/>
 
-			<action id="BasTools.Angular.Build" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Build"/>
-			<action id="BasTools.Angular.Serve" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Serve"/>
+			<action id="BasTools.Angular.Build" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Build"/>
+			<action id="BasTools.Angular.Serve" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Serve"/>
 
 			<separator/>
 
-			<action id="BasTools.Angular.Build.Production" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Build (Production)"/>
-			<action id="BasTools.Angular.Serve.Production" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Serve (Production)"/>
+			<action id="BasTools.Angular.Build.Production" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Build (Production)"/>
+			<action id="BasTools.Angular.Serve.Production" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Serve (Production)"/>
 
 			<separator/>
 
-			<action id="BasTools.Angular.Version" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/angular.png" text="Show Version"/>
+			<action id="BasTools.Angular.Version" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Show Version"/>
 		</group>
 
 		<group id="BasTools.Cordova" text="Cordova Tools">
 			<add-to-group group-id="BasTools.Main.Cordova"/>
 
-			<action id="BasTools.Cordova.Prepare" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/cellphone.png" text="Prepare App"/>
-			<action id="BasTools.Cordova.Requirements" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/cellphone.png" text="Check Requirements"/>
+			<action id="BasTools.Cordova.Prepare" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/cellphone.png" text="Prepare App"/>
+			<action id="BasTools.Cordova.Requirements" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/cellphone.png" text="Check Requirements"/>
 
 			<separator/>
 
-			<action id="BasTools.Cordova.Prepare.Android" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/android.png" text="Prepare App for Android"/>
-			<action id="BasTools.Cordova.Build.Android" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/android.png" text="Build App for Android"/>
-			<action id="BasTools.Cordova.Run.Android" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/android.png" text="Run App on Android Device"/>
+			<action id="BasTools.Cordova.Prepare.Android" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/android.png" text="Prepare App for Android"/>
+			<action id="BasTools.Cordova.Build.Android" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/android.png" text="Build App for Android"/>
+			<action id="BasTools.Cordova.Run.Android" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/android.png" text="Run App on Android Device"/>
 
 			<separator/>
 
-			<action id="BasTools.Cordova.Prepare.IOs" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/apple-ios.png" text="Prepare App for iOS"/>
+			<action id="BasTools.Cordova.Prepare.IOs" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/apple-ios.png" text="Prepare App for iOS"/>
 
 			<separator/>
 
-			<action id="BasTools.Cordova.Prepare.Windows" class="com.basmilius.ps.bastools.action.ideemedia.angular.VersionAction" icon="/icons/windows.png" text="Prepare App for Windows"/>
+			<action id="BasTools.Cordova.Prepare.Windows" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/windows.png" text="Prepare App for Windows"/>
 		</group>
 	</actions>
 

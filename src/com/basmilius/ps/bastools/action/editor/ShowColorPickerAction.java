@@ -36,23 +36,17 @@ public final class ShowColorPickerAction extends AnAction
 		final JComponent root = JUtils.getRootComponent(aae.getProject());
 
 		if (project == null || root == null)
-		{
 			return;
-		}
 
 		final Color color = ColorPicker.showDialog(root, "Pick a Color", JBColor.CYAN, false, null, false);
 
 		if (color == null)
-		{
 			return;
-		}
 
 		final Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();
 
 		if (editor == null)
-		{
 			return;
-		}
 
 		ExceptionUtils.executeIgnore(() -> EditorUtils.insertOrReplaceMultiCaret(editor, project, "#" + ColorUtil.toHex(color)));
 	}

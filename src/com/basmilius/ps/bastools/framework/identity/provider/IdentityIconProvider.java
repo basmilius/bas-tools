@@ -22,14 +22,10 @@ public class IdentityIconProvider extends IconProvider implements FileIconProvid
 	public Icon getIcon (@NotNull final VirtualFile file, @Iconable.IconFlags final int flags, @Nullable final Project project)
 	{
 		if (project == null)
-		{
 			return Icons.Default;
-		}
 
 		if (file.getName().equals(".angular-cli.json"))
-		{
 			return Icons.Angular;
-		}
 
 		return Icons.Default;
 	}
@@ -45,21 +41,16 @@ public class IdentityIconProvider extends IconProvider implements FileIconProvid
 			if (psi instanceof PsiDirectory)
 			{
 				final PsiDirectory dir = (PsiDirectory) psi;
+				final VirtualFile projectRoot = IdentityFramework.getSourcesRoot(project);
 
-				if (dir.getVirtualFile().getPath().equals(project.getBasePath()))
-				{
+				if (dir.getVirtualFile().getPath().equals(projectRoot.getPath()))
 					return Icons.Rhombus;
-				}
 
 				if (dir.getParent() != null && (dir.getName().equals("plugins") || dir.getParent().getName().equals("plugins")))
-				{
 					return Icons.Puzzle;
-				}
 
 				if (dir.getParent() != null && (dir.getName().equals("themes") || dir.getParent().getName().equals("themes")))
-				{
 					return Icons.Creation;
-				}
 			}
 		}
 

@@ -1,4 +1,4 @@
-package com.basmilius.ps.bastools.action.ideemedia.angular;
+package com.basmilius.ps.bastools.action.angular;
 
 import com.basmilius.ps.bastools.util.CommandUtils;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -19,26 +19,20 @@ public class VersionAction extends AnAction
 	}
 
 	@Override
-	public void actionPerformed (final AnActionEvent aae)
+	public final void actionPerformed (final AnActionEvent aae)
 	{
 		final Project project = aae.getProject();
 
 		if (project == null)
-		{
 			return;
-		}
 
 		CommandUtils.run(project, "powershell ng version", lines ->
 		{
 			final List<String> result = new ArrayList<>();
 
 			for (final String line : lines)
-			{
 				if (line.startsWith("@angular/") || line.startsWith("node:") || line.startsWith("os:"))
-				{
 					result.add(line);
-				}
-			}
 
 			ApplicationManager.getApplication().invokeLater(() -> Messages.showMessageDialog(project, String.join(System.getProperty("line.separator"), result), "Angular Version", Messages.getInformationIcon()));
 		});
