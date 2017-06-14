@@ -19,12 +19,12 @@
 	<option name="CONSOLE_FONT_NAME" value="Monospaced"/>
 	<colors>
 		<option name="GUTTER_BACKGROUND" value="292d30"/>
-		<option name="INDENT_GUIDE" value="49697e"/>
+		<option name="INDENT_GUIDE" value="31363a"/>
 		<option name="LINE_NUMBERS_COLOR" value="727d83"/>
 		<option name="READONLY_BACKGROUND" value="262a2d"/>
 		<option name="READONLY_FRAGMENT_BACKGROUND" value="262a2d"/>
 		<option name="RIGHT_MARGIN_COLOR" value=""/>
-		<option name="SELECTED_INDENT_GUIDE" value="66a7c7"/>
+		<option name="SELECTED_INDENT_GUIDE" value="41484d"/>
 		<option name="SELECTED_TEARLINE_COLOR" value="41484d"/>
 		<option name="SELECTION_BACKGROUND" value="2c4658"/>
 		<option name="TEARLINE_COLOR" value="31363a"/>

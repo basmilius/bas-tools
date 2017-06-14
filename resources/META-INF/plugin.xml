@@ -20,6 +20,7 @@
 		<bundledInspectionProfile path="/inspection/Bas Settings" />
 		<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.all.completion.AllCompletionContributor"/>
 		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.all.liveTemplates.AllLiveTemplatesProvider"/>
+		<editorTabColorProvider implementation="com.basmilius.ps.bastools.ui.tabs.BasToolsEditorTabColorProvider"/>
 	</extensions>
 
 	<extensions defaultExtensionNs="com.intellij">
@@ -37,6 +38,24 @@
 		<!--<category>PHP</category>-->
 		<!--</intentionAction>-->
 	</extensions>
+
+	<application-components>
+		<component>
+			<implementation-class>com.basmilius.ps.bastools.component.BasToolsComponent</implementation-class>
+		</component>
+		<component>
+			<implementation-class>com.basmilius.ps.bastools.ui.tabs.BasToolsTabHighlighterComponent</implementation-class>
+		</component>
+		<component>
+			<implementation-class>com.basmilius.ps.bastools.ui.tabs.BasToolsTabsPainterPatcherComponent</implementation-class>
+		</component>
+	</application-components>
+
+	<project-components>
+		<component>
+			<implementation-class>com.basmilius.ps.bastools.component.DefaultProjectComponent</implementation-class>
+		</component>
+	</project-components>
 
 	<actions>
 		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
@@ -99,17 +118,5 @@
 			<action id="BasTools.Cordova.Prepare.Windows" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/windows.png" text="Prepare App for Windows"/>
 		</group>
 	</actions>
-
-	<application-components>
-		<component>
-			<implementation-class>com.basmilius.ps.bastools.component.BasToolsComponent</implementation-class>
-		</component>
-	</application-components>
-
-	<project-components>
-		<component>
-			<implementation-class>com.basmilius.ps.bastools.component.DefaultProjectComponent</implementation-class>
-		</component>
-	</project-components>
 
 </idea-plugin>
