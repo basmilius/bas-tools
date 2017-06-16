@@ -1,0 +1,173 @@
+package com.basmilius.ps.bastools.action.editor
+
+import com.basmilius.ps.bastools.ui.DefaultColorPipette
+import com.basmilius.ps.bastools.util.EditorUtils
+import com.basmilius.ps.bastools.util.ExceptionUtils
+import com.basmilius.ps.bastools.util.JUtils
+import com.basmilius.ps.bastools.util.iid.ExceptionRunnable
+import com.intellij.codeInsight.hint.HintManager
+import com.intellij.openapi.Disposable
+import com.intellij.openapi.actionSystem.AnAction
+import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.editor.Editor
+import com.intellij.openapi.fileEditor.FileEditorManager
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.util.Disposer
+import com.intellij.ui.ColorUtil
+import com.intellij.ui.picker.ColorListener
+import com.intellij.ui.picker.ColorPipette
+
+import java.awt.*
+import java.awt.event.WindowEvent
+import java.awt.event.WindowListener
+
+class ShowColorPipetteAction : AnAction("Show Color Pipette"), ColorListener, Disposable, WindowListener
+{
+
+	private var currentColor: Color? = null
+	private var editor: Editor? = null
+	private var project: Project? = null
+
+	/**
+	 * ShowColorPipetteAction Constructor.
+	 */
+	init
+	{
+		this.currentColor = null
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun actionPerformed(aae: AnActionEvent)
+	{
+		this.project = aae.project
+		val root = JUtils.getRootComponent(aae.project)
+
+		if (project == null || root == null)
+			return
+
+		this.editor = FileEditorManager.getInstance(this.project!!).selectedTextEditor
+
+		if (this.editor == null)
+			return
+
+		val pipette = getPipetteIfAvailable(DefaultColorPipette(root, this), this)
+
+		if (pipette == null)
+		{
+			HintManager.getInstance().showErrorHint(this.editor!!, "Could not insert color, no pipette implementation found!")
+			return
+		}
+
+		pipette.setInitialColor(ColorUtil.fromHex("#000000"))
+		pipette.show().addWindowListener(this)
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun colorChanged(color: Color, o: Any)
+	{
+		this.currentColor = color
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun windowOpened(e: WindowEvent)
+	{
+
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun windowClosing(e: WindowEvent)
+	{
+
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun windowClosed(e: WindowEvent)
+	{
+		if (this.editor == null)
+			return
+
+		if (this.project == null)
+			return
+
+		if (this.currentColor == null)
+		{
+			HintManager.getInstance().showInformationHint(this.editor!!, "Could not insert color, you didn't select a color!")
+			return
+		}
+
+		ExceptionUtils.executeIgnore(Runnable { EditorUtils.insertOrReplaceMultiCaret(this.editor!!, this.project!!, "#" + ColorUtil.toHex(this.currentColor!!)) })
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun windowIconified(e: WindowEvent)
+	{
+
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun windowDeiconified(e: WindowEvent)
+	{
+
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun windowActivated(e: WindowEvent)
+	{
+
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun windowDeactivated(e: WindowEvent)
+	{
+		e.window.dispose()
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	override fun dispose()
+	{
+
+	}
+
+	/**
+	 * Gets a color pipette implementation if available.
+	 *
+	 * @param pipette          Base instance.
+	 * @param parentDisposable Parent disposable.
+	 *
+	 * @return ColorPipette
+	 */
+	private fun getPipetteIfAvailable(pipette: ColorPipette, parentDisposable: Disposable): ColorPipette?
+	{
+		if (pipette.isAvailable)
+		{
+			Disposer.register(parentDisposable, pipette)
+			return pipette
+		}
+		else
+		{
+			Disposer.dispose(pipette)
+			return null
+		}
+	}
+
+}
