@@ -19,7 +19,7 @@ class FunctionCallAllArgumentsCompletionProvider : CompletionProvider<Completion
 	/**
 	 * {@inheritdoc}
 	 */
-	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
+	override fun addCompletions(parameters : CompletionParameters, context : ProcessingContext, results : CompletionResultSet)
 	{
 		val func = PsiTreeUtil.getParentOfType(parameters.originalPosition, Function::class.java)
 
@@ -29,9 +29,7 @@ class FunctionCallAllArgumentsCompletionProvider : CompletionProvider<Completion
 			val pss = arrayOfNulls<String>(ps.size)
 
 			for (i in ps.indices)
-			{
 				pss[i] = "$" + ps[i].name
-			}
 
 			results.addElement(PrioritizedLookupElement.withPriority(LookupElementBuilder.create(pss.joinToString(", ")), LookupValueWithPriority.HIGHER.toDouble()))
 		}
@@ -40,7 +38,7 @@ class FunctionCallAllArgumentsCompletionProvider : CompletionProvider<Completion
 	companion object
 	{
 
-		var PLACE: ElementPattern<*> = PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(PhpElementTypes.FUNCTION_CALL))
+		var PLACE : ElementPattern<*> = PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(PhpElementTypes.FUNCTION_CALL))
 	}
 
 }

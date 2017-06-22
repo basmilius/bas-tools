@@ -26,6 +26,7 @@
 	<extensions defaultExtensionNs="com.intellij">
 		<fileIconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
 		<iconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
+		<moduleType id="BM_IDENTITY_FRAMEWORK_MODULE_TYPE" implementationClass="com.basmilius.ps.bastools.component.module.IdentityFrameworkModule"/>
 		<treeStructureProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityTreeStructureProvider"/>
 	</extensions>
 

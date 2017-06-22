@@ -2,8 +2,7 @@ package com.basmilius.ps.bastools.framework.identity
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
-
-import java.util.ArrayList
+import java.util.*
 
 object IdentityFramework
 {
@@ -17,7 +16,7 @@ object IdentityFramework
 	 *
 	 * @return Directory as virtual file.
 	 */
-	fun getSourcesRoot(project: Project): VirtualFile
+	fun getSourcesRoot(project : Project) : VirtualFile
 	{
 		val projectRoot = project.baseDir
 		val srcDirectory = projectRoot.findChild("src")
@@ -31,7 +30,7 @@ object IdentityFramework
 	 *
 	 * @return True if it's an Identity Project.
 	 */
-	fun isIdentityFrameworkProject(project: Project): Boolean
+	fun isIdentityFrameworkProject(project : Project) : Boolean
 	{
 		if (theseAreIdentityProjects.contains(project))
 			return true

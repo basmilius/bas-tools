@@ -26,7 +26,7 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 
 	}
 
-	private var connection: MessageBusConnection? = null
+	private var connection : MessageBusConnection? = null
 
 	/**
 	 * {@inheritDoc}
@@ -48,11 +48,11 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 	/**
 	 * {@inheritDoc}
 	 */
-	override fun selectionChanged(event: FileEditorManagerEvent)
+	override fun selectionChanged(event : FileEditorManagerEvent)
 	{
 		val editor = event.newEditor ?: return
 
-		var component: Component? = editor.component
+		var component : Component? = editor.component
 
 		while (component != null)
 		{
@@ -70,7 +70,7 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 	 * Patches the painter using reflection.
 	 * @param component Tabs component.
 	 */
-	private fun patchPainter(component: JBEditorTabs)
+	private fun patchPainter(component : JBEditorTabs)
 	{
 		val painter = ReflectionUtil.getField(JBEditorTabs::class.java, component, JBEditorTabsPainter::class.java, "myDarkPainter")
 
@@ -105,7 +105,7 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 	 * @throws IllegalAccessException Exception.
 	 */
 	@Throws(ClassNotFoundException::class, NoSuchFieldException::class, IllegalAccessException::class)
-	private fun paintSelectionAndBorder(objects: Array<Any>, borderColor: Color, borderThickness: Int, painter: BasToolsTabsPainter)
+	private fun paintSelectionAndBorder(objects : Array<Any>, borderColor : Color, borderThickness : Int, painter : BasToolsTabsPainter)
 	{
 		val g = objects[0] as Graphics2D
 		val rect = objects[1] as Rectangle
@@ -141,6 +141,14 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 		{
 			g.fillRect(rect.x + rect.width - borderThickness, rect.y, borderThickness, rect.height)
 		}
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	override fun getComponentName() : String
+	{
+		return "Bas Tools: Tabs Patcher"
 	}
 
 }
