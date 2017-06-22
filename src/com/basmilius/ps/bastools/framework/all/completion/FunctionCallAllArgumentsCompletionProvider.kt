@@ -39,6 +39,7 @@ class FunctionCallAllArgumentsCompletionProvider : CompletionProvider<Completion
 	{
 
 		var PLACE : ElementPattern<*> = PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(PhpElementTypes.FUNCTION_CALL))
+
 	}
 
 }

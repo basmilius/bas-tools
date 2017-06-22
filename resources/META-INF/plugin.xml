@@ -26,7 +26,6 @@
 	<extensions defaultExtensionNs="com.intellij">
 		<fileIconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
 		<iconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
-		<moduleType id="BM_IDENTITY_FRAMEWORK_MODULE_TYPE" implementationClass="com.basmilius.ps.bastools.component.module.IdentityFrameworkModule"/>
 		<treeStructureProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityTreeStructureProvider"/>
 	</extensions>
 
@@ -34,6 +33,8 @@
 		<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.identity.completion.CoreCompletionContributor"/>
 		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
 		<liveTemplateContext implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesContext"/>
+		<directoryProjectGenerator implementation="com.basmilius.ps.bastools.framework.identity.installer.IdentityInstallerWebProjectTemplate"/>
+		<projectTemplatesFactory implementation="com.basmilius.ps.bastools.framework.identity.installer.IdentityInstallerTemplatesFactory"/>
 		<!--<intentionAction>-->
 		<!--<className>com.basmilius.ps.bastools.framework.identity.intention.ReplaceWpActionWithIdentityActionIntention</className>-->
 		<!--<category>PHP</category>-->

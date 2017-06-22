@@ -43,7 +43,7 @@ class DefaultProjectComponent(private val project: Project) : ProjectComponent
 		val bsScheme = BasSettingsCodeStyleScheme()
 		CodeStyleSchemes.getInstance().addScheme(bsScheme)
 		CodeStyleSchemes.getInstance().currentScheme = bsScheme
-		CodeStyleSettingsManager.getInstance().temporarySettings = bsScheme.codeStyleSettings
+		CodeStyleSettingsManager.getInstance().setTemporarySettings(bsScheme.codeStyleSettings)
 
 		if (workspace == null)
 			return
