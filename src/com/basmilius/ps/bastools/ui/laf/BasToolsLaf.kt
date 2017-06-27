@@ -1,4 +1,4 @@
-package com.basmilius.ps.bastools.component.laf
+package com.basmilius.ps.bastools.ui.laf
 
 import com.intellij.ide.ui.laf.darcula.DarculaLaf
 

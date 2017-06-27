@@ -1,6 +1,6 @@
 package com.basmilius.ps.bastools.component
 
-import com.basmilius.ps.bastools.component.laf.BasToolsLaf
+import com.basmilius.ps.bastools.ui.laf.BasToolsLaf
 import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.util.IconLoader
 import com.intellij.ui.JBColor
