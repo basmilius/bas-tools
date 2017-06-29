@@ -1,8 +1,7 @@
 package com.basmilius.ps.bastools.resource
 
 import com.intellij.openapi.util.IconLoader
-
-import javax.swing.*
+import javax.swing.Icon
 
 /**
  * Interface Icons
@@ -26,6 +25,7 @@ interface Icons
 		val Android = IconLoader.getIcon("/icons/android.png")
 		val Angular = IconLoader.getIcon("/icons/angular.png")
 		val AppleIOs = IconLoader.getIcon("/icons/apple-ios.png")
+		val Beats = IconLoader.getIcon("/icons/beats.png")
 		val Cellphone = IconLoader.getIcon("/icons/cellphone.png")
 		val Creation = IconLoader.getIcon("/icons/creation.png")
 		val Puzzle = IconLoader.getIcon("/icons/puzzle.png")

@@ -1,9 +1,7 @@
 package com.basmilius.ps.bastools.framework.all.completion
 
-import com.intellij.codeInsight.completion.CompletionContributor
+import com.basmilius.ps.bastools.framework.base.completion.BaseCompletionContributor
 import com.intellij.codeInsight.completion.CompletionType
-import com.intellij.patterns.ElementPattern
-import com.intellij.psi.PsiElement
 
 /**
  * Class AllCompletionContributor
@@ -11,7 +9,7 @@ import com.intellij.psi.PsiElement
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.all.completion
  */
-class AllCompletionContributor : CompletionContributor()
+class AllCompletionContributor : BaseCompletionContributor()
 {
 
 	/**
@@ -21,8 +19,7 @@ class AllCompletionContributor : CompletionContributor()
 	 */
 	init
 	{
-		@Suppress("UNCHECKED_CAST")
-		this.extend(CompletionType.BASIC, FunctionCallAllArgumentsCompletionProvider.PLACE as ElementPattern<out PsiElement>, FunctionCallAllArgumentsCompletionProvider())
+		this.extend(CompletionType.BASIC, FunctionCallAllArgumentsCompletionProvider())
 	}
 
 }

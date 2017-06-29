@@ -1,13 +1,14 @@
 package com.basmilius.ps.bastools.framework.all.completion
 
+import com.basmilius.ps.bastools.framework.base.completion.BaseCompletionProvider
+import com.basmilius.ps.bastools.resource.Icons
 import com.intellij.codeInsight.completion.CompletionParameters
-import com.intellij.codeInsight.completion.CompletionProvider
 import com.intellij.codeInsight.completion.CompletionResultSet
 import com.intellij.codeInsight.completion.PrioritizedLookupElement
 import com.intellij.codeInsight.lookup.LookupElementBuilder
-import com.intellij.codeInsight.lookup.LookupValueWithPriority
 import com.intellij.patterns.ElementPattern
 import com.intellij.patterns.PlatformPatterns
+import com.intellij.psi.PsiElement
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.util.ProcessingContext
 import com.jetbrains.php.lang.parser.PhpElementTypes
@@ -19,7 +20,7 @@ import com.jetbrains.php.lang.psi.elements.Function
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.all.completion
  */
-class FunctionCallAllArgumentsCompletionProvider : CompletionProvider<CompletionParameters>()
+class FunctionCallAllArgumentsCompletionProvider : BaseCompletionProvider()
 {
 
 	/**
@@ -31,32 +32,29 @@ class FunctionCallAllArgumentsCompletionProvider : CompletionProvider<Completion
 	{
 		val func = PsiTreeUtil.getParentOfType(parameters.originalPosition, Function::class.java)
 
-		if (func != null)
-		{
-			val ps = func.parameters
-			val pss = arrayOfNulls<String>(ps.size)
+		if (func === null)
+			return
 
-			for (i in ps.indices)
-				pss[i] = "$" + ps[i].name
+		val ps = func.parameters
+		val pss = arrayOfNulls<String>(ps.size)
 
-			results.addElement(PrioritizedLookupElement.withPriority(LookupElementBuilder.create(pss.joinToString(", ")), LookupValueWithPriority.HIGHER.toDouble()))
-		}
+		for (i in ps.indices)
+			pss[i] = "$" + ps[i].name
+
+		val lookupElement = LookupElementBuilder.create(pss.joinToString(", ")).withBoldness(true).withIcon(Icons.Beats)
+		val lookupElementPrio = PrioritizedLookupElement.withPriority(lookupElement, 99999999999.0)
+
+		results.addElement(lookupElementPrio)
 	}
 
 	/**
-	 * Companion Object for FunctionCallAllArgumentsCompletionProvider
+	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius
-	 * @package com.basmilius.ps.bastools.framework.all.completion
 	 */
-	companion object
+	override fun getPlace() : ElementPattern<out PsiElement>
 	{
-
-		/**
-		 * Gets the PLACE where this completion should go.. (or something).
-		 */
-		var PLACE : ElementPattern<*> = PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(PhpElementTypes.FUNCTION_CALL))
-
+		return PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(PhpElementTypes.FUNCTION_CALL))
 	}
 
 }

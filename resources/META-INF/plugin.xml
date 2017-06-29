@@ -10,15 +10,15 @@
 
 	<idea-version since-build="171.0"/>
 
-	<depends>com.jetbrains.php</depends>
 	<depends>com.intellij.modules.platform</depends>
 	<depends>com.intellij.modules.lang</depends>
+	<depends>com.jetbrains.php</depends>
 
 	<extensions defaultExtensionNs="com.intellij">
 		<applicationConfigurable groupId="root" displayName="Bas Tools Preferences" id="preference.BasTools" instance="com.basmilius.ps.bastools.core.config.BasToolsConfigurable"/>
 		<bundledColorScheme path="/colors/Bas Settings"/>
 		<bundledInspectionProfile path="/inspection/Bas Settings"/>
-		<!--<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.all.completion.AllCompletionContributor"/>-->
+		<completion.contributor language="PHP" order="FIRST" id="BasTools.Framework.All.Completion" implementationClass="com.basmilius.ps.bastools.framework.all.completion.AllCompletionContributor"/>
 		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.all.liveTemplates.AllLiveTemplatesProvider"/>
 		<editorTabColorProvider implementation="com.basmilius.ps.bastools.ui.tabs.BasToolsEditorTabColorProvider"/>
 	</extensions>
