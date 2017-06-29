@@ -7,8 +7,6 @@ import com.intellij.psi.PsiElement
 import com.intellij.util.IncorrectOperationException
 import org.jetbrains.annotations.Nls
 
-// TODO(Bas): Figure out how intentions work.
-
 /**
  * Class ReplaceWpActionWithIdentityActionIntention
  *

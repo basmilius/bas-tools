@@ -36,8 +36,8 @@
 		<directoryProjectGenerator implementation="com.basmilius.ps.bastools.framework.identity.installer.IdentityInstallerWebProjectTemplate"/>
 		<projectTemplatesFactory implementation="com.basmilius.ps.bastools.framework.identity.installer.IdentityInstallerTemplatesFactory"/>
 		<!--<intentionAction>-->
-		<!--<className>com.basmilius.ps.bastools.framework.identity.intention.ReplaceWpActionWithIdentityActionIntention</className>-->
-		<!--<category>PHP</category>-->
+			<!--<className>com.basmilius.ps.bastools.framework.identity.intention.ReplaceWpActionWithIdentityActionIntention</className>-->
+			<!--<category>Identity Framework</category>-->
 		<!--</intentionAction>-->
 	</extensions>
 
@@ -69,10 +69,11 @@
 
 			<group id="BasTools.Main.Angular" icon="/icons/angular.png" popup="true" text="Angular Tools"/>
 			<group id="BasTools.Main.Cordova" icon="/icons/cellphone.png" popup="true" text="Cordova Tools"/>
+			<group id="BasTools.Main.Identity" icon="/icons/rhombus.png" popup="true" text="Identity Framework Tools"/>
 
 			<separator/>
 
-			<action id="BasTools.Action.About" class="com.basmilius.ps.bastools.action.AboutAction" text="About Bas Tools"/>
+			<action id="BasTools.Action.About" class="com.basmilius.ps.bastools.action.AboutAction" text="About Bas Tools" icon="/icons/beats.png"/>
 		</group>
 
 		<group id="BasTools.QuickNav" text="Bas Tools Quicklinks" description="Tools by Bas Milius">
@@ -118,6 +119,23 @@
 			<separator/>
 
 			<action id="BasTools.Cordova.Prepare.Windows" class="com.basmilius.ps.bastools.action.angular.VersionAction" icon="/icons/windows.png" text="Prepare App for Windows"/>
+		</group>
+
+		<group id="BasTools.Identity" text="Identity Framework Tools">
+			<add-to-group group-id="BasTools.Main.Identity"/>
+
+			<action id="BasTools.Identity.Deployer.Launch" class="com.basmilius.ps.bastools.action.angular.VersionAction" text="Launch Identity Deployer"/>
+			<action id="BasTools.Identity.Deployer.Connect" class="com.basmilius.ps.bastools.action.angular.VersionAction" text="Connect with Identity Deployer"/>
+
+			<separator/>
+
+			<action id="BasTools.Identity.I18n.CreatePot" class="com.basmilius.ps.bastools.action.angular.VersionAction" text="Create .pot file for domain.."/>
+
+			<separator/>
+
+			<action id="BasTools.Identity.Make.Extension" class="com.basmilius.ps.bastools.action.angular.VersionAction" text="Create Core Extension"/>
+			<action id="BasTools.Identity.Make.Plugin" class="com.basmilius.ps.bastools.action.angular.VersionAction" text="Create Identity WordPress Plugin"/>
+			<action id="BasTools.Identity.Make.Theme" class="com.basmilius.ps.bastools.action.angular.VersionAction" text="Create Identity WordPress Theme"/>
 		</group>
 	</actions>
 
