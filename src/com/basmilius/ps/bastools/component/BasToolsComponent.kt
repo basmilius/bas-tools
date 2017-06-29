@@ -7,11 +7,19 @@ import com.intellij.ui.JBColor
 
 import javax.swing.*
 
+/**
+ * Class BasToolsComponent
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.component
+ */
 class BasToolsComponent : ApplicationComponent
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun initComponent()
 	{
@@ -21,7 +29,7 @@ class BasToolsComponent : ApplicationComponent
 			JBColor.setDark(true)
 			IconLoader.setUseDarkIcons(true)
 		}
-		catch (e: Exception)
+		catch (e : Exception)
 		{
 			e.printStackTrace()
 		}
@@ -30,6 +38,8 @@ class BasToolsComponent : ApplicationComponent
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun disposeComponent()
 	{
@@ -38,8 +48,10 @@ class BasToolsComponent : ApplicationComponent
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun getComponentName(): String
+	override fun getComponentName() : String
 	{
 		return "Bas Tools"
 	}

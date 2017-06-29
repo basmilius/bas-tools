@@ -2,13 +2,21 @@ package com.basmilius.ps.bastools.ui.laf
 
 import com.intellij.ide.ui.laf.darcula.DarculaLaf
 
+/**
+ * Class BasToolsLaf
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.ui.laf
+ */
 class BasToolsLaf : DarculaLaf()
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun getPrefix(): String
+	override fun getPrefix() : String
 	{
 		return "bastools"
 	}

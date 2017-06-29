@@ -16,30 +16,55 @@ import java.awt.event.MouseEvent
 import java.awt.geom.Area
 import java.awt.image.BufferedImage
 
-class DefaultColorPipette(parent: JComponent, colorListener: ColorListener) : ColorPipetteBase(parent, colorListener)
+/**
+ * Class DefaultColorPipette
+ *
+ * @constructor
+ * @param parent JComponent
+ * @param colorListener COlorListener
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.ui
+ */
+class DefaultColorPipette(parent : JComponent, colorListener : ColorListener) : ColorPipetteBase(parent, colorListener)
 {
 
 	private val myCaptureRect = Rectangle(-4, -4, 8, 8)
 	private val myZoomRect = Rectangle(0, 0, SIZE, SIZE)
 	private val myPreviousLocation = Point()
 
-	private var myGraphics: Graphics2D? = null
-	private var myImage: BufferedImage? = null
-	private var myPipetteImage: BufferedImage? = null
-	private var myMaskImage: BufferedImage? = null
-	private val myTimer: Timer
+	private var myGraphics : Graphics2D? = null
+	private var myImage : BufferedImage? = null
+	private var myPipetteImage : BufferedImage? = null
+	private var myMaskImage : BufferedImage? = null
+	private val myTimer : Timer
 
+	/**
+	 * DefaultColorPipette Constructor
+	 *
+	 * @author Bas Milius
+	 */
 	init
 	{
 		myTimer = UIUtil.createNamedTimer("DefaultColorPipette", 5) { _ -> updatePipette() }
 	}
 
-	override fun getPixelColor(location: Point): Color
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun getPixelColor(location : Point) : Color
 	{
 		return super.getPixelColor(Point(location.x - HOT_SPOT.x + SIZE / 2, location.y - HOT_SPOT.y + SIZE / 2))
 	}
 
-	override fun show(): Dialog
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun show() : Dialog
 	{
 		val picker = super.show()
 		myTimer.start()
@@ -55,7 +80,12 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener) : Co
 		return picker
 	}
 
-	override fun isAvailable(): Boolean
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun isAvailable() : Boolean
 	{
 		if (myRobot != null)
 		{
@@ -65,7 +95,12 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener) : Co
 		return false
 	}
 
-	override fun getOrCreatePickerDialog(): Dialog
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun getOrCreatePickerDialog() : Dialog
 	{
 		var pickerDialog = pickerDialog
 		if (pickerDialog == null)
@@ -74,7 +109,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener) : Co
 			pickerDialog.addMouseListener(object : MouseAdapter()
 			{
 
-				override fun mouseExited(event: MouseEvent?)
+				override fun mouseExited(event : MouseEvent?)
 				{
 					updatePipette()
 				}
@@ -82,7 +117,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener) : Co
 			pickerDialog.addMouseMotionListener(object : MouseAdapter()
 			{
 
-				override fun mouseMoved(e: MouseEvent?)
+				override fun mouseMoved(e : MouseEvent?)
 				{
 					updatePipette()
 				}
@@ -90,7 +125,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener) : Co
 			pickerDialog.addFocusListener(object : FocusAdapter()
 			{
 
-				override fun focusLost(e: FocusEvent?)
+				override fun focusLost(e : FocusEvent?)
 				{
 					if (e!!.isTemporary)
 					{
@@ -129,6 +164,11 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener) : Co
 		return pickerDialog
 	}
 
+	/**
+	 * Updates the pipette.
+	 *
+	 * @author Bas Milius
+	 */
 	private fun updatePipette()
 	{
 		val pickerDialog = pickerDialog
@@ -166,12 +206,22 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener) : Co
 		}
 	}
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
 	override fun cancelPipette()
 	{
 		myTimer.stop()
 		super.cancelPipette()
 	}
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
 	override fun dispose()
 	{
 		myTimer.stop()
@@ -185,6 +235,11 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener) : Co
 		myMaskImage = null
 	}
 
+	/**
+	 * Companion Object for DefaultColorPipette
+	 *
+	 * @author Bas Milius
+	 */
 	companion object
 	{
 

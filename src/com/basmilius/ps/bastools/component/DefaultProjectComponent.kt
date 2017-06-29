@@ -8,11 +8,21 @@ import com.intellij.psi.codeStyle.CodeStyleSchemes
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager
 import java.io.IOException
 
-class DefaultProjectComponent(private val project: Project) : ProjectComponent
+/**
+ * Class DefaultProjectComponent
+ *
+ * @param project Project
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.component
+ */
+class DefaultProjectComponent(private val project : Project) : ProjectComponent
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun initComponent()
 	{
@@ -20,6 +30,8 @@ class DefaultProjectComponent(private val project: Project) : ProjectComponent
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun disposeComponent()
 	{
@@ -27,14 +39,18 @@ class DefaultProjectComponent(private val project: Project) : ProjectComponent
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun getComponentName(): String
+	override fun getComponentName() : String
 	{
-		return "Bas Tools Default Project"
+		return "Bas Tools - Default Project"
 	}
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun projectOpened()
 	{
@@ -69,7 +85,7 @@ class DefaultProjectComponent(private val project: Project) : ProjectComponent
 				workspace.rename(this, workspacePerUserFilename)
 				workspace.copy(this, workspace.parent, "workspace.xml")
 			}
-			catch (e: IOException)
+			catch (e : IOException)
 			{
 				e.printStackTrace()
 			}
@@ -78,6 +94,8 @@ class DefaultProjectComponent(private val project: Project) : ProjectComponent
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun projectClosed()
 	{

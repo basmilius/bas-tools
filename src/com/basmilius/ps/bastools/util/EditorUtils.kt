@@ -4,6 +4,12 @@ import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.editor.*
 import com.intellij.openapi.project.Project
 
+/**
+ * Object EditorUtils
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.util
+ */
 object EditorUtils
 {
 
@@ -13,9 +19,11 @@ object EditorUtils
 	 * @param editor  Editor instance.
 	 * @param project Project instance.
 	 * @param str     String you want to add/replace.
+	 *
+	 * @author Bas Milius
 	 */
 	@Throws(Exception::class)
-	fun insertOrReplaceMultiCaret(editor: Editor, project: Project, str: String)
+	fun insertOrReplaceMultiCaret(editor : Editor, project : Project, str : String)
 	{
 		val wca = object : WriteCommandAction.Simple<Unit>(project)
 		{

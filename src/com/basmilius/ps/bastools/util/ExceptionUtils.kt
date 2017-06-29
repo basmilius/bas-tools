@@ -8,6 +8,12 @@ import com.intellij.openapi.progress.Task
 import java.lang.management.ManagementFactory
 import java.util.concurrent.TimeUnit
 
+/**
+ * Object ExceptionUtils
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.util
+ */
 object ExceptionUtils
 {
 
@@ -15,8 +21,10 @@ object ExceptionUtils
 	 * Runs a Runnable and ignores the exception.
 	 *
 	 * @param runnable Runnable to run.
+	 *
+	 * @author Bas Milius
 	 */
-	fun executeIgnore(runnable: Runnable)
+	fun executeIgnore(runnable : Runnable)
 	{
 		ExceptionUtils.executeIgnore(runnable, 0)
 	}
@@ -26,15 +34,17 @@ object ExceptionUtils
 	 *
 	 * @param runnable Runnable to run.
 	 * @param delay    Delay time in milliseconds.
+	 *
+	 * @author Bas Milius
 	 */
-	fun executeIgnore(runnable: Runnable, delay: Int)
+	fun executeIgnore(runnable : Runnable, delay : Int)
 	{
 		if (runnable is ExceptionRunnable)
 		{
 			ProgressManager.getInstance().run(object : Task.Backgroundable(null, "Bas Tools Process")
 			{
 
-				override fun run(progressIndicator: ProgressIndicator)
+				override fun run(progressIndicator : ProgressIndicator)
 				{
 					try
 					{
@@ -45,7 +55,7 @@ object ExceptionUtils
 
 						runnable.run()
 					}
-					catch (e: Exception)
+					catch (e : Exception)
 					{
 						if (ManagementFactory.getRuntimeMXBean().inputArguments.toString().contains("jdwp"))
 						{
@@ -62,7 +72,7 @@ object ExceptionUtils
 			ProgressManager.getInstance().run(object : Task.Backgroundable(null, "Bas Tools Process")
 			{
 
-				override fun run(progressIndicator: ProgressIndicator)
+				override fun run(progressIndicator : ProgressIndicator)
 				{
 					if (delay > 0)
 					{

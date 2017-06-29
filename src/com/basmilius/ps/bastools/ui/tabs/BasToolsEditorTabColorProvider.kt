@@ -6,13 +6,21 @@ import com.intellij.openapi.vfs.VirtualFile
 
 import java.awt.*
 
+/**
+ * Class BasToolsEditorTabColorProvider
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.ui.tabs
+ */
 class BasToolsEditorTabColorProvider : EditorTabColorProvider
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun getEditorTabColor(project: Project, virtualFile: VirtualFile): Color?
+	override fun getEditorTabColor(project : Project, virtualFile : VirtualFile) : Color?
 	{
 		return BasToolsTabsPainterPatcherComponent.BackgroundColor
 	}

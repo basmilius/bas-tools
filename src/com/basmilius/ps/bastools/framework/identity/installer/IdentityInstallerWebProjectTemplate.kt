@@ -7,11 +7,19 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
 import javax.swing.Icon
 
+/**
+ * Class IdentityInstallerWebProjectTemplate
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.framework.identity.installer
+ */
 class IdentityInstallerWebProjectTemplate : WebProjectTemplate<IdentityInstallerSettings>()
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun generateProject(project : Project, baseDir : VirtualFile, settings : IdentityInstallerSettings, module : Module)
 	{
@@ -20,6 +28,8 @@ class IdentityInstallerWebProjectTemplate : WebProjectTemplate<IdentityInstaller
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun getDescription() : String
 	{
@@ -28,6 +38,8 @@ class IdentityInstallerWebProjectTemplate : WebProjectTemplate<IdentityInstaller
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun getName() : String
 	{
@@ -36,6 +48,8 @@ class IdentityInstallerWebProjectTemplate : WebProjectTemplate<IdentityInstaller
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun getIcon() : Icon
 	{

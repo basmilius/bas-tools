@@ -1,9 +1,21 @@
 package com.basmilius.ps.bastools.component.basSettings
 
-import com.basmilius.ps.bastools.component.BTCodeStyleScheme
+import com.basmilius.ps.bastools.component.BasToolsCodeStyleScheme
 
-class BasSettingsCodeStyleScheme : BTCodeStyleScheme("Bas Settings", true, BasSettingsBaseCodeStyleScheme(null))
+/**
+ * Class BasSettingsCodeStyleScheme
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.component.basSettings
+ */
+class BasSettingsCodeStyleScheme : BasToolsCodeStyleScheme("Bas Settings", true, BasSettingsBaseCodeStyleScheme(null))
 {
+
+	/**
+	 * BasSettingsCodeStyleScheme Constructor
+	 *
+	 * @author Bas Milius
+	 */
 	init
 	{
 

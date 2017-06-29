@@ -5,6 +5,12 @@ import com.intellij.openapi.wm.WindowManager
 
 import javax.swing.*
 
+/**
+ * Object JUtils
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.util
+ */
 object JUtils
 {
 
@@ -14,8 +20,10 @@ object JUtils
 	 * @param project Project.
 	 *
 	 * @return JComponent
+	 *
+	 * @author Bas Milius
 	 */
-	fun getRootComponent(project: Project?): JComponent?
+	fun getRootComponent(project : Project?) : JComponent?
 	{
 		if (project != null)
 		{

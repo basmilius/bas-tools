@@ -8,32 +8,45 @@ import com.intellij.util.IncorrectOperationException
 import org.jetbrains.annotations.Nls
 
 // TODO(Bas): Figure out how intentions work.
+
+/**
+ * Class ReplaceWpActionWithIdentityActionIntention
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.framework.identity.intention
+ */
 class ReplaceWpActionWithIdentityActionIntention : PsiElementBaseIntentionAction()
 {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @author Bas Milius
 	 */
 	@Throws(IncorrectOperationException::class)
-	override fun invoke(project: Project, editor: Editor, psiElement: PsiElement)
+	override fun invoke(project : Project, editor : Editor, psiElement : PsiElement)
 	{
 	}
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun isAvailable(project: Project, editor: Editor, psiElement: PsiElement): Boolean
+	override fun isAvailable(project : Project, editor : Editor, psiElement : PsiElement) : Boolean
 	{
 		return false
 	}
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @author Bas Milius
 	 */
 	@Nls
-	override fun getFamilyName(): String
+	override fun getFamilyName() : String
 	{
-		return "Convert WordPress add_action to Identity::action."
+		return "Converts WordPress add_action to Identity::action."
 	}
 
 }

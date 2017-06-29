@@ -12,10 +12,21 @@ import com.intellij.psi.PsiElement
 
 import javax.swing.*
 
+/**
+ * Class IdentityIconProvider
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.framework.identity.provider
+ */
 class IdentityIconProvider : IconProvider(), FileIconProvider
 {
 
-	override fun getIcon(file: VirtualFile, @Iconable.IconFlags flags: Int, project: Project?): Icon?
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun getIcon(file : VirtualFile, @Iconable.IconFlags flags : Int, project : Project?) : Icon?
 	{
 		if (project == null)
 			return Icons.Default
@@ -26,7 +37,12 @@ class IdentityIconProvider : IconProvider(), FileIconProvider
 		return Icons.Default
 	}
 
-	override fun getIcon(psi: PsiElement, @Iconable.IconFlags flags: Int): Icon?
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun getIcon(psi : PsiElement, @Iconable.IconFlags flags : Int) : Icon?
 	{
 		val project = psi.project
 

@@ -3,7 +3,6 @@ package com.basmilius.ps.bastools.action.editor
 import com.basmilius.ps.bastools.util.EditorUtils
 import com.basmilius.ps.bastools.util.ExceptionUtils
 import com.basmilius.ps.bastools.util.JUtils
-import com.basmilius.ps.bastools.util.iid.ExceptionRunnable
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.fileEditor.FileEditorManager
@@ -12,13 +11,18 @@ import com.intellij.ui.ColorUtil
 import com.intellij.ui.JBColor
 
 /**
- * ShowColorPickerAction Constructor.
+ * Class ShowColorPickerAction
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.action.editor
  */
 class ShowColorPickerAction : AnAction("Show Color Picker")
 {
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun actionPerformed(aae: AnActionEvent)
 	{

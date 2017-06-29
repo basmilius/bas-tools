@@ -11,6 +11,8 @@ class IdentityInstallerTemplatesFactory : ProjectTemplatesFactory()
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun getGroups() : Array<String>
 	{
@@ -19,6 +21,8 @@ class IdentityInstallerTemplatesFactory : ProjectTemplatesFactory()
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun getGroupIcon(p0 : String?) : Icon
 	{
@@ -27,6 +31,8 @@ class IdentityInstallerTemplatesFactory : ProjectTemplatesFactory()
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun createTemplates(s : String?, w : WizardContext?) : Array<ProjectTemplate>
 	{

@@ -6,11 +6,19 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.ui.Messages
 
-class VersionAction : AnAction()
+/**
+ * Class VersionAction
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.action.angular
+ */
+class VersionAction : AnAction("Show Angular Version")
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun actionPerformed(aae: AnActionEvent)
 	{

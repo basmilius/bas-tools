@@ -1,17 +1,27 @@
 package com.basmilius.ps.bastools.component.basSettings
 
-import com.basmilius.ps.bastools.component.BTCodeStyleScheme
+import com.basmilius.ps.bastools.component.BasToolsCodeStyleScheme
 import com.intellij.openapi.options.SchemeImportException
 import com.intellij.openapi.vfs.VfsUtil
 import com.intellij.psi.codeStyle.CodeStyleScheme
 import com.intellij.psi.codeStyle.CodeStyleSettings
 import com.intellij.psi.impl.source.codeStyle.CodeStyleSettingsLoader
 
-class BasSettingsBaseCodeStyleScheme(parent: CodeStyleScheme?) : BTCodeStyleScheme("Bas Settings Base", true, parent)
+/**
+ * Class BasSettingsBaseCodeStyleScheme
+ *
+ * @param parent CodeStyleScheme
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.component.basSettings
+ */
+class BasSettingsBaseCodeStyleScheme(parent : CodeStyleScheme?) : BasToolsCodeStyleScheme("Bas Settings Base", true, parent)
 {
 
 	/**
 	 * BasSettingsBaseCodeStyleScheme Init.
+	 *
+	 * @author Bas Milius
 	 */
 	init
 	{
@@ -20,6 +30,8 @@ class BasSettingsBaseCodeStyleScheme(parent: CodeStyleScheme?) : BTCodeStyleSche
 
 	/**
 	 * Reloads the settings.
+	 *
+	 * @author Bas Milius
 	 */
 	fun reloadSettings()
 	{
@@ -28,14 +40,20 @@ class BasSettingsBaseCodeStyleScheme(parent: CodeStyleScheme?) : BTCodeStyleSche
 			val settings = this.settings
 			this.codeStyleSettings = settings
 		}
-		catch (e: Exception)
+		catch (e : Exception)
 		{
 			e.printStackTrace()
 		}
 
 	}
 
-	private val settings: CodeStyleSettings
+	/**
+	 * Gets the code style settings.
+	 *
+	 * @return CodeStyleSettings
+	 * @author Bas Milius
+	 */
+	private val settings : CodeStyleSettings
 		@Throws(SchemeImportException::class)
 		get()
 		{

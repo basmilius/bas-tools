@@ -14,9 +14,18 @@ import net.sf.cglib.proxy.Enhancer
 import net.sf.cglib.proxy.MethodInterceptor
 import java.awt.*
 
+/**
+ * Class BasToolsTabsPainterPatcherComponent
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.ui.tabs
+ */
 class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorManagerListener
 {
 
+	/**
+	 * Companion Object for BasToolsTabsPainterPatcherComponent
+	 */
 	companion object
 	{
 
@@ -30,6 +39,8 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun initComponent()
 	{
@@ -39,6 +50,8 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun disposeComponent()
 	{
@@ -47,6 +60,8 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 
 	/**
 	 * {@inheritDoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun selectionChanged(event : FileEditorManagerEvent)
 	{
@@ -68,7 +83,10 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 
 	/**
 	 * Patches the painter using reflection.
+	 *
 	 * @param component Tabs component.
+	 *
+	 * @author Bas Milius
 	 */
 	private fun patchPainter(component : JBEditorTabs)
 	{
@@ -103,6 +121,8 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 	 * @throws ClassNotFoundException Exception.
 	 * @throws NoSuchFieldException   Exception.
 	 * @throws IllegalAccessException Exception.
+	 *
+	 * @author Bas Milius
 	 */
 	@Throws(ClassNotFoundException::class, NoSuchFieldException::class, IllegalAccessException::class)
 	private fun paintSelectionAndBorder(objects : Array<Any>, borderColor : Color, borderThickness : Int, painter : BasToolsTabsPainter)
@@ -145,6 +165,8 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun getComponentName() : String
 	{

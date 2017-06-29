@@ -13,11 +13,19 @@ import com.intellij.util.ProcessingContext
 import com.jetbrains.php.lang.parser.PhpElementTypes
 import com.jetbrains.php.lang.psi.elements.Function
 
+/**
+ * Class FunctionCallAllArgumentsCompletionProvider
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.framework.all.completion
+ */
 class FunctionCallAllArgumentsCompletionProvider : CompletionProvider<CompletionParameters>()
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
 	override fun addCompletions(parameters : CompletionParameters, context : ProcessingContext, results : CompletionResultSet)
 	{
@@ -35,9 +43,18 @@ class FunctionCallAllArgumentsCompletionProvider : CompletionProvider<Completion
 		}
 	}
 
+	/**
+	 * Companion Object for FunctionCallAllArgumentsCompletionProvider
+	 *
+	 * @author Bas Milius
+	 * @package com.basmilius.ps.bastools.framework.all.completion
+	 */
 	companion object
 	{
 
+		/**
+		 * Gets the PLACE where this completion should go.. (or something).
+		 */
 		var PLACE : ElementPattern<*> = PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(PhpElementTypes.FUNCTION_CALL))
 
 	}

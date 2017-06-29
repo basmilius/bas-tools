@@ -4,6 +4,12 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
 import java.util.*
 
+/**
+ * Object IdentityFramework
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.framework.identity
+ */
 object IdentityFramework
 {
 
@@ -15,6 +21,8 @@ object IdentityFramework
 	 * @param project Project instance.
 	 *
 	 * @return Directory as virtual file.
+	 *
+	 * @author Bas Milius
 	 */
 	fun getSourcesRoot(project : Project) : VirtualFile
 	{
@@ -29,6 +37,8 @@ object IdentityFramework
 	 * @param project Project instance.
 	 *
 	 * @return True if it's an Identity Project.
+	 *
+	 * @author Bas Milius
 	 */
 	fun isIdentityFrameworkProject(project : Project) : Boolean
 	{

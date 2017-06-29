@@ -8,13 +8,21 @@ import com.intellij.ide.projectView.impl.nodes.PsiFileNode
 import com.intellij.ide.util.treeView.AbstractTreeNode
 import java.util.*
 
+/**
+ * Class IdentityTreeStructureProvider
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.framework.identity.provider
+ */
 class IdentityTreeStructureProvider : TreeStructureProvider
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun modify(parent: AbstractTreeNode<*>, children: Collection<AbstractTreeNode<*>>, settings: ViewSettings): Collection<AbstractTreeNode<*>>
+	override fun modify(parent : AbstractTreeNode<*>, children : Collection<AbstractTreeNode<*>>, settings : ViewSettings) : Collection<AbstractTreeNode<*>>
 	{
 		val nodes = ArrayList<AbstractTreeNode<*>>()
 		val project = parent.project ?: return nodes
@@ -39,6 +47,9 @@ class IdentityTreeStructureProvider : TreeStructureProvider
 
 					if (virtualFile.parent.name == "wp-content" && virtualFile.name == "install.lock")
 						continue
+
+					if (virtualFile.name == "Thumbs.db")
+						continue
 				}
 
 				nodes.add(child)
@@ -54,8 +65,10 @@ class IdentityTreeStructureProvider : TreeStructureProvider
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun getData(selected: Collection<AbstractTreeNode<*>>?, dataName: String?): Any?
+	override fun getData(selected : Collection<AbstractTreeNode<*>>?, dataName : String?) : Any?
 	{
 		return null
 	}

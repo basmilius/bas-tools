@@ -4,12 +4,24 @@ import com.intellij.openapi.util.IconLoader
 
 import javax.swing.*
 
+/**
+ * Interface Icons
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.resource
+ */
 interface Icons
 {
+
+	/**
+	 * Companion Object for Icons
+	 *
+	 * @author Bas Milius
+	 */
 	companion object
 	{
 
-		val Default: Icon? = null
+		val Default : Icon? = null
 
 		val Android = IconLoader.getIcon("/icons/android.png")
 		val Angular = IconLoader.getIcon("/icons/angular.png")

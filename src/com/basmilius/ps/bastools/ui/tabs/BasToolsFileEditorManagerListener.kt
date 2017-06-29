@@ -8,27 +8,39 @@ import com.intellij.openapi.fileEditor.impl.EditorWindow
 import com.intellij.openapi.fileEditor.impl.EditorWithProviderComposite
 import com.intellij.openapi.vfs.VirtualFile
 
+/**
+ * Class BasToolsFileEditorManagerListener
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.ui.tabs
+ */
 class BasToolsFileEditorManagerListener : FileEditorManagerListener
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun fileOpened(source: FileEditorManager, file: VirtualFile)
+	override fun fileOpened(source : FileEditorManager, file : VirtualFile)
 	{
 	}
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun fileClosed(source: FileEditorManager, file: VirtualFile)
+	override fun fileClosed(source : FileEditorManager, file : VirtualFile)
 	{
 	}
 
 	/**
 	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
 	 */
-	override fun selectionChanged(event: FileEditorManagerEvent)
+	override fun selectionChanged(event : FileEditorManagerEvent)
 	{
 		val project = event.manager.project
 		val manager = FileEditorManagerEx.getInstanceEx(project)
@@ -45,18 +57,26 @@ class BasToolsFileEditorManagerListener : FileEditorManagerListener
 
 	/**
 	 * Gets the editor index.
+	 *
+	 * @param window EditorWindow
+	 * @param composite EditorWithProviderComposite
+	 *
+	 * @author Bas Milius
 	 */
-	private fun getEditorIndex(window: EditorWindow, composite: EditorWithProviderComposite): Int
+	private fun getEditorIndex(window : EditorWindow, composite : EditorWithProviderComposite) : Int
 	{
-		return window.editors
-				.takeWhile { it != composite }
-				.count()
+		return window.editors.takeWhile { it != composite }.count()
 	}
 
 	/**
 	 * Processes the active tab fill.
+	 *
+	 * @param file VirtualFile?
+	 * @param window EditorWindow
+	 *
+	 * @author Bas Milius
 	 */
-	private fun processTab(file: VirtualFile?, window: EditorWindow)
+	private fun processTab(file : VirtualFile?, window : EditorWindow)
 	{
 		val composite = window.findFileComposite(file) ?: return
 		val editorIndex = this.getEditorIndex(window, composite)

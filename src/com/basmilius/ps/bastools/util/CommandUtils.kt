@@ -11,6 +11,12 @@ import java.io.File
 import java.io.InputStreamReader
 import java.util.ArrayList
 
+/**
+ * Object CommandUtils
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.util
+ */
 object CommandUtils
 {
 
@@ -20,9 +26,11 @@ object CommandUtils
 	 * @param project Project that the command should be executed on.
 	 * @param command Command that should be executed.
 	 * @param handler Handler.
+	 *
+	 * @author Bas Milius
 	 */
 	@Synchronized
-	fun run(project: Project?, command: String, handler: ICommandResultHandler)
+	fun run(project : Project?, command : String, handler : ICommandResultHandler)
 	{
 		if (project == null)
 			return
@@ -30,7 +38,7 @@ object CommandUtils
 		ProgressManager.getInstance().run(object : Task.Backgroundable(project, "Executing command '$command'")
 		{
 
-			override fun run(progress: ProgressIndicator)
+			override fun run(progress : ProgressIndicator)
 			{
 				progress.isIndeterminate = true
 
@@ -57,7 +65,7 @@ object CommandUtils
 					reader.close()
 					`in`.close()
 				}
-				catch (e: Exception)
+				catch (e : Exception)
 				{
 					e.printStackTrace()
 				}
@@ -67,13 +75,22 @@ object CommandUtils
 		})
 	}
 
+	/**
+	 * Interface ICommandResultHandler
+	 *
+	 * @author Bas Milius
+	 */
 	interface ICommandResultHandler
 	{
 
 		/**
 		 * Invoked when a command is executed.
+		 *
+		 * @param lines Array<String>
+		 *
+		 * @author Bas Milius
 		 */
-		fun onCommandResult(lines: Array<String>): Unit
+		fun onCommandResult(lines : Array<String>) : Unit
 
 	}
 

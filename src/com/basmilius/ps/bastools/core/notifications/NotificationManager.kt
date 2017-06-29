@@ -4,6 +4,12 @@ import com.intellij.notification.*
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.project.Project
 
+/**
+ * Object NotificationManager
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.core.notifications
+ */
 object NotificationManager
 {
 
@@ -15,8 +21,10 @@ object NotificationManager
 	 * @param project Project that should be notified.
 	 * @param content Contents of the notification.
 	 * @param type Notification type.
+	 *
+	 * @author Bas Milius
 	 */
-	fun notify(project: Project, content: String, type: NotificationType)
+	fun notify(project : Project, content : String, type : NotificationType)
 	{
 		ApplicationManager.getApplication().invokeLater {
 			val notification = BTNotificationGroup.createNotification(content, type)
@@ -31,8 +39,10 @@ object NotificationManager
 	 * @param title Title of the notification.
 	 * @param content Contents of the notification.
 	 * @param type Notification type.
+	 *
+	 * @author Bas Milius
 	 */
-	fun notify(project: Project, title: String, content: String, type: NotificationType)
+	fun notify(project : Project, title : String, content : String, type : NotificationType)
 	{
 		ApplicationManager.getApplication().invokeLater {
 			val notification = BTNotificationGroup.createNotification(title, content, type, null)
