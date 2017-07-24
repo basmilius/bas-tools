@@ -2,6 +2,7 @@ package com.basmilius.ps.bastools.framework.identity
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
+import com.intellij.psi.PsiFile
 import java.util.*
 
 /**
@@ -56,6 +57,21 @@ object IdentityFramework
 		theseAreIdentityProjects.add(project)
 
 		return true
+	}
+
+	/**
+	 * Returns TRUE if a file is inside a particular directory.
+	 *
+	 * @return True if it's inside the specified directory.
+	 *
+	 * @author Bas Milius
+	 */
+	fun isChildOf (project : Project, file : PsiFile, dir : String) : Boolean
+	{
+		val sourcesRoot : VirtualFile = this.getSourcesRoot(project)
+		val directoryRoot : String = sourcesRoot.path + dir
+
+		return file.virtualFile.path.startsWith(directoryRoot)
 	}
 
 }
