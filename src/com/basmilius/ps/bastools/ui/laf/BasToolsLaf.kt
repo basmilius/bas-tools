@@ -21,4 +21,10 @@ class BasToolsLaf : DarculaLaf()
 		return "bastools"
 	}
 
+	override fun parseValue(key : String, value : String) : Any?
+	{
+		// println("$key => $value")
+		return super.parseValue(key, value)
+	}
+
 }

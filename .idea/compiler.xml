@@ -9,8 +9,8 @@
         <module name="bas-tools" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="bas-tools" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="bas-tools" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

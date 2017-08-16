@@ -56,6 +56,17 @@ class DefaultProjectComponent(private val project : Project) : ProjectComponent
 	{
 		val workspace = this.project.workspaceFile
 
+		try
+		{
+			val oldSettings = CodeStyleSchemes.getInstance().findPreferredScheme("Bas Settings")
+			if (oldSettings.name === "Bas Settings" && !oldSettings.isDefault)
+				CodeStyleSchemes.getInstance().deleteScheme(oldSettings)
+		}
+		catch (e : Exception)
+		{
+			e.printStackTrace()
+		}
+
 		val bsScheme = BasSettingsCodeStyleScheme()
 		CodeStyleSchemes.getInstance().addScheme(bsScheme)
 		CodeStyleSchemes.getInstance().currentScheme = bsScheme
@@ -68,16 +79,16 @@ class DefaultProjectComponent(private val project : Project) : ProjectComponent
 		val workspacePerUserFilename = "workspace.$username.xml"
 		val workspacePerUser = workspace.parent.findChild(workspacePerUserFilename)
 
-		ApplicationManager.getApplication().runWriteAction {
-			try
-			{
+		try
+		{
+			ApplicationManager.getApplication().runWriteAction {
 				if (workspacePerUser != null && workspacePerUser.exists())
 				{
-					val workspacePerUserContents = workspacePerUser.contentsToByteArray()
-					val workspacePerUserStream = workspace.getOutputStream(this)
+					val contents = workspacePerUser.contentsToByteArray()
+					val stream = workspace.getOutputStream(this)
 
-					workspacePerUserStream.write(workspacePerUserContents)
-					workspacePerUserStream.close()
+					stream.write(contents)
+					stream.close()
 
 					workspacePerUser.delete(this)
 				}
@@ -85,10 +96,10 @@ class DefaultProjectComponent(private val project : Project) : ProjectComponent
 				workspace.rename(this, workspacePerUserFilename)
 				workspace.copy(this, workspace.parent, "workspace.xml")
 			}
-			catch (e : IOException)
-			{
-				e.printStackTrace()
-			}
+		}
+		catch (e : IOException)
+		{
+			e.printStackTrace()
 		}
 	}
 
@@ -99,6 +110,26 @@ class DefaultProjectComponent(private val project : Project) : ProjectComponent
 	 */
 	override fun projectClosed()
 	{
+		val workspacePerUser = this.project.workspaceFile
+
+		if (workspacePerUser === null)
+			return
+
+		val workspace = workspacePerUser.parent.findChild("workspace.xml")
+
+		try
+		{
+			ApplicationManager.getApplication().runWriteAction {
+				if (workspace != null && workspace.exists())
+					workspace.delete(this)
+
+				workspacePerUser.copy(this, workspacePerUser.parent, "workspace.xml")
+			}
+		}
+		catch (e : IOException)
+		{
+			e.printStackTrace()
+		}
 	}
 
 }

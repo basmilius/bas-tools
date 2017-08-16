@@ -1,2 +1,0 @@
-Light Foreground: #a9b4bb
-Dark Foreground:  #859199
