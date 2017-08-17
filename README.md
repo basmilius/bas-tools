@@ -1,10 +1,10 @@
-#Bas Tools
+##Bas Tools
 Adds some extended features to PhpStorm.
 
 &nbsp;
 
 
-### General Features
+#### General Features
 - **UI/UX**
   - Darker interface.
   - Custom tabs.
@@ -12,7 +12,7 @@ Adds some extended features to PhpStorm.
 
 &nbsp;
  
-### Completion
+#### Completion
 - **General**
   - Completion of values inside the `header` and `header_remove` functions.
   - Completion of filenames inside `file_get_contents`, `is_file` and more functions.
@@ -20,7 +20,7 @@ Adds some extended features to PhpStorm.
 
 &nbsp;
  
-### Inspections
+#### Inspections
 - **General**
   - Check validity of callables.
 
@@ -34,13 +34,13 @@ Adds some extended features to PhpStorm.
   
 &nbsp;
 
-### Intentions
+#### Intentions
 - **Compute Constant Value**
   - Computes constant value of expressions (eg. 4 + 5 computes to 9).
 
 &nbsp;
 
-### Live Templates
+#### Live Templates
 - **General**
   - `ctor` creates a constructor inside a class.
   
@@ -57,7 +57,7 @@ Adds some extended features to PhpStorm.
 
 &nbsp;
 
-### Tool Windows
+#### Tool Windows
 - **Date Time Helpers**
   - Current Unix Timestamp.
   - Current Date Time.
