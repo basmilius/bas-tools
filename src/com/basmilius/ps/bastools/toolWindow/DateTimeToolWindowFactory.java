@@ -13,6 +13,8 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Timer;
@@ -45,8 +47,8 @@ public class DateTimeToolWindowFactory extends BaseToolWindowFactory
 
 		this.currentDateCopy.addActionListener(this::onCurrentDateCopyClick);
 		this.currentTimestampCopy.addActionListener(this::onCurrentTimestampCopyClick);
-
 		this.convertButton.addActionListener(this::onConvertButtonClick);
+		this.convertField.addKeyListener(new ConvertFieldKeyListener());
 
 		return this.rootPane;
 	}
@@ -114,6 +116,30 @@ public class DateTimeToolWindowFactory extends BaseToolWindowFactory
 		{
 			DateTimeToolWindowFactory.this.currentDate.setText(DateTimeToolWindowFactory.this.format.format(new Timestamp(System.currentTimeMillis())));
 			DateTimeToolWindowFactory.this.currentTimestamp.setText(Long.toString(System.currentTimeMillis() / 1000L));
+		}
+
+	}
+
+	private class ConvertFieldKeyListener implements KeyListener
+	{
+
+		@Override
+		public void keyTyped (KeyEvent e)
+		{
+		}
+
+		@Override
+		public void keyPressed (KeyEvent e)
+		{
+			if (e.getKeyCode() != KeyEvent.VK_ENTER)
+				return;
+
+			DateTimeToolWindowFactory.this.onConvertButtonClick(null);
+		}
+
+		@Override
+		public void keyReleased (KeyEvent e)
+		{
 		}
 
 	}

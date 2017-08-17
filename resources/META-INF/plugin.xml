@@ -72,6 +72,9 @@
 		<component>
 			<implementation-class>com.basmilius.ps.bastools.ui.tabs.BasToolsTabsPainterPatcherComponent</implementation-class>
 		</component>
+		<component>
+			<implementation-class>com.basmilius.ps.bastools.misc.MiscComponent</implementation-class>
+		</component>
 		<!--<component>-->
 			<!--<implementation-class>com.basmilius.ps.bastools.component.presenter.shortcuts.ShortcutPresenter</implementation-class>-->
 		<!--</component>-->
