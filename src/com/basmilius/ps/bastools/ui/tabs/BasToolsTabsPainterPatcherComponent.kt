@@ -145,21 +145,15 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 		g.color = borderColor
 		g.stroke = BasicStroke(0f)
 
-		if (position == JBTabsPosition.bottom)
+		if (position == null)
+			return
+
+		when (position)
 		{
-			g.fillRect(rect.x, rect.y, rect.width, borderThickness)
-		}
-		else if (position == JBTabsPosition.top)
-		{
-			g.fillRect(rect.x, rect.y + rect.height - borderThickness, rect.width, borderThickness)
-		}
-		else if (position == JBTabsPosition.left)
-		{
-			g.fillRect(rect.x, rect.y, borderThickness, rect.height)
-		}
-		else if (position == JBTabsPosition.right)
-		{
-			g.fillRect(rect.x + rect.width - borderThickness, rect.y, borderThickness, rect.height)
+			JBTabsPosition.bottom -> g.fillRect(rect.x, rect.y, rect.width, borderThickness)
+			JBTabsPosition.top -> g.fillRect(rect.x, rect.y + rect.height - borderThickness, rect.width, borderThickness)
+			JBTabsPosition.left -> g.fillRect(rect.x, rect.y, borderThickness, rect.height)
+			JBTabsPosition.right -> g.fillRect(rect.x + rect.width - borderThickness, rect.y, borderThickness, rect.height)
 		}
 	}
 

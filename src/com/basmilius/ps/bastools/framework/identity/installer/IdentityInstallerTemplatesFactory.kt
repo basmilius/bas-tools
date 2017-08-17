@@ -6,6 +6,12 @@ import com.intellij.platform.ProjectTemplate
 import com.intellij.platform.ProjectTemplatesFactory
 import javax.swing.Icon
 
+/**
+ * Class IdentityInstallerTemplatesFactory
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.framework.identity.installer
+ */
 class IdentityInstallerTemplatesFactory : ProjectTemplatesFactory()
 {
 

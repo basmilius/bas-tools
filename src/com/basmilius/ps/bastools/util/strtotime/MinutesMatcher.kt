@@ -5,11 +5,22 @@ import org.apache.commons.lang.time.DateUtils
 import java.util.*
 import java.util.regex.Pattern
 
+/**
+ * Class MinutesMatcher
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.util.strtotime
+ */
 class MinutesMatcher : Matcher
 {
 
 	private val minutes = Pattern.compile("[\\-+]?\\d+ minutes")
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
 	override fun tryConvert(input : String, refDateStr : String) : Date?
 	{
 		val calendar = Calendar.getInstance()

@@ -14,6 +14,11 @@ import com.jetbrains.php.lang.psi.elements.FunctionReference
 /**
  * Class SimpleReplaceFunctionWithMethodInspector
  *
+ * @constructor
+ * @param functionName String
+ * @param methodCall String
+ * @param shortName String
+ *
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.base.codeInspection.simple
  */

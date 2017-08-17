@@ -1,6 +1,8 @@
 package com.basmilius.ps.bastools.component
 
+import com.basmilius.ps.bastools.intention.ComputeConstantValueIntentionAction
 import com.basmilius.ps.bastools.ui.laf.BasToolsLaf
+import com.intellij.codeInsight.intention.IntentionManager
 import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.util.IconLoader
 import com.intellij.ui.JBColor
@@ -34,6 +36,7 @@ class BasToolsComponent : ApplicationComponent
 			e.printStackTrace()
 		}
 
+		IntentionManager.getInstance().addAction(ComputeConstantValueIntentionAction())
 	}
 
 	/**

@@ -21,6 +21,11 @@ class BasToolsLaf : DarculaLaf()
 		return "bastools"
 	}
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
 	override fun parseValue(key : String, value : String) : Any?
 	{
 		// println("$key => $value")

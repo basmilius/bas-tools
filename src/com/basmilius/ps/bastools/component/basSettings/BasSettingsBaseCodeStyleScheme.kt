@@ -10,6 +10,7 @@ import com.intellij.psi.impl.source.codeStyle.CodeStyleSettingsLoader
 /**
  * Class BasSettingsBaseCodeStyleScheme
  *
+ * @constructor
  * @param parent CodeStyleScheme
  *
  * @author Bas Milius
@@ -33,7 +34,7 @@ class BasSettingsBaseCodeStyleScheme(parent : CodeStyleScheme?) : BasToolsCodeSt
 	 *
 	 * @author Bas Milius
 	 */
-	fun reloadSettings()
+	private fun reloadSettings()
 	{
 		try
 		{

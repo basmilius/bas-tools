@@ -57,17 +57,7 @@ object ExpressionSemanticUtils
 	 */
 	fun getCountExpressionsInGroup(@NotNull groupStatement : GroupStatement) : Int
 	{
-		var count = 0
-
-		for (statement in groupStatement.children)
-		{
-			if (statement !is PhpPsiElement || statement is PhpDocType || statement is PhpDocComment)
-				continue
-
-			count++
-		}
-
-		return count
+		return groupStatement.children.count { it is PhpPsiElement && it !is PhpDocType && it !is PhpDocComment }
 	}
 
 	/**

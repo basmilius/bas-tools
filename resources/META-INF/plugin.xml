@@ -1,7 +1,7 @@
 <idea-plugin>
 	<id>com.basmilius.ps.bastools</id>
 	<name>Bas Tools</name>
-	<version>1.0</version>
+	<version>1.0.4</version>
 	<vendor email="basmilius@hotmail.com" url="https://www.basmilius.com">Bas Milius</vendor>
 
 	<description><![CDATA[]]></description>
@@ -16,8 +16,6 @@
 
 	<!-- General Stuff -->
 	<extensions defaultExtensionNs="com.intellij">
-		<applicationConfigurable groupId="root" displayName="Bas Tools Preferences" id="preference.BasTools" instance="com.basmilius.ps.bastools.core.config.BasToolsConfigurable"/>
-
 		<!-- Bundled schemes -->
 		<bundledColorScheme path="/colors/Bas Settings"/>
 		<bundledInspectionProfile path="/inspection/Bas Settings"/>
@@ -26,12 +24,14 @@
 		<editorTabColorProvider implementation="com.basmilius.ps.bastools.ui.tabs.BasToolsEditorTabColorProvider"/>
 
 		<!-- Tool Windows -->
-		<toolWindow id="Date Time Helpers" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.ps.bastools.toolWindow.DateTimeToolWindowFactory" />
+		<toolWindow id="Date Time Helpers" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.ps.bastools.toolWindow.DateTimeToolWindowFactory"/>
 	</extensions>
 
 	<!-- All Framework Stuff -->
 	<extensions defaultExtensionNs="com.intellij">
 		<!-- General Framework Stuff. -->
+		<psi.referenceContributor implementation="com.basmilius.ps.bastools.framework.all.psi.PhpFileReferenceContributor"/>
+		<completion.confidence language="PHP" id="asTrue" order="first" implementationClass="com.basmilius.ps.bastools.framework.all.completion.confidence.PhpParameterStringCompletionConfidence"/>
 		<completion.contributor language="PHP" order="FIRST" id="BasTools.Framework.All.Completion" implementationClass="com.basmilius.ps.bastools.framework.all.completion.AllCompletionContributor"/>
 		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.all.liveTemplates.AllLiveTemplatesProvider"/>
 
@@ -66,15 +66,15 @@
 		<component>
 			<implementation-class>com.basmilius.ps.bastools.component.BasToolsComponent</implementation-class>
 		</component>
-		<!--<component>-->
-			<!--<implementation-class>com.basmilius.ps.bastools.ui.component.LafComponent</implementation-class>-->
-		<!--</component>-->
 		<component>
 			<implementation-class>com.basmilius.ps.bastools.ui.tabs.BasToolsTabHighlighterComponent</implementation-class>
 		</component>
 		<component>
 			<implementation-class>com.basmilius.ps.bastools.ui.tabs.BasToolsTabsPainterPatcherComponent</implementation-class>
 		</component>
+		<!--<component>-->
+			<!--<implementation-class>com.basmilius.ps.bastools.component.presenter.shortcuts.ShortcutPresenter</implementation-class>-->
+		<!--</component>-->
 	</application-components>
 
 	<project-components>
@@ -94,6 +94,16 @@
 			<group id="BasTools.Main.Angular" icon="/icons/angular.png" popup="true" text="Angular Tools"/>
 			<group id="BasTools.Main.Cordova" icon="/icons/cellphone.png" popup="true" text="Cordova Tools"/>
 			<group id="BasTools.Main.Identity" icon="/icons/rhombus.png" popup="true" text="Identity Framework Tools"/>
+
+			<separator/>
+
+			<action id="BasTools.Action.SplitHorizontalView" class="com.basmilius.ps.bastools.action.editor.SplitHorizontalViewAction" text="Split Horizontal" icon="/icons/arrow-expand-down.png">
+				<keyboard-shortcut first-keystroke="ctrl alt DOWN" keymap="$default"/>
+			</action>
+
+			<action id="BasTools.Action.SplitVerticalView" class="com.basmilius.ps.bastools.action.editor.SplitVerticalViewAction" text="Split Vertical" icon="/icons/arrow-expand-right.png">
+				<keyboard-shortcut first-keystroke="ctrl alt RIGHT" keymap="$default"/>
+			</action>
 
 			<separator/>
 

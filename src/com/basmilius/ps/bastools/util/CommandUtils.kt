@@ -90,7 +90,7 @@ object CommandUtils
 		 *
 		 * @author Bas Milius
 		 */
-		fun onCommandResult(lines : Array<String>) : Unit
+		fun onCommandResult(lines : Array<String>)
 
 	}
 

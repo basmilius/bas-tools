@@ -5,11 +5,22 @@ import org.apache.commons.lang.time.DateUtils
 import java.util.*
 import java.util.regex.Pattern
 
+/**
+ * Class DaysMatcher
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.util.strtotime
+ */
 class DaysMatcher : Matcher
 {
 
 	private val days = Pattern.compile("[\\-+]?\\d+ days")
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
 	override fun tryConvert(input : String, refDateStr : String) : Date?
 	{
 		val calendar = Calendar.getInstance()

@@ -25,6 +25,8 @@ interface Icons
 		val Android = IconLoader.getIcon("/icons/android.png")
 		val Angular = IconLoader.getIcon("/icons/angular.png")
 		val AppleIOs = IconLoader.getIcon("/icons/apple-ios.png")
+		val ArrowExpandDown = IconLoader.getIcon("/icons/arrow-expand-down.png")
+		val ArrowExpandRight = IconLoader.getIcon("/icons/arrow-expand-right.png")
 		val Beats = IconLoader.getIcon("/icons/beats.png")
 		val Cellphone = IconLoader.getIcon("/icons/cellphone.png")
 		val Creation = IconLoader.getIcon("/icons/creation.png")

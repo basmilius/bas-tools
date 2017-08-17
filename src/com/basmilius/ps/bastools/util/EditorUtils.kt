@@ -1,7 +1,10 @@
 package com.basmilius.ps.bastools.util
 
+import com.intellij.openapi.actionSystem.DataContext
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.editor.*
+import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx
+import com.intellij.openapi.fileEditor.impl.EditorWindow
 import com.intellij.openapi.project.Project
 
 /**
@@ -62,6 +65,26 @@ object EditorUtils
 
 		}
 		wca.execute()
+	}
+
+	/**
+	 * Switches to a specific tab.
+	 *
+	 * @param project Project
+	 * @param context DataContext
+	 * @param index Int
+	 */
+	fun switchToTab(project : Project, context : DataContext, index : Int)
+	{
+		val editorManager = FileEditorManagerEx.getInstanceEx(project)
+		val currentWindow = EditorWindow.DATA_KEY.getData(context) ?: editorManager.currentWindow
+		val files = currentWindow.files
+		val fileIndex = if (index == -1) (files.size - 1) else index
+
+		if (fileIndex >= 0 && fileIndex < files.size)
+		{
+			editorManager.openFile(files[fileIndex], true)
+		}
 	}
 
 }

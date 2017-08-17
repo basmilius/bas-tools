@@ -186,15 +186,15 @@ class ShowColorPipetteAction : AnAction("Show Color Pipette"), ColorListener, Di
 	 */
 	private fun getPipetteIfAvailable(pipette : ColorPipette, parentDisposable : Disposable) : ColorPipette?
 	{
-		if (pipette.isAvailable)
+		return if (pipette.isAvailable)
 		{
 			Disposer.register(parentDisposable, pipette)
-			return pipette
+			pipette
 		}
 		else
 		{
 			Disposer.dispose(pipette)
-			return null
+			null
 		}
 	}
 

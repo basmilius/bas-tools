@@ -3,11 +3,22 @@ package com.basmilius.ps.bastools.util.strtotime
 import java.text.SimpleDateFormat
 import java.util.*
 
+/**
+ * Object DateTimeUtils
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.util.strtotime
+ */
 object DateTimeUtils
 {
 
 	private val matchers = LinkedList<Matcher>()
 
+	/**
+	 * DateTimeUtils Constructor.
+	 *
+	 * @author Bas Milius
+	 */
 	init
 	{
 		matchers.add(NowMatcher())
@@ -40,11 +51,28 @@ object DateTimeUtils
 		matchers.add(DateFormatMatcher(SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ")))
 	}
 
+	/**
+	 * Registers a matcher.
+	 *
+	 * @param matcher Matcher
+	 *
+	 * @author Bas Milius
+	 */
 	fun registerMatcher(matcher : Matcher)
 	{
 		matchers.add(0, matcher)
 	}
 
+	/**
+	 * Converts a string to date.
+	 *
+	 * @param input String
+	 * @param refDateStr String
+	 *
+	 * @return Date?
+	 *
+	 * @author Bas Milius
+	 */
 	fun convert(input : String, refDateStr : String = "") : Date?
 	{
 		return matchers
@@ -54,6 +82,15 @@ object DateTimeUtils
 
 }
 
+/**
+ * Converts a string to Unix Timestamp.
+ *
+ * @param str String
+ *
+ * @return Long?
+ *
+ * @author Bas Milius
+ */
 fun strtotime(str : String) : Long?
 {
 	val date = DateTimeUtils.convert(str) ?: return null

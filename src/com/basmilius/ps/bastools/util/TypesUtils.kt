@@ -2,6 +2,13 @@ package com.basmilius.ps.bastools.util
 
 import org.jetbrains.annotations.NotNull
 
+/**
+ * Object TypesUtils
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.util
+ */
+@Suppress("MemberVisibilityCanPrivate")
 object TypesUtils
 {
 
@@ -19,10 +26,10 @@ object TypesUtils
 	val strStatic = "static"
 	val strSelf = "self"
 	val strObject = "object"
-	val strEmptySet = "ø"
+//	val strEmptySet = "ø"
 
-	val strResolvingAbortedOnPsiLevel = "\\aborted-on-psi-level"
-	val strClassNotResolved = "\\class-not-resolved"
+//	val strResolvingAbortedOnPsiLevel = "\\aborted-on-psi-level"
+//	val strClassNotResolved = "\\class-not-resolved"
 
 	private var mapTypes : MutableMap<String, String>? = null
 

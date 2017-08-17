@@ -21,7 +21,7 @@ class AboutAction : AnAction("About Bas Tools")
 	 */
 	override fun actionPerformed(aae : AnActionEvent)
 	{
-		ApplicationManager.getApplication().invokeLater { Messages.showMessageDialog(aae.project, "Bas Tools 1.0, go to bas-tools.atbm.nl for more information about this plugin.", "Bas Tools", Messages.getInformationIcon()) }
+		ApplicationManager.getApplication().invokeLater { Messages.showMessageDialog(aae.project, "Bas Tools 1.0.4, go to bas-tools.atbm.nl for more information about this plugin.", "Bas Tools", Messages.getInformationIcon()) }
 	}
 
 }

@@ -5,11 +5,22 @@ import org.apache.commons.lang.time.DateUtils
 import java.util.*
 import java.util.regex.Pattern
 
+/**
+ * Class WeeksMatcher
+ *
+ * @author Bas Milius
+ * @package com.basmilius.ps.bastools.util.strtotime
+ */
 class WeeksMatcher : Matcher
 {
 
 	private val weeks = Pattern.compile("[\\-+]?\\d+ weeks")
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
 	override fun tryConvert(input : String, refDateStr : String) : Date?
 	{
 		val calendar = Calendar.getInstance()

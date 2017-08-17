@@ -5,6 +5,9 @@ import com.intellij.codeInspection.LocalQuickFix
 /**
  * Class BaseQuickFix
  *
+ * @constructor
+ * @param fixName String
+ *
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.base.codeInspection
  */
