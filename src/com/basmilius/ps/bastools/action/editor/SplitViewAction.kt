@@ -44,9 +44,8 @@ abstract class SplitViewAction(private val orientation : Int) : AnAction("Split 
 		if (window != null && file != null)
 		{
 			window.closeFile(file, false, false)
+			EditorUtils.switchToTab(project, aae.dataContext, window.files.lastIndexOf(window.files.find { it.path == file.path }))
 		}
-
-		EditorUtils.switchToTab(project, aae.dataContext, -1)
 	}
 
 }
