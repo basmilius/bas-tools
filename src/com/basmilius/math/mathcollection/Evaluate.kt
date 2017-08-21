@@ -4,7 +4,7 @@ package com.basmilius.math.mathcollection
  * Object Evaluate
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.mathcollection
+ * @package com.basmilius.math.mathcollection
  */
 object Evaluate
 {

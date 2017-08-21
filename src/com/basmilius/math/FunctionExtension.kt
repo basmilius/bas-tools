@@ -4,7 +4,7 @@ package com.basmilius.math
  * Interface FunctionExtension
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser
+ * @package com.basmilius.math
  */
 interface FunctionExtension
 {

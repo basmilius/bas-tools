@@ -12,7 +12,7 @@ import java.util.*
  * Class Expression
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser
+ * @package com.basmilius.math
  */
 class Expression
 {
@@ -21,7 +21,7 @@ class Expression
 	 * Companion Object Expression
 	 *
 	 * @author Bas Milius
-	 * @package com.basmilius.math.mxparser
+	 * @package com.basmilius.math
 	 */
 	companion object
 	{

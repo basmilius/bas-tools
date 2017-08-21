@@ -15,7 +15,7 @@ import java.util.regex.Pattern
  * Object MathParser
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser
+ * @package com.basmilius.math
  */
 object MathParser
 {

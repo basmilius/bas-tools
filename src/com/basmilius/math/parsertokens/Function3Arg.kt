@@ -6,7 +6,7 @@ import com.basmilius.math.MathParser
  * Object Function3Arg
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.parsertokens
+ * @package com.basmilius.math.parsertokens
  */
 object Function3Arg
 {

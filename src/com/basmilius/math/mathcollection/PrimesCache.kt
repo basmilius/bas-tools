@@ -4,7 +4,7 @@ package com.basmilius.math.mathcollection
  * Class PrimesCache
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.mathcollection
+ * @package com.basmilius.math.mathcollection
  */
 class PrimesCache
 {
@@ -13,7 +13,7 @@ class PrimesCache
 	 * Companion Object PrimesCache
 	 *
 	 * @author Bas Milius
-	 * @package com.basmilius.math.mxparser.mathcollection
+	 * @package com.basmilius.math.mathcollection
 	 */
 	companion object
 	{

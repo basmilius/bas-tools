@@ -8,7 +8,7 @@ import com.basmilius.math.MathParser
  * Object Calculus
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.mathcollection
+ * @package com.basmilius.math.mathcollection
  */
 object Calculus
 {

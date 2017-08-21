@@ -6,7 +6,7 @@ import com.basmilius.math.parsertokens.KeyWord
  * Class KwStrComparator
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.miscellaneous
+ * @package com.basmilius.math.miscellaneous
  */
 class KwStrComparator: Comparator<KeyWord>
 {

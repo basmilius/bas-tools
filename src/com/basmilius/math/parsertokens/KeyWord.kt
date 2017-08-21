@@ -4,7 +4,7 @@ package com.basmilius.math.parsertokens
  * Class KeyWord
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.parsertokens
+ * @package com.basmilius.math.parsertokens
  */
 class KeyWord
 {
@@ -13,7 +13,7 @@ class KeyWord
 	 * Companion Object KeyWord
 	 *
 	 * @author Bas Milius
-	 * @package com.basmilius.math.mxparser.parsertokens
+	 * @package com.basmilius.math.parsertokens
 	 */
 	companion object
 	{

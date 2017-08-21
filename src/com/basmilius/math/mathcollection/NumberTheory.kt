@@ -11,7 +11,7 @@ import kotlin.collections.ArrayList
  * Object NumberTheory
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.mathcollection
+ * @package com.basmilius.math.mathcollection
  */
 object NumberTheory
 {

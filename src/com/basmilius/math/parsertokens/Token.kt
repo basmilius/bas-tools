@@ -4,7 +4,7 @@ package com.basmilius.math.parsertokens
  * Class Token
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.parsertokens
+ * @package com.basmilius.math.parsertokens
  */
 class Token
 {
@@ -13,7 +13,7 @@ class Token
 	 * Companion Object Token
 	 *
 	 * @author Bas Milius
-	 * @package com.basmilius.math.mxparser.parsertokens
+	 * @package com.basmilius.math.parsertokens
 	 */
 	companion object
 	{

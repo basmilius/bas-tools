@@ -6,7 +6,7 @@ import com.basmilius.math.MathParser
  * Object CalculusOperator
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.parsertokens
+ * @package com.basmilius.math.parsertokens
  */
 object CalculusOperator
 {

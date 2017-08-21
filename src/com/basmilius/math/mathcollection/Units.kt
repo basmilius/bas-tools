@@ -4,7 +4,7 @@ package com.basmilius.math.mathcollection
  * Class Units
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.mathcollectionø
+ * @package com.basmilius.math.mathcollectionø
  */
 object Units
 {

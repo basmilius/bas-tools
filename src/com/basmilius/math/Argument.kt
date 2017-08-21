@@ -7,7 +7,7 @@ import com.basmilius.math.parsertokens.ParserSymbol
  * Class Argument
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser
+ * @package com.basmilius.math
  */
 open class Argument: PrimitiveElement
 {
@@ -16,7 +16,7 @@ open class Argument: PrimitiveElement
 	 * Companion Object Argument
 	 *
 	 * @author Bas Milius
-	 * @package com.basmilius.math.mxparser
+	 * @package com.basmilius.math
 	 */
 	companion object
 	{

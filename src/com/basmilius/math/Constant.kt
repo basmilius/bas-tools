@@ -7,7 +7,7 @@ import com.basmilius.math.parsertokens.ParserSymbol
  * Class Constant
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser
+ * @package com.basmilius.math
  */
 class Constant: PrimitiveElement
 {
@@ -16,7 +16,7 @@ class Constant: PrimitiveElement
 	 * Companion Object Constant
 	 *
 	 * @author Bas Milius
-	 * @package com.basmilius.math.mxparser
+	 * @package com.basmilius.math
 	 */
 	companion object
 	{

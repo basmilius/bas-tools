@@ -6,7 +6,7 @@ import com.basmilius.math.parsertokens.ParserSymbol
  * Class RecursiveArgument
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser
+ * @package com.basmilius.math
  */
 class RecursiveArgument: Argument
 {
@@ -15,7 +15,7 @@ class RecursiveArgument: Argument
 	 * Companion Object RecursiveArgument
 	 *
 	 * @author Bas Milius
-	 * @package com.basmilius.math.mxparser
+	 * @package com.basmilius.math
 	 */
 	companion object
 	{

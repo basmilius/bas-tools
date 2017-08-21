@@ -8,7 +8,7 @@ import com.basmilius.math.parsertokens.ConstantValue
  * Class ArgumentParameter
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.miscellaneous
+ * @package com.basmilius.math.miscellaneous
  */
 class ArgumentParameter
 {

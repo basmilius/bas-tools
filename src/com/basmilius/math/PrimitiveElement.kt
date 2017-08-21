@@ -7,6 +7,6 @@ package com.basmilius.math
  * @param myTypeId Int
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser
+ * @package com.basmilius.math
  */
 open class PrimitiveElement(val myTypeId: Int)

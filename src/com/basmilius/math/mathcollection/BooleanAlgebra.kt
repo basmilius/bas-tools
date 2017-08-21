@@ -4,7 +4,7 @@ package com.basmilius.math.mathcollection
  * Object BooleanAlgebra
  *
  * @author Bas Milius
- * @package com.basmilius.math.mxparser.mathcollection
+ * @package com.basmilius.math.mathcollection
  */
 object BooleanAlgebra
 {
