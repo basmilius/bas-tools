@@ -10,7 +10,7 @@ import com.jetbrains.php.lang.inspections.PhpInspection
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.base.codeInspection
  */
-abstract class BaseInspection(shortName : String) : PhpInspection()
+abstract class BaseInspection(shortName: String): PhpInspection()
 {
 
 	/**
@@ -18,14 +18,14 @@ abstract class BaseInspection(shortName : String) : PhpInspection()
 	 *
 	 * @author Bas Milius
 	 */
-	val inspectionShortName : String = shortName
+	val inspectionShortName: String = shortName
 
 	/**
 	 * @inheritdoc
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getShortName() : String
+	override fun getShortName(): String
 	{
 		return this.inspectionShortName
 	}
@@ -37,7 +37,7 @@ abstract class BaseInspection(shortName : String) : PhpInspection()
 	 *
 	 * @author Bas Milius
 	 */
-	open fun isValidFile(project : Project, file : PsiFile) : Boolean
+	open fun isValidFile(project: Project, file: PsiFile): Boolean
 	{
 		return true
 	}

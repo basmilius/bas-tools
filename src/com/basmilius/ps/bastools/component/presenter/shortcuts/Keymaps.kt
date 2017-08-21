@@ -58,4 +58,4 @@ fun getDefaultAlternativeKeymap() = getCurrentOSKind().getAlternativeKind()?.let
  *
  * @author Bas Milius
  */
-fun getShortcutPresenter() : ShortcutPresenter = ApplicationManager.getApplication().getComponent(ShortcutPresenter::class.java)
+fun getShortcutPresenter(): ShortcutPresenter = ApplicationManager.getApplication().getComponent(ShortcutPresenter::class.java)

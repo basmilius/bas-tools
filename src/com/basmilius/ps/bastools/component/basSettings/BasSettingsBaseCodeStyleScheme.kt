@@ -16,7 +16,7 @@ import com.intellij.psi.impl.source.codeStyle.CodeStyleSettingsLoader
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.component.basSettings
  */
-class BasSettingsBaseCodeStyleScheme(parent : CodeStyleScheme?) : BasToolsCodeStyleScheme("Bas Settings Base", true, parent)
+class BasSettingsBaseCodeStyleScheme(parent: CodeStyleScheme?): BasToolsCodeStyleScheme("Bas Settings Base", true, parent)
 {
 
 	/**
@@ -41,7 +41,7 @@ class BasSettingsBaseCodeStyleScheme(parent : CodeStyleScheme?) : BasToolsCodeSt
 			val settings = this.settings
 			this.codeStyleSettings = settings
 		}
-		catch (e : Exception)
+		catch (e: Exception)
 		{
 			e.printStackTrace()
 		}
@@ -54,7 +54,7 @@ class BasSettingsBaseCodeStyleScheme(parent : CodeStyleScheme?) : BasToolsCodeSt
 	 * @return CodeStyleSettings
 	 * @author Bas Milius
 	 */
-	private val settings : CodeStyleSettings
+	private val settings: CodeStyleSettings
 		@Throws(SchemeImportException::class)
 		get()
 		{

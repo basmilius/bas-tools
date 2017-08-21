@@ -16,8 +16,9 @@ import com.intellij.util.ProcessingContext
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.identity.completion
  */
-class CoreCompletionContributor : BaseCompletionContributor()
+class CoreCompletionContributor: BaseCompletionContributor()
 {
+
 	/**
 	 * CoreCompletionContributor Constructor
 	 *
@@ -33,7 +34,7 @@ class CoreCompletionContributor : BaseCompletionContributor()
 	 *
 	 * @author Bas Milius
 	 */
-	internal inner class PluginCallProvider : BaseCompletionProvider()
+	internal inner class PluginCallProvider: BaseCompletionProvider()
 	{
 
 		/**
@@ -41,7 +42,7 @@ class CoreCompletionContributor : BaseCompletionContributor()
 		 *
 		 * @author Bas Milius
 		 */
-		override fun addCompletions(parameters : CompletionParameters, context : ProcessingContext, results : CompletionResultSet)
+		override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 		{
 //			val func = PsiTreeUtil.getContextOfType(parameters.originalPosition, Method::class.java) ?: return
 		}
@@ -51,7 +52,7 @@ class CoreCompletionContributor : BaseCompletionContributor()
 		 *
 		 * @author Bas Milius
 		 */
-		override fun getPlace() : ElementPattern<out PsiElement>
+		override fun getPlace(): ElementPattern<out PsiElement>
 		{
 			return PlatformPatterns.psiElement()
 		}

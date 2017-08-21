@@ -17,7 +17,7 @@ import com.intellij.openapi.wm.ToolWindowManager
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.action.editor
  */
-abstract class SplitViewAction(private val orientation : Int) : AnAction("Split Editor")
+abstract class SplitViewAction(private val orientation: Int): AnAction("Split Editor")
 {
 
 	/**
@@ -25,7 +25,7 @@ abstract class SplitViewAction(private val orientation : Int) : AnAction("Split 
 	 *
 	 * @author Bas Milius
 	 */
-	override fun actionPerformed(aae : AnActionEvent?)
+	override fun actionPerformed(aae: AnActionEvent?)
 	{
 		if (aae == null)
 			return

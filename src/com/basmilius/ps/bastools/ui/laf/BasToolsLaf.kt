@@ -8,7 +8,7 @@ import com.intellij.ide.ui.laf.darcula.DarculaLaf
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.ui.laf
  */
-class BasToolsLaf : DarculaLaf()
+class BasToolsLaf: DarculaLaf()
 {
 
 	/**
@@ -16,7 +16,7 @@ class BasToolsLaf : DarculaLaf()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getPrefix() : String
+	override fun getPrefix(): String
 	{
 		return "bastools"
 	}
@@ -26,7 +26,7 @@ class BasToolsLaf : DarculaLaf()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun parseValue(key : String, value : String) : Any?
+	override fun parseValue(key: String, value: String): Any?
 	{
 		// println("$key => $value")
 		return super.parseValue(key, value)

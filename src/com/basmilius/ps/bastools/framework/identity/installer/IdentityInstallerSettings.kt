@@ -6,7 +6,7 @@ package com.basmilius.ps.bastools.framework.identity.installer
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.identity.installer
  */
-class IdentityInstallerSettings(private val version : IdentityInstallerVersion, private val phpInterpreter : String)
+class IdentityInstallerSettings(private val version: IdentityInstallerVersion, private val phpInterpreter: String)
 {
 
 	/**
@@ -14,7 +14,7 @@ class IdentityInstallerSettings(private val version : IdentityInstallerVersion, 
 	 *
 	 * @author Bas Milius
 	 */
-	fun isDownload() : Boolean
+	fun isDownload(): Boolean
 	{
 		return true
 	}
@@ -24,7 +24,7 @@ class IdentityInstallerSettings(private val version : IdentityInstallerVersion, 
 	 *
 	 * @author Bas Milius
 	 */
-	fun getVersion() : IdentityInstallerVersion
+	fun getVersion(): IdentityInstallerVersion
 	{
 		return this.version
 	}
@@ -34,7 +34,7 @@ class IdentityInstallerSettings(private val version : IdentityInstallerVersion, 
 	 *
 	 * @author Bas Milius
 	 */
-	fun getPhpInterpreter() : String
+	fun getPhpInterpreter(): String
 	{
 		return this.phpInterpreter
 	}
@@ -44,7 +44,7 @@ class IdentityInstallerSettings(private val version : IdentityInstallerVersion, 
 	 *
 	 * @author Bas Milius
 	 */
-	fun getExistingPath() : String
+	fun getExistingPath(): String
 	{
 		return ""
 	}

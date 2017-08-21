@@ -24,7 +24,7 @@ object NotificationManager
 	 *
 	 * @author Bas Milius
 	 */
-	fun notify(project : Project, content : String, type : NotificationType)
+	fun notify(project: Project, content: String, type: NotificationType)
 	{
 		ApplicationManager.getApplication().invokeLater {
 			val notification = BTNotificationGroup.createNotification(content, type)
@@ -42,7 +42,7 @@ object NotificationManager
 	 *
 	 * @author Bas Milius
 	 */
-	fun notify(project : Project, title : String, content : String, type : NotificationType)
+	fun notify(project: Project, title: String, content: String, type: NotificationType)
 	{
 		ApplicationManager.getApplication().invokeLater {
 			val notification = BTNotificationGroup.createNotification(title, content, type, null)

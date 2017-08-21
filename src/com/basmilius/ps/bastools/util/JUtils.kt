@@ -23,7 +23,7 @@ object JUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getRootComponent(project : Project?) : JComponent?
+	fun getRootComponent(project: Project?): JComponent?
 	{
 		if (project != null)
 		{

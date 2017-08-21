@@ -13,7 +13,7 @@ import javax.swing.Icon
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.identity.installer
  */
-class IdentityInstallerWebProjectTemplate : WebProjectTemplate<IdentityInstallerSettings>()
+class IdentityInstallerWebProjectTemplate: WebProjectTemplate<IdentityInstallerSettings>()
 {
 
 	/**
@@ -21,7 +21,7 @@ class IdentityInstallerWebProjectTemplate : WebProjectTemplate<IdentityInstaller
 	 *
 	 * @author Bas Milius
 	 */
-	override fun generateProject(project : Project, baseDir : VirtualFile, settings : IdentityInstallerSettings, module : Module)
+	override fun generateProject(project: Project, baseDir: VirtualFile, settings: IdentityInstallerSettings, module: Module)
 	{
 		// TODO: Actually generate the project.
 	}
@@ -31,7 +31,7 @@ class IdentityInstallerWebProjectTemplate : WebProjectTemplate<IdentityInstaller
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getDescription() : String
+	override fun getDescription(): String
 	{
 		return "An Identity Framework WordPress project."
 	}
@@ -41,7 +41,7 @@ class IdentityInstallerWebProjectTemplate : WebProjectTemplate<IdentityInstaller
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getName() : String
+	override fun getName(): String
 	{
 		return "Identity Framework"
 	}
@@ -51,7 +51,7 @@ class IdentityInstallerWebProjectTemplate : WebProjectTemplate<IdentityInstaller
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getIcon() : Icon
+	override fun getIcon(): Icon
 	{
 		return Icons.Rhombus
 	}

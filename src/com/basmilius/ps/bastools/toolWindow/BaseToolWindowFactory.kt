@@ -12,18 +12,18 @@ import javax.swing.JComponent
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.toolWindow
  */
-abstract class BaseToolWindowFactory : ToolWindowFactory
+abstract class BaseToolWindowFactory: ToolWindowFactory
 {
 
-	protected var project : Project? = null
-	protected var toolWindow : ToolWindow? = null
+	protected var project: Project? = null
+	protected var toolWindow: ToolWindow? = null
 
 	/**
 	 * @inheritdoc
 	 *
 	 * @author Bas Milius
 	 */
-	override fun createToolWindowContent(project : Project, toolWindow : ToolWindow)
+	override fun createToolWindowContent(project: Project, toolWindow: ToolWindow)
 	{
 		this.project = project
 		this.toolWindow = toolWindow
@@ -40,7 +40,7 @@ abstract class BaseToolWindowFactory : ToolWindowFactory
 	 *
 	 * @author Bas Milius
 	 */
-	protected abstract fun createWindowContent() : JComponent
+	protected abstract fun createWindowContent(): JComponent
 
 	/**
 	 * Gets the content factory.
@@ -49,6 +49,6 @@ abstract class BaseToolWindowFactory : ToolWindowFactory
 	 *
 	 * @author Bas Milius
 	 */
-	private fun getContentFactory() : ContentFactory = ContentFactory.SERVICE.getInstance()
+	private fun getContentFactory(): ContentFactory = ContentFactory.SERVICE.getInstance()
 
 }

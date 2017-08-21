@@ -24,7 +24,7 @@ object PossibleValuesDiscoveryUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun discover(@NotNull expression : PsiElement, @NotNull processed : HashSet<PsiElement>) : HashSet<PsiElement>
+	fun discover(@NotNull expression: PsiElement, @NotNull processed: HashSet<PsiElement>): HashSet<PsiElement>
 	{
 		val innerExpression = ExpressionSemanticUtils.getExpressionThroughParenthesis(expression)
 
@@ -56,7 +56,7 @@ object PossibleValuesDiscoveryUtils
 	 *
 	 * @author Bas Milius
 	 */
-	private fun handleVariable(@NotNull variable : Variable, @NotNull result : HashSet<PsiElement>, @NotNull processed : HashSet<PsiElement>)
+	private fun handleVariable(@NotNull variable: Variable, @NotNull result: HashSet<PsiElement>, @NotNull processed: HashSet<PsiElement>)
 	{
 		val variableName = variable.name
 
@@ -106,7 +106,7 @@ object PossibleValuesDiscoveryUtils
 	 *
 	 * @author Bas Milius
 	 */
-	private fun handleClassConstantReference(@NotNull reference : ClassConstantReference, @NotNull result : HashSet<PsiElement>)
+	private fun handleClassConstantReference(@NotNull reference: ClassConstantReference, @NotNull result: HashSet<PsiElement>)
 	{
 		val constantName = reference.name
 
@@ -135,7 +135,7 @@ object PossibleValuesDiscoveryUtils
 	 *
 	 * @author Bas Milius
 	 */
-	private fun handleClassFieldReference(@NotNull reference : FieldReference, @NotNull result : HashSet<PsiElement>, @NotNull processed : HashSet<PsiElement>)
+	private fun handleClassFieldReference(@NotNull reference: FieldReference, @NotNull result: HashSet<PsiElement>, @NotNull processed: HashSet<PsiElement>)
 	{
 		val fieldName = reference.name
 
@@ -189,7 +189,7 @@ object PossibleValuesDiscoveryUtils
 	 *
 	 * @author Bas Milius
 	 */
-	private fun handleTernary(@NotNull ternary : TernaryExpression, @NotNull result : HashSet<PsiElement>, @NotNull processed : HashSet<PsiElement>)
+	private fun handleTernary(@NotNull ternary: TernaryExpression, @NotNull result: HashSet<PsiElement>, @NotNull processed: HashSet<PsiElement>)
 	{
 		val trueVariant = ternary.trueVariant
 		val falseVariant = ternary.falseVariant

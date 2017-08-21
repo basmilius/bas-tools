@@ -11,7 +11,7 @@ import com.intellij.codeInspection.LocalQuickFix
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.base.codeInspection
  */
-abstract class BaseQuickFix(private val fixName : String) : LocalQuickFix
+abstract class BaseQuickFix(private val fixName: String): LocalQuickFix
 {
 
 	/**
@@ -19,7 +19,7 @@ abstract class BaseQuickFix(private val fixName : String) : LocalQuickFix
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getFamilyName() : String
+	override fun getFamilyName(): String
 	{
 		return this.fixName
 	}
@@ -29,7 +29,7 @@ abstract class BaseQuickFix(private val fixName : String) : LocalQuickFix
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getName() : String
+	override fun getName(): String
 	{
 		return this.fixName
 	}

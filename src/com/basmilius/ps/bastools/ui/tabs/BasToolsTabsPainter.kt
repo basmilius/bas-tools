@@ -11,7 +11,7 @@ import java.awt.*
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.ui.tabs
  */
-open class BasToolsTabsPainter : DefaultEditorTabsPainter
+open class BasToolsTabsPainter: DefaultEditorTabsPainter
 {
 
 	/**
@@ -22,7 +22,7 @@ open class BasToolsTabsPainter : DefaultEditorTabsPainter
 	 * @author Bas Milius
 	 */
 	@Suppress("unused")
-	constructor() : super(null)
+	constructor(): super(null)
 
 	/**
 	 * BasToolsTabsPainter Constructor.
@@ -31,14 +31,14 @@ open class BasToolsTabsPainter : DefaultEditorTabsPainter
 	 *
 	 * @author Bas Milius
 	 */
-	constructor(tabs : JBEditorTabs) : super(tabs)
+	constructor(tabs: JBEditorTabs): super(tabs)
 
 	/**
 	 * Paints the inactive.
 	 *
 	 * @author Bas Milius
 	 */
-	override fun doPaintInactive(g : Graphics2D, effectiveBounds : Rectangle?, x : Int, y : Int, w : Int, h : Int, color : Color?, row : Int, column : Int, vertical : Boolean)
+	override fun doPaintInactive(g: Graphics2D, effectiveBounds: Rectangle?, x: Int, y: Int, w: Int, h: Int, color: Color?, row: Int, column: Int, vertical: Boolean)
 	{
 		g.color = color ?: this.defaultTabColor
 		g.fillRect(x - 1, y - 1, w + 1, h + 1)
@@ -49,7 +49,7 @@ open class BasToolsTabsPainter : DefaultEditorTabsPainter
 	 *
 	 * @author Bas Milius
 	 */
-	override fun doPaintBackground(g : Graphics2D, clip : Rectangle, vertical : Boolean, rectangle : Rectangle?)
+	override fun doPaintBackground(g: Graphics2D, clip: Rectangle, vertical: Boolean, rectangle: Rectangle?)
 	{
 		g.color = this.defaultTabColor
 		g.fillRect(rectangle!!.x - 1, rectangle.y - 1, rectangle.width + 1, rectangle.height + 1)
@@ -67,7 +67,7 @@ open class BasToolsTabsPainter : DefaultEditorTabsPainter
 	 *
 	 * @author Bas Milius
 	 */
-	fun fillSelectionAndBorder(g : Graphics2D, color : Color?, x : Int, y : Int, width : Int, height : Int)
+	fun fillSelectionAndBorder(g: Graphics2D, color: Color?, x: Int, y: Int, width: Int, height: Int)
 	{
 		g.color = color ?: this.defaultTabColor
 		g.fillRect(x - 1, y - 1, width + 1, height + 1)
@@ -78,7 +78,7 @@ open class BasToolsTabsPainter : DefaultEditorTabsPainter
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getBackgroundColor() : Color
+	override fun getBackgroundColor(): Color
 	{
 		return BasToolsTabsPainterPatcherComponent.BackgroundColor
 	}
@@ -88,7 +88,7 @@ open class BasToolsTabsPainter : DefaultEditorTabsPainter
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getEmptySpaceColor() : Color
+	override fun getEmptySpaceColor(): Color
 	{
 		return BasToolsTabsPainterPatcherComponent.BackgroundColor
 	}
@@ -98,7 +98,7 @@ open class BasToolsTabsPainter : DefaultEditorTabsPainter
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getDefaultTabColor() : Color
+	override fun getDefaultTabColor(): Color
 	{
 		return this.backgroundColor
 	}
@@ -108,7 +108,7 @@ open class BasToolsTabsPainter : DefaultEditorTabsPainter
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getInactiveMaskColor() : Color
+	override fun getInactiveMaskColor(): Color
 	{
 		return this.backgroundColor
 	}
@@ -120,6 +120,6 @@ open class BasToolsTabsPainter : DefaultEditorTabsPainter
 	 *
 	 * @return JBEditorTabs
 	 */
-	val tabsComponent : JBEditorTabs get() = this.myTabs
+	val tabsComponent: JBEditorTabs get() = this.myTabs
 
 }

@@ -8,7 +8,7 @@ import com.basmilius.ps.bastools.component.BasToolsCodeStyleScheme
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.component.basSettings
  */
-class BasSettingsCodeStyleScheme : BasToolsCodeStyleScheme("Bas Settings", true, BasSettingsBaseCodeStyleScheme(null))
+class BasSettingsCodeStyleScheme: BasToolsCodeStyleScheme("Bas Settings", true, BasSettingsBaseCodeStyleScheme(null))
 {
 
 	/**

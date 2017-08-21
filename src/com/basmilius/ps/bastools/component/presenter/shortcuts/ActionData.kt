@@ -13,4 +13,4 @@ import com.intellij.openapi.project.Project
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.component.presenter.shortcuts
  */
-class ActionData(val actionId : String, val project : Project?, val actionText : String?)
+class ActionData(val actionId: String, val project: Project?, val actionText: String?)

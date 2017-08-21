@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.base.visitor
  */
-abstract class BaseElementVisitor(val problemsHolder : ProblemsHolder, val isOnTheFly : Boolean) : PhpElementVisitor()
+abstract class BaseElementVisitor(val problemsHolder: ProblemsHolder, val isOnTheFly: Boolean): PhpElementVisitor()
 {
 
 	/**
@@ -28,7 +28,7 @@ abstract class BaseElementVisitor(val problemsHolder : ProblemsHolder, val isOnT
 	 *
 	 * @author Bas Milius
 	 */
-	final override fun visitPhpElement(@NotNull element : PhpPsiElement)
+	final override fun visitPhpElement(@NotNull element: PhpPsiElement)
 	{
 		when (element)
 		{
@@ -46,7 +46,7 @@ abstract class BaseElementVisitor(val problemsHolder : ProblemsHolder, val isOnT
 	 *
 	 * @author Bas Milius
 	 */
-	fun visitPhpDeclare(@NotNull declare : Declare)
+	fun visitPhpDeclare(@NotNull declare: Declare)
 	{
 		this.visitElement(declare)
 	}
@@ -58,7 +58,7 @@ abstract class BaseElementVisitor(val problemsHolder : ProblemsHolder, val isOnT
 	 *
 	 * @author Bas Milius
 	 */
-	fun visitPhpDocTag(@NotNull tag : PhpDocTag)
+	fun visitPhpDocTag(@NotNull tag: PhpDocTag)
 	{
 		this.visitElement(tag)
 	}

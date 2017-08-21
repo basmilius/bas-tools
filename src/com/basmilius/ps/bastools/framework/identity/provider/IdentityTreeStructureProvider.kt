@@ -14,7 +14,7 @@ import java.util.*
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.identity.provider
  */
-class IdentityTreeStructureProvider : TreeStructureProvider
+class IdentityTreeStructureProvider: TreeStructureProvider
 {
 
 	/**
@@ -22,7 +22,7 @@ class IdentityTreeStructureProvider : TreeStructureProvider
 	 *
 	 * @author Bas Milius
 	 */
-	override fun modify(parent : AbstractTreeNode<*>, children : Collection<AbstractTreeNode<*>>, settings : ViewSettings) : Collection<AbstractTreeNode<*>>
+	override fun modify(parent: AbstractTreeNode<*>, children: Collection<AbstractTreeNode<*>>, settings: ViewSettings): Collection<AbstractTreeNode<*>>
 	{
 		val nodes = ArrayList<AbstractTreeNode<*>>()
 		val project = parent.project ?: return nodes
@@ -68,7 +68,7 @@ class IdentityTreeStructureProvider : TreeStructureProvider
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getData(selected : Collection<AbstractTreeNode<*>>?, dataName : String?) : Any?
+	override fun getData(selected: Collection<AbstractTreeNode<*>>?, dataName: String?): Any?
 	{
 		return null
 	}

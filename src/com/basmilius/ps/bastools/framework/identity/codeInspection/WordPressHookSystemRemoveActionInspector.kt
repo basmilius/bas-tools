@@ -11,7 +11,7 @@ import com.intellij.psi.PsiFile
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.identity.codeInspection
  */
-class WordPressHookSystemRemoveActionInspector : SimpleReplaceFunctionWithMethodInspector("remove_action", "Identity::actionRemove", "WordPressHookSystemRemoveActionInspector")
+class WordPressHookSystemRemoveActionInspector: SimpleReplaceFunctionWithMethodInspector("remove_action", "Identity::actionRemove", "WordPressHookSystemRemoveActionInspector")
 {
 
 	/**
@@ -19,7 +19,7 @@ class WordPressHookSystemRemoveActionInspector : SimpleReplaceFunctionWithMethod
 	 *
 	 * @author Bas Milius
 	 */
-	override fun isValidFile(project : Project, file : PsiFile) : Boolean
+	override fun isValidFile(project: Project, file: PsiFile): Boolean
 	{
 		// Check plugin dirs, but skip the main plugin file.
 		if (IdentityFramework.isChildOf(project, file, "/wp-content/plugins/idty-"))

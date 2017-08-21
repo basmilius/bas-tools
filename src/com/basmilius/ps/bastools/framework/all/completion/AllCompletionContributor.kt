@@ -9,7 +9,7 @@ import com.intellij.codeInsight.completion.CompletionType
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.all.completion
  */
-class AllCompletionContributor : BaseCompletionContributor()
+class AllCompletionContributor: BaseCompletionContributor()
 {
 
 	/**

@@ -13,356 +13,430 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-body {
-    font-size: 28pt;
-    font-family: Serif;
-    font-weight: normal;
-    margin-left: 0;
-    margin-right: 0;
-    color: #bbbbbb
+body
+{
+	font-size: 28pt;
+	font-family: Serif;
+	font-weight: normal;
+	margin-left: 0;
+	margin-right: 0;
+	color: #bbbbbb
 }
 
-p {
-    margin-top: 30
+p
+{
+	margin-top: 30
 }
 
-h1 {
-    font-size: 32;//x-large;
-    font-weight: bold;
-    margin-top: 20;
-    margin-bottom: 20
+h1
+{
+	font-size: 32;
+/ / x-large;
+	font-weight: bold;
+	margin-top: 20;
+	margin-bottom: 20
 }
 
-h2 {
-    font-size: 30;//large;
-    font-weight: bold;
-    margin-top: 20;
-    margin-bottom: 20
+h2
+{
+	font-size: 30;
+/ / large;
+	font-weight: bold;
+	margin-top: 20;
+	margin-bottom: 20
 }
 
-h3 {
-    font-size: 28;//medium;
-    font-weight: bold;
-    margin-top: 20;
-    margin-bottom: 20
+h3
+{
+	font-size: 28;
+/ / medium;
+	font-weight: bold;
+	margin-top: 20;
+	margin-bottom: 20
 }
 
-h4 {
-    font-size: 20;//small;
-    font-weight: bold;
-    margin-top: 20;
-    margin-bottom: 20
+h4
+{
+	font-size: 20;
+/ / small;
+	font-weight: bold;
+	margin-top: 20;
+	margin-bottom: 20
 }
 
-h5 {
-    font-size: 18;//x-small;
-    font-weight: bold;
-    margin-top: 20;
-    margin-bottom: 20
+h5
+{
+	font-size: 18;
+/ / x-small;
+	font-weight: bold;
+	margin-top: 20;
+	margin-bottom: 20
 }
 
-h6 {
-    font-size: 16;//xx-small;
-    font-weight: bold;
-    margin-top: 20;
-    margin-bottom: 20
+h6
+{
+	font-size: 16;
+/ / xx-small;
+	font-weight: bold;
+	margin-top: 20;
+	margin-bottom: 20
 }
 
-li p {
-    margin-top: 0;
-    margin-bottom: 0
+li p
+{
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-td p {
-    margin-top: 0
+td p
+{
+	margin-top: 0
 }
 
-menu li p {
-    margin-top: 0;
-    margin-bottom: 0
+menu li p
+{
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-menu li {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0
+menu li
+{
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-menu {
-    margin-left-ltr: 80;
-    margin-right-rtl: 80;
-    margin-top: 20;
-    margin-bottom: 20
+menu
+{
+	margin-left-ltr: 80;
+	margin-right-rtl: 80;
+	margin-top: 20;
+	margin-bottom: 20
 }
 
-dir li p {
-    margin-top: 0;
-    margin-bottom: 0
+dir li p
+{
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-dir li {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0
+dir li
+{
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-dir {
-    margin-left-ltr: 80;
-    margin-right-rtl: 80;
-    margin-top: 20;
-    margin-bottom: 20
+dir
+{
+	margin-left-ltr: 80;
+	margin-right-rtl: 80;
+	margin-top: 20;
+	margin-bottom: 20
 }
 
-dd {
-    margin-left-ltr: 80;
-    margin-right-rtl: 80;
-    margin-top: 0;
-    margin-bottom: 0
+dd
+{
+	margin-left-ltr: 80;
+	margin-right-rtl: 80;
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-dd p {
-    margin-left: 0;
-    margin-rigth: 0;
-    margin-top: 0;
-    margin-bottom: 0
+dd p
+{
+	margin-left: 0;
+	margin-rigth: 0;
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-dt {
-    margin-top: 0;
-    margin-bottom: 0
+dt
+{
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-dl {
-    margin-left: 0;
-    margin-top: 20;
-    margin-bottom: 20
+dl
+{
+	margin-left: 0;
+	margin-top: 20;
+	margin-bottom: 20
 }
 
-ol li {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0
+ol li
+{
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-ol {
-    margin-top: 20;
-    margin-bottom: 20;
-    margin-left-ltr: 100;
-    margin-right-rtl: 100;
-    list-style-type: decimal
+ol
+{
+	margin-top: 20;
+	margin-bottom: 20;
+	margin-left-ltr: 100;
+	margin-right-rtl: 100;
+	list-style-type: decimal
 }
 
-ol li p {
-    margin-top: 0;
-    margin-bottom: 0
+ol li p
+{
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-ul li {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0
+ul li
+{
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-ul {
-    margin-top: 20;
-    margin-bottom: 20;
-    margin-left-ltr: 100;
-    margin-right-rtl: 100;
-    list-style-type: disc;
-    -bullet-gap: 20
+ul
+{
+	margin-top: 20;
+	margin-bottom: 20;
+	margin-left-ltr: 100;
+	margin-right-rtl: 100;
+	list-style-type: disc;
+	-bullet-gap: 20
 }
 
-ul li ul li {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0
+ul li ul li
+{
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-ul li ul {
-    list-style-type: circle;
-    margin-left-ltr: 50;
-    margin-right-rtl: 50;
+ul li ul
+{
+	list-style-type: circle;
+	margin-left-ltr: 50;
+	margin-right-rtl: 50;
 }
 
-ul li ul li ul li {
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0
+ul li ul li ul li
+{
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-ul li ul li ul {
-    list-style-type: square;
-    margin-left-ltr: 50;
-    margin-right-rtl: 50
+ul li ul li ul
+{
+	list-style-type: square;
+	margin-left-ltr: 50;
+	margin-right-rtl: 50
 }
 
-ul li menu {
-    list-style-type: circle;
-    margin-left-ltr: 50;
-    margin-right-rtl: 50;
+ul li menu
+{
+	list-style-type: circle;
+	margin-left-ltr: 50;
+	margin-right-rtl: 50;
 }
 
-ul li p {
-    margin-top: 0;
-    margin-bottom: 0
+ul li p
+{
+	margin-top: 0;
+	margin-bottom: 0
 }
 
-a {
-    color: #589df6;
-    text-decoration: underline
+a
+{
+	color: #589df6;
+	text-decoration: underline
 }
 
-address {
-    color: #589df6;
-    font-style: italic
+address
+{
+	color: #589df6;
+	font-style: italic
 }
 
-big {
-    font-size: 34;//x-large
+big
+{
+	font-size: 34;
+/ / x-large
 }
 
-small {
-    font-size: 18;//x-small
+small
+{
+	font-size: 18;
+/ / x-small
 }
 
-samp {
-    font-size: 20;//small;
-    font-family: Monospaced
+samp
+{
+	font-size: 20;
+/ / small;
+	font-family: Monospaced
 }
 
-cite {
-    font-style: italic
+cite
+{
+	font-style: italic
 }
 
-code {
-    font-size: 20;//small;
-    font-family: Monospaced
+code
+{
+	font-size: 20;
+/ / small;
+	font-family: Monospaced
 }
 
-dfn {
-    font-style: italic
+dfn
+{
+	font-style: italic
 }
 
-em {
-    font-style: italic
+em
+{
+	font-style: italic
 }
 
-i {
-    font-style: italic
+i
+{
+	font-style: italic
 }
 
-b {
-    font-weight: bold
+b
+{
+	font-weight: bold
 }
 
-kbd {
-    font-size: 20;//small;
-    font-family: Monospaced
+kbd
+{
+	font-size: 20;
+/ / small;
+	font-family: Monospaced
 }
 
-s {
-    text-decoration: line-through
+s
+{
+	text-decoration: line-through
 }
 
-strike {
-    text-decoration: line-through
+strike
+{
+	text-decoration: line-through
 }
 
-strong {
-    font-weight: bold
+strong
+{
+	font-weight: bold
 }
 
-sub {
-    vertical-align: sub
+sub
+{
+	vertical-align: sub
 }
 
-sup {
-    vertical-align: sup
+sup
+{
+	vertical-align: sup
 }
 
-tt {
-    font-family: Monospaced
+tt
+{
+	font-family: Monospaced
 }
 
-u {
-    text-decoration: underline
+u
+{
+	text-decoration: underline
 }
 
-var {
-    font-weight: bold;
-    font-style: italic
+var
+{
+	font-weight: bold;
+	font-style: italic
 }
 
-table {
-    border-color: Gray;
-    border-style: outset
+table
+{
+	border-color: Gray;
+	border-style: outset
 }
 
-tr {
-    text-align: left
+tr
+{
+	text-align: left
 }
 
-td {
-    border-color: Gray;
-    border-style: inset;
-    padding-left: 6;
-    padding-right: 6;
-    padding-top: 6;
-    padding-bottom: 6
+td
+{
+	border-color: Gray;
+	border-style: inset;
+	padding-left: 6;
+	padding-right: 6;
+	padding-top: 6;
+	padding-bottom: 6
 }
 
-th {
-    text-align: center;
-    font-weight: bold;
-    border-color: Gray;
-    border-style: inset;
-    padding-left: 6;
-    padding-right: 6;
-    padding-top: 6;
-    padding-bottom: 6
+th
+{
+	text-align: center;
+	font-weight: bold;
+	border-color: Gray;
+	border-style: inset;
+	padding-left: 6;
+	padding-right: 6;
+	padding-top: 6;
+	padding-bottom: 6
 }
 
-blockquote {
-    margin-top: 10;
-    margin-bottom: 10;
-    margin-left: 70;
-    margin-right: 70
+blockquote
+{
+	margin-top: 10;
+	margin-bottom: 10;
+	margin-left: 70;
+	margin-right: 70
 }
 
-center {
-    text-align: center
+center
+{
+	text-align: center
 }
 
-pre {
-    margin-top: 10;
-    margin-bottom: 10;
-    font-family: Monospaced
+pre
+{
+	margin-top: 10;
+	margin-bottom: 10;
+	font-family: Monospaced
 }
 
-pre p {
-    margin-top: 0
+pre p
+{
+	margin-top: 0
 }
 
-caption {
-    caption-side: top;
-    text-align: center
+caption
+{
+	caption-side: top;
+	text-align: center
 }
 
-table {
-    border: none;
+table
+{
+	border: none;
 }
 
-td {
-    border: none;
+td
+{
+	border: none;
 }
 
-nobr {
-    white-space: nowrap
+nobr
+{
+	white-space: nowrap
 }
 

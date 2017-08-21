@@ -21,6 +21,6 @@ interface Matcher
 	 *
 	 * @author Bas Milius
 	 */
-	fun tryConvert(input : String, refDateStr : String) : Date?
+	fun tryConvert(input: String, refDateStr: String): Date?
 
 }

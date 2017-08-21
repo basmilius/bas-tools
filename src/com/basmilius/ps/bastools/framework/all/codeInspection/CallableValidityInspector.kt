@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.all.codeInspection
  */
-class CallableValidityInspector : BaseInspection("CallableValidityInspector")
+class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 {
 
 	/**
@@ -29,7 +29,7 @@ class CallableValidityInspector : BaseInspection("CallableValidityInspector")
 	 *
 	 * @author Bas Milius
 	 */
-	override fun buildVisitor(problemsHolder : ProblemsHolder, isOnTheFly : Boolean) : PsiElementVisitor
+	override fun buildVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean): PsiElementVisitor
 	{
 		return CallableValidityInspectorVisitor(problemsHolder, isOnTheFly)
 	}
@@ -40,7 +40,7 @@ class CallableValidityInspector : BaseInspection("CallableValidityInspector")
 	 * @author Bas Milius
 	 * @package com.basmilius.ps.bastools.framework.all.codeInspection.CallableValidityInspector
 	 */
-	inner class CallableValidityInspectorVisitor(problemsHolder : ProblemsHolder, isOnTheFly : Boolean) : BaseElementVisitor(problemsHolder, isOnTheFly)
+	inner class CallableValidityInspectorVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean): BaseElementVisitor(problemsHolder, isOnTheFly)
 	{
 
 		/**
@@ -48,7 +48,7 @@ class CallableValidityInspector : BaseInspection("CallableValidityInspector")
 		 *
 		 * @author Bas Milius
 		 */
-		override fun visitPhpFunctionCall(reference : FunctionReference?)
+		override fun visitPhpFunctionCall(reference: FunctionReference?)
 		{
 			if (reference == null)
 				return
@@ -66,7 +66,7 @@ class CallableValidityInspector : BaseInspection("CallableValidityInspector")
 				val values = PossibleValuesDiscoveryUtils.discover(parameters[0], processed)
 				processed.clear()
 
-				val callable : PsiElement?
+				val callable: PsiElement?
 
 				if (values.size == 1)
 					callable = values.iterator().next()
@@ -92,9 +92,9 @@ class CallableValidityInspector : BaseInspection("CallableValidityInspector")
 		 *
 		 * @author Bas Milius
 		 */
-		private fun buildResolver(@NotNull callable : PsiElement) : PsiReference?
+		private fun buildResolver(@NotNull callable: PsiElement): PsiReference?
 		{
-			var result : PhpCallbackReferenceBase? = null
+			var result: PhpCallbackReferenceBase? = null
 			val callback = PhpCallbackFunctionUtil.createCallback(callable)
 
 			if (callback is PhpCallbackFunctionUtil.PhpMemberCallbackInfoHolder)
@@ -113,7 +113,7 @@ class CallableValidityInspector : BaseInspection("CallableValidityInspector")
 		 *
 		 * @author Bas Milius
 		 */
-		private fun isTarget(@NotNull callable : PsiElement) : Boolean
+		private fun isTarget(@NotNull callable: PsiElement): Boolean
 		{
 			var result = callable is StringLiteralExpression
 
@@ -128,7 +128,7 @@ class CallableValidityInspector : BaseInspection("CallableValidityInspector")
 		 *
 		 * @author Bas Milius
 		 */
-		private fun analyzeValidity(@Nullable element : PsiElement?, @NotNull target : PsiElement, @NotNull callable : PsiElement)
+		private fun analyzeValidity(@Nullable element: PsiElement?, @NotNull target: PsiElement, @NotNull callable: PsiElement)
 		{
 			if (element !is Method)
 				return

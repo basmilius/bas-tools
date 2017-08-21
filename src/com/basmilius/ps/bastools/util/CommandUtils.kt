@@ -30,15 +30,15 @@ object CommandUtils
 	 * @author Bas Milius
 	 */
 	@Synchronized
-	fun run(project : Project?, command : String, handler : ICommandResultHandler)
+	fun run(project: Project?, command: String, handler: ICommandResultHandler)
 	{
 		if (project == null)
 			return
 
-		ProgressManager.getInstance().run(object : Task.Backgroundable(project, "Executing command '$command'")
+		ProgressManager.getInstance().run(object: Task.Backgroundable(project, "Executing command '$command'")
 		{
 
-			override fun run(progress : ProgressIndicator)
+			override fun run(progress: ProgressIndicator)
 			{
 				progress.isIndeterminate = true
 
@@ -65,7 +65,7 @@ object CommandUtils
 					reader.close()
 					`in`.close()
 				}
-				catch (e : Exception)
+				catch (e: Exception)
 				{
 					e.printStackTrace()
 				}
@@ -90,7 +90,7 @@ object CommandUtils
 		 *
 		 * @author Bas Milius
 		 */
-		fun onCommandResult(lines : Array<String>)
+		fun onCommandResult(lines: Array<String>)
 
 	}
 

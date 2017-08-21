@@ -15,7 +15,7 @@ import javax.swing.*
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.component
  */
-class BasToolsComponent : ApplicationComponent
+class BasToolsComponent: ApplicationComponent
 {
 
 	/**
@@ -31,7 +31,7 @@ class BasToolsComponent : ApplicationComponent
 			JBColor.setDark(true)
 			IconLoader.setUseDarkIcons(true)
 		}
-		catch (e : Exception)
+		catch (e: Exception)
 		{
 			e.printStackTrace()
 		}
@@ -54,7 +54,7 @@ class BasToolsComponent : ApplicationComponent
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName() : String
+	override fun getComponentName(): String
 	{
 		return "Bas Tools"
 	}

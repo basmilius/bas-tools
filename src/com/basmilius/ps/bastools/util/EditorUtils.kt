@@ -26,9 +26,9 @@ object EditorUtils
 	 * @author Bas Milius
 	 */
 	@Throws(Exception::class)
-	fun insertOrReplaceMultiCaret(editor : Editor, project : Project, str : String)
+	fun insertOrReplaceMultiCaret(editor: Editor, project: Project, str: String)
 	{
-		val wca = object : WriteCommandAction.Simple<Unit>(project)
+		val wca = object: WriteCommandAction.Simple<Unit>(project)
 		{
 
 			@Throws(Throwable::class)
@@ -74,7 +74,7 @@ object EditorUtils
 	 * @param context DataContext
 	 * @param index Int
 	 */
-	fun switchToTab(project : Project, context : DataContext, index : Int)
+	fun switchToTab(project: Project, context: DataContext, index: Int)
 	{
 		val editorManager = FileEditorManagerEx.getInstanceEx(project)
 		val currentWindow = EditorWindow.DATA_KEY.getData(context) ?: editorManager.currentWindow

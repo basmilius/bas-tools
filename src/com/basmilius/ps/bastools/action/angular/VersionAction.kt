@@ -10,7 +10,7 @@ import com.intellij.openapi.ui.Messages
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.action.angular
  */
-class VersionAction : AnAction("Show Angular Version")
+class VersionAction: AnAction("Show Angular Version")
 {
 
 	/**

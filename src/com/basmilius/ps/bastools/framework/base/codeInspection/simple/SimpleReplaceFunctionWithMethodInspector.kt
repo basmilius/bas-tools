@@ -22,7 +22,7 @@ import com.jetbrains.php.lang.psi.elements.FunctionReference
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.base.codeInspection.simple
  */
-abstract class SimpleReplaceFunctionWithMethodInspector(val functionName : String, val methodCall : String, shortName : String) : BaseInspection(shortName)
+abstract class SimpleReplaceFunctionWithMethodInspector(val functionName: String, val methodCall: String, shortName: String): BaseInspection(shortName)
 {
 
 	/**
@@ -32,7 +32,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName : Strin
 	 *
 	 * @author Bas Milius
 	 */
-	override fun buildVisitor(problemsHolder : ProblemsHolder, isOnTheFly : Boolean) : PsiElementVisitor
+	override fun buildVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean): PsiElementVisitor
 	{
 		return SimpleReplaceFunctionWithMethodInspectorVisitor(problemsHolder, isOnTheFly)
 	}
@@ -43,7 +43,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName : Strin
 	 * @author Bas Milius
 	 * @package com.basmilius.ps.bastools.framework.base.codeInspection.simple.SimpleReplaceFunctionWithMethodInspector
 	 */
-	inner class SimpleReplaceFunctionWithMethodInspectorVisitor(problemsHolder : ProblemsHolder, isOnTheFly : Boolean) : BaseElementVisitor(problemsHolder, isOnTheFly)
+	inner class SimpleReplaceFunctionWithMethodInspectorVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean): BaseElementVisitor(problemsHolder, isOnTheFly)
 	{
 
 		/**
@@ -51,7 +51,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName : Strin
 		 *
 		 * @author Bas Milius
 		 */
-		override fun visitPhpFunctionCall(reference : FunctionReference?)
+		override fun visitPhpFunctionCall(reference: FunctionReference?)
 		{
 			if (reference == null)
 				return
@@ -78,7 +78,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName : Strin
 	 * @author Bas Milius
 	 * @package com.basmilius.ps.bastools.framework.base.codeInspection.simple.SimpleReplaceFunctionWithMethodInspector
 	 */
-	inner class SimpleReplaceFunctionWithMethodInspectorQuickFix : BaseQuickFix("Replace with '${this@SimpleReplaceFunctionWithMethodInspector.methodCall}'")
+	inner class SimpleReplaceFunctionWithMethodInspectorQuickFix: BaseQuickFix("Replace with '${this@SimpleReplaceFunctionWithMethodInspector.methodCall}'")
 	{
 
 		/**
@@ -86,7 +86,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName : Strin
 		 *
 		 * @author Bas Milius
 		 */
-		override fun applyFix(project : Project, descriptor : ProblemDescriptor)
+		override fun applyFix(project: Project, descriptor: ProblemDescriptor)
 		{
 			val psi = descriptor.psiElement as? FunctionReference ?: return
 

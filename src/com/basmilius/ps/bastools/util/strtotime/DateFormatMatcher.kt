@@ -10,7 +10,7 @@ import java.util.*
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.util.strtotime
  */
-class DateFormatMatcher(private val dateFormat : DateFormat) : Matcher
+class DateFormatMatcher(private val dateFormat: DateFormat): Matcher
 {
 
 	/**
@@ -18,13 +18,13 @@ class DateFormatMatcher(private val dateFormat : DateFormat) : Matcher
 	 *
 	 * @author Bas Milius
 	 */
-	override fun tryConvert(input : String, refDateStr : String) : Date?
+	override fun tryConvert(input: String, refDateStr: String): Date?
 	{
 		return try
 		{
 			this.dateFormat.parse(input)
 		}
-		catch (e : ParseException)
+		catch (e: ParseException)
 		{
 			null
 		}

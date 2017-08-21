@@ -13,13 +13,13 @@ import com.intellij.psi.PsiFileSystemItem
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.all.psi
  */
-class GenericFileLookupElement : LookupElement
+class GenericFileLookupElement: LookupElement
 {
 
-	private val fileName : String
-	private val psiFile : PsiFileSystemItem
-	private var element : PsiElement? = null
-	private var insertHandler : InsertHandler<LookupElement>? = null
+	private val fileName: String
+	private val psiFile: PsiFileSystemItem
+	private var element: PsiElement? = null
+	private var insertHandler: InsertHandler<LookupElement>? = null
 
 	/**
 	 * GenericFileLookupElement Constructor.
@@ -29,7 +29,7 @@ class GenericFileLookupElement : LookupElement
 	 *
 	 * @author Bas Milius
 	 */
-	constructor (fileName : String, psiFile : PsiFileSystemItem) : super()
+	constructor (fileName: String, psiFile: PsiFileSystemItem): super()
 	{
 		this.fileName = fileName
 		this.psiFile = psiFile
@@ -45,7 +45,7 @@ class GenericFileLookupElement : LookupElement
 	 *
 	 * @author Bas Milius
 	 */
-	constructor(fileName : String, psiFile : PsiFileSystemItem, element : PsiElement, insertHandler : InsertHandler<LookupElement>) : super()
+	constructor(fileName: String, psiFile: PsiFileSystemItem, element: PsiElement, insertHandler: InsertHandler<LookupElement>): super()
 	{
 		this.fileName = fileName
 		this.psiFile = psiFile
@@ -58,7 +58,7 @@ class GenericFileLookupElement : LookupElement
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getLookupString() : String
+	override fun getLookupString(): String
 	{
 		return this.fileName
 	}
@@ -68,7 +68,7 @@ class GenericFileLookupElement : LookupElement
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getObject() : Any
+	override fun getObject(): Any
 	{
 		return this.element ?: super.getObject()
 	}
@@ -78,7 +78,7 @@ class GenericFileLookupElement : LookupElement
 	 *
 	 * @author Bas Milius
 	 */
-	override fun handleInsert(context : InsertionContext)
+	override fun handleInsert(context: InsertionContext)
 	{
 		if (this.insertHandler == null)
 			return
@@ -91,7 +91,7 @@ class GenericFileLookupElement : LookupElement
 	 *
 	 * @author Bas Milius
 	 */
-	override fun renderElement(presentation : LookupElementPresentation?)
+	override fun renderElement(presentation: LookupElementPresentation?)
 	{
 		presentation?.itemText = this.lookupString
 		presentation?.icon = this.psiFile.getIcon(0)

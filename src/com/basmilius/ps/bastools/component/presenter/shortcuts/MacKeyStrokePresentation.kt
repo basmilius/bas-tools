@@ -20,7 +20,7 @@ val macKeyStrokesFont by lazy {
 	font
 }
 
-private fun getNonDisplayableMacSymbols(font : Font) =
+private fun getNonDisplayableMacSymbols(font: Font) =
 		MacKeymapUtil::class.java.declaredFields
 				.filter { it.type == String::class.java && it.name != "APPLE" }
 				.map { Pair(it.name, it.get(null) as String) }

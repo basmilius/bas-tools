@@ -14,11 +14,11 @@ import com.intellij.util.xmlb.XmlSerializerUtil
  * @package com.basmilius.ps.bastools.component.presenter.shortcuts
  */
 @State(name = "ShortcutPresenter", storages = arrayOf(Storage(file = "shortcut-presenter.xml")))
-class ShortcutPresenter : ApplicationComponent, PersistentStateComponent<ShortcutPresenterState>
+class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<ShortcutPresenterState>
 {
 
 	val configuration = ShortcutPresenterState()
-	var presenter : Presenter? = null
+	var presenter: Presenter? = null
 
 	/**
 	 * {@inheritdoc}
@@ -32,7 +32,7 @@ class ShortcutPresenter : ApplicationComponent, PersistentStateComponent<Shortcu
 	 *
 	 * @author Bas Milius
 	 */
-	override fun loadState(state : ShortcutPresenterState)
+	override fun loadState(state: ShortcutPresenterState)
 	{
 		XmlSerializerUtil.copyBean(state, this.configuration)
 	}
@@ -75,7 +75,7 @@ class ShortcutPresenter : ApplicationComponent, PersistentStateComponent<Shortcu
 	 *
 	 * @author Bas Milius
 	 */
-	fun setShowActionsDescriptions(value : Boolean, project : Project?)
+	fun setShowActionsDescriptions(value: Boolean, project: Project?)
 	{
 		this.configuration.showActionDescription = value
 
@@ -100,7 +100,7 @@ class ShortcutPresenter : ApplicationComponent, PersistentStateComponent<Shortcu
 	 *
 	 * @author Bas Milius
 	 */
-	fun setFontSize(value : Int)
+	fun setFontSize(value: Int)
 	{
 		configuration.fontSize = value
 	}

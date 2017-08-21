@@ -15,7 +15,7 @@ val inputEventMaskFieldNames by lazy {
 			.map { Pair(fieldNameToPresentableName(it.name.removeSuffix("_MASK")), it.get(null) as Int) }
 }
 
-fun getWinModifiersText(modifiers : Int) =
+fun getWinModifiersText(modifiers: Int) =
 		inputEventMaskFieldNames
 				.filter { modifiers and (it.second) != 0 }.joinToString("+") { it.first }
 
@@ -27,7 +27,7 @@ val keyEventFieldNames by lazy {
 			.mapValues { it.value.first().first }
 }
 
-fun getWinKeyText(key : Int) =
+fun getWinKeyText(key: Int) =
 		when (key)
 		{
 			KeyEvent.VK_BACK_SPACE -> "Backspace"
@@ -41,4 +41,4 @@ fun getWinKeyText(key : Int) =
 			else -> "Unknown key 0x${Integer.toHexString(key)}"
 		}
 
-fun fieldNameToPresentableName(name : String) = name.split('_').joinToString(" ") { StringUtil.capitalize(it.toLowerCase()) }
+fun fieldNameToPresentableName(name: String) = name.split('_').joinToString(" ") { StringUtil.capitalize(it.toLowerCase()) }

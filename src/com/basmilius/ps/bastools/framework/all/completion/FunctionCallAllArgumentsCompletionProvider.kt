@@ -20,7 +20,7 @@ import com.jetbrains.php.lang.psi.elements.Function
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.all.completion
  */
-class FunctionCallAllArgumentsCompletionProvider : BaseCompletionProvider()
+class FunctionCallAllArgumentsCompletionProvider: BaseCompletionProvider()
 {
 
 	/**
@@ -28,7 +28,7 @@ class FunctionCallAllArgumentsCompletionProvider : BaseCompletionProvider()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun addCompletions(parameters : CompletionParameters, context : ProcessingContext, results : CompletionResultSet)
+	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 	{
 		val func = PsiTreeUtil.getParentOfType(parameters.originalPosition, Function::class.java)
 
@@ -52,7 +52,7 @@ class FunctionCallAllArgumentsCompletionProvider : BaseCompletionProvider()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getPlace() : ElementPattern<out PsiElement>
+	override fun getPlace(): ElementPattern<out PsiElement>
 	{
 		return PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(PhpElementTypes.FUNCTION_CALL))
 	}

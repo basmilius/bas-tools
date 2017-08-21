@@ -26,18 +26,18 @@ import java.awt.image.BufferedImage
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.ui
  */
-class DefaultColorPipette(parent : JComponent, colorListener : ColorListener) : ColorPipetteBase(parent, colorListener)
+class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): ColorPipetteBase(parent, colorListener)
 {
 
 	private val myCaptureRect = Rectangle(-4, -4, 8, 8)
 	private val myZoomRect = Rectangle(0, 0, SIZE, SIZE)
 	private val myPreviousLocation = Point()
 
-	private var myGraphics : Graphics2D? = null
-	private var myImage : BufferedImage? = null
-	private var myPipetteImage : BufferedImage? = null
-	private var myMaskImage : BufferedImage? = null
-	private val myTimer : Timer
+	private var myGraphics: Graphics2D? = null
+	private var myImage: BufferedImage? = null
+	private var myPipetteImage: BufferedImage? = null
+	private var myMaskImage: BufferedImage? = null
+	private val myTimer: Timer
 
 	/**
 	 * DefaultColorPipette Constructor
@@ -54,7 +54,7 @@ class DefaultColorPipette(parent : JComponent, colorListener : ColorListener) : 
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getPixelColor(location : Point) : Color
+	override fun getPixelColor(location: Point): Color
 	{
 		return super.getPixelColor(Point(location.x - HOT_SPOT.x + SIZE / 2, location.y - HOT_SPOT.y + SIZE / 2))
 	}
@@ -64,7 +64,7 @@ class DefaultColorPipette(parent : JComponent, colorListener : ColorListener) : 
 	 *
 	 * @author Bas Milius
 	 */
-	override fun show() : Dialog
+	override fun show(): Dialog
 	{
 		val picker = super.show()
 		myTimer.start()
@@ -85,7 +85,7 @@ class DefaultColorPipette(parent : JComponent, colorListener : ColorListener) : 
 	 *
 	 * @author Bas Milius
 	 */
-	override fun isAvailable() : Boolean
+	override fun isAvailable(): Boolean
 	{
 		if (myRobot != null)
 		{
@@ -100,32 +100,32 @@ class DefaultColorPipette(parent : JComponent, colorListener : ColorListener) : 
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getOrCreatePickerDialog() : Dialog
+	override fun getOrCreatePickerDialog(): Dialog
 	{
 		var pickerDialog = pickerDialog
 		if (pickerDialog == null)
 		{
 			pickerDialog = super.getOrCreatePickerDialog()
-			pickerDialog.addMouseListener(object : MouseAdapter()
+			pickerDialog.addMouseListener(object: MouseAdapter()
 			{
 
-				override fun mouseExited(event : MouseEvent?)
+				override fun mouseExited(event: MouseEvent?)
 				{
 					updatePipette()
 				}
 			})
-			pickerDialog.addMouseMotionListener(object : MouseAdapter()
+			pickerDialog.addMouseMotionListener(object: MouseAdapter()
 			{
 
-				override fun mouseMoved(e : MouseEvent?)
+				override fun mouseMoved(e: MouseEvent?)
 				{
 					updatePipette()
 				}
 			})
-			pickerDialog.addFocusListener(object : FocusAdapter()
+			pickerDialog.addFocusListener(object: FocusAdapter()
 			{
 
-				override fun focusLost(e : FocusEvent?)
+				override fun focusLost(e: FocusEvent?)
 				{
 					if (e!!.isTemporary)
 					{

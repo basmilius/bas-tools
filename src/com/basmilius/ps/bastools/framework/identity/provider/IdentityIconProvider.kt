@@ -18,7 +18,7 @@ import javax.swing.*
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.identity.provider
  */
-class IdentityIconProvider : IconProvider(), FileIconProvider
+class IdentityIconProvider: IconProvider(), FileIconProvider
 {
 
 	/**
@@ -26,7 +26,7 @@ class IdentityIconProvider : IconProvider(), FileIconProvider
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getIcon(file : VirtualFile, @Iconable.IconFlags flags : Int, project : Project?) : Icon?
+	override fun getIcon(file: VirtualFile, @Iconable.IconFlags flags: Int, project: Project?): Icon?
 	{
 		if (project == null)
 			return Icons.Default
@@ -42,7 +42,7 @@ class IdentityIconProvider : IconProvider(), FileIconProvider
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getIcon(psi : PsiElement, @Iconable.IconFlags flags : Int) : Icon?
+	override fun getIcon(psi: PsiElement, @Iconable.IconFlags flags: Int): Icon?
 	{
 		val project = psi.project
 

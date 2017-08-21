@@ -8,4 +8,4 @@ import javax.swing.SwingConstants
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.action.editor
  */
-class SplitHorizontalViewAction : SplitViewAction(SwingConstants.HORIZONTAL)
+class SplitHorizontalViewAction: SplitViewAction(SwingConstants.HORIZONTAL)

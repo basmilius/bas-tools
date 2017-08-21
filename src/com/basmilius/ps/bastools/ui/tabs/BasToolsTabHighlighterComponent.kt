@@ -11,10 +11,10 @@ import com.intellij.util.messages.MessageBusConnection
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.ui.tabs
  */
-class BasToolsTabHighlighterComponent : ApplicationComponent
+class BasToolsTabHighlighterComponent: ApplicationComponent
 {
 
-	private var connection : MessageBusConnection? = null
+	private var connection: MessageBusConnection? = null
 
 	/**
 	 * {@inheritdoc}
@@ -42,7 +42,7 @@ class BasToolsTabHighlighterComponent : ApplicationComponent
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName() : String
+	override fun getComponentName(): String
 	{
 		return "com.basmilius.ps.bastools.ui.tabs.BasToolsTabHighlighterComponent"
 	}

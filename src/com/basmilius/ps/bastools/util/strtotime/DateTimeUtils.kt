@@ -58,7 +58,7 @@ object DateTimeUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun registerMatcher(matcher : Matcher)
+	fun registerMatcher(matcher: Matcher)
 	{
 		matchers.add(0, matcher)
 	}
@@ -73,7 +73,7 @@ object DateTimeUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun convert(input : String, refDateStr : String = "") : Date?
+	fun convert(input: String, refDateStr: String = ""): Date?
 	{
 		return matchers
 				.map { it.tryConvert(input, refDateStr) }
@@ -91,7 +91,7 @@ object DateTimeUtils
  *
  * @author Bas Milius
  */
-fun strtotime(str : String) : Long?
+fun strtotime(str: String): Long?
 {
 	val date = DateTimeUtils.convert(str) ?: return null
 

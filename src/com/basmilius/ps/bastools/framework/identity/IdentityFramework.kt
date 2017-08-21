@@ -25,7 +25,7 @@ object IdentityFramework
 	 *
 	 * @author Bas Milius
 	 */
-	fun getSourcesRoot(project : Project) : VirtualFile
+	fun getSourcesRoot(project: Project): VirtualFile
 	{
 		val projectRoot = project.baseDir
 		val srcDirectory = projectRoot.findChild("src")
@@ -41,7 +41,7 @@ object IdentityFramework
 	 *
 	 * @author Bas Milius
 	 */
-	fun isIdentityFrameworkProject(project : Project) : Boolean
+	fun isIdentityFrameworkProject(project: Project): Boolean
 	{
 		if (theseAreIdentityProjects.contains(project))
 			return true
@@ -66,10 +66,10 @@ object IdentityFramework
 	 *
 	 * @author Bas Milius
 	 */
-	fun isChildOf (project : Project, file : PsiFile, dir : String) : Boolean
+	fun isChildOf(project: Project, file: PsiFile, dir: String): Boolean
 	{
-		val sourcesRoot : VirtualFile = this.getSourcesRoot(project)
-		val directoryRoot : String = sourcesRoot.path + dir
+		val sourcesRoot: VirtualFile = this.getSourcesRoot(project)
+		val directoryRoot: String = sourcesRoot.path + dir
 
 		return file.virtualFile.path.startsWith(directoryRoot)
 	}

@@ -13,24 +13,24 @@ import com.intellij.util.ProcessingContext
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.base.completion
  */
-abstract class BaseCompletionProvider : CompletionProvider<CompletionParameters>()
+abstract class BaseCompletionProvider: CompletionProvider<CompletionParameters>()
 {
 
-	private var _contributor : BaseCompletionContributor? = null
+	private var _contributor: BaseCompletionContributor? = null
 
 	/**
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius
 	 */
-	abstract override fun addCompletions(parameters : CompletionParameters, context : ProcessingContext, results : CompletionResultSet)
+	abstract override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 
 	/**
 	 * Gets the contributor.
 	 *
 	 * @author Bas Milius
 	 */
-	fun getContributor() : BaseCompletionContributor?
+	fun getContributor(): BaseCompletionContributor?
 	{
 		return this._contributor;
 	}
@@ -40,7 +40,7 @@ abstract class BaseCompletionProvider : CompletionProvider<CompletionParameters>
 	 *
 	 * @author Bas Milius
 	 */
-	abstract fun getPlace() : ElementPattern<out PsiElement>
+	abstract fun getPlace(): ElementPattern<out PsiElement>
 
 	/**
 	 * Sets the contributor.
@@ -49,7 +49,7 @@ abstract class BaseCompletionProvider : CompletionProvider<CompletionParameters>
 	 *
 	 * @author Bas Milius
 	 */
-	fun setContributor(contributor : BaseCompletionContributor)
+	fun setContributor(contributor: BaseCompletionContributor)
 	{
 		this._contributor = contributor;
 	}

@@ -16,7 +16,7 @@ import java.io.IOException
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.component
  */
-class DefaultProjectComponent(private val project : Project) : ProjectComponent
+class DefaultProjectComponent(private val project: Project): ProjectComponent
 {
 
 	/**
@@ -42,7 +42,7 @@ class DefaultProjectComponent(private val project : Project) : ProjectComponent
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName() : String
+	override fun getComponentName(): String
 	{
 		return "Bas Tools - Default Project"
 	}
@@ -62,7 +62,7 @@ class DefaultProjectComponent(private val project : Project) : ProjectComponent
 			if (oldSettings.name === "Bas Settings" && !oldSettings.isDefault)
 				CodeStyleSchemes.getInstance().deleteScheme(oldSettings)
 		}
-		catch (e : Exception)
+		catch (e: Exception)
 		{
 			e.printStackTrace()
 		}
@@ -97,7 +97,7 @@ class DefaultProjectComponent(private val project : Project) : ProjectComponent
 				workspace.copy(this, workspace.parent, "workspace.xml")
 			}
 		}
-		catch (e : IOException)
+		catch (e: IOException)
 		{
 			e.printStackTrace()
 		}
@@ -126,7 +126,7 @@ class DefaultProjectComponent(private val project : Project) : ProjectComponent
 				workspacePerUser.copy(this, workspacePerUser.parent, "workspace.xml")
 			}
 		}
-		catch (e : IOException)
+		catch (e: IOException)
 		{
 			e.printStackTrace()
 		}

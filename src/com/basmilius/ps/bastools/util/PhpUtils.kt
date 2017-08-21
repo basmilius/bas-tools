@@ -22,7 +22,7 @@ object PhpUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getCanonicalFunctionName(func : PsiElement) : String?
+	fun getCanonicalFunctionName(func: PsiElement): String?
 	{
 		if (func.reference is MethodReference)
 			return getMethodName(func)
@@ -45,7 +45,7 @@ object PhpUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getParameterIndex(param : PsiElement?) : Int
+	fun getParameterIndex(param: PsiElement?): Int
 	{
 		var index = 0
 		var element = param
@@ -72,7 +72,7 @@ object PhpUtils
 	 *
 	 * @author Bas Milius
 	 */
-	private fun getClassConstructName(func : PsiElement) : String?
+	private fun getClassConstructName(func: PsiElement): String?
 	{
 		val children = func.children
 
@@ -100,7 +100,7 @@ object PhpUtils
 	 *
 	 * @author Bas Milius
 	 */
-	private fun getFunctionName(func : PsiElement) : String?
+	private fun getFunctionName(func: PsiElement): String?
 	{
 		if (func.reference == null)
 			return null
@@ -119,7 +119,7 @@ object PhpUtils
 	 *
 	 * @author Bas Milius
 	 */
-	private fun getMethodName(func : PsiElement) : String?
+	private fun getMethodName(func: PsiElement): String?
 	{
 		if (func.reference == null)
 			return null

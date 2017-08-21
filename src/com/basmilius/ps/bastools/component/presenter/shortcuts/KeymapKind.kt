@@ -8,7 +8,7 @@ import com.intellij.util.PlatformUtils
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.component.presenter.shortcuts
  */
-enum class KeymapKind(val displayName : String, val defaultKeymapName : String)
+enum class KeymapKind(val displayName: String, val defaultKeymapName: String)
 {
 
 	WIN("Win/Linux", "\$default"),

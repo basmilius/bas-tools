@@ -9,7 +9,7 @@ import java.util.regex.Pattern
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.util.strtotime
  */
-class TomorrowMatcher : Matcher
+class TomorrowMatcher: Matcher
 {
 
 	private val tomorrow = Pattern.compile("\\W*tomorrow\\W*")
@@ -19,7 +19,7 @@ class TomorrowMatcher : Matcher
 	 *
 	 * @author Bas Milius
 	 */
-	override fun tryConvert(input : String, refDateStr : String) : Date?
+	override fun tryConvert(input: String, refDateStr: String): Date?
 	{
 		if (tomorrow.matcher(input).matches())
 		{

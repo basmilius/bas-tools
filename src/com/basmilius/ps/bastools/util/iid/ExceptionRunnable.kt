@@ -6,7 +6,7 @@ package com.basmilius.ps.bastools.util.iid
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.util.iid
  */
-interface ExceptionRunnable : Runnable
+interface ExceptionRunnable: Runnable
 {
 
 	/**

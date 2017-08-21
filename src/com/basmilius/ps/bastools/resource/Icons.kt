@@ -20,7 +20,7 @@ interface Icons
 	companion object
 	{
 
-		val Default : Icon? = null
+		val Default: Icon? = null
 
 		val Android = IconLoader.getIcon("/icons/android.png")
 		val Angular = IconLoader.getIcon("/icons/angular.png")

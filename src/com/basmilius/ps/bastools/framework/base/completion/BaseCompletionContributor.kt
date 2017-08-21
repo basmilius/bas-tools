@@ -9,7 +9,7 @@ import com.intellij.codeInsight.completion.CompletionType
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.base.completion
  */
-abstract class BaseCompletionContributor : CompletionContributor()
+abstract class BaseCompletionContributor: CompletionContributor()
 {
 
 	/**
@@ -20,7 +20,7 @@ abstract class BaseCompletionContributor : CompletionContributor()
 	 *
 	 * @author Bas Milius
 	 */
-	fun extend(type : CompletionType, completionProvider : BaseCompletionProvider)
+	fun extend(type: CompletionType, completionProvider: BaseCompletionProvider)
 	{
 		completionProvider.setContributor(this)
 		this.extend(type, completionProvider.getPlace(), completionProvider);

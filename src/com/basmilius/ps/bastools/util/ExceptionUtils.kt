@@ -24,7 +24,7 @@ object ExceptionUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun executeIgnore(runnable : Runnable)
+	fun executeIgnore(runnable: Runnable)
 	{
 		ExceptionUtils.executeIgnore(runnable, 0)
 	}
@@ -37,14 +37,14 @@ object ExceptionUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun executeIgnore(runnable : Runnable, delay : Int)
+	fun executeIgnore(runnable: Runnable, delay: Int)
 	{
 		if (runnable is ExceptionRunnable)
 		{
-			ProgressManager.getInstance().run(object : Task.Backgroundable(null, "Bas Tools Process")
+			ProgressManager.getInstance().run(object: Task.Backgroundable(null, "Bas Tools Process")
 			{
 
-				override fun run(progressIndicator : ProgressIndicator)
+				override fun run(progressIndicator: ProgressIndicator)
 				{
 					try
 					{
@@ -55,7 +55,7 @@ object ExceptionUtils
 
 						runnable.run()
 					}
-					catch (e : Exception)
+					catch (e: Exception)
 					{
 						if (ManagementFactory.getRuntimeMXBean().inputArguments.toString().contains("jdwp"))
 						{
@@ -69,10 +69,10 @@ object ExceptionUtils
 		}
 		else
 		{
-			ProgressManager.getInstance().run(object : Task.Backgroundable(null, "Bas Tools Process")
+			ProgressManager.getInstance().run(object: Task.Backgroundable(null, "Bas Tools Process")
 			{
 
-				override fun run(progressIndicator : ProgressIndicator)
+				override fun run(progressIndicator: ProgressIndicator)
 				{
 					if (delay > 0)
 					{

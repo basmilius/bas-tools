@@ -25,7 +25,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun hasAlternativeBranches(ifStatement : If) : Boolean
+	fun hasAlternativeBranches(ifStatement: If): Boolean
 	{
 		return (ifStatement.elseBranch != null || ifStatement.elseIfBranches.isNotEmpty())
 	}
@@ -39,7 +39,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getReturnValue(@NotNull returnValue : PhpReturn) : PhpExpression?
+	fun getReturnValue(@NotNull returnValue: PhpReturn): PhpExpression?
 	{
 		for (child in returnValue.children)
 			if (child is PhpExpression)
@@ -55,7 +55,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getCountExpressionsInGroup(@NotNull groupStatement : GroupStatement) : Int
+	fun getCountExpressionsInGroup(@NotNull groupStatement: GroupStatement): Int
 	{
 		return groupStatement.children.count { it is PhpPsiElement && it !is PhpDocType && it !is PhpDocComment }
 	}
@@ -67,7 +67,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getLastStatement(@NotNull groupStatement : GroupStatement) : PsiElement?
+	fun getLastStatement(@NotNull groupStatement: GroupStatement): PsiElement?
 	{
 		var lastChild = groupStatement.lastChild
 
@@ -89,7 +89,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getGroupStatement(@NotNull expression : PsiElement) : GroupStatement?
+	fun getGroupStatement(@NotNull expression: PsiElement): GroupStatement?
 	{
 		for (child in expression.children)
 		{
@@ -109,7 +109,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getExpressionThroughParenthesis(@Nullable expression : PsiElement) : PsiElement
+	fun getExpressionThroughParenthesis(@Nullable expression: PsiElement): PsiElement
 	{
 		if (expression !is ParenthesizedExpression)
 			return expression
@@ -129,7 +129,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getScope(@NotNull expression : PsiElement) : Function?
+	fun getScope(@NotNull expression: PsiElement): Function?
 	{
 		var parent = expression.parent
 

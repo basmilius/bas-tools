@@ -19,7 +19,7 @@ import com.jetbrains.php.lang.psi.elements.impl.NewExpressionImpl
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.all.psi
  */
-class PhpFileReferenceContributor : PsiReferenceContributor()
+class PhpFileReferenceContributor: PsiReferenceContributor()
 {
 
 	/**
@@ -27,7 +27,7 @@ class PhpFileReferenceContributor : PsiReferenceContributor()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun registerReferenceProviders(registrar : PsiReferenceRegistrar)
+	override fun registerReferenceProviders(registrar: PsiReferenceRegistrar)
 	{
 		registrar.registerReferenceProvider(PlatformPatterns.psiElement(StringLiteralExpression::class.java).withLanguage(PhpLanguage.INSTANCE), ReferenceProvider())
 	}
@@ -38,7 +38,7 @@ class PhpFileReferenceContributor : PsiReferenceContributor()
 	 * @author Bas Milius
 	 * @package com.basmilius.ps.bastools.framework.all.psi.ReferenceProvider
 	 */
-	private class ReferenceProvider : PsiReferenceProvider()
+	private class ReferenceProvider: PsiReferenceProvider()
 	{
 
 		/**
@@ -46,7 +46,7 @@ class PhpFileReferenceContributor : PsiReferenceContributor()
 		 *
 		 * @author Bas Milius
 		 */
-		override fun getReferencesByElement(element : PsiElement, context : ProcessingContext) : Array<PsiReference>
+		override fun getReferencesByElement(element: PsiElement, context: ProcessingContext): Array<PsiReference>
 		{
 			if (element.context !is ParameterList)
 				return arrayOf()

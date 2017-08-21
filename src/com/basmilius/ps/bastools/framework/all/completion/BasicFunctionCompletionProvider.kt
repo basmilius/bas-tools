@@ -20,7 +20,7 @@ import com.intellij.codeInsight.lookup.LookupElementBuilder
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.all.completion
  */
-class BasicFunctionCompletionProvider : BaseCompletionProvider()
+class BasicFunctionCompletionProvider: BaseCompletionProvider()
 {
 
 	private val CARET_MAGIC_IDENTIFIER = "IntellijIdeaRulezzz"
@@ -30,15 +30,15 @@ class BasicFunctionCompletionProvider : BaseCompletionProvider()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun addCompletions(parameters : CompletionParameters, context : ProcessingContext, results : CompletionResultSet)
+	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 	{
 		val functionName = PhpUtils.getCanonicalFunctionName(parameters.position.parent.parent.parent) ?: return
 		val project = parameters.position.project
-		var resultElements : Array<String> = arrayOf()
-		var resultInfos : Array<String> = arrayOf()
+		var resultElements: Array<String> = arrayOf()
+		var resultInfos: Array<String> = arrayOf()
 		var resultPostfix = ""
 		var resultPostfixAlt = ""
-		var resultPostfixExceptions : Array<String> = arrayOf()
+		var resultPostfixExceptions: Array<String> = arrayOf()
 		var resultBold = false
 		var resultCaseSensitivity = true
 
@@ -197,7 +197,7 @@ class BasicFunctionCompletionProvider : BaseCompletionProvider()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getPlace() : ElementPattern<out PsiElement>
+	override fun getPlace(): ElementPattern<out PsiElement>
 	{
 		val stringInFunctionCall = PlatformPatterns.psiElement(PhpElementTypes.STRING)
 				.withParent(PlatformPatterns.psiElement(PhpElementTypes.PARAMETER_LIST)
@@ -224,7 +224,7 @@ class BasicFunctionCompletionProvider : BaseCompletionProvider()
 	 *
 	 * @author Bas Milius
 	 */
-	private fun concatArrays(a : Array<String>, b : Array<String>) : Array<String>
+	private fun concatArrays(a: Array<String>, b: Array<String>): Array<String>
 	{
 		val c = ArrayList<String>()
 
@@ -244,7 +244,7 @@ class BasicFunctionCompletionProvider : BaseCompletionProvider()
 	 *
 	 * @author Bas Milius
 	 */
-	private fun prefixArray(prefix : String, a : Array<String>) : Array<String>
+	private fun prefixArray(prefix: String, a: Array<String>): Array<String>
 	{
 		val b = ArrayList<String>()
 
@@ -267,7 +267,7 @@ class BasicFunctionCompletionProvider : BaseCompletionProvider()
 	 *
 	 * @author Bas Milius
 	 */
-	private fun methodMatches(methodName : String, paramIndex : Int, tokens : Array<String>) : Boolean
+	private fun methodMatches(methodName: String, paramIndex: Int, tokens: Array<String>): Boolean
 	{
 		return tokens.firstOrNull { it.startsWith("$methodName:$paramIndex") } != null
 	}
@@ -284,7 +284,7 @@ class BasicFunctionCompletionProvider : BaseCompletionProvider()
 	 *
 	 * @author Bas Milius
 	 */
-	private fun methodMatchesAt(methodName : String, paramIndex : Int, tokens : Array<String>, expectedParamIndex : Int) : Boolean
+	private fun methodMatchesAt(methodName: String, paramIndex: Int, tokens: Array<String>, expectedParamIndex: Int): Boolean
 	{
 		return tokens.contains(methodName) && paramIndex == expectedParamIndex
 	}

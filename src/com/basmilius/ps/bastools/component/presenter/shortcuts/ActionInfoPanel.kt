@@ -29,13 +29,13 @@ import javax.swing.*
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.component.presenter.shortcuts
  */
-class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?>>) : NonOpaquePanel(BorderLayout()), Disposable
+class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>): NonOpaquePanel(BorderLayout()), Disposable
 {
 
-	private val hint : JBPopup
-	private val labelsPanel : JPanel
+	private val hint: JBPopup
+	private val labelsPanel: JPanel
 	private val hideAlarm = Alarm(this)
-	private var animator : Animator
+	private var animator: Animator
 	private var phase = Phase.FADING_IN
 	private val hintAlpha = if (UIUtil.isUnderDarcula()) 0.05.toFloat() else 0.1.toFloat()
 
@@ -81,13 +81,13 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 			setCancelCallback { phase = Phase.HIDDEN; true }
 			createPopup()
 		}
-		hint.addListener(object : JBPopupListener
+		hint.addListener(object: JBPopupListener
 		{
-			override fun beforeShown(lightweightWindowEvent : LightweightWindowEvent?)
+			override fun beforeShown(lightweightWindowEvent: LightweightWindowEvent?)
 			{
 			}
 
-			override fun onClosed(lightweightWindowEvent : LightweightWindowEvent?)
+			override fun onClosed(lightweightWindowEvent: LightweightWindowEvent?)
 			{
 				phase = Phase.HIDDEN
 			}
@@ -117,7 +117,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 	 *
 	 * @author Bas Milius
 	 */
-	private fun getHintWindow() : Window?
+	private fun getHintWindow(): Window?
 	{
 		if (hint.isDisposed)
 			return null
@@ -137,7 +137,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 	 *
 	 * @author Bas Milius
 	 */
-	private fun setAlpha(alpha : Float)
+	private fun setAlpha(alpha: Float)
 	{
 		val window = getHintWindow()
 		if (window != null)
@@ -167,7 +167,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 	 *
 	 * @author Bas Milius
 	 */
-	fun updateText(project : Project, textFragments : List<Pair<String, Font?>>)
+	fun updateText(project: Project, textFragments: List<Pair<String, Font?>>)
 	{
 		if (getHintWindow() == null) return
 		labelsPanel.removeAll()
@@ -189,7 +189,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 	 *
 	 * @author Bas Milius
 	 */
-	private fun computeLocation(ideFrame : IdeFrame) : RelativePoint
+	private fun computeLocation(ideFrame: IdeFrame): RelativePoint
 	{
 		val statusBarHeight = ideFrame.statusBar.component.height
 		val visibleRect = ideFrame.component.visibleRect
@@ -206,7 +206,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 	 *
 	 * @author Bas Milius
 	 */
-	private fun updateLabelText(project : Project, textFragments : List<Pair<String, Font?>>)
+	private fun updateLabelText(project: Project, textFragments: List<Pair<String, Font?>>)
 	{
 		val ideFrame = WindowManager.getInstance().getIdeFrame(project)
 
@@ -225,7 +225,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 	 *
 	 * @author Bas Milius
 	 */
-	private fun List<Pair<String, Font?>>.mergeFragments() : List<Pair<String, Font?>>
+	private fun List<Pair<String, Font?>>.mergeFragments(): List<Pair<String, Font?>>
 	{
 		val result = ArrayList<Pair<String, Font?>>()
 		for (item in this)
@@ -254,7 +254,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 	 *
 	 * @author Bas Milius
 	 */
-	private fun createLabels(textFragments : List<Pair<String, Font?>>, ideFrame : IdeFrame) : List<JLabel>
+	private fun createLabels(textFragments: List<Pair<String, Font?>>, ideFrame: IdeFrame): List<JLabel>
 	{
 		var fontSize = getShortcutPresenter().configuration.fontSize.toFloat()
 		val labels = textFragments.mergeFragments().map {
@@ -263,7 +263,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 			label
 		}
 
-		fun setFontSize(size : Float)
+		fun setFontSize(size: Float)
 		{
 			for (label in labels)
 			{
@@ -327,7 +327,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 	 *
 	 * @author Bas Milius
 	 */
-	fun canBeReused() : Boolean = phase == Phase.FADING_IN || phase == Phase.SHOWN
+	fun canBeReused(): Boolean = phase == Phase.FADING_IN || phase == Phase.SHOWN
 
 	/**
 	 * Class FadeInOutAnimator
@@ -338,7 +338,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 	 * @author Bas Milius
 	 * @package com.basmilius.ps.bastools.component.presenter.shortcuts.ActionInfoPanel
 	 */
-	inner class FadeInOutAnimator(private val forward : Boolean) : Animator("Action Hint Fade In/Out", 5, 100, false, forward)
+	inner class FadeInOutAnimator(private val forward: Boolean): Animator("Action Hint Fade In/Out", 5, 100, false, forward)
 	{
 
 		/**
@@ -346,7 +346,7 @@ class ActionInfoPanel(project : Project, textFragments : List<Pair<String, Font?
 		 *
 		 * @author Bas Milius
 		 */
-		override fun paintNow(frame : Int, totalFrames : Int, cycle : Int)
+		override fun paintNow(frame: Int, totalFrames: Int, cycle: Int)
 		{
 			if (forward && phase != Phase.FADING_IN || !forward && phase != Phase.FADING_OUT)
 				return

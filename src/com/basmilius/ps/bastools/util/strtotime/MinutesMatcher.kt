@@ -11,7 +11,7 @@ import java.util.regex.Pattern
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.util.strtotime
  */
-class MinutesMatcher : Matcher
+class MinutesMatcher: Matcher
 {
 
 	private val minutes = Pattern.compile("[\\-+]?\\d+ minutes")
@@ -21,7 +21,7 @@ class MinutesMatcher : Matcher
 	 *
 	 * @author Bas Milius
 	 */
-	override fun tryConvert(input : String, refDateStr : String) : Date?
+	override fun tryConvert(input: String, refDateStr: String): Date?
 	{
 		val calendar = Calendar.getInstance()
 
@@ -31,7 +31,7 @@ class MinutesMatcher : Matcher
 			{
 				calendar.time = DateUtils.parseDate(refDateStr, Array(1) { "yyyy-MM-dd'T'HH:mm" })
 			}
-			catch (e : Exception)
+			catch (e: Exception)
 			{
 			}
 		}

@@ -8,7 +8,7 @@ import com.intellij.openapi.keymap.KeymapManager
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.component.presenter.shortcuts
  */
-class KeymapDescription(val name : String = "", val displayText : String = "")
+class KeymapDescription(val name: String = "", val displayText: String = "")
 {
 
 	/**
@@ -34,7 +34,7 @@ class KeymapDescription(val name : String = "", val displayText : String = "")
 	 *
 	 * @author Bas Milius
 	 */
-	override fun equals(other : Any?) : Boolean
+	override fun equals(other: Any?): Boolean
 	{
 		return other is KeymapDescription && other.name == this.name && other.displayText == this.displayText
 	}
@@ -44,7 +44,7 @@ class KeymapDescription(val name : String = "", val displayText : String = "")
 	 *
 	 * @author Bas Milius
 	 */
-	override fun hashCode() : Int
+	override fun hashCode(): Int
 	{
 		return this.name.hashCode() + 31 * this.displayText.hashCode()
 	}

@@ -11,7 +11,7 @@ import com.intellij.openapi.wm.ToolWindowManager
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.action.tools
  */
-class DisplayDateTimeToolWindow : AnAction("Show Date Time Tool Window")
+class DisplayDateTimeToolWindow: AnAction("Show Date Time Tool Window")
 {
 
 	/**
@@ -19,13 +19,13 @@ class DisplayDateTimeToolWindow : AnAction("Show Date Time Tool Window")
 	 *
 	 * @author Bas Milius
 	 */
-	override fun actionPerformed(aae : AnActionEvent?)
+	override fun actionPerformed(aae: AnActionEvent?)
 	{
 		if (aae === null)
 			return
 
 		val project = aae.project ?: return
-		val toolWindow : ToolWindow = ToolWindowManager.getInstance(project).getToolWindow("Date Time Helpers") ?: return
+		val toolWindow: ToolWindow = ToolWindowManager.getInstance(project).getToolWindow("Date Time Helpers") ?: return
 
 		if (toolWindow.isVisible)
 		{

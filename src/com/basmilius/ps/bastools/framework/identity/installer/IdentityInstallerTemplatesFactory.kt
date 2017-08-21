@@ -12,7 +12,7 @@ import javax.swing.Icon
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.framework.identity.installer
  */
-class IdentityInstallerTemplatesFactory : ProjectTemplatesFactory()
+class IdentityInstallerTemplatesFactory: ProjectTemplatesFactory()
 {
 
 	/**
@@ -20,7 +20,7 @@ class IdentityInstallerTemplatesFactory : ProjectTemplatesFactory()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getGroups() : Array<String>
+	override fun getGroups(): Array<String>
 	{
 		return Array(1, { _ -> "PHP" })
 	}
@@ -30,7 +30,7 @@ class IdentityInstallerTemplatesFactory : ProjectTemplatesFactory()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getGroupIcon(p0 : String?) : Icon
+	override fun getGroupIcon(p0: String?): Icon
 	{
 		return Icons.Rhombus
 	}
@@ -40,7 +40,7 @@ class IdentityInstallerTemplatesFactory : ProjectTemplatesFactory()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun createTemplates(s : String?, w : WizardContext?) : Array<ProjectTemplate>
+	override fun createTemplates(s: String?, w: WizardContext?): Array<ProjectTemplate>
 	{
 		return arrayOf(IdentityInstallerWebProjectTemplate())
 	}

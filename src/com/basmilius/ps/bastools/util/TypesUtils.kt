@@ -31,9 +31,9 @@ object TypesUtils
 //	val strResolvingAbortedOnPsiLevel = "\\aborted-on-psi-level"
 //	val strClassNotResolved = "\\class-not-resolved"
 
-	private var mapTypes : MutableMap<String, String>? = null
+	private var mapTypes: MutableMap<String, String>? = null
 
-	private fun getTypesMap() : Map<String, String>
+	private fun getTypesMap(): Map<String, String>
 	{
 		if (mapTypes == null)
 		{
@@ -95,7 +95,7 @@ object TypesUtils
 		return mapTypes as MutableMap<String, String>
 	}
 
-	fun getType(@NotNull givenType : String) : String
+	fun getType(@NotNull givenType: String): String
 	{
 		if (givenType.contains("[]"))
 			return strArray

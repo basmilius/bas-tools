@@ -9,9 +9,9 @@ package com.basmilius.ps.bastools.framework.identity.installer
 class IdentityInstallerVersion
 {
 
-	private var version : String? = null
-	private var presentableName : String? = null
-	private var url : String? = null
+	private var version: String? = null
+	private var presentableName: String? = null
+	private var url: String? = null
 
 	/**
 	 * Class IdentityInstallerVersion
@@ -20,7 +20,7 @@ class IdentityInstallerVersion
 	 *
 	 * @author Bas Milius
 	 */
-	constructor(version : String)
+	constructor(version: String)
 	{
 		this.version = version
 		this.presentableName = version
@@ -35,7 +35,7 @@ class IdentityInstallerVersion
 	 *
 	 * @author Bas Milius
 	 */
-	constructor(version : String, presentableName : String, url : String)
+	constructor(version: String, presentableName: String, url: String)
 	{
 		this.version = version
 		this.presentableName = presentableName
@@ -49,7 +49,7 @@ class IdentityInstallerVersion
 	 *
 	 * @return String?
 	 */
-	fun getPresentableName() : String?
+	fun getPresentableName(): String?
 	{
 		return presentableName
 	}
@@ -61,7 +61,7 @@ class IdentityInstallerVersion
 	 *
 	 * @return String?
 	 */
-	fun getVersion() : String?
+	fun getVersion(): String?
 	{
 		return version
 	}
@@ -73,7 +73,7 @@ class IdentityInstallerVersion
 	 *
 	 * @return String?
 	 */
-	fun getUrl() : String?
+	fun getUrl(): String?
 	{
 		return url
 	}

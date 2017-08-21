@@ -20,7 +20,7 @@ import java.awt.*
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.ui.tabs
  */
-class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorManagerListener
+class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerListener
 {
 
 	/**
@@ -35,7 +35,7 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 
 	}
 
-	private var connection : MessageBusConnection? = null
+	private var connection: MessageBusConnection? = null
 
 	/**
 	 * {@inheritDoc}
@@ -63,11 +63,11 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 	 *
 	 * @author Bas Milius
 	 */
-	override fun selectionChanged(event : FileEditorManagerEvent)
+	override fun selectionChanged(event: FileEditorManagerEvent)
 	{
 		val editor = event.newEditor ?: return
 
-		var component : Component? = editor.component
+		var component: Component? = editor.component
 
 		while (component != null)
 		{
@@ -88,7 +88,7 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 	 *
 	 * @author Bas Milius
 	 */
-	private fun patchPainter(component : JBEditorTabs)
+	private fun patchPainter(component: JBEditorTabs)
 	{
 		val painter = ReflectionUtil.getField(JBEditorTabs::class.java, component, JBEditorTabsPainter::class.java, "myDarkPainter")
 
@@ -125,7 +125,7 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 	 * @author Bas Milius
 	 */
 	@Throws(ClassNotFoundException::class, NoSuchFieldException::class, IllegalAccessException::class)
-	private fun paintSelectionAndBorder(objects : Array<Any>, borderColor : Color, borderThickness : Int, painter : BasToolsTabsPainter)
+	private fun paintSelectionAndBorder(objects: Array<Any>, borderColor: Color, borderThickness: Int, painter: BasToolsTabsPainter)
 	{
 		val g = objects[0] as Graphics2D
 		val rect = objects[1] as Rectangle
@@ -162,7 +162,7 @@ class BasToolsTabsPainterPatcherComponent : ApplicationComponent, FileEditorMana
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName() : String
+	override fun getComponentName(): String
 	{
 		return "Bas Tools: Tabs Patcher"
 	}

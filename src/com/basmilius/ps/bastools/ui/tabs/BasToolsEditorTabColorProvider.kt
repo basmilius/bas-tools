@@ -12,7 +12,7 @@ import java.awt.*
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.ui.tabs
  */
-class BasToolsEditorTabColorProvider : EditorTabColorProvider
+class BasToolsEditorTabColorProvider: EditorTabColorProvider
 {
 
 	/**
@@ -20,7 +20,7 @@ class BasToolsEditorTabColorProvider : EditorTabColorProvider
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getEditorTabColor(project : Project, virtualFile : VirtualFile) : Color?
+	override fun getEditorTabColor(project: Project, virtualFile: VirtualFile): Color?
 	{
 		return BasToolsTabsPainterPatcherComponent.BackgroundColor
 	}

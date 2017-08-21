@@ -1,6 +1,6 @@
 package com.basmilius.ps.bastools.intention
 
-import com.basmilius.math.mxparser.Expression
+import com.basmilius.math.Expression
 import com.intellij.codeInsight.hint.HintManager
 import com.intellij.codeInsight.intention.IntentionAction
 import com.intellij.openapi.application.ApplicationManager
@@ -20,7 +20,7 @@ import com.jetbrains.php.lang.psi.elements.impl.ConcatenationExpressionImpl
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.intention
  */
-class ComputeConstantValueIntentionAction : IntentionAction
+class ComputeConstantValueIntentionAction: IntentionAction
 {
 
 	/**
@@ -30,7 +30,7 @@ class ComputeConstantValueIntentionAction : IntentionAction
 	 *
 	 * @author Bas Milius
 	 */
-	override fun startInWriteAction() : Boolean
+	override fun startInWriteAction(): Boolean
 	{
 		return false
 	}
@@ -42,7 +42,7 @@ class ComputeConstantValueIntentionAction : IntentionAction
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getFamilyName() : String
+	override fun getFamilyName(): String
 	{
 		return "Bas Tools - Intentions"
 	}
@@ -58,7 +58,7 @@ class ComputeConstantValueIntentionAction : IntentionAction
 	 *
 	 * @author Bas Milius
 	 */
-	override fun isAvailable(project : Project, editor : Editor?, file : PsiFile?) : Boolean
+	override fun isAvailable(project: Project, editor: Editor?, file: PsiFile?): Boolean
 	{
 		if (editor == null)
 			return false
@@ -74,7 +74,7 @@ class ComputeConstantValueIntentionAction : IntentionAction
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getText() : String
+	override fun getText(): String
 	{
 		return "Compute Constant Value"
 	}
@@ -88,7 +88,7 @@ class ComputeConstantValueIntentionAction : IntentionAction
 	 *
 	 * @author Bas Milius
 	 */
-	override fun invoke(project : Project, editor : Editor?, file : PsiFile?)
+	override fun invoke(project: Project, editor: Editor?, file: PsiFile?)
 	{
 		if (editor == null)
 			return
@@ -110,7 +110,7 @@ class ComputeConstantValueIntentionAction : IntentionAction
 	 *
 	 * @author Bas Milius
 	 */
-	private fun run(editor : Editor, file : PsiFile, run : Boolean = true) : Boolean
+	private fun run(editor: Editor, file: PsiFile, run: Boolean = true): Boolean
 	{
 		val caretModel = editor.caretModel
 
@@ -119,7 +119,7 @@ class ComputeConstantValueIntentionAction : IntentionAction
 			val caret = caretModel.allCarets[i]
 			val psi = file.findElementAt(caret.offset)
 			var canWalk = true
-			var expression : PsiElement? = PsiTreeUtil.getParentOfType(psi, BinaryExpressionImpl::class.java)
+			var expression: PsiElement? = PsiTreeUtil.getParentOfType(psi, BinaryExpressionImpl::class.java)
 
 			if (expression == null)
 				expression = PsiTreeUtil.getPrevSiblingOfType(psi, BinaryExpressionImpl::class.java)
@@ -173,7 +173,7 @@ class ComputeConstantValueIntentionAction : IntentionAction
 							ApplicationManager.getApplication().runWriteAction { editor.document.replaceString(expression!!.textOffset, expression!!.textOffset + expressionText.length, result) }
 						}
 					}
-					catch (err : Exception)
+					catch (err: Exception)
 					{
 					}
 				}

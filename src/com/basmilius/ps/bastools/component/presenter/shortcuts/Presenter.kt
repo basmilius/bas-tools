@@ -16,7 +16,7 @@ import javax.swing.KeyStroke
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.component.presenter.shortcuts
  */
-class Presenter : Disposable
+class Presenter: Disposable
 {
 
 	private val movingActions = setOf("EditorLeft", "EditorRight", "EditorDown", "EditorUp", "EditorLineStart", "EditorLineEnd", "EditorPageUp", "EditorPageDown", "EditorPreviousWord", "EditorNextWord", "EditorScrollUp", "EditorScrollDown", "EditorTextStart", "EditorTextEnd", "EditorDownWithSelection", "EditorUpWithSelection", "EditorRightWithSelection", "EditorLeftWithSelection", "EditorLineStartWithSelection", "EditorLineEndWithSelection", "EditorPageDownWithSelection", "EditorPageUpWithSelection")
@@ -25,7 +25,7 @@ class Presenter : Disposable
 
 	private val parentGroupIds = setOf("CodeCompletionGroup", "FoldingGroup", "GoToMenu", "IntroduceActionsGroup")
 
-	private var infoPanel : ActionInfoPanel? = null
+	private var infoPanel: ActionInfoPanel? = null
 
 	private val parentNames = HashMap<String, String>()
 
@@ -47,7 +47,7 @@ class Presenter : Disposable
 	 *
 	 * @author Bas Milius
 	 */
-	private fun fillParentNames(group : ActionGroup, parentName : String)
+	private fun fillParentNames(group: ActionGroup, parentName: String)
 	{
 		val actionManager = ActionManager.getInstance()
 
@@ -85,11 +85,11 @@ class Presenter : Disposable
 				.filterIsInstance<ActionGroup>()
 				.forEach { fillParentNames(it, it.templatePresentation.text!!) }
 
-		actionManager.addAnActionListener(object : AnActionListener
+		actionManager.addAnActionListener(object: AnActionListener
 		{
-			var currentAction : ActionData? = null
+			var currentAction: ActionData? = null
 
-			override fun beforeActionPerformed(action : AnAction, dataContext : DataContext, event : AnActionEvent?)
+			override fun beforeActionPerformed(action: AnAction, dataContext: DataContext, event: AnActionEvent?)
 			{
 				currentAction = null
 
@@ -104,7 +104,7 @@ class Presenter : Disposable
 				}
 			}
 
-			override fun afterActionPerformed(action : AnAction, dataContext : DataContext, event : AnActionEvent?)
+			override fun afterActionPerformed(action: AnAction, dataContext: DataContext, event: AnActionEvent?)
 			{
 				val actionData = currentAction
 				val actionId = ActionManager.getInstance().getId(action)
@@ -115,7 +115,7 @@ class Presenter : Disposable
 				}
 			}
 
-			override fun beforeEditorTyping(c : Char, dataContext : DataContext?)
+			override fun beforeEditorTyping(c: Char, dataContext: DataContext?)
 			{
 			}
 
@@ -131,7 +131,7 @@ class Presenter : Disposable
 	 *
 	 * @author Bas Milius
 	 */
-	private fun MutableList<Pair<String, Font?>>.addText(text : String)
+	private fun MutableList<Pair<String, Font?>>.addText(text: String)
 	{
 		this.add(Pair(text, null))
 	}
@@ -143,7 +143,7 @@ class Presenter : Disposable
 	 *
 	 * @author Bas Milius
 	 */
-	fun showActionInfo(actionData : ActionData)
+	fun showActionInfo(actionData: ActionData)
 	{
 		val actionId = actionData.actionId
 		val parentGroupName = parentNames[actionId]
@@ -201,7 +201,7 @@ class Presenter : Disposable
 	 *
 	 * @author Bas Milius
 	 */
-	private fun shortcutTextFragments(keymap : KeymapDescription, actionId : String, shownShortcut : String) : List<Pair<String, Font?>>
+	private fun shortcutTextFragments(keymap: KeymapDescription, actionId: String, shownShortcut: String): List<Pair<String, Font?>>
 	{
 		val fragments = ArrayList<Pair<String, Font?>>()
 		val shortcutText = shortcutText(keymap.getKeymap()?.getShortcuts(actionId), keymap.getKind())
@@ -244,7 +244,7 @@ class Presenter : Disposable
 	 *
 	 * @author Bas Milius
 	 */
-	private fun shortcutText(shortcuts : Array<Shortcut>?, keymapKind : KeymapKind) : String
+	private fun shortcutText(shortcuts: Array<Shortcut>?, keymapKind: KeymapKind): String
 	{
 		return when
 		{
@@ -263,7 +263,7 @@ class Presenter : Disposable
 	 *
 	 * @author Bas Milius
 	 */
-	private fun shortcutText(shortcut : Shortcut, keymapKind : KeymapKind) : String
+	private fun shortcutText(shortcut: Shortcut, keymapKind: KeymapKind): String
 	{
 		return when (shortcut)
 		{
@@ -282,7 +282,7 @@ class Presenter : Disposable
 	 *
 	 * @author Bas Milius
 	 */
-	private fun shortcutText(keystroke : KeyStroke, keymapKind : KeymapKind) : String
+	private fun shortcutText(keystroke: KeyStroke, keymapKind: KeymapKind): String
 	{
 		return when (keymapKind)
 		{

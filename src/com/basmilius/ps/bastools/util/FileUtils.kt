@@ -28,7 +28,7 @@ object FileUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getProjectFiles(project : Project) : Array<String>
+	fun getProjectFiles(project: Project): Array<String>
 	{
 		val files = ArrayList<String>()
 		val projectDir = project.baseDir
@@ -55,7 +55,7 @@ object FileUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getRelativeFiles(baseFile : PsiFile) : Array<String>
+	fun getRelativeFiles(baseFile: PsiFile): Array<String>
 	{
 		val files = ArrayList<String>()
 		val project = baseFile.project
@@ -83,7 +83,7 @@ object FileUtils
 	 *
 	 * @author Bas Milius
 	 */
-	fun getRelativeFilesByName(baseFile : PsiFile, fileType : Int) : Map<String, PsiFileSystemItem>
+	fun getRelativeFilesByName(baseFile: PsiFile, fileType: Int): Map<String, PsiFileSystemItem>
 	{
 		val files = HashMap<String, PsiFileSystemItem>()
 		val project = baseFile.project

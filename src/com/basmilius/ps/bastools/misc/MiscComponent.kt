@@ -9,10 +9,10 @@ import com.basmilius.ps.bastools.misc.angryDeveloper.AngryDeveloperFeature
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.misc
  */
-class MiscComponent : ApplicationComponent
+class MiscComponent: ApplicationComponent
 {
 
-	private val features : Array<MiscFeature> = arrayOf(
+	private val features: Array<MiscFeature> = arrayOf(
 			AngryDeveloperFeature()
 	)
 
@@ -21,7 +21,7 @@ class MiscComponent : ApplicationComponent
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName() : String
+	override fun getComponentName(): String
 	{
 		return "Bas Tools - Misc stuff"
 	}
