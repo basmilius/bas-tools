@@ -76,7 +76,7 @@
 			<implementation-class>com.basmilius.ps.bastools.misc.MiscComponent</implementation-class>
 		</component>
 		<!--<component>-->
-			<!--<implementation-class>com.basmilius.ps.bastools.component.presenter.shortcuts.ShortcutPresenter</implementation-class>-->
+		<!--<implementation-class>com.basmilius.ps.bastools.component.presenter.shortcuts.ShortcutPresenter</implementation-class>-->
 		<!--</component>-->
 	</application-components>
 
@@ -100,12 +100,20 @@
 
 			<separator/>
 
-			<action id="BasTools.Action.SplitHorizontalView" class="com.basmilius.ps.bastools.action.editor.SplitHorizontalViewAction" text="Split Horizontal" icon="/icons/arrow-expand-down.png">
-				<keyboard-shortcut first-keystroke="ctrl alt DOWN" keymap="$default"/>
+			<action id="BasTools.Action.ShiftTabRight" class="com.basmilius.ps.bastools.action.editor.ShiftTabRightAction" text="Shift Tab Right" icon="/icons/arrow-expand-right.png">
+				<keyboard-shortcut first-keystroke="ctrl alt CLOSE_BRACKET" keymap="$default"/>
 			</action>
 
-			<action id="BasTools.Action.SplitVerticalView" class="com.basmilius.ps.bastools.action.editor.SplitVerticalViewAction" text="Split Vertical" icon="/icons/arrow-expand-right.png">
-				<keyboard-shortcut first-keystroke="ctrl alt RIGHT" keymap="$default"/>
+			<action id="BasTools.Action.ShiftTabLeft" class="com.basmilius.ps.bastools.action.editor.ShiftTabLeftAction" text="Shift Tab Left" icon="/icons/arrow-expand-left.png">
+				<keyboard-shortcut first-keystroke="ctrl alt OPEN_BRACKET" keymap="$default"/>
+			</action>
+
+			<action id="BasTools.Action.ShiftTabDown" class="com.basmilius.ps.bastools.action.editor.ShiftTabDownAction" text="Shift Tab Down" icon="/icons/arrow-expand-down.png">
+				<keyboard-shortcut first-keystroke="ctrl alt shift CLOSE_BRACKET" keymap="$default"/>
+			</action>
+
+			<action id="BasTools.Action.ShiftTabUp" class="com.basmilius.ps.bastools.action.editor.ShiftTabUpAction" text="Shift Tab Up" icon="/icons/arrow-expand-up.png">
+				<keyboard-shortcut first-keystroke="ctrl alt shift OPEN_BRACKET" keymap="$default"/>
 			</action>
 
 			<separator/>
