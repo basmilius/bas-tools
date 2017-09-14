@@ -16,7 +16,7 @@ import javax.swing.SwingConstants
  * @author Bas Milius
  * @package com.basmilius.ps.bastools.action.editor
  */
-abstract class ShiftTabAction(private val orientation: Orientation): AnAction("Split Editor")
+abstract class ShiftTabAction(private val orientation: Orientation): AnAction("Shift Tab")
 {
 
 	/**

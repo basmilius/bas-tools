@@ -6,6 +6,7 @@ import com.intellij.codeInsight.intention.IntentionManager
 import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.util.IconLoader
 import com.intellij.ui.JBColor
+import com.intellij.util.PlatformUtils
 
 import javax.swing.*
 
@@ -36,7 +37,10 @@ class BasToolsComponent: ApplicationComponent
 			e.printStackTrace()
 		}
 
-		IntentionManager.getInstance().addAction(ComputeConstantValueIntentionAction())
+		if (PlatformUtils.isPhpStorm())
+		{
+            IntentionManager.getInstance().addAction(ComputeConstantValueIntentionAction())
+        }
 	}
 
 	/**
@@ -54,9 +58,6 @@ class BasToolsComponent: ApplicationComponent
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName(): String
-	{
-		return "Bas Tools"
-	}
+	override fun getComponentName() = "Bas Tools"
 
 }

@@ -10,6 +10,7 @@ import com.intellij.patterns.ElementPattern
 import com.intellij.patterns.PlatformPatterns
 import com.intellij.psi.PsiElement
 import com.intellij.psi.util.PsiTreeUtil
+import com.intellij.util.PlatformUtils
 import com.intellij.util.ProcessingContext
 import com.jetbrains.php.lang.parser.PhpElementTypes
 import com.jetbrains.php.lang.psi.elements.Function
@@ -55,6 +56,16 @@ class FunctionCallAllArgumentsCompletionProvider: BaseCompletionProvider()
 	override fun getPlace(): ElementPattern<out PsiElement>
 	{
 		return PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(PhpElementTypes.FUNCTION_CALL))
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun isAvailable(): Boolean
+	{
+		return PlatformUtils.isPhpStorm()
 	}
 
 }

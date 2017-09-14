@@ -1,18 +1,18 @@
 <idea-plugin>
 	<id>com.basmilius.ps.bastools</id>
 	<name>Bas Tools</name>
-	<version>1.0.4</version>
+	<version>1.1.0</version>
 	<vendor email="basmilius@hotmail.com" url="https://www.basmilius.com">Bas Milius</vendor>
 
 	<description><![CDATA[]]></description>
 
 	<change-notes><![CDATA[Bas Tools!]]></change-notes>
 
-	<idea-version since-build="171.0"/>
+	<idea-version since-build="173.0"/>
 
+	<depends optional="true" config-file="./phpstorm.xml">com.jetbrains.php</depends>
 	<depends>com.intellij.modules.platform</depends>
 	<depends>com.intellij.modules.lang</depends>
-	<depends>com.jetbrains.php</depends>
 
 	<!-- General Stuff -->
 	<extensions defaultExtensionNs="com.intellij">
@@ -25,41 +25,6 @@
 
 		<!-- Tool Windows -->
 		<toolWindow id="Date Time Helpers" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.ps.bastools.toolWindow.DateTimeToolWindowFactory"/>
-	</extensions>
-
-	<!-- All Framework Stuff -->
-	<extensions defaultExtensionNs="com.intellij">
-		<!-- General Framework Stuff. -->
-		<psi.referenceContributor implementation="com.basmilius.ps.bastools.framework.all.psi.PhpFileReferenceContributor"/>
-		<completion.confidence language="PHP" id="asTrue" order="first" implementationClass="com.basmilius.ps.bastools.framework.all.completion.confidence.PhpParameterStringCompletionConfidence"/>
-		<completion.contributor language="PHP" order="FIRST" id="BasTools.Framework.All.Completion" implementationClass="com.basmilius.ps.bastools.framework.all.completion.AllCompletionContributor"/>
-		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.all.liveTemplates.AllLiveTemplatesProvider"/>
-
-		<!-- General Inspections -->
-		<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="CallableValidityInspector" displayName="Validates callables" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.ps.bastools.framework.all.codeInspection.CallableValidityInspector"/>
-	</extensions>
-
-	<!-- Identity Framework Stuff -->
-	<extensions defaultExtensionNs="com.intellij">
-		<!-- Idea modifications for Identity Framework -->
-		<fileIconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
-		<iconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
-		<treeStructureProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityTreeStructureProvider"/>
-
-		<!-- Handy helper stuff for Identity Framework -->
-		<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.identity.completion.CoreCompletionContributor"/>
-		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
-		<liveTemplateContext implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesContext"/>
-		<directoryProjectGenerator implementation="com.basmilius.ps.bastools.framework.identity.installer.IdentityInstallerWebProjectTemplate"/>
-		<projectTemplatesFactory implementation="com.basmilius.ps.bastools.framework.identity.installer.IdentityInstallerTemplatesFactory"/>
-
-		<!-- Inspections for Identity Framework -->
-		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemAddActionInspector" displayName="Usage of add_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemAddActionInspector"/>
-		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemDoActionInspector" displayName="Usage of do_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemDoActionInspector"/>
-		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemRemoveActionInspector" displayName="Usage of remove_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemRemoveActionInspector"/>
-		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemAddFilterInspector" displayName="Usage of add_filter" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemAddFilterInspector"/>
-		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemApplyFiltersInspector" displayName="Usage of apply_filters" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemApplyFiltersInspector"/>
-		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemRemoveFilterInspector" displayName="Usage of remove_filter" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemRemoveFilterInspector"/>
 	</extensions>
 
 	<application-components>
@@ -100,25 +65,35 @@
 
 			<separator/>
 
-			<action id="BasTools.Action.ShiftTabRight" class="com.basmilius.ps.bastools.action.editor.ShiftTabRightAction" text="Shift Tab Right" icon="/icons/arrow-expand-right.png">
-				<keyboard-shortcut first-keystroke="ctrl alt CLOSE_BRACKET" keymap="$default"/>
-			</action>
+			<group id="BasTools.Main.ShiftTab" popup="true" text="Shift Tab"/>
 
-			<action id="BasTools.Action.ShiftTabLeft" class="com.basmilius.ps.bastools.action.editor.ShiftTabLeftAction" text="Shift Tab Left" icon="/icons/arrow-expand-left.png">
-				<keyboard-shortcut first-keystroke="ctrl alt OPEN_BRACKET" keymap="$default"/>
-			</action>
-
-			<action id="BasTools.Action.ShiftTabDown" class="com.basmilius.ps.bastools.action.editor.ShiftTabDownAction" text="Shift Tab Down" icon="/icons/arrow-expand-down.png">
-				<keyboard-shortcut first-keystroke="ctrl alt shift CLOSE_BRACKET" keymap="$default"/>
-			</action>
-
-			<action id="BasTools.Action.ShiftTabUp" class="com.basmilius.ps.bastools.action.editor.ShiftTabUpAction" text="Shift Tab Up" icon="/icons/arrow-expand-up.png">
-				<keyboard-shortcut first-keystroke="ctrl alt shift OPEN_BRACKET" keymap="$default"/>
+			<action id="BasTools.Main.Action.Editor.CodeShot" class="com.basmilius.ps.bastools.action.editor.CodeShotAction" text="Code Shot">
+				<keyboard-shortcut first-keystroke="ctrl NUMPAD5" keymap="$default"/>
 			</action>
 
 			<separator/>
 
 			<action id="BasTools.Action.About" class="com.basmilius.ps.bastools.action.AboutAction" text="About Bas Tools" icon="/icons/beats.png"/>
+		</group>
+
+		<group id="BasTools.ShiftTab" text="Shift Tab">
+			<add-to-group group-id="BasTools.Main.ShiftTab"/>
+
+			<action id="BasTools.Action.ShiftTabRight" class="com.basmilius.ps.bastools.action.editor.ShiftTabRightAction" text="Shift Tab Right" icon="/icons/arrow-expand-right.png">
+				<keyboard-shortcut first-keystroke="ctrl NUMPAD6" keymap="$default"/>
+			</action>
+
+			<action id="BasTools.Action.ShiftTabLeft" class="com.basmilius.ps.bastools.action.editor.ShiftTabLeftAction" text="Shift Tab Left" icon="/icons/arrow-expand-left.png">
+				<keyboard-shortcut first-keystroke="ctrl NUMPAD4" keymap="$default"/>
+			</action>
+
+			<action id="BasTools.Action.ShiftTabDown" class="com.basmilius.ps.bastools.action.editor.ShiftTabDownAction" text="Shift Tab Down" icon="/icons/arrow-expand-down.png">
+				<keyboard-shortcut first-keystroke="ctrl NUMPAD2" keymap="$default"/>
+			</action>
+
+			<action id="BasTools.Action.ShiftTabUp" class="com.basmilius.ps.bastools.action.editor.ShiftTabUpAction" text="Shift Tab Up" icon="/icons/arrow-expand-up.png">
+				<keyboard-shortcut first-keystroke="ctrl NUMPAD8" keymap="$default"/>
+			</action>
 		</group>
 
 		<group id="BasTools.QuickNav" text="Bas Tools Quicklinks" description="Tools by Bas Milius">

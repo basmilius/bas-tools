@@ -2,6 +2,7 @@ package com.basmilius.ps.bastools.framework.all.completion
 
 import com.basmilius.ps.bastools.framework.base.completion.BaseCompletionContributor
 import com.intellij.codeInsight.completion.CompletionType
+import com.intellij.util.PlatformUtils
 
 /**
  * Class AllCompletionContributor
@@ -21,6 +22,16 @@ class AllCompletionContributor: BaseCompletionContributor()
 	{
 		this.extend(CompletionType.BASIC, FunctionCallAllArgumentsCompletionProvider())
 		this.extend(CompletionType.BASIC, BasicFunctionCompletionProvider())
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun isAvailable(): Boolean
+	{
+		return PlatformUtils.isPhpStorm()
 	}
 
 }

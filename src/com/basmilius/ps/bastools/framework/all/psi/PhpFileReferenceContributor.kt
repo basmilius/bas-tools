@@ -12,6 +12,7 @@ import com.jetbrains.php.lang.psi.elements.MethodReference
 import com.jetbrains.php.lang.psi.elements.ParameterList
 import com.jetbrains.php.lang.psi.elements.StringLiteralExpression
 import com.jetbrains.php.lang.psi.elements.impl.NewExpressionImpl
+import com.intellij.util.PlatformUtils
 
 /**
  * Class PhpFileReferenceContributor
@@ -29,7 +30,10 @@ class PhpFileReferenceContributor: PsiReferenceContributor()
 	 */
 	override fun registerReferenceProviders(registrar: PsiReferenceRegistrar)
 	{
-		registrar.registerReferenceProvider(PlatformPatterns.psiElement(StringLiteralExpression::class.java).withLanguage(PhpLanguage.INSTANCE), ReferenceProvider())
+		if (PlatformUtils.isPhpStorm())
+		{
+            registrar.registerReferenceProvider(PlatformPatterns.psiElement(StringLiteralExpression::class.java).withLanguage(PhpLanguage.INSTANCE), ReferenceProvider())
+        }
 	}
 
 	/**

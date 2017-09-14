@@ -36,6 +36,15 @@ abstract class BaseCompletionProvider: CompletionProvider<CompletionParameters>(
 	}
 
 	/**
+	 * Returns TRUE if this completion provider should be available.
+	 *
+	 * @return Boolean
+	 *
+	 * @author Bas Milius
+	 */
+	abstract fun isAvailable (): Boolean;
+
+	/**
 	 * Gets the place.
 	 *
 	 * @author Bas Milius

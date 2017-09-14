@@ -8,6 +8,7 @@ import com.intellij.codeInsight.completion.CompletionType
 import com.intellij.patterns.ElementPattern
 import com.intellij.patterns.PlatformPatterns
 import com.intellij.psi.PsiElement
+import com.intellij.util.PlatformUtils
 import com.intellij.util.ProcessingContext
 
 /**
@@ -30,12 +31,32 @@ class CoreCompletionContributor: BaseCompletionContributor()
 	}
 
 	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun isAvailable(): Boolean
+	{
+		return PlatformUtils.isPhpStorm()
+	}
+
+	/**
 	 * Class PluginCallProvider
 	 *
 	 * @author Bas Milius
 	 */
 	internal inner class PluginCallProvider: BaseCompletionProvider()
 	{
+
+		/**
+		 * {@inheritdoc}
+		 *
+		 * @author Bas Milius
+		 */
+		override fun isAvailable(): Boolean
+		{
+			return PlatformUtils.isPhpStorm()
+		}
 
 		/**
 		 * {@inheritdoc}

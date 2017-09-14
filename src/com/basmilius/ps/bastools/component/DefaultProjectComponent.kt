@@ -6,6 +6,7 @@ import com.intellij.openapi.components.ProjectComponent
 import com.intellij.openapi.project.Project
 import com.intellij.psi.codeStyle.CodeStyleSchemes
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager
+import com.intellij.util.PlatformUtils
 import java.io.IOException
 
 /**
@@ -42,10 +43,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName(): String
-	{
-		return "Bas Tools - Default Project"
-	}
+	override fun getComponentName() = "Bas Tools - Default Project"
 
 	/**
 	 * {@inheritdoc}
@@ -56,21 +54,24 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	{
 		val workspace = this.project.workspaceFile
 
-		try
+		if (PlatformUtils.isPhpStorm())
 		{
-			val oldSettings = CodeStyleSchemes.getInstance().findPreferredScheme("Bas Settings")
-			if (oldSettings.name === "Bas Settings" && !oldSettings.isDefault)
-				CodeStyleSchemes.getInstance().deleteScheme(oldSettings)
-		}
-		catch (e: Exception)
-		{
-			e.printStackTrace()
-		}
+            try
+            {
+                val oldSettings = CodeStyleSchemes.getInstance().findPreferredScheme("Bas Settings")
+                if (oldSettings.name === "Bas Settings" && !oldSettings.isDefault)
+                    CodeStyleSchemes.getInstance().deleteScheme(oldSettings)
+            }
+            catch (e: Exception)
+            {
+                e.printStackTrace()
+            }
 
-		val bsScheme = BasSettingsCodeStyleScheme()
-		CodeStyleSchemes.getInstance().addScheme(bsScheme)
-		CodeStyleSchemes.getInstance().currentScheme = bsScheme
-		CodeStyleSettingsManager.getInstance().setTemporarySettings(bsScheme.codeStyleSettings)
+            val bsScheme = BasSettingsCodeStyleScheme()
+            CodeStyleSchemes.getInstance().addScheme(bsScheme)
+            CodeStyleSchemes.getInstance().currentScheme = bsScheme
+            CodeStyleSettingsManager.getInstance().setTemporarySettings(bsScheme.codeStyleSettings)
+        }
 
 		if (workspace == null)
 			return

@@ -21,10 +21,7 @@ class MiscComponent: ApplicationComponent
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName(): String
-	{
-		return "Bas Tools - Misc stuff"
-	}
+	override fun getComponentName() = "Bas Tools - Misc stuff"
 
 	/**
 	 * {@inheritdoc}

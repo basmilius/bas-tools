@@ -13,6 +13,7 @@ import com.jetbrains.php.lang.PhpLanguage
 import com.jetbrains.php.lang.lexer.PhpTokenTypes
 import com.jetbrains.php.lang.parser.PhpElementTypes
 import com.intellij.codeInsight.lookup.LookupElementBuilder
+import com.intellij.util.PlatformUtils
 
 /**
  * Class BasicFunctionCompletionProvider
@@ -287,6 +288,16 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	private fun methodMatchesAt(methodName: String, paramIndex: Int, tokens: Array<String>, expectedParamIndex: Int): Boolean
 	{
 		return tokens.contains(methodName) && paramIndex == expectedParamIndex
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius
+	 */
+	override fun isAvailable(): Boolean
+	{
+		return PlatformUtils.isPhpStorm()
 	}
 
 	/**

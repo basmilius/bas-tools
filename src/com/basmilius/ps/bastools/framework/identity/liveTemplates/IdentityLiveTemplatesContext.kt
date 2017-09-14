@@ -2,6 +2,7 @@ package com.basmilius.ps.bastools.framework.identity.liveTemplates
 
 import com.intellij.codeInsight.template.TemplateContextType
 import com.intellij.psi.PsiFile
+import com.intellij.util.PlatformUtils
 
 /**
  * Class IdentityLiveTemplatesContext
@@ -21,7 +22,7 @@ class IdentityLiveTemplatesContext: TemplateContextType("BASTOOLS.IDENTITY_FRAME
 	 */
 	override fun isInContext(psi: PsiFile, offset: Int): Boolean
 	{
-		return psi.name.endsWith(".php")
+		return PlatformUtils.isPhpStorm() && psi.name.endsWith(".php")
 	}
 
 }

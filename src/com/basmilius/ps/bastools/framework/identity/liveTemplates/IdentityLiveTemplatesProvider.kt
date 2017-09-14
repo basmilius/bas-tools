@@ -1,6 +1,7 @@
 package com.basmilius.ps.bastools.framework.identity.liveTemplates
 
 import com.intellij.codeInsight.template.impl.DefaultLiveTemplatesProvider
+import com.intellij.util.PlatformUtils
 
 /**
  * Class IdentityLiveTemplatesProvider
@@ -18,7 +19,10 @@ class IdentityLiveTemplatesProvider: DefaultLiveTemplatesProvider
 	 */
 	override fun getDefaultLiveTemplateFiles(): Array<String>
 	{
-		return arrayOf("liveTemplates/IdentityFramework")
+		if (PlatformUtils.isPhpStorm())
+			return arrayOf("liveTemplates/IdentityFramework")
+
+		return arrayOf()
 	}
 
 	/**

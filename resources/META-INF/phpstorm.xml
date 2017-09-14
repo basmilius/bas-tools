@@ -1,0 +1,38 @@
+<idea-plugin>
+
+	<!-- All Framework Stuff -->
+	<extensions defaultExtensionNs="com.intellij">
+		<!-- General Framework Stuff. -->
+		<psi.referenceContributor implementation="com.basmilius.ps.bastools.framework.all.psi.PhpFileReferenceContributor"/>
+		<completion.confidence language="PHP" id="asTrue" order="first" implementationClass="com.basmilius.ps.bastools.framework.all.completion.confidence.PhpParameterStringCompletionConfidence"/>
+		<completion.contributor language="PHP" order="FIRST" id="BasTools.Framework.All.Completion" implementationClass="com.basmilius.ps.bastools.framework.all.completion.AllCompletionContributor"/>
+		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.all.liveTemplates.AllLiveTemplatesProvider"/>
+
+		<!-- General Inspections -->
+		<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="CallableValidityInspector" displayName="Validates callables" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.ps.bastools.framework.all.codeInspection.CallableValidityInspector"/>
+	</extensions>
+
+	<!-- Identity Framework Stuff -->
+	<extensions defaultExtensionNs="com.intellij">
+		<!-- Idea modifications for Identity Framework -->
+		<fileIconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
+		<iconProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityIconProvider"/>
+		<treeStructureProvider implementation="com.basmilius.ps.bastools.framework.identity.provider.IdentityTreeStructureProvider"/>
+
+		<!-- Handy helper stuff for Identity Framework -->
+		<completion.contributor language="PHP" implementationClass="com.basmilius.ps.bastools.framework.identity.completion.CoreCompletionContributor"/>
+		<defaultLiveTemplatesProvider implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
+		<liveTemplateContext implementation="com.basmilius.ps.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesContext"/>
+		<directoryProjectGenerator implementation="com.basmilius.ps.bastools.framework.identity.installer.IdentityInstallerWebProjectTemplate"/>
+		<projectTemplatesFactory implementation="com.basmilius.ps.bastools.framework.identity.installer.IdentityInstallerTemplatesFactory"/>
+
+		<!-- Inspections for Identity Framework -->
+		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemAddActionInspector" displayName="Usage of add_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemAddActionInspector"/>
+		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemDoActionInspector" displayName="Usage of do_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemDoActionInspector"/>
+		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemRemoveActionInspector" displayName="Usage of remove_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemRemoveActionInspector"/>
+		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemAddFilterInspector" displayName="Usage of add_filter" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemAddFilterInspector"/>
+		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemApplyFiltersInspector" displayName="Usage of apply_filters" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemApplyFiltersInspector"/>
+		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemRemoveFilterInspector" displayName="Usage of remove_filter" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.ps.bastools.framework.identity.codeInspection.WordPressHookSystemRemoveFilterInspector"/>
+	</extensions>
+
+</idea-plugin>

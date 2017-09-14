@@ -22,8 +22,21 @@ abstract class BaseCompletionContributor: CompletionContributor()
 	 */
 	fun extend(type: CompletionType, completionProvider: BaseCompletionProvider)
 	{
+		if (!this.isAvailable())
+			return
+
 		completionProvider.setContributor(this)
-		this.extend(type, completionProvider.getPlace(), completionProvider);
+
+		this.extend(type, completionProvider.getPlace(), completionProvider)
 	}
+
+	/**
+	 * Returns TRUE if this completion provider should be available.
+	 *
+	 * @return Boolean
+	 *
+	 * @author Bas Milius
+	 */
+	abstract fun isAvailable (): Boolean
 
 }

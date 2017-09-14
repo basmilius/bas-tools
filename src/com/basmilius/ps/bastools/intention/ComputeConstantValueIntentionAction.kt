@@ -30,10 +30,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 *
 	 * @author Bas Milius
 	 */
-	override fun startInWriteAction(): Boolean
-	{
-		return false
-	}
+	override fun startInWriteAction() = false
 
 	/**
 	 * Gets the family name.
@@ -42,10 +39,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getFamilyName(): String
-	{
-		return "Bas Tools - Intentions"
-	}
+	override fun getFamilyName() = "Bas Tools - Intentions"
 
 	/**
 	 * Returns TRUE if the intention should be available.
@@ -74,10 +68,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getText(): String
-	{
-		return "Compute Constant Value"
-	}
+	override fun getText() = "Compute Constant Value"
 
 	/**
 	 * Invoked when the intention is invoked.
