@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="725bfcde-6574-4689-a0e5-82996a7bb273" name="Default" comment="- Added &quot;Bas Settings&quot; color scheme.&#10;- Added &quot;Bas Settings&quot; inspection profile.&#10;- Added &quot;Bas Settings&quot; code style, but it's not yet working for some reason.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/META-INF/phpstorm.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/editor/CodeShotAction.kt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/util/CodeFragmentPictureUtils.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/editor/ShiftTabAction.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/editor/ShiftTabAction.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/component/BasToolsComponent.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/component/BasToolsComponent.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/component/DefaultProjectComponent.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/component/DefaultProjectComponent.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/all/completion/AllCompletionContributor.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/all/completion/AllCompletionContributor.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/all/completion/BasicFunctionCompletionProvider.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/all/completion/BasicFunctionCompletionProvider.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/all/completion/FunctionCallAllArgumentsCompletionProvider.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/all/completion/FunctionCallAllArgumentsCompletionProvider.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/all/psi/PhpFileReferenceContributor.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/all/psi/PhpFileReferenceContributor.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/base/completion/BaseCompletionContributor.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/base/completion/BaseCompletionContributor.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/base/completion/BaseCompletionProvider.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/base/completion/BaseCompletionProvider.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/identity/completion/CoreCompletionContributor.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/identity/completion/CoreCompletionContributor.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/identity/liveTemplates/IdentityLiveTemplatesContext.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/identity/liveTemplates/IdentityLiveTemplatesContext.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/identity/liveTemplates/IdentityLiveTemplatesProvider.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/framework/identity/liveTemplates/IdentityLiveTemplatesProvider.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/intention/ComputeConstantValueIntentionAction.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/intention/ComputeConstantValueIntentionAction.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/misc/MiscComponent.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/misc/MiscComponent.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/AboutAction.kt" afterPath="$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/AboutAction.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,38 +27,7 @@
     <favorites_list name="bas-tools" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding>
-                <element signature="n#group#2;n#actions#0;n#idea-plugin#0;n#!!top" expanded="false" />
-                <element signature="n#group#3;n#actions#0;n#idea-plugin#0;n#!!top" expanded="false" />
-                <element signature="n#group#4;n#actions#0;n#idea-plugin#0;n#!!top" expanded="false" />
-                <element signature="n#group#5;n#actions#0;n#idea-plugin#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CodeShotAction.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/editor/CodeShotAction.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-              <folding>
-                <element signature="e#49#586#0" expanded="true" />
-                <element signature="n#!!block;n#actionPerformed#0;n#!!block;n#CodeShotAction#0" expanded="false" />
-                <element signature="n#!!block;n#update#0;n#!!block;n#CodeShotAction#0" expanded="false" />
-                <element signature="n#!!block;n#lostOwnership#0;n#!!block;n#CodeShotAction#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -145,7 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/basmilius/math/mxparser/miscellaneous/DescKwLenComparator.kt" />
         <option value="$PROJECT_DIR$/src/com/basmilius/math/mxparser/Expression.java" />
         <option value="$PROJECT_DIR$/src/com/basmilius/math/mxparser/miscellaneous/IterativeOperatorParameters.kt" />
         <option value="$PROJECT_DIR$/src/com/basmilius/math/mxparser/miscellaneous/KwStrComparator.kt" />
@@ -196,6 +147,7 @@
         <option value="$PROJECT_DIR$/src/com/basmilius/ps/bastools/util/CodeFragmentPictureUtils.kt" />
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/editor/CodeShotAction.kt" />
+        <option value="$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/AboutAction.kt" />
       </list>
     </option>
   </component>
@@ -278,12 +230,6 @@
               <item name="bas-tools" type="b2602c69:ProjectViewProjectNode" />
               <item name="bas-tools" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="codestyles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bas-tools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bas-tools" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -311,31 +257,6 @@
               <item name="basmilius" type="462c0819:PsiDirectoryNode" />
               <item name="bastools" type="462c0819:PsiDirectoryNode" />
               <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bas-tools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bas-tools" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="basmilius" type="462c0819:PsiDirectoryNode" />
-              <item name="bastools" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bas-tools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bas-tools" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="basmilius" type="462c0819:PsiDirectoryNode" />
-              <item name="bastools" type="462c0819:PsiDirectoryNode" />
-              <item name="toolWindow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bas-tools" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bas-tools" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="basmilius" type="462c0819:PsiDirectoryNode" />
-              <item name="bastools" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -840,7 +761,7 @@
       <workItem from="1505405849206" duration="87000" />
       <workItem from="1505405950322" duration="783000" />
       <workItem from="1505406750332" duration="2652000" />
-      <workItem from="1505409427167" duration="273000" />
+      <workItem from="1505409427167" duration="592000" />
     </task>
     <task id="LOCAL-00001" summary="- Added &quot;Bas Settings&quot; color scheme.&#10;- Added &quot;Bas Settings&quot; inspection profile.&#10;- Added &quot;Bas Settings&quot; code style, but it's not yet working for some reason.">
       <created>1497334658032</created>
@@ -853,7 +774,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248062000" />
+    <option name="totallyTimeSpent" value="248381000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,7 +787,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969603" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -882,7 +802,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Date Time Helpers" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" x="2235" y="117" width="306" height="233" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2171875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2171875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -957,13 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="89" column="48" lean-forward="false" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/AboutAction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1261,6 +1174,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/editor/CodeShotAction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding>
+            <element signature="e#49#586#0" expanded="true" />
+            <element signature="n#!!block;n#actionPerformed#0;n#!!block;n#CodeShotAction#0" expanded="false" />
+            <element signature="n#!!block;n#update#0;n#!!block;n#CodeShotAction#0" expanded="false" />
+            <element signature="n#!!block;n#lostOwnership#0;n#!!block;n#CodeShotAction#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -1274,15 +1200,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/editor/CodeShotAction.kt">
+    <entry file="file://$PROJECT_DIR$/src/com/basmilius/ps/bastools/action/AboutAction.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        <state relative-caret-position="380">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding>
-            <element signature="e#49#586#0" expanded="true" />
-            <element signature="n#!!block;n#actionPerformed#0;n#!!block;n#CodeShotAction#0" expanded="false" />
-            <element signature="n#!!block;n#update#0;n#!!block;n#CodeShotAction#0" expanded="false" />
-            <element signature="n#!!block;n#lostOwnership#0;n#!!block;n#CodeShotAction#0" expanded="false" />
+            <element signature="n#!!block;n#actionPerformed#0;n#!!block;n#AboutAction#0" expanded="false" />
           </folding>
         </state>
       </provider>
