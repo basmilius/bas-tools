@@ -1,0 +1,7 @@
+<idea-plugin>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<completion.contributor language="Locale" order="LAST" id="BasTools.Framewotk.All.Completion.GetText" implementationClass="com.basmilius.bastools.framework.all.completion.GetTextCompletionContributor"/>
+	</extensions>
+
+</idea-plugin>

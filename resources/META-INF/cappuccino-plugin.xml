@@ -1,0 +1,8 @@
+<idea-plugin>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<lang.fileViewProviderFactory language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.CappuccinoFileViewProviderFactory"/>
+		<fileTypeFactory implementation="com.basmilius.bastools.language.cappuccino.CappuccinoFileTypeFactory"/>
+	</extensions>
+
+</idea-plugin>
