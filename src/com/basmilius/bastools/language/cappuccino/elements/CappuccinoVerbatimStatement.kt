@@ -25,7 +25,7 @@ class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(nod
 	 *
 	 * @author Bas Milius
 	 */
-	private fun getContentElement(): PsiElement? = this.findChildByType(CappuccinoTokenTypes.VERBATIM_CONTENT)
+	fun getContentElement(): PsiElement? = this.findChildByType(CappuccinoTokenTypes.VERBATIM_CONTENT)
 
 	/**
 	 * Gets the end tag text.
@@ -89,7 +89,7 @@ class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(nod
 		 */
 		override fun decode(rangeInsideHost: TextRange, outChars: StringBuilder): Boolean
 		{
-			outChars.append(rangeInsideHost.substring(this.myHost.text));
+			outChars.append(rangeInsideHost.substring(this.myHost.text))
 
 			return true
 		}
@@ -108,7 +108,7 @@ class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(nod
 		 */
 		override fun getRelevantTextRange(): TextRange
 		{
-			val content = (this.myHost as CappuccinoVerbatimStatement).getContentElement() ?: error("No content element for Verbatim Statement: ${this.myHost.text}")
+			val content = (this.myHost as CappuccinoVerbatimStatement).getContentElement() ?: error("No content element for Verbatim Statement: " + this.myHost.text)
 			val contentOffset = content.startOffsetInParent
 
 			return TextRange(contentOffset, contentOffset + content.textLength)

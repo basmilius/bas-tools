@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util
+package com.basmilius.bastools.core.util
 
 import com.intellij.openapi.progress.ProgressIndicator
 import com.intellij.openapi.progress.ProgressManager
@@ -15,7 +15,7 @@ import java.util.ArrayList
  * Object CommandUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util
+ * @package com.basmilius.bastools.core.util
  */
 object CommandUtils
 {

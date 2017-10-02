@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util
+package com.basmilius.bastools.core.util
 
 import com.intellij.psi.PsiElement
 import com.jetbrains.php.lang.psi.elements.*
@@ -8,7 +8,7 @@ import com.jetbrains.php.lang.psi.elements.Function
  * Object PhpUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util
+ * @package com.basmilius.bastools.core.util
  */
 object PhpUtils
 {

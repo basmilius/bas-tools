@@ -59,7 +59,7 @@ class CappuccinoBlockTag(node: ASTNode): CappuccinoCompositeElement(node), PsiNa
 
 		if (identifier == null)
 			this.reference = null
-		else
+		else if (this.reference == null || this.reference?.getIdentifier() != identifier.text)
 			this.reference = CappuccinoBlockReference(this.project, this, TextRange(0, this.textLength))
 
 		return this.reference
@@ -70,12 +70,7 @@ class CappuccinoBlockTag(node: ASTNode): CappuccinoCompositeElement(node), PsiNa
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getName(): String?
-	{
-		val identifier = this.findIdentifier() ?: return null
-
-		return identifier.text
-	}
+	override fun getName() = this.findIdentifier()?.text
 
 	/**
 	 * {@inheritdoc}
@@ -85,7 +80,7 @@ class CappuccinoBlockTag(node: ASTNode): CappuccinoCompositeElement(node), PsiNa
 	@Throws(IncorrectOperationException::class)
 	override fun setName(@NonNls @NotNull name: String): PsiElement
 	{
-		val newIdentifier = CappuccinoElementFactory.createPsiElement(this.project, "", CappuccinoTokenTypes.IDENTIFIER) ?: throw IncorrectOperationException("Cannot rename block '$this'")
+		val newIdentifier = CappuccinoElementFactory.createPsiElement(this.project, "{% block $name %}", CappuccinoTokenTypes.IDENTIFIER) ?: throw IncorrectOperationException("Cannot rename block '$this'")
 		val identifier = this.findIdentifier() ?: throw IncorrectOperationException("Cannot rename block '$this'")
 
 		identifier.replace(newIdentifier)

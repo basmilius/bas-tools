@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util
+package com.basmilius.bastools.core.util
 
 import com.intellij.psi.PsiElement
 import com.intellij.psi.util.PsiTreeUtil
@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull
  * Object PossibleValuesDiscoveryUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util
+ * @package com.basmilius.bastools.core.util
  */
 object PossibleValuesDiscoveryUtils
 {

@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util
+package com.basmilius.bastools.core.util
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.roots.ProjectFileIndex
@@ -10,7 +10,7 @@ import com.intellij.psi.PsiManager
  * Object FileUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util
+ * @package com.basmilius.bastools.core.util
  */
 object FileUtils
 {

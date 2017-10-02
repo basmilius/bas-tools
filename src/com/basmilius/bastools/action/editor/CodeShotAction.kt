@@ -1,6 +1,6 @@
 package com.basmilius.bastools.action.editor
 
-import com.basmilius.bastools.util.CodeFragmentPictureUtils
+import com.basmilius.bastools.core.util.CodeFragmentPictureUtils
 import com.intellij.codeInsight.hint.EditorFragmentComponent
 import com.intellij.codeInsight.hint.HintManager
 import com.intellij.openapi.actionSystem.AnAction

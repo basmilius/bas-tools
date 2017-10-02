@@ -35,6 +35,6 @@ open class CappuccinoCompositeElement(node: ASTNode): ASTWrapperPsiElement(node)
 	 *
 	 * @author Bas Milius
 	 */
-	override fun toString() = super.getNode().elementType.toString()
+	override fun toString() = this.getNode().elementType.toString()
 
 }

@@ -1,30 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <idea-plugin>
 
-	<depends optional="true" config-file="./localization-plugin.xml">org.jetbrains.plugins.localization</depends>
-
-	<!-- General -->
-	<extensions defaultExtensionNs="com.intellij">
-
-		<!-- Bundled schemes -->
-		<bundledColorScheme path="/colors/Bas Settings"/>
-		<bundledInspectionProfile path="/inspection/Bas Settings"/>
-
-	</extensions>
-
 	<!-- All Framework Stuff -->
 	<extensions defaultExtensionNs="com.intellij">
 
-		<!-- Idea modifications -->
 		<treeStructureProvider implementation="com.basmilius.bastools.framework.all.provider.AllTreeStructureProvider"/>
 
-		<!-- General Framework Stuff. -->
-		<psi.referenceContributor implementation="com.basmilius.bastools.framework.all.psi.PhpFileReferenceContributor"/>
 		<completion.confidence language="PHP" id="asTrue" order="first" implementationClass="com.basmilius.bastools.framework.all.completion.confidence.PhpParameterStringCompletionConfidence"/>
 		<completion.contributor language="PHP" order="FIRST" id="BasTools.Framework.All.Completion" implementationClass="com.basmilius.bastools.framework.all.completion.AllCompletionContributor"/>
 		<defaultLiveTemplatesProvider implementation="com.basmilius.bastools.framework.all.liveTemplates.AllLiveTemplatesProvider"/>
+		<psi.referenceContributor implementation="com.basmilius.bastools.framework.all.psi.PhpFileReferenceContributor"/>
 
-		<!-- General Inspections -->
 		<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="CallableValidityInspector" displayName="Validates callables" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.CallableValidityInspector"/>
 
 	</extensions>
@@ -32,19 +18,16 @@
 	<!-- Identity Framework Stuff -->
 	<extensions defaultExtensionNs="com.intellij">
 
-		<!-- Idea modifications for Identity Framework -->
 		<fileIconProvider implementation="com.basmilius.bastools.framework.identity.provider.IdentityIconProvider"/>
 		<iconProvider implementation="com.basmilius.bastools.framework.identity.provider.IdentityIconProvider"/>
 		<treeStructureProvider implementation="com.basmilius.bastools.framework.identity.provider.IdentityTreeStructureProvider"/>
 
-		<!-- Handy helper stuff for Identity Framework -->
 		<completion.contributor language="PHP" implementationClass="com.basmilius.bastools.framework.identity.completion.CoreCompletionContributor"/>
 		<defaultLiveTemplatesProvider implementation="com.basmilius.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
-		<liveTemplateContext implementation="com.basmilius.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesContext"/>
 		<directoryProjectGenerator implementation="com.basmilius.bastools.framework.identity.installer.IdentityInstallerWebProjectTemplate"/>
+		<liveTemplateContext implementation="com.basmilius.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesContext"/>
 		<projectTemplatesFactory implementation="com.basmilius.bastools.framework.identity.installer.IdentityInstallerTemplatesFactory"/>
 
-		<!-- Inspections for Identity Framework -->
 		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemAddActionInspector" displayName="Usage of add_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.bastools.framework.identity.codeInspection.WordPressHookSystemAddActionInspector"/>
 		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemDoActionInspector" displayName="Usage of do_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.bastools.framework.identity.codeInspection.WordPressHookSystemDoActionInspector"/>
 		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemRemoveActionInspector" displayName="Usage of remove_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.bastools.framework.identity.codeInspection.WordPressHookSystemRemoveActionInspector"/>
@@ -57,8 +40,10 @@
 	<!-- Cappuccino support -->
 	<extensions defaultExtensionNs="com.intellij">
 
-		<colorSettingsPage implementation="com.basmilius.bastools.language.cappuccino.CappuccinoColorsAndFontsPage"/>
 		<codeStyleSettingsProvider implementation="com.basmilius.bastools.language.cappuccino.formatter.CappuccinoCodeStyleProvider"/>
+		<colorSettingsPage implementation="com.basmilius.bastools.language.cappuccino.CappuccinoColorsAndFontsPage"/>
+		<completion.contributor language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.completion.CappuccinoCompletionContributor"/>
+		<defaultLiveTemplatesProvider implementation="com.basmilius.bastools.language.cappuccino.liveTemplates.CappuccinoLiveTemplatesProvider"/>
 		<fileTypeFactory implementation="com.basmilius.bastools.language.cappuccino.CappuccinoFileTypeFactory"/>
 		<highlightErrorFilter implementation="com.basmilius.bastools.language.cappuccino.CappuccinoHighlightErrorFilter"/>
 		<indexPatternBuilder implementation="com.basmilius.bastools.language.cappuccino.CappuccinoIndexPatternBuilder"/>
@@ -75,10 +60,18 @@
 		<lang.parserDefinition language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.parser.CappuccinoParserDefinition"/>
 		<lang.psiStructureViewFactory language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.structure.CappuccinoStructureViewProvider"/>
 		<langCodeStyleSettingsProvider implementation="com.basmilius.bastools.language.cappuccino.formatter.CappuccinoLanguageCodeStyleSettingsProvider"/>
+		<liveTemplateContext implementation="com.basmilius.bastools.language.cappuccino.liveTemplates.CappuccinoTemplateContextType"/>
+		<multiHostInjector implementation="com.basmilius.bastools.language.cappuccino.injection.CappuccinoVerbatimInjector"/>
 		<quoteHandler fileType="Cappuccino" className="com.basmilius.bastools.language.cappuccino.CappuccinoQuoteHandler"/>
-		<targetElementEvaluator implementationClass="com.basmilius.bastools.language.cappuccino.editor.CappuccinoTargetElementEvaluator"/>
+		<targetElementEvaluator language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.editor.CappuccinoTargetElementEvaluator"/>
 		<typedHandler implementation="com.basmilius.bastools.language.cappuccino.CappuccinoTypedHandler"/>
 
 	</extensions>
+
+	<project-components>
+		<component>
+			<implementation-class>com.basmilius.bastools.component.DefaultProjectComponent</implementation-class>
+		</component>
+	</project-components>
 
 </idea-plugin>

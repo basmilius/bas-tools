@@ -6,10 +6,12 @@ import com.basmilius.bastools.language.cappuccino.elements.CappuccinoTag
 import com.intellij.lang.ASTNode
 import com.intellij.lang.PsiBuilder
 import com.intellij.psi.tree.IElementType
-import java.util.*
 
 /**
  * Class CappuccinoPsiBuilder
+ *
+ * @constructor
+ * @param builder PsiBuilder
  *
  * @author Bas Milius
  * @package com.basmilius.bastools.language.cappuccino.parser
@@ -26,7 +28,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	companion object
 	{
 
-		private val TAG_NAME_TO_TYPE_MAP = HashMap<String, IElementType>(CappuccinoElementTypes.TAGS.types.size)
+		private val TAG_NAME_TO_TYPE_MAP = HashMap<String, IElementType>()
 
 		/**
 		 * CappuccinoPsiBuilder Constructor.
@@ -35,13 +37,25 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 		 */
 		init
 		{
-			val elementTypes = CappuccinoElementTypes.TAGS.types
-
-			elementTypes
+			CappuccinoElementTypes.TAGS.types
 					.filterIsInstance<CappuccinoTag>()
 					.forEach { TAG_NAME_TO_TYPE_MAP.put(it.tagName, it) }
 
 			TAG_NAME_TO_TYPE_MAP.put("from", CappuccinoElementTypes.IMPORT_TAG)
+		}
+
+		/**
+		 * Gets the mapped tag type.
+		 *
+		 * @param tokenText String?
+		 *
+		 * @return IElementType
+		 *
+		 * @author Bas Milius
+		 */
+		fun getTagType(tokenText: String?): IElementType
+		{
+			return TAG_NAME_TO_TYPE_MAP[tokenText] ?: return CappuccinoElementTypes.TAG
 		}
 
 	}
@@ -62,27 +76,13 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 		while (!this.builder.eof())
 			when
 			{
-				this.builder.tokenType == CappuccinoTokenTypes.STATEMENT_BLOCK_START -> this.parseStatement(null, Collections.emptySet())
+				this.builder.tokenType == CappuccinoTokenTypes.STATEMENT_BLOCK_START -> this.parseStatement(null, setOf())
 				this.builder.tokenType == CappuccinoTokenTypes.PRINT_BLOCK_START -> this.parsePrintBlock()
 				else -> this.builder.advanceLexer()
 			}
 
 		marker.done(root)
 		return this.builder.treeBuilt
-	}
-
-	/**
-	 * Gets the mapped tag type.
-	 *
-	 * @param tokenText String?
-	 *
-	 * @return IElementType
-	 *
-	 * @author Bas Milius
-	 */
-	private fun getTagType(tokenText: String?): IElementType
-	{
-		return TAG_NAME_TO_TYPE_MAP[tokenText] ?: return CappuccinoElementTypes.TAG
 	}
 
 	/**
@@ -125,7 +125,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	 */
 	private fun parsePrintBlock()
 	{
-		assert(this.builder.tokenType === CappuccinoTokenTypes.PRINT_BLOCK_START)
+		assert(this.builder.tokenType == CappuccinoTokenTypes.PRINT_BLOCK_START)
 
 		val printBlockMarker = this.builder.mark()
 		this.builder.advanceLexer()
@@ -140,7 +140,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 
 			when
 			{
-				this.builder.tokenType == CappuccinoTokenTypes.LBRACE_CURL -> this.parseLiteral(CappuccinoTokenTypes.LBRACE_CURL)
+				this.builder.tokenType == CappuccinoTokenTypes.LBRACE_CURL -> this.parseLiteral(CappuccinoTokenTypes.RBRACE_CURL)
 				this.builder.tokenType == CappuccinoTokenTypes.RBRACE_SQ -> this.parseLiteral(CappuccinoTokenTypes.RBRACE_SQ)
 				else -> this.builder.advanceLexer()
 			}
@@ -188,7 +188,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 
 			when
 			{
-				this.builder.tokenType == CappuccinoTokenTypes.STATEMENT_BLOCK_START -> childStatementType = parseStatement(null, definition.endTagTypes)?.tagType
+				this.builder.tokenType == CappuccinoTokenTypes.STATEMENT_BLOCK_START -> childStatementType = this.parseStatement(null, definition.endTagTypes)?.tagType
 				this.builder.tokenType == CappuccinoTokenTypes.PRINT_BLOCK_START -> this.parsePrintBlock()
 				else -> this.builder.advanceLexer()
 			}
@@ -258,29 +258,26 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 		val statementMarker = this.builder.mark()
 		val tagData = this.parseTag()
 
-		if (tagData == null)
+		if (tagData != null)
 		{
-			statementMarker.drop()
-			return tagData
-		}
+			val statementDefinition = CappuccinoBlockStatements.getStatementDefinitionByStartTag(tagData.tagType)
 
-		val statementDefinition = CappuccinoBlockStatements.getStatementDefinitionByStartTag(tagData.tagType)
-
-		if (statementDefinition != null)
-		{
-			val type = this.parseStatement(statementDefinition, tagData.isShort)
-			statementMarker.done(type)
-			return CappuccinoTagParsingData(type, tagData.isShort, tagData.name)
-		}
-
-		if (tagData.name != null && !tagData.name.startsWith("end"))
-		{
-			val type = this.parseStatement(tagData.name, name, types)
-
-			if (type != null)
+			if (statementDefinition != null)
 			{
+				val type = this.parseStatement(statementDefinition, tagData.isShort)
 				statementMarker.done(type)
-				return CappuccinoTagParsingData(type, false, tagData.name)
+				return CappuccinoTagParsingData(type, tagData.isShort, tagData.name)
+			}
+
+			if (!tagData.name.startsWith("end"))
+			{
+				val type = this.parseStatement(tagData.name, name, types)
+
+				if (type != null)
+				{
+					statementMarker.done(type)
+					return CappuccinoTagParsingData(type, false, tagData.name)
+				}
 			}
 		}
 
@@ -297,18 +294,20 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	 */
 	private fun parseTag(): CappuccinoTagParsingData?
 	{
-		assert(this.builder.tokenType === CappuccinoTokenTypes.STATEMENT_BLOCK_START)
+		assert(this.builder.tokenType == CappuccinoTokenTypes.STATEMENT_BLOCK_START)
 
 		val marker = this.builder.mark()
 
-		if (builder.tokenType == CappuccinoTokenTypes.TAG_NAME)
+		this.builder.advanceLexer()
+
+		if (this.builder.tokenType != CappuccinoTokenTypes.TAG_NAME)
 		{
-			marker.error(" A block must start with a tag name!")
+			marker.error("A block must start with a tag name!")
 			return null
 		}
 
-		val name = this.builder.tokenText
-		val tagType = this.getTagType(name)
+		val name = this.builder.tokenText!!
+		val tagType = getTagType(name)
 		var isShortBlock = true
 
 		this.builder.advanceLexer()

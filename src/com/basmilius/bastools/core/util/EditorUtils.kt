@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util
+package com.basmilius.bastools.core.util
 
 import com.intellij.openapi.actionSystem.DataContext
 import com.intellij.openapi.command.WriteCommandAction
@@ -11,7 +11,7 @@ import com.intellij.openapi.project.Project
  * Object EditorUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util
+ * @package com.basmilius.bastools.core.util
  */
 object EditorUtils
 {

@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util.strtotime
+package com.basmilius.bastools.core.util.strtotime
 
 import java.text.SimpleDateFormat
 import java.util.*
@@ -7,7 +7,7 @@ import java.util.*
  * Object DateTimeUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util.strtotime
+ * @package com.basmilius.bastools.core.util.strtotime
  */
 object DateTimeUtils
 {

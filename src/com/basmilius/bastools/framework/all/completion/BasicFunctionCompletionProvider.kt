@@ -1,8 +1,8 @@
 package com.basmilius.bastools.framework.all.completion
 
 import com.basmilius.bastools.framework.base.completion.BaseCompletionProvider
-import com.basmilius.bastools.util.FileUtils
-import com.basmilius.bastools.util.PhpUtils
+import com.basmilius.bastools.core.util.FileUtils
+import com.basmilius.bastools.core.util.PhpUtils
 import com.intellij.codeInsight.completion.CompletionParameters
 import com.intellij.codeInsight.completion.CompletionResultSet
 import com.intellij.codeInsight.lookup.LookupElementBuilder

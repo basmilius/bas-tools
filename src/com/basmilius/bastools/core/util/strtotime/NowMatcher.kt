@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util.strtotime
+package com.basmilius.bastools.core.util.strtotime
 
 import java.util.*
 import java.util.regex.Pattern
@@ -7,7 +7,7 @@ import java.util.regex.Pattern
  * Class NowWatcher
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util.strtotime
+ * @package com.basmilius.bastools.core.util.strtotime
  */
 class NowMatcher: Matcher
 {

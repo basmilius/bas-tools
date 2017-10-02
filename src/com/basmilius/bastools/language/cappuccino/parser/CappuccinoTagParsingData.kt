@@ -13,4 +13,4 @@ import com.intellij.psi.tree.IElementType
  * @author Bas Milius
  * @package com.basmilius.bastools.language.cappuccino.parser
  */
-data class CappuccinoTagParsingData(val tagType: IElementType, val isShort: Boolean, val name: String?)
+data class CappuccinoTagParsingData(val tagType: IElementType, val isShort: Boolean, val name: String)

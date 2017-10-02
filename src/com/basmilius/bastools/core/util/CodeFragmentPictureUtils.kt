@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util
+package com.basmilius.bastools.core.util
 
 import com.intellij.codeInsight.hint.EditorFragmentComponent
 import com.intellij.ide.ui.UISettings
@@ -13,7 +13,7 @@ import java.awt.image.BufferedImage
  * Object CodeFragmentPictureUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util
+ * @package com.basmilius.bastools.core.util
  */
 object CodeFragmentPictureUtils
 {
@@ -45,7 +45,7 @@ object CodeFragmentPictureUtils
 	 * Class TransferableImage
 	 *
 	 * @author Bas Milius
-	 * @package com.basmilius.bastools.util.CodeFragmentPictureUtils
+	 * @package com.basmilius.bastools.core.util.CodeFragmentPictureUtils
 	 */
 	class TransferableImage(private val image: Image): Transferable
 	{

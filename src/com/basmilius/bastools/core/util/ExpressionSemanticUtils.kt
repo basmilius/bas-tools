@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util
+package com.basmilius.bastools.core.util
 
 import com.intellij.psi.PsiElement
 import com.jetbrains.php.lang.documentation.phpdoc.psi.PhpDocComment
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable
  * Object ExpressionSemanticUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util
+ * @package com.basmilius.bastools.core.util
  */
 object ExpressionSemanticUtils
 {

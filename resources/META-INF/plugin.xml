@@ -9,45 +9,53 @@
 
 	<change-notes><![CDATA[Nothing special.]]></change-notes>
 
-	<depends>com.intellij.modules.platform</depends>
 	<depends>com.intellij.modules.lang</depends>
+	<depends>com.intellij.modules.platform</depends>
+	<depends>com.intellij.modules.ultimate</depends>
 
-	<depends optional="true" config-file="./php-plugin.xml">com.jetbrains.php</depends>
+	<depends optional="true" config-file="php-plugin.xml">com.jetbrains.php</depends>
+
+	<!--<depends optional="true" config-file="./php-plugin.xml">com.jetbrains.php</depends>-->
+	<!--<depends optional="true" config-file="./localization-plugin.xml">org.jetbrains.plugins.localization</depends>-->
 
 	<!-- General -->
 	<extensions defaultExtensionNs="com.intellij">
-		<!-- Idea modifications -->
+
+		<bundledColorScheme id="Bas Settings" path="./colors/Bas Settings"/>
+		<bundledInspectionProfile id="Bas Settings" path="./inspection/Bas Settings"/>
+
 		<editorTabColorProvider implementation="com.basmilius.bastools.ui.tabs.BasToolsEditorTabColorProvider"/>
 
-		<!-- Tool Windows -->
 		<toolWindow id="Date Time Helpers" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.DateTimeToolWindowFactory"/>
+
 	</extensions>
 
 	<application-components>
+
 		<component>
 			<implementation-class>com.basmilius.bastools.component.BasToolsComponent</implementation-class>
 		</component>
+
 		<component>
 			<implementation-class>com.basmilius.bastools.ui.tabs.BasToolsTabHighlighterComponent</implementation-class>
 		</component>
+
 		<component>
 			<implementation-class>com.basmilius.bastools.ui.tabs.BasToolsTabsPainterPatcherComponent</implementation-class>
 		</component>
+
 		<component>
 			<implementation-class>com.basmilius.bastools.misc.MiscComponent</implementation-class>
 		</component>
+
 		<!--<component>-->
 		<!--<implementation-class>com.basmilius.bastools.component.presenter.shortcuts.ShortcutPresenter</implementation-class>-->
 		<!--</component>-->
+
 	</application-components>
 
-	<project-components>
-		<component>
-			<implementation-class>com.basmilius.bastools.component.DefaultProjectComponent</implementation-class>
-		</component>
-	</project-components>
-
 	<actions>
+
 		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
 			<add-to-group group-id="MainMenu" anchor="last"/>
 
@@ -150,6 +158,7 @@
 			<action id="BasTools.Identity.Make.Plugin" class="com.basmilius.bastools.action.angular.VersionAction" text="Create Identity WordPress Plugin"/>
 			<action id="BasTools.Identity.Make.Theme" class="com.basmilius.bastools.action.angular.VersionAction" text="Create Identity WordPress Theme"/>
 		</group>
+
 	</actions>
 
 </idea-plugin>

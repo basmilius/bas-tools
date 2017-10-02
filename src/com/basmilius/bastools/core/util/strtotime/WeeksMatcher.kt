@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util.strtotime
+package com.basmilius.bastools.core.util.strtotime
 
 import org.apache.commons.lang.StringUtils
 import org.apache.commons.lang.time.DateUtils
@@ -6,15 +6,15 @@ import java.util.*
 import java.util.regex.Pattern
 
 /**
- * Class MinutesMatcher
+ * Class WeeksMatcher
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util.strtotime
+ * @package com.basmilius.bastools.core.util.strtotime
  */
-class MinutesMatcher: Matcher
+class WeeksMatcher: Matcher
 {
 
-	private val minutes = Pattern.compile("[\\-+]?\\d+ minutes")
+	private val weeks = Pattern.compile("[\\-+]?\\d+ weeks")
 
 	/**
 	 * {@inheritdoc}
@@ -29,17 +29,17 @@ class MinutesMatcher: Matcher
 		{
 			try
 			{
-				calendar.time = DateUtils.parseDate(refDateStr, Array(1) { "yyyy-MM-dd'T'HH:mm" })
+				calendar.time = DateUtils.parseDate(refDateStr, Array(1) { "yyyy-MM-dd" })
 			}
 			catch (e: Exception)
 			{
 			}
 		}
 
-		if (minutes.matcher(input).matches())
+		if (weeks.matcher(input).matches())
 		{
-			val m = input.split(" ")[0].toInt()
-			calendar.timeInMillis = System.currentTimeMillis() + (m * 60 * 1000)
+			val w = input.split(" ")[0].toInt()
+			calendar.add(Calendar.DAY_OF_YEAR, w * 7)
 			return calendar.time
 		}
 

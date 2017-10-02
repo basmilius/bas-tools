@@ -18,34 +18,14 @@ class CappuccinoQuoteHandler: SimpleTokenSetQuoteHandler(CappuccinoTokenTypes.SI
 	 *
 	 * @author Bas Milius
 	 */
-	override fun isClosingQuote(iterator: HighlighterIterator, offset: Int): Boolean
-	{
-		return if (this.myLiteralTokenSet.contains(iterator.tokenType) && iterator.end - iterator.start == 1)
-		{
-			!this.isOpeningQuoteInternal(iterator)
-		}
-		else
-		{
-			false
-		}
-	}
+	override fun isClosingQuote(iterator: HighlighterIterator, offset: Int) = if (this.myLiteralTokenSet.contains(iterator.tokenType) && iterator.end - iterator.start == 1) !this.isOpeningQuoteInternal(iterator) else false
 
 	/**
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius
 	 */
-	override fun isOpeningQuote(iterator: HighlighterIterator, offset: Int): Boolean
-	{
-		return if (this.myLiteralTokenSet.contains(iterator.tokenType) && offset == iterator.start)
-		{
-			this.isOpeningQuoteInternal(iterator)
-		}
-		else
-		{
-			false
-		}
-	}
+	override fun isOpeningQuote(iterator: HighlighterIterator, offset: Int) = if (this.myLiteralTokenSet.contains(iterator.tokenType) && offset == iterator.start) this.isOpeningQuoteInternal(iterator) else false
 
 	/**
 	 * Internal isOpeningQuote method.
@@ -63,6 +43,7 @@ class CappuccinoQuoteHandler: SimpleTokenSetQuoteHandler(CappuccinoTokenTypes.SI
 			if (!iterator.atEnd())
 			{
 				val type = iterator.tokenType
+
 				return !this.myLiteralTokenSet.contains(type) && CappuccinoTokenTypes.STRING_TEXT == type
 			}
 
@@ -87,35 +68,25 @@ class CappuccinoQuoteHandler: SimpleTokenSetQuoteHandler(CappuccinoTokenTypes.SI
 
 		try
 		{
-			val document = editor.document
-			val chars = document.charsSequence
-			val lineEnd = document.getLineEndOffset(document.getLineNumber(offset))
+			val doc = editor.document
+			val chars = doc.charsSequence
+			val lineEnd = doc.getLineEndOffset(doc.getLineNumber(offset))
 
 			while (!iterator.atEnd() && iterator.start < lineEnd)
 			{
-				val type = iterator.tokenType
-
-				if (this.myLiteralTokenSet.contains(type) && (iterator.start >= iterator.end - 1 || (chars[iterator.end - 1] != '"' && chars[iterator.end - 1] != '\'')))
+				if (this.myLiteralTokenSet.contains(iterator.tokenType) && (iterator.start >= iterator.end - 1 || chars[iterator.end - 1] != '"' && chars[iterator.end - 1] != '\''))
 					return true
 
 				iterator.advance()
 			}
-
-			return false
 		}
 		finally
 		{
-			while(true)
-			{
-				if (!iterator.atEnd() && iterator.start == start)
-				{
-				}
-				else
-				{
-					iterator.retreat()
-				}
-			}
+			while (!iterator.atEnd() && iterator.start == start)
+				iterator.retreat()
 		}
+
+		return false
 	}
 
 }

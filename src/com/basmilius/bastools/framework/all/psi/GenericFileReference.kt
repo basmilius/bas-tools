@@ -1,6 +1,6 @@
 package com.basmilius.bastools.framework.all.psi
 
-import com.basmilius.bastools.util.FileUtils
+import com.basmilius.bastools.core.util.FileUtils
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiReference

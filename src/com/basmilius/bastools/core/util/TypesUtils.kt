@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util
+package com.basmilius.bastools.core.util
 
 import org.jetbrains.annotations.NotNull
 
@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull
  * Object TypesUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util
+ * @package com.basmilius.bastools.core.util
  */
 @Suppress("MemberVisibilityCanPrivate")
 object TypesUtils

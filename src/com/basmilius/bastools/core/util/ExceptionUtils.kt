@@ -1,6 +1,6 @@
-package com.basmilius.bastools.util
+package com.basmilius.bastools.core.util
 
-import com.basmilius.bastools.util.iid.ExceptionRunnable
+import com.basmilius.bastools.core.util.iid.ExceptionRunnable
 import com.intellij.openapi.progress.ProgressIndicator
 import com.intellij.openapi.progress.ProgressManager
 import com.intellij.openapi.progress.Task
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
  * Object ExceptionUtils
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util
+ * @package com.basmilius.bastools.core.util
  */
 object ExceptionUtils
 {

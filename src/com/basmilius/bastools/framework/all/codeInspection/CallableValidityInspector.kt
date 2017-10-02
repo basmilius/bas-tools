@@ -2,18 +2,15 @@ package com.basmilius.bastools.framework.all.codeInspection
 
 import com.basmilius.bastools.framework.base.codeInspection.BaseInspection
 import com.basmilius.bastools.framework.base.visitor.BaseElementVisitor
-import com.basmilius.bastools.util.PossibleValuesDiscoveryUtils
-import com.basmilius.bastools.util.TypesUtils
+import com.basmilius.bastools.core.util.PossibleValuesDiscoveryUtils
+import com.basmilius.bastools.core.util.TypesUtils
 import com.intellij.codeInspection.ProblemHighlightType
 import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.PsiElement
-import com.intellij.psi.PsiElementVisitor
 import com.intellij.psi.PsiReference
 import com.jetbrains.php.lang.PhpCallbackFunctionUtil
 import com.jetbrains.php.lang.PhpCallbackReferenceBase
 import com.jetbrains.php.lang.psi.elements.*
-import org.jetbrains.annotations.NotNull
-import org.jetbrains.annotations.Nullable
 
 /**
  * Class CallableValidityInspector
@@ -29,10 +26,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 	 *
 	 * @author Bas Milius
 	 */
-	override fun buildVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean): PsiElementVisitor
-	{
-		return CallableValidityInspectorVisitor(problemsHolder, isOnTheFly)
-	}
+	override fun buildVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean) = CallableValidityInspectorVisitor(problemsHolder, isOnTheFly)
 
 	/**
 	 * Inner Class CallableValidityInspectorVisitor
@@ -92,7 +86,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		 *
 		 * @author Bas Milius
 		 */
-		private fun buildResolver(@NotNull callable: PsiElement): PsiReference?
+		private fun buildResolver(callable: PsiElement): PsiReference?
 		{
 			var result: PhpCallbackReferenceBase? = null
 			val callback = PhpCallbackFunctionUtil.createCallback(callable)
@@ -113,7 +107,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		 *
 		 * @author Bas Milius
 		 */
-		private fun isTarget(@NotNull callable: PsiElement): Boolean
+		private fun isTarget(callable: PsiElement): Boolean
 		{
 			var result = callable is StringLiteralExpression
 
@@ -128,7 +122,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		 *
 		 * @author Bas Milius
 		 */
-		private fun analyzeValidity(@Nullable element: PsiElement?, @NotNull target: PsiElement, @NotNull callable: PsiElement)
+		private fun analyzeValidity(element: PsiElement?, target: PsiElement, callable: PsiElement)
 		{
 			if (element !is Method)
 				return

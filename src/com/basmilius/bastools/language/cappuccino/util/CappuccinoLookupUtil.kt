@@ -27,7 +27,7 @@ object CappuccinoLookupUtil
 	 *
 	 * @author Bas Milius
 	 */
-	fun findBaseTag(file: PsiFile, tagName: String): CappuccinoBlockTag
+	fun findBaseTag(file: PsiFile, tagName: String): CappuccinoBlockTag?
 	{
 		val foundElement = arrayOfNulls<PsiElement>(1)
 		val finder = object: ElementFinder(Condition { element ->
@@ -55,7 +55,7 @@ object CappuccinoLookupUtil
 
 		lookupExtends(file, finder, 0)
 
-		return foundElement[0] as CappuccinoBlockTag
+		return foundElement[0] as CappuccinoBlockTag?
 	}
 
 	/**

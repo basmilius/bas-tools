@@ -1,4 +1,4 @@
-package com.basmilius.bastools.util.strtotime
+package com.basmilius.bastools.core.util.strtotime
 
 import org.apache.commons.lang.StringUtils
 import org.apache.commons.lang.time.DateUtils
@@ -6,15 +6,15 @@ import java.util.*
 import java.util.regex.Pattern
 
 /**
- * Class DaysMatcher
+ * Class MinutesMatcher
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util.strtotime
+ * @package com.basmilius.bastools.core.util.strtotime
  */
-class DaysMatcher: Matcher
+class MinutesMatcher: Matcher
 {
 
-	private val days = Pattern.compile("[\\-+]?\\d+ days")
+	private val minutes = Pattern.compile("[\\-+]?\\d+ minutes")
 
 	/**
 	 * {@inheritdoc}
@@ -29,17 +29,17 @@ class DaysMatcher: Matcher
 		{
 			try
 			{
-				calendar.time = DateUtils.parseDate(refDateStr, Array(1) { "yyyy-MM-dd" })
+				calendar.time = DateUtils.parseDate(refDateStr, Array(1) { "yyyy-MM-dd'T'HH:mm" })
 			}
 			catch (e: Exception)
 			{
 			}
 		}
 
-		if (days.matcher(input).matches())
+		if (minutes.matcher(input).matches())
 		{
-			val d = input.split(" ")[0].toInt()
-			calendar.add(Calendar.DAY_OF_YEAR, d)
+			val m = input.split(" ")[0].toInt()
+			calendar.timeInMillis = System.currentTimeMillis() + (m * 60 * 1000)
 			return calendar.time
 		}
 

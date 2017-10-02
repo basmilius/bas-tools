@@ -8,8 +8,6 @@ import com.intellij.psi.PsiReference
 import com.intellij.psi.PsiReferenceProvider
 import com.intellij.psi.PsiWhiteSpace
 import com.intellij.psi.impl.source.resolve.reference.impl.providers.FileReferenceSet
-import org.jetbrains.annotations.NotNull
-import org.jetbrains.annotations.Nullable
 import java.util.*
 
 /**
@@ -43,7 +41,6 @@ open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeEle
 	 *
 	 * @author Bas Milius
 	 */
-	@Nullable
 	protected fun findFileNameElement(): PsiElement?
 	{
 		val children = this.getNonWhitespaceChildren()
@@ -80,7 +77,6 @@ open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeEle
 	 *
 	 * @author Bas Milius
 	 */
-	@NotNull
 	override fun getNavigationElement(): PsiElement
 	{
 		val fileNameElement = this.findFileNameElement()
@@ -96,7 +92,6 @@ open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeEle
 	 *
 	 * @author Bas Milius
 	 */
-	@NotNull
 	override fun getReferences(): Array<out PsiReference>
 	{
 		val fileNameElement = this.findFileNameElement()

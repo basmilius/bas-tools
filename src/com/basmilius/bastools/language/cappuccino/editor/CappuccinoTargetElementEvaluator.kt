@@ -19,10 +19,7 @@ class CappuccinoTargetElementEvaluator: TargetElementEvaluator
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getElementByReference(reference: PsiReference, flags: Int): PsiElement?
-	{
-		return if (reference is CappuccinoBlockReference) if (flags and 2 != 0) reference.element else reference.resolve() else null
-	}
+	override fun getElementByReference(reference: PsiReference, flags: Int) = if (reference is CappuccinoBlockReference) if (flags and 2 != 0) reference.element else reference.resolve() else null
 
 	/**
 	 * {@inheritdoc}

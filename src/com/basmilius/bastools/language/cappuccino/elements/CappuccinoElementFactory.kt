@@ -40,10 +40,12 @@ object CappuccinoElementFactory
 			override fun visitElement(element: PsiElement)
 			{
 				if (result.get() == null)
+				{
 					if (element.node.elementType === type)
 						result.set(element)
 					else
 						super.visitElement(element)
+				}
 			}
 		})
 

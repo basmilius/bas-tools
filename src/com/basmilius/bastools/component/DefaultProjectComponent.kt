@@ -6,12 +6,12 @@ import com.intellij.openapi.components.ProjectComponent
 import com.intellij.openapi.project.Project
 import com.intellij.psi.codeStyle.CodeStyleSchemes
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager
-import com.intellij.util.PlatformUtils
 import java.io.IOException
 
 /**
  * Class DefaultProjectComponent
  *
+ * @constructor
  * @param project Project
  *
  * @author Bas Milius
@@ -52,56 +52,8 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 */
 	override fun projectOpened()
 	{
-		val workspace = this.project.workspaceFile
-
-		if (PlatformUtils.isPhpStorm())
-		{
-            try
-            {
-                val oldSettings = CodeStyleSchemes.getInstance().findPreferredScheme("Bas Settings")
-                if (oldSettings.name === "Bas Settings" && !oldSettings.isDefault)
-                    CodeStyleSchemes.getInstance().deleteScheme(oldSettings)
-            }
-            catch (e: Exception)
-            {
-                e.printStackTrace()
-            }
-
-            val bsScheme = BasSettingsCodeStyleScheme()
-            CodeStyleSchemes.getInstance().addScheme(bsScheme)
-            CodeStyleSchemes.getInstance().currentScheme = bsScheme
-            CodeStyleSettingsManager.getInstance().setTemporarySettings(bsScheme.codeStyleSettings)
-        }
-
-		if (workspace == null)
-			return
-
-		val username = System.getProperty("user.name").toLowerCase()
-		val workspacePerUserFilename = "workspace.$username.xml"
-		val workspacePerUser = workspace.parent.findChild(workspacePerUserFilename)
-
-		try
-		{
-			ApplicationManager.getApplication().runWriteAction {
-				if (workspacePerUser != null && workspacePerUser.exists())
-				{
-					val contents = workspacePerUser.contentsToByteArray()
-					val stream = workspace.getOutputStream(this)
-
-					stream.write(contents)
-					stream.close()
-
-					workspacePerUser.delete(this)
-				}
-
-				workspace.rename(this, workspacePerUserFilename)
-				workspace.copy(this, workspace.parent, "workspace.xml")
-			}
-		}
-		catch (e: IOException)
-		{
-			e.printStackTrace()
-		}
+		this.applyCodeStyleSettings()
+		this.applyWorkspacePerUser()
 	}
 
 	/**
@@ -125,6 +77,67 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 					workspace.delete(this)
 
 				workspacePerUser.copy(this, workspacePerUser.parent, "workspace.xml")
+			}
+		}
+		catch (e: IOException)
+		{
+			e.printStackTrace()
+		}
+	}
+
+	/**
+	 * Applies Bas Settings code style.
+	 *
+	 * @author Bas Milius
+	 */
+	private fun applyCodeStyleSettings()
+	{
+		try
+		{
+			val oldSettings = CodeStyleSchemes.getInstance().findPreferredScheme("Bas Settings")
+			if (oldSettings.name === "Bas Settings" && !oldSettings.isDefault)
+				CodeStyleSchemes.getInstance().deleteScheme(oldSettings)
+		}
+		catch (e: Exception)
+		{
+			e.printStackTrace()
+		}
+
+		val bsScheme = BasSettingsCodeStyleScheme()
+		CodeStyleSchemes.getInstance().addScheme(bsScheme)
+		CodeStyleSchemes.getInstance().currentScheme = bsScheme
+		CodeStyleSettingsManager.getInstance().setTemporarySettings(bsScheme.codeStyleSettings)
+	}
+
+	/**
+	 * Applies workspace per user.
+	 *
+	 * @author Bas Milius
+	 */
+	private fun applyWorkspacePerUser()
+	{
+		val workspace = this.project.workspaceFile ?: return
+
+		val username = System.getProperty("user.name").toLowerCase()
+		val workspacePerUserFilename = "workspace.$username.xml"
+		val workspacePerUser = workspace.parent.findChild(workspacePerUserFilename)
+
+		try
+		{
+			ApplicationManager.getApplication().runWriteAction {
+				if (workspacePerUser != null && workspacePerUser.exists())
+				{
+					val contents = workspacePerUser.contentsToByteArray()
+					val stream = workspace.getOutputStream(this)
+
+					stream.write(contents)
+					stream.close()
+
+					workspacePerUser.delete(this)
+				}
+
+				workspace.rename(this, workspacePerUserFilename)
+				workspace.copy(this, workspace.parent, "workspace.xml")
 			}
 		}
 		catch (e: IOException)

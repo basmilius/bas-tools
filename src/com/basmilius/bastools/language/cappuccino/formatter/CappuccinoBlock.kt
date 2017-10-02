@@ -7,6 +7,7 @@ import com.intellij.formatting.*
 import com.intellij.lang.ASTNode
 import com.intellij.psi.codeStyle.CodeStyleSettings
 import com.intellij.psi.formatter.xml.XmlFormattingPolicy
+import com.intellij.xml.template.formatter.AbstractXmlTemplateFormattingModelBuilder
 import com.intellij.xml.template.formatter.TemplateLanguageBlock
 
 /**
@@ -24,7 +25,7 @@ import com.intellij.xml.template.formatter.TemplateLanguageBlock
  * @author Bas Milius
  * @package com.basmilius.bastools.language.cappuccino.formatter
  */
-class CappuccinoBlock(builder: CappuccinoFormattingModelBuilder, node: ASTNode, wrap: Wrap?, alignment: Alignment?, settings: CodeStyleSettings, xmlFormattingPolicy: XmlFormattingPolicy, indent: Indent?): TemplateLanguageBlock(builder, node, wrap, alignment, settings, xmlFormattingPolicy, indent)
+class CappuccinoBlock(builder: AbstractXmlTemplateFormattingModelBuilder, node: ASTNode, wrap: Wrap?, alignment: Alignment?, settings: CodeStyleSettings, xmlFormattingPolicy: XmlFormattingPolicy, indent: Indent?): TemplateLanguageBlock(builder, node, wrap, alignment, settings, xmlFormattingPolicy, indent)
 {
 
 	/**
@@ -115,7 +116,7 @@ class CappuccinoBlock(builder: CappuccinoFormattingModelBuilder, node: ASTNode, 
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getSpacing(adjacentBlock: TemplateLanguageBlock) = Spacing.getReadOnlySpacing()!!
+	override fun getSpacing(adjacentBlock: TemplateLanguageBlock): Spacing? = Spacing.getReadOnlySpacing()
 
 	/**
 	 * {@inheritdoc}

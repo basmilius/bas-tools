@@ -1,6 +1,6 @@
 package com.basmilius.bastools.toolWindow;
 
-import com.basmilius.bastools.util.strtotime.DateTimeUtilsKt;
+import com.basmilius.bastools.core.util.strtotime.DateTimeUtilsKt;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowType;

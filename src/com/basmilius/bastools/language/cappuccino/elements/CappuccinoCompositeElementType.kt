@@ -7,7 +7,6 @@ import com.intellij.psi.impl.source.tree.CompositeElement
 import com.intellij.psi.tree.ICompositeElementType
 import com.intellij.psi.tree.IElementType
 import org.jetbrains.annotations.NonNls
-import org.jetbrains.annotations.NotNull
 
 /**
  * Class CappuccinoCompositeElementType
@@ -18,7 +17,7 @@ import org.jetbrains.annotations.NotNull
  * @author Bas Milius
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
-open class CappuccinoCompositeElementType(@NotNull @NonNls debugName: String): IElementType(debugName, CappuccinoLanguage.Instance), ICompositeElementType
+open class CappuccinoCompositeElementType(@NonNls debugName: String): IElementType(debugName, CappuccinoLanguage.Instance), ICompositeElementType
 {
 
 	/**

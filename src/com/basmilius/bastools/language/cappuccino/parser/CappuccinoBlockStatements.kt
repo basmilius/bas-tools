@@ -1,5 +1,6 @@
 package com.basmilius.bastools.language.cappuccino.parser
 
+import com.basmilius.bastools.language.cappuccino.elements.CappuccinoElementTypes
 import com.basmilius.bastools.language.cappuccino.elements.CappuccinoElementTypes.Companion.AUTOESCAPE_STATEMENT
 import com.basmilius.bastools.language.cappuccino.elements.CappuccinoElementTypes.Companion.AUTOESCAPE_TAG
 import com.basmilius.bastools.language.cappuccino.elements.CappuccinoElementTypes.Companion.BLOCK_STATEMENT
@@ -52,8 +53,8 @@ import java.util.*
 object CappuccinoBlockStatements
 {
 
-	val StatementByStartTagMap = HashMap<IElementType, StatementDefinition>()
-	val StatementByTypeMap = HashMap<IElementType, StatementDefinition>()
+	private val StatementByStartTagMap = HashMap<IElementType, StatementDefinition>()
+	private val StatementByTypeMap = HashMap<IElementType, StatementDefinition>()
 
 	/**
 	 * CappuccinoBlockStatements Constructor.
@@ -130,7 +131,7 @@ object CappuccinoBlockStatements
 	 *
 	 * @author Bas Milius
 	 */
-	fun isBlockStatement(type: IElementType): Boolean = StatementByTypeMap.containsKey(type) || StatementByStartTagMap.contains(type)
+	fun isBlockStatement(type: IElementType) = StatementByTypeMap.containsKey(type) || type == CappuccinoElementTypes.CAPPUCCINO_STATEMENT
 
 	/**
 	 * Class StatementDefinition
@@ -143,10 +144,10 @@ object CappuccinoBlockStatements
 	 * @author Bas Milius
 	 * @package com.basmilius.bastools.language.cappuccino.parser.CappuccinoBlockStatements
 	 */
-	class StatementDefinition(val statementType: IElementType, val startTagType: IElementType, vararg endTagTypes: IElementType)
+	class StatementDefinition(val statementType: IElementType, private val startTagType: IElementType, vararg endTagTypes: IElementType)
 	{
 
-		val endsBeforeTypes = HashSet<IElementType>()
+		private val endsBeforeTypes = HashSet<IElementType>()
 		val endTagTypes = HashSet<IElementType>()
 		var mayBeShort = false
 

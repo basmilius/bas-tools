@@ -35,7 +35,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	 * @author Bas Milius
 	 */
 	@NotNull
-	fun getIdentifier(): String = this.identifier!!
+	fun getIdentifier(): String = this.identifier ?: ""
 
 	/**
 	 * {@inheritdoc}
@@ -53,9 +53,9 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	@Nullable
 	override fun resolve(): PsiElement?
 	{
-		val resolved = ResolveCache.getInstance(this.project).resolveWithCaching(this, this.blockResolver, false, false) ?: return null
+		val resolved = ResolveCache.getInstance(this.project).resolveWithCaching(this, this.blockResolver, false, false)
 
-		return resolved.getIdentifier()
+		return resolved?.getIdentifier()
 	}
 
 	/**
@@ -138,7 +138,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 		 *
 		 * @author Bas Milius
 		 */
-		fun getIdentifier(): PsiElement? = if (this.tag != null) this.tag.findIdentifier() else null
+		fun getIdentifier(): PsiElement? = this.tag?.findIdentifier()
 
 		/**
 		 * {@inheritdoc}

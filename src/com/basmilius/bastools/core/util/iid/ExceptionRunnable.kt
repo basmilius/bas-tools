@@ -1,10 +1,10 @@
-package com.basmilius.bastools.util.iid
+package com.basmilius.bastools.core.util.iid
 
 /**
  * Interface ExceptionRunnable
  *
  * @author Bas Milius
- * @package com.basmilius.bastools.util.iid
+ * @package com.basmilius.bastools.core.util.iid
  */
 interface ExceptionRunnable: Runnable
 {

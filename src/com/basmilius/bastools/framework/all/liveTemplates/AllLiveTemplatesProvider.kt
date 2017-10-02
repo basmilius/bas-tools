@@ -16,19 +16,13 @@ class AllLiveTemplatesProvider: DefaultLiveTemplatesProvider
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getDefaultLiveTemplateFiles(): Array<String>
-	{
-		return arrayOf("liveTemplates/MissingPhpStuffFramework")
-	}
+	override fun getDefaultLiveTemplateFiles() = arrayOf("liveTemplates/MissingPhpStuffFramework")
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getHiddenLiveTemplateFiles(): Array<String?>
-	{
-		return arrayOfNulls(0)
-	}
+	override fun getHiddenLiveTemplateFiles(): Array<String?> = arrayOfNulls(0)
 
 }

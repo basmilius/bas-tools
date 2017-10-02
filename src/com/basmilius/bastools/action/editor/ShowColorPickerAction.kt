@@ -1,8 +1,8 @@
 package com.basmilius.bastools.action.editor
 
-import com.basmilius.bastools.util.EditorUtils
-import com.basmilius.bastools.util.ExceptionUtils
-import com.basmilius.bastools.util.JUtils
+import com.basmilius.bastools.core.util.EditorUtils
+import com.basmilius.bastools.core.util.ExceptionUtils
+import com.basmilius.bastools.core.util.JUtils
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.fileEditor.FileEditorManager

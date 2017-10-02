@@ -1,6 +1,7 @@
 package com.basmilius.bastools.language.cappuccino.lexer
 
 import com.basmilius.bastools.language.cappuccino.CappuccinoTokenTypes
+import com.basmilius.bastools.language.cappuccino.parser.CappuccinoKeywords
 import com.intellij.lexer.FlexAdapter
 import com.intellij.lexer.MergingLexerAdapter
 import com.intellij.psi.tree.TokenSet
@@ -11,7 +12,7 @@ import com.intellij.psi.tree.TokenSet
  * @author Bas Milius
  * @package com.basmilius.bastools.language.cappuccino.lexer
  */
-class CappuccinoLexerAdapter: MergingLexerAdapter(FlexAdapter(CappuccinoLexer()), TokensToMerge)
+class CappuccinoLexerAdapter: MergingLexerAdapter(FlexAdapter(_CappuccinoLexer(null)), TokensToMerge), CappuccinoKeywords
 {
 
 	/**
