@@ -140,6 +140,10 @@ public class DateTimeToolWindowFactory extends BaseToolWindowFactory
 		@Override
 		public void keyReleased (KeyEvent e)
 		{
+			if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_V)
+			{
+				DateTimeToolWindowFactory.this.onConvertButtonClick(null);
+			}
 		}
 
 	}

@@ -81,31 +81,44 @@ class CappuccinoBlock(builder: AbstractXmlTemplateFormattingModelBuilder, node: 
 		val firstChildNode = this.myNode.firstChildNode
 		val childType = childNode.elementType
 
-		when
+		if (type == CappuccinoElementTypes.IF_STATEMENT)
 		{
-			type == CappuccinoElementTypes.IF_STATEMENT && childType != CappuccinoElementTypes.IF_TAG && childType != CappuccinoElementTypes.ELSE_STATEMENT && childType != CappuccinoElementTypes.ELSE_TAG && childType != CappuccinoElementTypes.ENDIF_TAG && childType != CappuccinoElementTypes.ELSEIF_STATEMENT -> return Indent.getNormalIndent()
+			if (childType != CappuccinoElementTypes.IF_TAG && childType != CappuccinoElementTypes.ELSE_STATEMENT && childType != CappuccinoElementTypes.ELSE_TAG && childType != CappuccinoElementTypes.ENDIF_TAG && childType != CappuccinoElementTypes.ELSEIF_STATEMENT)
+				return Indent.getNormalIndent()
+		}
+		else if (type == CappuccinoElementTypes.ELSE_STATEMENT)
+		{
+			if (childType != CappuccinoElementTypes.ELSE_TAG && childType != CappuccinoElementTypes.ENDIF_TAG && childType != CappuccinoElementTypes.ENDFOR_TAG)
+				return Indent.getNormalIndent()
+		}
+		else if (type == CappuccinoElementTypes.ELSEIF_STATEMENT)
+		{
+			if (childType != CappuccinoElementTypes.ELSE_TAG && childType != CappuccinoElementTypes.ELSE_STATEMENT && childType != CappuccinoElementTypes.ENDIF_TAG && childType != CappuccinoElementTypes.ELSEIF_STATEMENT && childType != CappuccinoElementTypes.ELSEIF_TAG)
+				return Indent.getNormalIndent()
+		}
+		else if (type == CappuccinoElementTypes.FOR_STATEMENT)
+		{
+			if (childType != CappuccinoElementTypes.FOR_TAG && childType != CappuccinoElementTypes.ENDFOR_TAG && childType != CappuccinoElementTypes.ELSE_STATEMENT)
+				return Indent.getNormalIndent()
+		}
+		else if (type == CappuccinoElementTypes.LITERAL && firstChildNode != null)
+		{
+			if (firstChildNode.elementType == CappuccinoTokenTypes.LBRACE_CURL && childType != CappuccinoTokenTypes.LBRACE_CURL && childType != CappuccinoTokenTypes.RBRACE_CURL)
+				return Indent.getNormalIndent()
+			else if (childType != CappuccinoTokenTypes.LBRACE_SQ && childType != CappuccinoTokenTypes.RBRACE_SQ)
+				return Indent.getNormalIndent()
+		}
+		else if (type == CappuccinoElementTypes.CAPPUCCINO_STATEMENT)
+		{
+			if (childType != CappuccinoElementTypes.TAG)
+				return Indent.getNormalIndent()
+		}
+		else if (CappuccinoBlockStatements.isBlockStatement(type))
+		{
+			val definition = CappuccinoBlockStatements.getStatementDefinitionByType(type)
 
-			type == CappuccinoElementTypes.ELSE_STATEMENT && childType != CappuccinoElementTypes.ELSE_TAG && childType != CappuccinoElementTypes.ENDIF_TAG && childType != CappuccinoElementTypes.ENDFOR_TAG -> return Indent.getNormalIndent()
-
-			type == CappuccinoElementTypes.ELSEIF_STATEMENT && childType != CappuccinoElementTypes.ELSE_TAG && childType != CappuccinoElementTypes.ELSE_STATEMENT && childType != CappuccinoElementTypes.ENDIF_TAG && childType != CappuccinoElementTypes.ELSEIF_STATEMENT && childType != CappuccinoElementTypes.ELSEIF_TAG -> return Indent.getNormalIndent()
-
-			type == CappuccinoElementTypes.FOR_STATEMENT && childType != CappuccinoElementTypes.FOR_TAG && childType != CappuccinoElementTypes.ENDFOR_TAG && childType != CappuccinoElementTypes.ELSE_STATEMENT -> return Indent.getNormalIndent()
-
-			type == CappuccinoElementTypes.LITERAL && firstChildNode != null -> when
-			{
-				firstChildNode.elementType == CappuccinoTokenTypes.LBRACE_CURL && childType != CappuccinoTokenTypes.LBRACE_CURL && childType != CappuccinoTokenTypes.RBRACE_CURL -> return Indent.getNormalIndent()
-				childType != CappuccinoTokenTypes.LBRACE_SQ && childType != CappuccinoTokenTypes.RBRACE_SQ -> return Indent.getNormalIndent()
-			}
-
-			type == CappuccinoElementTypes.CAPPUCCINO_STATEMENT && childType != CappuccinoElementTypes.TAG -> Indent.getNormalIndent()
-
-			CappuccinoBlockStatements.isBlockStatement(type) ->
-			{
-				val definition = CappuccinoBlockStatements.getStatementDefinitionByType(type)
-
-				if (definition != null && !definition.isStartTag(childType) && !definition.isEndTag(childType))
-					return Indent.getNormalIndent()
-			}
+			if (definition != null && !definition.isStartTag(childType) && !definition.isEndTag(childType))
+				return Indent.getNormalIndent()
 		}
 
 		return Indent.getNoneIndent()

@@ -129,7 +129,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	{
 		val g = objects[0] as Graphics2D
 		val rect = objects[1] as Rectangle
-		val tabColor = objects[4] as Color
+		val tabColor = objects[4] as? Color ?: return
 
 		val tabsComponent = painter.tabsComponent
 		val position = tabsComponent.tabsPosition
@@ -162,9 +162,6 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName(): String
-	{
-		return "Bas Tools: Tabs Patcher"
-	}
+	override fun getComponentName() = "Bas Tools: Tabs Patcher"
 
 }
