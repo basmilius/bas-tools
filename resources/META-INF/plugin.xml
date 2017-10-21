@@ -26,7 +26,8 @@
 
 		<editorTabColorProvider implementation="com.basmilius.bastools.ui.tabs.BasToolsEditorTabColorProvider"/>
 
-		<toolWindow id="Date Time Helpers" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.DateTimeToolWindowFactory"/>
+		<toolWindow id="Color Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.ColorsToolWindow"/>
+		<toolWindow id="Datetime Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.DateTimeToolWindowFactory"/>
 
 	</extensions>
 
@@ -48,11 +49,23 @@
 			<implementation-class>com.basmilius.bastools.misc.MiscComponent</implementation-class>
 		</component>
 
-		<!--<component>-->
-		<!--<implementation-class>com.basmilius.bastools.component.presenter.shortcuts.ShortcutPresenter</implementation-class>-->
-		<!--</component>-->
+		<component>
+			<implementation-class>com.basmilius.bastools.component.presenter.shortcuts.ShortcutPresenter</implementation-class>
+		</component>
 
 	</application-components>
+
+	<project-components>
+
+		<component>
+			<implementation-class>com.basmilius.bastools.component.BasToolsProjectComponent</implementation-class>
+		</component>
+
+		<!--<component>-->
+		<!--<implementation-class>com.basmilius.bastools.watcher.SassWatcherProjectComponent</implementation-class>-->
+		<!--</component>-->
+
+	</project-components>
 
 	<actions>
 

@@ -4,7 +4,7 @@ class ShortcutPresenterState
 {
 
 	var alternativeKeymap = getDefaultAlternativeKeymap()
-	var fontSize = 18
+	var fontSize = 15
 	var mainKeymap = getDefaultMainKeymap()
 	var showActionDescription = true
 

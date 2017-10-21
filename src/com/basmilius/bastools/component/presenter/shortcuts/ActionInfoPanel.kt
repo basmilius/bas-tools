@@ -64,14 +64,16 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	{
 		val ideFrame = WindowManager.getInstance().getIdeFrame(project)
 		labelsPanel = NonOpaquePanel(FlowLayout(FlowLayout.CENTER, 0, 0))
-		val background = JBColor(Color(186, 238, 186, 120), Color(73, 117, 73))
+
+		val background = JBColor(Color(65, 105, 65), Color(65, 105, 65))
 		updateLabelText(project, textFragments)
 		setBackground(background)
 		isOpaque = true
-		add(labelsPanel, BorderLayout.CENTER)
-		val emptyBorder = BorderFactory.createEmptyBorder(5, 10, 5, 10)
-		border = emptyBorder
 
+		add(labelsPanel, BorderLayout.CENTER)
+
+		val emptyBorder = BorderFactory.createEmptyBorder(6, 12, 6, 12)
+		border = emptyBorder
 
 		hint = with(JBPopupFactory.getInstance().createComponentPopupBuilder(this, this) as ComponentPopupBuilderImpl) {
 			setAlpha(1.0.toFloat())
@@ -81,6 +83,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 			setCancelCallback { phase = Phase.HIDDEN; true }
 			createPopup()
 		}
+
 		hint.addListener(object: JBPopupListener
 		{
 			override fun beforeShown(lightweightWindowEvent: LightweightWindowEvent?)
@@ -173,10 +176,12 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 		labelsPanel.removeAll()
 		updateLabelText(project, textFragments)
 		hint.content.invalidate()
+
 		val ideFrame = WindowManager.getInstance().getIdeFrame(project)
 		hint.setLocation(computeLocation(ideFrame).screenPoint)
 		hint.size = preferredSize
 		hint.content.repaint()
+
 		showFinal()
 	}
 
@@ -194,7 +199,8 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 		val statusBarHeight = ideFrame.statusBar.component.height
 		val visibleRect = ideFrame.component.visibleRect
 		val popupSize = preferredSize
-		val point = Point(visibleRect.x + (visibleRect.width - popupSize.width) / 2, visibleRect.y + visibleRect.height - popupSize.height - statusBarHeight - 5)
+		val point = Point(visibleRect.x + (visibleRect.width - popupSize.width) / 2, visibleRect.y + visibleRect.height - popupSize.height - statusBarHeight - 12)
+
 		return RelativePoint(ideFrame.component, point)
 	}
 
@@ -210,9 +216,8 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	{
 		val ideFrame = WindowManager.getInstance().getIdeFrame(project)
 
-		for (label in createLabels(textFragments, ideFrame))
-		{
-			labelsPanel.add(label)
+		createLabels(textFragments, ideFrame).forEach {
+			labelsPanel.add(it)
 		}
 	}
 
@@ -228,6 +233,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	private fun List<Pair<String, Font?>>.mergeFragments(): List<Pair<String, Font?>>
 	{
 		val result = ArrayList<Pair<String, Font?>>()
+
 		for (item in this)
 		{
 			val last = result.lastOrNull()
@@ -241,6 +247,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 				result.add(item)
 			}
 		}
+
 		return result
 	}
 
@@ -266,10 +273,10 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 		fun setFontSize(size: Float)
 		{
 			for (label in labels)
-			{
 				label.font = label.font.deriveFont(size)
-			}
+
 			val maxAscent = labels.map { it.getFontMetrics(it.font).maxAscent }.max() ?: 0
+
 			for (label in labels)
 			{
 				val ascent = label.getFontMetrics(label.font).maxAscent
@@ -283,8 +290,11 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 				}
 			}
 		}
+
 		setFontSize(fontSize)
+
 		val frameWidth = ideFrame.component.width
+
 		if (frameWidth > 100)
 		{
 			while (labels.map { it.preferredSize.width }.sum() > frameWidth - 10 && fontSize > 12)
@@ -292,6 +302,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 				setFontSize(--fontSize)
 			}
 		}
+
 		return labels
 	}
 

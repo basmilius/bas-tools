@@ -44,10 +44,6 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 */
 	override fun initComponent()
 	{
-		if (this.configuration.showActionDescription)
-		{
-			this.presenter = Presenter()
-		}
 	}
 
 	/**
@@ -56,6 +52,28 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * @author Bas Milius
 	 */
 	override fun disposeComponent()
+	{
+	}
+
+	/**
+	 * Enables shortcut presenter.
+	 *
+	 * @author Bas Milius
+	 */
+	fun enable()
+	{
+		if (this.configuration.showActionDescription)
+		{
+			this.presenter = Presenter()
+		}
+	}
+
+	/**
+	 * Disables shortcut presenter.
+	 *
+	 * @author Bas Milius
+	 */
+	fun disable()
 	{
 		this.presenter?.disable()
 	}

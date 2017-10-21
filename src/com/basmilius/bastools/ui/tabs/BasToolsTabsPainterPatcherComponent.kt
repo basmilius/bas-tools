@@ -29,7 +29,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	companion object
 	{
 
-		val HighlightColor = JBColor(Color(105, 203, 156, 255), Color(105, 203, 156, 255))
+		val HighlightColor = JBColor(Color(102, 135, 102), Color(102, 135, 102))
 		val HighlightThickness = 2
 		val BackgroundColor = JBColor(Color(45, 49, 53, 255), Color(45, 49, 53, 255))
 
