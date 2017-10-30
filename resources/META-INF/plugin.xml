@@ -25,6 +25,7 @@
 		<bundledInspectionProfile id="Bas Settings" path="./inspection/Bas Settings"/>
 
 		<editorTabColorProvider implementation="com.basmilius.bastools.ui.tabs.BasToolsEditorTabColorProvider"/>
+		<iconProvider implementation="com.basmilius.bastools.provider.BasToolsIconProvider"/>
 
 		<toolWindow id="Color Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.ColorsToolWindow"/>
 		<toolWindow id="Datetime Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.DateTimeToolWindowFactory"/>
@@ -61,9 +62,9 @@
 			<implementation-class>com.basmilius.bastools.component.BasToolsProjectComponent</implementation-class>
 		</component>
 
-		<!--<component>-->
-		<!--<implementation-class>com.basmilius.bastools.watcher.SassWatcherProjectComponent</implementation-class>-->
-		<!--</component>-->
+		<component>
+			<implementation-class>com.basmilius.bastools.watcher.SassWatcherProjectComponent</implementation-class>
+		</component>
 
 	</project-components>
 

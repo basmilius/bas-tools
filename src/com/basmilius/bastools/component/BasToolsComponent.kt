@@ -7,8 +7,7 @@ import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.util.IconLoader
 import com.intellij.ui.JBColor
 import com.intellij.util.PlatformUtils
-
-import javax.swing.*
+import javax.swing.UIManager
 
 /**
  * Class BasToolsComponent
@@ -28,7 +27,11 @@ class BasToolsComponent: ApplicationComponent
 	{
 		try
 		{
-			UIManager.setLookAndFeel(BasToolsLaf())
+			val laf = BasToolsLaf()
+			laf.patchUI()
+
+			UIManager.setLookAndFeel(laf)
+
 			JBColor.setDark(true)
 			IconLoader.setUseDarkIcons(true)
 		}
@@ -39,8 +42,8 @@ class BasToolsComponent: ApplicationComponent
 
 		if (PlatformUtils.isPhpStorm())
 		{
-            IntentionManager.getInstance().addAction(ComputeConstantValueIntentionAction())
-        }
+			IntentionManager.getInstance().addAction(ComputeConstantValueIntentionAction())
+		}
 	}
 
 	/**

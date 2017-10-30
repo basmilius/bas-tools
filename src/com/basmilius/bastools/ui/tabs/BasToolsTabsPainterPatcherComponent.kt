@@ -29,9 +29,9 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	companion object
 	{
 
-		val HighlightColor = JBColor(Color(102, 135, 102), Color(102, 135, 102))
+		val HighlightColor = JBColor(Color(120, 147, 105), Color(120, 147, 105))
 		val HighlightThickness = 2
-		val BackgroundColor = JBColor(Color(45, 49, 53, 255), Color(45, 49, 53, 255))
+		val BackgroundColor = JBColor(Color(45, 49, 53), Color(45, 49, 53))
 
 	}
 
@@ -39,7 +39,6 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritDoc}
-	 *
 	 * @author Bas Milius
 	 */
 	override fun initComponent()
@@ -50,7 +49,6 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritDoc}
-	 *
 	 * @author Bas Milius
 	 */
 	override fun disposeComponent()
@@ -60,7 +58,6 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritDoc}
-	 *
 	 * @author Bas Milius
 	 */
 	override fun selectionChanged(event: FileEditorManagerEvent)
@@ -159,9 +156,8 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritdoc}
-	 *
 	 * @author Bas Milius
 	 */
-	override fun getComponentName() = "Bas Tools: Tabs Patcher"
+	override fun getComponentName() = "Bas Tools: Tabs UI Patcher"
 
 }

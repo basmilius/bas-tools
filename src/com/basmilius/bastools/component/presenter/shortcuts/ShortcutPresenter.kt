@@ -62,7 +62,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 */
 	fun enable()
 	{
-		if (this.configuration.showActionDescription)
+		if (this.presenter == null && this.configuration.showActionDescription)
 		{
 			this.presenter = Presenter()
 		}

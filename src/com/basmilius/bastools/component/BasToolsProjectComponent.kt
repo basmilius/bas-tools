@@ -60,9 +60,7 @@ class BasToolsProjectComponent(private val project: Project): FileDocumentManage
 		val basToolsDotJson = json ?: this.project.guessProjectDir().findChild(".bas-tools.json")?.contentsToByteArray()
 		val options = BasToolsOptionsLoader.readFromFile(basToolsDotJson)
 
-		val wasPresenterEnabled = this.options?.presenter?.enabled == true
-
-		if (wasPresenterEnabled && options?.presenter?.enabled == false)
+		if (options?.presenter?.enabled == false)
 			this.presenterComponent.disable()
 		else
 			this.presenterComponent.enable()

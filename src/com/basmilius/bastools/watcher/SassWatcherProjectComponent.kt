@@ -10,12 +10,25 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.vfs.VirtualFileManager
 
+/**
+ * Class SassWatcherProjectComponent
+ *
+ * @constructor
+ * @param project Project
+ *
+ * @author Bas Milius
+ * @package com.basmilius.bastools.watcher
+ */
 class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener, ProjectComponent
 {
 
 	private val messageBus = project.messageBus
 	private val connection = messageBus.connect()
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius
+	 */
 	override fun projectClosed()
 	{
 		super.projectClosed()
@@ -23,6 +36,10 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 		this.connection.disconnect()
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius
+	 */
 	override fun projectOpened()
 	{
 		super.projectOpened()
@@ -30,9 +47,15 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 		this.connection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, this)
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius
+	 *
+	 * TODO(Bas): Find a way to get the current project and show an editor hint on error.
+	 */
 	override fun beforeDocumentSaving(document: Document)
 	{
-		val file = FileDocumentManager.getInstance().getFile(document)
+		val file = FileDocumentManager.getInstance().getFile(document) ?: return
 
 		ApplicationUtils.deferRun(timeout = 1000) {
 			VirtualFileManager.getInstance().asyncRefresh(null)
@@ -40,26 +63,50 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 		}
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius
+	 */
 	override fun fileWithNoDocumentChanged(file: VirtualFile)
 	{
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius
+	 */
 	override fun fileContentReloaded(file: VirtualFile, document: Document)
 	{
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius
+	 */
 	override fun fileContentLoaded(file: VirtualFile, document: Document)
 	{
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius
+	 */
 	override fun beforeFileContentReload(file: VirtualFile?, document: Document)
 	{
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius
+	 */
 	override fun unsavedDocumentsDropped()
 	{
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius
+	 */
 	override fun beforeAllDocumentsSaving()
 	{
 	}
