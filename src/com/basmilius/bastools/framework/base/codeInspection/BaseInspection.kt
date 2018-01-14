@@ -18,7 +18,7 @@ abstract class BaseInspection(shortName: String): PhpInspection()
 	 *
 	 * @author Bas Milius
 	 */
-	val inspectionShortName: String = shortName
+	private val inspectionShortName: String = shortName
 
 	/**
 	 * @inheritdoc

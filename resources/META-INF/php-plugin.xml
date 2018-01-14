@@ -12,6 +12,14 @@
 		<psi.referenceContributor implementation="com.basmilius.bastools.framework.all.psi.PhpFileReferenceContributor"/>
 
 		<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="CallableValidityInspector" displayName="Validates callables" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.CallableValidityInspector"/>
+		<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="MarthaNamingIsNotValidInspection" displayName="Martha Naming" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.MarthaNamingIsNotValidInspection"/>
+
+		<defaultTemplatePropertiesProvider implementation="com.basmilius.bastools.core.configurable.personal.BasToolsPersonalTemplatePropertiesProvider"/>
+		<liveTemplatePreprocessor implementation="com.basmilius.bastools.core.configurable.personal.BasToolsPersonalTemplatePreprocessor"/>
+
+	</extensions>
+
+	<extensions defaultExtensionNs="com.jetbrains.php">
 
 	</extensions>
 
@@ -57,6 +65,7 @@
 		<lang.findUsagesProvider language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.editor.CappuccinoFindUsagesProvider"/>
 		<lang.foldingBuilder language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.folding.CappuccinoFoldingBuilder"/>
 		<lang.formatter language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.formatter.CappuccinoFormattingModelBuilder"/>
+		<gotoDeclarationHandler implementation="com.basmilius.bastools.language.cappuccino.CappuccinoGoToCappyContributor"/>
 		<lang.parserDefinition language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.parser.CappuccinoParserDefinition"/>
 		<lang.psiStructureViewFactory language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.structure.CappuccinoStructureViewProvider"/>
 		<langCodeStyleSettingsProvider implementation="com.basmilius.bastools.language.cappuccino.formatter.CappuccinoLanguageCodeStyleSettingsProvider"/>

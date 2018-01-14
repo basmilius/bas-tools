@@ -4,6 +4,11 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.WindowManager
 
 import javax.swing.*
+import javax.swing.event.ChangeEvent
+import javax.swing.event.DocumentEvent
+import javax.swing.event.DocumentListener
+import javax.swing.text.Document
+import javax.swing.text.JTextComponent
 
 /**
  * Object JUtils
@@ -13,6 +18,70 @@ import javax.swing.*
  */
 object JUtils
 {
+
+	/**
+	 * Adds a simple change listener to a JTextComponent.
+	 *
+	 * @param field JTextComponent
+	 * @param listener ChangeListener
+	 *
+	 * @author Bas Milius
+	 */
+	fun addChangeListener(field: JTextComponent, listener: (event: ChangeEvent) -> Unit)
+	{
+		val dl = object: DocumentListener
+		{
+
+			private var lastChange = 0
+			private var lastNotifiedChange = 0
+
+			/**
+			 * {@inheritdoc}
+			 * @author Bas Milius
+			 */
+			override fun changedUpdate(e: DocumentEvent?)
+			{
+				this.lastChange++
+
+				SwingUtilities.invokeLater {
+					if (this.lastNotifiedChange != this.lastChange)
+					{
+						this.lastNotifiedChange = this.lastChange
+						listener(ChangeEvent(field))
+					}
+				}
+			}
+
+			/**
+			 * {@inheritdoc}
+			 * @author Bas Milius
+			 */
+			override fun insertUpdate(e: DocumentEvent?)
+			{
+				this.changedUpdate(e)
+			}
+
+			/**
+			 * {@inheritdoc}
+			 * @author Bas Milius
+			 */
+			override fun removeUpdate(e: DocumentEvent?)
+			{
+				this.changedUpdate(e)
+			}
+
+		}
+
+		field.addPropertyChangeListener("document") {
+			(it.oldValue as? Document?)?.removeDocumentListener(dl)
+			(it.newValue as? Document?)?.addDocumentListener(dl)
+
+			dl.changedUpdate(null)
+		}
+
+		val document = field.document ?: return
+		document.addDocumentListener(dl)
+	}
 
 	/**
 	 * Gets the root component for the project.

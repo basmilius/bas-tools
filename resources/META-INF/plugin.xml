@@ -21,6 +21,13 @@
 	<!-- General -->
 	<extensions defaultExtensionNs="com.intellij">
 
+		<applicationConfigurable groupId="root" groupWeight="0" displayName="Bas Tools" id="BasTools.Config.Root" instance="com.basmilius.bastools.core.configurable.BasToolsConfigurable"/>
+		<applicationConfigurable parentId="BasTools.Config.Root" displayName="Personal" id="BasTools.Config.Personal" instance="com.basmilius.bastools.core.configurable.personal.BasToolsPersonalConfigurable"/>
+		<applicationConfigurable parentId="BasTools.Config.Root" displayName="Presenter" id="BasTools.Config.Presenter" instance="com.basmilius.bastools.core.configurable.presenter.BasToolsPresenterConfigurable"/>
+
+		<applicationService serviceImplementation="com.basmilius.bastools.core.configurable.personal.BasToolsPersonalConfigurable$PersonalConfigurationState"/>
+		<applicationService serviceImplementation="com.basmilius.bastools.core.configurable.presenter.BasToolsPresenterConfigurable$PresenterConfigurationState"/>
+
 		<bundledColorScheme id="Bas Settings" path="./colors/Bas Settings"/>
 		<bundledInspectionProfile id="Bas Settings" path="./inspection/Bas Settings"/>
 
@@ -57,10 +64,6 @@
 	</application-components>
 
 	<project-components>
-
-		<component>
-			<implementation-class>com.basmilius.bastools.component.BasToolsProjectComponent</implementation-class>
-		</component>
 
 		<component>
 			<implementation-class>com.basmilius.bastools.watcher.SassWatcherProjectComponent</implementation-class>

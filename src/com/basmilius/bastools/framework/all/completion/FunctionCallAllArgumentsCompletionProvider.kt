@@ -59,6 +59,6 @@ class FunctionCallAllArgumentsCompletionProvider: BaseCompletionProvider()
 	 *
 	 * @author Bas Milius
 	 */
-	override fun isAvailable() = true
+	override fun isAvailable() = false // Disabled. Need to fix this first.
 
 }

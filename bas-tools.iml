@@ -10,11 +10,11 @@
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="jdk" jdkName="PhpStorm PS-173.3415.21" jdkType="IDEA JDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
+    <orderEntry type="library" name="io.bit3:jsass:5.5.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="php-openapi-src" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="localization" level="project" />
-    <orderEntry type="library" name="io.bit3:jsass:5.5.3" level="project" />
   </component>
 </module>
