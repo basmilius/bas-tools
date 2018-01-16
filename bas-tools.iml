@@ -13,7 +13,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
-    <orderEntry type="library" name="io.bit3:jsass:5.5.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="php-openapi-src" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="localization" level="project" />
   </component>
