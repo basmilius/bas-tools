@@ -129,7 +129,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 					if (parent != null)
 					{
 						if (parent is ConcatenationExpressionImpl && expression is BinaryExpressionImpl)
-						{ // This is probably something like: $var = 'Result of 1 + 2 = ' . (1 + 2) . ' :)'
+						{
 							canWalk = false
 							continue
 						}

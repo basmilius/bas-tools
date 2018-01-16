@@ -23,7 +23,7 @@ interface Icons
 		val Default: Icon? = null
 
 		val BasTools = IconLoader.getIcon("/icons/bas_tools.png")
-		val CoffeeBean = IconLoader.getIcon("/icons/coffee_bean.png")
+		val CappuccinoFile = IconLoader.getIcon("/icons/cappuccino_file.png")
 		val IdeeMedia = IconLoader.getIcon("/icons/ideemedia.png")
 		val IdentityPlugin = IconLoader.getIcon("/icons/identity_plugin.png")
 		val IdentityTheme = IconLoader.getIcon("/icons/identity_theme.png")

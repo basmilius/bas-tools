@@ -12,7 +12,7 @@
 		<psi.referenceContributor implementation="com.basmilius.bastools.framework.all.psi.PhpFileReferenceContributor"/>
 
 		<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="CallableValidityInspector" displayName="Validates callables" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.CallableValidityInspector"/>
-		<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="MarthaNamingIsNotValidInspection" displayName="Martha Naming" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.MarthaNamingIsNotValidInspection"/>
+		<!--<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="MarthaNamingIsNotValidInspection" displayName="Martha Naming" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.MarthaNamingIsNotValidInspection"/>-->
 
 		<defaultTemplatePropertiesProvider implementation="com.basmilius.bastools.core.configurable.personal.BasToolsPersonalTemplatePropertiesProvider"/>
 		<liveTemplatePreprocessor implementation="com.basmilius.bastools.core.configurable.personal.BasToolsPersonalTemplatePreprocessor"/>
@@ -82,5 +82,13 @@
 			<implementation-class>com.basmilius.bastools.component.DefaultProjectComponent</implementation-class>
 		</component>
 	</project-components>
+
+	<actions>
+
+		<action class="com.basmilius.bastools.action.code.json.JsonRearrangePropertiesAction" id="BasTools.Main.Code.JsonArrange" icon="/icons/code_rearrange.png">
+			<add-to-group group-id="BasTools.Main.Code"/>
+		</action>
+
+	</actions>
 
 </idea-plugin>

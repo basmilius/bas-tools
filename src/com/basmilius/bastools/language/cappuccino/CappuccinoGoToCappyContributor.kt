@@ -4,6 +4,11 @@ import com.intellij.codeInsight.navigation.actions.GotoDeclarationHandler
 import com.intellij.openapi.actionSystem.DataContext
 import com.intellij.openapi.editor.Editor
 import com.intellij.psi.PsiElement
+import com.intellij.psi.PsiManager
+import com.intellij.psi.search.FilenameIndex
+import com.intellij.psi.util.PsiTreeUtil
+import com.jetbrains.php.lang.psi.elements.MethodReference
+import com.jetbrains.php.lang.psi.elements.StringLiteralExpression
 
 /**
  * Class CappuccinoGoToCappyContributor
@@ -23,7 +28,27 @@ class CappuccinoGoToCappyContributor: GotoDeclarationHandler
 	 */
 	override fun getGotoDeclarationTargets(sourceElement: PsiElement?, offset: Int, editor: Editor): Array<PsiElement>?
 	{
-		return null
+		if (sourceElement == null)
+			return null
+
+		val project = editor.project ?: return null
+
+		val renderMethod = PsiTreeUtil.getContextOfType(sourceElement, MethodReference::class.java) ?: return null
+
+		if (renderMethod.name != "render")
+			return null
+
+		if (renderMethod.parameterList == null)
+			return null
+
+		val firstParameter = renderMethod.parameterList!!.parameters[0] as? StringLiteralExpression ?: return null
+		val templateName = firstParameter.contents.replace("@([a-z0-9]+)\\/".toRegex(), "/") // TODO(Bas): Add support for filesystem namespaces.
+
+		val cappuccinoFiles = FilenameIndex.getAllFilesByExt(project, "cappy")
+				.filter { it.path.endsWith(templateName) }
+				.mapNotNull { PsiManager.getInstance(project).findFile(it) }
+
+		return cappuccinoFiles.toTypedArray()
 	}
 
 	/**

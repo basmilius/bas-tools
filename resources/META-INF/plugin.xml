@@ -76,17 +76,15 @@
 		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
 			<add-to-group group-id="MainMenu" anchor="last"/>
 
-			<group id="BasTools.Main.QuickNav" icon="AllIcons.General.MoreTabs" popup="true" text="Quick Actions"/>
+			<group id="BasTools.Main.QuickNav" popup="true" text="Quick Actions" icon="/icons/quick_actions.png"/>
 
 			<separator/>
 
-			<group id="BasTools.Main.Angular" icon="/icons/angular.png" popup="true" text="Angular Tools"/>
-			<group id="BasTools.Main.Cordova" icon="/icons/phone.png" popup="true" text="Cordova Tools"/>
-			<group id="BasTools.Main.Identity" icon="/icons/ideemedia.png" popup="true" text="Identity Framework Tools"/>
+			<group id="BasTools.Main.ShiftTab" popup="true" text="Shift Tab" icon="/icons/shift_tab_right.png"/>
 
 			<separator/>
 
-			<group id="BasTools.Main.ShiftTab" popup="true" text="Shift Tab"/>
+			<group id="BasTools.Main.Code" popup="true" text="Code" icon="/icons/code.png"/>
 
 			<action id="BasTools.Main.Action.Editor.CodeShot" class="com.basmilius.bastools.action.editor.CodeShotAction" text="Code Shot">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD5" keymap="$default"/>
@@ -100,19 +98,19 @@
 		<group id="BasTools.ShiftTab" text="Shift Tab">
 			<add-to-group group-id="BasTools.Main.ShiftTab"/>
 
-			<action id="BasTools.Action.ShiftTabRight" class="com.basmilius.bastools.action.editor.ShiftTabRightAction" text="Shift Tab Right" icon="/icons/arrow_right.png">
+			<action id="BasTools.Action.ShiftTabRight" class="com.basmilius.bastools.action.editor.ShiftTabRightAction" text="Shift Tab Right" icon="/icons/shift_tab_right.png">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD6" keymap="$default"/>
 			</action>
 
-			<action id="BasTools.Action.ShiftTabLeft" class="com.basmilius.bastools.action.editor.ShiftTabLeftAction" text="Shift Tab Left" icon="/icons/arrow_left.png">
+			<action id="BasTools.Action.ShiftTabLeft" class="com.basmilius.bastools.action.editor.ShiftTabLeftAction" text="Shift Tab Left" icon="/icons/shift_tab_left.png">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD4" keymap="$default"/>
 			</action>
 
-			<action id="BasTools.Action.ShiftTabDown" class="com.basmilius.bastools.action.editor.ShiftTabDownAction" text="Shift Tab Down" icon="/icons/arrow_down.png">
+			<action id="BasTools.Action.ShiftTabDown" class="com.basmilius.bastools.action.editor.ShiftTabDownAction" text="Shift Tab Down" icon="/icons/shift_tab_down.png">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD2" keymap="$default"/>
 			</action>
 
-			<action id="BasTools.Action.ShiftTabUp" class="com.basmilius.bastools.action.editor.ShiftTabUpAction" text="Shift Tab Up" icon="/icons/arrow_up.png">
+			<action id="BasTools.Action.ShiftTabUp" class="com.basmilius.bastools.action.editor.ShiftTabUpAction" text="Shift Tab Up" icon="/icons/shift_tab_up.png">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD8" keymap="$default"/>
 			</action>
 		</group>
@@ -124,56 +122,6 @@
 			<action id="BasTools.QuickNav.ToolWindowDateTimeHelpers" class="com.basmilius.bastools.action.tools.DisplayDateTimeToolWindow" text="Show Date Time Tool Window" icon="/icons/clock.png"/>
 			<action id="BasTools.QuickNav.ShowColorPicker" class="com.basmilius.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="/icons/color.png"/>
 			<action id="BasTools.QuickNav.ShowColorPipette" class="com.basmilius.bastools.action.editor.ShowColorPipetteAction" text="Show Color Pipette" icon="/icons/dropper.png"/>
-		</group>
-
-		<group id="BasTools.Angular" text="Angular Tools">
-			<add-to-group group-id="BasTools.Main.Angular"/>
-
-			<action id="BasTools.Angular.Build" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Build"/>
-			<action id="BasTools.Angular.Serve" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Serve"/>
-
-			<separator/>
-
-			<action id="BasTools.Angular.Build.Production" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Build (Production)"/>
-			<action id="BasTools.Angular.Serve.Production" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Serve (Production)"/>
-
-			<separator/>
-
-			<action id="BasTools.Angular.Version" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/angular.png" text="Show Version"/>
-		</group>
-
-		<group id="BasTools.Cordova" text="Cordova Tools">
-			<add-to-group group-id="BasTools.Main.Cordova"/>
-
-			<action id="BasTools.Cordova.Prepare" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/phone.png" text="Prepare App"/>
-			<action id="BasTools.Cordova.Requirements" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/phone.png" text="Check Requirements"/>
-
-			<separator/>
-
-			<action id="BasTools.Cordova.Prepare.Android" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/android.png" text="Prepare App for Android"/>
-			<action id="BasTools.Cordova.Build.Android" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/android.png" text="Build App for Android"/>
-			<action id="BasTools.Cordova.Run.Android" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/android.png" text="Run App on Android Device"/>
-
-			<separator/>
-
-			<action id="BasTools.Cordova.Prepare.IOs" class="com.basmilius.bastools.action.angular.VersionAction" icon="/icons/ios.png" text="Prepare App for iOS"/>
-		</group>
-
-		<group id="BasTools.Identity" text="Identity Framework Tools">
-			<add-to-group group-id="BasTools.Main.Identity"/>
-
-			<action id="BasTools.Identity.Deployer.Launch" class="com.basmilius.bastools.action.angular.VersionAction" text="Launch Identity Deployer"/>
-			<action id="BasTools.Identity.Deployer.Connect" class="com.basmilius.bastools.action.angular.VersionAction" text="Connect with Identity Deployer"/>
-
-			<separator/>
-
-			<action id="BasTools.Identity.I18n.CreatePot" class="com.basmilius.bastools.action.angular.VersionAction" text="Create .pot file for domain.."/>
-
-			<separator/>
-
-			<action id="BasTools.Identity.Make.Extension" class="com.basmilius.bastools.action.angular.VersionAction" text="Create Core Extension"/>
-			<action id="BasTools.Identity.Make.Plugin" class="com.basmilius.bastools.action.angular.VersionAction" text="Create Identity WordPress Plugin"/>
-			<action id="BasTools.Identity.Make.Theme" class="com.basmilius.bastools.action.angular.VersionAction" text="Create Identity WordPress Theme"/>
 		</group>
 
 	</actions>

@@ -44,7 +44,7 @@ class CappuccinoFileType: LanguageFileType(CappuccinoLanguage.Instance)
 	 *
 	 * @author Bas Milius
 	 */
-	override fun getIcon(): Icon = Icons.CoffeeBean
+	override fun getIcon(): Icon = Icons.CappuccinoFile
 
 	/**
 	 * {@inheritdoc}
