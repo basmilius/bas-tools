@@ -80,11 +80,11 @@
 
 			<separator/>
 
-			<group id="BasTools.Main.ShiftTab" popup="true" text="Shift Tab" icon="/icons/shift_tab_right.png"/>
+			<group id="BasTools.Main.ShiftTab"/>
 
 			<separator/>
 
-			<group id="BasTools.Main.Code" popup="true" text="Code" icon="/icons/code.png"/>
+			<group id="BasTools.Main.Code"/>
 
 			<action id="BasTools.Main.Action.Editor.CodeShot" class="com.basmilius.bastools.action.editor.CodeShotAction" text="Code Shot">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD5" keymap="$default"/>
@@ -95,7 +95,12 @@
 			<action id="BasTools.Action.About" class="com.basmilius.bastools.action.AboutAction" text="About Bas Tools" icon="/icons/bas_tools.png"/>
 		</group>
 
-		<group id="BasTools.ShiftTab" text="Shift Tab">
+		<group id="BasTools.Code" text="Code" popup="true" icon="/icons/code.png">
+			<add-to-group group-id="BasTools.Main.Code"/>
+			<add-to-group group-id="EditorPopupMenu" anchor="first"/>
+		</group>
+
+		<group id="BasTools.ShiftTab" popup="true" text="Shift Tab" icon="/icons/shift_tab_right.png">
 			<add-to-group group-id="BasTools.Main.ShiftTab"/>
 
 			<action id="BasTools.Action.ShiftTabRight" class="com.basmilius.bastools.action.editor.ShiftTabRightAction" text="Shift Tab Right" icon="/icons/shift_tab_right.png">

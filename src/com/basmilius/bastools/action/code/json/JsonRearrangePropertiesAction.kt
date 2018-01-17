@@ -1,9 +1,10 @@
 package com.basmilius.bastools.action.code.json
 
+import com.basmilius.bastools.core.util.EditorUtils
+import com.intellij.json.psi.JsonElement
 import com.intellij.json.psi.JsonFile
 import com.intellij.json.psi.JsonObject
 import com.intellij.json.psi.JsonProperty
-import com.intellij.json.psi.impl.JsonPropertyImpl
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.LangDataKeys
@@ -26,25 +27,30 @@ class JsonRearrangePropertiesAction: AnAction("Rearrange JSON properties")
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.3.0
 	 */
-	override fun actionPerformed(aae: AnActionEvent)
+	override fun actionPerformed(aae: AnActionEvent) // TODO(Bas): Show editor hints if we cannot rearrange.
 	{
+		val editor = aae.getData(LangDataKeys.EDITOR)
 		val file = aae.getData(LangDataKeys.PSI_FILE) ?: return
-		val objects = PsiTreeUtil.findChildrenOfType(file, JsonObject::class.java)
 
-		if (objects.isEmpty())
-			return
-
-		val writer = object: WriteCommandAction.Simple<Unit>(aae.project!!)
+		if (editor != null && editor.selectionModel.hasSelection())
 		{
+			val selectedPsiTree = PsiTreeUtil.findElementOfClassAtOffset(file, editor.selectionModel.selectionStart, JsonElement::class.java, false) as? JsonObject ?: return
 
-			override fun run()
-			{
-				objects.forEach { this@JsonRearrangePropertiesAction.rearrange(it) }
+			EditorUtils.writeAction(file.project, file) {
+				this.rearrange(selectedPsiTree)
 			}
-
 		}
+		else
+		{
+			val objects = PsiTreeUtil.findChildrenOfType(file, JsonObject::class.java)
 
-		writer.execute()
+			if (objects.isEmpty())
+				return
+
+			EditorUtils.writeAction(file.project, file) {
+				objects.forEach { this.rearrange(it) }
+			}
+		}
 	}
 
 	/**

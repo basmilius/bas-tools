@@ -6,6 +6,7 @@ import com.intellij.openapi.editor.*
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx
 import com.intellij.openapi.fileEditor.impl.EditorWindow
 import com.intellij.openapi.project.Project
+import com.intellij.psi.PsiFile
 
 /**
  * Object EditorUtils
@@ -24,7 +25,8 @@ object EditorUtils
 	 *
 	 * @return Char
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun getCharAt(document: Document, offset: Int) = if (offset < document.textLength && offset >= 0) document.charsSequence[offset] else '\u0000'
 
@@ -35,7 +37,8 @@ object EditorUtils
 	 * @param project Project instance.
 	 * @param str     String you want to add/replace.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	@Throws(Exception::class)
 	fun insertOrReplaceMultiCaret(editor: Editor, project: Project, str: String)
@@ -77,6 +80,31 @@ object EditorUtils
 
 		}
 		wca.execute()
+	}
+
+	/**
+	 * Executes a write action in a simple way.
+	 *
+	 * @param project Project
+	 * @param file PsiFile
+	 * @param command () -> Unit
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.1
+	 */
+	fun writeAction(project: Project, file: PsiFile, command: () -> Unit)
+	{
+		val writer = object: WriteCommandAction.Simple<Unit>(project, file)
+		{
+
+			override fun run()
+			{
+				command()
+			}
+
+		}
+
+		writer.execute()
 	}
 
 }
