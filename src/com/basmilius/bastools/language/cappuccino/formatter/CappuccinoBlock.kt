@@ -22,7 +22,7 @@ import com.intellij.xml.template.formatter.TemplateLanguageBlock
  * @param xmlFormattingPolicy XmlFormattingPolicy
  * @param indent Indent
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.formatter
  */
 class CappuccinoBlock(builder: AbstractXmlTemplateFormattingModelBuilder, node: ASTNode, wrap: Wrap?, alignment: Alignment?, settings: CodeStyleSettings, xmlFormattingPolicy: XmlFormattingPolicy, indent: Indent?): TemplateLanguageBlock(builder, node, wrap, alignment, settings, xmlFormattingPolicy, indent)
@@ -31,7 +31,7 @@ class CappuccinoBlock(builder: AbstractXmlTemplateFormattingModelBuilder, node: 
 	/**
 	 * Companion Object CappuccinoBlock
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.formatter
 	 */
 	companion object
@@ -44,7 +44,7 @@ class CappuccinoBlock(builder: AbstractXmlTemplateFormattingModelBuilder, node: 
 		 *
 		 * @return Spacing
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun createSingleSpace(addSpace: Boolean): Spacing
 		{
@@ -60,7 +60,7 @@ class CappuccinoBlock(builder: AbstractXmlTemplateFormattingModelBuilder, node: 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getChildAttributes(newChildIndex: Int): ChildAttributes
 	{
@@ -73,7 +73,7 @@ class CappuccinoBlock(builder: AbstractXmlTemplateFormattingModelBuilder, node: 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getChildIndent(childNode: ASTNode): Indent
 	{
@@ -127,14 +127,14 @@ class CappuccinoBlock(builder: AbstractXmlTemplateFormattingModelBuilder, node: 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getSpacing(adjacentBlock: TemplateLanguageBlock): Spacing? = Spacing.getReadOnlySpacing()
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getSpacing(child1: Block?, child2: Block): Spacing?
 	{

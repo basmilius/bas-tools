@@ -5,7 +5,7 @@ import com.basmilius.math.Expression
 /**
  * Class IterativeOperatorParameters
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.miscellaneous
  */
 class IterativeOperatorParameters(functionParameters: List<FunctionParameter>)

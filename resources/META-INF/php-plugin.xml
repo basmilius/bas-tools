@@ -92,7 +92,7 @@
 		</action>
 
 		<action id="BasTools.Cappuccino.NewFile" icon="/icons/cappuccino_file.png" class="com.basmilius.bastools.language.cappuccino.action.CappuccinoNewFileAction">
-			<add-to-group group-id="NewGroup" anchor="after" relative-to-action="PhpNewClass"/>
+			<add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
 		</action>
 
 	</actions>

@@ -15,7 +15,7 @@ import com.jetbrains.php.lang.psi.elements.*
 /**
  * Class CallableValidityInspector
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.codeInspection
  */
 class CallableValidityInspector: BaseInspection("CallableValidityInspector")
@@ -24,14 +24,14 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun buildVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean) = CallableValidityInspectorVisitor(problemsHolder, isOnTheFly)
 
 	/**
 	 * Inner Class CallableValidityInspectorVisitor
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.framework.all.codeInspection.CallableValidityInspector
 	 */
 	inner class CallableValidityInspectorVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean): BaseElementVisitor(problemsHolder, isOnTheFly)
@@ -40,7 +40,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun visitPhpFunctionCall(reference: FunctionReference?)
 		{
@@ -84,7 +84,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		 *
 		 * @return PsiReference?
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun buildResolver(callable: PsiElement): PsiReference?
 		{
@@ -105,7 +105,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun isTarget(callable: PsiElement): Boolean
 		{
@@ -120,7 +120,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		/**
 		 * Analyzes the validity of an element.
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun analyzeValidity(element: PsiElement?, target: PsiElement, callable: PsiElement)
 		{

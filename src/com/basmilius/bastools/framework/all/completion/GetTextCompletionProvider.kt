@@ -13,7 +13,7 @@ import com.jetbrains.localization.LocaleElementTypes
 /**
  * Class GetTextCompletionProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.completion
  */
 class GetTextCompletionProvider: BaseCompletionProvider()
@@ -22,7 +22,7 @@ class GetTextCompletionProvider: BaseCompletionProvider()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 	{
@@ -32,14 +32,14 @@ class GetTextCompletionProvider: BaseCompletionProvider()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isAvailable(): Boolean = true
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getPlace(): ElementPattern<out PsiElement> = PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(LocaleElementTypes.STRING_LITERAL_EXPRESSION))
 

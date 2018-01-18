@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable
  * @constructor
  * @param node ASTNode
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
 class CappuccinoBlockTag(node: ASTNode): CappuccinoCompositeElement(node), PsiNamedElement
@@ -30,7 +30,7 @@ class CappuccinoBlockTag(node: ASTNode): CappuccinoCompositeElement(node), PsiNa
 	 *
 	 * @return PsiElement?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@Nullable
 	fun findIdentifier(): PsiElement?
@@ -51,7 +51,7 @@ class CappuccinoBlockTag(node: ASTNode): CappuccinoCompositeElement(node), PsiNa
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getReference(): PsiReference?
 	{
@@ -68,14 +68,14 @@ class CappuccinoBlockTag(node: ASTNode): CappuccinoCompositeElement(node), PsiNa
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getName() = this.findIdentifier()?.text
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@Throws(IncorrectOperationException::class)
 	override fun setName(@NonNls @NotNull name: String): PsiElement
@@ -91,7 +91,7 @@ class CappuccinoBlockTag(node: ASTNode): CappuccinoCompositeElement(node), PsiNa
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun toString(): String
 	{

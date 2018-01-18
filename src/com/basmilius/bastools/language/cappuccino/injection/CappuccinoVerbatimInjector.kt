@@ -12,7 +12,7 @@ import java.util.*
 /**
  * Class CappuccinoVerbatimInjector
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.injection
  */
 class CappuccinoVerbatimInjector: MultiHostInjector
@@ -21,14 +21,14 @@ class CappuccinoVerbatimInjector: MultiHostInjector
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun elementsToInjectIn(): MutableList<out Class<out PsiElement>> = Collections.singletonList(CappuccinoVerbatimStatement::class.java)
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getLanguagesToInject(registrar: MultiHostRegistrar, context: PsiElement)
 	{
@@ -54,7 +54,7 @@ class CappuccinoVerbatimInjector: MultiHostInjector
 	 *
 	 * @return Language
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getInjectedLanguage(verbatimStatement: CappuccinoVerbatimStatement, content: PsiElement): Language?
 	{

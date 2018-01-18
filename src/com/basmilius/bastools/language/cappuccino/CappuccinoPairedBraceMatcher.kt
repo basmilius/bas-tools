@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable
 /**
  * Class CappuccinoPairedBraceMatcher
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoPairedBraceMatcher: PairedBraceMatcher
@@ -19,7 +19,7 @@ class CappuccinoPairedBraceMatcher: PairedBraceMatcher
 	/**
 	 * Companion Object CappuccinoPairedBraceMatcher
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino
 	 */
 	companion object
@@ -32,7 +32,7 @@ class CappuccinoPairedBraceMatcher: PairedBraceMatcher
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@NotNull
 	override fun getPairs(): Array<BracePair> = Pairs
@@ -40,14 +40,14 @@ class CappuccinoPairedBraceMatcher: PairedBraceMatcher
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isPairedBracesAllowedBeforeType(@NotNull lbraceType: IElementType, @Nullable tokenType: IElementType?): Boolean = true
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getCodeConstructStart(file: PsiFile?, openingBraceOffset: Int): Int = openingBraceOffset
 

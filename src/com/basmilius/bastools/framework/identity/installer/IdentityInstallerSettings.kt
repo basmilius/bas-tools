@@ -3,7 +3,7 @@ package com.basmilius.bastools.framework.identity.installer
 /**
  * Class IdentityInstallerSettings
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.identity.installer
  */
 class IdentityInstallerSettings(private val version: IdentityInstallerVersion, private val phpInterpreter: String)
@@ -12,7 +12,7 @@ class IdentityInstallerSettings(private val version: IdentityInstallerVersion, p
 	/**
 	 * Returns TRUE if it's a download.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun isDownload(): Boolean
 	{
@@ -22,7 +22,7 @@ class IdentityInstallerSettings(private val version: IdentityInstallerVersion, p
 	/**
 	 * Gets the current version of the framework.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getVersion(): IdentityInstallerVersion
 	{
@@ -32,7 +32,7 @@ class IdentityInstallerSettings(private val version: IdentityInstallerVersion, p
 	/**
 	 * Gets the PHP Interpreter.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getPhpInterpreter(): String
 	{
@@ -42,7 +42,7 @@ class IdentityInstallerSettings(private val version: IdentityInstallerVersion, p
 	/**
 	 * Gets the existing path.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getExistingPath(): String
 	{

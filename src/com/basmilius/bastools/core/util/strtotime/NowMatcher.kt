@@ -6,7 +6,7 @@ import java.util.regex.Pattern
 /**
  * Class NowWatcher
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util.strtotime
  */
 class NowMatcher: Matcher
@@ -18,7 +18,7 @@ class NowMatcher: Matcher
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun tryConvert(input: String, refDateStr: String): Date?
 	{

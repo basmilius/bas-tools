@@ -12,7 +12,7 @@ import java.lang.StringBuilder
 /**
  * Class CappuccinoVerbatimStatement
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
 class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(node), PsiLanguageInjectionHost
@@ -23,7 +23,7 @@ class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(nod
 	 *
 	 * @return PsiElement?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getContentElement(): PsiElement? = this.findChildByType(CappuccinoTokenTypes.VERBATIM_CONTENT)
 
@@ -32,7 +32,7 @@ class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(nod
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getEndTagText() = findChildByType<PsiElement>(CappuccinoElementTypes.ENDVERBATIM_TAG)?.text
 
@@ -41,42 +41,42 @@ class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(nod
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getStartTagText() = findChildByType<PsiElement>(CappuccinoElementTypes.VERBATIM_TAG)?.text
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isValidHost() = this.getContentElement() != null
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun updateText(text: String): PsiLanguageInjectionHost = ElementManipulators.handleContentChange(this, text)
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createLiteralTextEscaper(): LiteralTextEscaper<out PsiLanguageInjectionHost> = VerbatimContentEscaper(this)
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun toString() = "Verbatim"
 
 	/**
 	 * Inner Class VerbatimContentEscaper
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.elements
 	 */
 	inner class VerbatimContentEscaper(host: CappuccinoVerbatimStatement): LiteralTextEscaper<CappuccinoVerbatimStatement>(host)
@@ -85,7 +85,7 @@ class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(nod
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun decode(rangeInsideHost: TextRange, outChars: StringBuilder): Boolean
 		{
@@ -97,14 +97,14 @@ class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(nod
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun getOffsetInHost(offsetInDecoded: Int, rangeInsideHost: TextRange) = rangeInsideHost.startOffset + offsetInDecoded
 
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun getRelevantTextRange(): TextRange
 		{
@@ -117,7 +117,7 @@ class CappuccinoVerbatimStatement(node: ASTNode): CappuccinoCompositeElement(nod
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun isOneLine() = false
 

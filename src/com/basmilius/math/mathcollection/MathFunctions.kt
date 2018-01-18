@@ -6,7 +6,7 @@ import java.math.RoundingMode
 /**
  * Object MathFunctions
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object MathFunctions
@@ -19,7 +19,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun bellNumber(num: Int): Double
 	{
@@ -63,7 +63,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun bellNumber(num: Double): Double
 	{
@@ -78,7 +78,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun eulerNumber(n: Int, k: Int): Double
 	{
@@ -97,7 +97,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun eulerNumber(n: Double, k: Double): Double
 	{
@@ -111,7 +111,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun factorial(n: Int): Double
 	{
@@ -142,7 +142,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun factorial(n: Double): Double
 	{
@@ -157,7 +157,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun binomCoeff(n: Double, k: Int): Double
 	{
@@ -191,7 +191,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun binomCoeff(n: Double, k: Double): Double
 	{
@@ -206,7 +206,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun bernoulliNumber(m: Int, n: Int): Double
 	{
@@ -231,7 +231,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun bernoulliNumber(m: Double, n: Double): Double
 	{
@@ -246,7 +246,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun Stirling1Number(n: Int, k: Int): Double
 	{
@@ -264,7 +264,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun Stirling1Number(n: Double, k: Double): Double
 	{
@@ -279,7 +279,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun Stirling2Number(n: Int, k: Int): Double
 	{
@@ -297,7 +297,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun Stirling2Number(n: Double, k: Double): Double
 	{
@@ -312,7 +312,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun worpitzkyNumber(n: Int, k: Int): Double
 	{
@@ -334,7 +334,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun worpitzkyNumber(n: Double, k: Double): Double
 	{
@@ -380,7 +380,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun harmonicNumber(x: Double, n: Int): Double
 	{
@@ -399,7 +399,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun harmonicNumber(x: Double, n: Double): Double
 	{
@@ -413,7 +413,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun catalanNumber(n: Int): Double
 	{
@@ -427,7 +427,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun catalanNumber(n: Double): Double
 	{
@@ -441,7 +441,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun fibonacciNumber(n: Int): Double
 	{
@@ -459,7 +459,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun fibonacciNumber(n: Double): Double
 	{
@@ -473,7 +473,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun lucasNumber(n: Int): Double
 	{
@@ -490,7 +490,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun lucasNumber(n: Double): Double
 	{
@@ -505,7 +505,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun kroneckerDelta(i: Double, j: Double): Double
 	{
@@ -523,7 +523,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun kroneckerDelta(i: Int, j: Int): Double
 	{
@@ -537,7 +537,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun continuedFraction(vararg sequence: Double): Double
 	{
@@ -568,7 +568,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun continuedPolynomial(n: Int, x: DoubleArray): Double
 	{
@@ -585,7 +585,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun continuedPolynomial(vararg x: Double): Double
 	{
@@ -602,7 +602,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun eulerPolynomial(m: Int, x: Double): Double
 	{
@@ -634,7 +634,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun eulerPolynomial(m: Double, x: Double): Double
 	{
@@ -650,7 +650,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun chi(x: Double, a: Double, b: Double): Double
 	{
@@ -668,7 +668,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun chi_LR(x: Double, a: Double, b: Double): Double
 	{
@@ -686,7 +686,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun chi_L(x: Double, a: Double, b: Double): Double
 	{
@@ -704,7 +704,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun chi_R(x: Double, a: Double, b: Double): Double
 	{
@@ -721,7 +721,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun power(a: Double, b: Double): Double
 	{
@@ -757,7 +757,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun root(n: Double, x: Double): Double
 	{
@@ -788,7 +788,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun mod(a: Double, b: Double): Double
 	{
@@ -803,7 +803,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun div(a: Double, b: Double): Double
 	{
@@ -819,7 +819,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sin(a: Double): Double
 	{
@@ -833,7 +833,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun cos(a: Double): Double
 	{
@@ -847,7 +847,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun tan(a: Double): Double
 	{
@@ -861,7 +861,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun ctan(a: Double): Double
 	{
@@ -879,7 +879,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sec(a: Double): Double
 	{
@@ -897,7 +897,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun cosec(a: Double): Double
 	{
@@ -915,7 +915,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun asin(a: Double): Double
 	{
@@ -929,7 +929,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun acos(a: Double): Double
 	{
@@ -943,7 +943,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun atan(a: Double): Double
 	{
@@ -957,7 +957,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun actan(a: Double): Double
 	{
@@ -971,7 +971,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun asec(a: Double): Double
 	{
@@ -985,7 +985,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun acosec(a: Double): Double
 	{
@@ -999,7 +999,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun ln(a: Double): Double
 	{
@@ -1013,7 +1013,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun log2(a: Double): Double
 	{
@@ -1027,7 +1027,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun log10(a: Double): Double
 	{
@@ -1041,7 +1041,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun rad(a: Double): Double
 	{
@@ -1055,7 +1055,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun exp(a: Double): Double
 	{
@@ -1069,7 +1069,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sqrt(a: Double): Double
 	{
@@ -1083,7 +1083,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sinh(a: Double): Double
 	{
@@ -1097,7 +1097,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun cosh(a: Double): Double
 	{
@@ -1111,7 +1111,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun tanh(a: Double): Double
 	{
@@ -1125,7 +1125,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun coth(a: Double): Double
 	{
@@ -1143,7 +1143,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sech(a: Double): Double
 	{
@@ -1161,7 +1161,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun csch(a: Double): Double
 	{
@@ -1179,7 +1179,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun deg(a: Double): Double
 	{
@@ -1193,7 +1193,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun abs(a: Double): Double
 	{
@@ -1207,7 +1207,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sgn(a: Double): Double
 	{
@@ -1221,7 +1221,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun floor(a: Double): Double
 	{
@@ -1235,7 +1235,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun ceil(a: Double): Double
 	{
@@ -1249,7 +1249,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun arsinh(a: Double): Double
 	{
@@ -1263,7 +1263,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun arcosh(a: Double): Double
 	{
@@ -1277,7 +1277,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun artanh(a: Double): Double
 	{
@@ -1293,7 +1293,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun arcoth(a: Double): Double
 	{
@@ -1309,7 +1309,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun arsech(a: Double): Double
 	{
@@ -1325,7 +1325,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun arcsch(a: Double): Double
 	{
@@ -1341,7 +1341,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sa(a: Double): Double
 	{
@@ -1359,7 +1359,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sinc(a: Double): Double
 	{
@@ -1376,7 +1376,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun log(a: Double, b: Double): Double
 	{
@@ -1395,7 +1395,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun round(value: Double, places: Double): Double
 	{
@@ -1412,7 +1412,7 @@ object MathFunctions
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun decimalDigitsBefore(value: Double): Int
 	{
@@ -1572,7 +1572,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun ulp(value: Double): Double
 	{
@@ -1586,7 +1586,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun ulpDecimalDigitsBefore(value: Double): Double
 	{
@@ -1600,7 +1600,7 @@ object MathFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun coalesce(vararg values: Double): Double
 	{

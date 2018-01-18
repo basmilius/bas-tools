@@ -9,7 +9,7 @@ import com.intellij.psi.tree.TokenSet
 /**
  * Class CappuccinoLexerAdapter
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.lexer
  */
 class CappuccinoLexerAdapter: MergingLexerAdapter(FlexAdapter(_CappuccinoLexer(null)), TokensToMerge), CappuccinoKeywords
@@ -18,7 +18,7 @@ class CappuccinoLexerAdapter: MergingLexerAdapter(FlexAdapter(_CappuccinoLexer(n
 	/**
 	 * Class CappuccinoLexerAdapter
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.lexer
 	 */
 	companion object

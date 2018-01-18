@@ -7,7 +7,7 @@ import java.util.*
 /**
  * Class DateFormatMatcher
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util.strtotime
  */
 class DateFormatMatcher(private val dateFormat: DateFormat): Matcher
@@ -16,7 +16,7 @@ class DateFormatMatcher(private val dateFormat: DateFormat): Matcher
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun tryConvert(input: String, refDateStr: String): Date?
 	{

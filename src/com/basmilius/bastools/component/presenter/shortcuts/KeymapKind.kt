@@ -5,7 +5,7 @@ import com.intellij.util.PlatformUtils
 /**
  * Enum KeymapKind
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component.presenter.shortcuts
  */
 enum class KeymapKind(val displayName: String, val defaultKeymapName: String)
@@ -17,7 +17,7 @@ enum class KeymapKind(val displayName: String, val defaultKeymapName: String)
 	/**
 	 * Gets the alternative keymap.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getAlternativeKind() = when (this)
 	{

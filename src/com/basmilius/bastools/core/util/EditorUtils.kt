@@ -11,7 +11,7 @@ import com.intellij.psi.PsiFile
 /**
  * Object EditorUtils
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
  */
 object EditorUtils

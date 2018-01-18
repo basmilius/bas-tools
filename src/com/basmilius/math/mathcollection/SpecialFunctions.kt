@@ -3,7 +3,7 @@ package com.basmilius.math.mathcollection
 /**
  * Object SpecialFunctions
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object SpecialFunctions
@@ -19,7 +19,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun exponentialIntegralEi(x: Double): Double
 	{
@@ -48,7 +48,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun continuedFractionEi(x: Double): Double
 	{
@@ -96,7 +96,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun powerSeriesEi(x: Double): Double
 	{
@@ -131,7 +131,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun argumentAdditionSeriesEi(x: Double): Double
 	{
@@ -168,7 +168,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun logarithmicIntegralLi(x: Double): Double
 	{
@@ -194,7 +194,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun offsetLogarithmicIntegralLi(x: Double): Double
 	{
@@ -217,7 +217,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun erf(x: Double): Double
 	{
@@ -236,7 +236,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun erfc(x: Double): Double
 	{
@@ -255,7 +255,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun erfInv(x: Double): Double
 	{
@@ -290,7 +290,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun erfImp(z: Double, invert: Boolean): Double
 	{
@@ -409,7 +409,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun erfcInv(z: Double): Double
 	{
@@ -445,7 +445,7 @@ object SpecialFunctions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun erfInvImpl(p: Double, q: Double, s: Double): Double
 	{

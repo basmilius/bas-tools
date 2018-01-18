@@ -12,7 +12,7 @@ private val macKeymap = KeymapManager.getInstance().getKeymap(KeymapKind.MAC.def
  *
  * @return KeymapKind
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  */
 fun getCurrentOSKind() = when
 {
@@ -25,7 +25,7 @@ fun getCurrentOSKind() = when
  *
  * @return Keymap
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  */
 fun KeymapKind.getKeymap() = when (this)
 {
@@ -38,7 +38,7 @@ fun KeymapKind.getKeymap() = when (this)
  *
  * @return KeymapDescription
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  */
 fun getDefaultMainKeymap() = KeymapDescription(getCurrentOSKind().defaultKeymapName, "")
 
@@ -47,7 +47,7 @@ fun getDefaultMainKeymap() = KeymapDescription(getCurrentOSKind().defaultKeymapN
  *
  * @return KeymapDescription
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  */
 fun getDefaultAlternativeKeymap() = getCurrentOSKind().getAlternativeKind()?.let { KeymapDescription(it.defaultKeymapName, "for ${it.displayName}") }
 
@@ -56,6 +56,6 @@ fun getDefaultAlternativeKeymap() = getCurrentOSKind().getAlternativeKind()?.let
  *
  * @return ShortcutPresenter
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  */
 fun getShortcutPresenter(): ShortcutPresenter = ApplicationManager.getApplication().getComponent(ShortcutPresenter::class.java)

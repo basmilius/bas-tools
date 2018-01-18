@@ -7,7 +7,7 @@ import com.basmilius.math.parsertokens.ConstantValue
 /**
  * Class ArgumentParameter
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.miscellaneous
  */
 class ArgumentParameter

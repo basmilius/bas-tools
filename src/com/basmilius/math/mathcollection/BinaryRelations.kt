@@ -3,7 +3,7 @@ package com.basmilius.math.mathcollection
 /**
  * Object BinaryRelations
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object BinaryRelations
@@ -16,7 +16,7 @@ object BinaryRelations
 	/**
 	 * Comparison mode indicator.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setExactComparison()
 	{
@@ -26,7 +26,7 @@ object BinaryRelations
 	/**
 	 * Sets comparison mode to EXACT.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setEpsilonComparison()
 	{
@@ -36,7 +36,7 @@ object BinaryRelations
 	/**
 	 * Sets default epsilon value.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setDefaultEpsilon()
 	{
@@ -48,7 +48,7 @@ object BinaryRelations
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkIfEpsilonMode(): Boolean
 	{
@@ -60,7 +60,7 @@ object BinaryRelations
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkIfExactMode(): Boolean
 	{
@@ -75,7 +75,7 @@ object BinaryRelations
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun eq(a: Double, b: Double): Double
 	{
@@ -105,7 +105,7 @@ object BinaryRelations
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun neq(a: Double, b: Double): Double
 	{
@@ -135,7 +135,7 @@ object BinaryRelations
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun lt(a: Double, b: Double): Double
 	{
@@ -165,7 +165,7 @@ object BinaryRelations
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun gt(a: Double, b: Double): Double
 	{
@@ -195,7 +195,7 @@ object BinaryRelations
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun leq(a: Double, b: Double): Double
 	{
@@ -225,7 +225,7 @@ object BinaryRelations
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun geq(a: Double, b: Double): Double
 	{

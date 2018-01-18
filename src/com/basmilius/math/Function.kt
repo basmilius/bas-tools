@@ -6,7 +6,7 @@ import com.basmilius.math.parsertokens.ParserSymbol
 /**
  * Class Function
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math
  */
 class Function: PrimitiveElement
@@ -15,7 +15,7 @@ class Function: PrimitiveElement
 	/**
 	 * Companion Object Function
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.math
 	 */
 	companion object
@@ -45,7 +45,7 @@ class Function: PrimitiveElement
 	 * @property
 	 * @type String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	var functionName: String
 		get() = this.pr_functionName
@@ -72,7 +72,7 @@ class Function: PrimitiveElement
 	 * @param functionExpressionString String
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(functionName: String, functionExpressionString: String, vararg elements: PrimitiveElement): super(TYPE_ID)
 	{
@@ -103,7 +103,7 @@ class Function: PrimitiveElement
 	 * @param functionExpressionString String
 	 * @param argumentsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(functionName: String, functionExpressionString: String, vararg argumentsNames: String): super(TYPE_ID)
 	{
@@ -137,7 +137,7 @@ class Function: PrimitiveElement
 	 * @param functionDefinitionString String
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(functionDefinitionString: String, vararg elements: PrimitiveElement): super(TYPE_ID)
 	{
@@ -178,7 +178,7 @@ class Function: PrimitiveElement
 	 * @param functionName String
 	 * @param functionExtension FunctionExtension
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(functionName: String, functionExtension: FunctionExtension): super(TYPE_ID)
 	{
@@ -206,7 +206,7 @@ class Function: PrimitiveElement
 	 * @constructor
 	 * @param function Function
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(function: Function): super(TYPE_ID)
 	{
@@ -225,7 +225,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunctionExpressionString(): String
 	{
@@ -241,7 +241,7 @@ class Function: PrimitiveElement
 	 * @param argumentIndex Int
 	 * @param argumentValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setArgumentValue(argumentIndex: Int, argumentValue: Double)
 	{
@@ -260,7 +260,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkSyntax(): Boolean
 	{
@@ -279,7 +279,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getErrorMessage(): String
 	{
@@ -291,7 +291,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Function
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun clone(): Function
 	{
@@ -303,7 +303,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun calculate(): Double
 	{
@@ -317,7 +317,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun calculate(vararg params: Double): Double
 	{
@@ -351,7 +351,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun calculate(vararg arguments: Argument): Double
 	{
@@ -383,7 +383,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addDefinitions(vararg elements: PrimitiveElement)
 	{
@@ -396,7 +396,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeDefinitions(vararg elements: PrimitiveElement)
 	{
@@ -409,7 +409,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun countRecursiveArguments(): Int
 	{
@@ -428,7 +428,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param arguments Argument[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addArguments(vararg arguments: Argument)
 	{
@@ -444,7 +444,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param argumentsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineArguments(vararg argumentsNames: String)
 	{
@@ -461,7 +461,7 @@ class Function: PrimitiveElement
 	 * @param argumentName String
 	 * @param argumentValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineArgument(argumentName: String, argumentValue: Double)
 	{
@@ -479,7 +479,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgumentIndex(argumentName: String): Int
 	{
@@ -493,7 +493,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Argument?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgument(argumentName: String): Argument?
 	{
@@ -507,7 +507,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Argument?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgument(argumentIndex: Int): Argument?
 	{
@@ -521,7 +521,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getParameterName(parameterIndex: Int): String
 	{
@@ -538,7 +538,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgumentsNumber(): Int
 	{
@@ -550,7 +550,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param argumentsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeArguments(vararg argumentsNames: String)
 	{
@@ -566,7 +566,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param arguments Argument[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeArguments(vararg arguments: Argument)
 	{
@@ -580,7 +580,7 @@ class Function: PrimitiveElement
 	/**
 	 * Removes all arguments associated with the function expression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeAllArguments()
 	{
@@ -596,7 +596,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param constants Constant[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addConstants(vararg constants: Constant)
 	{
@@ -609,7 +609,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param constantsList List<Constant>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addConstants(constantsList: List<Constant>)
 	{
@@ -623,7 +623,7 @@ class Function: PrimitiveElement
 	 * @param constantName String
 	 * @param constantValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineConstant(constantName: String, constantValue: Double)
 	{
@@ -638,7 +638,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstantIndex(constantName: String): Int
 	{
@@ -652,7 +652,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Constant?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstant(constantName: String): Constant?
 	{
@@ -666,7 +666,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Constant?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstant(constantIndex: Int): Constant?
 	{
@@ -678,7 +678,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstantsNumber(): Int
 	{
@@ -690,7 +690,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param constantsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeConstants(vararg constantsNames: String)
 	{
@@ -703,7 +703,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param constants Constant[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeConstants(vararg constants: Constant)
 	{
@@ -714,7 +714,7 @@ class Function: PrimitiveElement
 	/**
 	 * Removes all constants associated with the function expression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeAllConstants()
 	{
@@ -727,7 +727,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param functions Function
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addFunctions(vararg functions: Function)
 	{
@@ -742,7 +742,7 @@ class Function: PrimitiveElement
 	 * @param functionExpressionString String
 	 * @param argumentsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineFunction(functionName: String, functionExpressionString: String, vararg argumentsNames: String)
 	{
@@ -757,7 +757,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunctionIndex(functionName: String): Int
 	{
@@ -771,7 +771,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Function?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunction(functionName: String): Function?
 	{
@@ -785,7 +785,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Function?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunction(functionIndex: Int): Function?
 	{
@@ -797,7 +797,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunctionsNumber(): Int
 	{
@@ -809,7 +809,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param functionsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeFunctions(vararg functionsNames: String)
 	{
@@ -822,7 +822,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param functions Function[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeFunctions(vararg functions: Function)
 	{
@@ -833,7 +833,7 @@ class Function: PrimitiveElement
 	/**
 	 * Removes all functions associated with the function expression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeAllFunctions()
 	{
@@ -844,7 +844,7 @@ class Function: PrimitiveElement
 	/**
 	 * Enables verbose function mode.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setVerboseMode()
 	{
@@ -854,7 +854,7 @@ class Function: PrimitiveElement
 	/**
 	 * Disables function verbose mode (Sets default silent mode).
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setSilentMode()
 	{
@@ -866,7 +866,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getVerboseMode(): Boolean
 	{
@@ -876,7 +876,7 @@ class Function: PrimitiveElement
 	/**
 	 * Checks whether function name appears in function body, if yes the recursive mode is being set.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkRecursiveMode()
 	{
@@ -902,7 +902,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getRecursiveMode(): Boolean
 	{
@@ -914,7 +914,7 @@ class Function: PrimitiveElement
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getComputingTime(): Double
 	{
@@ -926,7 +926,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param expression Expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addRelatedExpression(expression: Expression)
 	{
@@ -939,7 +939,7 @@ class Function: PrimitiveElement
 	 *
 	 * @param expression Expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeRelatedExpression(expression: Expression)
 	{
@@ -950,7 +950,7 @@ class Function: PrimitiveElement
 	/**
 	 * Sets expression modified flags in the related expression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setExpressionModifiedFlags()
 	{

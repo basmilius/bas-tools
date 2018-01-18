@@ -10,7 +10,7 @@ import com.intellij.openapi.project.Project
  * @param project Project?
  * @param actionText String?
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component.presenter.shortcuts
  */
 class ActionData(val actionId: String, val project: Project?, val actionText: String?)

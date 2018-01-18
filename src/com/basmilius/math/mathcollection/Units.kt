@@ -3,7 +3,7 @@ package com.basmilius.math.mathcollection
 /**
  * Class Units
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollectionø
  */
 object Units

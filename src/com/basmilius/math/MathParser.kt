@@ -14,7 +14,7 @@ import java.util.regex.Pattern
 /**
  * Object MathParser
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math
  */
 object MathParser
@@ -55,7 +55,7 @@ object MathParser
 	 *
 	 * @param maximumNumbersInCache Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun initPrimesCache(maximumNumbersInCache: Int = PrimesCache.DEFAULT_MAX_NUM_IN_CACHE)
 	{
@@ -67,7 +67,7 @@ object MathParser
 	 *
 	 * @param primesCache PrimesCache
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun initPrimesCache(primesCache: PrimesCache)
 	{
@@ -77,7 +77,7 @@ object MathParser
 	/**
 	 * Sets primes cache to null.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setNoPrimesCache()
 	{
@@ -89,7 +89,7 @@ object MathParser
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getMaxNumInPrimesCache(): Int
 	{
@@ -101,7 +101,7 @@ object MathParser
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getThreadsNumber(): Int
 	{
@@ -111,7 +111,7 @@ object MathParser
 	/**
 	 * Sets default threads number.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setDefaultThreadsNumber()
 	{
@@ -123,7 +123,7 @@ object MathParser
 	 *
 	 * @param threadsNumber Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setThreadsNumber(threadsNumber: Int)
 	{
@@ -140,7 +140,7 @@ object MathParser
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunctionValue(f: Expression, x: Argument, x0: Double): Double
 	{
@@ -155,7 +155,7 @@ object MathParser
 	 *
 	 * @return DoubleArray?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun arrayList2double(numbers: List<Double>?): DoubleArray
 	{
@@ -182,7 +182,7 @@ object MathParser
 	 *
 	 * @return DoubleArray
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunctionValues(f: Expression, index: Argument, from: Double, to: Double, delta: Double): DoubleArray
 	{
@@ -263,7 +263,7 @@ object MathParser
 	 *
 	 * @param randomGenerator Random
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setRandomGenerator(randomGenerator: Random)
 	{
@@ -273,7 +273,7 @@ object MathParser
 	/**
 	 * Sets comparison mode to EXACT.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setExactComparison()
 	{
@@ -283,7 +283,7 @@ object MathParser
 	/**
 	 * Sets comparison mode to EPSILON.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setEpsilonComparison()
 	{
@@ -295,7 +295,7 @@ object MathParser
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getEpsilon(): Double
 	{
@@ -307,7 +307,7 @@ object MathParser
 	 *
 	 * @param epsilon Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setEpsilon(epsilon: Double)
 	{
@@ -317,7 +317,7 @@ object MathParser
 	/**
 	 * Sets default epsilon value.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setDefaultEpsilon()
 	{
@@ -329,7 +329,7 @@ object MathParser
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkIfEpsilonMode(): Boolean
 	{
@@ -341,7 +341,7 @@ object MathParser
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkIfExactMode(): Boolean
 	{
@@ -351,7 +351,7 @@ object MathParser
 	/**
 	 * Double floating-point precision arithmetic causes rounding problems.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun enableUlpRounding()
 	{
@@ -361,7 +361,7 @@ object MathParser
 	/**
 	 * Double floating-point precision arithmetic causes rounding problems.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun disableUlpRounding()
 	{
@@ -373,7 +373,7 @@ object MathParser
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkIfUlpRounding(): Boolean
 	{
@@ -385,7 +385,7 @@ object MathParser
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getMaxAllowedRecursionDepth(): Int
 	{
@@ -397,7 +397,7 @@ object MathParser
 	 *
 	 * @param maxAllowedRecursionDepth Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setMaxAllowedRecursionDepth(maxAllowedRecursionDepth: Int)
 	{
@@ -409,7 +409,7 @@ object MathParser
 	 *
 	 * @param tokens String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeBuiltinTokens(vararg tokens: String)
 	{
@@ -425,7 +425,7 @@ object MathParser
 	 *
 	 * @param tokens String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun unremoveBuiltinTokens(vararg tokens: String)
 	{
@@ -441,7 +441,7 @@ object MathParser
 	/**
 	 * Un-marks all tokens previously marked to be removed.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun unremoveAllBuiltinTokens()
 	{
@@ -454,7 +454,7 @@ object MathParser
 	 *
 	 * @return StringArray
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getBuiltinTokensToRemove(): StringArray
 	{
@@ -473,7 +473,7 @@ object MathParser
 	 * @param newToken String
 	 * @param newTokenDescription String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun modifyBuiltinToken(currentToken: String, newToken: String, newTokenDescription: String = "")
 	{
@@ -493,7 +493,7 @@ object MathParser
 	 *
 	 * @param currentOrNewTokens String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun unmodifyBuiltinTokens(vararg currentOrNewTokens: String)
 	{
@@ -515,7 +515,7 @@ object MathParser
 	/**
 	 * Un-marks all tokens previously marked to be modified.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun unmodifyAllBuiltinTokens()
 	{
@@ -528,7 +528,7 @@ object MathParser
 	 *
 	 * @return Array<Array<String?>>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getBuiltinTokensToModify(): Array<Array<String?>>
 	{
@@ -549,7 +549,7 @@ object MathParser
 	/**
 	 * Sets MathParser to override built-in tokens.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setToOverrideBuiltinTokens()
 	{
@@ -560,7 +560,7 @@ object MathParser
 	/**
 	 * Sets MathParser not to override built-in tokens.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setNotToOverrideBuiltinTokens()
 	{
@@ -573,7 +573,7 @@ object MathParser
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkIfsetToUserrideBuiltinTokens(): Boolean
 	{
@@ -587,7 +587,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getTokenTypeDescription(tokenTypeId: Int): String
 	{
@@ -622,7 +622,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberToHexString(number: Int): String
 	{
@@ -636,7 +636,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberToHexString(number: Long): String
 	{
@@ -651,7 +651,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberToHexString(number: Double): String
 	{
@@ -665,7 +665,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun hexString2AsciiString(hexString: String): String
 	{
@@ -692,7 +692,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberToAsciiString(number: Int): String
 	{
@@ -706,7 +706,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberToAsciiString(number: Long): String
 	{
@@ -720,7 +720,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberToAsciiString(number: Double): String
 	{
@@ -735,7 +735,7 @@ object MathParser
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(numberLiteral: String, numeralSystemBase: Int): Double
 	{
@@ -749,7 +749,7 @@ object MathParser
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(numberLiteral: String): Double
 	{
@@ -764,7 +764,7 @@ object MathParser
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(numeralSystemBase: Int, vararg digits: Int): Double
 	{
@@ -779,7 +779,7 @@ object MathParser
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(numeralSystemBase: Double, vararg digits: Double): Double
 	{
@@ -794,7 +794,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convDecimal2OthBase(decimalNumber: Double, numeralSystemBase: Int): String
 	{
@@ -810,7 +810,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convDecimal2OthBase(decimalNumber: Double, numeralSystemBase: Int, format: Int): String
 	{
@@ -822,7 +822,7 @@ object MathParser
 	 *
 	 * @param o Any
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun consolePrintln(o: Any)
 	{
@@ -843,7 +843,7 @@ object MathParser
 	 *
 	 * @param stringArray Array<String>?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun consolePrintln(stringArray: Array<String>?)
 	{
@@ -860,7 +860,7 @@ object MathParser
 	/**
 	 * Prints new line to the Console, no new line.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun consolePrintln()
 	{
@@ -881,7 +881,7 @@ object MathParser
 	 *
 	 * @param o Any
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun consolePrint(o: Any)
 	{
@@ -898,7 +898,7 @@ object MathParser
 	/**
 	 * Resets console output string, console output string is being built by consolePrintln(), consolePrint().
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun resetConsoleOutput()
 	{
@@ -909,7 +909,7 @@ object MathParser
 	/**
 	 * Sets default console prefix.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setDefaultConsolePrefix()
 	{
@@ -919,7 +919,7 @@ object MathParser
 	/**
 	 * Sets default console output string prefix.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setDefaultConsoleOutputPrefix()
 	{
@@ -931,7 +931,7 @@ object MathParser
 	 *
 	 * @param consolePrefix String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setConsolePrefix(consolePrefix: String)
 	{
@@ -943,7 +943,7 @@ object MathParser
 	 *
 	 * @param consoleOutputPrefix String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setConsoleOutputPrefix(consoleOutputPrefix: String)
 	{
@@ -955,7 +955,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getHelp(): String
 	{
@@ -969,7 +969,7 @@ object MathParser
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getHelp(word: String): String
 	{
@@ -979,7 +979,7 @@ object MathParser
 	/**
 	 * Prints all help content.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun consolePrintHelp()
 	{
@@ -991,7 +991,7 @@ object MathParser
 	 *
 	 * @param word String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun consolePrintHelp(word: String)
 	{
@@ -1003,7 +1003,7 @@ object MathParser
 	 *
 	 * @return List<KeyWord>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getKeyWords(): List<KeyWord>
 	{
@@ -1017,7 +1017,7 @@ object MathParser
 	 *
 	 * @return List<KeyWord>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getKeyWords(query: String): List<KeyWord>
 	{
@@ -1032,7 +1032,7 @@ object MathParser
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun regexMatch(str: String, pattern: String): Boolean
 	{
@@ -1044,7 +1044,7 @@ object MathParser
 	 *
 	 * @param tokens List<Token>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun consolePrintTokens(tokens: List<Token>)
 	{

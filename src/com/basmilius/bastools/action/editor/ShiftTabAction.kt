@@ -13,7 +13,7 @@ import javax.swing.SwingConstants
  * @constructor
  * @param orientation Int
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.action.editor
  */
 abstract class ShiftTabAction(private val orientation: Orientation): AnAction("Shift Tab")
@@ -22,7 +22,7 @@ abstract class ShiftTabAction(private val orientation: Orientation): AnAction("S
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun actionPerformed(aae: AnActionEvent?)
 	{
@@ -88,7 +88,7 @@ abstract class ShiftTabAction(private val orientation: Orientation): AnAction("S
 	 * @param fileEditorManagerEx FileEditorManagerEx
 	 *
 	 * @return Int
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getCurrentSplitIndex(fileEditorManagerEx: FileEditorManagerEx): Int
 	{
@@ -98,7 +98,7 @@ abstract class ShiftTabAction(private val orientation: Orientation): AnAction("S
 	/**
 	 * Enum Class Orientation
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.action.editor.ShiftTabAction
 	 */
 	enum class Orientation

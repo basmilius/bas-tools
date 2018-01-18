@@ -7,7 +7,7 @@ import com.intellij.psi.AbstractElementManipulator
 /**
  * Class CappuccinoFileReferenceManipulator
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements.manipulators
  */
 class CappuccinoFileReferenceManipulator: AbstractElementManipulator<CappuccinoTagWithFileReference>()
@@ -16,7 +16,7 @@ class CappuccinoFileReferenceManipulator: AbstractElementManipulator<CappuccinoT
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun handleContentChange(element: CappuccinoTagWithFileReference, range: TextRange, newContent: String): CappuccinoTagWithFileReference
 	{

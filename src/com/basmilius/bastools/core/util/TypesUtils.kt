@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull
 /**
  * Object TypesUtils
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
  */
 @Suppress("MemberVisibilityCanPrivate")

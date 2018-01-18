@@ -9,7 +9,7 @@ import com.intellij.psi.PsiNamedElement
 /**
  * Class CappuccinoFindUsagesProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.editor
  */
 class CappuccinoFindUsagesProvider: FindUsagesProvider
@@ -18,7 +18,7 @@ class CappuccinoFindUsagesProvider: FindUsagesProvider
 	/**
 	 * Companion Object CappuccinoFindUsagesProvider
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.editor
 	 */
 	companion object
@@ -31,7 +31,7 @@ class CappuccinoFindUsagesProvider: FindUsagesProvider
 		 *
 		 * @return String?
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun getName(element: PsiElement): String? = if (element is PsiNamedElement) element.name else element.text
 
@@ -40,28 +40,28 @@ class CappuccinoFindUsagesProvider: FindUsagesProvider
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getWordsScanner(): WordsScanner? = null
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getNodeText(element: PsiElement, useFullName: Boolean) = getName(element)!!
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getDescriptiveName(element: PsiElement): String = getName(element)!!
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getType(element: PsiElement): String
 	{
@@ -74,14 +74,14 @@ class CappuccinoFindUsagesProvider: FindUsagesProvider
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getHelpId(element: PsiElement): String? = "reference.dialogs.findUsages.other"
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun canFindUsagesFor(element: PsiElement) = element is CappuccinoBlockTag && getName(element) != null
 

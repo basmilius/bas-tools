@@ -9,7 +9,7 @@ import javax.swing.JComponent
 /**
  * Class BaseToolWindowFactory
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.toolWindow
  */
 abstract class BaseToolWindowFactory: ToolWindowFactory
@@ -21,7 +21,7 @@ abstract class BaseToolWindowFactory: ToolWindowFactory
 	/**
 	 * @inheritdoc
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createToolWindowContent(project: Project, toolWindow: ToolWindow)
 	{
@@ -38,7 +38,7 @@ abstract class BaseToolWindowFactory: ToolWindowFactory
 	 *
 	 * @return JComponent
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	protected abstract fun createWindowContent(): JComponent
 
@@ -47,7 +47,7 @@ abstract class BaseToolWindowFactory: ToolWindowFactory
 	 *
 	 * @return ContentFactory
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getContentFactory(): ContentFactory = ContentFactory.SERVICE.getInstance()
 

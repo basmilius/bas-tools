@@ -5,7 +5,7 @@ import com.basmilius.math.parsertokens.KeyWord
 /**
  * Class KwTypeComparator
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.miscellaneous
  */
 class KwTypeComparator: Comparator<KeyWord>
@@ -14,7 +14,7 @@ class KwTypeComparator: Comparator<KeyWord>
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun compare(kw1: KeyWord, kw2: KeyWord): Int
 	{

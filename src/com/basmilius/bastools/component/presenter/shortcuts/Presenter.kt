@@ -13,7 +13,7 @@ import javax.swing.KeyStroke
 /**
  * Class Presenter
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component.presenter.shortcuts
  */
 class Presenter: Disposable
@@ -32,7 +32,7 @@ class Presenter: Disposable
 	/**
 	 * Presenter Constructor.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	init
 	{
@@ -45,7 +45,7 @@ class Presenter: Disposable
 	 * @param group ActionGroup
 	 * @param parentName String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun fillParentNames(group: ActionGroup, parentName: String)
 	{
@@ -74,7 +74,7 @@ class Presenter: Disposable
 	/**
 	 * Enables the presenter.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun enable()
 	{
@@ -129,7 +129,7 @@ class Presenter: Disposable
 	 *
 	 * @param text String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MutableList<Pair<String, Font?>>.addText(text: String)
 	{
@@ -141,7 +141,7 @@ class Presenter: Disposable
 	 *
 	 * @param actionData ActionData
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun showActionInfo(actionData: ActionData)
 	{
@@ -199,7 +199,7 @@ class Presenter: Disposable
 	 *
 	 * @return List<Pair<String, Font?>>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun shortcutTextFragments(keymap: KeymapDescription, actionId: String, shownShortcut: String): List<Pair<String, Font?>>
 	{
@@ -242,7 +242,7 @@ class Presenter: Disposable
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun shortcutText(shortcuts: Array<Shortcut>?, keymapKind: KeymapKind): String
 	{
@@ -261,7 +261,7 @@ class Presenter: Disposable
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun shortcutText(shortcut: Shortcut, keymapKind: KeymapKind): String
 	{
@@ -280,7 +280,7 @@ class Presenter: Disposable
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun shortcutText(keystroke: KeyStroke, keymapKind: KeymapKind): String
 	{
@@ -299,7 +299,7 @@ class Presenter: Disposable
 	/**
 	 * Disables the presenter.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun disable()
 	{
@@ -315,7 +315,7 @@ class Presenter: Disposable
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun dispose()
 	{

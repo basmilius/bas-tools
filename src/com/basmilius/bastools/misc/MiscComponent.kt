@@ -6,7 +6,7 @@ import com.basmilius.bastools.misc.angryDeveloper.AngryDeveloperFeature
 /**
  * Class MiscComponent
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.misc
  */
 class MiscComponent: ApplicationComponent
@@ -19,14 +19,14 @@ class MiscComponent: ApplicationComponent
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getComponentName() = "Bas Tools - Misc stuff"
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun initComponent()
 	{
@@ -40,7 +40,7 @@ class MiscComponent: ApplicationComponent
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun disposeComponent()
 	{

@@ -3,7 +3,7 @@ package com.basmilius.math.mathcollection
 /**
  * Object Evaluate
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object Evaluate
@@ -17,7 +17,7 @@ object Evaluate
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun polynomial(x: Double, coefficients: DoubleArray): Double
 	{

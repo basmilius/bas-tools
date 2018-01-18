@@ -3,7 +3,7 @@ package com.basmilius.math.mathcollection
 /**
  * Object BooleanAlgebra
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object BooleanAlgebra
@@ -80,7 +80,7 @@ object BooleanAlgebra
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun double2IntBoolean(a: Double): Int
 	{
@@ -97,7 +97,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun and(a: Double, b: Double): Double
 	{
@@ -115,7 +115,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun or(a: Double, b: Double): Double
 	{
@@ -133,7 +133,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun xor(a: Double, b: Double): Double
 	{
@@ -151,7 +151,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun nand(a: Double, b: Double): Double
 	{
@@ -169,7 +169,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun nor(a: Double, b: Double): Double
 	{
@@ -187,7 +187,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun xnor(a: Double, b: Double): Double
 	{
@@ -205,7 +205,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun imp(a: Double, b: Double): Double
 	{
@@ -223,7 +223,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun eqv(a: Double, b: Double): Double
 	{
@@ -240,7 +240,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun not(a: Double): Double
 	{
@@ -257,7 +257,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun cimp(a: Double, b: Double): Double
 	{
@@ -275,7 +275,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun nimp(a: Double, b: Double): Double
 	{
@@ -293,7 +293,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun cnimp(a: Double, b: Double): Double
 	{
@@ -310,7 +310,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun andVariadic(vararg values: Double): Double
 	{
@@ -334,7 +334,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun orVariadic(vararg values: Double): Double
 	{
@@ -358,7 +358,7 @@ object BooleanAlgebra
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun xorVariadic(vararg values: Double): Double
 	{

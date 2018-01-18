@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull
 /**
  * Class CappuccinoFileTypeFactory
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoFileTypeFactory: FileTypeFactory()
@@ -16,7 +16,7 @@ class CappuccinoFileTypeFactory: FileTypeFactory()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createFileTypes(@NotNull consumer: FileTypeConsumer)
 	{

@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull
 /**
  * Class CappuccinoFile
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoFile(viewProvider: FileViewProvider): PsiFileBase(viewProvider, CappuccinoLanguage.Instance)
@@ -17,7 +17,7 @@ class CappuccinoFile(viewProvider: FileViewProvider): PsiFileBase(viewProvider, 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@NotNull
 	override fun getFileType(): FileType = CappuccinoFileType.Instance
@@ -25,7 +25,7 @@ class CappuccinoFile(viewProvider: FileViewProvider): PsiFileBase(viewProvider, 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun toString(): String = "CappuccinoFile: ${this.name}"
 

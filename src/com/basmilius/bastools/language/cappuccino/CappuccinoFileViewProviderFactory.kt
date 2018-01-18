@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull
 /**
  * Class CappuccinoFileViewProviderFactory
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoFileViewProviderFactory: FileViewProviderFactory
@@ -19,7 +19,7 @@ class CappuccinoFileViewProviderFactory: FileViewProviderFactory
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createFileViewProvider(@NotNull file: VirtualFile, @NotNull language: Language, @NotNull manager: PsiManager, eventSystemEnabled: Boolean): FileViewProvider = CappuccinoFileViewProvider(manager, file, eventSystemEnabled)
 

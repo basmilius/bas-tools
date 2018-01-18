@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NonNls
  * @constructor
  * @param debugName String
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
 open class CappuccinoCompositeElementType(@NonNls debugName: String): IElementType(debugName, CappuccinoLanguage.Instance), ICompositeElementType
@@ -27,7 +27,7 @@ open class CappuccinoCompositeElementType(@NonNls debugName: String): IElementTy
 	 *
 	 * @return PsiElement
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun createPsiElement(node: ASTNode): PsiElement
 	{
@@ -46,7 +46,7 @@ open class CappuccinoCompositeElementType(@NonNls debugName: String): IElementTy
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createCompositeNode(): ASTNode = CompositeElement(this)
 

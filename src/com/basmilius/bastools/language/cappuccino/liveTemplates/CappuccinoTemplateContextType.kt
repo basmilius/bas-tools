@@ -8,7 +8,7 @@ import com.intellij.psi.xml.XmlTokenType
 /**
  * Class CappuccinoTemplateContextType
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.liveTemplates
  */
 class CappuccinoTemplateContextType: TemplateContextType("Cappuccino", "Cappuccino")
@@ -17,7 +17,7 @@ class CappuccinoTemplateContextType: TemplateContextType("Cappuccino", "Cappucci
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isInContext(file: PsiFile, offset: Int): Boolean
 	{

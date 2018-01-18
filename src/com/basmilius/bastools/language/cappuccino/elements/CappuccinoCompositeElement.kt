@@ -10,7 +10,7 @@ import com.intellij.lang.ASTNode
  * @constructor
  * @param node ASTNode
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
 open class CappuccinoCompositeElement(node: ASTNode): ASTWrapperPsiElement(node)
@@ -19,21 +19,21 @@ open class CappuccinoCompositeElement(node: ASTNode): ASTWrapperPsiElement(node)
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getLanguage() = CappuccinoLanguage.Instance
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getNode() = super.getNode()
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun toString() = this.getNode().elementType.toString()
 

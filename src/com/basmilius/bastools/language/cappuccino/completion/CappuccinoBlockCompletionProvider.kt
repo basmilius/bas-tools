@@ -18,7 +18,7 @@ import com.intellij.util.ProcessingContext
 /**
  * Class CappuccinoBlockCompletionProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.completion
  */
 class CappuccinoBlockCompletionProvider: BaseCompletionProvider()
@@ -27,7 +27,7 @@ class CappuccinoBlockCompletionProvider: BaseCompletionProvider()
 	/**
 	 * Class CappuccinoBlockCompletionProvider
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.completion
 	 */
 	companion object
@@ -39,7 +39,7 @@ class CappuccinoBlockCompletionProvider: BaseCompletionProvider()
 		 * @param results CompletionResultSet
 		 * @param completionElement PsiElement
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun collectBlockNames(results: CompletionResultSet, completionElement: PsiElement)
 		{
@@ -53,7 +53,7 @@ class CappuccinoBlockCompletionProvider: BaseCompletionProvider()
 				/**
 				 * {@inheritdoc}
 				 *
-				 * @author Bas Milius
+				 * @author Bas Milius <bas@mili.us>
 				 */
 				override fun handleMatch(element: PsiElement?): Boolean
 				{
@@ -76,7 +76,7 @@ class CappuccinoBlockCompletionProvider: BaseCompletionProvider()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 	{
@@ -104,14 +104,14 @@ class CappuccinoBlockCompletionProvider: BaseCompletionProvider()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isAvailable() = PlatformUtils.isPhpStorm()
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getPlace(): ElementPattern<out PsiElement> = PlatformPatterns.psiElement().withParent(CappuccinoBlockTag::class.java)
 

@@ -9,7 +9,7 @@ import com.intellij.psi.tree.IElementType
  * @param tagName String
  * @param isStructural Boolean
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
 class CappuccinoTag(val tagName: String, val isStructural: Boolean): CappuccinoCompositeElementType("${tagName.toUpperCase()}_TAG")
@@ -18,7 +18,7 @@ class CappuccinoTag(val tagName: String, val isStructural: Boolean): CappuccinoC
 	/**
 	 * Companion Object CappuccinoTag
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.elements
 	 */
 	companion object

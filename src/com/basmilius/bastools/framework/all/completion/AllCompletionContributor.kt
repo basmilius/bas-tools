@@ -6,7 +6,7 @@ import com.intellij.codeInsight.completion.CompletionType
 /**
  * Class AllCompletionContributor
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.completion
  */
 class AllCompletionContributor: BaseCompletionContributor()
@@ -15,7 +15,7 @@ class AllCompletionContributor: BaseCompletionContributor()
 	/**
 	 * AllCompletionContributor Constructor
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	init
 	{
@@ -26,7 +26,7 @@ class AllCompletionContributor: BaseCompletionContributor()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isAvailable() = true
 

@@ -7,7 +7,7 @@ import com.intellij.psi.ElementManipulator
 /**
  * Class CappuccinoBlockTagManipulator
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements.manipulators
  */
 class CappuccinoBlockTagManipulator: ElementManipulator<CappuccinoBlockTag>
@@ -16,7 +16,7 @@ class CappuccinoBlockTagManipulator: ElementManipulator<CappuccinoBlockTag>
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getRangeInElement(element: CappuccinoBlockTag): TextRange
 	{
@@ -26,14 +26,14 @@ class CappuccinoBlockTagManipulator: ElementManipulator<CappuccinoBlockTag>
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun handleContentChange(element: CappuccinoBlockTag, newContent: String?): CappuccinoBlockTag? = null
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun handleContentChange(element: CappuccinoBlockTag, range: TextRange, newContent: String): CappuccinoBlockTag
 	{

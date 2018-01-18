@@ -8,7 +8,7 @@ import java.util.regex.Pattern
 /**
  * Class MinutesMatcher
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util.strtotime
  */
 class MinutesMatcher: Matcher
@@ -19,7 +19,7 @@ class MinutesMatcher: Matcher
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun tryConvert(input: String, refDateStr: String): Date?
 	{

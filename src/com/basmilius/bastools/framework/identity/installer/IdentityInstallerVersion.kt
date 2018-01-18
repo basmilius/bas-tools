@@ -3,7 +3,7 @@ package com.basmilius.bastools.framework.identity.installer
 /**
  * Class IdentityInstallerVersion
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.identity.installer
  */
 class IdentityInstallerVersion
@@ -18,7 +18,7 @@ class IdentityInstallerVersion
 	 *
 	 * @param version String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(version: String)
 	{
@@ -33,7 +33,7 @@ class IdentityInstallerVersion
 	 * @param presentableName String
 	 * @param url String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(version: String, presentableName: String, url: String)
 	{
@@ -45,7 +45,7 @@ class IdentityInstallerVersion
 	/**
 	 * Gets the presentable name.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 *
 	 * @return String?
 	 */
@@ -57,7 +57,7 @@ class IdentityInstallerVersion
 	/**
 	 * Gets the version string.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 *
 	 * @return String?
 	 */
@@ -69,7 +69,7 @@ class IdentityInstallerVersion
 	/**
 	 * Gets the URL.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 *
 	 * @return String?
 	 */

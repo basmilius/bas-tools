@@ -15,7 +15,7 @@ import com.intellij.psi.tree.TokenSet
 /**
  * Class CappuccinoParserDefinition
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.parser
  */
 class CappuccinoParserDefinition: ParserDefinition
@@ -24,7 +24,7 @@ class CappuccinoParserDefinition: ParserDefinition
 	/**
 	 * Companion Object CappuccinoParserDefinition
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.parser
 	 */
 	companion object
@@ -40,7 +40,7 @@ class CappuccinoParserDefinition: ParserDefinition
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createElement(node: ASTNode): PsiElement
 	{
@@ -55,56 +55,56 @@ class CappuccinoParserDefinition: ParserDefinition
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createFile(viewProvider: FileViewProvider) = CappuccinoFile(viewProvider)
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createLexer(project: Project) = CappuccinoLexerAdapter()
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createParser(project: Project) = CappuccinoParser()
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getCommentTokens() = COMMENT
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getFileNodeType() = FILE_NODE_TYPE
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getStringLiteralElements() = STRING_LITERALS
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getWhitespaceTokens() = WHITE_SPACE
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun spaceExistanceTypeBetweenTokens(left: ASTNode, right: ASTNode) = ParserDefinition.SpaceRequirements.MAY
 

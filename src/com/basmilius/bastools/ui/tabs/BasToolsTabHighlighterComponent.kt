@@ -8,7 +8,7 @@ import com.intellij.util.messages.MessageBusConnection
 /**
  * Class BasToolsTabHighighterComponent
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.tabs
  */
 class BasToolsTabHighlighterComponent: ApplicationComponent
@@ -19,7 +19,7 @@ class BasToolsTabHighlighterComponent: ApplicationComponent
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun initComponent()
 	{
@@ -30,7 +30,7 @@ class BasToolsTabHighlighterComponent: ApplicationComponent
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun disposeComponent()
 	{
@@ -40,7 +40,7 @@ class BasToolsTabHighlighterComponent: ApplicationComponent
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getComponentName(): String
 	{

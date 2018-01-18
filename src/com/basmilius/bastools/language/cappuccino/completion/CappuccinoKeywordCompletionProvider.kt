@@ -15,7 +15,7 @@ import com.intellij.util.ProcessingContext
 /**
  * Class CappuccinoKeywordCompletionProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.completion
  */
 class CappuccinoKeywordCompletionProvider: BaseCompletionProvider()
@@ -24,7 +24,7 @@ class CappuccinoKeywordCompletionProvider: BaseCompletionProvider()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 	{
@@ -49,14 +49,14 @@ class CappuccinoKeywordCompletionProvider: BaseCompletionProvider()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isAvailable() = PlatformUtils.isPhpStorm()
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getPlace(): ElementPattern<out PsiElement> = PlatformPatterns.psiElement().withParent(CappuccinoCompositeElement::class.java)
 }

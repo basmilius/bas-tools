@@ -13,7 +13,7 @@ import javax.swing.text.JTextComponent
 /**
  * Object JUtils
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
  */
 object JUtils
@@ -25,7 +25,7 @@ object JUtils
 	 * @param field JTextComponent
 	 * @param listener ChangeListener
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addChangeListener(field: JTextComponent, listener: (event: ChangeEvent) -> Unit)
 	{
@@ -37,7 +37,7 @@ object JUtils
 
 			/**
 			 * {@inheritdoc}
-			 * @author Bas Milius
+			 * @author Bas Milius <bas@mili.us>
 			 */
 			override fun changedUpdate(e: DocumentEvent?)
 			{
@@ -54,7 +54,7 @@ object JUtils
 
 			/**
 			 * {@inheritdoc}
-			 * @author Bas Milius
+			 * @author Bas Milius <bas@mili.us>
 			 */
 			override fun insertUpdate(e: DocumentEvent?)
 			{
@@ -63,7 +63,7 @@ object JUtils
 
 			/**
 			 * {@inheritdoc}
-			 * @author Bas Milius
+			 * @author Bas Milius <bas@mili.us>
 			 */
 			override fun removeUpdate(e: DocumentEvent?)
 			{
@@ -90,7 +90,7 @@ object JUtils
 	 *
 	 * @return JComponent
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getRootComponent(project: Project?): JComponent?
 	{

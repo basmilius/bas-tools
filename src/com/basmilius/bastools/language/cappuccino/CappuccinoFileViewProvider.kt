@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull
 /**
  * Class CappuccinoFileViewProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoFileViewProvider: AbstractTemplateLanguageFileViewProvider
@@ -23,7 +23,7 @@ class CappuccinoFileViewProvider: AbstractTemplateLanguageFileViewProvider
 	 * @param virtualFile VirtualFile
 	 * @param eventSystemEnabled Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(@NotNull manager: PsiManager, @NotNull virtualFile: VirtualFile, eventSystemEnabled: Boolean): super(manager, virtualFile, eventSystemEnabled)
 
@@ -35,21 +35,21 @@ class CappuccinoFileViewProvider: AbstractTemplateLanguageFileViewProvider
 	 * @param eventSystemEnabled Boolean
 	 * @param templateDataLanguage Language
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(@NotNull manager: PsiManager, @NotNull virtualFile: VirtualFile, eventSystemEnabled: Boolean, @NotNull templateDataLanguage: Language): super(manager, virtualFile, eventSystemEnabled, templateDataLanguage)
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getTemplateDataType() = CappuccinoElementTypes.TEMPLATE_DATA
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@NotNull
 	override fun getBaseLanguage(): Language = CappuccinoLanguage.Instance
@@ -57,7 +57,7 @@ class CappuccinoFileViewProvider: AbstractTemplateLanguageFileViewProvider
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun cloneInner(fileCopy: VirtualFile): CappuccinoFileViewProvider = CappuccinoFileViewProvider(this.manager, fileCopy, false, this.templateDataLanguage)
 

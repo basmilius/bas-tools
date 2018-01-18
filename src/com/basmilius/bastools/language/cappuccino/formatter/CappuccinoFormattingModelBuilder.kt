@@ -16,7 +16,7 @@ import com.intellij.xml.template.formatter.AbstractXmlTemplateFormattingModelBui
 /**
  * Class CappuccinoFormattingModelBuilder
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.formatter
  */
 class CappuccinoFormattingModelBuilder: AbstractXmlTemplateFormattingModelBuilder()
@@ -25,14 +25,14 @@ class CappuccinoFormattingModelBuilder: AbstractXmlTemplateFormattingModelBuilde
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createTemplateLanguageBlock(node: ASTNode, settings: CodeStyleSettings, xmlFormattingPolicy: XmlFormattingPolicy, indent: Indent?, alignment: Alignment?, wrap: Wrap?) = CappuccinoBlock(this, node, wrap, alignment, settings, xmlFormattingPolicy, indent)
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isMarkupLanguageElement(element: PsiElement): Boolean
 	{
@@ -44,14 +44,14 @@ class CappuccinoFormattingModelBuilder: AbstractXmlTemplateFormattingModelBuilde
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isOuterLanguageElement(element: PsiElement) = element.node.elementType == CappuccinoTokenTypes.OUTER_ELEMENT_TYPE
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isTemplateFile(file: PsiFile) = file is CappuccinoFile
 

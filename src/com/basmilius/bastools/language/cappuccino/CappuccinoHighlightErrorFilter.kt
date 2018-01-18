@@ -7,7 +7,7 @@ import com.intellij.psi.tree.TokenSet
 /**
  * Class CappuccinoHighlightErrorFilter
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.intellij.codeInsight.highlighting.TemplateLanguageErrorFilter
  */
 class CappuccinoHighlightErrorFilter: TemplateLanguageErrorFilter(TokenSet.create(CappuccinoTokenTypes.STATEMENT_BLOCK_START, CappuccinoTokenTypes.PRINT_BLOCK_START, CappuccinoTokenTypes.PRINT_BLOCK_END), CappuccinoFileViewProvider::class.java, HTMLLanguage.INSTANCE.id)

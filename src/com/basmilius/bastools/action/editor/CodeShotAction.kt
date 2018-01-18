@@ -15,7 +15,7 @@ import java.awt.datatransfer.Transferable
 /**
  * Class CodeShotAction
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.action.editor
  */
 class CodeShotAction: AnAction("Code Shot"), ClipboardOwner
@@ -24,7 +24,7 @@ class CodeShotAction: AnAction("Code Shot"), ClipboardOwner
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun actionPerformed(aae: AnActionEvent)
 	{
@@ -69,7 +69,7 @@ class CodeShotAction: AnAction("Code Shot"), ClipboardOwner
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun update(aae: AnActionEvent)
 	{
@@ -82,7 +82,7 @@ class CodeShotAction: AnAction("Code Shot"), ClipboardOwner
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun lostOwnership(clipboard: Clipboard?, contents: Transferable?)
 	{

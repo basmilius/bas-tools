@@ -5,7 +5,7 @@ import com.basmilius.math.MathParser
 /**
  * Object Function1Arg
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.parsertokens
  */
 object Function1Arg

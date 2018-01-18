@@ -11,7 +11,7 @@ import com.intellij.psi.PsiRecursiveElementVisitor
 /**
  * Object CappuccinoLookupUtil
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.util
  */
 object CappuccinoLookupUtil
@@ -25,7 +25,7 @@ object CappuccinoLookupUtil
 	 *
 	 * @return CappuccinoBlockTag
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun findBaseTag(file: PsiFile, tagName: String): CappuccinoBlockTag?
 	{
@@ -65,7 +65,7 @@ object CappuccinoLookupUtil
 	 *
 	 * @return CappuccinoExtendsTag?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun findExtendsTag(file: PsiFile): CappuccinoExtendsTag?
 	{
@@ -92,7 +92,7 @@ object CappuccinoLookupUtil
 	 * @param file PsiFile
 	 * @param finder ElementFinder
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun lookupExtends(file: PsiFile, finder: ElementFinder)
 	{
@@ -106,7 +106,7 @@ object CappuccinoLookupUtil
 	 * @param finder ElementFinder
 	 * @param currLookupDepth Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun lookupExtends(file: PsiFile, finder: ElementFinder, currLookupDepth: Int)
 	{
@@ -139,7 +139,7 @@ object CappuccinoLookupUtil
 	/**
 	 * Class ElementFinder
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.util.CappuccinoLookupUtil
 	 */
 	abstract class ElementFinder(private val condition: Condition<PsiElement>): PsiRecursiveElementVisitor()
@@ -150,7 +150,7 @@ object CappuccinoLookupUtil
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun visitElement(element: PsiElement?)
 		{
@@ -170,7 +170,7 @@ object CappuccinoLookupUtil
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		abstract fun handleMatch(element: PsiElement?): Boolean
 

@@ -8,7 +8,7 @@ import javax.swing.Icon
 /**
  * Class CappuccinoFileType
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoFileType: LanguageFileType(CappuccinoLanguage.Instance)
@@ -17,7 +17,7 @@ class CappuccinoFileType: LanguageFileType(CappuccinoLanguage.Instance)
 	/**
 	 * Companion Object CappuccinoFileType
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino
 	 */
 	companion object
@@ -30,7 +30,7 @@ class CappuccinoFileType: LanguageFileType(CappuccinoLanguage.Instance)
 	/**
 	 * CappuccinoFileType Constructor.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	init
 	{
@@ -42,28 +42,28 @@ class CappuccinoFileType: LanguageFileType(CappuccinoLanguage.Instance)
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getIcon(): Icon = Icons.CappuccinoFile
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getDefaultExtension(): String = CappuccinoLanguage.DefaultExtension
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getDescription(): String = CappuccinoLanguage.Description
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getName(): String = CappuccinoLanguage.LanguageName
 

@@ -3,7 +3,7 @@ package com.basmilius.math.parsertokens
 /**
  * Class KeyWord
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.parsertokens
  */
 class KeyWord
@@ -12,7 +12,7 @@ class KeyWord
 	/**
 	 * Companion Object KeyWord
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.math.parsertokens
 	 */
 	companion object
@@ -32,7 +32,7 @@ class KeyWord
 	/**
 	 * KeyWord Constructor.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor()
 	{
@@ -54,7 +54,7 @@ class KeyWord
 	 * @param since String
 	 * @param wordTypeId Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(wordString: String, description: String, wordId: Int, syntax: String, since: String, wordTypeId: Int)
 	{

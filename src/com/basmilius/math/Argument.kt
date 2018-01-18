@@ -6,7 +6,7 @@ import com.basmilius.math.parsertokens.ParserSymbol
 /**
  * Class Argument
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math
  */
 open class Argument: PrimitiveElement
@@ -15,7 +15,7 @@ open class Argument: PrimitiveElement
 	/**
 	 * Companion Object Argument
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.math
 	 */
 	companion object
@@ -51,7 +51,7 @@ open class Argument: PrimitiveElement
 	 * @property
 	 * @type String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	var argumentName: String
 		get() = this.pr_argumentName
@@ -86,7 +86,7 @@ open class Argument: PrimitiveElement
 	 * @param argumentDefinitionString String
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(argumentDefinitionString: String, vararg elements: PrimitiveElement): super(TYPE_ID)
 	{
@@ -147,7 +147,7 @@ open class Argument: PrimitiveElement
 	 * @param argumentName String
 	 * @param argumentValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(argumentName: String, argumentValue: Double): super(TYPE_ID)
 	{
@@ -177,7 +177,7 @@ open class Argument: PrimitiveElement
 	 * @param argumentExpressionString String
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(argumentName: String, argumentExpressionString: String, vararg elements: PrimitiveElement): super(TYPE_ID)
 	{
@@ -203,7 +203,7 @@ open class Argument: PrimitiveElement
 	/**
 	 * Enables argument verbose mode.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setVerboseMode()
 	{
@@ -213,7 +213,7 @@ open class Argument: PrimitiveElement
 	/**
 	 * Disables argument verbose mode (sets default silent mode).
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setSilentMode()
 	{
@@ -225,7 +225,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getVerboseMode(): Boolean
 	{
@@ -237,7 +237,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getRecursiveMode(): Boolean
 	{
@@ -249,7 +249,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getComputingTime(): Double
 	{
@@ -261,7 +261,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgumentExpressionString(): String
 	{
@@ -273,7 +273,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param argumentExpressionString String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setArgumentExpressionString(argumentExpressionString: String)
 	{
@@ -290,7 +290,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addDefinitions(vararg elements: PrimitiveElement)
 	{
@@ -302,7 +302,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeDefinitions(vararg elements: PrimitiveElement)
 	{
@@ -314,7 +314,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param arguments Argument[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addArguments(vararg arguments: Argument)
 	{
@@ -326,7 +326,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param argumentsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineArguments(vararg argumentsNames: String)
 	{
@@ -339,7 +339,7 @@ open class Argument: PrimitiveElement
 	 * @param argumentName String
 	 * @param argumentValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineArgument(argumentName: String, argumentValue: Double)
 	{
@@ -353,7 +353,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgumentIndex(argumentName: String): Int
 	{
@@ -367,7 +367,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Argument?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgument(argumentName: String): Argument?
 	{
@@ -381,7 +381,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Argument?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgument(argumentIndex: Int): Argument?
 	{
@@ -393,7 +393,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgumentsNumber(): Int
 	{
@@ -405,7 +405,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param argumentsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeArguments(vararg argumentsNames: String)
 	{
@@ -417,7 +417,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param arguments Argument[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeArguments(vararg arguments: Argument)
 	{
@@ -427,7 +427,7 @@ open class Argument: PrimitiveElement
 	/**
 	 * Removes all arguments associated with the argument expression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeAllArguments()
 	{
@@ -439,7 +439,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param constants Constant[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addConstants(vararg constants: Constant)
 	{
@@ -451,7 +451,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param constantsList List<Constant>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addConstants(constantsList: List<Constant>)
 	{
@@ -464,7 +464,7 @@ open class Argument: PrimitiveElement
 	 * @param constantName String
 	 * @param constantValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineConstant(constantName: String, constantValue: Double)
 	{
@@ -478,7 +478,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstantIndex(constantName: String): Int
 	{
@@ -492,7 +492,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Constant?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstant(constantName: String): Constant?
 	{
@@ -506,7 +506,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Constant?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstant(constantIndex: Int): Constant?
 	{
@@ -518,7 +518,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstantsNumber(): Int
 	{
@@ -530,7 +530,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param constantsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeConstants(vararg constantsNames: String)
 	{
@@ -542,7 +542,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param constants Constant[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeConstants(vararg constants: Constant)
 	{
@@ -552,7 +552,7 @@ open class Argument: PrimitiveElement
 	/**
 	 * Removes all constants associated with the argument expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeAllConstants()
 	{
@@ -564,7 +564,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param functions Function[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addFunctions(vararg functions: Function)
 	{
@@ -578,7 +578,7 @@ open class Argument: PrimitiveElement
 	 * @param functionExpressionString String
 	 * @param argumentsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineFunction(functionName: String, functionExpressionString: String, vararg argumentsNames: String)
 	{
@@ -592,7 +592,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunctionIndex(functionName: String): Int
 	{
@@ -606,7 +606,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Function?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunction(functionName: String): Function?
 	{
@@ -620,7 +620,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Function?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunction(functionIndex: Int): Function?
 	{
@@ -632,7 +632,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunctionsNumber(): Int
 	{
@@ -644,7 +644,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param functionsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeFunctions(vararg functionsNames: String)
 	{
@@ -656,7 +656,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param functions Function[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeFunctions(vararg functions: Function)
 	{
@@ -666,7 +666,7 @@ open class Argument: PrimitiveElement
 	/**
 	 * Removes all functions associated with the argument expression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeAllFunctions()
 	{
@@ -678,7 +678,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param expression Expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addRelatedExpression(expression: Expression)
 	{
@@ -690,7 +690,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @param expression Expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeRelatedExpression(expression: Expression)
 	{
@@ -700,7 +700,7 @@ open class Argument: PrimitiveElement
 	/**
 	 * Sets expression was modified flag to all related expressions to the argumentExpression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setExpressionModifiedFlags()
 	{
@@ -712,7 +712,7 @@ open class Argument: PrimitiveElement
 	 *
 	 * @return Argument
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun clone(): Argument
 	{

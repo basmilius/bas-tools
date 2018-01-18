@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable
 /**
  * Object ExpressionSemanticUtils
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
  */
 object ExpressionSemanticUtils
@@ -23,7 +23,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun hasAlternativeBranches(ifStatement: If): Boolean
 	{
@@ -37,7 +37,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @todo Double check if OpenAPI doesn't have a method for this.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getReturnValue(@NotNull returnValue: PhpReturn): PhpExpression?
 	{
@@ -53,7 +53,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getCountExpressionsInGroup(@NotNull groupStatement: GroupStatement): Int
 	{
@@ -65,7 +65,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @return PsiElement?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getLastStatement(@NotNull groupStatement: GroupStatement): PsiElement?
 	{
@@ -87,7 +87,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @return GroupStatement?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getGroupStatement(@NotNull expression: PsiElement): GroupStatement?
 	{
@@ -107,7 +107,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @return PsiElement
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getExpressionThroughParenthesis(@Nullable expression: PsiElement): PsiElement
 	{
@@ -127,7 +127,7 @@ object ExpressionSemanticUtils
 	 *
 	 * @return Function?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getScope(@NotNull expression: PsiElement): Function?
 	{

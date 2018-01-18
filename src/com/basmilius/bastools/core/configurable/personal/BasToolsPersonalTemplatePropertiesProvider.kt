@@ -8,7 +8,7 @@ import java.util.*
 /**
  * Class BasToolsPersonalTemplatePropertiesProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @packate com.basmilius.bastools.core.configurable.personal
  * @since 1.3.0
  */
@@ -18,7 +18,7 @@ class BasToolsPersonalTemplatePropertiesProvider: DefaultTemplatePropertiesProvi
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.3.0
 	 */
 	override fun fillProperties(directory: PsiDirectory, properties: Properties)

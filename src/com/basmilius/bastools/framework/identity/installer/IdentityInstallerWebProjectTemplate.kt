@@ -9,7 +9,7 @@ import com.intellij.openapi.vfs.VirtualFile
 /**
  * Class IdentityInstallerWebProjectTemplate
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.identity.installer
  */
 class IdentityInstallerWebProjectTemplate: WebProjectTemplate<IdentityInstallerSettings>()
@@ -18,7 +18,7 @@ class IdentityInstallerWebProjectTemplate: WebProjectTemplate<IdentityInstallerS
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun generateProject(project: Project, baseDir: VirtualFile, settings: IdentityInstallerSettings, module: Module)
 	{
@@ -28,21 +28,21 @@ class IdentityInstallerWebProjectTemplate: WebProjectTemplate<IdentityInstallerS
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getDescription() = "An Identity Framework WordPress project."
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getName() = "Identity Framework"
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getIcon() = Icons.IdeeMedia
 

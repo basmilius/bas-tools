@@ -17,7 +17,7 @@ import com.jetbrains.php.lang.psi.elements.impl.ConcatenationExpressionImpl
 /**
  * Class ComputeConstantValueIntentionAction
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.intention
  */
 class ComputeConstantValueIntentionAction: IntentionAction
@@ -28,7 +28,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun startInWriteAction() = false
 
@@ -37,7 +37,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getFamilyName() = "Bas Tools - Intentions"
 
@@ -50,7 +50,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isAvailable(project: Project, editor: Editor?, file: PsiFile?): Boolean
 	{
@@ -66,7 +66,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	/**
 	 * Gets the intention label.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getText() = "Compute Constant Value"
 
@@ -77,7 +77,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 * @param editor Editor?
 	 * @param file PsiFile?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun invoke(project: Project, editor: Editor?, file: PsiFile?)
 	{
@@ -99,7 +99,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun run(editor: Editor, file: PsiFile, run: Boolean = true): Boolean
 	{

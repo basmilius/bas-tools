@@ -9,7 +9,7 @@ import com.intellij.psi.codeStyle.LanguageCodeStyleSettingsProvider
 /**
  * Class CappuccinoLanguageCodeStyleSettingsProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.formatter
  */
 class CappuccinoLanguageCodeStyleSettingsProvider: LanguageCodeStyleSettingsProvider()
@@ -18,7 +18,7 @@ class CappuccinoLanguageCodeStyleSettingsProvider: LanguageCodeStyleSettingsProv
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun customizeSettings(consumer: CodeStyleSettingsCustomizable, settingsType: SettingsType)
 	{
@@ -32,14 +32,14 @@ class CappuccinoLanguageCodeStyleSettingsProvider: LanguageCodeStyleSettingsProv
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getCodeSample(p0: SettingsType) = "<!DOCTYPE html>\n<html>\n<body>\n<div id=\"content\">{% block content %}{% endblock %}</div>\n<div id=\"footer\">\n\t{% block footer %}\n\t\t&copy; Copyright 2011 by <a\n\t\t\thref=\"http://domain.invalid/\">you</a>.\n\t{% endblock %}\n</div>\n<p>{{ textarea('comment') }}</p>\n</body>\n</html>"
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getDefaultCommonSettings(): CommonCodeStyleSettings
 	{
@@ -52,14 +52,14 @@ class CappuccinoLanguageCodeStyleSettingsProvider: LanguageCodeStyleSettingsProv
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getIndentOptionsEditor() = SmartIndentOptionsEditor()
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getLanguage() = CappuccinoLanguage.Instance
 

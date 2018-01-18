@@ -22,7 +22,7 @@ import javax.swing.Icon
 /**
  * Class CappuccinoStructureViewProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.structure
  */
 class CappuccinoStructureViewProvider: PsiStructureViewFactory
@@ -31,7 +31,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 	/**
 	 * Companion Object CappuccinoStructureViewProvider
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.structure
 	 */
 	companion object
@@ -45,7 +45,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 		 *
 		 * @return String
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun getStatementIdentifier(statementElement: PsiElement, tagType: IElementType?): String
 		{
@@ -82,7 +82,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 		 *
 		 * @return IElementType?
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun getTagType(element: PsiElement): IElementType?
 		{
@@ -104,7 +104,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun isBlockElement(element: PsiElement): Boolean
 		{
@@ -118,14 +118,14 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getStructureViewBuilder(file: PsiFile) = StructureViewBuilder(file)
 
 	/**
 	 * Class StructureViewBuilder
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.structure.CappuccinoStructureViewProvider
 	 */
 	inner class StructureViewBuilder(psiElement: PsiElement): TemplateLanguageStructureViewBuilder(psiElement)
@@ -134,7 +134,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun createMainView(editor: FileEditor, mainFile: PsiFile): StructureViewComposite.StructureViewDescriptor
 		{
@@ -150,7 +150,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 		 *
 		 * @return TreeBasedStructureViewBuilder
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun createBuilder(mainFile: PsiFile): TreeBasedStructureViewBuilder
 		{
@@ -160,7 +160,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 				/**
 				 * {@inheritdoc}
 				 *
-				 * @author Bas Milius
+				 * @author Bas Milius <bas@mili.us>
 				 */
 				override fun createStructureViewModel(editor: Editor?) = StructureViewModelBase(mainFile, editor, StructureViewTreeElement(mainFile))
 
@@ -172,7 +172,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 	/**
 	 * Class StructureViewTreeElement
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.structure.CappuccinoStructureViewProvider
 	 */
 	private inner class StructureViewTreeElement(psiElement: PsiElement): PsiTreeElementBase<PsiElement>(psiElement)
@@ -181,7 +181,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun getChildrenBase(): MutableCollection<IdeStructureViewTreeElement>
 		{
@@ -207,7 +207,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun getIcon(open: Boolean): Icon?
 		{
@@ -219,7 +219,7 @@ class CappuccinoStructureViewProvider: PsiStructureViewFactory
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun getPresentableText(): String?
 		{

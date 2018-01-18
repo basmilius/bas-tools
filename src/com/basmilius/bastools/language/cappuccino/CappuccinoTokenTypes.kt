@@ -6,7 +6,7 @@ import com.intellij.psi.tree.TokenSet
 /**
  * Interface CappuccinoTokenTypes
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 interface CappuccinoTokenTypes
@@ -15,7 +15,7 @@ interface CappuccinoTokenTypes
 	/**
 	 * Companion Object CappuccinoTokenTypes
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino
 	 */
 	companion object

@@ -6,7 +6,7 @@ import com.intellij.psi.codeStyle.CustomCodeStyleSettings
 /**
  * Class CappuccinoFormatterOptions
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.formatter
  */
 class CappuccinoFormatterOptions(container: CodeStyleSettings): CustomCodeStyleSettings("Cappuccino", container)

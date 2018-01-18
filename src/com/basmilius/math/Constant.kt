@@ -6,7 +6,7 @@ import com.basmilius.math.parsertokens.ParserSymbol
 /**
  * Class Constant
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math
  */
 class Constant: PrimitiveElement
@@ -15,7 +15,7 @@ class Constant: PrimitiveElement
 	/**
 	 * Companion Object Constant
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.math
 	 */
 	companion object
@@ -46,7 +46,7 @@ class Constant: PrimitiveElement
 	 * @param constantName String
 	 * @param constantValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor (constantName: String, constantValue: Double): super(TYPE_ID)
 	{
@@ -73,7 +73,7 @@ class Constant: PrimitiveElement
 	 * @param constantValue Double
 	 * @param description String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(constantName: String, constantValue: Double, description: String): this(constantName, constantValue)
 	{
@@ -87,7 +87,7 @@ class Constant: PrimitiveElement
 	 * @param constantDefinitionString String
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(constantDefinitionString: String, vararg elements: PrimitiveElement): super(TYPE_ID)
 	{
@@ -115,7 +115,7 @@ class Constant: PrimitiveElement
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstantName(): String
 	{
@@ -127,7 +127,7 @@ class Constant: PrimitiveElement
 	 *
 	 * @param constantName String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setConstantName(constantName: String)
 	{
@@ -148,7 +148,7 @@ class Constant: PrimitiveElement
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstantValue(): Double
 	{
@@ -160,7 +160,7 @@ class Constant: PrimitiveElement
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getErrorMessage(): String
 	{
@@ -172,7 +172,7 @@ class Constant: PrimitiveElement
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getSyntaxStatus(): Boolean
 	{
@@ -184,7 +184,7 @@ class Constant: PrimitiveElement
 	 *
 	 * @param expression Expression?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addRelatedExpression(expression: Expression?)
 	{
@@ -197,7 +197,7 @@ class Constant: PrimitiveElement
 	 *
 	 * @param expression Expression?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeRelatedExpression(expression: Expression?)
 	{
@@ -208,7 +208,7 @@ class Constant: PrimitiveElement
 	/**
 	 * Sets expression modified flag to each related expression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setExpressionModifiedFlags()
 	{

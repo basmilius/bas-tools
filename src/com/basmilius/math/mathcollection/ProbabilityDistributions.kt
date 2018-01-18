@@ -5,7 +5,7 @@ import java.util.*
 /**
  * Object ProbabilityDistributions
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object ProbabilityDistributions
@@ -22,7 +22,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun rndUniformContinuous(a: Double, b: Double, rnd: Random = randomGenerator): Double
 	{
@@ -41,7 +41,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun rndUniformContinuous(rnd: Random = randomGenerator): Double
 	{
@@ -57,7 +57,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun pdfUniformContinuous(x: Double, a: Double, b: Double): Double
 	{
@@ -82,7 +82,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun cdfUniformContinuous(x: Double, a: Double, b: Double): Double
 	{
@@ -108,7 +108,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun qntUniformContinuous(q: Double, a: Double, b: Double): Double
 	{
@@ -133,7 +133,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun rndInteger(a: Int, b: Int, rnd: Random = randomGenerator): Double
 	{
@@ -154,7 +154,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun rndInteger(rnd: Random = randomGenerator): Int
 	{
@@ -169,7 +169,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun rndIndex(n: Int, rnd: Random = randomGenerator): Int
 	{
@@ -187,7 +187,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun rndNormal(mean: Double, stddev: Double, rnd: Random? = randomGenerator): Double
 	{
@@ -240,7 +240,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun pdfNormal(x: Double, mean: Double, stddev: Double): Double
 	{
@@ -266,7 +266,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun cdfNormal(x: Double, mean: Double, stddev: Double): Double
 	{
@@ -290,7 +290,7 @@ object ProbabilityDistributions
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun qntNormal(q: Double, mean: Double, stddev: Double): Double
 	{

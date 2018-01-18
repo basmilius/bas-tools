@@ -17,7 +17,7 @@ import com.jetbrains.php.lang.parser.PhpElementTypes
 /**
  * Class BasicFunctionCompletionProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.completion
  */
 class BasicFunctionCompletionProvider: BaseCompletionProvider()
@@ -28,7 +28,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 	{
@@ -195,7 +195,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getPlace(): ElementPattern<out PsiElement>
 	{
@@ -222,7 +222,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 *
 	 * @return Array<String>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun concatArrays(a: Array<String>, b: Array<String>): Array<String>
 	{
@@ -242,7 +242,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 *
 	 * @return Array<String>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun prefixArray(prefix: String, a: Array<String>): Array<String>
 	{
@@ -265,7 +265,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun methodMatches(methodName: String, paramIndex: Int, tokens: Array<String>) = tokens.firstOrNull { it.startsWith("$methodName:$paramIndex") } != null
 
@@ -279,21 +279,21 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun methodMatchesAt(methodName: String, paramIndex: Int, tokens: Array<String>, expectedParamIndex: Int) = tokens.contains(methodName) && paramIndex == expectedParamIndex
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isAvailable() = true
 
 	/**
 	 * Class CompletionTokens
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.framework.all.completion.BasicFunctionCompletionProvider
 	 */
 	object CompletionTokens

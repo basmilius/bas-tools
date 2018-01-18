@@ -7,7 +7,7 @@ import com.intellij.openapi.editor.colors.TextAttributesKey
 /**
  * Object CappuccinoHighlighterData
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 object CappuccinoHighlighterData

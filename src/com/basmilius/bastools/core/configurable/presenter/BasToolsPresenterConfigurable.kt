@@ -9,7 +9,7 @@ import com.intellij.openapi.components.Storage
 /**
  * Class BasToolsPresenterConfigurable
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.configurable.presenter
  */
 class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfigurableForm, BasToolsPresenterConfigurable.PresenterConfigurationState>()
@@ -17,20 +17,20 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createForm() = BasToolsPresenterConfigurableForm(this)
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createState() = PresenterConfigurationState.getInstance()
 
 	/**
 	 * Class PresenterConfigurationState
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.core.configurable.presenter.BasToolsPresenterConfigurable
 	 */
 	@State(
@@ -43,7 +43,7 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 		/**
 		 * Companion Object PresenterConfigurationState
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 * @package com.basmilius.bastools.core.configurable.presenter.BasToolsPresenterConfigurable
 		 */
 		companion object
@@ -54,7 +54,7 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 			 *
 			 * @return PersonalConfigurationState
 			 *
-			 * @author Bas Milius
+			 * @author Bas Milius <bas@mili.us>
 			 */
 			fun getInstance() = ServiceManager.getService(PresenterConfigurationState::class.java)!!
 
@@ -62,13 +62,13 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 
 		/**
 		 * {@inheritdoc}
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun getState() = this
 
 		/**
 		 * {@inheritdoc}
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun loadState(state: PresenterConfigurationState?)
 		{

@@ -3,7 +3,7 @@ package com.basmilius.math.mathcollection
 /**
  * Object Coefficients
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object Coefficients

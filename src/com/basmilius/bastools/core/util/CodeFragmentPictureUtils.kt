@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage
 /**
  * Object CodeFragmentPictureUtils
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
  */
 object CodeFragmentPictureUtils
@@ -23,7 +23,7 @@ object CodeFragmentPictureUtils
 	 *
 	 * @return BufferedImage
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun createBufferedImage(fragment: EditorFragmentComponent): BufferedImage
 	{
@@ -44,7 +44,7 @@ object CodeFragmentPictureUtils
 	/**
 	 * Class TransferableImage
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.core.util.CodeFragmentPictureUtils
 	 */
 	class TransferableImage(private val image: Image): Transferable

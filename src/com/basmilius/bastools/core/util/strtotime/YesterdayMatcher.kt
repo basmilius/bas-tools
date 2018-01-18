@@ -6,7 +6,7 @@ import java.util.regex.Pattern
 /**
  * Class YesterdayMatcher
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util.strtotime
  */
 class YesterdayMatcher: Matcher
@@ -17,7 +17,7 @@ class YesterdayMatcher: Matcher
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun tryConvert(input: String, refDateStr: String): Date?
 	{

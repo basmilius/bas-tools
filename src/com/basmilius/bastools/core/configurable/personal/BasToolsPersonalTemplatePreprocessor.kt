@@ -7,7 +7,7 @@ import com.intellij.psi.PsiFile
 /**
  * Class BasToolsPersonalTemplatePreprocessor
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @since 1.3.0
  */
 class BasToolsPersonalTemplatePreprocessor: TemplatePreprocessor

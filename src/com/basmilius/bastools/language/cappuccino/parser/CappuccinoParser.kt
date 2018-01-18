@@ -8,7 +8,7 @@ import com.intellij.psi.tree.IElementType
 /**
  * Class CappuccinoParser
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.parser
  */
 class CappuccinoParser: PsiParser, CappuccinoElementTypes
@@ -17,7 +17,7 @@ class CappuccinoParser: PsiParser, CappuccinoElementTypes
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun parse(root: IElementType, builder: PsiBuilder) = CappuccinoPsiBuilder(builder).buildPsiTree(root)
 

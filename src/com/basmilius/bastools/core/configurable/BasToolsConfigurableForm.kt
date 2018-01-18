@@ -6,7 +6,7 @@ import javax.swing.*
 /**
  * Class BasToolsConfigurableForm
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.configurable
  */
 class BasToolsConfigurableForm: AbstractForm<BasToolsPersonalConfigurable.PersonalConfigurationState>()
@@ -14,7 +14,7 @@ class BasToolsConfigurableForm: AbstractForm<BasToolsPersonalConfigurable.Person
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun applyChanges()
 	{
@@ -22,7 +22,7 @@ class BasToolsConfigurableForm: AbstractForm<BasToolsPersonalConfigurable.Person
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun build()
 	{
@@ -36,7 +36,7 @@ class BasToolsConfigurableForm: AbstractForm<BasToolsPersonalConfigurable.Person
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun load()
 	{
@@ -44,7 +44,7 @@ class BasToolsConfigurableForm: AbstractForm<BasToolsPersonalConfigurable.Person
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun update(state: BasToolsPersonalConfigurable.PersonalConfigurationState)
 	{

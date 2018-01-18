@@ -7,7 +7,7 @@ import com.intellij.openapi.options.colors.ColorSettingsPage
 /**
  * Class CappuccinoColorsAndFontsPage
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoColorsAndFontsPage: ColorSettingsPage
@@ -16,7 +16,7 @@ class CappuccinoColorsAndFontsPage: ColorSettingsPage
 	/**
 	 * Companion Object CappuccinoColorsAndFontsPage
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino
 	 */
 	companion object
@@ -39,28 +39,28 @@ class CappuccinoColorsAndFontsPage: ColorSettingsPage
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getAdditionalHighlightingTagToDescriptorMap() = null
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getAttributeDescriptors() = ATTRS
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getColorDescriptors(): Array<out ColorDescriptor> = ColorDescriptor.EMPTY_ARRAY
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getDemoText() = "{# Comment #}\n" +
 			"{% macro input(name, value, type, size) %}\n" +
@@ -73,21 +73,21 @@ class CappuccinoColorsAndFontsPage: ColorSettingsPage
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getDisplayName() = "Cappuccino"
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getHighlighter() = CappuccinoHighlighter.CappuccinoFileHighlighter()
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getIcon() = null
 

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable
 /**
  * Object CappuccinoElementFactory
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
 object CappuccinoElementFactory
@@ -27,7 +27,7 @@ object CappuccinoElementFactory
 	 *
 	 * @return PsiElement
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@Nullable
 	fun createPsiElement(project: Project, text: String, type: IElementType): PsiElement?

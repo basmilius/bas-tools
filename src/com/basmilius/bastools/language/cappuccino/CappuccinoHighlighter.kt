@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull
  * @param virtualFile VirtualFile?
  * @param colors EditorColorsScheme
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoHighlighter(project: Project?, virtualFile: VirtualFile?, colors: EditorColorsScheme): LayeredLexerEditorHighlighter(CappuccinoFileHighlighter(), colors)
@@ -31,7 +31,7 @@ class CappuccinoHighlighter(project: Project?, virtualFile: VirtualFile?, colors
 	/**
 	 * CappuccinoHighlighter Constructor.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	init
 	{
@@ -49,7 +49,7 @@ class CappuccinoHighlighter(project: Project?, virtualFile: VirtualFile?, colors
 	/**
 	 * Class CappuccinoFileHighlighter
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.CappuccinoHighlighter
 	 */
 	class CappuccinoFileHighlighter: SyntaxHighlighterBase()
@@ -58,7 +58,7 @@ class CappuccinoHighlighter(project: Project?, virtualFile: VirtualFile?, colors
 		/**
 		 * Companion Object CappuccinoFileHighlighter
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 * @package com.basmilius.bastools.language.cappuccino.CappuccinoHighlighter
 		 */
 		companion object
@@ -69,7 +69,7 @@ class CappuccinoHighlighter(project: Project?, virtualFile: VirtualFile?, colors
 			/**
 			 * CappuccinoFileHighlighter Constructor.
 			 *
-			 * @author Bas Milius
+			 * @author Bas Milius <bas@mili.us>
 			 */
 			init
 			{
@@ -88,7 +88,7 @@ class CappuccinoHighlighter(project: Project?, virtualFile: VirtualFile?, colors
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		@NotNull
 		override fun getHighlightingLexer(): Lexer = CappuccinoLexerAdapter()
@@ -96,7 +96,7 @@ class CappuccinoHighlighter(project: Project?, virtualFile: VirtualFile?, colors
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		@NotNull
 		override fun getTokenHighlights(tokenType: IElementType?): Array<TextAttributesKey> = pack(CappuccinoHighlighterData.TEMPLATE, Keys[tokenType])

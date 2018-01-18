@@ -9,7 +9,7 @@ import com.intellij.psi.AbstractElementManipulator
 /**
  * Class CappuccinoVerbatimStatementManipulator
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements.manipulators
  */
 class CappuccinoVerbatimStatementManipulator: AbstractElementManipulator<CappuccinoVerbatimStatement>()
@@ -18,7 +18,7 @@ class CappuccinoVerbatimStatementManipulator: AbstractElementManipulator<Cappucc
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun handleContentChange(element: CappuccinoVerbatimStatement, range: TextRange, newContent: String): CappuccinoVerbatimStatement
 	{

@@ -17,7 +17,7 @@ import java.awt.*
 /**
  * Class BasToolsTabsPainterPatcherComponent
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.tabs
  */
 class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerListener
@@ -39,7 +39,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritDoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun initComponent()
 	{
@@ -49,7 +49,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritDoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun disposeComponent()
 	{
@@ -58,7 +58,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritDoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun selectionChanged(event: FileEditorManagerEvent)
 	{
@@ -83,7 +83,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	 *
 	 * @param component Tabs component.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun patchPainter(component: JBEditorTabs)
 	{
@@ -119,7 +119,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	 * @throws NoSuchFieldException   Exception.
 	 * @throws IllegalAccessException Exception.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@Throws(ClassNotFoundException::class, NoSuchFieldException::class, IllegalAccessException::class)
 	private fun paintSelectionAndBorder(objects: Array<Any>, borderColor: Color, borderThickness: Int, painter: BasToolsTabsPainter)
@@ -156,7 +156,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getComponentName() = "Bas Tools: Tabs UI Patcher"
 

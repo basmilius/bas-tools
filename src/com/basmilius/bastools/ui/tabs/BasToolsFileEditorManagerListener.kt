@@ -11,7 +11,7 @@ import com.intellij.openapi.vfs.VirtualFile
 /**
  * Class BasToolsFileEditorManagerListener
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.tabs
  */
 class BasToolsFileEditorManagerListener: FileEditorManagerListener
@@ -20,7 +20,7 @@ class BasToolsFileEditorManagerListener: FileEditorManagerListener
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun fileOpened(source: FileEditorManager, file: VirtualFile)
 	{
@@ -29,7 +29,7 @@ class BasToolsFileEditorManagerListener: FileEditorManagerListener
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun fileClosed(source: FileEditorManager, file: VirtualFile)
 	{
@@ -38,7 +38,7 @@ class BasToolsFileEditorManagerListener: FileEditorManagerListener
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun selectionChanged(event: FileEditorManagerEvent)
 	{
@@ -61,7 +61,7 @@ class BasToolsFileEditorManagerListener: FileEditorManagerListener
 	 * @param window EditorWindow
 	 * @param composite EditorWithProviderComposite
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getEditorIndex(window: EditorWindow, composite: EditorWithProviderComposite): Int
 	{
@@ -74,7 +74,7 @@ class BasToolsFileEditorManagerListener: FileEditorManagerListener
 	 * @param file VirtualFile?
 	 * @param window EditorWindow
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun processTab(file: VirtualFile?, window: EditorWindow)
 	{

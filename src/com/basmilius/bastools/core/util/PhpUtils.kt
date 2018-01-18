@@ -7,7 +7,7 @@ import com.jetbrains.php.lang.psi.elements.Function
 /**
  * Object PhpUtils
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
  */
 object PhpUtils
@@ -20,7 +20,7 @@ object PhpUtils
 	 *
 	 * @return String?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getCanonicalFunctionName(func: PsiElement): String?
 	{
@@ -43,7 +43,7 @@ object PhpUtils
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getParameterIndex(param: PsiElement?): Int
 	{
@@ -70,7 +70,7 @@ object PhpUtils
 	 *
 	 * @return String?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getClassConstructName(func: PsiElement): String?
 	{
@@ -98,7 +98,7 @@ object PhpUtils
 	 *
 	 * @return String?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getFunctionName(func: PsiElement): String?
 	{
@@ -117,7 +117,7 @@ object PhpUtils
 	 *
 	 * @return String?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getMethodName(func: PsiElement): String?
 	{

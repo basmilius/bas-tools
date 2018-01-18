@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable
  * @param source CappuccinoBlockTag
  * @param range TextRange
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
 class CappuccinoBlockReference(private val project: Project, source: CappuccinoBlockTag, range: TextRange): PsiReferenceBase<PsiElement>(source, range, true)
@@ -32,7 +32,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@NotNull
 	fun getIdentifier(): String = this.identifier ?: ""
@@ -40,7 +40,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@NotNull
 	override fun getVariants(): Array<out PsiElement> = PsiElement.EMPTY_ARRAY
@@ -48,7 +48,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@Nullable
 	override fun resolve(): PsiElement?
@@ -61,7 +61,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isReferenceTo(element: PsiElement?): Boolean
 	{
@@ -76,7 +76,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	 *
 	 * @return BlockResolveResult?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	@Nullable
 	fun resolveDefinition(): BlockResolveResult?
@@ -96,7 +96,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	/**
 	 * Class BlockResolver
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.elements.CappuccinoBlockTag
 	 */
 	inner class BlockResolver: ResolveCache.AbstractResolver<CappuccinoBlockReference, BlockResolveResult>
@@ -105,7 +105,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun resolve(reference: CappuccinoBlockReference, incompleteCode: Boolean) = reference.resolveDefinition()
 
@@ -117,7 +117,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	 * @constructor
 	 * @param tag CappuccinoBlockTag?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.elements.CappuccinoBlockTag
 	 */
 	inner class BlockResolveResult(private val tag: CappuccinoBlockTag?): ResolveResult
@@ -126,7 +126,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		@Nullable
 		override fun getElement(): PsiElement? = this.tag
@@ -136,14 +136,14 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 		 *
 		 * @return PsiElement?
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun getIdentifier(): PsiElement? = this.tag?.findIdentifier()
 
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun isValidResult(): Boolean
 		{

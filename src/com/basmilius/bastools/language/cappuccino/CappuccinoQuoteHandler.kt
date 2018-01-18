@@ -7,7 +7,7 @@ import com.intellij.openapi.editor.highlighter.HighlighterIterator
 /**
  * Class CappuccinoQuoteHandler
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoQuoteHandler: SimpleTokenSetQuoteHandler(CappuccinoTokenTypes.SINGLE_QUOTE, CappuccinoTokenTypes.DOUBLE_QUOTE)
@@ -16,21 +16,21 @@ class CappuccinoQuoteHandler: SimpleTokenSetQuoteHandler(CappuccinoTokenTypes.SI
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isClosingQuote(iterator: HighlighterIterator, offset: Int) = if (this.myLiteralTokenSet.contains(iterator.tokenType) && iterator.end - iterator.start == 1) !this.isOpeningQuoteInternal(iterator) else false
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isOpeningQuote(iterator: HighlighterIterator, offset: Int) = if (this.myLiteralTokenSet.contains(iterator.tokenType) && offset == iterator.start) this.isOpeningQuoteInternal(iterator) else false
 
 	/**
 	 * Internal isOpeningQuote method.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun isOpeningQuoteInternal(iterator: HighlighterIterator): Boolean
 	{
@@ -60,7 +60,7 @@ class CappuccinoQuoteHandler: SimpleTokenSetQuoteHandler(CappuccinoTokenTypes.SI
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun hasNonClosedLiteral(editor: Editor, iterator: HighlighterIterator, offset: Int): Boolean
 	{

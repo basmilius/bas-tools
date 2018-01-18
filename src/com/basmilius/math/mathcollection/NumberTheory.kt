@@ -10,7 +10,7 @@ import kotlin.collections.ArrayList
 /**
  * Object NumberTheory
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object NumberTheory
@@ -24,7 +24,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun min(a: Double, b: Double): Double
 	{
@@ -41,7 +41,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun min(vararg numbers: Double): Double
 	{
@@ -69,7 +69,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun argmin(vararg numbers: Double): Double
 	{
@@ -104,7 +104,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun max(a: Double, b: Double): Double
 	{
@@ -121,7 +121,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun max(vararg numbers: Double): Double
 	{
@@ -149,7 +149,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun argmax(vararg numbers: Double): Double
 	{
@@ -184,7 +184,7 @@ object NumberTheory
 	 * @param leftIndex Int
 	 * @param rightIndex Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun sortAsc(array: DoubleArray, initOrder: IntArray, leftIndex: Int, rightIndex: Int)
 	{
@@ -227,7 +227,7 @@ object NumberTheory
 	 *
 	 * @return IntArray?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sortAsc(array: DoubleArray?): IntArray?
 	{
@@ -254,7 +254,7 @@ object NumberTheory
 	 *
 	 * @return Array<DoubleArray>?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getDistValues(array: DoubleArray?, returnOrderByDescFreqAndAscOrigPos: Boolean): Array<DoubleArray>?
 	{
@@ -376,7 +376,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberOfDistValues(vararg numbers: Double): Double
 	{
@@ -401,7 +401,7 @@ object NumberTheory
 	 *
 	 * @return Long
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun gcd(a: Long, b: Long): Long
 	{
@@ -430,7 +430,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun gcd(a: Double, b: Double): Double
 	{
@@ -461,7 +461,7 @@ object NumberTheory
 	 *
 	 * @return Long
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun gcd(vararg numbers: Long): Long
 	{
@@ -482,7 +482,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun gcd(vararg numbers: Double): Double
 	{
@@ -504,7 +504,7 @@ object NumberTheory
 	 *
 	 * @return Long
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun lcm(a: Long, b: Long): Long
 	{
@@ -525,7 +525,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun lcm(a: Double, b: Double): Double
 	{
@@ -545,7 +545,7 @@ object NumberTheory
 	 *
 	 * @return Long
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun lcm(vararg numbers: Long): Long
 	{
@@ -566,7 +566,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun lcm(vararg numbers: Double): Double
 	{
@@ -587,7 +587,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sum(vararg numbers: Double): Double
 	{
@@ -614,7 +614,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun prod(vararg numbers: Double): Double
 	{
@@ -641,7 +641,7 @@ object NumberTheory
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun primeTest(n: Long): Boolean
 	{
@@ -693,7 +693,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun primeTest(n: Double): Double
 	{
@@ -710,7 +710,7 @@ object NumberTheory
 	 *
 	 * @return Long
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun primeCount(n: Long): Long
 	{
@@ -733,7 +733,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun primeCount(n: Double): Double
 	{
@@ -751,7 +751,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun sigmaSummation(f: Expression, index: Argument, from: Double, to: Double, delta: Double): Double
 	{
@@ -805,7 +805,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun piProduct(f: Expression, index: Argument, from: Double, to: Double, delta: Double): Double
 	{
@@ -859,7 +859,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun min(f: Expression, index: Argument, from: Double, to: Double, delta: Double): Double
 	{
@@ -926,7 +926,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun max(f: Expression, index: Argument, from: Double, to: Double, delta: Double): Double
 	{
@@ -989,7 +989,7 @@ object NumberTheory
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getRegExpForNumeralSystem(numeralSystemBase: Int): String
 	{
@@ -1042,7 +1042,7 @@ object NumberTheory
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun digitIndex(digitChar: Char): Int
 	{
@@ -1121,7 +1121,7 @@ object NumberTheory
 	 *
 	 * @return Char
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun digitChar(digitIndex: Int): Char
 	{
@@ -1175,7 +1175,7 @@ object NumberTheory
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getNumeralSystemBase(numberLiteral: String): Int
 	{
@@ -1190,7 +1190,7 @@ object NumberTheory
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(numberLiteral: String?, numeralSystemBase: Int): Double
 	{
@@ -1260,7 +1260,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(numberLiteral: String?): Double
 	{
@@ -1300,7 +1300,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(numeralSystemBase: Int, vararg digits: Int): Double
 	{
@@ -1353,7 +1353,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(numeralSystemBase: Double, vararg digits: Double): Double
 	{
@@ -1391,7 +1391,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(baseAndDigits: IntArray?): Double
 	{
@@ -1417,7 +1417,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convOthBase2Decimal(baseAndDigits: DoubleArray?): Double
 	{
@@ -1444,7 +1444,7 @@ object NumberTheory
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convDecimal2OthBase(decimalNumber: Double, numeralSystemBase: Int): String
 	{
@@ -1494,7 +1494,7 @@ object NumberTheory
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun convDecimal2OthBase(decimalNumber: Double, numeralSystemBase: Int, format: Int): String
 	{
@@ -1528,7 +1528,7 @@ object NumberTheory
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberOfDigits(number: Long): Int
 	{
@@ -1559,7 +1559,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberOfDigits(number: Double): Double
 	{
@@ -1898,7 +1898,7 @@ object NumberTheory
 	 *
 	 * @return Long
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberOfDigits(number: Long, numeralSystemBase: Long): Long
 	{
@@ -1939,7 +1939,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberOfDigits(number: Double, numeralSystemBase: Double): Double
 	{
@@ -1983,7 +1983,7 @@ object NumberTheory
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun digitAtPosition(number: Long, position: Int, numeralSystemBase: Int): Int
 	{
@@ -2022,7 +2022,7 @@ object NumberTheory
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun digitAtPosition(number: Long, position: Int): Int
 	{
@@ -2038,7 +2038,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun digitAtPosition(number: Double, position: Double, numeralSystemBase: Double): Double
 	{
@@ -2087,7 +2087,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun digitAtPosition(number: Double, position: Double): Double
 	{
@@ -2101,7 +2101,7 @@ object NumberTheory
 	 *
 	 * @return LongArray
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun primeFactors(number: Long): LongArray
 	{
@@ -2158,7 +2158,7 @@ object NumberTheory
 	 *
 	 * @return DoubleArray
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun primeFactors(number: Double): DoubleArray
 	{
@@ -2218,7 +2218,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun numberOfPrimeFactors(number: Double): Double
 	{
@@ -2242,7 +2242,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun primeFactorValue(number: Double, id: Double): Double
 	{
@@ -2275,7 +2275,7 @@ object NumberTheory
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun primeFactorExponent(number: Double, id: Double): Double
 	{

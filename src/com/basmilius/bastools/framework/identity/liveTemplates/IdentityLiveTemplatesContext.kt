@@ -8,7 +8,7 @@ import com.intellij.psi.PsiFile
  *
  * @constructor
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.identity.liveTemplates
  */
 class IdentityLiveTemplatesContext: TemplateContextType("BASTOOLS.IDENTITY_FRAMEWORK", "Identity Framework")
@@ -17,7 +17,7 @@ class IdentityLiveTemplatesContext: TemplateContextType("BASTOOLS.IDENTITY_FRAME
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isInContext(psi: PsiFile, offset: Int) = psi.name.endsWith(".php")
 

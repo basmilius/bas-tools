@@ -8,7 +8,7 @@ import com.intellij.psi.PsiReference
 /**
  * Class CappuccinoTargetElementEvaluator
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.editor
  */
 class CappuccinoTargetElementEvaluator: TargetElementEvaluator
@@ -17,14 +17,14 @@ class CappuccinoTargetElementEvaluator: TargetElementEvaluator
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getElementByReference(reference: PsiReference, flags: Int) = if (reference is CappuccinoBlockReference) if (flags and 2 != 0) reference.element else reference.resolve() else null
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun includeSelfInGotoImplementation(element: PsiElement) = false
 

@@ -7,7 +7,7 @@ import com.basmilius.math.MathParser
 /**
  * Object Calculus
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object Calculus
@@ -29,7 +29,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun integralTrapezoid(f: Expression, x: Argument, a: Double, b: Double, eps: Double, maxSteps: Int): Double
 	{
@@ -80,7 +80,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun derivative(f: Expression, x: Argument, x0: Double, derType: Int, eps: Double, maxSteps: Int): Double
 	{
@@ -140,7 +140,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun derivativeNth(f: Expression, n: Double, x: Argument, x0: Double, derType: Int, eps: Double, maxSteps: Int): Double
 	{
@@ -219,7 +219,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun forwardDifference(f: Expression, x: Argument, x0: Double): Double
 	{
@@ -240,7 +240,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun forwardDifference(f: Expression, x: Argument): Double
 	{
@@ -265,7 +265,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun backwardDifference(f: Expression, x: Argument, x0: Double): Double
 	{
@@ -286,7 +286,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun backwardDifference(f: Expression, x: Argument): Double
 	{
@@ -312,7 +312,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun forwardDifference(f: Expression, h: Double, x: Argument, x0: Double): Double
 	{
@@ -334,7 +334,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun forwardDifference(f: Expression, h: Double, x: Argument): Double
 	{
@@ -360,7 +360,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun backwardDifference(f: Expression, h: Double, x: Argument, x0: Double): Double
 	{
@@ -382,7 +382,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun backwardDifference(f: Expression, h: Double, x: Argument): Double
 	{
@@ -410,7 +410,7 @@ object Calculus
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun solveBrent(f: Expression, x: Argument, a: Double, b: Double, eps: Double, maxSteps: Double): Double
 	{

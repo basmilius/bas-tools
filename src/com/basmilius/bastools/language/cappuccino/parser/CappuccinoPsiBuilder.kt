@@ -13,7 +13,7 @@ import com.intellij.psi.tree.IElementType
  * @constructor
  * @param builder PsiBuilder
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.parser
  */
 class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTypes
@@ -22,7 +22,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	/**
 	 * Companion Object CappuccinoPsiBuilder
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.parser
 	 */
 	companion object
@@ -33,7 +33,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 		/**
 		 * CappuccinoPsiBuilder Constructor.
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		init
 		{
@@ -51,7 +51,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 		 *
 		 * @return IElementType
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun getTagType(tokenText: String?): IElementType
 		{
@@ -67,7 +67,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	 *
 	 * @return ASTNode
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun buildPsiTree(root: IElementType): ASTNode
 	{
@@ -90,7 +90,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	 *
 	 * @param type IElementType
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun parseLiteral(type: IElementType)
 	{
@@ -121,7 +121,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	/**
 	 * Parses a print block.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun parsePrintBlock()
 	{
@@ -141,7 +141,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 			when
 			{
 				this.builder.tokenType == CappuccinoTokenTypes.LBRACE_CURL -> this.parseLiteral(CappuccinoTokenTypes.RBRACE_CURL)
-				this.builder.tokenType == CappuccinoTokenTypes.RBRACE_SQ -> this.parseLiteral(CappuccinoTokenTypes.RBRACE_SQ)
+				this.builder.tokenType == CappuccinoTokenTypes.LBRACE_SQ -> this.parseLiteral(CappuccinoTokenTypes.RBRACE_SQ)
 				else -> this.builder.advanceLexer()
 			}
 		}
@@ -157,7 +157,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	 *
 	 * @return IElementType
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun parseStatement(definition: CappuccinoBlockStatements.StatementDefinition, withIdentifierOnly: Boolean): IElementType
 	{
@@ -207,7 +207,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	 *
 	 * @return IElementType?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun parseStatement(name: String, endName: String?, types: Set<IElementType>): IElementType?
 	{
@@ -251,7 +251,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	 *
 	 * @return CappuccinoTagParsingData?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun parseStatement(name: String?, types: Set<IElementType>): CappuccinoTagParsingData?
 	{
@@ -290,7 +290,7 @@ class CappuccinoPsiBuilder(private val builder: PsiBuilder): CappuccinoElementTy
 	 *
 	 * @return CappuccinoTagParsingData?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun parseTag(): CappuccinoTagParsingData?
 	{

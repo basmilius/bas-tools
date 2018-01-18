@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull
 /**
  * Class CappuccinoIndexPatternBuilder
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoIndexPatternBuilder: IndexPatternBuilder
@@ -20,28 +20,28 @@ class CappuccinoIndexPatternBuilder: IndexPatternBuilder
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getCommentEndDelta(p0: IElementType?) = 2
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getCommentStartDelta(p0: IElementType?) = 2
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getCommentTokenSet(@NotNull file: PsiFile): TokenSet = TokenSet.create(CappuccinoTokenTypes.COMMENT)
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getIndexingLexer(file: PsiFile): Lexer? = if (file is CappuccinoFile) CappuccinoLexerAdapter() else null
 

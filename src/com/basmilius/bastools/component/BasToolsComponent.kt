@@ -12,7 +12,7 @@ import javax.swing.UIManager
 /**
  * Class BasToolsComponent
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component
  */
 class BasToolsComponent: ApplicationComponent
@@ -21,7 +21,7 @@ class BasToolsComponent: ApplicationComponent
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun initComponent()
 	{
@@ -49,7 +49,7 @@ class BasToolsComponent: ApplicationComponent
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun disposeComponent()
 	{
@@ -59,7 +59,7 @@ class BasToolsComponent: ApplicationComponent
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getComponentName() = "Bas Tools"
 

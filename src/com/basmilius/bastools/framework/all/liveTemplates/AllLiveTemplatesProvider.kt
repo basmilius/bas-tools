@@ -5,7 +5,7 @@ import com.intellij.codeInsight.template.impl.DefaultLiveTemplatesProvider
 /**
  * Class AllLiveTemplatesProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.liveTemplates
  */
 class AllLiveTemplatesProvider: DefaultLiveTemplatesProvider
@@ -14,14 +14,14 @@ class AllLiveTemplatesProvider: DefaultLiveTemplatesProvider
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getDefaultLiveTemplateFiles() = arrayOf("liveTemplates/MissingPhpStuffFramework")
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getHiddenLiveTemplateFiles(): Array<String?> = arrayOfNulls(0)
 

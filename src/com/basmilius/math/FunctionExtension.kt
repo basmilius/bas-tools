@@ -3,7 +3,7 @@ package com.basmilius.math
 /**
  * Interface FunctionExtension
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math
  */
 interface FunctionExtension
@@ -14,7 +14,7 @@ interface FunctionExtension
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getParametersNumber(): Int
 
@@ -24,7 +24,7 @@ interface FunctionExtension
 	 * @param parameterIndex Int
 	 * @param parameterValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setParameterValue(parameterIndex: Int, parameterValue: Double)
 
@@ -35,7 +35,7 @@ interface FunctionExtension
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getParameterName(parameterIndex: Int): String
 
@@ -44,14 +44,14 @@ interface FunctionExtension
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun calculate(): Double
 
 	/**
 	 *
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun clone(): FunctionExtension
 

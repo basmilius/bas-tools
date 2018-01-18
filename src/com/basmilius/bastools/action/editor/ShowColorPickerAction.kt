@@ -13,7 +13,7 @@ import com.intellij.ui.JBColor
 /**
  * Class ShowColorPickerAction
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.action.editor
  */
 class ShowColorPickerAction: AnAction("Show Color Picker")
@@ -22,7 +22,7 @@ class ShowColorPickerAction: AnAction("Show Color Picker")
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun actionPerformed(aae: AnActionEvent)
 	{

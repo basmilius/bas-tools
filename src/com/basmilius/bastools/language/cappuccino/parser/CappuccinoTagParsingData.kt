@@ -10,7 +10,7 @@ import com.intellij.psi.tree.IElementType
  * @param isShort Boolean
  * @param name String?
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.parser
  */
 data class CappuccinoTagParsingData(val tagType: IElementType, val isShort: Boolean, val name: String)

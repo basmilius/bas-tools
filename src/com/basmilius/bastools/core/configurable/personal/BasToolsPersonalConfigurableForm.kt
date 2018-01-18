@@ -14,7 +14,7 @@ import javax.swing.*
  * @constructor
  * @param configurable BasToolsPersonalConfigurable
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.configurable.personal
  */
 class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersonalConfigurable): AbstractForm<BasToolsPersonalConfigurable.PersonalConfigurationState>()
@@ -26,7 +26,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	/**
 	 * BasToolsPersonalConfigurableForm Initializer.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	init
 	{
@@ -36,7 +36,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun applyChanges()
 	{
@@ -50,7 +50,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun build()
 	{
@@ -64,7 +64,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun load()
 	{
@@ -75,7 +75,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun update(state: BasToolsPersonalConfigurable.PersonalConfigurationState)
 	{
@@ -88,7 +88,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	 *
 	 * @return JComponent
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun createDetailsPanel(): JComponent
 	{
@@ -116,7 +116,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	 *
 	 * @return GridConstraints
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun constraints(row: Int = 0, column: Int = 0, fill: Int = GridConstraints.FILL_HORIZONTAL, xgrow: Int = GridConstraints.SIZEPOLICY_FIXED, ygrow: Int = GridConstraints.SIZEPOLICY_FIXED): GridConstraints
 	{

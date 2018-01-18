@@ -3,7 +3,7 @@ package com.basmilius.bastools.language.cappuccino.parser
 /**
  * Interface CappuccinoKeywords
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.parser
  */
 interface CappuccinoKeywords
@@ -12,7 +12,7 @@ interface CappuccinoKeywords
 	/**
 	 * Companion Object CappuccinoKeywords
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.parser
 	 */
 	companion object

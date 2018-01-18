@@ -11,7 +11,7 @@ import java.util.*
 /**
  * Class Expression
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math
  */
 class Expression
@@ -20,7 +20,7 @@ class Expression
 	/**
 	 * Companion Object Expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.math
 	 */
 	companion object
@@ -44,7 +44,7 @@ class Expression
 		 *
 		 * @return String
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun getLeftSpaces(maxStr: String, str: String): String
 		{
@@ -64,7 +64,7 @@ class Expression
 		 *
 		 * @return String
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun getRightSpaces(maxStr: String, str: String): String
 		{
@@ -81,7 +81,7 @@ class Expression
 		 *
 		 * @param tokensList List<Token>?
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun showTokens(tokensList: List<Token>?)
 		{
@@ -153,7 +153,7 @@ class Expression
 	 * @property
 	 * @type Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	var computingTime: Double = 0.0
 		private set
@@ -164,7 +164,7 @@ class Expression
 	 * @property
 	 * @type String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	var errorMessage: String = ""
 		private set
@@ -175,7 +175,7 @@ class Expression
 	 * @property
 	 * @type String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	var expressionString: String
 		get() = this.pr_expressionString
@@ -191,7 +191,7 @@ class Expression
 	 * @property
 	 * @type Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	var syntaxStatus: Boolean = false
 		private set
@@ -202,7 +202,7 @@ class Expression
 	 * @constructor
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(vararg elements: PrimitiveElement)
 	{
@@ -219,7 +219,7 @@ class Expression
 	 * @param expressionString String
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(expressionString: String, vararg elements: PrimitiveElement)
 	{
@@ -236,7 +236,7 @@ class Expression
 	 * @param expressionString String
 	 * @param parserKeyWordsOnly Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(expressionString: String, parserKeyWordsOnly: Boolean)
 	{
@@ -257,7 +257,7 @@ class Expression
 	 * @param constantsList ArrayList<Constant>
 	 * @param disableUlpRounding Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(expressionString: String, initialTokens: ArrayList<Token>, argumentsList: ArrayList<Argument>, functionsList: ArrayList<Function>, constantsList: ArrayList<Constant>, disableUlpRounding: Boolean)
 	{
@@ -290,7 +290,7 @@ class Expression
 	 * @param functionsList ArrayList<Function>
 	 * @param constantsList ArrayList<Constant>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(expressionString: String, argumentsList: ArrayList<Argument>, functionsList: ArrayList<Function>, constantsList: ArrayList<Constant>)
 	{
@@ -311,7 +311,7 @@ class Expression
 	 * @constructor
 	 * @param expression Expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private constructor(expression: Expression)
 	{
@@ -340,7 +340,7 @@ class Expression
 	 *
 	 * @param expression Expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addRelatedExpression(expression: Expression)
 	{
@@ -355,7 +355,7 @@ class Expression
 	 *
 	 * @param expression Expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeRelatedExpression(expression: Expression)
 	{
@@ -365,7 +365,7 @@ class Expression
 	/**
 	 * Prints related expression list.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun showRelatedExpressions()
 	{
@@ -381,7 +381,7 @@ class Expression
 	 * @param syntaxStatus Boolean
 	 * @param errorMessage String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setSyntaxStatus(syntaxStatus: Boolean, errorMessage: String)
 	{
@@ -392,7 +392,7 @@ class Expression
 	/**
 	 * Sets expression status to modified.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setExpressionModifiedFlag()
 	{
@@ -417,7 +417,7 @@ class Expression
 	/**
 	 * Common variables while expression initializing.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun expressionInternalVarsInit()
 	{
@@ -434,7 +434,7 @@ class Expression
 	/**
 	 * Common variables while expression initializing.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun expressionInit()
 	{
@@ -450,7 +450,7 @@ class Expression
 	/**
 	 * Clears expression string.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun clearExpressionString()
 	{
@@ -461,7 +461,7 @@ class Expression
 	/**
 	 * Clears expression description.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun clearDescription()
 	{
@@ -471,7 +471,7 @@ class Expression
 	/**
 	 * Disables verbose mode (default silent mode).
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setSilentMode()
 	{
@@ -481,7 +481,7 @@ class Expression
 	/**
 	 * Enables verbose mode.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setVerboseMode()
 	{
@@ -491,7 +491,7 @@ class Expression
 	/**
 	 * Disables recursive mode.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun disableRecursiveMode()
 	{
@@ -503,7 +503,7 @@ class Expression
 	 *
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addDefinitions(vararg elements: PrimitiveElement)
 	{
@@ -524,7 +524,7 @@ class Expression
 	 *
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeDefinitions(vararg elements: PrimitiveElement)
 	{
@@ -545,7 +545,7 @@ class Expression
 	 *
 	 * @param arguments Argument[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addArguments(vararg arguments: Argument)
 	{
@@ -564,7 +564,7 @@ class Expression
 	 * @param argumentName String
 	 * @param argumentValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineArgument(argumentName: String, argumentValue: Double)
 	{
@@ -579,7 +579,7 @@ class Expression
 	 *
 	 * @param argumentNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineArguments(vararg argumentNames: String)
 	{
@@ -600,7 +600,7 @@ class Expression
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgumentIndex(argumentName: String): Int
 	{
@@ -628,7 +628,7 @@ class Expression
 	 *
 	 * @return Argument?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgument(argumentName: String): Argument?
 	{
@@ -647,7 +647,7 @@ class Expression
 	 *
 	 * @return Argument?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgument(argumentIndex: Int): Argument?
 	{
@@ -662,7 +662,7 @@ class Expression
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgumentsNumber(): Int
 	{
@@ -676,7 +676,7 @@ class Expression
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgumentValue(argumentName: String): Double
 	{
@@ -694,7 +694,7 @@ class Expression
 	 * @param argumentName String
 	 * @param argumentValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun setArgumentValue(argumentName: String, argumentValue: Double)
 	{
@@ -709,7 +709,7 @@ class Expression
 	 *
 	 * @param argumentNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeArguments(vararg argumentNames: String)
 	{
@@ -732,7 +732,7 @@ class Expression
 	 *
 	 * @param arguments Argument[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeArguments(vararg arguments: Argument)
 	{
@@ -748,7 +748,7 @@ class Expression
 	/**
 	 * Removes all arguments associated with the expression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeAllArguments()
 	{
@@ -782,7 +782,7 @@ class Expression
 	 *
 	 * @param constantsList List<Constant>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addConstants(constantsList: List<Constant>)
 	{
@@ -800,7 +800,7 @@ class Expression
 	 * @param constantName String
 	 * @param constantValue Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineConstant(constantName: String, constantValue: Double)
 	{
@@ -817,7 +817,7 @@ class Expression
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstantIndex(constantName: String): Int
 	{
@@ -845,7 +845,7 @@ class Expression
 	 *
 	 * @return Constant?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstant(constantName: String): Constant?
 	{
@@ -861,7 +861,7 @@ class Expression
 	 *
 	 * @return Constant?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstant(constantIndex: Int): Constant?
 	{
@@ -873,7 +873,7 @@ class Expression
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getConstantsNumber(): Int
 	{
@@ -885,7 +885,7 @@ class Expression
 	 *
 	 * @param constantsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeConstants(vararg constantsNames: String)
 	{
@@ -908,7 +908,7 @@ class Expression
 	 *
 	 * @param constants Constant[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeConstants(vararg constants: Constant)
 	{
@@ -923,7 +923,7 @@ class Expression
 	/**
 	 * Removes all constants associated with the expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeAllConstants()
 	{
@@ -939,7 +939,7 @@ class Expression
 	 *
 	 * @param functions Function[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun addFunctions(vararg functions: Function)
 	{
@@ -961,7 +961,7 @@ class Expression
 	 * @param functionExpressionString String
 	 * @param argumentsNames String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun defineFunction(functionName: String, functionExpressionString: String, vararg argumentsNames: String)
 	{
@@ -978,7 +978,7 @@ class Expression
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunctionIndex(functionName: String): Int
 	{
@@ -1006,7 +1006,7 @@ class Expression
 	 *
 	 * @return Function?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunction(functionName: String): Function?
 	{
@@ -1022,7 +1022,7 @@ class Expression
 	 *
 	 * @return Function?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunction(functionIndex: Int): Function?
 	{
@@ -1034,7 +1034,7 @@ class Expression
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getFunctionsNumber(): Int
 	{
@@ -1046,7 +1046,7 @@ class Expression
 	 *
 	 * @param functionsNames String[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeFunctions(vararg functionsNames: String)
 	{
@@ -1069,7 +1069,7 @@ class Expression
 	 *
 	 * @param functions Function[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeFunctions(vararg functions: Function)
 	{
@@ -1085,7 +1085,7 @@ class Expression
 	/**
 	 * Removes all functions associated with the expression.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun removeAllFunctions()
 	{
@@ -1103,7 +1103,7 @@ class Expression
 	 * @param number Double
 	 * @param ulpRound Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun setToNumber(pos: Int, number: Double, ulpRound: Boolean)
 	{
@@ -1138,7 +1138,7 @@ class Expression
 	 * @param pos Int
 	 * @param number Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun setToNumber(pos: Int, number: Double)
 	{
@@ -1152,7 +1152,7 @@ class Expression
 	 * @param result Double
 	 * @param ulpRound Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun f1SetDecreaseRemove(pos: Int, result: Double, ulpRound: Boolean)
 	{
@@ -1167,7 +1167,7 @@ class Expression
 	 * @param pos Int
 	 * @param result Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun f1SetDecreaseRemove(pos: Int, result: Double)
 	{
@@ -1181,7 +1181,7 @@ class Expression
 	 * @param result Double
 	 * @param ulpRound Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun f2SetDecreaseRemove(pos: Int, result: Double, ulpRound: Boolean)
 	{
@@ -1197,7 +1197,7 @@ class Expression
 	 * @param pos Int
 	 * @param result Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun f2SetDecreaseRemove(pos: Int, result: Double)
 	{
@@ -1211,7 +1211,7 @@ class Expression
 	 * @param result Double
 	 * @param ulpRound Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun f3SetDecreaseRemove(pos: Int, result: Double, ulpRound: Boolean)
 	{
@@ -1228,7 +1228,7 @@ class Expression
 	 * @param pos Int
 	 * @param result Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun f3SetDecreaseRemove(pos: Int, result: Double)
 	{
@@ -1242,7 +1242,7 @@ class Expression
 	 * @param result Double
 	 * @param ulpRound Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun opSetDecreaseRemove(pos: Int, result: Double, ulpRound: Boolean)
 	{
@@ -1257,7 +1257,7 @@ class Expression
 	 * @param pos Int
 	 * @param result Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun opSetDecreaseRemove(pos: Int, result: Double)
 	{
@@ -1271,7 +1271,7 @@ class Expression
 	 * @param result Double
 	 * @param ulpRound Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun calcSetDecreaseRemove(pos: Int, result: Double, ulpRound: Boolean)
 	{
@@ -1294,7 +1294,7 @@ class Expression
 	 * @param pos Int
 	 * @param result Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun calcSetDecreaseRemove(pos: Int, result: Double)
 	{
@@ -1309,7 +1309,7 @@ class Expression
 	 * @param length Double
 	 * @param ulpRound Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun variadicSetDecreaseRemove(pos: Int, value: Double, length: Int, ulpRound: Boolean)
 	{
@@ -1327,7 +1327,7 @@ class Expression
 	 * @param value Double
 	 * @param length Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun variadicSetDecreaseRemove(pos: Int, value: Double, length: Int)
 	{
@@ -1341,7 +1341,7 @@ class Expression
 	 * @param ifCondition Double
 	 * @param ulpRound Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ifSetRemove(pos: Int, ifCondition: Double, ulpRound: Boolean)
 	{
@@ -1398,7 +1398,7 @@ class Expression
 	 * @param pos Int
 	 * @param ifCondition Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ifSetRemove(pos: Int, ifCondition: Double)
 	{
@@ -1411,7 +1411,7 @@ class Expression
 	 * @param from Int
 	 * @param to Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun removeTokens(from: Int, to: Int)
 	{
@@ -1435,7 +1435,7 @@ class Expression
 	 *
 	 * @return List<Token>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun createInitialTokens(startPos: Int, endPos: Int, tokensList: List<Token>): ArrayList<Token>
 	{
@@ -1453,7 +1453,7 @@ class Expression
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getParametersNumber(pos: Int): Int
 	{
@@ -1492,7 +1492,7 @@ class Expression
 	 *
 	 * @return List<FunctionParameter>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getFunctionParameters(pos: Int, tokensList: List<Token>): List<FunctionParameter>
 	{
@@ -1549,7 +1549,7 @@ class Expression
 	 * @param argumentName String
 	 * @return ArgumentParameter
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getParamArgument(argumentName: String): ArgumentParameter
 	{
@@ -1581,7 +1581,7 @@ class Expression
 	 *
 	 * @param argParam ArgumentParameter
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun clearParamArgument(argParam: ArgumentParameter)
 	{
@@ -1603,7 +1603,7 @@ class Expression
 	 *
 	 * @return List<Double>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getNumbers(pos: Int): List<Double>
 	{
@@ -1639,7 +1639,7 @@ class Expression
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getTokenValue(tokenIndex: Int): Double
 	{
@@ -1654,7 +1654,7 @@ class Expression
 	 * @param tokenId Int
 	 * @param tokenTypeId Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun updateMissingTokens(tokens: List<Token>, keyWord: String, tokenId: Int, tokenTypeId: Int)
 	{
@@ -1673,7 +1673,7 @@ class Expression
 	 * @param index ArgumentParameter
 	 * @param iterParams IterativeOperatorParameters
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun updateMissingTokens(index: ArgumentParameter, iterParams: IterativeOperatorParameters)
 	{
@@ -1692,7 +1692,7 @@ class Expression
 	 * @param index ArgumentParameter
 	 * @param iterParams IterativeOperatorParameters
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun evalFromToDeltaParameters(index: ArgumentParameter, iterParams: IterativeOperatorParameters)
 	{
@@ -1734,7 +1734,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun FREE_ARGUMENT(pos: Int)
 	{
@@ -1753,7 +1753,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun DEPENDENT_ARGUMENT(pos: Int)
 	{
@@ -1784,7 +1784,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun USER_FUNCTION(pos: Int)
 	{
@@ -1849,7 +1849,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun USER_CONSTANT(pos: Int)
 	{
@@ -1862,7 +1862,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun RECURSIVE_ARGUMENT(pos: Int)
 	{
@@ -1883,7 +1883,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CONSTANT(pos: Int)
 	{
@@ -1990,7 +1990,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun UNIT(pos: Int)
 	{
@@ -2103,7 +2103,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun RANDOM_VARIABLE(pos: Int)
 	{
@@ -2153,7 +2153,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun POWER(pos: Int)
 	{
@@ -2167,7 +2167,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MODULO(pos: Int)
 	{
@@ -2181,7 +2181,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun DIVIDE(pos: Int)
 	{
@@ -2195,7 +2195,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MULTIPLY(pos: Int)
 	{
@@ -2209,7 +2209,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun PLUS(pos: Int)
 	{
@@ -2241,7 +2241,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MINUS(pos: Int)
 	{
@@ -2273,7 +2273,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun AND(pos: Int)
 	{
@@ -2287,7 +2287,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun OR(pos: Int)
 	{
@@ -2301,7 +2301,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NAND(pos: Int)
 	{
@@ -2315,7 +2315,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NOR(pos: Int)
 	{
@@ -2329,7 +2329,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun XOR(pos: Int)
 	{
@@ -2343,7 +2343,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun IMP(pos: Int)
 	{
@@ -2357,7 +2357,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CIMP(pos: Int)
 	{
@@ -2371,7 +2371,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NIMP(pos: Int)
 	{
@@ -2385,7 +2385,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CNIMP(pos: Int)
 	{
@@ -2399,7 +2399,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun EQV(pos: Int)
 	{
@@ -2413,7 +2413,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NEG(pos: Int)
 	{
@@ -2427,7 +2427,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun EQ(pos: Int)
 	{
@@ -2441,7 +2441,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NEQ(pos: Int)
 	{
@@ -2455,7 +2455,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun LT(pos: Int)
 	{
@@ -2469,7 +2469,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun GT(pos: Int)
 	{
@@ -2483,7 +2483,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun LEQ(pos: Int)
 	{
@@ -2497,7 +2497,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun GEQ(pos: Int)
 	{
@@ -2511,7 +2511,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BITWISE_COMPL(pos: Int)
 	{
@@ -2525,7 +2525,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BITWISE_AND(pos: Int)
 	{
@@ -2539,7 +2539,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BITWISE_OR(pos: Int)
 	{
@@ -2553,7 +2553,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BITWISE_XOR(pos: Int)
 	{
@@ -2567,7 +2567,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BITWISE_LEFT_SHIFT(pos: Int)
 	{
@@ -2581,7 +2581,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BITWISE_RIGHT_SHIFT(pos: Int)
 	{
@@ -2595,7 +2595,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SIN(pos: Int)
 	{
@@ -2608,7 +2608,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun COS(pos: Int)
 	{
@@ -2621,7 +2621,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun TAN(pos: Int)
 	{
@@ -2634,7 +2634,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CTAN(pos: Int)
 	{
@@ -2647,7 +2647,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SEC(pos: Int)
 	{
@@ -2660,7 +2660,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun COSEC(pos: Int)
 	{
@@ -2673,7 +2673,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ASIN(pos: Int)
 	{
@@ -2686,7 +2686,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ACOS(pos: Int)
 	{
@@ -2699,7 +2699,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ATAN(pos: Int)
 	{
@@ -2712,7 +2712,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ACTAN(pos: Int)
 	{
@@ -2725,7 +2725,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun LN(pos: Int)
 	{
@@ -2738,7 +2738,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun LOG2(pos: Int)
 	{
@@ -2751,7 +2751,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun LOG10(pos: Int)
 	{
@@ -2764,7 +2764,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun RAD(pos: Int)
 	{
@@ -2777,7 +2777,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun EXP(pos: Int)
 	{
@@ -2790,7 +2790,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SQRT(pos: Int)
 	{
@@ -2803,7 +2803,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SINH(pos: Int)
 	{
@@ -2816,7 +2816,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun COSH(pos: Int)
 	{
@@ -2829,7 +2829,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun TANH(pos: Int)
 	{
@@ -2842,7 +2842,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun COTH(pos: Int)
 	{
@@ -2855,7 +2855,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SECH(pos: Int)
 	{
@@ -2868,7 +2868,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CSCH(pos: Int)
 	{
@@ -2881,7 +2881,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun DEG(pos: Int)
 	{
@@ -2894,7 +2894,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ABS(pos: Int)
 	{
@@ -2907,7 +2907,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SGN(pos: Int)
 	{
@@ -2920,7 +2920,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun FLOOR(pos: Int)
 	{
@@ -2933,7 +2933,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CEIL(pos: Int)
 	{
@@ -2946,7 +2946,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARSINH(pos: Int)
 	{
@@ -2959,7 +2959,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARCOSH(pos: Int)
 	{
@@ -2972,7 +2972,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARTANH(pos: Int)
 	{
@@ -2985,7 +2985,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARCOTH(pos: Int)
 	{
@@ -2998,7 +2998,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARSECH(pos: Int)
 	{
@@ -3011,7 +3011,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARCSCH(pos: Int)
 	{
@@ -3024,7 +3024,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SA(pos: Int)
 	{
@@ -3037,7 +3037,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SINC(pos: Int)
 	{
@@ -3050,7 +3050,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BELL_NUMBER(pos: Int)
 	{
@@ -3063,7 +3063,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun LUCAS_NUMBER(pos: Int)
 	{
@@ -3076,7 +3076,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun FIBONACCI_NUMBER(pos: Int)
 	{
@@ -3089,7 +3089,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun HARMONIC_NUMBER(pos: Int)
 	{
@@ -3102,7 +3102,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun IS_PRIME(pos: Int)
 	{
@@ -3115,7 +3115,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun PRIME_COUNT(pos: Int)
 	{
@@ -3128,7 +3128,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun EXP_INT(pos: Int)
 	{
@@ -3141,7 +3141,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun LOG_INT(pos: Int)
 	{
@@ -3154,7 +3154,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun OFF_LOG_INT(pos: Int)
 	{
@@ -3167,7 +3167,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun FACT(pos: Int)
 	{
@@ -3181,7 +3181,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun PERC(pos: Int)
 	{
@@ -3195,7 +3195,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NOT(pos: Int)
 	{
@@ -3208,7 +3208,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun GAUSS_ERF(pos: Int)
 	{
@@ -3221,7 +3221,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun GAUSS_ERFC(pos: Int)
 	{
@@ -3234,7 +3234,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun GAUSS_ERF_INV(pos: Int)
 	{
@@ -3247,7 +3247,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun GAUSS_ERFC_INV(pos: Int)
 	{
@@ -3260,7 +3260,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ULP(pos: Int)
 	{
@@ -3273,7 +3273,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ISNAN(pos: Int)
 	{
@@ -3286,7 +3286,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NDIG10(pos: Int)
 	{
@@ -3299,7 +3299,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NFACT(pos: Int)
 	{
@@ -3312,7 +3312,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARCSEC(pos: Int)
 	{
@@ -3325,7 +3325,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARCCSC(pos: Int)
 	{
@@ -3338,7 +3338,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun LOG(pos: Int)
 	{
@@ -3352,7 +3352,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MOD(pos: Int)
 	{
@@ -3366,7 +3366,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BINOM_COEFF(pos: Int)
 	{
@@ -3380,7 +3380,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BERNOULLI_NUMBER(pos: Int)
 	{
@@ -3394,7 +3394,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun STIRLING1_NUMBER(pos: Int)
 	{
@@ -3408,7 +3408,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun STIRLING2_NUMBER(pos: Int)
 	{
@@ -3422,7 +3422,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun WORPITZKY_NUMBER(pos: Int)
 	{
@@ -3436,7 +3436,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun EULER_NUMBER(pos: Int)
 	{
@@ -3450,7 +3450,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun KRONECKER_DELTA(pos: Int)
 	{
@@ -3464,7 +3464,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun EULER_POLYNOMIAL(pos: Int)
 	{
@@ -3478,7 +3478,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun HARMONIC2_NUMBER(pos: Int)
 	{
@@ -3492,7 +3492,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ROUND(pos: Int)
 	{
@@ -3506,7 +3506,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun RND_VAR_UNIFORM_CONT(pos: Int)
 	{
@@ -3520,7 +3520,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun RND_VAR_UNIFORM_DISCR(pos: Int)
 	{
@@ -3534,7 +3534,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun RND_NORMAL(pos: Int)
 	{
@@ -3548,7 +3548,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NDIG(pos: Int)
 	{
@@ -3562,7 +3562,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun DIGIT10(pos: Int)
 	{
@@ -3576,7 +3576,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun FACTVAL(pos: Int)
 	{
@@ -3590,7 +3590,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun FACTEXP(pos: Int)
 	{
@@ -3604,7 +3604,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ROOT(pos: Int)
 	{
@@ -3618,7 +3618,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun IF_CONDITION(pos: Int)
 	{
@@ -3636,7 +3636,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun IFF(pos: Int)
 	{
@@ -3737,7 +3737,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun IF(pos: Int)
 	{
@@ -3760,7 +3760,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CHI(pos: Int)
 	{
@@ -3775,7 +3775,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CHI_LR(pos: Int)
 	{
@@ -3790,7 +3790,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CHI_L(pos: Int)
 	{
@@ -3805,7 +3805,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CHI_R(pos: Int)
 	{
@@ -3820,7 +3820,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun PDF_UNIFORM_CONT(pos: Int)
 	{
@@ -3835,7 +3835,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CDF_UNIFORM_CONT(pos: Int)
 	{
@@ -3850,7 +3850,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun QNT_UNIFORM_CONT(pos: Int)
 	{
@@ -3865,7 +3865,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun PDF_NORMAL(pos: Int)
 	{
@@ -3880,7 +3880,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CDF_NORMAL(pos: Int)
 	{
@@ -3895,7 +3895,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun QNT_NORMAL(pos: Int)
 	{
@@ -3910,7 +3910,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun DIGIT(pos: Int)
 	{
@@ -3925,7 +3925,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SUM(pos: Int)
 	{
@@ -3943,7 +3943,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun PROD(pos: Int)
 	{
@@ -3961,7 +3961,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MIN(pos: Int)
 	{
@@ -3979,7 +3979,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MAX(pos: Int)
 	{
@@ -3997,7 +3997,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun AVG(pos: Int)
 	{
@@ -4015,7 +4015,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun VAR(pos: Int)
 	{
@@ -4033,7 +4033,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun STD(pos: Int)
 	{
@@ -4052,7 +4052,7 @@ class Expression
 	 * @param pos Int
 	 * @param derivativeType Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun DERIVATIVE(pos: Int, derivativeType: Int)
 	{
@@ -4149,7 +4149,7 @@ class Expression
 	 * @param pos Int
 	 * @param derivativeType Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun DERIVATIVE_NTH(pos: Int, derivativeType: Int)
 	{
@@ -4223,7 +4223,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun INTEGRAL(pos: Int)
 	{
@@ -4260,7 +4260,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SOLVE(pos: Int)
 	{
@@ -4297,7 +4297,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun FORWARD_DIFFERENCE(pos: Int)
 	{
@@ -4330,7 +4330,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BACKWARD_DIFFERENCE(pos: Int)
 	{
@@ -4363,7 +4363,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MIN_VARIADIC(pos: Int)
 	{
@@ -4376,7 +4376,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MAX_VARIADIC(pos: Int)
 	{
@@ -4389,7 +4389,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun SUM_VARIADIC(pos: Int)
 	{
@@ -4402,7 +4402,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun PROD_VARIADIC(pos: Int)
 	{
@@ -4415,7 +4415,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun AVG_VARIADIC(pos: Int)
 	{
@@ -4428,7 +4428,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun VAR_VARIADIC(pos: Int)
 	{
@@ -4441,7 +4441,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun STD_VARIADIC(pos: Int)
 	{
@@ -4454,7 +4454,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CONTINUED_FRACTION(pos: Int)
 	{
@@ -4467,7 +4467,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun CONTINUED_POLYNOMIAL(pos: Int)
 	{
@@ -4480,7 +4480,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun GCD(pos: Int)
 	{
@@ -4493,7 +4493,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun LCM(pos: Int)
 	{
@@ -4506,7 +4506,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun RND_LIST(pos: Int)
 	{
@@ -4521,7 +4521,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun COALESCE(pos: Int)
 	{
@@ -4534,7 +4534,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun OR_VARIADIC(pos: Int)
 	{
@@ -4547,7 +4547,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun AND_VARIADIC(pos: Int)
 	{
@@ -4560,7 +4560,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun XOR_VARIADIC(pos: Int)
 	{
@@ -4573,7 +4573,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARGMIN_VARIADIC(pos: Int)
 	{
@@ -4586,7 +4586,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun ARGMAX_VARIADIC(pos: Int)
 	{
@@ -4599,7 +4599,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MEDIAN_VARIADIC(pos: Int)
 	{
@@ -4612,7 +4612,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun MODE_VARIADIC(pos: Int)
 	{
@@ -4625,7 +4625,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun BASE_VARIADIC(pos: Int)
 	{
@@ -4638,7 +4638,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun NDIST_VARIADIC(pos: Int)
 	{
@@ -4651,7 +4651,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun COMMA(pos: Int)
 	{
@@ -4664,7 +4664,7 @@ class Expression
 	 * @param lPos Int
 	 * @param rPos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun PARENTHESES(lPos: Int, rPos: Int)
 	{
@@ -4680,7 +4680,7 @@ class Expression
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkLexSyntax(): Boolean
 	{
@@ -4707,7 +4707,7 @@ class Expression
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun checkSyntax(): Boolean
 	{
@@ -4721,7 +4721,7 @@ class Expression
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun checkCalculusParameter(param: String): Int
 	{
@@ -4735,7 +4735,7 @@ class Expression
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun checkIfKnownArgument(param: FunctionParameter): Boolean
 	{
@@ -4752,7 +4752,7 @@ class Expression
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun checkIfUnknownToken(param: FunctionParameter): Boolean
 	{
@@ -4770,7 +4770,7 @@ class Expression
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun checkSyntax(level: String, functionWithBodyExt: Boolean): Boolean
 	{
@@ -5126,7 +5126,7 @@ class Expression
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun calculate(): Double
 	{
@@ -5775,7 +5775,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun f1ArgCalc(pos: Int)
 	{
@@ -5844,7 +5844,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun f2ArgCalc(pos: Int)
 	{
@@ -5878,7 +5878,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun f3ArgCalc(pos: Int)
 	{
@@ -5904,7 +5904,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun variadicFunCalc(pos: Int)
 	{
@@ -5941,7 +5941,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun calculusCalc(pos: Int)
 	{
@@ -5970,7 +5970,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun bolCalc(pos: Int)
 	{
@@ -5994,7 +5994,7 @@ class Expression
 	 *
 	 * @param pos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun bitwiseCalc(pos: Int)
 	{
@@ -6011,7 +6011,7 @@ class Expression
 	/**
 	 * Creates parser key words list.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun addParserKeyWords()
 	{
@@ -6489,7 +6489,7 @@ class Expression
 	/**
 	 * Adds arguments key words to the keywords list.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun addArgumentsKeyWords()
 	{
@@ -6509,7 +6509,7 @@ class Expression
 	/**
 	 * Adds functions key words to the keywords list.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun addFunctionsKeyWords()
 	{
@@ -6538,7 +6538,7 @@ class Expression
 	/**
 	 * Adds constants key words to the keywords list.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun addConstantsKeyWords()
 	{
@@ -6554,7 +6554,7 @@ class Expression
 	/**
 	 * Final validation of key words.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun validateParserKeyWords()
 	{
@@ -6585,7 +6585,7 @@ class Expression
 	 * @param wordSince String
 	 * @param wordTypeId Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun addKeyWord(wordString: String, wordDescription: String, wordId: Int, wordSyntax: String, wordSince: String, wordTypeId: Int)
 	{
@@ -6618,7 +6618,7 @@ class Expression
 	 *
 	 * @param token Token
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun checkOtherNumberBases(token: Token)
 	{
@@ -6697,7 +6697,7 @@ class Expression
 	 * @param tokenStr String
 	 * @param keyWord KeyWord
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun addToken(tokenStr: String, keyWord: KeyWord)
 	{
@@ -6723,7 +6723,7 @@ class Expression
 	/**
 	 * Tokenizing expression string.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun tokenizeExpressionString()
 	{
@@ -6956,7 +6956,7 @@ class Expression
 	/**
 	 * Evaluates tokens levels.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun evaluateTokensLevels()
 	{
@@ -7007,7 +7007,7 @@ class Expression
 	/**
 	 * copy initial tokens lito to tokens list.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun copyInitialTokens()
 	{
@@ -7024,7 +7024,7 @@ class Expression
 	 *
 	 * @return List<Token>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getCopyOfInitialTokens(): List<Token>
 	{
@@ -7066,7 +7066,7 @@ class Expression
 	 *
 	 * @return Array<String?>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getMissingUserDefinedArguments(): Array<String?>
 	{
@@ -7091,7 +7091,7 @@ class Expression
 	 *
 	 * @return Array<String?>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getMissingUserDefinedFunctions(): Array<String?>
 	{
@@ -7117,7 +7117,7 @@ class Expression
 	 * @param lPos Int
 	 * @param rPos Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun showParsing(lPos: Int, rPos: Int)
 	{
@@ -7135,7 +7135,7 @@ class Expression
 	/**
 	 * shows known keywords.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	internal fun showKeyWords()
 	{
@@ -7162,7 +7162,7 @@ class Expression
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getHelp(): String
 	{
@@ -7176,7 +7176,7 @@ class Expression
 	 *
 	 * @return String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getHelp(word: String): String
 	{
@@ -7251,7 +7251,7 @@ class Expression
 	 *
 	 * @return List<KeyWord>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getKeyWords(): List<KeyWord>
 	{
@@ -7265,7 +7265,7 @@ class Expression
 	 *
 	 * @return List<KeyWord>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getKeyWords(query: String): List<KeyWord>
 	{
@@ -7300,7 +7300,7 @@ class Expression
 	/**
 	 * Show tokens.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun showTokens()
 	{
@@ -7310,7 +7310,7 @@ class Expression
 	/**
 	 * Shows initial tokens.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	internal fun showInitialTokens()
 	{
@@ -7320,7 +7320,7 @@ class Expression
 	/**
 	 * Shows arguments.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun showArguments()
 	{
@@ -7341,7 +7341,7 @@ class Expression
 	 * @param info String
 	 * @param withExpressionString Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun printSystemInfo(info: String, withExpressionString: Boolean)
 	{
@@ -7360,7 +7360,7 @@ class Expression
 	 *
 	 * @return Expression
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun clone(): Expression
 	{

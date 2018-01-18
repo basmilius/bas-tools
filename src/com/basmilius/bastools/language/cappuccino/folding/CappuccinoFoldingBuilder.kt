@@ -17,7 +17,7 @@ import com.intellij.psi.tree.IElementType
 /**
  * Class CappuccinoFoldingBuilder
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.intellij.lang.folding.CustomFoldingBuilder
  */
 class CappuccinoFoldingBuilder: CustomFoldingBuilder()
@@ -26,7 +26,7 @@ class CappuccinoFoldingBuilder: CustomFoldingBuilder()
 	/**
 	 * Companion Object CappuccinoFoldingBuilder
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.intellij.lang.folding.CustomFoldingBuilder
 	 */
 	companion object
@@ -38,7 +38,7 @@ class CappuccinoFoldingBuilder: CustomFoldingBuilder()
 		 * @param element PsiElement
 		 * @param descriptors ArrayList<FoldingDescriptor>
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun collectCappuccinoFoldingRegions(element: PsiElement, descriptors: MutableList<FoldingDescriptor>)
 		{
@@ -65,7 +65,7 @@ class CappuccinoFoldingBuilder: CustomFoldingBuilder()
 		 *
 		 * @return String
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun getBlockPlaceholderText(topNode: ASTNode): String
 		{
@@ -98,7 +98,7 @@ class CappuccinoFoldingBuilder: CustomFoldingBuilder()
 		 *
 		 * @return String
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun getFoldedComment(commentNode: ASTNode): String
 		{
@@ -141,7 +141,7 @@ class CappuccinoFoldingBuilder: CustomFoldingBuilder()
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun isFoldable(nodeType: IElementType): Boolean
 		{
@@ -158,7 +158,7 @@ class CappuccinoFoldingBuilder: CustomFoldingBuilder()
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		private fun isMultilineComment(comment: PsiElement): Boolean
 		{
@@ -173,7 +173,7 @@ class CappuccinoFoldingBuilder: CustomFoldingBuilder()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun buildLanguageFoldRegions(descriptors: MutableList<FoldingDescriptor>, root: PsiElement, document: Document, quick: Boolean)
 	{
@@ -186,14 +186,14 @@ class CappuccinoFoldingBuilder: CustomFoldingBuilder()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getLanguagePlaceholderText(node: ASTNode, range: TextRange) = if (isFoldable(node.elementType)) getBlockPlaceholderText(node) else "..."
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isRegionCollapsedByDefault(node: ASTNode) = false
 

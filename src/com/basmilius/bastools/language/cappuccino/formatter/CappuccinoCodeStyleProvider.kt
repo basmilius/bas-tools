@@ -10,7 +10,7 @@ import com.intellij.psi.codeStyle.CodeStyleSettingsProvider
 /**
  * Class CappuccinoCodeStyleProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.formatter
  */
 class CappuccinoCodeStyleProvider: CodeStyleSettingsProvider()
@@ -19,21 +19,21 @@ class CappuccinoCodeStyleProvider: CodeStyleSettingsProvider()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createCustomSettings(settings: CodeStyleSettings) = CappuccinoFormatterOptions(settings)
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun createSettingsPage(settings: CodeStyleSettings, originalSettings: CodeStyleSettings) = MyConfigurable(settings, originalSettings)
 
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getLanguage() = CappuccinoLanguage.Instance
 
@@ -44,7 +44,7 @@ class CappuccinoCodeStyleProvider: CodeStyleSettingsProvider()
 	 * @param settings CodeStyleSettings
 	 * @param cloneSettings CodeStyleSettings
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.formatter.CappuccinoCodeStyleProvider
 	 */
 	inner class MyConfigurable(settings: CodeStyleSettings, cloneSettings: CodeStyleSettings): CodeStyleAbstractConfigurable(settings, cloneSettings, "Cappuccino")
@@ -53,7 +53,7 @@ class CappuccinoCodeStyleProvider: CodeStyleSettingsProvider()
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun createPanel(settings: CodeStyleSettings): CodeStyleAbstractPanel
 		{
@@ -63,7 +63,7 @@ class CappuccinoCodeStyleProvider: CodeStyleSettingsProvider()
 				/**
 				 * {@inheritdoc}
 				 *
-				 * @author Bas Milius
+				 * @author Bas Milius <bas@mili.us>
 				 */
 				override fun initTabs(settings: CodeStyleSettings)
 				{
@@ -77,7 +77,7 @@ class CappuccinoCodeStyleProvider: CodeStyleSettingsProvider()
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun getHelpTopic() = "reference.settingsdialog.codestyle.cappuccino"
 

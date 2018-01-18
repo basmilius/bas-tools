@@ -23,7 +23,7 @@ import java.awt.image.BufferedImage
  * @param parent JComponent
  * @param colorListener COlorListener
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui
  */
 class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): ColorPipetteBase(parent, colorListener)
@@ -42,7 +42,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	/**
 	 * DefaultColorPipette Constructor
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	init
 	{
@@ -52,7 +52,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getPixelColor(location: Point): Color
 	{
@@ -62,7 +62,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun show(): Dialog
 	{
@@ -83,7 +83,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isAvailable(): Boolean
 	{
@@ -98,7 +98,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getOrCreatePickerDialog(): Dialog
 	{
@@ -167,7 +167,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	/**
 	 * Updates the pipette.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun updatePipette()
 	{
@@ -209,7 +209,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun cancelPipette()
 	{
@@ -220,7 +220,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun dispose()
 	{
@@ -238,7 +238,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	/**
 	 * Companion Object for DefaultColorPipette
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	companion object
 	{

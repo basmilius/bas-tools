@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 /**
  * Object ExceptionUtils
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
  */
 object ExceptionUtils
@@ -22,7 +22,7 @@ object ExceptionUtils
 	 *
 	 * @param runnable Runnable to run.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun executeIgnore(runnable: Runnable)
 	{
@@ -35,7 +35,7 @@ object ExceptionUtils
 	 * @param runnable Runnable to run.
 	 * @param delay    Delay time in milliseconds.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun executeIgnore(runnable: Runnable, delay: Int)
 	{

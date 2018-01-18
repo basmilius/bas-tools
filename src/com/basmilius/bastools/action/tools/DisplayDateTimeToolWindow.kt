@@ -9,7 +9,7 @@ import com.intellij.openapi.wm.ToolWindowType
 /**
  * Class DisplayDateTimeToolWindow
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.action.tools
  */
 class DisplayDateTimeToolWindow: AnAction("Show Date Time Tool Window")
@@ -18,7 +18,7 @@ class DisplayDateTimeToolWindow: AnAction("Show Date Time Tool Window")
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun actionPerformed(aae: AnActionEvent?)
 	{

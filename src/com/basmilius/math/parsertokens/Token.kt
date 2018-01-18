@@ -3,7 +3,7 @@ package com.basmilius.math.parsertokens
 /**
  * Class Token
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.parsertokens
  */
 class Token
@@ -12,7 +12,7 @@ class Token
 	/**
 	 * Companion Object Token
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.math.parsertokens
 	 */
 	companion object
@@ -35,7 +35,7 @@ class Token
 	 *
 	 * @return Token
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun clone(): Token
 	{

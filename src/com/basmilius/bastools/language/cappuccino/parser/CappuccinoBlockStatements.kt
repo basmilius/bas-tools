@@ -47,7 +47,7 @@ import java.util.*
 /**
  * Object CappuccinoBlockStatements
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.parser
  */
 object CappuccinoBlockStatements
@@ -59,7 +59,7 @@ object CappuccinoBlockStatements
 	/**
 	 * CappuccinoBlockStatements Constructor.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	init
 	{
@@ -88,7 +88,7 @@ object CappuccinoBlockStatements
 	 *
 	 * @return StatementDefinition
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun defineStatement(statementType: IElementType, tagType: IElementType, vararg terminatorTypes: IElementType): StatementDefinition
 	{
@@ -107,7 +107,7 @@ object CappuccinoBlockStatements
 	 *
 	 * @return StatementDefinition
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getStatementDefinitionByStartTag(startTagType: IElementType) = StatementByStartTagMap[startTagType]
 
@@ -118,7 +118,7 @@ object CappuccinoBlockStatements
 	 *
 	 * @return StatementDefinition
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getStatementDefinitionByType(statementType: IElementType) = StatementByTypeMap[statementType]
 
@@ -129,7 +129,7 @@ object CappuccinoBlockStatements
 	 *
 	 * @return Boolean
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun isBlockStatement(type: IElementType) = StatementByTypeMap.containsKey(type) || type == CappuccinoElementTypes.CAPPUCCINO_STATEMENT
 
@@ -141,7 +141,7 @@ object CappuccinoBlockStatements
 	 * @param startTagType IElementType
 	 * @param endTagTypes ...IElementType
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.parser.CappuccinoBlockStatements
 	 */
 	class StatementDefinition(val statementType: IElementType, private val startTagType: IElementType, vararg endTagTypes: IElementType)
@@ -154,7 +154,7 @@ object CappuccinoBlockStatements
 		/**
 		 * StatementDefinition Constructor.
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		init
 		{
@@ -166,7 +166,7 @@ object CappuccinoBlockStatements
 		 *
 		 * @param endsBeforeTypes ...IElementType
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun endsBefore(vararg endsBeforeTypes: IElementType)
 		{
@@ -178,7 +178,7 @@ object CappuccinoBlockStatements
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun isTerminatedOn(elementType: IElementType?) = this.endTagTypes.contains(elementType)
 
@@ -187,7 +187,7 @@ object CappuccinoBlockStatements
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun isTerminatedBefore(elementType: IElementType?) = this.endsBeforeTypes.contains(elementType)
 
@@ -196,7 +196,7 @@ object CappuccinoBlockStatements
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun isStartTag(elementType: IElementType) = this.startTagType == elementType
 
@@ -205,7 +205,7 @@ object CappuccinoBlockStatements
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun isEndTag(elementType: IElementType) = this.endTagTypes.contains(elementType)
 

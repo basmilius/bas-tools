@@ -7,7 +7,7 @@ import com.basmilius.math.parsertokens.Token
 /**
  * Class HeadEqBody
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.miscellaneous
  */
 class HeadEqBody(definitionString: String)
@@ -24,7 +24,7 @@ class HeadEqBody(definitionString: String)
 	 * HeadEqBody Constructor.
 	 *
 	 * @constructor
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	init
 	{

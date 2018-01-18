@@ -7,7 +7,7 @@ import com.basmilius.math.MathParser
 /**
  * Object Statistics
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 object Statistics
@@ -24,7 +24,7 @@ object Statistics
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun avg(f: Expression, index: Argument, from: Double, to: Double, delta: Double): Double
 	{
@@ -87,7 +87,7 @@ object Statistics
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun `var`(f: Expression, index: Argument, from: Double, to: Double, delta: Double): Double
 	{
@@ -108,7 +108,7 @@ object Statistics
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun std(f: Expression, index: Argument, from: Double, to: Double, delta: Double): Double
 	{
@@ -125,7 +125,7 @@ object Statistics
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun avg(vararg numbers: Double): Double
 	{
@@ -152,7 +152,7 @@ object Statistics
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun `var`(vararg numbers: Double): Double
 	{
@@ -186,7 +186,7 @@ object Statistics
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun std(vararg numbers: Double): Double
 	{
@@ -209,7 +209,7 @@ object Statistics
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun median(vararg numbers: Double): Double
 	{
@@ -240,7 +240,7 @@ object Statistics
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun mode(vararg numbers: Double): Double
 	{

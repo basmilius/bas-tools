@@ -19,7 +19,7 @@ import com.jetbrains.php.lang.psi.elements.FunctionReference
  * @param methodCall String
  * @param shortName String
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.base.codeInspection.simple
  */
 abstract class SimpleReplaceFunctionWithMethodInspector(val functionName: String, val methodCall: String, shortName: String): BaseInspection(shortName)
@@ -30,7 +30,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName: String
 	 *
 	 * @return BaseElementVisitor
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun buildVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean): PsiElementVisitor
 	{
@@ -40,7 +40,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName: String
 	/**
 	 * Inner Class SimpleReplaceFunctionWithMethodInspectorVisitor
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.framework.base.codeInspection.simple.SimpleReplaceFunctionWithMethodInspector
 	 */
 	inner class SimpleReplaceFunctionWithMethodInspectorVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean): BaseElementVisitor(problemsHolder, isOnTheFly)
@@ -49,7 +49,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName: String
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun visitPhpFunctionCall(reference: FunctionReference?)
 		{
@@ -75,7 +75,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName: String
 	/**
 	 * Inner Class SimpleReplaceFunctionWithMethodInspectorQuickFix
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.framework.base.codeInspection.simple.SimpleReplaceFunctionWithMethodInspector
 	 */
 	inner class SimpleReplaceFunctionWithMethodInspectorQuickFix: BaseQuickFix("Replace with '${this@SimpleReplaceFunctionWithMethodInspector.methodCall}'")
@@ -84,7 +84,7 @@ abstract class SimpleReplaceFunctionWithMethodInspector(val functionName: String
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		override fun applyFix(project: Project, descriptor: ProblemDescriptor)
 		{

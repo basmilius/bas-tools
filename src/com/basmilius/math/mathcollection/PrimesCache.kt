@@ -3,7 +3,7 @@ package com.basmilius.math.mathcollection
 /**
  * Class PrimesCache
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math.mathcollection
  */
 class PrimesCache
@@ -12,7 +12,7 @@ class PrimesCache
 	/**
 	 * Companion Object PrimesCache
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.math.mathcollection
 	 */
 	companion object
@@ -36,7 +36,7 @@ class PrimesCache
 	/**
 	 * PrimesCache Constructor.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor (): this(DEFAULT_MAX_NUM_IN_CACHE)
 
@@ -45,7 +45,7 @@ class PrimesCache
 	 *
 	 * @param maxNumInCache Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(maxNumInCache: Int)
 	{
@@ -59,7 +59,7 @@ class PrimesCache
 	/**
 	 * Eratosthenes Sieve implementation.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun eratosthenesSieve()
 	{
@@ -97,7 +97,7 @@ class PrimesCache
 	/**
 	 * Counts found primes.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun countPrimes()
 	{
@@ -113,7 +113,7 @@ class PrimesCache
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun primeTest(n: Int): Int
 	{
@@ -128,7 +128,7 @@ class PrimesCache
 	 *
 	 * @return BooleanArray
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getPrimes(): BooleanArray
 	{
@@ -142,7 +142,7 @@ class PrimesCache
 	 *
 	 * @return Int
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun isPrime(n: Int): Boolean
 	{

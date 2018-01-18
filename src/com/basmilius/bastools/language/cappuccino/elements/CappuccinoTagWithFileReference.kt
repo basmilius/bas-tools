@@ -13,7 +13,7 @@ import java.util.*
 /**
  * Class CappuccinoTagWithFileReference
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
 open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeElement(node)
@@ -24,7 +24,7 @@ open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeEle
 	 *
 	 * @param newName String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun changeFileName(newName: String)
 	{
@@ -39,7 +39,7 @@ open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeEle
 	 *
 	 * @return PsiElement?
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	protected fun findFileNameElement(): PsiElement?
 	{
@@ -53,7 +53,7 @@ open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeEle
 	 *
 	 * @return Array<PsiElement>
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun getNonWhitespaceChildren(): Array<PsiElement>
 	{
@@ -75,7 +75,7 @@ open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeEle
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getNavigationElement(): PsiElement
 	{
@@ -90,7 +90,7 @@ open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeEle
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getReferences(): Array<out PsiReference>
 	{
@@ -105,7 +105,7 @@ open class CappuccinoTagWithFileReference(node: ASTNode): CappuccinoCompositeEle
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getTextOffset() = this.navigationElement.textRange.startOffset
 

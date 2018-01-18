@@ -10,7 +10,7 @@ import javax.swing.UIManager
 /**
  * Class BasToolsLaf
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.laf
  */
 class BasToolsLaf: DarculaLaf()
@@ -18,25 +18,25 @@ class BasToolsLaf: DarculaLaf()
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getDescription() = "Better dark theme for IntelliJ IDEA."
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getName() = "BasTools Darcula"
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun getPrefix() = "bastools"
 
 	/**
 	 * {@inheritdoc}
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun parseValue(key: String, value: String): Any?
 	{

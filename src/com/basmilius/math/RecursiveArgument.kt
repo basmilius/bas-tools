@@ -5,7 +5,7 @@ import com.basmilius.math.parsertokens.ParserSymbol
 /**
  * Class RecursiveArgument
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math
  */
 class RecursiveArgument: Argument
@@ -14,7 +14,7 @@ class RecursiveArgument: Argument
 	/**
 	 * Companion Object RecursiveArgument
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.math
 	 */
 	companion object
@@ -36,7 +36,7 @@ class RecursiveArgument: Argument
 	 * @param recursiveExpressionString String
 	 * @param indexName String
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(argumentName: String, recursiveExpressionString: String, indexName: String): super(argumentName, recursiveExpressionString)
 	{
@@ -62,7 +62,7 @@ class RecursiveArgument: Argument
 	 * @param n Argument
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(argumentName: String, recursiveExpressionString: String, n: Argument, vararg elements: PrimitiveElement): super(argumentName, recursiveExpressionString)
 	{
@@ -87,7 +87,7 @@ class RecursiveArgument: Argument
 	 * @param argumentDefinitionString String
 	 * @param elements PrimitiveElement[]
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	constructor(argumentDefinitionString: String, vararg elements: PrimitiveElement): super(argumentDefinitionString)
 	{
@@ -115,7 +115,7 @@ class RecursiveArgument: Argument
 	 * @param index Int
 	 * @param value Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	private fun addBaseCase(index: Int, value: Double)
 	{
@@ -137,7 +137,7 @@ class RecursiveArgument: Argument
 	/**
 	 * Clears all based cases and stored calculated values.
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun resetAllCases()
 	{
@@ -152,7 +152,7 @@ class RecursiveArgument: Argument
 	 *
 	 * @return Double
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun getArgumentValue(index: Double): Double
 	{

@@ -14,7 +14,7 @@ import com.intellij.psi.tree.TokenSet
 /**
  * Interface CappuccinoElementTypes
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.elements
  */
 interface CappuccinoElementTypes: CappuccinoKeywords
@@ -23,7 +23,7 @@ interface CappuccinoElementTypes: CappuccinoKeywords
 	/**
 	 * Companion Object CappuccinoElementTypes
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.elements
 	 */
 	companion object

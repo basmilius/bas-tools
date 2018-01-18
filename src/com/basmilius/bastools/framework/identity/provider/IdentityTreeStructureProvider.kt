@@ -10,7 +10,7 @@ import com.intellij.ide.util.treeView.AbstractTreeNode
 /**
  * Class IdentityTreeStructureProvider
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.identity.provider
  */
 class IdentityTreeStructureProvider: TreeStructureProvider
@@ -19,7 +19,7 @@ class IdentityTreeStructureProvider: TreeStructureProvider
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun modify(parent: AbstractTreeNode<*>, children: Collection<AbstractTreeNode<*>>, settings: ViewSettings): Collection<AbstractTreeNode<*>>
 	{

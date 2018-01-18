@@ -11,7 +11,7 @@ import com.intellij.util.PlatformUtils
 /**
  * Class CappuccinoCompletionContributor
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino.completion
  */
 class CappuccinoCompletionContributor: BaseCompletionContributor()
@@ -20,7 +20,7 @@ class CappuccinoCompletionContributor: BaseCompletionContributor()
 	/**
 	 * Companion Object CappuccinoCompletionContributor
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino.completion
 	 */
 	companion object
@@ -33,7 +33,7 @@ class CappuccinoCompletionContributor: BaseCompletionContributor()
 		 *
 		 * @param result CompletionResultSet
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun addBuildInFilterLookups(result: CompletionResultSet)
 		{
@@ -46,7 +46,7 @@ class CappuccinoCompletionContributor: BaseCompletionContributor()
 		 *
 		 * @result result CompletionResultSet
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun addTagNameLookups(result: CompletionResultSet)
 		{
@@ -72,7 +72,7 @@ class CappuccinoCompletionContributor: BaseCompletionContributor()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isAvailable() = PlatformUtils.isPhpStorm()
 

@@ -3,7 +3,7 @@ package com.basmilius.bastools.core.util
 /**
  * Object ApplicationUtils
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
  */
 object ApplicationUtils
@@ -15,7 +15,7 @@ object ApplicationUtils
 	 * @param timeout Long
 	 * @param func Closure
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	fun deferRun(timeout: Long, func: () -> Unit)
 	{

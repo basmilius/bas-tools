@@ -6,7 +6,7 @@ package com.basmilius.math
  * @constructor
  * @param myTypeId Int
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.math
  */
 open class PrimitiveElement(val myTypeId: Int)

@@ -14,7 +14,7 @@ import com.intellij.psi.codeStyle.CodeStyleSettingsManager
 /**
  * Class CappuccinoTypedHandler
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.language.cappuccino
  */
 class CappuccinoTypedHandler: TypedHandlerDelegate()
@@ -23,7 +23,7 @@ class CappuccinoTypedHandler: TypedHandlerDelegate()
 	/**
 	 * Companion Object CappuccinoTypedHandler
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.language.cappuccino
 	 */
 	companion object
@@ -38,7 +38,7 @@ class CappuccinoTypedHandler: TypedHandlerDelegate()
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun isClosingSequenceNeeded(editor: Editor, afterOffset: Int, openingChar: Char): Boolean
 		{
@@ -68,7 +68,7 @@ class CappuccinoTypedHandler: TypedHandlerDelegate()
 		 *
 		 * @return Boolean
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun isWhitespaceRequired(project: Project, char: Char): Boolean
 		{
@@ -93,7 +93,7 @@ class CappuccinoTypedHandler: TypedHandlerDelegate()
 		 * @param str String
 		 * @param caretShift Int
 		 *
-		 * @author Bas Milius
+		 * @author Bas Milius <bas@mili.us>
 		 */
 		fun typeInStringAndMoveCaret(editor: Editor, str: String, caretShift: Int)
 		{
@@ -105,7 +105,7 @@ class CappuccinoTypedHandler: TypedHandlerDelegate()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun beforeCharTyped(c: Char, project: Project, editor: Editor, file: PsiFile, fileType: FileType): Result = when
 	{

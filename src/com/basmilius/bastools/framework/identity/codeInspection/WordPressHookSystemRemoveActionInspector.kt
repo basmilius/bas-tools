@@ -8,7 +8,7 @@ import com.intellij.psi.PsiFile
 /**
  * Class WordPressHookSystemRemoveActionInspector
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.identity.codeInspection
  */
 class WordPressHookSystemRemoveActionInspector: SimpleReplaceFunctionWithMethodInspector("remove_action", "Identity::actionRemove", "WordPressHookSystemRemoveActionInspector")
@@ -17,7 +17,7 @@ class WordPressHookSystemRemoveActionInspector: SimpleReplaceFunctionWithMethodI
 	/**
 	 * @inheritdoc
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun isValidFile(project: Project, file: PsiFile): Boolean
 	{

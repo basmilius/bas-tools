@@ -11,7 +11,7 @@ import com.jetbrains.php.lang.psi.elements.StringLiteralExpression
 /**
  * Class PhpParameterStringCompletionConfidence
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.completion.confidence
  */
 class PhpParameterStringCompletionConfidence: CompletionConfidence()
@@ -20,7 +20,7 @@ class PhpParameterStringCompletionConfidence: CompletionConfidence()
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun shouldSkipAutopopup(contextElement: PsiElement, psiFile: PsiFile, offset: Int): ThreeState
 	{

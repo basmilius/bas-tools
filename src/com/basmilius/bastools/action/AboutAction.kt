@@ -8,7 +8,7 @@ import com.intellij.openapi.ui.Messages
 /**
  * Class AboutAction
  *
- * @author Bas Milius
+ * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.action
  */
 class AboutAction: AnAction("About Bas Tools")
@@ -17,11 +17,11 @@ class AboutAction: AnAction("About Bas Tools")
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @author Bas Milius
+	 * @author Bas Milius <bas@mili.us>
 	 */
 	override fun actionPerformed(aae: AnActionEvent)
 	{
-		ApplicationManager.getApplication().invokeLater { Messages.showMessageDialog(aae.project, "Bas Tools 1.3.0, go to bas-tools.atbm.nl for more information about this plugin.", "Bas Tools", Messages.getInformationIcon()) }
+		ApplicationManager.getApplication().invokeLater { Messages.showMessageDialog(aae.project, "Bas Tools 1.3.1, go to bas.tools for more information about this plugin.", "Bas Tools", Messages.getInformationIcon()) }
 	}
 
 }
