@@ -75,6 +75,8 @@
 		<targetElementEvaluator language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.editor.CappuccinoTargetElementEvaluator"/>
 		<typedHandler implementation="com.basmilius.bastools.language.cappuccino.CappuccinoTypedHandler"/>
 
+		<internalFileTemplate name="Cappuccino File" />
+
 	</extensions>
 
 	<project-components>
@@ -85,8 +87,12 @@
 
 	<actions>
 
-		<action class="com.basmilius.bastools.action.code.json.JsonRearrangePropertiesAction" id="BasTools.Main.Code.JsonArrange" icon="/icons/code_rearrange.png">
+		<action id="BasTools.Main.Code.JsonArrange" icon="/icons/code_rearrange.png" class="com.basmilius.bastools.action.code.json.JsonRearrangePropertiesAction">
 			<add-to-group group-id="BasTools.Code"/>
+		</action>
+
+		<action id="BasTools.Cappuccino.NewFile" icon="/icons/cappuccino_file.png" class="com.basmilius.bastools.language.cappuccino.action.CappuccinoNewFileAction">
+			<add-to-group group-id="NewGroup" anchor="after" relative-to-action="PhpNewClass"/>
 		</action>
 
 	</actions>
