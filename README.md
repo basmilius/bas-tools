@@ -12,6 +12,19 @@ Adds some extended features to PhpStorm.
 
 &nbsp;
  
+### Actions
+- **General**
+  - Rearrange JSON properties.
+
+&nbsp;
+ 
+### Cappuccino
+- **General**
+  - Support for basmilius/Cappuccino.
+  - Go to definition (CTRL + B) on render method.
+
+&nbsp;
+ 
 ### Completion
 - **General**
   - Completion of values inside the `header` and `header_remove` functions.
@@ -23,6 +36,7 @@ Adds some extended features to PhpStorm.
 ### Inspections
 - **General**
   - Check validity of callables.
+  - Checks for empty line at end of file.
 
 - **Identity Framework**
   - Replace `add_action` with `Identity::action`. *Quick Fix available!*
