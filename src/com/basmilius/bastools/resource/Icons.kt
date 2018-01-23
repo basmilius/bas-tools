@@ -8,6 +8,7 @@ import javax.swing.Icon
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.resource
+ * @since 1.0.0
  */
 interface Icons
 {
@@ -16,6 +17,7 @@ interface Icons
 	 * Companion Object for Icons
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	companion object
 	{

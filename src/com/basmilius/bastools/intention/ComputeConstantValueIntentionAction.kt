@@ -19,6 +19,7 @@ import com.jetbrains.php.lang.psi.elements.impl.ConcatenationExpressionImpl
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.intention
+ * @since 1.0.3
  */
 class ComputeConstantValueIntentionAction: IntentionAction
 {
@@ -29,6 +30,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.3
 	 */
 	override fun startInWriteAction() = false
 
@@ -38,6 +40,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 * @return String
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.3
 	 */
 	override fun getFamilyName() = "Bas Tools - Intentions"
 
@@ -51,6 +54,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.3
 	 */
 	override fun isAvailable(project: Project, editor: Editor?, file: PsiFile?): Boolean
 	{
@@ -78,6 +82,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 * @param file PsiFile?
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.3
 	 */
 	override fun invoke(project: Project, editor: Editor?, file: PsiFile?)
 	{
@@ -100,6 +105,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.3
 	 */
 	private fun run(editor: Editor, file: PsiFile, run: Boolean = true): Boolean
 	{

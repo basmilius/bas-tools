@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
+ * @since 1.0.0
  */
 object PossibleValuesDiscoveryUtils
 {
@@ -23,6 +24,7 @@ object PossibleValuesDiscoveryUtils
 	 * @return HashSet<PsiElement>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun discover(@NotNull expression: PsiElement, @NotNull processed: HashSet<PsiElement>): HashSet<PsiElement>
 	{
@@ -55,6 +57,7 @@ object PossibleValuesDiscoveryUtils
 	 * @param processed HashSet<PsiElement>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun handleVariable(@NotNull variable: Variable, @NotNull result: HashSet<PsiElement>, @NotNull processed: HashSet<PsiElement>)
 	{
@@ -105,6 +108,7 @@ object PossibleValuesDiscoveryUtils
 	 * @param result HashSet<PsiElement>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun handleClassConstantReference(@NotNull reference: ClassConstantReference, @NotNull result: HashSet<PsiElement>)
 	{
@@ -134,6 +138,7 @@ object PossibleValuesDiscoveryUtils
 	 * @param processed HashSet<PsiElement>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun handleClassFieldReference(@NotNull reference: FieldReference, @NotNull result: HashSet<PsiElement>, @NotNull processed: HashSet<PsiElement>)
 	{
@@ -188,6 +193,7 @@ object PossibleValuesDiscoveryUtils
 	 * @param processed HashSet<PsiElement>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun handleTernary(@NotNull ternary: TernaryExpression, @NotNull result: HashSet<PsiElement>, @NotNull processed: HashSet<PsiElement>)
 	{

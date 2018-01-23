@@ -12,10 +12,6 @@
 		<psi.referenceContributor implementation="com.basmilius.bastools.framework.all.psi.PhpFileReferenceContributor"/>
 
 		<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="CallableValidityInspector" displayName="Validates callables" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.CallableValidityInspector"/>
-		<!--<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="MarthaNamingIsNotValidInspection" displayName="Martha Naming" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.MarthaNamingIsNotValidInspection"/>-->
-
-		<defaultTemplatePropertiesProvider implementation="com.basmilius.bastools.core.configurable.personal.BasToolsPersonalTemplatePropertiesProvider"/>
-		<liveTemplatePreprocessor implementation="com.basmilius.bastools.core.configurable.personal.BasToolsPersonalTemplatePreprocessor"/>
 
 	</extensions>
 
@@ -32,9 +28,7 @@
 
 		<completion.contributor language="PHP" implementationClass="com.basmilius.bastools.framework.identity.completion.CoreCompletionContributor"/>
 		<defaultLiveTemplatesProvider implementation="com.basmilius.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesProvider"/>
-		<directoryProjectGenerator implementation="com.basmilius.bastools.framework.identity.installer.IdentityInstallerWebProjectTemplate"/>
 		<liveTemplateContext implementation="com.basmilius.bastools.framework.identity.liveTemplates.IdentityLiveTemplatesContext"/>
-		<projectTemplatesFactory implementation="com.basmilius.bastools.framework.identity.installer.IdentityInstallerTemplatesFactory"/>
 
 		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemAddActionInspector" displayName="Usage of add_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.bastools.framework.identity.codeInspection.WordPressHookSystemAddActionInspector"/>
 		<localInspection language="PHP" groupPath="Bas Tools,Identity Framework" shortName="WordPressHookSystemDoActionInspector" displayName="Usage of do_action" groupName="Code Style" enabledByDefault="true" level="WEAK WARNING" implementationClass="com.basmilius.bastools.framework.identity.codeInspection.WordPressHookSystemDoActionInspector"/>

@@ -11,6 +11,7 @@ import java.awt.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.tabs
+ * @since 1.0.0
  */
 class BasToolsEditorTabColorProvider: EditorTabColorProvider
 {
@@ -19,6 +20,7 @@ class BasToolsEditorTabColorProvider: EditorTabColorProvider
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getEditorTabColor(project: Project, virtualFile: VirtualFile): Color?
 	{

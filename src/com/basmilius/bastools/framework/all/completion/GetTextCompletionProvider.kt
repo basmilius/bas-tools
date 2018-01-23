@@ -15,6 +15,7 @@ import com.jetbrains.localization.LocaleElementTypes
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.completion
+ * @since 1.2.0
  */
 class GetTextCompletionProvider: BaseCompletionProvider()
 {
@@ -23,6 +24,7 @@ class GetTextCompletionProvider: BaseCompletionProvider()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 	{
@@ -33,6 +35,7 @@ class GetTextCompletionProvider: BaseCompletionProvider()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun isAvailable(): Boolean = true
 
@@ -40,6 +43,7 @@ class GetTextCompletionProvider: BaseCompletionProvider()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun getPlace(): ElementPattern<out PsiElement> = PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(LocaleElementTypes.STRING_LITERAL_EXPRESSION))
 

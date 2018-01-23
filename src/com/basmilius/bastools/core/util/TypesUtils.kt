@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
+ * @since 1.1.0
  */
 @Suppress("MemberVisibilityCanPrivate")
 object TypesUtils
@@ -95,6 +96,12 @@ object TypesUtils
 		return mapTypes as MutableMap<String, String>
 	}
 
+	/**
+	 * Gets a type.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
+	 */
 	fun getType(@NotNull givenType: String): String
 	{
 		if (givenType.contains("[]"))

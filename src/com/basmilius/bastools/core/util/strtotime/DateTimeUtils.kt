@@ -8,6 +8,7 @@ import java.util.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util.strtotime
+ * @since 1.1.0
  */
 object DateTimeUtils
 {
@@ -18,6 +19,7 @@ object DateTimeUtils
 	 * DateTimeUtils Constructor.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	init
 	{
@@ -57,6 +59,7 @@ object DateTimeUtils
 	 * @param matcher Matcher
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun registerMatcher(matcher: Matcher)
 	{
@@ -72,6 +75,7 @@ object DateTimeUtils
 	 * @return Date?
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun convert(input: String, refDateStr: String = ""): Date?
 	{
@@ -90,6 +94,7 @@ object DateTimeUtils
  * @return Long?
  *
  * @author Bas Milius <bas@mili.us>
+ * @since 1.1.0
  */
 fun strtotime(str: String): Long?
 {

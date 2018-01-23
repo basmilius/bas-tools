@@ -9,6 +9,7 @@ import java.util.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util.strtotime
+ * @since 1.1.0
  */
 class DateFormatMatcher(private val dateFormat: DateFormat): Matcher
 {
@@ -17,6 +18,7 @@ class DateFormatMatcher(private val dateFormat: DateFormat): Matcher
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun tryConvert(input: String, refDateStr: String): Date?
 	{

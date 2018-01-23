@@ -19,18 +19,23 @@ import java.awt.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.tabs
+ * @since 1.0.0
  */
 class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerListener
 {
 
 	/**
-	 * Companion Object for BasToolsTabsPainterPatcherComponent
+	 * Companion Object BasToolsTabsPainterPatcherComponent
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @package com.basmilius.bastools.ui.tabs
+	 * @since 1.0.0
 	 */
 	companion object
 	{
 
 		val HighlightColor = JBColor(Color(120, 147, 105), Color(120, 147, 105))
-		val HighlightThickness = 2
+		const val HighlightThickness = 2
 		val BackgroundColor = JBColor(Color(45, 49, 53), Color(45, 49, 53))
 
 	}
@@ -39,7 +44,9 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritDoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun initComponent()
 	{
@@ -49,7 +56,9 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritDoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun disposeComponent()
 	{
@@ -58,7 +67,9 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritDoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun selectionChanged(event: FileEditorManagerEvent)
 	{
@@ -84,6 +95,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	 * @param component Tabs component.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun patchPainter(component: JBEditorTabs)
 	{
@@ -110,16 +122,17 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	/**
 	 * Paints the selection and border of a task.
 	 *
-	 * @param objects         Method parameters.
-	 * @param borderColor     Highlight color.
-	 * @param borderThickness Highlight thickness.
-	 * @param painter         Tab painter.
+	 * @param objects Array<Any>
+	 * @param borderColor Color
+	 * @param borderThickness Int
+	 * @param painter BasToolsTabsPainter
 	 *
-	 * @throws ClassNotFoundException Exception.
-	 * @throws NoSuchFieldException   Exception.
-	 * @throws IllegalAccessException Exception.
+	 * @throws ClassNotFoundException
+	 * @throws NoSuchFieldException
+	 * @throws IllegalAccessException
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	@Throws(ClassNotFoundException::class, NoSuchFieldException::class, IllegalAccessException::class)
 	private fun paintSelectionAndBorder(objects: Array<Any>, borderColor: Color, borderThickness: Int, painter: BasToolsTabsPainter)
@@ -156,7 +169,9 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getComponentName() = "Bas Tools: Tabs UI Patcher"
 

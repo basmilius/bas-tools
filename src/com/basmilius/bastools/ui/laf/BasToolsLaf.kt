@@ -12,6 +12,7 @@ import javax.swing.UIManager
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.laf
+ * @since 1.0.0
  */
 class BasToolsLaf: DarculaLaf()
 {
@@ -19,24 +20,28 @@ class BasToolsLaf: DarculaLaf()
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getDescription() = "Better dark theme for IntelliJ IDEA."
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getName() = "BasTools Darcula"
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getPrefix() = "bastools"
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun parseValue(key: String, value: String): Any?
 	{
@@ -45,11 +50,23 @@ class BasToolsLaf: DarculaLaf()
 		return super.parseValue(key, value)
 	}
 
+	/**
+	 * Start patching the UI.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
+	 */
 	fun patchUI()
 	{
 		this.patchUIUtil()
 	}
 
+	/**
+	 * Patches the UI with utils.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
+	 */
 	private fun patchUIUtil()
 	{
 		val color = UIManager.getColor("Panel.background")

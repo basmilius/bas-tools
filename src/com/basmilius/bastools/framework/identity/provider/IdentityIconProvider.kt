@@ -17,6 +17,7 @@ import javax.swing.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.identity.provider
+ * @since 1.0.0
  */
 class IdentityIconProvider: IconProvider(), FileIconProvider
 {
@@ -25,6 +26,7 @@ class IdentityIconProvider: IconProvider(), FileIconProvider
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getIcon(file: VirtualFile, @Iconable.IconFlags flags: Int, project: Project?): Icon?
 	{
@@ -38,6 +40,7 @@ class IdentityIconProvider: IconProvider(), FileIconProvider
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getIcon(psi: PsiElement, @Iconable.IconFlags flags: Int): Icon?
 	{

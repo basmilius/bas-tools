@@ -7,6 +7,7 @@ import com.intellij.openapi.keymap.KeymapManager
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component.presenter.shortcuts
+ * @since 1.1.0
  */
 class KeymapDescription(val name: String = "", val displayText: String = "")
 {
@@ -17,6 +18,7 @@ class KeymapDescription(val name: String = "", val displayText: String = "")
 	 * @return KeymapKind
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun getKind() = if (name.contains("Mac OS")) KeymapKind.MAC else KeymapKind.WIN
 
@@ -26,6 +28,7 @@ class KeymapDescription(val name: String = "", val displayText: String = "")
 	 * @return Keymap
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun getKeymap() = KeymapManager.getInstance().getKeymap(name)
 
@@ -33,6 +36,7 @@ class KeymapDescription(val name: String = "", val displayText: String = "")
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun equals(other: Any?): Boolean
 	{
@@ -43,6 +47,7 @@ class KeymapDescription(val name: String = "", val displayText: String = "")
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun hashCode(): Int
 	{

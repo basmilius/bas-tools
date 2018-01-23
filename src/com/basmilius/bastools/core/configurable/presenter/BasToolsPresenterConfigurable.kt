@@ -11,6 +11,7 @@ import com.intellij.openapi.components.Storage
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.configurable.presenter
+ * @since 1.3.0
  */
 class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfigurableForm, BasToolsPresenterConfigurable.PresenterConfigurationState>()
 {
@@ -18,12 +19,14 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun createForm() = BasToolsPresenterConfigurableForm(this)
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun createState() = PresenterConfigurationState.getInstance()
 
@@ -32,6 +35,7 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.core.configurable.presenter.BasToolsPresenterConfigurable
+	 * @since 1.3.0
 	 */
 	@State(
 			name = "PresenterConfiguration",
@@ -45,6 +49,7 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 		 *
 		 * @author Bas Milius <bas@mili.us>
 		 * @package com.basmilius.bastools.core.configurable.presenter.BasToolsPresenterConfigurable
+		 * @since 1.3.0
 		 */
 		companion object
 		{
@@ -55,6 +60,7 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 			 * @return PersonalConfigurationState
 			 *
 			 * @author Bas Milius <bas@mili.us>
+			 * @since 1.3.0
 			 */
 			fun getInstance() = ServiceManager.getService(PresenterConfigurationState::class.java)!!
 
@@ -63,12 +69,14 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 		/**
 		 * {@inheritdoc}
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.3.0
 		 */
 		override fun getState() = this
 
 		/**
 		 * {@inheritdoc}
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.3.0
 		 */
 		override fun loadState(state: PresenterConfigurationState?)
 		{

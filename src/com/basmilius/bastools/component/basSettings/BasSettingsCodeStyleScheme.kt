@@ -7,6 +7,7 @@ import com.basmilius.bastools.component.BasToolsCodeStyleScheme
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component.basSettings
+ * @since 1.1.0
  */
 class BasSettingsCodeStyleScheme: BasToolsCodeStyleScheme("Bas Settings", true, BasSettingsBaseCodeStyleScheme(null))
 {
@@ -15,6 +16,7 @@ class BasSettingsCodeStyleScheme: BasToolsCodeStyleScheme("Bas Settings", true, 
 	 * BasSettingsCodeStyleScheme Constructor
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	init
 	{

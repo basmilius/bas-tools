@@ -8,6 +8,7 @@ import com.intellij.codeInsight.completion.CompletionType
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.completion
+ * @since 1.2.0
  */
 class GetTextCompletionContributor: BaseCompletionContributor()
 {
@@ -16,6 +17,7 @@ class GetTextCompletionContributor: BaseCompletionContributor()
 	 * GetTextCompletionContributor Constructor.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	init
 	{
@@ -26,7 +28,8 @@ class GetTextCompletionContributor: BaseCompletionContributor()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
-	override fun isAvailable(): Boolean = true
+	override fun isAvailable(): Boolean = false
 
 }

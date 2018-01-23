@@ -16,6 +16,7 @@ import javax.swing.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.configurable.personal
+ * @since 1.3.0
  */
 class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersonalConfigurable): AbstractForm<BasToolsPersonalConfigurable.PersonalConfigurationState>()
 {
@@ -27,6 +28,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	 * BasToolsPersonalConfigurableForm Initializer.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	init
 	{
@@ -37,6 +39,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun applyChanges()
 	{
@@ -51,6 +54,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun build()
 	{
@@ -65,6 +69,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun load()
 	{
@@ -76,6 +81,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun update(state: BasToolsPersonalConfigurable.PersonalConfigurationState)
 	{
@@ -89,6 +95,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	 * @return JComponent
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	private fun createDetailsPanel(): JComponent
 	{
@@ -117,6 +124,7 @@ class BasToolsPersonalConfigurableForm(private val configurable: BasToolsPersona
 	 * @return GridConstraints
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	private fun constraints(row: Int = 0, column: Int = 0, fill: Int = GridConstraints.FILL_HORIZONTAL, xgrow: Int = GridConstraints.SIZEPOLICY_FIXED, ygrow: Int = GridConstraints.SIZEPOLICY_FIXED): GridConstraints
 	{

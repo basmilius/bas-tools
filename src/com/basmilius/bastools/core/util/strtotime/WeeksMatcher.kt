@@ -10,6 +10,7 @@ import java.util.regex.Pattern
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util.strtotime
+ * @since 1.1.0
  */
 class WeeksMatcher: Matcher
 {
@@ -20,6 +21,7 @@ class WeeksMatcher: Matcher
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun tryConvert(input: String, refDateStr: String): Date?
 	{

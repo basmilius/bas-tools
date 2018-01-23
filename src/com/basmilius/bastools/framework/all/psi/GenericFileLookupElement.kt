@@ -12,6 +12,7 @@ import com.intellij.psi.PsiFileSystemItem
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.psi
+ * @since 1.2.0
  */
 class GenericFileLookupElement: LookupElement
 {
@@ -28,6 +29,7 @@ class GenericFileLookupElement: LookupElement
 	 * @param psiFile PsiFileSystemItem
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	constructor (fileName: String, psiFile: PsiFileSystemItem): super()
 	{
@@ -44,6 +46,7 @@ class GenericFileLookupElement: LookupElement
 	 * @param insertHandler InsertHandler<LookupElement>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	constructor(fileName: String, psiFile: PsiFileSystemItem, element: PsiElement, insertHandler: InsertHandler<LookupElement>): super()
 	{
@@ -57,6 +60,7 @@ class GenericFileLookupElement: LookupElement
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun getLookupString(): String
 	{
@@ -67,6 +71,7 @@ class GenericFileLookupElement: LookupElement
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun getObject(): Any
 	{
@@ -77,6 +82,7 @@ class GenericFileLookupElement: LookupElement
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun handleInsert(context: InsertionContext)
 	{
@@ -90,6 +96,7 @@ class GenericFileLookupElement: LookupElement
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun renderElement(presentation: LookupElementPresentation?)
 	{

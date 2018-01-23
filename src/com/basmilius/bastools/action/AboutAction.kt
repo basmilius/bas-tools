@@ -10,6 +10,7 @@ import com.intellij.openapi.ui.Messages
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.action
+ * @since 1.0.0
  */
 class AboutAction: AnAction("About Bas Tools")
 {
@@ -18,6 +19,7 @@ class AboutAction: AnAction("About Bas Tools")
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun actionPerformed(aae: AnActionEvent)
 	{

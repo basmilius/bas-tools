@@ -11,6 +11,7 @@ import com.intellij.openapi.wm.ToolWindowType
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.action.tools
+ * @since 1.1.0
  */
 class DisplayDateTimeToolWindow: AnAction("Show Date Time Tool Window")
 {
@@ -19,6 +20,7 @@ class DisplayDateTimeToolWindow: AnAction("Show Date Time Tool Window")
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun actionPerformed(aae: AnActionEvent?)
 	{

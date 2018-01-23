@@ -8,6 +8,7 @@ import com.intellij.openapi.options.Configurable
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.configurable
+ * @since 1.3.0
  */
 abstract class AbstractConfigurable<out TAbstractConfigForm: AbstractForm<*>, TState: PersistentStateComponent<TState>>: Configurable
 {
@@ -17,7 +18,9 @@ abstract class AbstractConfigurable<out TAbstractConfigForm: AbstractForm<*>, TS
 
 	/**
 	 * AbstractConfigurable Constructor
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	init
 	{
@@ -26,7 +29,9 @@ abstract class AbstractConfigurable<out TAbstractConfigForm: AbstractForm<*>, TS
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun apply()
 	{
@@ -35,7 +40,9 @@ abstract class AbstractConfigurable<out TAbstractConfigForm: AbstractForm<*>, TS
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun reset()
 	{
@@ -48,6 +55,7 @@ abstract class AbstractConfigurable<out TAbstractConfigForm: AbstractForm<*>, TS
 	 * @return TAbstractConfigForm
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	abstract protected fun createForm(): TAbstractConfigForm
 
@@ -57,24 +65,30 @@ abstract class AbstractConfigurable<out TAbstractConfigForm: AbstractForm<*>, TS
 	 * @return TState
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	abstract protected fun createState(): TState
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override final fun createComponent(): AbstractForm<*> = this.form
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override final fun getDisplayName(): String = AbstractConfigurable::class.qualifiedName!!
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override final fun isModified() = this.form.modified
 

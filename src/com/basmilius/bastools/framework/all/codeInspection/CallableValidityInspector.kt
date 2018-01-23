@@ -17,6 +17,7 @@ import com.jetbrains.php.lang.psi.elements.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.codeInspection
+ * @since 1.2.0
  */
 class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 {
@@ -25,6 +26,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun buildVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean) = CallableValidityInspectorVisitor(problemsHolder, isOnTheFly)
 
@@ -33,6 +35,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.framework.all.codeInspection.CallableValidityInspector
+	 * @since 1.2.0
 	 */
 	inner class CallableValidityInspectorVisitor(problemsHolder: ProblemsHolder, isOnTheFly: Boolean): BaseElementVisitor(problemsHolder, isOnTheFly)
 	{
@@ -41,6 +44,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		 * {@inheritdoc}
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.2.0
 		 */
 		override fun visitPhpFunctionCall(reference: FunctionReference?)
 		{
@@ -85,6 +89,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		 * @return PsiReference?
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.2.0
 		 */
 		private fun buildResolver(callable: PsiElement): PsiReference?
 		{
@@ -106,6 +111,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		 * @return Boolean
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.2.0
 		 */
 		private fun isTarget(callable: PsiElement): Boolean
 		{
@@ -121,6 +127,7 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 		 * Analyzes the validity of an element.
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.2.0
 		 */
 		private fun analyzeValidity(element: PsiElement?, target: PsiElement, callable: PsiElement)
 		{

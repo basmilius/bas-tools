@@ -14,6 +14,7 @@ import java.awt.image.BufferedImage
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
+ * @since 1.1.0
  */
 object CodeFragmentPictureUtils
 {
@@ -24,6 +25,7 @@ object CodeFragmentPictureUtils
 	 * @return BufferedImage
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun createBufferedImage(fragment: EditorFragmentComponent): BufferedImage
 	{
@@ -46,6 +48,7 @@ object CodeFragmentPictureUtils
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.core.util.CodeFragmentPictureUtils
+	 * @since 1.1.0
 	 */
 	class TransferableImage(private val image: Image): Transferable
 	{
@@ -53,7 +56,8 @@ object CodeFragmentPictureUtils
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Miliu
+		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.1.0
 		 */
 		@Throws(UnsupportedFlavorException::class)
 		override fun getTransferData(flavor: DataFlavor): Any
@@ -67,7 +71,8 @@ object CodeFragmentPictureUtils
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Miliu
+		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.1.0
 		 */
 		override fun getTransferDataFlavors(): Array<DataFlavor?>
 		{
@@ -80,7 +85,8 @@ object CodeFragmentPictureUtils
 		/**
 		 * {@inheritdoc}
 		 *
-		 * @author Bas Miliu
+		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.1.0
 		 */
 		override fun isDataFlavorSupported(flavor: DataFlavor): Boolean
 		{

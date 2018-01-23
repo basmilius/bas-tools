@@ -8,6 +8,7 @@ import com.intellij.codeInsight.completion.CompletionType
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.base.completion
+ * @since 1.0.0
  */
 abstract class BaseCompletionContributor: CompletionContributor()
 {
@@ -19,6 +20,7 @@ abstract class BaseCompletionContributor: CompletionContributor()
 	 * @param completionProvider BaseCompletionProvider
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun extend(type: CompletionType, completionProvider: BaseCompletionProvider)
 	{
@@ -36,7 +38,8 @@ abstract class BaseCompletionContributor: CompletionContributor()
 	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
-	abstract fun isAvailable (): Boolean
+	abstract fun isAvailable(): Boolean
 
 }

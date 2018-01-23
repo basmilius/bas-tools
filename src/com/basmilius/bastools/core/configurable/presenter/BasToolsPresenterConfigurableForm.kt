@@ -10,6 +10,7 @@ import com.basmilius.bastools.core.configurable.AbstractForm
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.configurable.presenter
+ * @since 1.3.0
  */
 class BasToolsPresenterConfigurableForm(private val configurable: BasToolsPresenterConfigurable): AbstractForm<BasToolsPresenterConfigurable.PresenterConfigurationState>()
 {
@@ -17,6 +18,7 @@ class BasToolsPresenterConfigurableForm(private val configurable: BasToolsPresen
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun applyChanges()
 	{
@@ -25,6 +27,7 @@ class BasToolsPresenterConfigurableForm(private val configurable: BasToolsPresen
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun build()
 	{
@@ -34,6 +37,7 @@ class BasToolsPresenterConfigurableForm(private val configurable: BasToolsPresen
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun load()
 	{
@@ -45,6 +49,7 @@ class BasToolsPresenterConfigurableForm(private val configurable: BasToolsPresen
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun update(state: BasToolsPresenterConfigurable.PresenterConfigurationState)
 	{

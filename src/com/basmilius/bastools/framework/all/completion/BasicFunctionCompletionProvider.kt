@@ -19,16 +19,18 @@ import com.jetbrains.php.lang.parser.PhpElementTypes
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.completion
+ * @since 1.0.0
  */
 class BasicFunctionCompletionProvider: BaseCompletionProvider()
 {
 
-	private val CARET_MAGIC_IDENTIFIER = "IntellijIdeaRulezzz"
+	private val _caretMagicIdentifier = "IntellijIdeaRulezzz"
 
 	/**
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 	{
@@ -50,8 +52,8 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 		val stringLiteral = parameters.position.text
 		var stringPrefix = ""
 
-		if (stringLiteral.contains(CARET_MAGIC_IDENTIFIER))
-			stringPrefix = stringLiteral.substring(0, stringLiteral.indexOf(CARET_MAGIC_IDENTIFIER))
+		if (stringLiteral.contains(_caretMagicIdentifier))
+			stringPrefix = stringLiteral.substring(0, stringLiteral.indexOf(_caretMagicIdentifier))
 
 		if (methodMatches(functionName, paramIndex, CompletionTokens.FileOtherFunctions))
 		{
@@ -196,6 +198,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getPlace(): ElementPattern<out PsiElement>
 	{
@@ -223,6 +226,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 * @return Array<String>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun concatArrays(a: Array<String>, b: Array<String>): Array<String>
 	{
@@ -243,6 +247,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 * @return Array<String>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun prefixArray(prefix: String, a: Array<String>): Array<String>
 	{
@@ -266,6 +271,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun methodMatches(methodName: String, paramIndex: Int, tokens: Array<String>) = tokens.firstOrNull { it.startsWith("$methodName:$paramIndex") } != null
 
@@ -280,6 +286,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun methodMatchesAt(methodName: String, paramIndex: Int, tokens: Array<String>, expectedParamIndex: Int) = tokens.contains(methodName) && paramIndex == expectedParamIndex
 
@@ -287,6 +294,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun isAvailable() = true
 
@@ -295,6 +303,7 @@ class BasicFunctionCompletionProvider: BaseCompletionProvider()
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.framework.all.completion.BasicFunctionCompletionProvider
+	 * @since 1.0.0
 	 */
 	object CompletionTokens
 	{

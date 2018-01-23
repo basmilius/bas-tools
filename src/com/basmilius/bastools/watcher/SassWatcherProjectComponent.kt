@@ -18,6 +18,7 @@ import com.intellij.openapi.vfs.VirtualFileManager
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.watcher
+ * @since 1.0.0
  */
 class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener, ProjectComponent
 {
@@ -27,7 +28,9 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun projectClosed()
 	{
@@ -38,7 +41,9 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun projectOpened()
 	{
@@ -49,7 +54,9 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 *
 	 * TODO(Bas): Find a way to get the current project and show an editor hint on error.
 	 */
@@ -65,7 +72,9 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun fileWithNoDocumentChanged(file: VirtualFile)
 	{
@@ -73,7 +82,9 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun fileContentReloaded(file: VirtualFile, document: Document)
 	{
@@ -81,7 +92,9 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun fileContentLoaded(file: VirtualFile, document: Document)
 	{
@@ -89,7 +102,9 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun beforeFileContentReload(file: VirtualFile?, document: Document)
 	{
@@ -97,7 +112,9 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun unsavedDocumentsDropped()
 	{
@@ -105,7 +122,9 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun beforeAllDocumentsSaving()
 	{

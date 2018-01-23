@@ -24,6 +24,7 @@ import java.awt.event.WindowListener
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.action.editor
+ * @since 1.0.0
  */
 class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Disposable, WindowListener
 {
@@ -36,6 +37,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * ShowColorPipetteAction Constructor.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	init
 	{
@@ -46,6 +48,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun actionPerformed(aae: AnActionEvent)
 	{
@@ -76,6 +79,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun colorChanged(color: Color, o: Any)
 	{
@@ -86,6 +90,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun windowOpened(e: WindowEvent)
 	{
@@ -96,6 +101,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun windowClosing(e: WindowEvent)
 	{
@@ -106,6 +112,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun windowClosed(e: WindowEvent)
 	{
@@ -128,6 +135,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun windowIconified(e: WindowEvent)
 	{
@@ -138,6 +146,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun windowDeiconified(e: WindowEvent)
 	{
@@ -148,6 +157,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun windowActivated(e: WindowEvent)
 	{
@@ -158,6 +168,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun windowDeactivated(e: WindowEvent)
 	{
@@ -168,6 +179,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * {@inheritDoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun dispose()
 	{
@@ -183,6 +195,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 * @return ColorPipette
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun getPipetteIfAvailable(pipette: ColorPipette, parentDisposable: Disposable): ColorPipette?
 	{

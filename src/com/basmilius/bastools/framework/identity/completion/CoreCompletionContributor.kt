@@ -13,6 +13,7 @@ import com.intellij.util.ProcessingContext
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.identity.completion
+ * @since 1.1.0
  */
 class CoreCompletionContributor: BaseCompletionContributor()
 {
@@ -21,6 +22,7 @@ class CoreCompletionContributor: BaseCompletionContributor()
 	 * CoreCompletionContributor Constructor
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	init
 	{
@@ -31,6 +33,7 @@ class CoreCompletionContributor: BaseCompletionContributor()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun isAvailable() = true
 
@@ -38,6 +41,7 @@ class CoreCompletionContributor: BaseCompletionContributor()
 	 * Class PluginCallProvider
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	internal inner class PluginCallProvider: BaseCompletionProvider()
 	{
@@ -46,6 +50,7 @@ class CoreCompletionContributor: BaseCompletionContributor()
 		 * {@inheritdoc}
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.1.0
 		 */
 		override fun isAvailable() = true
 
@@ -53,6 +58,7 @@ class CoreCompletionContributor: BaseCompletionContributor()
 		 * {@inheritdoc}
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.1.0
 		 */
 		override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 		{
@@ -63,6 +69,7 @@ class CoreCompletionContributor: BaseCompletionContributor()
 		 * {@inheritdoc}
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.1.0
 		 */
 		override fun getPlace() = PlatformPatterns.psiElement()!!
 

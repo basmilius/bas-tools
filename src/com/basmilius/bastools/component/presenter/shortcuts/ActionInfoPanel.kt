@@ -28,6 +28,7 @@ import javax.swing.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component.presenter.shortcuts
+ * @since 1.1.0
  */
 class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>): NonOpaquePanel(BorderLayout()), Disposable
 {
@@ -44,6 +45,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.component.presenter.shortcuts.ActionInfoPanel
+	 * @since 1.1.0
 	 */
 	enum class Phase
 	{
@@ -59,6 +61,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * ActionInfoPanel Constructor.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	init
 	{
@@ -105,6 +108,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * Fade Out.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	private fun fadeOut()
 	{
@@ -119,6 +123,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * Gets the hint window.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	private fun getHintWindow(): Window?
 	{
@@ -139,6 +144,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * @param alpha Alpha
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	private fun setAlpha(alpha: Float)
 	{
@@ -153,6 +159,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * Shows the final panel.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	private fun showFinal()
 	{
@@ -169,6 +176,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * @param textFragments List<Pair<string, Font?>>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun updateText(project: Project, textFragments: List<Pair<String, Font?>>)
 	{
@@ -193,6 +201,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * @return RelativePoint
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	private fun computeLocation(ideFrame: IdeFrame): RelativePoint
 	{
@@ -211,6 +220,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * @param textFragments List<Pair<String, Font?>>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	private fun updateLabelText(project: Project, textFragments: List<Pair<String, Font?>>)
 	{
@@ -229,6 +239,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * @return List<Pair<String, Font?>>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	private fun List<Pair<String, Font?>>.mergeFragments(): List<Pair<String, Font?>>
 	{
@@ -260,6 +271,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * @return List<JLabel>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	private fun createLabels(textFragments: List<Pair<String, Font?>>, ideFrame: IdeFrame): List<JLabel>
 	{
@@ -310,6 +322,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * Closes the panel.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun close()
 	{
@@ -320,6 +333,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun dispose()
 	{
@@ -337,6 +351,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun canBeReused(): Boolean = phase == Phase.FADING_IN || phase == Phase.SHOWN
 
@@ -348,6 +363,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.component.presenter.shortcuts.ActionInfoPanel
+	 * @since 1.1.0
 	 */
 	inner class FadeInOutAnimator(private val forward: Boolean): Animator("Action Hint Fade In/Out", 5, 100, false, forward)
 	{
@@ -356,6 +372,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 		 * {@inheritdoc}
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.1.0
 		 */
 		override fun paintNow(frame: Int, totalFrames: Int, cycle: Int)
 		{
@@ -369,6 +386,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 		 * {@inheritdoc}
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.1.0
 		 */
 		override fun paintCycleEnd()
 		{

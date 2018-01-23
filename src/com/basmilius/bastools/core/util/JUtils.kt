@@ -15,6 +15,7 @@ import javax.swing.text.JTextComponent
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
+ * @since 1.1.0
  */
 object JUtils
 {
@@ -26,6 +27,7 @@ object JUtils
 	 * @param listener ChangeListener
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun addChangeListener(field: JTextComponent, listener: (event: ChangeEvent) -> Unit)
 	{
@@ -91,6 +93,7 @@ object JUtils
 	 * @return JComponent
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun getRootComponent(project: Project?): JComponent?
 	{

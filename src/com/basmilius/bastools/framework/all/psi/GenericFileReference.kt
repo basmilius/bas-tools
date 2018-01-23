@@ -16,6 +16,7 @@ import com.jetbrains.php.lang.psi.elements.StringLiteralExpression
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.psi
+ * @since 1.2.0
  */
 class GenericFileReference(element: StringLiteralExpression, type: Int): PsiReferenceBase<PsiElement>(element), PsiReference
 {
@@ -27,6 +28,7 @@ class GenericFileReference(element: StringLiteralExpression, type: Int): PsiRefe
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun resolve(): PsiElement?
 	{
@@ -39,6 +41,7 @@ class GenericFileReference(element: StringLiteralExpression, type: Int): PsiRefe
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun getVariants(): Array<Any>
 	{

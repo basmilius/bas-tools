@@ -16,6 +16,7 @@ import java.io.IOException
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component
+ * @since 1.0.0
  */
 class DefaultProjectComponent(private val project: Project): ProjectComponent
 {
@@ -24,6 +25,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun initComponent()
 	{
@@ -33,6 +35,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun disposeComponent()
 	{
@@ -42,6 +45,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getComponentName() = "Bas Tools - Default Project"
 
@@ -49,6 +53,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun projectOpened()
 	{
@@ -60,6 +65,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun projectClosed()
 	{
@@ -89,6 +95,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 * Applies Bas Settings code style.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun applyCodeStyleSettings()
 	{
@@ -113,6 +120,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 * Applies workspace per user.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	private fun applyWorkspacePerUser()
 	{

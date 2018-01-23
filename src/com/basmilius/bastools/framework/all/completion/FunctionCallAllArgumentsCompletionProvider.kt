@@ -19,6 +19,7 @@ import com.jetbrains.php.lang.psi.elements.Function
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.completion
+ * @since 1.0.0
  */
 class FunctionCallAllArgumentsCompletionProvider: BaseCompletionProvider()
 {
@@ -27,6 +28,7 @@ class FunctionCallAllArgumentsCompletionProvider: BaseCompletionProvider()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 	{
@@ -51,6 +53,7 @@ class FunctionCallAllArgumentsCompletionProvider: BaseCompletionProvider()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getPlace(): ElementPattern<out PsiElement> = PlatformPatterns.psiElement().inside(PlatformPatterns.psiElement(PhpElementTypes.FUNCTION_CALL))
 
@@ -58,6 +61,7 @@ class FunctionCallAllArgumentsCompletionProvider: BaseCompletionProvider()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun isAvailable() = false // Disabled. Need to fix this first.
 

@@ -16,6 +16,7 @@ import java.util.ArrayList
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
+ * @since 1.0.0
  */
 object CommandUtils
 {
@@ -28,6 +29,7 @@ object CommandUtils
 	 * @param handler Handler.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	@Synchronized
 	fun run(project: Project?, command: String, handler: ICommandResultHandler)
@@ -79,6 +81,7 @@ object CommandUtils
 	 * Interface ICommandResultHandler
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	interface ICommandResultHandler
 	{
@@ -89,6 +92,7 @@ object CommandUtils
 		 * @param lines Array<String>
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.0.0
 		 */
 		fun onCommandResult(lines: Array<String>)
 

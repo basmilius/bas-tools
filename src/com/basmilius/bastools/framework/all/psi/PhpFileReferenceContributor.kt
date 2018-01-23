@@ -18,6 +18,7 @@ import com.jetbrains.php.lang.psi.elements.impl.NewExpressionImpl
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.psi
+ * @since 1.2.0
  */
 class PhpFileReferenceContributor: PsiReferenceContributor()
 {
@@ -26,6 +27,7 @@ class PhpFileReferenceContributor: PsiReferenceContributor()
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun registerReferenceProviders(registrar: PsiReferenceRegistrar)
 	{
@@ -37,6 +39,7 @@ class PhpFileReferenceContributor: PsiReferenceContributor()
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.framework.all.psi.ReferenceProvider
+	 * @since 1.2.0
 	 */
 	private class ReferenceProvider: PsiReferenceProvider()
 	{
@@ -45,6 +48,7 @@ class PhpFileReferenceContributor: PsiReferenceContributor()
 		 * {@inheritdoc}
 		 *
 		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.2.0
 		 */
 		override fun getReferencesByElement(element: PsiElement, context: ProcessingContext): Array<PsiReference>
 		{

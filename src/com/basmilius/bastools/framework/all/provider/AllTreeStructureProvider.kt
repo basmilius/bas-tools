@@ -11,6 +11,7 @@ import com.intellij.ide.util.treeView.AbstractTreeNode
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.all.provider
+ * @since 1.2.0
  */
 class AllTreeStructureProvider: TreeStructureProvider
 {
@@ -19,6 +20,7 @@ class AllTreeStructureProvider: TreeStructureProvider
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
 	 */
 	override fun modify(parent: AbstractTreeNode<*>, children: Collection<AbstractTreeNode<*>>, settings: ViewSettings): Collection<AbstractTreeNode<*>>
 	{

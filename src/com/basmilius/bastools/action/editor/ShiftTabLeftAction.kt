@@ -5,5 +5,6 @@ package com.basmilius.bastools.action.editor
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.action.editor
+ * @since 1.1.0
  */
 class ShiftTabLeftAction: ShiftTabAction(Orientation.LEFT)

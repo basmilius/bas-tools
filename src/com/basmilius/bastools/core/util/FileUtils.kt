@@ -11,6 +11,7 @@ import com.intellij.psi.PsiManager
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
+ * @since 1.0.0
  */
 object FileUtils
 {
@@ -27,6 +28,7 @@ object FileUtils
 	 * @return Array<String>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun getProjectFiles(project: Project): Array<String>
 	{
@@ -54,6 +56,7 @@ object FileUtils
 	 * @return Array<String>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun getRelativeFiles(baseFile: PsiFile): Array<String>
 	{
@@ -82,6 +85,7 @@ object FileUtils
 	 * @return Map<String, PsiFileSystemItem>
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun getRelativeFilesByName(baseFile: PsiFile, fileType: Int): Map<String, PsiFileSystemItem>
 	{

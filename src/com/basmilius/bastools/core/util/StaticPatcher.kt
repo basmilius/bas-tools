@@ -1,18 +1,24 @@
 package com.basmilius.bastools.core.util
 
 import java.lang.reflect.Field
-import java.lang.reflect.Array.setInt
 import java.lang.reflect.Modifier
-import java.lang.reflect.AccessibleObject.setAccessible
-import java.lang.reflect.Array.setInt
-import java.lang.reflect.AccessibleObject.setAccessible
 
-
-
-
+/**
+ * Object StaticPatcher
+ *
+ * @author Bas Milius <bas@mili.us>
+ * @package com.basmilius.bastools.core.util
+ * @since 1.2.0
+ */
 object StaticPatcher
 {
 
+	/**
+	 * Sets a field value.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
+	 */
 	fun setFieldValue(obj: Any, fieldName: String, value: Any)
 	{
 		try
@@ -27,6 +33,12 @@ object StaticPatcher
 		}
 	}
 
+	/**
+	 * Sets a final static.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
+	 */
 	fun setFinalStatic(cls: Class<*>, fieldName: String, newValue: Any)
 	{
 		val fields = cls.declaredFields
@@ -39,6 +51,12 @@ object StaticPatcher
 			}
 	}
 
+	/**
+	 * Sets a final static.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.2.0
+	 */
 	@Throws(Exception::class)
 	fun setFinalStatic(field: Field, newValue: Any)
 	{

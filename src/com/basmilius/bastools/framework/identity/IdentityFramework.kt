@@ -9,6 +9,7 @@ import com.intellij.psi.PsiFile
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.identity
+ * @since 1.0.0
  */
 object IdentityFramework
 {
@@ -18,11 +19,12 @@ object IdentityFramework
 	/**
 	 * Gets the sources root directory for a project.
 	 *
-	 * @param project Project instance.
+	 * @param project Project
 	 *
-	 * @return Directory as virtual file.
+	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun getSourcesRoot(project: Project): VirtualFile
 	{
@@ -34,11 +36,12 @@ object IdentityFramework
 	/**
 	 * Checks if a project is an Identity Framework project (And therefore awesome!).
 	 *
-	 * @param project Project instance.
+	 * @param project Project
 	 *
-	 * @return True if it's an Identity Project.
+	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun isIdentityFrameworkProject(project: Project): Boolean
 	{
@@ -61,9 +64,10 @@ object IdentityFramework
 	/**
 	 * Returns TRUE if a file is inside a particular directory.
 	 *
-	 * @return True if it's inside the specified directory.
+	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun isChildOf(project: Project, file: PsiFile, dir: String): Boolean
 	{

@@ -7,6 +7,7 @@ import java.util.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util.strtotime
+ * @since 1.1.0
  */
 interface Matcher
 {
@@ -17,9 +18,10 @@ interface Matcher
 	 * @param input String
 	 * @param refDateStr String
 	 *
-	 * @return Date?s
+	 * @return Date?
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun tryConvert(input: String, refDateStr: String): Date?
 

@@ -12,6 +12,7 @@ import com.intellij.util.ProcessingContext
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.framework.base.completion
+ * @since 1.1.0
  */
 abstract class BaseCompletionProvider: CompletionProvider<CompletionParameters>()
 {
@@ -22,6 +23,7 @@ abstract class BaseCompletionProvider: CompletionProvider<CompletionParameters>(
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	abstract override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, results: CompletionResultSet)
 
@@ -29,6 +31,7 @@ abstract class BaseCompletionProvider: CompletionProvider<CompletionParameters>(
 	 * Gets the contributor.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun getContributor(): BaseCompletionContributor?
 	{
@@ -41,6 +44,7 @@ abstract class BaseCompletionProvider: CompletionProvider<CompletionParameters>(
 	 * @return Boolean
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	abstract fun isAvailable (): Boolean;
 
@@ -48,6 +52,7 @@ abstract class BaseCompletionProvider: CompletionProvider<CompletionParameters>(
 	 * Gets the place.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	abstract fun getPlace(): ElementPattern<out PsiElement>
 
@@ -57,6 +62,7 @@ abstract class BaseCompletionProvider: CompletionProvider<CompletionParameters>(
 	 * @param contributor BaseCompletionContributor
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun setContributor(contributor: BaseCompletionContributor)
 	{

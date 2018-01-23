@@ -10,6 +10,7 @@ import java.awt.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.tabs
+ * @since 1.0.0
  */
 open class BasToolsTabsPainter: DefaultEditorTabsPainter
 {
@@ -20,6 +21,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * Suppress unused, because we need this in Reflection.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	@Suppress("unused")
 	constructor(): super(null)
@@ -30,6 +32,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * @param tabs Editor tabs.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	constructor(tabs: JBEditorTabs): super(tabs)
 
@@ -37,6 +40,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * Paints the inactive.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun doPaintInactive(g: Graphics2D, effectiveBounds: Rectangle?, x: Int, y: Int, w: Int, h: Int, color: Color?, row: Int, column: Int, vertical: Boolean)
 	{
@@ -48,6 +52,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * Paints the background.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun doPaintBackground(g: Graphics2D, clip: Rectangle, vertical: Boolean, rectangle: Rectangle?)
 	{
@@ -66,6 +71,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * @param height Int
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun fillSelectionAndBorder(g: Graphics2D, color: Color?, x: Int, y: Int, width: Int, height: Int)
 	{
@@ -77,6 +83,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * Gets the background color.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getBackgroundColor(): Color
 	{
@@ -87,6 +94,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * Gets the empty space color.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getEmptySpaceColor(): Color
 	{
@@ -97,6 +105,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * Gets the default tab color.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getDefaultTabColor(): Color
 	{
@@ -107,6 +116,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * Gets the inactive mask color.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getInactiveMaskColor(): Color
 	{
@@ -116,9 +126,10 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	/**
 	 * Gets the editor tabs.
 	 *
-	 * @author Bas Milius <bas@mili.us>
-	 *
 	 * @return JBEditorTabs
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	val tabsComponent: JBEditorTabs get() = this.myTabs
 

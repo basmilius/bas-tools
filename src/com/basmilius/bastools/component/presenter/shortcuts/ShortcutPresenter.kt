@@ -12,6 +12,7 @@ import com.intellij.util.xmlb.XmlSerializerUtil
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component.presenter.shortcuts
+ * @since 1.1.0
  */
 @State(name = "ShortcutPresenter", storages = arrayOf(Storage(file = "shortcut-presenter.xml")))
 class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<ShortcutPresenterState>
@@ -24,6 +25,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun getState() = this.configuration
 
@@ -31,6 +33,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun loadState(state: ShortcutPresenterState)
 	{
@@ -41,6 +44,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun initComponent()
 	{
@@ -50,6 +54,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun disposeComponent()
 	{
@@ -59,6 +64,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * Enables shortcut presenter.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun enable()
 	{
@@ -72,6 +78,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * Disables shortcut presenter.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun disable()
 	{
@@ -82,6 +89,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	override fun getComponentName() = "Shortcut Presentation"
 
@@ -92,6 +100,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * @param project Project?
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun setShowActionsDescriptions(value: Boolean, project: Project?)
 	{
@@ -117,6 +126,7 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 * @param value Int
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.1.0
 	 */
 	fun setFontSize(value: Int)
 	{

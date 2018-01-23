@@ -8,13 +8,16 @@ import javax.swing.*
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.configurable
+ * @since 1.3.0
  */
 class BasToolsConfigurableForm: AbstractForm<BasToolsPersonalConfigurable.PersonalConfigurationState>()
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun applyChanges()
 	{
@@ -22,7 +25,9 @@ class BasToolsConfigurableForm: AbstractForm<BasToolsPersonalConfigurable.Person
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun build()
 	{
@@ -36,7 +41,9 @@ class BasToolsConfigurableForm: AbstractForm<BasToolsPersonalConfigurable.Person
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun load()
 	{
@@ -44,7 +51,9 @@ class BasToolsConfigurableForm: AbstractForm<BasToolsPersonalConfigurable.Person
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	override fun update(state: BasToolsPersonalConfigurable.PersonalConfigurationState)
 	{

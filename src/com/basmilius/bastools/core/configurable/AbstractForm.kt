@@ -7,6 +7,7 @@ import javax.swing.JComponent
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.configurable
+ * @since 1.3.0
  */
 abstract class AbstractForm<in TState>: JComponent()
 {
@@ -17,6 +18,7 @@ abstract class AbstractForm<in TState>: JComponent()
 	 * Gets or Sets modified.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	var modified: Boolean
 		get() = this._modified
@@ -29,6 +31,7 @@ abstract class AbstractForm<in TState>: JComponent()
 	 * Applies changes.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	abstract fun applyChanges()
 
@@ -36,13 +39,15 @@ abstract class AbstractForm<in TState>: JComponent()
 	 * Builds the form.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	abstract fun build()
 
 	/**
 	 * Loads the state.
 	 *
-	 * @author Bas Miius
+	 * @author Bas Miius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	abstract fun load()
 
@@ -50,6 +55,7 @@ abstract class AbstractForm<in TState>: JComponent()
 	 * Updates the form with configurable state.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
 	 */
 	abstract fun update(state: TState)
 

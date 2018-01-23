@@ -15,13 +15,16 @@ import javax.swing.Icon
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.provider
+ * @since 1.0.0
  */
 class BasToolsIconProvider: IconProvider(), FileIconProvider
 {
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	override fun getIcon(file: VirtualFile, @Iconable.IconFlags flags: Int, project: Project?): Icon?
 	{
@@ -30,14 +33,10 @@ class BasToolsIconProvider: IconProvider(), FileIconProvider
 
 	/**
 	 * {@inheritdoc}
+	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
-	override fun getIcon(psi: PsiElement, @Iconable.IconFlags flags: Int): Icon?
-	{
-		if (psi is PsiFile && psi.name == ".bas-tools.json")
-			return Icons.BasTools
-
-		return Icons.Default
-	}
+	override fun getIcon(psi: PsiElement, @Iconable.IconFlags flags: Int) = Icons.Default
 
 }

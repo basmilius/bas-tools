@@ -9,6 +9,7 @@ import com.intellij.openapi.project.Project
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.notifications
+ * @since 1.0.0
  */
 object NotificationManager
 {
@@ -23,6 +24,7 @@ object NotificationManager
 	 * @param type Notification type.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun notify(project: Project, content: String, type: NotificationType)
 	{
@@ -41,6 +43,7 @@ object NotificationManager
 	 * @param type Notification type.
 	 *
 	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
 	 */
 	fun notify(project: Project, title: String, content: String, type: NotificationType)
 	{
