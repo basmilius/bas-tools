@@ -45,7 +45,9 @@ class BasToolsLaf: DarculaLaf()
 	 */
 	override fun parseValue(key: String, value: String): Any?
 	{
-		System.out.println(String.format("UI: %s (%s)", key, value))
+//		System.out.println(String.format("UI: %s (%s)", key, value))
+
+		// TODO(Bas): Find out what properties we should override.
 
 		return super.parseValue(key, value)
 	}

@@ -2,9 +2,14 @@ package com.basmilius.bastools.action.tools
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.wm.ToolWindow
+import com.intellij.openapi.diagnostic.logger
 import com.intellij.openapi.wm.ToolWindowManager
 import com.intellij.openapi.wm.ToolWindowType
+import com.intellij.openapi.wm.WindowManager
+import com.intellij.openapi.wm.impl.ToolWindowImpl
+import com.intellij.util.ui.UIUtil
+import java.awt.Dimension
+import java.awt.Point
 
 /**
  * Class DisplayDateTimeToolWindow
@@ -28,16 +33,23 @@ class DisplayDateTimeToolWindow: AnAction("Show Date Time Tool Window")
 			return
 
 		val project = aae.project ?: return
-		val toolWindow: ToolWindow = ToolWindowManager.getInstance(project).getToolWindow("Date Time Helpers") ?: return
+		val toolWindowManager = ToolWindowManager.getInstance(project)
+		val toolWindow = toolWindowManager.getToolWindow("Datetime Tools") as? ToolWindowImpl ?: return
 
 		if (toolWindow.isVisible)
 		{
-			toolWindow.hide(null)
+			toolWindow.hide { }
 		}
 		else
 		{
 			toolWindow.setType(ToolWindowType.FLOATING, null)
-			toolWindow.show(null)
+			toolWindow.show { }
+
+			val ideWindow = WindowManager.getInstance().suggestParentWindow(project) ?: return
+			val toolWindowPanel = UIUtil.getWindow(toolWindow.decorator) ?: return
+
+			toolWindowPanel.location = Point(ideWindow.location.x + ideWindow.size.width - 332, ideWindow.location.y + 24 + 101)
+			toolWindowPanel.size = Dimension(308, 233)
 		}
 	}
 

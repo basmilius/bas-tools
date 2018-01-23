@@ -67,7 +67,7 @@ public class DateTimeToolWindowFactory extends BaseToolWindowFactory
 		if (this.getProject() == null)
 			return;
 
-		final String input = this.convertField.getText();
+		final String input = this.convertField.getText().trim();
 
 		if (StringUtils.isEmpty(input))
 			return;
