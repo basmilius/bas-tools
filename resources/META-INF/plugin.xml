@@ -8,7 +8,7 @@
 	<description><![CDATA[Adds enhanced features to JetBrains IDE's]]></description>
 
 	<change-notes>
-		<![CDATA[Nothing special.]]>
+		<![CDATA[For change notes, please go to the GitHub repository.]]>
 	</change-notes>
 
 	<depends>com.intellij.modules.lang</depends>
