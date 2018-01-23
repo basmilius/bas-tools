@@ -46,7 +46,7 @@ abstract class BaseCompletionProvider: CompletionProvider<CompletionParameters>(
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.1.0
 	 */
-	abstract fun isAvailable (): Boolean;
+	abstract fun isAvailable(): Boolean;
 
 	/**
 	 * Gets the place.

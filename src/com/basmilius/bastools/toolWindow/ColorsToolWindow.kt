@@ -8,7 +8,7 @@ import javax.swing.JComponent
 import javax.swing.JPanel
 import javax.swing.border.EmptyBorder
 
-class ColorsToolWindow : BaseToolWindowFactory()
+class ColorsToolWindow: BaseToolWindowFactory()
 {
 
 	private val root = JPanel(GridLayoutManager(8, 2))

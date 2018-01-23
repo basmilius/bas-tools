@@ -9,8 +9,6 @@ import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiFile
 import com.intellij.psi.PsiParserFacade
-import com.intellij.psi.PsiWhiteSpace
-import com.intellij.psi.templateLanguages.OuterLanguageElement
 
 /**
  * Class MissingEmptyLineAtFileEndInspector
