@@ -55,7 +55,7 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 		this.project = aae.project
 		val root = JUtils.getRootComponent(aae.project)
 
-		if (project == null || root == null)
+		if (this.project == null || root == null)
 			return
 
 		this.editor = FileEditorManager.getInstance(this.project!!).selectedTextEditor
@@ -122,13 +122,21 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 		if (this.project == null)
 			return
 
-		if (this.currentColor == null)
+		val currentColor = this.currentColor
+		val editor = this.editor ?: return
+		val project = this.project ?: return
+
+		if (currentColor == null)
 		{
-			HintManager.getInstance().showInformationHint(this.editor!!, "Could not insert color, you didn't select a color!")
+			HintManager.getInstance().showInformationHint(editor, "Could not insert color, you didn't select a color!")
 			return
 		}
 
-		ExceptionUtils.executeIgnore(Runnable { EditorUtils.insertOrReplaceMultiCaret(this.editor!!, this.project!!, "#" + ColorUtil.toHex(this.currentColor!!)) })
+		editor.selectionModel.removeSelection()
+
+		ExceptionUtils.executeIgnore {
+			EditorUtils.insertOrReplaceMultiCaret(editor, project, "#" + ColorUtil.toHex(currentColor))
+		}
 	}
 
 	/**

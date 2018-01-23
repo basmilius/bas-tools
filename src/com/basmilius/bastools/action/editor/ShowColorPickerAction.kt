@@ -37,7 +37,9 @@ class ShowColorPickerAction: AnAction("Show Color Picker")
 		val color = ColorPicker.showDialog(root, "Pick a Color", JBColor.CYAN, false, null, false) ?: return
 		val editor = FileEditorManager.getInstance(project).selectedTextEditor ?: return
 
-		ExceptionUtils.executeIgnore(Runnable { EditorUtils.insertOrReplaceMultiCaret(editor, project, "#" + ColorUtil.toHex(color)) })
+		ExceptionUtils.executeIgnore {
+			EditorUtils.insertOrReplaceMultiCaret(editor, project, "#" + ColorUtil.toHex(color))
+		}
 	}
 
 }

@@ -15,9 +15,6 @@
 
 	<depends optional="true" config-file="php-plugin.xml">com.jetbrains.php</depends>
 
-	<!--<depends optional="true" config-file="./php-plugin.xml">com.jetbrains.php</depends>-->
-	<!--<depends optional="true" config-file="./localization-plugin.xml">org.jetbrains.plugins.localization</depends>-->
-
 	<!-- General -->
 	<extensions defaultExtensionNs="com.intellij">
 

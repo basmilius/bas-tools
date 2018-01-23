@@ -41,17 +41,14 @@ object EditorUtils
 	@Throws(Exception::class)
 	fun insertOrReplaceMultiCaret(editor: Editor, project: Project, str: String)
 	{
-		val wca = object: WriteCommandAction.Simple<Unit>(project)
-		{
+		EditorUtils.writeAction(project) {
+			val document = editor.document
+			val caret = editor.caretModel
+			val selection = editor.selectionModel
 
-			@Throws(Throwable::class)
-			override fun run()
+			when
 			{
-				val document = editor.document
-				val caret = editor.caretModel
-				val selection = editor.selectionModel
-
-				if (selection.hasSelection())
+				selection.hasSelection() ->
 				{
 					val starts = selection.blockSelectionStarts
 					val ends = selection.blockSelectionEnds
@@ -62,7 +59,8 @@ object EditorUtils
 						document.replaceString(starts[i], ends[i], str)
 					}
 				}
-				else if (caret.caretCount > 0)
+
+				caret.caretCount > 0 ->
 				{
 					for (c in caret.allCarets)
 					{
@@ -70,14 +68,34 @@ object EditorUtils
 						c.moveToOffset(c.offset + 7)
 					}
 				}
-				else
-				{
-					throw Exception("No carets found!")
-				}
+
+				else -> throw Exception("No carets found!")
+			}
+		}
+	}
+
+	/**
+	 * Executes a write action in a simple way.
+	 *
+	 * @param project Project
+	 * @param command () -> Unit
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.1
+	 */
+	fun writeAction(project: Project, command: () -> Unit)
+	{
+		val writer = object: WriteCommandAction.Simple<Unit>(project)
+		{
+
+			override fun run()
+			{
+				command()
 			}
 
 		}
-		wca.execute()
+
+		writer.execute()
 	}
 
 	/**
