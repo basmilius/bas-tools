@@ -5,7 +5,6 @@ import com.basmilius.bastools.language.cappuccino.CappuccinoLanguage
 import com.basmilius.bastools.language.cappuccino.CappuccinoTokenTypes
 import com.basmilius.bastools.language.cappuccino.elements.CappuccinoElementTypes
 import com.intellij.ide.structureView.StructureViewModelBase
-import com.intellij.ide.structureView.StructureViewTreeElement as IdeStructureViewTreeElement
 import com.intellij.ide.structureView.TreeBasedStructureViewBuilder
 import com.intellij.ide.structureView.impl.StructureViewComposite
 import com.intellij.ide.structureView.impl.TemplateLanguageStructureViewBuilder
@@ -18,6 +17,7 @@ import com.intellij.psi.PsiFile
 import com.intellij.psi.tree.IElementType
 import com.intellij.util.PlatformIcons
 import javax.swing.Icon
+import com.intellij.ide.structureView.StructureViewTreeElement as IdeStructureViewTreeElement
 
 /**
  * Class CappuccinoStructureViewProvider

@@ -6,8 +6,6 @@ import com.intellij.openapi.wm.WindowManager
 import com.intellij.ui.picker.ColorListener
 import com.intellij.ui.picker.ColorPipetteBase
 import com.intellij.util.ui.UIUtil
-
-import javax.swing.*
 import java.awt.*
 import java.awt.event.FocusAdapter
 import java.awt.event.FocusEvent
@@ -15,6 +13,8 @@ import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
 import java.awt.geom.Area
 import java.awt.image.BufferedImage
+import javax.swing.JComponent
+import javax.swing.Timer
 
 /**
  * Class DefaultColorPipette

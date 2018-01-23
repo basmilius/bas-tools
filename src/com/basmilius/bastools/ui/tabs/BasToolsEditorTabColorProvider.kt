@@ -3,8 +3,7 @@ package com.basmilius.bastools.ui.tabs
 import com.intellij.openapi.fileEditor.impl.EditorTabColorProvider
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
-
-import java.awt.*
+import java.awt.Color
 
 /**
  * Class BasToolsEditorTabColorProvider

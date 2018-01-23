@@ -2,8 +2,9 @@ package com.basmilius.bastools.ui.tabs
 
 import com.intellij.ui.tabs.impl.DefaultEditorTabsPainter
 import com.intellij.ui.tabs.impl.JBEditorTabs
-
-import java.awt.*
+import java.awt.Color
+import java.awt.Graphics2D
+import java.awt.Rectangle
 
 /**
  * Class BasToolsTabsPainter

@@ -5,8 +5,12 @@ import com.basmilius.bastools.core.util.JUtils
 import com.intellij.ui.border.IdeaTitledBorder
 import com.intellij.uiDesigner.core.GridConstraints
 import com.intellij.uiDesigner.core.GridLayoutManager
-import java.awt.*
-import javax.swing.*
+import java.awt.Dimension
+import java.awt.Insets
+import javax.swing.JComponent
+import javax.swing.JLabel
+import javax.swing.JPanel
+import javax.swing.JTextField
 
 /**
  * Class BasToolsPersonalConfigurableForm

@@ -2,8 +2,8 @@ package com.basmilius.bastools.core.util
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.WindowManager
-
-import javax.swing.*
+import javax.swing.JComponent
+import javax.swing.SwingUtilities
 import javax.swing.event.ChangeEvent
 import javax.swing.event.DocumentEvent
 import javax.swing.event.DocumentListener

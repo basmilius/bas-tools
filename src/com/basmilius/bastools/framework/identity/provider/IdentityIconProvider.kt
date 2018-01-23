@@ -9,8 +9,7 @@ import com.intellij.openapi.util.Iconable
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiElement
-
-import javax.swing.*
+import javax.swing.Icon
 
 /**
  * Class IdentityIconProvider

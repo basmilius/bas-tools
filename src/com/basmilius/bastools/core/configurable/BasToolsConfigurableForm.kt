@@ -1,7 +1,8 @@
 package com.basmilius.bastools.core.configurable
 
 import com.basmilius.bastools.core.configurable.personal.BasToolsPersonalConfigurable
-import javax.swing.*
+import javax.swing.BoxLayout
+import javax.swing.JButton
 
 /**
  * Class BasToolsConfigurableForm

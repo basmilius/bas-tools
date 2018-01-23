@@ -1,9 +1,9 @@
 package com.basmilius.bastools.action.editor
 
-import com.basmilius.bastools.ui.DefaultColorPipette
 import com.basmilius.bastools.core.util.EditorUtils
 import com.basmilius.bastools.core.util.ExceptionUtils
 import com.basmilius.bastools.core.util.JUtils
+import com.basmilius.bastools.ui.DefaultColorPipette
 import com.intellij.codeInsight.hint.HintManager
 import com.intellij.openapi.Disposable
 import com.intellij.openapi.actionSystem.AnAction

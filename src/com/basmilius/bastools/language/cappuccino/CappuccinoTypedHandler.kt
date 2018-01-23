@@ -1,7 +1,7 @@
 package com.basmilius.bastools.language.cappuccino
 
-import com.basmilius.bastools.language.cappuccino.formatter.CappuccinoFormatterOptions
 import com.basmilius.bastools.core.util.EditorUtils
+import com.basmilius.bastools.language.cappuccino.formatter.CappuccinoFormatterOptions
 import com.intellij.codeInsight.editorActions.TypedHandlerDelegate
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.EditorModificationUtil

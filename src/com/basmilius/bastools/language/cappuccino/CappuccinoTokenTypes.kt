@@ -1,6 +1,5 @@
 package com.basmilius.bastools.language.cappuccino
 
-import com.intellij.psi.tree.IElementType
 import com.intellij.psi.tree.TokenSet
 
 /**

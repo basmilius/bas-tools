@@ -2,7 +2,6 @@ package com.basmilius.bastools.ui.laf
 
 import com.basmilius.bastools.core.util.StaticPatcher
 import com.intellij.ide.ui.laf.darcula.DarculaLaf
-import com.intellij.openapi.editor.colors.EditorColors
 import com.intellij.ui.JBColor
 import com.intellij.util.ui.UIUtil
 import javax.swing.UIManager

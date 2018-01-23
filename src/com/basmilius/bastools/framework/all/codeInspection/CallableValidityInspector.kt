@@ -1,9 +1,9 @@
 package com.basmilius.bastools.framework.all.codeInspection
 
-import com.basmilius.bastools.framework.base.codeInspection.BaseInspection
-import com.basmilius.bastools.framework.base.visitor.BaseElementVisitor
 import com.basmilius.bastools.core.util.PossibleValuesDiscoveryUtils
 import com.basmilius.bastools.core.util.TypesUtils
+import com.basmilius.bastools.framework.base.codeInspection.BaseInspection
+import com.basmilius.bastools.framework.base.visitor.BaseElementVisitor
 import com.intellij.codeInspection.ProblemHighlightType
 import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.PsiElement

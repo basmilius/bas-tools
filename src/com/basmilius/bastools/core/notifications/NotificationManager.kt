@@ -1,6 +1,9 @@
 package com.basmilius.bastools.core.notifications
 
-import com.intellij.notification.*
+import com.intellij.notification.NotificationDisplayType
+import com.intellij.notification.NotificationGroup
+import com.intellij.notification.NotificationType
+import com.intellij.notification.Notifications
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.project.Project
 

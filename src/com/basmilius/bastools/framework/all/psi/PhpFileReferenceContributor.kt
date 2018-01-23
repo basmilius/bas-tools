@@ -1,8 +1,8 @@
 package com.basmilius.bastools.framework.all.psi
 
-import com.basmilius.bastools.framework.all.completion.BasicFunctionCompletionProvider
 import com.basmilius.bastools.core.util.FileUtils
 import com.basmilius.bastools.core.util.PhpUtils
+import com.basmilius.bastools.framework.all.completion.BasicFunctionCompletionProvider
 import com.intellij.patterns.PlatformPatterns
 import com.intellij.psi.*
 import com.intellij.util.ProcessingContext
