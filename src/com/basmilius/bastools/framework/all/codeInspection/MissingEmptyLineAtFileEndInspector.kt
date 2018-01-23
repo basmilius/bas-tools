@@ -10,6 +10,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiFile
 import com.intellij.psi.PsiParserFacade
 import com.intellij.psi.PsiWhiteSpace
+import com.intellij.psi.templateLanguages.OuterLanguageElement
 
 /**
  * Class MissingEmptyLineAtFileEndInspector
@@ -47,9 +48,7 @@ class MissingEmptyLineAtFileEndInspector: BaseInspection("MissingEmptyLineAtFile
 		 */
 		override fun visitFile(file: PsiFile)
 		{
-			val last = file.lastChild ?: return
-
-			if (last is PsiWhiteSpace && last.textContains('\n'))
+			if (file.text.endsWith('\n'))
 				return
 
 			problemsHolder.registerProblem(file.lastChild, "Missing empty line!", ProblemHighlightType.GENERIC_ERROR_OR_WARNING, MissingEmptyLineAtFileEndQuickFix())
