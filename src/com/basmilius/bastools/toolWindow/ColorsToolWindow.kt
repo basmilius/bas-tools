@@ -11,7 +11,7 @@ import javax.swing.border.EmptyBorder
 class ColorsToolWindow: BaseToolWindowFactory()
 {
 
-	private val root = JPanel(GridLayoutManager(8, 2))
+	private val root = com.intellij.ui.components.panels.VerticalBox()
 
 	init
 	{
