@@ -1,9 +1,9 @@
 package com.basmilius.bastools.action.editor
 
-import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx
+import com.intellij.openapi.project.DumbAwareAction
 import com.intellij.openapi.wm.ToolWindowManager
 import javax.swing.SwingConstants
 
@@ -17,7 +17,7 @@ import javax.swing.SwingConstants
  * @package com.basmilius.bastools.action.editor
  * @since 1.1.0
  */
-abstract class ShiftTabAction(private val orientation: Orientation): AnAction("Shift Tab")
+abstract class ShiftTabAction(private val orientation: Orientation): DumbAwareAction("Shift Tab")
 {
 
 	/**
