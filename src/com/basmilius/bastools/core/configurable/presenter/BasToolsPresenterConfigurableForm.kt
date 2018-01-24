@@ -1,6 +1,8 @@
 package com.basmilius.bastools.core.configurable.presenter
 
 import com.basmilius.bastools.core.configurable.AbstractForm
+import com.intellij.uiDesigner.core.GridLayoutManager
+import java.awt.Dimension
 
 /**
  * Class BasToolsPresenterConfigurableForm
@@ -31,6 +33,9 @@ class BasToolsPresenterConfigurableForm(private val configurable: BasToolsPresen
 	 */
 	override fun build()
 	{
+		this.layout = GridLayoutManager(1, 1)
+		this.maximumSize = Dimension(505, Int.MAX_VALUE)
+
 		this.load()
 	}
 

@@ -6,6 +6,7 @@ import com.intellij.openapi.wm.ToolWindowManager
 import com.intellij.openapi.wm.ToolWindowType
 import com.intellij.openapi.wm.WindowManager
 import com.intellij.openapi.wm.impl.ToolWindowImpl
+import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
 import java.awt.Dimension
 import java.awt.Point
@@ -47,8 +48,8 @@ class DisplayDateTimeToolWindow: AnAction("Show Date Time Tool Window")
 			val ideWindow = WindowManager.getInstance().suggestParentWindow(project) ?: return
 			val toolWindowPanel = UIUtil.getWindow(toolWindow.decorator) ?: return
 
-			toolWindowPanel.location = Point(ideWindow.location.x + ideWindow.size.width - 332, ideWindow.location.y + 24 + 101)
-			toolWindowPanel.size = Dimension(308, 233)
+			toolWindowPanel.location = Point(ideWindow.location.x + ideWindow.size.width - JBUI.scale(332), ideWindow.location.y + JBUI.scale(125))
+			toolWindowPanel.size = JBUI.size(Dimension(308, 233))
 		}
 	}
 

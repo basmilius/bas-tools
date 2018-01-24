@@ -72,6 +72,8 @@
 
 		<internalFileTemplate name="Cappuccino File"/>
 
+		<!--<stubIndex implementation="com.basmilius.bastools.language.cappuccino.index.CappuccinoRenderCallsIndex"/>-->
+
 	</extensions>
 
 	<project-components>

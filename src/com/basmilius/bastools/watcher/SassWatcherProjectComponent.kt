@@ -66,7 +66,7 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 
 		ApplicationUtils.deferRun(timeout = 1000) {
 			VirtualFileManager.getInstance().asyncRefresh(null)
-			System.out.println(String.format("File saved and Virtual File System synced! (%s)", file?.name))
+			System.out.println(String.format("File saved and Virtual File System synced! (%s)", file.name))
 		}
 	}
 
