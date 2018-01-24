@@ -68,10 +68,10 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	 */
 	fun enable()
 	{
-		if (this.presenter == null && this.configuration.showActionDescription)
-		{
-			this.presenter = Presenter()
-		}
+		if (this.isEnabled())
+			return
+
+		this.presenter = Presenter()
 	}
 
 	/**
@@ -83,7 +83,18 @@ class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<Shortcut
 	fun disable()
 	{
 		this.presenter?.disable()
+		this.presenter = null
 	}
+
+	/**
+	 * Returns TRUE if Presenter Mode is currently active.
+	 *
+	 * @return Boolean
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun isEnabled() = !(this.presenter === null)
 
 	/**
 	 * {@inheritdoc}

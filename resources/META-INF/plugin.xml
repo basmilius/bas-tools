@@ -2,8 +2,8 @@
 
 	<name>Bas Tools</name>
 	<id>com.basmilius.bastools</id>
-	<version>1.3.1</version>
-	<vendor email="basmilius@hotmail.com" url="https://www.basmilius.com">Bas Milius</vendor>
+	<version>1.4.0</version>
+	<vendor email="bas@mili.us" url="https://www.basmilius.com">Bas Milius</vendor>
 
 	<description><![CDATA[Adds enhanced features to JetBrains IDE's]]></description>
 
@@ -93,6 +93,14 @@
 		<group id="BasTools.Code" text="Code" popup="true" icon="/icons/code.png">
 			<add-to-group group-id="BasTools.Main.Code"/>
 			<add-to-group group-id="EditorPopupMenu" anchor="first"/>
+		</group>
+
+		<group id="BasTools.PresenterMode" text="Presenter Mode" popup="true">
+			<add-to-group group-id="BasTools.Main.Code"/>
+
+			<action id="BasTools.PresenterMode.Enable" text="Enable Presenter Mode" class="com.basmilius.bastools.action.presenter.EnablePresenterModeAction"/>
+			<action id="BasTools.PresenterMode.Disable" text="Disable Presenter Mode" class="com.basmilius.bastools.action.presenter.DisablePresenterModeAction"/>
+			<action id="BasTools.PresenterMode.Toggle" text="Toggle Presenter Mode" class="com.basmilius.bastools.action.presenter.TogglePresenterModeAction"/>
 		</group>
 
 		<group id="BasTools.ShiftTab" popup="true" text="Shift Tab" icon="/icons/shift_tab_right.png">

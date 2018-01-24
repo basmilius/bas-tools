@@ -15,6 +15,8 @@ import com.intellij.ui.components.panels.NonOpaquePanel
 import com.intellij.ui.popup.ComponentPopupBuilderImpl
 import com.intellij.util.Alarm
 import com.intellij.util.ui.Animator
+import com.intellij.util.ui.JBEmptyBorder
+import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
 import java.awt.*
 import javax.swing.*
@@ -75,7 +77,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 
 		add(labelsPanel, BorderLayout.CENTER)
 
-		val emptyBorder = BorderFactory.createEmptyBorder(6, 12, 6, 12)
+		val emptyBorder = JBEmptyBorder(6, 12, 6, 12)
 		border = emptyBorder
 
 		hint = with(JBPopupFactory.getInstance().createComponentPopupBuilder(this, this) as ComponentPopupBuilderImpl) {
@@ -285,7 +287,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 		fun setFontSize(size: Float)
 		{
 			for (label in labels)
-				label.font = label.font.deriveFont(size)
+				label.font = label.font.deriveFont(JBUI.scale(size))
 
 			val maxAscent = labels.map { it.getFontMetrics(it.font).maxAscent }.max() ?: 0
 
@@ -294,7 +296,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 				val ascent = label.getFontMetrics(label.font).maxAscent
 				if (ascent < maxAscent)
 				{
-					label.border = BorderFactory.createEmptyBorder(maxAscent - ascent, 0, 0, 0)
+					label.border = JBEmptyBorder(maxAscent - ascent, 0, 0, 0)
 				}
 				else
 				{
