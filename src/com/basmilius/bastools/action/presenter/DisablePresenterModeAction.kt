@@ -25,7 +25,7 @@ class DisablePresenterModeAction: DumbAwareAction("Enable Presenter Mode")
 	{
 		val shortcutPresenter = ApplicationManager.getApplication().getComponent(ShortcutPresenter::class.java)
 
-		shortcutPresenter.enable()
+		shortcutPresenter.disable()
 	}
 
 	/**

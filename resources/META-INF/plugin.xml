@@ -69,7 +69,7 @@
 	<actions>
 
 		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
-			<add-to-group group-id="MainMenu" anchor="last"/>
+			<add-to-group group-id="MainMenu" anchor="after" relative-to-action="CodeMenu"/>
 
 			<group id="BasTools.Main.QuickNav" popup="true" text="Quick Actions" icon="/icons/quick_actions.png"/>
 

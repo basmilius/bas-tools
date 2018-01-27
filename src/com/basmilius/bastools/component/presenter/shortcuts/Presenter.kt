@@ -296,7 +296,7 @@ class Presenter: Disposable
 	{
 		return when (keymapKind)
 		{
-			KeymapKind.MAC -> MacKeymapUtil.getKeyStrokeText(keystroke) ?: ""
+			KeymapKind.MAC -> MacKeymapUtil.getKeyStrokeText(keystroke)
 			KeymapKind.WIN ->
 			{
 				val modifiers = keystroke.modifiers

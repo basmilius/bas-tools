@@ -75,12 +75,10 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 
 		WindowManager.getInstance().setAlphaModeRatio(picker, if (SystemInfo.isMac) 0.95f else 0.99f)
 
-		if (SystemInfo.isJavaVersionAtLeast("1.7"))
-		{
-			val area = Area(Rectangle(0, 0, DIALOG_SIZE, DIALOG_SIZE))
-			area.subtract(Area(Rectangle(SIZE / 2 - 1, SIZE / 2 - 1, 3, 3)))
-			picker.shape = area
-		}
+		val area = Area(Rectangle(0, 0, DIALOG_SIZE, DIALOG_SIZE))
+		area.subtract(Area(Rectangle(SIZE / 2 - 1, SIZE / 2 - 1, 3, 3)))
+		picker.shape = area
+
 		return picker
 	}
 
