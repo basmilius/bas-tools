@@ -34,8 +34,6 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	companion object
 	{
 
-		val HighlightColor = JBColor(Color(120, 147, 105), Color(120, 147, 105))
-		const val HighlightThickness = 2
 		val BackgroundColor = JBColor(Color(45, 49, 53), Color(45, 49, 53))
 
 	}
@@ -110,7 +108,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 			if (method.name == "paintSelectionAndBorder")
 			{
-				this@BasToolsTabsPainterPatcherComponent.paintSelectionAndBorder(objects, HighlightColor, HighlightThickness, tabsPainter)
+				this@BasToolsTabsPainterPatcherComponent.paintSelectionAndBorder(objects, tabsPainter)
 			}
 
 			result
@@ -123,8 +121,6 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	 * Paints the selection and border of a task.
 	 *
 	 * @param objects Array<Any>
-	 * @param borderColor Color
-	 * @param borderThickness Int
 	 * @param painter BasToolsTabsPainter
 	 *
 	 * @throws ClassNotFoundException
@@ -135,11 +131,10 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	 * @since 1.0.0
 	 */
 	@Throws(ClassNotFoundException::class, NoSuchFieldException::class, IllegalAccessException::class)
-	private fun paintSelectionAndBorder(objects: Array<Any>, borderColor: Color, borderThickness: Int, painter: BasToolsTabsPainter)
+	private fun paintSelectionAndBorder(objects: Array<Any>, painter: BasToolsTabsPainter)
 	{
 		val g = objects[0] as Graphics2D
 		val rect = objects[1] as Rectangle
-		val tabColor = objects[4] as? Color ?: return
 
 		val tabsComponent = painter.tabsComponent
 		val position = tabsComponent.tabsPosition
@@ -151,19 +146,17 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 		val y = rect.y
 		val height = rect.height
 
-		painter.fillSelectionAndBorder(g, tabColor, x, y, rect.width, height)
-		g.color = borderColor
-		g.stroke = BasicStroke(0f)
+		painter.fillSelectionAndBorder(g, x, y, rect.width, height)
 
 		if (position == null)
 			return
 
 		when (position)
 		{
-			JBTabsPosition.bottom -> g.fillRect(rect.x, rect.y, rect.width, borderThickness)
-			JBTabsPosition.top -> g.fillRect(rect.x, rect.y + rect.height - borderThickness, rect.width, borderThickness)
-			JBTabsPosition.left -> g.fillRect(rect.x, rect.y, borderThickness, rect.height)
-			JBTabsPosition.right -> g.fillRect(rect.x + rect.width - borderThickness, rect.y, borderThickness, rect.height)
+			JBTabsPosition.bottom -> g.fillRect(rect.x, rect.y, rect.width, 0)
+			JBTabsPosition.top -> g.fillRect(rect.x, rect.y + rect.height, rect.width, 0)
+			JBTabsPosition.left -> g.fillRect(rect.x, rect.y, 0, rect.height)
+			JBTabsPosition.right -> g.fillRect(rect.x + rect.width, rect.y, 0, rect.height)
 		}
 	}
 

@@ -1,14 +1,18 @@
 package com.basmilius.bastools.ui.laf
 
 import com.basmilius.bastools.core.util.StaticPatcher
+import com.basmilius.bastools.resource.Icons
+import com.basmilius.bastools.ui.laf.border.BTUIMenuItemBorder
+import com.basmilius.bastools.ui.laf.icon.BTUIDefaultMenuArrowIcon
+import com.basmilius.bastools.ui.laf.ui.BTUITreeUI
+import com.basmilius.bastools.ui.laf.ui.BTUITreeUIProxy
 import com.intellij.ide.ui.laf.darcula.DarculaLaf
 import com.intellij.ui.JBColor
 import com.intellij.util.ui.JBInsets
+import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
-import javax.swing.LayoutStyle
 import javax.swing.UIDefaults
 import javax.swing.UIManager
-import javax.swing.plaf.InsetsUIResource
 
 /**
  * Class BasToolsLaf
@@ -40,22 +44,6 @@ class BasToolsLaf: DarculaLaf()
 	 * @since 1.0.0
 	 */
 	override fun getPrefix() = "bastools"
-
-	override fun getDefaults(): UIDefaults
-	{
-		val defaults = super.getDefaults()
-
-		defaults.forEach { key, value ->
-			System.out.println("$key => $value")
-		}
-
-		return defaults
-	}
-
-	override fun loadDefaults(defaults: UIDefaults)
-	{
-		super.loadDefaults(defaults)
-	}
 
 	/**
 	 * Start patching the UI.
@@ -89,6 +77,75 @@ class BasToolsLaf: DarculaLaf()
 
 		StaticPatcher.setFinalStatic(UIUtil::class.java, "AQUA_SEPARATOR_FOREGROUND_COLOR", JBColor(0x3A3F43, 0x3A3F43))
 		StaticPatcher.setFinalStatic(UIUtil::class.java, "AQUA_SEPARATOR_BACKGROUND_COLOR", JBColor(0x3A3F43, 0x3A3F43))
+	}
+
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	override fun getDefaults(): UIDefaults
+	{
+		val defaults = super.getDefaults()
+
+		defaults.forEach { key, value ->
+			System.out.println("$key => $value")
+		}
+
+		return defaults
+	}
+
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	override fun loadDefaults(defaults: UIDefaults)
+	{
+		super.loadDefaults(defaults)
+
+		this.uiDefaultsMenu(defaults)
+		this.uiDefaultsTabbedPane(defaults)
+		this.uiDefaultsTree(defaults)
+	}
+
+	/**
+	 * Adds new Menu/MenuItem default UI values.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun uiDefaultsMenu (defaults: UIDefaults)
+	{
+		defaults["Menu.arrowIcon"] = BTUIDefaultMenuArrowIcon(Icons.ChevronRight)
+		defaults["Menu.border"] = BTUIMenuItemBorder()
+		defaults["Menu.maxGutterIconWidth"] = JBUI.scale(24)
+		defaults["Menu.submenuPopupOffsetY"] = JBUI.scale(-1)
+		defaults["MenuItem.border"] = BTUIMenuItemBorder()
+		defaults["MenuItem.maxGutterIconWidth"] = JBUI.scale(24)
+	}
+
+	/**
+	 * Adds new TabbedPane default UI values.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun uiDefaultsTabbedPane (defaults: UIDefaults)
+	{
+		defaults["TabbedPane.tabInsets"] = JBInsets.JBInsetsUIResource(JBUI.insets(6, 12))
+	}
+
+	/**
+	 * Adds new Tree/TreeItem default UI values.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun uiDefaultsTree (defaults: UIDefaults)
+	{
+		defaults["TreeUI"] = BTUITreeUI::class.qualifiedName
+		defaults[BTUITreeUI::class.qualifiedName] = BTUITreeUIProxy::class.java
 	}
 
 }

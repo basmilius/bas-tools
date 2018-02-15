@@ -1,6 +1,5 @@
 package com.basmilius.bastools.resource
 
-import com.intellij.icons.AllIcons
 import com.intellij.openapi.util.IconLoader
 import javax.swing.Icon
 
@@ -18,6 +17,7 @@ object Icons
 
 	val BasTools = IconLoader.getIcon("/icons/bas_tools.png")
 	val CappuccinoFile = IconLoader.getIcon("/icons/cappuccino_file.png")
+	val ChevronDown = IconLoader.getIcon("/icons/chevron_down.png")
 	val ChevronRight = IconLoader.getIcon("/icons/chevron_right.png")
 	val IdeeMedia = IconLoader.getIcon("/icons/ideemedia.png")
 	val IdentityPlugin = IconLoader.getIcon("/icons/identity_plugin.png")

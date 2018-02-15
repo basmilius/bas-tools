@@ -1,5 +1,6 @@
 package com.basmilius.bastools.ui.tabs
 
+import com.intellij.ui.JBColor
 import com.intellij.ui.tabs.impl.DefaultEditorTabsPainter
 import com.intellij.ui.tabs.impl.JBEditorTabs
 import java.awt.Color
@@ -65,7 +66,6 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * Fills the selection and border.
 	 *
 	 * @param g Graphics2D
-	 * @param color Color?
 	 * @param x Int
 	 * @param y Int
 	 * @param width Int
@@ -74,9 +74,9 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	fun fillSelectionAndBorder(g: Graphics2D, color: Color?, x: Int, y: Int, width: Int, height: Int)
+	fun fillSelectionAndBorder(g: Graphics2D, x: Int, y: Int, width: Int, height: Int)
 	{
-		g.color = color ?: this.defaultTabColor
+		g.color = JBColor(Color(38, 42, 45), Color(38, 42, 45))
 		g.fillRect(x - 1, y - 1, width + 2, height + 2)
 	}
 
