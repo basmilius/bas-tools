@@ -1,5 +1,7 @@
 package com.basmilius.bastools.core.util
 
+import com.intellij.openapi.application.ApplicationManager
+
 /**
  * Object ApplicationUtils
  *
@@ -27,6 +29,19 @@ object ApplicationUtils
 			func()
 		})
 		thread.start()
+	}
+
+	/**
+	 * Invokes {@see func} later.
+	 *
+	 * @param func Closure
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun invokeLater(func: () -> Unit)
+	{
+		ApplicationManager.getApplication().invokeLater(func)
 	}
 
 }

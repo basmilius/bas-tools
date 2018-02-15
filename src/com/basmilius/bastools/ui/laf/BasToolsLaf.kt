@@ -1,5 +1,6 @@
 package com.basmilius.bastools.ui.laf
 
+import com.basmilius.bastools.core.util.ApplicationUtils
 import com.basmilius.bastools.core.util.StaticPatcher
 import com.basmilius.bastools.resource.Icons
 import com.basmilius.bastools.ui.laf.border.BTUIMenuItemBorder
@@ -7,7 +8,14 @@ import com.basmilius.bastools.ui.laf.icon.BTUIDefaultMenuArrowIcon
 import com.basmilius.bastools.ui.laf.ui.BTUITreeUI
 import com.basmilius.bastools.ui.laf.ui.BTUITreeUIProxy
 import com.intellij.ide.ui.laf.darcula.DarculaLaf
+import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.project.ProjectManager
+import com.intellij.openapi.project.ProjectManagerListener
+import com.intellij.openapi.wm.WindowManager
+import com.intellij.openapi.wm.impl.status.IdeStatusBarImpl
 import com.intellij.ui.JBColor
+import com.intellij.util.IconUtil
 import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
@@ -115,9 +123,9 @@ class BasToolsLaf: DarculaLaf()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	private fun uiDefaultsMenu (defaults: UIDefaults)
+	private fun uiDefaultsMenu(defaults: UIDefaults)
 	{
-		defaults["Menu.arrowIcon"] = BTUIDefaultMenuArrowIcon(Icons.ChevronRight)
+		defaults["Menu.arrowIcon"] = BTUIDefaultMenuArrowIcon(IconUtil.scale(Icons.ChevronRight, 0.75))
 		defaults["Menu.border"] = BTUIMenuItemBorder()
 		defaults["Menu.maxGutterIconWidth"] = JBUI.scale(24)
 		defaults["Menu.submenuPopupOffsetY"] = JBUI.scale(-1)
@@ -131,7 +139,7 @@ class BasToolsLaf: DarculaLaf()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	private fun uiDefaultsTabbedPane (defaults: UIDefaults)
+	private fun uiDefaultsTabbedPane(defaults: UIDefaults)
 	{
 		defaults["TabbedPane.tabInsets"] = JBInsets.JBInsetsUIResource(JBUI.insets(6, 12))
 	}
@@ -142,7 +150,7 @@ class BasToolsLaf: DarculaLaf()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	private fun uiDefaultsTree (defaults: UIDefaults)
+	private fun uiDefaultsTree(defaults: UIDefaults)
 	{
 		defaults["TreeUI"] = BTUITreeUI::class.qualifiedName
 		defaults[BTUITreeUI::class.qualifiedName] = BTUITreeUIProxy::class.java
