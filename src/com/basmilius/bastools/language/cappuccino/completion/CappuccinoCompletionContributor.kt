@@ -51,8 +51,7 @@ class CappuccinoCompletionContributor: BaseCompletionContributor()
 		fun addTagNameLookups(result: CompletionResultSet)
 		{
 			val types = CappuccinoElementTypes.TAGS.types
-					.filter { it is CappuccinoTag }
-					.map { it as CappuccinoTag }
+					.mapNotNull { it as? CappuccinoTag }
 
 			for (type in types)
 				result.addElement(LookupElementBuilder.create(type.tagName))

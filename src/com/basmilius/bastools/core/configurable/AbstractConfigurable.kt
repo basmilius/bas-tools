@@ -57,7 +57,7 @@ abstract class AbstractConfigurable<out TAbstractConfigForm: AbstractForm<*>, TS
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.3.0
 	 */
-	abstract protected fun createForm(): TAbstractConfigForm
+	protected abstract fun createForm(): TAbstractConfigForm
 
 	/**
 	 * Creates the State.
@@ -67,22 +67,14 @@ abstract class AbstractConfigurable<out TAbstractConfigForm: AbstractForm<*>, TS
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.3.0
 	 */
-	abstract protected fun createState(): TState
+	protected abstract fun createState(): TState
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.3.0
 	 */
-	override final fun createComponent(): AbstractForm<*> = this.form
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.3.0
-	 */
-	override final fun getDisplayName(): String = AbstractConfigurable::class.qualifiedName!!
+	final override fun createComponent(): AbstractForm<*> = this.form
 
 	/**
 	 * {@inheritdoc}
@@ -90,6 +82,14 @@ abstract class AbstractConfigurable<out TAbstractConfigForm: AbstractForm<*>, TS
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.3.0
 	 */
-	override final fun isModified() = this.form.modified
+	final override fun getDisplayName(): String = AbstractConfigurable::class.qualifiedName!!
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.3.0
+	 */
+	final override fun isModified() = this.form.modified
 
 }

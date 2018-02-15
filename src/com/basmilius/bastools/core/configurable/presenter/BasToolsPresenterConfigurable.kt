@@ -78,7 +78,7 @@ class BasToolsPresenterConfigurable: AbstractConfigurable<BasToolsPresenterConfi
 		 * @author Bas Milius <bas@mili.us>
 		 * @since 1.3.0
 		 */
-		override fun loadState(state: PresenterConfigurationState?)
+		override fun loadState(state: PresenterConfigurationState)
 		{
 		}
 

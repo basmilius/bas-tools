@@ -3,8 +3,12 @@ package com.basmilius.bastools.ui.laf
 import com.basmilius.bastools.core.util.StaticPatcher
 import com.intellij.ide.ui.laf.darcula.DarculaLaf
 import com.intellij.ui.JBColor
+import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.UIUtil
+import javax.swing.LayoutStyle
+import javax.swing.UIDefaults
 import javax.swing.UIManager
+import javax.swing.plaf.InsetsUIResource
 
 /**
  * Class BasToolsLaf
@@ -37,18 +41,20 @@ class BasToolsLaf: DarculaLaf()
 	 */
 	override fun getPrefix() = "bastools"
 
-	/**
-	 * {@inheritdoc}
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.0.0
-	 */
-	override fun parseValue(key: String, value: String): Any?
+	override fun getDefaults(): UIDefaults
 	{
-//		System.out.println(String.format("UI: %s (%s)", key, value))
+		val defaults = super.getDefaults()
 
-		// TODO(Bas): Find out what properties we should override.
+		defaults.forEach { key, value ->
+			System.out.println("$key => $value")
+		}
 
-		return super.parseValue(key, value)
+		return defaults
+	}
+
+	override fun loadDefaults(defaults: UIDefaults)
+	{
+		super.loadDefaults(defaults)
 	}
 
 	/**

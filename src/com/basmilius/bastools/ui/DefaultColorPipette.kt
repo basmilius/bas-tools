@@ -75,12 +75,10 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 
 		WindowManager.getInstance().setAlphaModeRatio(picker, if (SystemInfo.isMac) 0.95f else 0.99f)
 
-		if (SystemInfo.isJavaVersionAtLeast("1.7"))
-		{
-			val area = Area(Rectangle(0, 0, DIALOG_SIZE, DIALOG_SIZE))
-			area.subtract(Area(Rectangle(SIZE / 2 - 1, SIZE / 2 - 1, 3, 3)))
-			picker.shape = area
-		}
+		val area = Area(Rectangle(0, 0, DIALOG_SIZE, DIALOG_SIZE))
+		area.subtract(Area(Rectangle(SIZE / 2 - 1, SIZE / 2 - 1, 3, 3)))
+		picker.shape = area
+
 		return picker
 	}
 
@@ -179,11 +177,13 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	private fun updatePipette()
 	{
 		val pickerDialog = pickerDialog
+
 		if (pickerDialog != null && pickerDialog.isShowing)
 		{
 			val mouseLoc = updateLocation() ?: return
 			val c = getPixelColor(mouseLoc)
-			if (c != color || mouseLoc != myPreviousLocation)
+
+			if ((c != color || mouseLoc != myPreviousLocation) && myPipetteImage != null)
 			{
 				color = c
 				myPreviousLocation.location = mouseLoc
@@ -205,7 +205,7 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 				// paint magnifier
 				myGraphics!!.composite = AlphaComposite.SrcOver
 
-				UIUtil.drawImage(myGraphics!!, myPipetteImage, SIZE - AllIcons.Ide.Pipette.iconWidth, 0, this)
+				UIUtil.drawImage(myGraphics!!, myPipetteImage!!, SIZE - AllIcons.Ide.Pipette.iconWidth, 0, this)
 
 				pickerDialog.cursor = myParent.toolkit.createCustomCursor(myImage, HOT_SPOT, "ColorPicker")
 				notifyListener(c, 300)

@@ -1,5 +1,6 @@
 package com.basmilius.bastools.resource
 
+import com.intellij.icons.AllIcons
 import com.intellij.openapi.util.IconLoader
 import javax.swing.Icon
 
@@ -10,25 +11,16 @@ import javax.swing.Icon
  * @package com.basmilius.bastools.resource
  * @since 1.0.0
  */
-interface Icons
+object Icons
 {
 
-	/**
-	 * Companion Object for Icons
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.0.0
-	 */
-	companion object
-	{
+	val Default: Icon? = null
 
-		val Default: Icon? = null
-
-		val BasTools = IconLoader.getIcon("/icons/bas_tools.png")
-		val CappuccinoFile = IconLoader.getIcon("/icons/cappuccino_file.png")
-		val IdeeMedia = IconLoader.getIcon("/icons/ideemedia.png")
-		val IdentityPlugin = IconLoader.getIcon("/icons/identity_plugin.png")
-		val IdentityTheme = IconLoader.getIcon("/icons/identity_theme.png")
-	}
+	val BasTools = IconLoader.getIcon("/icons/bas_tools.png")
+	val CappuccinoFile = IconLoader.getIcon("/icons/cappuccino_file.png")
+	val ChevronRight = IconLoader.getIcon("/icons/chevron_right.png")
+	val IdeeMedia = IconLoader.getIcon("/icons/ideemedia.png")
+	val IdentityPlugin = IconLoader.getIcon("/icons/identity_plugin.png")
+	val IdentityTheme = IconLoader.getIcon("/icons/identity_theme.png")
 
 }
