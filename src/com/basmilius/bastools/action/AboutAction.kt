@@ -1,7 +1,5 @@
 package com.basmilius.bastools.action
 
-import com.basmilius.bastools.ui.window.AboutWindow
-import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.project.DumbAwareAction
@@ -25,10 +23,7 @@ class AboutAction: DumbAwareAction("About Bas Tools")
 	 */
 	override fun actionPerformed(aae: AnActionEvent)
 	{
-		val about = AboutWindow()
-		about.showWindow()
-
-//		ApplicationManager.getApplication().invokeLater { Messages.showMessageDialog(aae.project, "Bas Tools 1.4.0, go to bas.tools for more information about this plugin.", "Bas Tools", Messages.getInformationIcon()) }
+		ApplicationManager.getApplication().invokeLater { Messages.showMessageDialog(aae.project, "Bas Tools 1.4.0, go to basmilius.com for more information about this plugin.", "Bas Tools", Messages.getInformationIcon()) }
 	}
 
 }
