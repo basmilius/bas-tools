@@ -11,7 +11,7 @@
 		<![CDATA[For change notes, please go to the GitHub repository.]]>
 	</change-notes>
 
-	<idea-version since-build="181.3741.23"/>
+	<idea-version since-build="181.3741.2"/>
 
 	<depends>com.intellij.modules.lang</depends>
 	<depends>com.intellij.modules.platform</depends>
