@@ -1,19 +1,23 @@
+/*
+ * Copyright © 2018 Bas Milius <bas@mili.us> - All rights reserved.
+ *
+ * This file is part of Bas Tools, a plugin for the IntelliJ Platform.
+ *
+ * For the full copyright and license information, please view the
+ * LICENSE file that was distributed with this source code.
+ */
+
 package com.basmilius.bastools.ui.laf
 
-import com.basmilius.bastools.core.util.ApplicationUtils
 import com.basmilius.bastools.core.util.StaticPatcher
 import com.basmilius.bastools.resource.Icons
 import com.basmilius.bastools.ui.laf.border.BTUIMenuItemBorder
 import com.basmilius.bastools.ui.laf.icon.BTUIDefaultMenuArrowIcon
+import com.basmilius.bastools.ui.laf.ui.BTUINavBarItemUI
 import com.basmilius.bastools.ui.laf.ui.BTUITreeUI
 import com.basmilius.bastools.ui.laf.ui.BTUITreeUIProxy
+import com.intellij.ide.navigationToolbar.ui.NavBarUIManager
 import com.intellij.ide.ui.laf.darcula.DarculaLaf
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.project.Project
-import com.intellij.openapi.project.ProjectManager
-import com.intellij.openapi.project.ProjectManagerListener
-import com.intellij.openapi.wm.WindowManager
-import com.intellij.openapi.wm.impl.status.IdeStatusBarImpl
 import com.intellij.ui.JBColor
 import com.intellij.util.IconUtil
 import com.intellij.util.ui.JBInsets
@@ -74,17 +78,19 @@ class BasToolsLaf: DarculaLaf()
 	{
 		val color = UIManager.getColor("Panel.background")
 
-		StaticPatcher.setFinalStatic(UIUtil::class.java, "CONTRAST_BORDER_COLOR", color)
-		StaticPatcher.setFinalStatic(UIUtil::class.java, "BORDER_COLOR", color)
-		StaticPatcher.setFinalStatic(UIUtil::class.java, "AQUA_SEPARATOR_FOREGROUND_COLOR", color)
+		StaticPatcher.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", color)
+		StaticPatcher.setFinalStatic(UIUtil::class, "BORDER_COLOR", color)
+		StaticPatcher.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_FOREGROUND_COLOR", color)
 
-		StaticPatcher.setFinalStatic(UIUtil::class.java, "BORDER_COLOR", JBColor(0xff0000, 0xff0000))
-		StaticPatcher.setFinalStatic(UIUtil::class.java, "CONTRAST_BORDER_COLOR", JBColor(0x2c3134, 0x2c3134))
+		StaticPatcher.setFinalStatic(UIUtil::class, "BORDER_COLOR", JBColor(0xff0000, 0xff0000))
+		StaticPatcher.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", JBColor(0x2c3134, 0x2c3134))
 
-		StaticPatcher.setFinalStatic(UIUtil::class.java, "SIDE_PANEL_BACKGROUND", JBColor(0x292d30, 0x292d30))
+		StaticPatcher.setFinalStatic(UIUtil::class, "SIDE_PANEL_BACKGROUND", JBColor(0x292d30, 0x292d30))
 
-		StaticPatcher.setFinalStatic(UIUtil::class.java, "AQUA_SEPARATOR_FOREGROUND_COLOR", JBColor(0x3A3F43, 0x3A3F43))
-		StaticPatcher.setFinalStatic(UIUtil::class.java, "AQUA_SEPARATOR_BACKGROUND_COLOR", JBColor(0x3A3F43, 0x3A3F43))
+		StaticPatcher.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_FOREGROUND_COLOR", JBColor(0x3A3F43, 0x3A3F43))
+		StaticPatcher.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_BACKGROUND_COLOR", JBColor(0x3A3F43, 0x3A3F43))
+
+		StaticPatcher.setFinalStatic(NavBarUIManager::class, "DARCULA", BTUINavBarItemUI())
 	}
 
 	/**

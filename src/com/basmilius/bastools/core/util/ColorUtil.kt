@@ -1,5 +1,15 @@
+/*
+ * Copyright © 2018 Bas Milius <bas@mili.us> - All rights reserved.
+ *
+ * This file is part of Bas Tools, a plugin for the IntelliJ Platform.
+ *
+ * For the full copyright and license information, please view the
+ * LICENSE file that was distributed with this source code.
+ */
+
 package com.basmilius.bastools.core.util
 
+import com.intellij.ui.JBColor
 import java.awt.Color
 
 /**
@@ -172,5 +182,37 @@ object ColorUtil
 	 * @since 1.4.0
 	 */
 	fun Color.isLight(delta: Float = 0.5f) = this.getLuminance() >= delta
+
+	/**
+	 * Converts a Color to a JBColor.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun Color.toJBColor() = JBColor(this, this)
+
+	/**
+	 * Returns a tint of {@see this Color} with {@see weight}.
+	 *
+	 * @param weight Int
+	 *
+	 * @return Color
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun Color.withShade (weight: Int) = shade(this, weight)
+
+	/**
+	 * Returns a shade of {@see this Color} with {@see weight}.
+	 *
+	 * @param weight Int
+	 *
+	 * @return Color
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun Color.withTint (weight: Int) = tint(this, weight)
 
 }
