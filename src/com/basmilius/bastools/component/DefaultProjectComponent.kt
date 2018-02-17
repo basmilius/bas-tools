@@ -10,12 +10,13 @@
 package com.basmilius.bastools.component
 
 import com.basmilius.bastools.component.basSettings.BasSettingsCodeStyleScheme
-import com.intellij.openapi.application.ApplicationManager
+import com.basmilius.bastools.core.util.ApplicationUtils
+import com.basmilius.bastools.core.util.ExceptionUtils
 import com.intellij.openapi.components.ProjectComponent
+import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.project.Project
 import com.intellij.psi.codeStyle.CodeStyleSchemes
-import com.intellij.psi.codeStyle.CodeStyleSettingsManager
-import java.io.IOException
+import com.intellij.psi.codeStyle.ProjectCodeStyleSettingsManager
 
 /**
  * Class DefaultProjectComponent
@@ -56,7 +57,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	override fun getComponentName() = "Bas Tools - Default Project"
+	override fun getComponentName() = "Bas Tools"
 
 	/**
 	 * {@inheritdoc}
@@ -68,6 +69,12 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	{
 		this.applyCodeStyleSettings()
 		this.applyWorkspacePerUser()
+
+		ApplicationUtils.withComponent(BasToolsComponent::class) {
+			it.withFrameworks {
+				it.onProjectOpened(this.project)
+			}
+		}
 	}
 
 	/**
@@ -78,25 +85,12 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 */
 	override fun projectClosed()
 	{
-		val workspacePerUser = this.project.workspaceFile
+		this.unloadWorkspacePerUser()
 
-		if (workspacePerUser === null)
-			return
-
-		val workspace = workspacePerUser.parent.findChild("workspace.xml")
-
-		try
-		{
-			ApplicationManager.getApplication().runWriteAction {
-				if (workspace != null && workspace.exists())
-					workspace.delete(this)
-
-				workspacePerUser.copy(this, workspacePerUser.parent, "workspace.xml")
+		ApplicationUtils.withComponent(BasToolsComponent::class) {
+			it.withFrameworks {
+				it.onProjectClosed(this.project)
 			}
-		}
-		catch (e: IOException)
-		{
-			e.printStackTrace()
 		}
 	}
 
@@ -122,8 +116,11 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 		val bsScheme = BasSettingsCodeStyleScheme()
 		CodeStyleSchemes.getInstance().addScheme(bsScheme)
 		CodeStyleSchemes.getInstance().currentScheme = bsScheme
+		CodeStyleSchemes.getInstance().defaultScheme.codeStyleSettings.copyFrom(bsScheme.codeStyleSettings)
 
-		CodeStyleSettingsManager.getInstance(this.project).setTemporarySettings(bsScheme.codeStyleSettings)
+		val projectSettingsManager = ServiceManager.getService(this.project, ProjectCodeStyleSettingsManager::class.java) as ProjectCodeStyleSettingsManager
+		projectSettingsManager.mainProjectCodeStyle = bsScheme.codeStyleSettings
+		projectSettingsManager.PREFERRED_PROJECT_CODE_STYLE = "Bas Settings"
 	}
 
 	/**
@@ -140,9 +137,8 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 		val workspacePerUserFilename = "workspace.$username.xml"
 		val workspacePerUser = workspace.parent.findChild(workspacePerUserFilename)
 
-		try
-		{
-			ApplicationManager.getApplication().runWriteAction {
+		ExceptionUtils.dontCare {
+			ApplicationUtils.runWriteAction {
 				if (workspacePerUser != null && workspacePerUser.exists())
 				{
 					val contents = workspacePerUser.contentsToByteArray()
@@ -158,9 +154,30 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 				workspace.copy(this, workspace.parent, "workspace.xml")
 			}
 		}
-		catch (e: IOException)
-		{
-			e.printStackTrace()
+	}
+
+	/**
+	 * Unloads workspace per user.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun unloadWorkspacePerUser()
+	{
+		val workspacePerUser = this.project.workspaceFile
+
+		if (workspacePerUser === null)
+			return
+
+		val workspace = workspacePerUser.parent.findChild("workspace.xml")
+
+		ExceptionUtils.dontCare {
+			ApplicationUtils.runWriteAction {
+				if (workspace != null && workspace.exists())
+					workspace.delete(this)
+
+				workspacePerUser.copy(this, workspacePerUser.parent, "workspace.xml")
+			}
 		}
 	}
 

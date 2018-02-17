@@ -1,0 +1,22 @@
+<?php
+declare(strict_types=1);
+#if (${NAMESPACE})
+
+namespace ${NAMESPACE};
+#end
+
+use Columba\Router\AbstractResponse;
+
+#parse("PHP Class Doc Comment.php")
+final class ${NAME} extends AbstractResponse
+{
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function print (${DS}data): void
+	{
+		// TODO: Return ${DS}data to the browser somhow.
+	}
+
+}

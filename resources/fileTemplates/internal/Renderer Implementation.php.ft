@@ -1,0 +1,22 @@
+<?php
+declare(strict_types=1);
+#if (${NAMESPACE})
+
+namespace ${NAMESPACE};
+#end
+
+use Columba\Router\AbstractRenderer;
+
+#parse("PHP Class Doc Comment.php")
+final class ${NAME} extends AbstractRenderer
+{
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function render (string ${DS}template, array ${DS}context = []): string
+	{
+		// TODO: Return a renderer view.
+	}
+
+}

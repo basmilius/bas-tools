@@ -25,28 +25,47 @@ object ExceptionUtils
 {
 
 	/**
+	 * We don't care what happends.
+	 *
+	 * @param func Closure
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun dontCare(func: () -> Unit)
+	{
+		try
+		{
+			func()
+		}
+		catch (err: Exception)
+		{
+		}
+	}
+
+	/**
 	 * Runs a Runnable and ignores the exception.
 	 *
-	 * @param callback () -> Unit
+	 * @param func Closure
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	fun executeIgnore(callback: () -> Unit)
+	fun executeIgnore(func: () -> Unit)
 	{
-		ExceptionUtils.executeIgnore(0, callback)
+		ExceptionUtils.executeIgnore(0, func)
 	}
 
 	/**
 	 * Runs a Runnable and ignores the exception.
 	 *
 	 * @param delay Int
-	 * @param callback () -> Unit
+	 * @param func Closure
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	fun executeIgnore(delay: Int, callback: () -> Unit)
+	private fun executeIgnore(delay: Int, func: () -> Unit)
 	{
 		ProgressManager.getInstance().run(object: Task.Backgroundable(null, "Bas Tools Process")
 		{
@@ -58,7 +77,7 @@ object ExceptionUtils
 					if (delay > 0)
 						TimeUnit.MILLISECONDS.sleep(delay.toLong())
 
-					callback()
+					func()
 				}
 				catch (e: Exception)
 				{

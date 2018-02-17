@@ -7,7 +7,7 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.language.cappuccino.action
+package com.basmilius.bastools.action.code
 
 import com.basmilius.bastools.language.cappuccino.CappuccinoFileType
 import com.basmilius.bastools.resource.Icons

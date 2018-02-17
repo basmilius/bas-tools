@@ -168,7 +168,7 @@ class Presenter: Disposable
 		if (actionText.isNotEmpty())
 			fragments.addText("<b>$actionText</b>")
 
-		val mainKeymap = getShortcutPresenter().configuration.mainKeymap
+		val mainKeymap = getDefaultMainKeymap()
 		val shortcutTextFragments = shortcutTextFragments(mainKeymap, actionId, actionText)
 		if (shortcutTextFragments.isNotEmpty())
 		{
@@ -178,7 +178,7 @@ class Presenter: Disposable
 			fragments.addAll(shortcutTextFragments)
 		}
 
-		val alternativeKeymap = getShortcutPresenter().configuration.alternativeKeymap
+		val alternativeKeymap = getDefaultAlternativeKeymap()
 		if (alternativeKeymap != null)
 		{
 			val mainShortcut = shortcutText(mainKeymap.getKeymap()?.getShortcuts(actionId), mainKeymap.getKind())

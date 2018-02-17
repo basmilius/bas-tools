@@ -9,13 +9,13 @@
 
 package com.basmilius.bastools.component
 
-import com.basmilius.bastools.intention.ComputeConstantValueIntentionAction
+import com.basmilius.bastools.framework.all.AllFramework
+import com.basmilius.bastools.framework.base.AbstractFramework
+import com.basmilius.bastools.framework.columba.ColumbaFramework
 import com.basmilius.bastools.ui.laf.BasToolsLaf
-import com.intellij.codeInsight.intention.IntentionManager
 import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.util.IconLoader
 import com.intellij.ui.JBColor
-import com.intellij.util.PlatformUtils
 import javax.swing.UIManager
 
 /**
@@ -29,8 +29,43 @@ class BasToolsComponent: ApplicationComponent
 {
 
 	/**
-	 * {@inheritdoc}
+	 * Companion Object BasToolsComponent
 	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @package com.basmilius.bastools.component
+	 * @since 1.1.0
+	 */
+	companion object
+	{
+
+		/**
+		 * Gets a list with registred frameworks.
+		 *
+		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.4.0
+		 */
+		val Frameworks: List<AbstractFramework> = arrayListOf(
+				AllFramework(),
+				ColumbaFramework()
+		)
+
+	}
+
+	/**
+	 * Does something with all frameworks.
+	 *
+	 * @param func Closure
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun withFrameworks(func: (AbstractFramework) -> Unit)
+	{
+		Frameworks.forEach { func(it) }
+	}
+
+	/**
+	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.1.0
 	 */
@@ -45,32 +80,27 @@ class BasToolsComponent: ApplicationComponent
 
 			JBColor.setDark(true)
 			IconLoader.setUseDarkIcons(true)
+
+			Frameworks.forEach { it.onLoad() }
 		}
 		catch (e: Exception)
 		{
 			e.printStackTrace()
 		}
-
-		if (PlatformUtils.isPhpStorm())
-		{
-			IntentionManager.getInstance().addAction(ComputeConstantValueIntentionAction())
-		}
 	}
 
 	/**
 	 * {@inheritdoc}
-	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.1.0
 	 */
 	override fun disposeComponent()
 	{
-
+		Frameworks.forEach { it.onUnload() }
 	}
 
 	/**
 	 * {@inheritdoc}
-	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.1.0
 	 */

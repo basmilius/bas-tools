@@ -16,6 +16,7 @@
 	<depends>com.intellij.modules.lang</depends>
 	<depends>com.intellij.modules.platform</depends>
 	<depends>com.intellij.modules.ultimate</depends>
+	<depends>org.jetbrains.plugins.sass</depends>
 
 	<depends optional="true" config-file="php-plugin.xml">com.jetbrains.php</depends>
 

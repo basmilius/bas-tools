@@ -72,6 +72,19 @@
 
 	</extensions>
 
+	<extensions defaultExtensionNs="com.intellij">
+
+		<internalFileTemplate name="Router"/>
+		<internalFileTemplate name="Subrouter"/>
+		<internalFileTemplate name="Renderer Implementation"/>
+		<internalFileTemplate name="Response Implementation"/>
+
+	</extensions>
+
+	<extensions defaultExtensionNs="com.jetbrains.php">
+
+	</extensions>
+
 	<project-components>
 		<component>
 			<implementation-class>com.basmilius.bastools.component.DefaultProjectComponent</implementation-class>
@@ -84,7 +97,11 @@
 			<add-to-group group-id="BasTools.Code"/>
 		</action>
 
-		<action id="BasTools.Cappuccino.NewFile" icon="/icons/cappuccino_file.png" class="com.basmilius.bastools.language.cappuccino.action.CappuccinoNewFileAction">
+		<action id="BasTools.NewFile.Cappuccino" class="com.basmilius.bastools.action.code.CappuccinoNewFileAction">
+			<add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
+		</action>
+
+		<action id="BasTools.NewFile.SCSS" class="com.basmilius.bastools.action.code.SCSSNewFileAction">
 			<add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
 		</action>
 

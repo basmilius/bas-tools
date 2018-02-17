@@ -286,7 +286,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 */
 	private fun createLabels(textFragments: List<Pair<String, Font?>>, ideFrame: IdeFrame): List<JLabel>
 	{
-		var fontSize = getShortcutPresenter().configuration.fontSize.toFloat()
+		var fontSize = getShortcutPresenter()?.configuration?.fontSize?.toFloat() ?: 14f
 		val labels = textFragments.mergeFragments().map {
 			val label = JLabel("<html>${it.first}</html>", SwingConstants.CENTER)
 			if (it.second != null) label.font = it.second
