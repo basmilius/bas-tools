@@ -19,6 +19,7 @@ import com.intellij.ui.tabs.impl.JBEditorTabs
 import com.intellij.ui.tabs.impl.JBEditorTabsPainter
 import com.intellij.util.ReflectionUtil
 import com.intellij.util.messages.MessageBusConnection
+import com.intellij.util.ui.UIUtil
 import net.sf.cglib.proxy.Enhancer
 import net.sf.cglib.proxy.MethodInterceptor
 import java.awt.*
@@ -113,12 +114,12 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 
 		val tabsPainter = BasToolsTabsPainter(component)
 		val proxy = Enhancer.create(BasToolsTabsPainter::class.java, MethodInterceptor { _, method, objects, _ ->
-			val result = method.invoke(tabsPainter, *objects)
+			var result = method.invoke(tabsPainter, *objects)
 
 			if (method.name == "paintSelectionAndBorder")
-			{
 				this@BasToolsTabsPainterPatcherComponent.paintSelectionAndBorder(objects, tabsPainter)
-			}
+			else if (method.name == "getEmptySpaceColor")
+				result = UIUtil.getPanelBackground()
 
 			result
 		}) as BasToolsTabsPainter

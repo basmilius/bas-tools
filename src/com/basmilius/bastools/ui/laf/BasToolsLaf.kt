@@ -11,11 +11,10 @@ package com.basmilius.bastools.ui.laf
 
 import com.basmilius.bastools.core.util.StaticPatcher
 import com.basmilius.bastools.resource.Icons
+import com.basmilius.bastools.ui.laf.border.BTUIButtonBorder
 import com.basmilius.bastools.ui.laf.border.BTUIMenuItemBorder
 import com.basmilius.bastools.ui.laf.icon.BTUIDefaultMenuArrowIcon
-import com.basmilius.bastools.ui.laf.ui.BTUINavBarItemUI
-import com.basmilius.bastools.ui.laf.ui.BTUITreeUI
-import com.basmilius.bastools.ui.laf.ui.BTUITreeUIProxy
+import com.basmilius.bastools.ui.laf.ui.*
 import com.intellij.ide.navigationToolbar.ui.NavBarUIManager
 import com.intellij.ide.ui.laf.darcula.DarculaLaf
 import com.intellij.ui.JBColor
@@ -118,9 +117,25 @@ class BasToolsLaf: DarculaLaf()
 	{
 		super.loadDefaults(defaults)
 
+		this.uiDefaultsButton(defaults)
 		this.uiDefaultsMenu(defaults)
+		this.uiDefaultsStatusBar(defaults)
 		this.uiDefaultsTabbedPane(defaults)
 		this.uiDefaultsTree(defaults)
+	}
+
+	/**
+	 * Adds new Button default UI values.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun uiDefaultsButton(defaults: UIDefaults)
+	{
+		defaults["Button.border"] = BTUIButtonBorder()
+		defaults["ButtonUI"] = BTUIButtonUI::class.qualifiedName
+		defaults["ToggleButtonUI"] = BTUIButtonUI::class.qualifiedName
+		defaults[BTUIButtonUI::class.qualifiedName] = BTUIButtonUIProxy::class.java
 	}
 
 	/**
@@ -137,6 +152,18 @@ class BasToolsLaf: DarculaLaf()
 		defaults["Menu.submenuPopupOffsetY"] = JBUI.scale(-1)
 		defaults["MenuItem.border"] = BTUIMenuItemBorder()
 		defaults["MenuItem.maxGutterIconWidth"] = JBUI.scale(24)
+	}
+
+	/**
+	 * Adds new StatusBar default UI values.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun uiDefaultsStatusBar(defaults: UIDefaults)
+	{
+		defaults["IdeStatusBarUI"] = BTUIStatusBarUI::class.qualifiedName
+		defaults[BTUIStatusBarUI::class.qualifiedName] = BTUIStatusBarUIProxy::class.java
 	}
 
 	/**

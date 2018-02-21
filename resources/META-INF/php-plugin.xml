@@ -75,7 +75,6 @@
 	<extensions defaultExtensionNs="com.intellij">
 
 		<internalFileTemplate name="Router"/>
-		<internalFileTemplate name="Subrouter"/>
 		<internalFileTemplate name="Renderer Implementation"/>
 		<internalFileTemplate name="Response Implementation"/>
 

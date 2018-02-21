@@ -12,6 +12,7 @@ package com.basmilius.bastools.ui.tabs
 import com.intellij.ui.JBColor
 import com.intellij.ui.tabs.impl.DefaultEditorTabsPainter
 import com.intellij.ui.tabs.impl.JBEditorTabs
+import com.intellij.util.ui.UIUtil
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.Rectangle
@@ -108,7 +109,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun getEmptySpaceColor(): Color
 	{
-		return BasToolsTabsPainterPatcherComponent.BackgroundColor
+		return UIUtil.getPanelBackground()
 	}
 
 	/**
