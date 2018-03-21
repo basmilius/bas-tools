@@ -102,7 +102,7 @@
 		<option name="WHILE_ON_NEW_LINE" value="true" />
 		<option name="CATCH_ON_NEW_LINE" value="true" />
 		<option name="FINALLY_ON_NEW_LINE" value="true" />
-		<option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
+		<option name="SPACE_BEFORE_METHOD_PARENTHESES" value="false" />
 		<indentOptions>
 			<option name="USE_TAB_CHARACTER" value="true" />
 			<option name="SMART_TABS" value="true" />
@@ -124,7 +124,7 @@
 		<option name="CATCH_ON_NEW_LINE" value="true" />
 		<option name="FINALLY_ON_NEW_LINE" value="true" />
 		<option name="SPECIAL_ELSE_IF_TREATMENT" value="true" />
-		<option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
+		<option name="SPACE_BEFORE_METHOD_PARENTHESES" value="false" />
 		<indentOptions>
 			<option name="USE_TAB_CHARACTER" value="true" />
 			<option name="SMART_TABS" value="true" />
@@ -166,7 +166,7 @@
 		<option name="WHILE_ON_NEW_LINE" value="true" />
 		<option name="CATCH_ON_NEW_LINE" value="true" />
 		<option name="FINALLY_ON_NEW_LINE" value="true" />
-		<option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
+		<option name="SPACE_BEFORE_METHOD_PARENTHESES" value="false" />
 		<indentOptions>
 			<option name="USE_TAB_CHARACTER" value="true" />
 			<option name="SMART_TABS" value="true" />

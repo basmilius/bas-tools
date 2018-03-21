@@ -103,7 +103,7 @@ class BTUIButtonBorder: DarculaButtonPainter()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	private fun paintShadow(g: Graphics2D, r: Rectangle)
+	override fun paintShadow(g: Graphics2D, r: Rectangle)
 	{
 		g.color = Color.BLACK
 

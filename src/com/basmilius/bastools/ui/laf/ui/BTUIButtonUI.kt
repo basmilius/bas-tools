@@ -30,7 +30,7 @@ class BTUIButtonUI: DarculaButtonUI()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getButtonColor1(): Color
+	override fun getButtonColorStart(): Color
 	{
 		return ObjectUtils.notNull(UIManager.getColor("Button.darcula.color2"), ColorUIResource(0x414648))
 	}
@@ -40,7 +40,7 @@ class BTUIButtonUI: DarculaButtonUI()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getButtonColor2(): Color
+	override fun getButtonColorEnd(): Color
 	{
 		return ObjectUtils.notNull(UIManager.getColor("Button.darcula.color2"), ColorUIResource(0x414648))
 	}
@@ -50,7 +50,7 @@ class BTUIButtonUI: DarculaButtonUI()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getSelectedButtonColor1(): Color
+	override fun getDefaultButtonColorStart(): Color
 	{
 		return ObjectUtils.notNull(UIManager.getColor("Button.darcula.selection.color2"), ColorUIResource(0x233143))
 	}
@@ -60,7 +60,7 @@ class BTUIButtonUI: DarculaButtonUI()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getSelectedButtonColor2(): Color
+	override fun getDefaultButtonColorEnd(): Color
 	{
 		return ObjectUtils.notNull(UIManager.getColor("Button.darcula.selection.color2"), ColorUIResource(0x233143))
 	}

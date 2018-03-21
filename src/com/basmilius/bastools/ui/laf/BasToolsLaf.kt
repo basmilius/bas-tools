@@ -132,10 +132,10 @@ class BasToolsLaf: DarculaLaf()
 	 */
 	private fun uiDefaultsButton(defaults: UIDefaults)
 	{
-		defaults["Button.border"] = BTUIButtonBorder()
-		defaults["ButtonUI"] = BTUIButtonUI::class.qualifiedName
-		defaults["ToggleButtonUI"] = BTUIButtonUI::class.qualifiedName
-		defaults[BTUIButtonUI::class.qualifiedName] = BTUIButtonUIProxy::class.java
+//		defaults["Button.border"] = BTUIButtonBorder()
+//		defaults["ButtonUI"] = BTUIButtonUI::class.qualifiedName
+//		defaults["ToggleButtonUI"] = BTUIButtonUI::class.qualifiedName
+//		defaults[BTUIButtonUI::class.qualifiedName] = BTUIButtonUIProxy::class.java
 	}
 
 	/**

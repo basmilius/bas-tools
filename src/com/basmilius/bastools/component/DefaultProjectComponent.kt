@@ -118,9 +118,9 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 		CodeStyleSchemes.getInstance().currentScheme = bsScheme
 		CodeStyleSchemes.getInstance().defaultScheme.codeStyleSettings.copyFrom(bsScheme.codeStyleSettings)
 
-		val projectSettingsManager = ServiceManager.getService(this.project, ProjectCodeStyleSettingsManager::class.java) as ProjectCodeStyleSettingsManager
-		projectSettingsManager.mainProjectCodeStyle = bsScheme.codeStyleSettings
-		projectSettingsManager.PREFERRED_PROJECT_CODE_STYLE = "Bas Settings"
+//		val projectSettingsManager = ServiceManager.getService(this.project, ProjectCodeStyleSettingsManager::class.java) as ProjectCodeStyleSettingsManager
+//		projectSettingsManager.mainProjectCodeStyle = bsScheme.codeStyleSettings
+//		projectSettingsManager.PREFERRED_PROJECT_CODE_STYLE = "Bas Settings"
 	}
 
 	/**
