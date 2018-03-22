@@ -117,7 +117,7 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 		if (map == null)
 		{
 			map = MiniCode()
-			this.mapRef = SoftReference<MiniCode>(map)
+			this.mapRef = SoftReference(map)
 		}
 
 		return map
@@ -159,7 +159,7 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 
 	private fun updateImageSoon() = SwingUtilities.invokeLater { updateImage() }
 
-	fun paintLast(gfx: Graphics?)
+	private fun paintLast(gfx: Graphics?)
 	{
 		val g = gfx as Graphics2D
 

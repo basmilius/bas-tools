@@ -9,7 +9,6 @@
 
 package com.basmilius.bastools.component.codeMap.renderer
 
-import com.basmilius.bastools.component.codeMap.CMClean
 import com.basmilius.bastools.component.codeMap.CMPixelsPerLine
 import com.basmilius.bastools.component.codeMap.CMWidth
 import com.basmilius.bastools.core.util.MathUtil.clamp
@@ -77,7 +76,7 @@ class MiniCode
 		return color
 	}
 
-	fun getLine(offset: Int): LineInfo
+	private fun getLine(offset: Int): LineInfo
 	{
 		if (this.lineEndings == null)
 			return NoLines
@@ -127,39 +126,6 @@ class MiniCode
 					indexMax = indexMid - 1
 				}
 				else -> return LineInfo(indexMid, lineEndings[indexMid - 1] + 1, clampedOffset)
-			}
-		}
-	}
-
-	private fun renderAccurate(x: Int, y: Int, char: Int, color: Int)
-	{
-		val topWeight = getTopWeight(char)
-		val bottomWeight = getBottomWeight(char)
-
-		if (topWeight == 0.0f && bottomWeight == 0.0f)
-			return
-
-		when (CMPixelsPerLine)
-		{
-			1 ->
-				this.setPixel(x, y + 1, color, ((topWeight + bottomWeight) / 2.0).toFloat())
-
-			2 ->
-			{
-				this.setPixel(x, y, color, topWeight * 0.5f)
-				this.setPixel(x, y + 1, color, bottomWeight)
-			}
-			3 ->
-			{
-				this.setPixel(x, y, color, topWeight * 0.3f)
-				this.setPixel(x, y + 1, color, ((topWeight + bottomWeight) / 2.0).toFloat())
-				this.setPixel(x, y + 2, color, bottomWeight * 0.7f)
-			}
-			4 ->
-			{
-				this.setPixel(x, y + 1, color, topWeight)
-				this.setPixel(x, y + 2, color, ((topWeight + bottomWeight) / 2.0).toFloat())
-				this.setPixel(x, y + 3, color, bottomWeight)
 			}
 		}
 	}
@@ -280,12 +246,7 @@ class MiniCode
 				}
 
 				if (0 <= x && x < this.image!!.width && 0 <= y && y + CMPixelsPerLine < this.image!!.height)
-				{
-					if (CMClean)
-						this.renderClean(x, y, text[i].toInt(), color)
-					else
-						this.renderAccurate(x, y, text[i].toInt(), color)
-				}
+					this.renderClean(x, y, text[i].toInt(), color)
 			}
 
 			lexer.advance()
@@ -293,7 +254,7 @@ class MiniCode
 		}
 	}
 
-	fun updateDimensions(text: String, folds: Folds)
+	private fun updateDimensions(text: String, folds: Folds)
 	{
 		var lineLength = 0    // The current line length
 		var longestLine = 1   // The longest line in the document
