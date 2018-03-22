@@ -30,7 +30,7 @@ class AllCompletionContributor: BaseCompletionContributor()
 	 */
 	init
 	{
-		this.extend(CompletionType.BASIC, FunctionCallAllArgumentsCompletionProvider())
+//		this.extend(CompletionType.BASIC, FunctionCallAllArgumentsCompletionProvider())
 		this.extend(CompletionType.BASIC, BasicFunctionCompletionProvider())
 	}
 

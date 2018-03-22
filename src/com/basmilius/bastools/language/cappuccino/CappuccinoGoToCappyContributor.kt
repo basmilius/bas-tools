@@ -51,7 +51,7 @@ class CappuccinoGoToCappyContributor: GotoDeclarationHandler
 			return null
 
 		val firstParameter = renderMethod.parameterList!!.parameters[0] as? StringLiteralExpression ?: return null
-		val templateName = firstParameter.contents.replace("@([a-z0-9]+)\\/".toRegex(), "/") // TODO(Bas): Add support for filesystem namespaces.
+		val templateName = firstParameter.contents.replace("@([a-z0-9]+)\\/".toRegex(), "") // TODO(Bas): Add support for filesystem namespaces.
 
 		val cappuccinoFiles = FilenameIndex.getAllFilesByExt(project, "cappy")
 				.filter { it.path.endsWith(templateName) }

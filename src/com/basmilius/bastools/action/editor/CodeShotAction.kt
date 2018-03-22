@@ -25,7 +25,7 @@ import java.awt.datatransfer.Transferable
  * Class CodeShotAction
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.action.editor
+ * @package com.basmilius.bastools.action.textEditor
  * @since 1.1.0
  */
 class CodeShotAction: AnAction("Code Shot"), ClipboardOwner

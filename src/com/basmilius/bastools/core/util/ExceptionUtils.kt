@@ -14,6 +14,8 @@ import com.intellij.openapi.progress.ProgressManager
 import com.intellij.openapi.progress.Task
 import java.util.concurrent.TimeUnit
 
+typealias Callback = () -> Unit
+
 /**
  * Object ExceptionUtils
  *
@@ -32,7 +34,7 @@ object ExceptionUtils
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	fun dontCare(func: () -> Unit)
+	fun dontCare(func: Callback)
 	{
 		try
 		{
@@ -51,7 +53,7 @@ object ExceptionUtils
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	fun executeIgnore(func: () -> Unit)
+	fun executeIgnore(func: Callback)
 	{
 		ExceptionUtils.executeIgnore(0, func)
 	}
@@ -65,7 +67,7 @@ object ExceptionUtils
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	private fun executeIgnore(delay: Int, func: () -> Unit)
+	private fun executeIgnore(delay: Int, func: Callback)
 	{
 		ProgressManager.getInstance().run(object: Task.Backgroundable(null, "Bas Tools Process")
 		{

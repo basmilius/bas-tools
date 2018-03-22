@@ -93,7 +93,7 @@
 	<actions>
 
 		<action id="BasTools.Main.Code.JsonArrange" icon="/icons/code_rearrange.png" class="com.basmilius.bastools.action.code.json.JsonRearrangePropertiesAction">
-			<add-to-group group-id="BasTools.Code"/>
+			<add-to-group group-id="BasTools.Code.ActualCodeTools"/>
 		</action>
 
 		<action id="BasTools.NewFile.Cappuccino" class="com.basmilius.bastools.action.code.CappuccinoNewFileAction">

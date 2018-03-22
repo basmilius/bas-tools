@@ -38,7 +38,7 @@ object EditorUtils
 	fun getCharAt(document: Document, offset: Int) = if (offset < document.textLength && offset >= 0) document.charsSequence[offset] else '\u0000'
 
 	/**
-	 * Inserts or replaces text in the editor.
+	 * Inserts or replaces text in the textEditor.
 	 *
 	 * @param editor  Editor instance.
 	 * @param project Project instance.

@@ -23,7 +23,7 @@ import com.intellij.ui.JBColor
  * Class ShowColorPickerAction
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.action.editor
+ * @package com.basmilius.bastools.action.textEditor
  * @since 1.0.0
  */
 class ShowColorPickerAction: AnAction("Show Color Picker")

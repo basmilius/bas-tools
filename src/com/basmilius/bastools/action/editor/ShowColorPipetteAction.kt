@@ -32,7 +32,7 @@ import java.awt.event.WindowListener
  * Class ShowColorPipetteAction
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.action.editor
+ * @package com.basmilius.bastools.action.textEditor
  * @since 1.0.0
  */
 class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Disposable, WindowListener

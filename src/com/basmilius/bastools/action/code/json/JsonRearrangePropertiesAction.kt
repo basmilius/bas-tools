@@ -35,7 +35,7 @@ class JsonRearrangePropertiesAction: AnAction("Rearrange JSON properties")
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.3.0
 	 */
-	override fun actionPerformed(aae: AnActionEvent) // TODO(Bas): Show editor hints if we cannot rearrange.
+	override fun actionPerformed(aae: AnActionEvent) // TODO(Bas): Show textEditor hints if we cannot rearrange.
 	{
 		val editor = aae.getData(LangDataKeys.EDITOR)
 		val file = aae.getData(LangDataKeys.PSI_FILE) ?: return

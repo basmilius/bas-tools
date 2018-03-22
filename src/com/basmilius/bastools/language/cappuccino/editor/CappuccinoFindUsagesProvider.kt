@@ -19,7 +19,7 @@ import com.intellij.psi.PsiNamedElement
  * Class CappuccinoFindUsagesProvider
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.language.cappuccino.editor
+ * @package com.basmilius.bastools.language.cappuccino.textEditor
  */
 class CappuccinoFindUsagesProvider: FindUsagesProvider
 {
@@ -28,7 +28,7 @@ class CappuccinoFindUsagesProvider: FindUsagesProvider
 	 * Companion Object CappuccinoFindUsagesProvider
 	 *
 	 * @author Bas Milius <bas@mili.us>
-	 * @package com.basmilius.bastools.language.cappuccino.editor
+	 * @package com.basmilius.bastools.language.cappuccino.textEditor
 	 */
 	companion object
 	{

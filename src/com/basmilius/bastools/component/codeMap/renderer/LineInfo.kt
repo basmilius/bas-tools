@@ -7,13 +7,18 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.action.editor
+package com.basmilius.bastools.component.codeMap.renderer
 
 /**
- * Class ShiftTabLeftAction
+ * Data Class LineInfo
+ *
+ * @constructor
+ * @param number Int
+ * @param begin Int
+ * @param end Int
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.action.textEditor
- * @since 1.1.0
+ * @package com.basmilius.bastools.component.codeMap.renderer
+ * @since 1.4.0
  */
-class ShiftTabLeftAction: ShiftTabAction(Orientation.LEFT)
+data class LineInfo(val number: Int, var begin: Int, var end: Int)

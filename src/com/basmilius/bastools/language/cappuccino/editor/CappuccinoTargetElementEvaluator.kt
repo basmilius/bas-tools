@@ -18,7 +18,7 @@ import com.intellij.psi.PsiReference
  * Class CappuccinoTargetElementEvaluator
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.language.cappuccino.editor
+ * @package com.basmilius.bastools.language.cappuccino.textEditor
  */
 class CappuccinoTargetElementEvaluator: TargetElementEvaluator
 {

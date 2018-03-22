@@ -69,7 +69,7 @@ class BasToolsFileEditorManagerListener: FileEditorManagerListener
 	}
 
 	/**
-	 * Gets the editor index.
+	 * Gets the textEditor index.
 	 *
 	 * @param window EditorWindow
 	 * @param composite EditorWithProviderComposite

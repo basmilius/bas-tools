@@ -67,7 +67,7 @@ class SassWatcherProjectComponent(project: Project): FileDocumentManagerListener
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 *
-	 * TODO(Bas): Find a way to get the current project and show an editor hint on error.
+	 * TODO(Bas): Find a way to get the current project and show an textEditor hint on error.
 	 */
 	override fun beforeDocumentSaving(document: Document)
 	{

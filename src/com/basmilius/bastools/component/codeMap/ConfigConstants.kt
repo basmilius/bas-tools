@@ -7,13 +7,9 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.action.editor
+package com.basmilius.bastools.component.codeMap
 
-/**
- * Class ShiftTabLeftAction
- *
- * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.action.textEditor
- * @since 1.1.0
- */
-class ShiftTabLeftAction: ShiftTabAction(Orientation.LEFT)
+const val CMClean = true
+const val CMDisabled = false
+const val CMPixelsPerLine = 2
+const val CMWidth = 120

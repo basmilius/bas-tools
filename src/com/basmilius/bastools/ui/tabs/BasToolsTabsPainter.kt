@@ -135,7 +135,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	}
 
 	/**
-	 * Gets the editor tabs.
+	 * Gets the textEditor tabs.
 	 *
 	 * @return JBEditorTabs
 	 *

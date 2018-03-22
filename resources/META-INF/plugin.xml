@@ -11,7 +11,7 @@
 		<![CDATA[For change notes, please go to the GitHub repository.]]>
 	</change-notes>
 
-	<idea-version since-build="181.3741.2"/>
+	<idea-version since-build="181.4203.513"/>
 
 	<depends>com.intellij.modules.lang</depends>
 	<depends>com.intellij.modules.platform</depends>
@@ -67,6 +67,10 @@
 			<implementation-class>com.basmilius.bastools.watcher.SassWatcherProjectComponent</implementation-class>
 		</component>
 
+		<component>
+			<implementation-class>com.basmilius.bastools.component.codeMap.CodeMapComponent</implementation-class>
+		</component>
+
 	</project-components>
 
 	<actions>
@@ -84,10 +88,6 @@
 
 			<group id="BasTools.Main.Code"/>
 
-			<action id="BasTools.Main.Action.Editor.CodeShot" class="com.basmilius.bastools.action.editor.CodeShotAction" text="Code Shot">
-				<keyboard-shortcut first-keystroke="ctrl NUMPAD5" keymap="$default"/>
-			</action>
-
 			<separator/>
 
 			<action id="BasTools.Action.About" class="com.basmilius.bastools.action.AboutAction" text="About Bas Tools" icon="/icons/bas_tools.png"/>
@@ -96,7 +96,16 @@
 		<group id="BasTools.Code" text="Code" popup="true" icon="/icons/code.png">
 			<add-to-group group-id="BasTools.Main.Code"/>
 			<add-to-group group-id="EditorPopupMenu" anchor="first"/>
+
+			<group id="BasTools.Code.ActualCodeTools"/>
+			<separator/>
+			<group id="BasTools.Code.OtherTools"/>
 		</group>
+
+		<action id="BasTools.Main.Action.Editor.CodeShot" class="com.basmilius.bastools.action.editor.CodeShotAction" text="Code Shot">
+			<add-to-group group-id="BasTools.Code.OtherTools"/>
+			<keyboard-shortcut first-keystroke="ctrl NUMPAD5" keymap="$default"/>
+		</action>
 
 		<group id="BasTools.PresenterMode" text="Presenter Mode" popup="true">
 			<add-to-group group-id="BasTools.Main.Code"/>

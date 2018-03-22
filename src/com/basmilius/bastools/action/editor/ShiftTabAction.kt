@@ -23,7 +23,7 @@ import javax.swing.SwingConstants
  * @param orientation Int
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.action.editor
+ * @package com.basmilius.bastools.action.textEditor
  * @since 1.1.0
  */
 abstract class ShiftTabAction(private val orientation: Orientation): DumbAwareAction("Shift Tab")
@@ -108,7 +108,7 @@ abstract class ShiftTabAction(private val orientation: Orientation): DumbAwareAc
 	 * Enum Class Orientation
 	 *
 	 * @author Bas Milius <bas@mili.us>
-	 * @package com.basmilius.bastools.action.editor.ShiftTabAction
+	 * @package com.basmilius.bastools.action.textEditor.ShiftTabAction
 	 * @since 1.1.0
 	 */
 	enum class Orientation
