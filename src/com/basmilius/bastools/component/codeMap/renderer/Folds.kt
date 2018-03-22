@@ -36,14 +36,13 @@ class Folds(allFolds: Array<FoldRegion>)
 	{
 		var i = 0
 
-		if (!folds.isEmpty())
-			allFolds.forEach {
-				if (!it.isExpanded)
-				{
-					folds[i++] = it.startOffset
-					folds[i++] = it.endOffset
-				}
+		allFolds.forEach {
+			if (!it.isExpanded)
+			{
+				folds[i++] = it.startOffset
+				folds[i++] = it.endOffset
 			}
+		}
 	}
 
 	/**
