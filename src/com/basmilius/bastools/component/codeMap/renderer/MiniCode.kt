@@ -54,6 +54,18 @@ class MiniCode
 
 	private var lineEndings: ArrayList<Int>? = null
 
+	/**
+	 * Gets the color for a {@see element}.
+	 *
+	 * @param element IElementType
+	 * @param hl SyntaxHighlighter
+	 * @param colorScheme EditorColorsScheme
+	 *
+	 * @return Int
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun getColorForElementType(element: IElementType, hl: SyntaxHighlighter, colorScheme: EditorColorsScheme): Int
 	{
 		var color = colorScheme.defaultForeground.rgb
@@ -76,6 +88,16 @@ class MiniCode
 		return color
 	}
 
+	/**
+	 * Gets a line at offset.
+	 *
+	 * @param offset Int
+	 *
+	 * @return LineInfo
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun getLine(offset: Int): LineInfo
 	{
 		if (this.lineEndings == null)
@@ -118,6 +140,7 @@ class MiniCode
 
 					indexMin = indexMid + 1
 				}
+
 				clampedOffset < value ->
 				{
 					if (lineEndings[indexMid - 1] < clampedOffset)
@@ -125,11 +148,23 @@ class MiniCode
 
 					indexMax = indexMid - 1
 				}
+
 				else -> return LineInfo(indexMid, lineEndings[indexMid - 1] + 1, clampedOffset)
 			}
 		}
 	}
 
+	/**
+	 * Renders a clean code sheet.
+	 *
+	 * @param x Int
+	 * @param y Int
+	 * @param char Int
+	 * @param color Int
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun renderClean(x: Int, y: Int, char: Int, color: Int)
 	{
 		val weight = when (char)
@@ -152,12 +187,14 @@ class MiniCode
 				this.setPixel(x, y, color, weight * 0.3f)
 				this.setPixel(x, y + 1, color, weight * 0.6f)
 			}
+
 			3 ->
 			{
 				this.setPixel(x, y, color, weight * 0.1f)
 				this.setPixel(x, y + 1, color, weight * 0.6f)
 				this.setPixel(x, y + 2, color, weight * 0.6f)
 			}
+
 			4 ->
 			{
 				this.setPixel(x, y + 1, color, weight * 0.6f)
@@ -167,6 +204,17 @@ class MiniCode
 		}
 	}
 
+	/**
+	 * Sets a pixel by X and Y.
+	 *
+	 * @param x Int
+	 * @param y Int
+	 * @param color Int
+	 * @param alpha Float
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun setPixel(x: Int, y: Int, color: Int, alpha: Float)
 	{
 		var a = alpha
@@ -185,6 +233,17 @@ class MiniCode
 		this.image!!.raster.setPixel(x, y, UnpackedColor)
 	}
 
+	/**
+	 * Updates the MiniCode map.
+	 *
+	 * @param text String
+	 * @param colorScheme EditorColorsScheme
+	 * @param highlighter SyntaxHighlighter
+	 * @param folds Folds
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	fun update(text: String, colorScheme: EditorColorsScheme, highlighter: SyntaxHighlighter, folds: Folds)
 	{
 		updateDimensions(text, folds)
@@ -241,6 +300,7 @@ class MiniCode
 						x = 0
 						y += CMPixelsPerLine
 					}
+
 					'\t' -> x += 4
 					else -> x += 1
 				}
@@ -254,11 +314,20 @@ class MiniCode
 		}
 	}
 
+	/**
+	 * Updates the code dimensions.
+	 *
+	 * @param text String
+	 * @param folds Folds
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun updateDimensions(text: String, folds: Folds)
 	{
-		var lineLength = 0    // The current line length
-		var longestLine = 1   // The longest line in the document
-		var lines = 1          // The total number of lines in the document
+		var lineLength = 0
+		var longestLine = 1
+		var lines = 1
 		var last = ' '
 		var ch: Char
 
@@ -304,15 +373,15 @@ class MiniCode
 			lineEndings.add(text.length - 1)
 
 		this.lineEndings = lineEndings
-		height = (lines + 1) * CMPixelsPerLine
+		this.height = (lines + 1) * CMPixelsPerLine
 
-		if (this.image != null && this.image!!.height >= height && this.image!!.width >= CMWidth)
+		if (this.image != null && this.image!!.height >= this.height && this.image!!.width >= CMWidth)
 			return
 
 		if (this.image != null)
 			this.image?.flush()
 
-		this.image = UIUtil.createImage(CMWidth, height + 100 * CMPixelsPerLine, BufferedImage.TYPE_4BYTE_ABGR)
+		this.image = UIUtil.createImage(CMWidth, this.height + 100 * CMPixelsPerLine, BufferedImage.TYPE_4BYTE_ABGR)
 	}
 
 }

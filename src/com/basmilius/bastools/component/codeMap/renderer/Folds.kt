@@ -27,7 +27,7 @@ class Folds(allFolds: Array<FoldRegion>)
 	private val folds = IntArray(allFolds.count { it.isExpanded } * 2)
 
 	/**
-	 * Folds Constructor.
+	 * Folds Initializer.
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0

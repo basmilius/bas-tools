@@ -9,6 +9,16 @@
 
 package com.basmilius.bastools.component.codeMap.renderer
 
+/**
+ * Gets the bottom weight of a character.
+ *
+ * @param c Int
+ *
+ * @return Float
+ *
+ * @author Bas Milius <bas@mili.us>
+ * @since 1.4.0
+ */
 fun getBottomWeight(c: Int): Float
 {
 	when (c)
@@ -113,6 +123,16 @@ fun getBottomWeight(c: Int): Float
 	}
 }
 
+/**
+ * Gets the top weight of a character.
+ *
+ * @param c Int
+ *
+ * @return Float
+ *
+ * @author Bas Milius <bas@mili.us>
+ * @since 1.4.0
+ */
 fun getTopWeight(c: Int): Float
 {
 	when (c)

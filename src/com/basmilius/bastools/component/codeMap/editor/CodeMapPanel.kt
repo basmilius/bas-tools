@@ -40,6 +40,12 @@ import javax.swing.SwingUtilities
 /**
  * Class CodeMapPanel
  *
+ * @constructor
+ * @param project Project
+ * @param textEditor TextEditor
+ * @param container JPanel
+ * @param runner TaskQueueRunner
+ *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component.codeMap.textEditor
  * @since 1.4.0
@@ -58,9 +64,21 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 	private val documentListener: DocumentListener
 	private val selectionListener: SelectionListener = SelectionListener { repaint() }
 
+	/**
+	 * Returns TRUE if code map should be disabled.
+	 *
+	 * @property isDisabled
+	 * @return Boolean
+	 */
 	private val isDisabled: Boolean
 		get() = CMDisabled
 
+	/**
+	 * CodeMapPanel Constructor.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	init
 	{
 		componentListener = object: ComponentAdapter()
@@ -84,19 +102,25 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 			}
 
 		}
-		this.textEditor.editor.document.addDocumentListener(documentListener)
 
+		this.textEditor.editor.document.addDocumentListener(documentListener)
 		this.textEditor.editor.scrollingModel.addVisibleAreaListener(this)
 		this.textEditor.editor.selectionModel.addSelectionListener(selectionListener)
 
-		updateSize()
-		updateImage()
+		this.updateSize()
+		this.updateImage()
 
-		isOpaque = false
-		layout = BorderLayout()
-		add(scrollbar)
+		this.isOpaque = false
+		this.layout = BorderLayout()
+		this.add(scrollbar)
 	}
 
+	/**
+	 * Updates the size.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun updateSize()
 	{
 		if (isDisabled)
@@ -110,6 +134,14 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 		}
 	}
 
+	/**
+	 * Gets or creates the code map.
+	 *
+	 * @return MiniCode?
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun getOrCreateMap(): MiniCode?
 	{
 		var map = mapRef.get()
@@ -123,6 +155,12 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 		return map
 	}
 
+	/**
+	 * Updates the image.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun updateImage()
 	{
 		if (this.isDisabled)
@@ -157,8 +195,22 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 		}
 	}
 
+	/**
+	 * Updates the image "soon".
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun updateImageSoon() = SwingUtilities.invokeLater { updateImage() }
 
+	/**
+	 * Paints last..?
+	 *
+	 * @param gfx Graphics?
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun paintLast(gfx: Graphics?)
 	{
 		val g = gfx as Graphics2D
@@ -170,6 +222,11 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 		this.scrollbar.paint(gfx)
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	override fun paint(gfx: Graphics?)
 	{
 		if (this.renderLock.locked)
@@ -199,10 +256,20 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 			g.drawImage(minimap.image, 0, 0, this.scrollstate.documentWidth, this.scrollstate.drawHeight, 0, this.scrollstate.visibleStart, this.scrollstate.documentWidth, this.scrollstate.visibleEnd, null)
 
 		this.paintSelections(gfx as Graphics2D)
-		gfx.drawImage(buf, 0, 0, null)
+		gfx.drawImage(this.buf, 0, 0, null)
 		this.scrollbar.paint(gfx)
 	}
 
+	/**
+	 * Paints selection.
+	 *
+	 * @param g Graphics2D
+	 * @param startByte Int
+	 * @param endByte Int
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun paintSelection(g: Graphics2D, startByte: Int, endByte: Int)
 	{
 		val start = this.textEditor.editor.offsetToVisualPosition(startByte)
@@ -230,6 +297,14 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 		}
 	}
 
+	/**
+	 * Paints selections.
+	 *
+	 * @param g Graphics2D
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun paintSelections(g: Graphics2D)
 	{
 		this.paintSelection(g, this.textEditor.editor.selectionModel.selectionStart, this.textEditor.editor.selectionModel.selectionEnd)
@@ -238,6 +313,11 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 			this.paintSelection(g, start, this.textEditor.editor.selectionModel.blockSelectionEnds[index])
 	}
 
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	override fun visibleAreaChanged(visibleAreaEvent: VisibleAreaEvent)
 	{
 		var currentFoldCount = 0
@@ -251,7 +331,7 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 		val end = this.scrollstate.documentHeight * visibleArea.height / this.textEditor.editor.contentComponent.height
 
 		this.scrollstate.setViewportArea(start, end)
-		this.scrollstate.setVisibleHeight(height)
+		this.scrollstate.setVisibleHeight(this.height)
 
 		if (currentFoldCount != this.lastFoldCount)
 			updateImage()
@@ -262,14 +342,22 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 		this.repaint()
 	}
 
+	/**
+	 * Invoked on close.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	fun onClose()
 	{
-		container.removeComponentListener(componentListener)
+		this.container.removeComponentListener(componentListener)
+
 		this.textEditor.editor.document.removeDocumentListener(documentListener)
 		this.textEditor.editor.selectionModel.removeSelectionListener(selectionListener)
-		remove(scrollbar)
 
-		mapRef.clear()
+		this.remove(scrollbar)
+
+		this.mapRef.clear()
 	}
 
 }

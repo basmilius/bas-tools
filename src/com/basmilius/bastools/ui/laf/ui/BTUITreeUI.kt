@@ -13,6 +13,7 @@ import com.basmilius.bastools.resource.Icons
 import com.intellij.openapi.util.Conditions
 import com.intellij.ui.JBColor
 import com.intellij.util.IconUtil
+import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.tree.WideSelectionTreeUI
 import java.awt.Color
 import java.awt.Graphics
@@ -41,7 +42,7 @@ class BTUITreeUI: WideSelectionTreeUI(true, Conditions.alwaysFalse())
 	{
 		super.installUI(c)
 
-		this.tree.rowHeight = 24
+		this.tree.rowHeight = JBUI.scale(24)
 	}
 
 	/**

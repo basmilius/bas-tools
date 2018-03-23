@@ -21,6 +21,10 @@ import javax.swing.JPanel
 /**
  * Class EditorPanelInjector
  *
+ * @constructor
+ * @param project Project
+ * @param queue TaskQueueRunner
+ *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.component.codeMap.textEditor
  * @since 1.4.0
@@ -28,20 +32,52 @@ import javax.swing.JPanel
 class EditorPanelInjector(private val project: Project, private val queue: TaskQueueRunner): FileEditorManagerListener
 {
 
-	private val panels = HashMap<FileEditor, CodeMapPanel>()
+	private val panels = HashMap<TextEditor, CodeMapPanel>()
 
-	override fun fileOpened(fem: FileEditorManager, virtualFile: VirtualFile)
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	override fun fileClosed(fem: FileEditorManager, virtualFile: VirtualFile)
 	{
-		val editors = fem.allEditors
-
-		for (editor in editors)
-			if (editor is TextEditor)
-				inject(editor)
-
-		freeUnusedPanels(fem)
+		this.freeUnusedPanels(fem)
 	}
 
-	private fun getPanel(editor: FileEditor): JPanel?
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	override fun fileOpened(fem: FileEditorManager, virtualFile: VirtualFile)
+	{
+		fem.allEditors
+				.mapNotNull { it as? TextEditor }
+				.forEach { this.inject(it) }
+
+		this.freeUnusedPanels(fem)
+	}
+
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	override fun selectionChanged(fileEditorManagerEvent: FileEditorManagerEvent)
+	{
+	}
+
+	/**
+	 * Gets a panel.
+	 *
+	 * @param editor TextEditor
+	 *
+	 * @return JPanel?
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun getPanel(editor: TextEditor): JPanel?
 	{
 		try
 		{
@@ -69,6 +105,14 @@ class EditorPanelInjector(private val project: Project, private val queue: TaskQ
 		}
 	}
 
+	/**
+	 * Injects the codemap panel.
+	 *
+	 * @param editor TextEditor
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun inject(editor: TextEditor)
 	{
 		val panel = this.getPanel(editor) ?: return
@@ -83,7 +127,15 @@ class EditorPanelInjector(private val project: Project, private val queue: TaskQ
 		}
 	}
 
-	private fun uninject(editor: FileEditor)
+	/**
+	 * Uninjects the codemap panel.
+	 *
+	 * @param editor TextEditor
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun uninject(editor: TextEditor)
 	{
 		val panel = getPanel(editor) ?: return
 		val innerLayout = panel.layout as BorderLayout
@@ -97,35 +149,31 @@ class EditorPanelInjector(private val project: Project, private val queue: TaskQ
 			panel.remove(leftPanel)
 	}
 
-	override fun fileClosed(fem: FileEditorManager, virtualFile: VirtualFile)
-	{
-		freeUnusedPanels(fem)
-	}
-
+	/**
+	 * Frees unused panels.
+	 *
+	 * @param fem FileEditorManager
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	private fun freeUnusedPanels(fem: FileEditorManager)
 	{
-		val unseen = HashSet(panels.keys)
+		val unseen = HashSet(this.panels.keys)
 
 		for (editor in fem.allEditors)
-		{
 			if (unseen.contains(editor))
-			{
 				unseen.remove(editor)
-			}
-		}
 
 		var panel: CodeMapPanel
 		for (editor in unseen)
 		{
 			panel = panels[editor]!!
 			panel.onClose()
-			uninject(editor)
-			panels.remove(editor)
-		}
-	}
 
-	override fun selectionChanged(fileEditorManagerEvent: FileEditorManagerEvent)
-	{
+			this.uninject(editor)
+			this.panels.remove(editor)
+		}
 	}
 
 }
