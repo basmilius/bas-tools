@@ -28,6 +28,8 @@ object Icons
 	val CappuccinoFile = IconLoader.getIcon("/icons/cappuccino_file.png")
 	val ChevronDown = IconLoader.getIcon("/icons/chevron_down.png")
 	val ChevronRight = IconLoader.getIcon("/icons/chevron_right.png")
+	val Close = IconLoader.getIcon("/icons/close.png")
+	val CloseHover = IconLoader.getIcon("/icons/close_hover.png")
 	val IdeeMedia = IconLoader.getIcon("/icons/ideemedia.png")
 	val IdentityPlugin = IconLoader.getIcon("/icons/identity_plugin.png")
 	val IdentityTheme = IconLoader.getIcon("/icons/identity_theme.png")

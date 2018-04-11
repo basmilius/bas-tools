@@ -11,17 +11,23 @@ package com.basmilius.bastools.ui.laf
 
 import com.basmilius.bastools.core.util.StaticPatcher
 import com.basmilius.bastools.resource.Icons
-import com.basmilius.bastools.ui.laf.border.BTUIButtonBorder
 import com.basmilius.bastools.ui.laf.border.BTUIMenuItemBorder
 import com.basmilius.bastools.ui.laf.icon.BTUIDefaultMenuArrowIcon
 import com.basmilius.bastools.ui.laf.ui.*
+import com.intellij.icons.AllIcons
 import com.intellij.ide.navigationToolbar.ui.NavBarUIManager
 import com.intellij.ide.ui.laf.darcula.DarculaLaf
+import com.intellij.ui.AnActionButton
 import com.intellij.ui.JBColor
+import com.intellij.ui.tabs.TabsUtil
 import com.intellij.util.IconUtil
 import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
+import javassist.ClassClassPath
+import javassist.ClassPool
+import javassist.expr.ExprEditor
+import javassist.expr.FieldAccess
 import javax.swing.UIDefaults
 import javax.swing.UIManager
 
@@ -64,7 +70,42 @@ class BasToolsLaf: DarculaLaf()
 	 */
 	fun patchUI()
 	{
+		this.patchEditorTabs()
 		this.patchUIUtil()
+	}
+
+	/**
+	 * Patches the editor tabs.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun patchEditorTabs()
+	{
+		try
+		{
+			val classPool = ClassPool(true)
+			classPool.insertClassPath(ClassClassPath(AnActionButton::class.java))
+
+			val classSimpleColoredComponent = classPool.get("com.intellij.ui.SimpleColoredComponent")
+
+			classSimpleColoredComponent.instrument(object: ExprEditor()
+			{
+
+				override fun edit(f: FieldAccess)
+				{
+					if (f.fieldName == "myIpad")
+						f.replace("\$_ = com.intellij.util.ui.JBUI.insets(2, 0, 3, 6);")
+				}
+
+			})
+
+			classSimpleColoredComponent.toClass()
+		}
+		catch (err: Exception)
+		{
+			err.printStackTrace()
+		}
 	}
 
 	/**
@@ -76,6 +117,14 @@ class BasToolsLaf: DarculaLaf()
 	private fun patchUIUtil()
 	{
 		val color = UIManager.getColor("Panel.background")
+
+		StaticPatcher.setFinalStatic(AllIcons.Actions::class, "Close", Icons.Close)
+		StaticPatcher.setFinalStatic(AllIcons.Actions::class, "CloseNew", Icons.Close)
+		StaticPatcher.setFinalStatic(AllIcons.Actions::class, "CloseHovered", Icons.CloseHover)
+		StaticPatcher.setFinalStatic(AllIcons.Actions::class, "CloseNewHovered", Icons.CloseHover)
+
+		StaticPatcher.setFinalStatic(TabsUtil::class, "TAB_VERTICAL_PADDING", 9)
+		StaticPatcher.setFinalStatic(TabsUtil::class, "TABS_BORDER", 3)
 
 		StaticPatcher.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", color)
 		StaticPatcher.setFinalStatic(UIUtil::class, "BORDER_COLOR", color)
@@ -117,26 +166,26 @@ class BasToolsLaf: DarculaLaf()
 	{
 		super.loadDefaults(defaults)
 
-		this.uiDefaultsButton(defaults)
+//		this.uiDefaultsButton(defaults)
 		this.uiDefaultsMenu(defaults)
 		this.uiDefaultsStatusBar(defaults)
 		this.uiDefaultsTabbedPane(defaults)
 		this.uiDefaultsTree(defaults)
 	}
 
-	/**
-	 * Adds new Button default UI values.
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.4.0
-	 */
-	private fun uiDefaultsButton(defaults: UIDefaults)
-	{
+//	/**
+//	 * Adds new Button default UI values.
+//	 *
+//	 * @author Bas Milius <bas@mili.us>
+//	 * @since 1.4.0
+//	 */
+//	private fun uiDefaultsButton(defaults: UIDefaults)
+//	{
 //		defaults["Button.border"] = BTUIButtonBorder()
 //		defaults["ButtonUI"] = BTUIButtonUI::class.qualifiedName
 //		defaults["ToggleButtonUI"] = BTUIButtonUI::class.qualifiedName
 //		defaults[BTUIButtonUI::class.qualifiedName] = BTUIButtonUIProxy::class.java
-	}
+//	}
 
 	/**
 	 * Adds new Menu/MenuItem default UI values.

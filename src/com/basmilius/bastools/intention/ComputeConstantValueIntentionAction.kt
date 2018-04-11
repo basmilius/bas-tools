@@ -9,10 +9,10 @@
 
 package com.basmilius.bastools.intention
 
+import com.basmilius.bastools.core.util.ApplicationUtils
 import com.basmilius.math.Expression
 import com.intellij.codeInsight.hint.HintManager
 import com.intellij.codeInsight.intention.IntentionAction
-import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiElement
@@ -176,7 +176,9 @@ class ComputeConstantValueIntentionAction: IntentionAction
 							if (result.endsWith(".0"))
 								result = result.replace(".0", "")
 
-							ApplicationManager.getApplication().runWriteAction { editor.document.replaceString(expression!!.textOffset, expression!!.textOffset + expressionText.length, result) }
+							ApplicationUtils.runWriteAction {
+								editor.document.replaceString(expression.textOffset, expressionText.length, result)
+							}
 						}
 					}
 					catch (err: Exception)

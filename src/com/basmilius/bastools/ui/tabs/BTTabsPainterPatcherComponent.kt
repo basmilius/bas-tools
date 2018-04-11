@@ -13,42 +13,34 @@ import com.intellij.openapi.application.ex.ApplicationManagerEx
 import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent
 import com.intellij.openapi.fileEditor.FileEditorManagerListener
-import com.intellij.ui.JBColor
 import com.intellij.ui.tabs.JBTabsPosition
+import com.intellij.ui.tabs.TabInfo
 import com.intellij.ui.tabs.impl.JBEditorTabs
 import com.intellij.ui.tabs.impl.JBEditorTabsPainter
 import com.intellij.util.ReflectionUtil
 import com.intellij.util.messages.MessageBusConnection
 import com.intellij.util.ui.UIUtil
+import javassist.ClassClassPath
+import javassist.ClassPool
+import javassist.expr.ExprEditor
+import javassist.expr.MethodCall
 import net.sf.cglib.proxy.Enhancer
 import net.sf.cglib.proxy.MethodInterceptor
-import java.awt.*
+import java.awt.Component
+import java.awt.Graphics2D
+import java.awt.Rectangle
 
 /**
- * Class BasToolsTabsPainterPatcherComponent
+ * Class BTTabsPainterPatcherComponent
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.tabs
  * @since 1.0.0
  */
-class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerListener
+class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerListener
 {
 
-	/**
-	 * Companion Object BasToolsTabsPainterPatcherComponent
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @package com.basmilius.bastools.ui.tabs
-	 * @since 1.0.0
-	 */
-	companion object
-	{
-
-		val BackgroundColor = JBColor(Color(45, 49, 53), Color(45, 49, 53))
-
-	}
-
-	private var connection: MessageBusConnection? = null
+	private lateinit var connection: MessageBusConnection
 
 	/**
 	 * {@inheritDoc}
@@ -59,7 +51,39 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	override fun initComponent()
 	{
 		this.connection = ApplicationManagerEx.getApplicationEx().messageBus.connect()
-		this.connection!!.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, this)
+		this.connection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, this)
+
+		try
+		{
+			val classPool = ClassPool(true)
+			classPool.insertClassPath(ClassClassPath(TabInfo::class.java))
+
+			val classTabLabel = classPool.get("com.intellij.ui.tabs.impl.TabLabel")
+
+			val getInsetsMethod = classTabLabel.getDeclaredMethod("getInsets")
+			val getPreferredSizeMethod = classTabLabel.getDeclaredMethod("getPreferredSize")
+
+			getInsetsMethod.setBody("{ return com.intellij.util.ui.JBUI.insets(0, 9, 0, 6); }")
+
+			getPreferredSizeMethod.instrument(object: ExprEditor()
+			{
+
+				override fun edit(call: MethodCall)
+				{
+					if (call.className != "com.intellij.ui.tabs.TabsUtil" || call.methodName != "getTabsHeight")
+						return
+
+					call.replace("{ \$_ = com.intellij.util.ui.JBUI.scale(30); }")
+				}
+
+			})
+
+			classTabLabel.toClass()
+		}
+		catch (err: Exception)
+		{
+			err.printStackTrace()
+		}
 	}
 
 	/**
@@ -70,7 +94,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	 */
 	override fun disposeComponent()
 	{
-		this.connection!!.disconnect()
+		this.connection.disconnect()
 	}
 
 	/**
@@ -100,38 +124,39 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	/**
 	 * Patches the painter using reflection.
 	 *
-	 * @param component Tabs component.
+	 * @param tabs Tabs component.
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	private fun patchPainter(component: JBEditorTabs)
+	private fun patchPainter(tabs: JBEditorTabs)
 	{
-		val painter = ReflectionUtil.getField(JBEditorTabs::class.java, component, JBEditorTabsPainter::class.java, "myDarkPainter")
+		val painter = ReflectionUtil.getField(JBEditorTabs::class.java, tabs, JBEditorTabsPainter::class.java, "myDarkPainter")
 
-		if (painter is BasToolsTabsPainter)
+		if (painter is BTTabsPainter)
 			return
 
-		val tabsPainter = BasToolsTabsPainter(component)
-		val proxy = Enhancer.create(BasToolsTabsPainter::class.java, MethodInterceptor { _, method, objects, _ ->
+		val tabsPainter = BTTabsPainter(tabs)
+		val proxy = Enhancer.create(BTTabsPainter::class.java, MethodInterceptor { _, method, objects, _ ->
 			var result = method.invoke(tabsPainter, *objects)
 
 			if (method.name == "paintSelectionAndBorder")
-				this@BasToolsTabsPainterPatcherComponent.paintSelectionAndBorder(objects, tabsPainter)
+				this@BTTabsPainterPatcherComponent.paintSelectionAndBorder(objects, tabsPainter)
 			else if (method.name == "getEmptySpaceColor")
 				result = UIUtil.getPanelBackground()
 
 			result
-		}) as BasToolsTabsPainter
+		}) as BTTabsPainter
 
-		ReflectionUtil.setField(JBEditorTabs::class.java, component, JBEditorTabsPainter::class.java, "myDarkPainter", proxy)
+		// TODO(Bas): Create an own ReflectionUtil implementation to omit .java for class params.
+		ReflectionUtil.setField(JBEditorTabs::class.java, tabs, JBEditorTabsPainter::class.java, "myDarkPainter", proxy)
 	}
 
 	/**
 	 * Paints the selection and border of a task.
 	 *
 	 * @param objects Array<Any>
-	 * @param painter BasToolsTabsPainter
+	 * @param painter BTTabsPainter
 	 *
 	 * @throws ClassNotFoundException
 	 * @throws NoSuchFieldException
@@ -141,7 +166,7 @@ class BasToolsTabsPainterPatcherComponent: ApplicationComponent, FileEditorManag
 	 * @since 1.0.0
 	 */
 	@Throws(ClassNotFoundException::class, NoSuchFieldException::class, IllegalAccessException::class)
-	private fun paintSelectionAndBorder(objects: Array<Any>, painter: BasToolsTabsPainter)
+	private fun paintSelectionAndBorder(objects: Array<Any>, painter: BTTabsPainter)
 	{
 		val g = objects[0] as Graphics2D
 		val rect = objects[1] as Rectangle

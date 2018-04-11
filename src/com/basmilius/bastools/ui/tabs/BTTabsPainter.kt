@@ -12,23 +12,42 @@ package com.basmilius.bastools.ui.tabs
 import com.intellij.ui.JBColor
 import com.intellij.ui.tabs.impl.DefaultEditorTabsPainter
 import com.intellij.ui.tabs.impl.JBEditorTabs
-import com.intellij.util.ui.UIUtil
+import com.intellij.util.ui.JBUI
+import java.awt.BasicStroke
 import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.Rectangle
 
 /**
- * Class BasToolsTabsPainter
+ * Open Class BTTabsPainter
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.tabs
  * @since 1.0.0
  */
-open class BasToolsTabsPainter: DefaultEditorTabsPainter
+open class BTTabsPainter: DefaultEditorTabsPainter
 {
 
+	private fun Int.scale() = JBUI.scale(this)
+
 	/**
-	 * BasToolsTabsPainter Constructor.
+	 * Companion Object BTTabsPainter
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @package com.basmilius.bastools.ui.tabs
+	 * @since 1.4.0
+	 */
+	companion object
+	{
+
+		val BackgroundColor = JBColor(Color(40, 44, 47), Color(40, 44, 47))
+		val FocusColor = JBColor(Color(32, 33, 36), Color(32, 33, 36))
+		val OutlineColor = JBColor(Color(56, 58, 63), Color(56, 58, 63))
+
+	}
+
+	/**
+	 * BTTabsPainter Constructor.
 	 *
 	 * Suppress unused, because we need this in Reflection.
 	 *
@@ -39,7 +58,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	constructor(): super(null)
 
 	/**
-	 * BasToolsTabsPainter Constructor.
+	 * BTTabsPainter Constructor.
 	 *
 	 * @param tabs Editor tabs.
 	 *
@@ -56,8 +75,12 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun doPaintInactive(g: Graphics2D, effectiveBounds: Rectangle?, x: Int, y: Int, w: Int, h: Int, color: Color?, row: Int, column: Int, vertical: Boolean)
 	{
-		g.color = color ?: this.defaultTabColor
-		g.fillRect(x - 1, y - 1, w + 2, h + 2)
+		g.color = color ?: BackgroundColor
+		g.fillRect(x - 1.scale(), y - 1.scale(), w + 2.scale(), h + 2.scale())
+
+		g.color = OutlineColor
+		g.stroke = BasicStroke(1f)
+		g.drawLine(x, y + h, x + w, y + h)
 	}
 
 	/**
@@ -66,10 +89,14 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	override fun doPaintBackground(g: Graphics2D, clip: Rectangle, vertical: Boolean, rectangle: Rectangle?)
+	override fun doPaintBackground(g: Graphics2D, clip: Rectangle, vertical: Boolean, rectangle: Rectangle)
 	{
-		g.color = this.defaultTabColor
-		g.fillRect(rectangle!!.x - 1, rectangle.y - 1, rectangle.width + 2, rectangle.height + 2)
+		g.color = BackgroundColor
+		g.fillRect(rectangle.x - 1.scale(), rectangle.y - 1.scale(), rectangle.width + 2.scale(), rectangle.height + 2.scale())
+
+		g.color = OutlineColor
+		g.stroke = BasicStroke(1f)
+		g.drawLine(rectangle.x, rectangle.y + rectangle.height, rectangle.x + rectangle.width, rectangle.y + rectangle.height)
 	}
 
 	/**
@@ -86,8 +113,14 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 */
 	fun fillSelectionAndBorder(g: Graphics2D, x: Int, y: Int, width: Int, height: Int)
 	{
-		g.color = JBColor(Color(38, 42, 45), Color(38, 42, 45))
-		g.fillRect(x - 1, y - 1, width + 2, height + 2)
+		g.color = FocusColor
+		g.fillRect(x, y, width, height + 1.scale())
+
+		g.color = OutlineColor
+		g.stroke = BasicStroke(1f)
+		g.drawLine(x, y + height, x, y)
+		g.drawLine(x, y, x + width, y)
+		g.drawLine(x + width, y + height, x + width, y)
 	}
 
 	/**
@@ -98,7 +131,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun getBackgroundColor(): Color
 	{
-		return BasToolsTabsPainterPatcherComponent.BackgroundColor
+		return BackgroundColor
 	}
 
 	/**
@@ -109,7 +142,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun getEmptySpaceColor(): Color
 	{
-		return UIUtil.getPanelBackground()
+		return BackgroundColor
 	}
 
 	/**
@@ -120,7 +153,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun getDefaultTabColor(): Color
 	{
-		return this.backgroundColor
+		return BackgroundColor
 	}
 
 	/**
@@ -131,7 +164,7 @@ open class BasToolsTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun getInactiveMaskColor(): Color
 	{
-		return this.backgroundColor
+		return BackgroundColor
 	}
 
 	/**

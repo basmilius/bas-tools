@@ -33,7 +33,6 @@
 		<bundledColorScheme id="Bas Settings" path="./colors/Bas Settings"/>
 		<bundledInspectionProfile id="Bas Settings" path="./inspection/Bas Settings"/>
 
-		<editorTabColorProvider implementation="com.basmilius.bastools.ui.tabs.BasToolsEditorTabColorProvider"/>
 		<iconProvider implementation="com.basmilius.bastools.provider.BasToolsIconProvider"/>
 
 		<toolWindow id="Color Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.ColorsToolWindow"/>
@@ -48,11 +47,7 @@
 		</component>
 
 		<component>
-			<implementation-class>com.basmilius.bastools.ui.tabs.BasToolsTabHighlighterComponent</implementation-class>
-		</component>
-
-		<component>
-			<implementation-class>com.basmilius.bastools.ui.tabs.BasToolsTabsPainterPatcherComponent</implementation-class>
+			<implementation-class>com.basmilius.bastools.ui.tabs.BTTabsPainterPatcherComponent</implementation-class>
 		</component>
 
 		<component>

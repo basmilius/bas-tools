@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.component.codeMap.editor
 
-import com.basmilius.bastools.ui.tabs.BasToolsTabsPainterPatcherComponent
+import com.basmilius.bastools.ui.tabs.BTTabsPainter
 import com.intellij.openapi.fileEditor.TextEditor
 import com.intellij.ui.JBColor
 import java.awt.AlphaComposite
@@ -37,7 +37,7 @@ class Scrollbar(val textEditor: TextEditor, private val scrollState: ScrollState
 	private var mouseStart: Int = 0
 	private val defaultCursor = Cursor(Cursor.DEFAULT_CURSOR)
 	private var dragging = false
-	private var visibleRectColor: JBColor = BasToolsTabsPainterPatcherComponent.BackgroundColor
+	private var visibleRectColor: JBColor = BTTabsPainter.BackgroundColor
 
 	/**
 	 * Scrollbar Initializer.
