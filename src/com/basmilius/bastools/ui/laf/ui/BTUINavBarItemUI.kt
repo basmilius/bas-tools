@@ -18,10 +18,7 @@ import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
 import gnu.trove.THashMap
-import java.awt.BasicStroke
-import java.awt.Color
-import java.awt.Graphics2D
-import java.awt.RenderingHints
+import java.awt.*
 import java.awt.geom.Path2D
 import java.awt.image.BufferedImage
 
@@ -196,8 +193,8 @@ class BTUINavBarItemUI: DarculaNavBarUI()
 		{
 			graphics.translate(0, 0)
 			graphics.color = light
-			graphics.drawLine(0, 0, decorationOffset, height / 2)
-			graphics.drawLine(decorationOffset, height / 2, 0, height)
+			graphics.drawLine(0, JBUI.scale(9), decorationOffset - JBUI.scale(1), height / 2)
+			graphics.drawLine(decorationOffset - JBUI.scale(1), height / 2, 0, height - JBUI.scale(9))
 		}
 
 		/**
@@ -209,6 +206,13 @@ class BTUINavBarItemUI: DarculaNavBarUI()
 		private fun getDecorationOffset() = JBUI.scale(6)
 
 	}
+
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	override fun getElementIpad(isPopupElement: Boolean) = JBUI.insets(4, 0)!!
 
 	/**
 	 * {@inheritdoc}
@@ -264,6 +268,6 @@ class BTUINavBarItemUI: DarculaNavBarUI()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getElementPadding(): JBInsets = JBUI.insets(3, 7, 3, 9)
+	override fun getElementPadding(): JBInsets = JBUI.insets(6, 7, 6, 9)
 
 }

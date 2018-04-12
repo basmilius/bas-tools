@@ -40,9 +40,9 @@ open class BTTabsPainter: DefaultEditorTabsPainter
 	companion object
 	{
 
-		val BackgroundColor = JBColor(Color(40, 44, 47), Color(40, 44, 47))
+		val BackgroundColor = JBColor(Color(25, 26, 28), Color(25, 26, 28))
 		val FocusColor = JBColor(Color(32, 33, 36), Color(32, 33, 36))
-		val OutlineColor = JBColor(Color(56, 58, 63), Color(56, 58, 63))
+		val OutlineColor = JBColor(Color(42, 43, 49), Color(42, 43, 49))
 
 	}
 
@@ -117,9 +117,9 @@ open class BTTabsPainter: DefaultEditorTabsPainter
 		g.fillRect(x, y, width, height + 1.scale())
 
 		g.color = OutlineColor
-		g.stroke = BasicStroke(1f)
-		g.drawLine(x, y + height, x, y)
-		g.drawLine(x, y, x + width, y)
+		g.stroke = BasicStroke(JBUI.scale(1f))
+		g.drawLine(x - 1.scale(), y + height, x - 1.scale(), y)
+		g.drawLine(x - 1.scale(), y, x + width, y)
 		g.drawLine(x + width, y + height, x + width, y)
 	}
 

@@ -60,10 +60,24 @@ class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerList
 
 			val classTabLabel = classPool.get("com.intellij.ui.tabs.impl.TabLabel")
 
+			val createLabelMethod = classTabLabel.getDeclaredMethod("createLabel")
 			val getInsetsMethod = classTabLabel.getDeclaredMethod("getInsets")
 			val getPreferredSizeMethod = classTabLabel.getDeclaredMethod("getPreferredSize")
 
-			getInsetsMethod.setBody("{ return com.intellij.util.ui.JBUI.insets(0, 9, 0, 6); }")
+			createLabelMethod.instrument(object: ExprEditor()
+			{
+
+				override fun edit(call: MethodCall)
+				{
+					if (call.className != "com.intellij.util.ui.JBUI" || call.methodName != "emptyInsets")
+						return
+
+					call.replace("{ \$_ = com.intellij.util.ui.JBUI.insets(0, 0, 0, 6); }")
+				}
+
+			})
+
+			getInsetsMethod.setBody("{ return com.intellij.util.ui.JBUI.insets(0, 9); }")
 
 			getPreferredSizeMethod.instrument(object: ExprEditor()
 			{

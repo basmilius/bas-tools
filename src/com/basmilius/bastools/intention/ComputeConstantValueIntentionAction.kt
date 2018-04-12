@@ -157,9 +157,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 				}
 
 				if (expression?.parent != null && expression.parent is ParenthesizedExpression)
-				{
 					expression = expression.parent
-				}
 
 				val expressionText = expression!!.text
 
@@ -177,7 +175,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 								result = result.replace(".0", "")
 
 							ApplicationUtils.runWriteAction {
-								editor.document.replaceString(expression.textOffset, expressionText.length, result)
+								editor.document.replaceString(expression!!.textOffset, expressionText.length, result)
 							}
 						}
 					}

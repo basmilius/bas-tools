@@ -39,6 +39,17 @@ class BasToolsComponent: ApplicationComponent
 	{
 
 		/**
+		 * BasToolsComponent Initializer.
+		 *
+		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.4.0
+		 */
+		init
+		{
+			BasToolsLaf.patch()
+		}
+
+		/**
 		 * Gets a list with registred frameworks.
 		 *
 		 * @author Bas Milius <bas@mili.us>
@@ -73,10 +84,7 @@ class BasToolsComponent: ApplicationComponent
 	{
 		try
 		{
-			val laf = BasToolsLaf()
-			laf.patchUI()
-
-			UIManager.setLookAndFeel(laf)
+			UIManager.setLookAndFeel(BasToolsLaf())
 
 			JBColor.setDark(true)
 			IconLoader.setUseDarkIcons(true)

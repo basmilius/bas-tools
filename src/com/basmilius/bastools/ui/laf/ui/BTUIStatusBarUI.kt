@@ -37,9 +37,9 @@ class BTUIStatusBarUI: StatusBarUI()
 	companion object
 	{
 
-		private val MinSize = Dimension(100, 23)
+		private val MinSize = Dimension(100, 30)
 
-		private val MaxSize = Dimension(Int.MAX_VALUE, 23)
+		private val MaxSize = Dimension(Int.MAX_VALUE, 30)
 
 		private val painter = Painter()
 
@@ -103,7 +103,7 @@ class BTUIStatusBarUI: StatusBarUI()
 		{
 			val g2d = graphics.create() as Graphics2D
 			val background = UIUtil.getPanelBackground()
-			val border = JBColor(Color(49, 54, 58), Color(49, 54, 58))
+			val border = JBColor(Color(50, 52, 56), Color(50, 52, 56))
 
 			g2d.color = background
 			g2d.fillRect(0, 0, width, height)

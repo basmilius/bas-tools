@@ -7,21 +7,20 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.ui.laf.border
+package com.basmilius.bastools.ui.laf.patch
 
-import com.intellij.ide.ui.laf.darcula.ui.DarculaMenuItemBorder
-import com.intellij.util.ui.JBUI
-import java.awt.Component
-import java.awt.Insets
+import com.basmilius.bastools.core.util.StaticPatcher
+import com.basmilius.bastools.ui.laf.ui.BTUINavBarItemUI
+import com.intellij.ide.navigationToolbar.ui.NavBarUIManager
 
 /**
- * Class BTUIMenuItemBorder
+ * Class NavBarUIManagerPatch
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.ui.laf.border
+ * @package com.basmilius.bastools.ui.laf.patch
  * @since 1.4.0
  */
-class BTUIMenuItemBorder: DarculaMenuItemBorder()
+class NavBarUIManagerPatch: IUIPatch
 {
 
 	/**
@@ -29,9 +28,9 @@ class BTUIMenuItemBorder: DarculaMenuItemBorder()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getBorderInsets(c: Component): Insets
+	override fun patch()
 	{
-		return JBUI.insets(4, 6)
+		StaticPatcher.setFinalStatic(NavBarUIManager::class, "DARCULA", BTUINavBarItemUI())
 	}
 
 }

@@ -21,6 +21,7 @@ import java.awt.Insets
 import java.awt.Rectangle
 import javax.swing.JComponent
 import javax.swing.JViewport
+import javax.swing.UIManager
 import javax.swing.tree.TreePath
 
 /**
@@ -42,7 +43,7 @@ class BTUITreeUI: WideSelectionTreeUI(true, Conditions.alwaysFalse())
 	{
 		super.installUI(c)
 
-		this.tree.rowHeight = JBUI.scale(24)
+		this.tree.rowHeight = JBUI.scale(30)
 	}
 
 	/**
@@ -50,14 +51,14 @@ class BTUITreeUI: WideSelectionTreeUI(true, Conditions.alwaysFalse())
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getCollapsedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, 0.75), 3)
+	override fun getCollapsedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, 0.75), 5)
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getExpandedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, 0.75), 3)
+	override fun getExpandedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, 0.75), 5)
 
 	/**
 	 * {@inheritdoc}
@@ -78,9 +79,7 @@ class BTUITreeUI: WideSelectionTreeUI(true, Conditions.alwaysFalse())
 
 			if (selected)
 			{
-				val color = JBColor(Color(58, 6, 65), Color(58, 61, 65))
-
-				leafGraphics.color = color
+				leafGraphics.color = UIManager.getColor("bastools.selectionBackground")
 				leafGraphics.fillRect(offsetX, bounds.y, containerWidth, bounds.height)
 			}
 
