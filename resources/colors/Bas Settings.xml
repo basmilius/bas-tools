@@ -25,7 +25,8 @@
 		<option name="LINE_NUMBERS_COLOR" value="727d83"/>
 		<option name="READONLY_BACKGROUND" value="202124"/>
 		<option name="READONLY_FRAGMENT_BACKGROUND" value="202124"/>
-		<option name="RIGHT_MARGIN_COLOR" value=""/>
+		<option name="METHOD_SEPARATORS_COLOR" value="202124"/>
+		<option name="RIGHT_MARGIN_COLOR" value="202124"/>
 		<option name="SELECTED_INDENT_GUIDE" value="41484d"/>
 		<option name="SELECTED_TEARLINE_COLOR" value="41484d"/>
 		<option name="SELECTION_BACKGROUND" value="243a49"/>

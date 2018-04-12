@@ -61,7 +61,7 @@ class ToolWindowPatch: IUIPatch
 				if (call.className != "com.intellij.ui.tabs.TabsUtil" || call.methodName != "getTabsHeight")
 					return
 
-				call.replace("\$_ = com.intellij.util.ui.JBUI.scale(30);")
+				call.replace("\$_ = com.intellij.util.ui.JBUI.scale(31);")
 			}
 
 		})
