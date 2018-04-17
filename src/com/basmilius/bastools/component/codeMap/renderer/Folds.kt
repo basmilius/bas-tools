@@ -24,7 +24,7 @@ import com.intellij.openapi.editor.FoldRegion
 class Folds(allFolds: Array<FoldRegion>)
 {
 
-	private val folds = IntArray(allFolds.count { it.isExpanded } * 2)
+	private val folds = IntArray(allFolds.count { !it.isExpanded } * 2)
 
 	/**
 	 * Folds Initializer.

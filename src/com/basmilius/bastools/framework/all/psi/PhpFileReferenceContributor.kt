@@ -11,6 +11,7 @@ package com.basmilius.bastools.framework.all.psi
 
 import com.basmilius.bastools.core.util.FileUtils
 import com.basmilius.bastools.core.util.PhpUtils
+import com.basmilius.bastools.core.util.PlatformPatternsUtils
 import com.basmilius.bastools.framework.all.completion.BasicFunctionCompletionProvider
 import com.intellij.patterns.PlatformPatterns
 import com.intellij.psi.*
@@ -40,7 +41,7 @@ class PhpFileReferenceContributor: PsiReferenceContributor()
 	 */
 	override fun registerReferenceProviders(registrar: PsiReferenceRegistrar)
 	{
-		registrar.registerReferenceProvider(PlatformPatterns.psiElement(StringLiteralExpression::class.java).withLanguage(PhpLanguage.INSTANCE), ReferenceProvider())
+		registrar.registerReferenceProvider(PlatformPatternsUtils.psiElement(StringLiteralExpression::class).withLanguage(PhpLanguage.INSTANCE), ReferenceProvider())
 	}
 
 	/**

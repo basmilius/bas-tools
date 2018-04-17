@@ -9,6 +9,7 @@
 
 package com.basmilius.bastools.ui.tabs
 
+import com.basmilius.bastools.core.util.ReflectionUtils
 import com.intellij.openapi.application.ex.ApplicationManagerEx
 import com.intellij.openapi.components.ApplicationComponent
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent
@@ -69,25 +70,30 @@ class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerList
 
 				override fun edit(call: MethodCall)
 				{
-					if (call.className != "com.intellij.util.ui.JBUI" || call.methodName != "emptyInsets")
-						return
+					val methodCall = "${call.className}::${call.methodName}"
 
-					call.replace("{ \$_ = com.intellij.util.ui.JBUI.insets(0, 0, 0, 6); }")
+					when(methodCall)
+					{
+						"com.intellij.util.ui.JBUI::emptyInsets" -> call.replace("{ \$_ = com.intellij.util.ui.JBUI.insets(0, 3, 5, 3); }")
+						"com.intellij.ui.SimpleColoredComponent::setIconTextGap" -> call.replace("{ \$1 = com.intellij.util.ui.JBUI.scale(9); \$_ = \$proceed($$); }")
+					}
 				}
 
 			})
 
-			getInsetsMethod.setBody("{ return com.intellij.util.ui.JBUI.insets(0, 9); }")
+			getInsetsMethod.setBody("{ return com.intellij.util.ui.JBUI.insets(0, 6); }")
 
 			getPreferredSizeMethod.instrument(object: ExprEditor()
 			{
 
 				override fun edit(call: MethodCall)
 				{
-					if (call.className != "com.intellij.ui.tabs.TabsUtil" || call.methodName != "getTabsHeight")
-						return
+					val methodCall = "${call.className}::${call.methodName}"
 
-					call.replace("{ \$_ = com.intellij.util.ui.JBUI.scale(30); }")
+					when(methodCall)
+					{
+						"com.intellij.ui.tabs.TabsUtil::getTabsHeight" -> call.replace("{ \$_ = com.intellij.util.ui.JBUI.scale(30); }")
+					}
 				}
 
 			})
@@ -162,8 +168,7 @@ class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerList
 			result
 		}) as BTTabsPainter
 
-		// TODO(Bas): Create an own ReflectionUtil implementation to omit .java for class params.
-		ReflectionUtil.setField(JBEditorTabs::class.java, tabs, JBEditorTabsPainter::class.java, "myDarkPainter", proxy)
+		ReflectionUtils.setField(JBEditorTabs::class, tabs, JBEditorTabsPainter::class, "myDarkPainter", proxy)
 	}
 
 	/**

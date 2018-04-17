@@ -9,7 +9,8 @@
 
 package com.basmilius.bastools.intention
 
-import com.basmilius.bastools.core.util.ApplicationUtils
+import com.basmilius.bastools.core.util.EditorUtils
+import com.basmilius.bastools.core.util.PsiUtils
 import com.basmilius.math.Expression
 import com.intellij.codeInsight.hint.HintManager
 import com.intellij.codeInsight.intention.IntentionAction
@@ -17,7 +18,6 @@ import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFile
-import com.intellij.psi.util.PsiTreeUtil
 import com.jetbrains.php.lang.psi.elements.ParenthesizedExpression
 import com.jetbrains.php.lang.psi.elements.impl.AssignmentExpressionImpl
 import com.jetbrains.php.lang.psi.elements.impl.BinaryExpressionImpl
@@ -125,70 +125,67 @@ class ComputeConstantValueIntentionAction: IntentionAction
 			val caret = caretModel.allCarets[i]
 			val psi = file.findElementAt(caret.offset)
 			var canWalk = true
-			var expression: PsiElement? = PsiTreeUtil.getParentOfType(psi, BinaryExpressionImpl::class.java)
+			var expression: PsiElement? = PsiUtils.getParentOfType(psi, BinaryExpressionImpl::class)
 
 			if (expression == null)
-				expression = PsiTreeUtil.getPrevSiblingOfType(psi, BinaryExpressionImpl::class.java)
+				expression = PsiUtils.getPrevSiblingOfType(psi, BinaryExpressionImpl::class)
 
 			if (expression == null)
 			{
-				expression = PsiTreeUtil.getPrevSiblingOfType(psi, AssignmentExpressionImpl::class.java)
-				expression = PsiTreeUtil.findChildOfType(expression, BinaryExpressionImpl::class.java)
+				expression = PsiUtils.getPrevSiblingOfType(psi, AssignmentExpressionImpl::class)
+				expression = PsiUtils.findChildOfType(expression, BinaryExpressionImpl::class)
 			}
 
-			if (expression != null)
-			{
-				while (canWalk)
-				{
-					val parent = PsiTreeUtil.getParentOfType(expression, BinaryExpressionImpl::class.java)
-					if (parent != null)
-					{
-						if (parent is ConcatenationExpressionImpl && expression is BinaryExpressionImpl)
-						{
-							canWalk = false
-							continue
-						}
+			if (expression == null && !run)
+				return false
 
-						expression = parent
+			while (canWalk)
+			{
+				val parent = PsiUtils.getParentOfType(expression, BinaryExpressionImpl::class)
+				if (parent != null)
+				{
+					if (parent is ConcatenationExpressionImpl && expression is BinaryExpressionImpl)
+					{
+						canWalk = false
 						continue
 					}
 
-					canWalk = false
+					expression = parent
+					continue
 				}
 
-				if (expression?.parent != null && expression.parent is ParenthesizedExpression)
-					expression = expression.parent
+				canWalk = false
+			}
 
-				val expressionText = expression!!.text
+			if (expression?.parent != null && expression.parent is ParenthesizedExpression)
+				expression = expression.parent
 
-				if (run)
+			val expressionText = expression!!.text
+
+			if (run)
+			{
+				try
 				{
-					try
+					val expressionCalculator = Expression(expressionText)
+					val computed = expressionCalculator.calculate().toString()
+
+					if (computed != "NaN")
 					{
-						val expressionCalculator = Expression(expressionText)
-						val computed = expressionCalculator.calculate().toString()
+						var result = computed
+						if (result.endsWith(".0"))
+							result = result.replace(".0", "")
 
-						if (computed != "NaN")
-						{
-							var result = computed
-							if (result.endsWith(".0"))
-								result = result.replace(".0", "")
-
-							ApplicationUtils.runWriteAction {
-								editor.document.replaceString(expression!!.textOffset, expressionText.length, result)
-							}
+						EditorUtils.writeAction(editor.project!!) {
+							editor.document.replaceString(expression!!.textOffset, expression!!.textOffset + expressionText.length, result)
 						}
 					}
-					catch (err: Exception)
-					{
-					}
 				}
-				else if (expressionText.isEmpty())
+				catch (err: Exception)
 				{
-					return false
+					err.printStackTrace()
 				}
 			}
-			else if (!run)
+			else if (expressionText.isEmpty())
 			{
 				return false
 			}

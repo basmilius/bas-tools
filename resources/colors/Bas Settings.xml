@@ -1,31 +1,38 @@
 <scheme name="Bas Settings" version="142" parent_scheme="Darcula">
-	<option name="FONT_SCALE" value="2.0"/>
+	<option name="FONT_SCALE" value="1.0"/>
 	<metaInfo>
-		<property name="created">2018-04-11T14:28:40</property>
+		<property name="created">2018-04-17T09:14:29</property>
 		<property name="ide">PhpStorm</property>
 		<property name="ideVersion">2018.1.1.0.0</property>
-		<property name="modified">2018-04-11T14:28:42</property>
+		<property name="modified">2018-04-17T09:14:32</property>
 		<property name="originalScheme">_@user_Bas Settings</property>
 	</metaInfo>
-	<option name="LINE_SPACING" value="1.1"/>
+	<option name="LINE_SPACING" value="1.2"/>
 	<font>
 		<option name="EDITOR_FONT_NAME" value="Operator Mono Medium"/>
-		<option name="EDITOR_FONT_SIZE" value="28"/>
+		<option name="EDITOR_FONT_SIZE" value="14"/>
 	</font>
 	<font>
 		<option name="EDITOR_FONT_NAME" value="Source Code Pro"/>
-		<option name="EDITOR_FONT_SIZE" value="28"/>
+		<option name="EDITOR_FONT_SIZE" value="14"/>
 	</font>
-	<option name="CONSOLE_FONT_NAME" value="Monospaced"/>
+	<console-font>
+		<option name="EDITOR_FONT_NAME" value="Operator Mono Medium"/>
+		<option name="EDITOR_FONT_SIZE" value="14"/>
+	</console-font>
+	<console-font>
+		<option name="EDITOR_FONT_NAME" value="Source Code Pro"/>
+		<option name="EDITOR_FONT_SIZE" value="14"/>
+	</console-font>
 	<colors>
 		<option name="CARET_COLOR" value="7c7f81"/>
 		<option name="CARET_ROW_COLOR" value="242528"/>
 		<option name="GUTTER_BACKGROUND" value="202124"/>
 		<option name="INDENT_GUIDE" value="31363a"/>
 		<option name="LINE_NUMBERS_COLOR" value="727d83"/>
+		<option name="METHOD_SEPARATORS_COLOR" value="202124"/>
 		<option name="READONLY_BACKGROUND" value="202124"/>
 		<option name="READONLY_FRAGMENT_BACKGROUND" value="202124"/>
-		<option name="METHOD_SEPARATORS_COLOR" value="202124"/>
 		<option name="RIGHT_MARGIN_COLOR" value="202124"/>
 		<option name="SELECTED_INDENT_GUIDE" value="41484d"/>
 		<option name="SELECTED_TEARLINE_COLOR" value="41484d"/>
@@ -293,7 +300,7 @@
 		</option>
 		<option name="TODO_DEFAULT_ATTRIBUTES">
 			<value>
-				<option name="FOREGROUND" value="b84592"/>
+				<option name="FOREGROUND" value="307791"/>
 				<option name="FONT_TYPE" value="2"/>
 			</value>
 		</option>

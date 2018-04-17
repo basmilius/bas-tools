@@ -51,14 +51,14 @@ class BTUITreeUI: WideSelectionTreeUI(true, Conditions.alwaysFalse())
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getCollapsedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, 0.75), 5)
+	override fun getCollapsedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, 0.8), 5)
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getExpandedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, 0.75), 5)
+	override fun getExpandedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, 0.8), 5)
 
 	/**
 	 * {@inheritdoc}

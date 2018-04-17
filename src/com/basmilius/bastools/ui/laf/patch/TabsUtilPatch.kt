@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.ui.laf.patch
 
-import com.basmilius.bastools.core.util.StaticPatcher
+import com.basmilius.bastools.core.util.ReflectionUtils
 import com.intellij.ui.tabs.TabsUtil
 
 /**
@@ -29,8 +29,8 @@ class TabsUtilPatch: IUIPatch
 	 */
 	override fun patch()
 	{
-		StaticPatcher.setFinalStatic(TabsUtil::class, "TAB_VERTICAL_PADDING", 9)
-		StaticPatcher.setFinalStatic(TabsUtil::class, "TABS_BORDER", 3)
+		ReflectionUtils.setFinalStatic(TabsUtil::class, "TAB_VERTICAL_PADDING", 9)
+		ReflectionUtils.setFinalStatic(TabsUtil::class, "TABS_BORDER", 3)
 	}
 
 }

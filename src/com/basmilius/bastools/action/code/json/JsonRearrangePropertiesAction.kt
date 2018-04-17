@@ -10,14 +10,11 @@
 package com.basmilius.bastools.action.code.json
 
 import com.basmilius.bastools.core.util.EditorUtils
-import com.intellij.json.psi.JsonElement
-import com.intellij.json.psi.JsonFile
-import com.intellij.json.psi.JsonObject
-import com.intellij.json.psi.JsonProperty
+import com.basmilius.bastools.core.util.PsiUtils
+import com.intellij.json.psi.*
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.LangDataKeys
-import com.intellij.psi.util.PsiTreeUtil
 
 /**
  * Class JsonRearrangePropertiesAction
@@ -35,14 +32,14 @@ class JsonRearrangePropertiesAction: AnAction("Rearrange JSON properties")
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.3.0
 	 */
-	override fun actionPerformed(aae: AnActionEvent) // TODO(Bas): Show textEditor hints if we cannot rearrange.
+	override fun actionPerformed(aae: AnActionEvent)
 	{
 		val editor = aae.getData(LangDataKeys.EDITOR)
 		val file = aae.getData(LangDataKeys.PSI_FILE) ?: return
 
 		if (editor != null && editor.selectionModel.hasSelection())
 		{
-			val selectedPsiTree = PsiTreeUtil.findElementOfClassAtOffset(file, editor.selectionModel.selectionStart, JsonElement::class.java, false) as? JsonObject ?: return
+			val selectedPsiTree = PsiUtils.findElementOfClassAtOffset(file, editor.selectionModel.selectionStart, JsonElement::class, false) as? JsonObject ?: return
 
 			EditorUtils.writeAction(file.project, file) {
 				this.rearrange(selectedPsiTree)
@@ -50,7 +47,7 @@ class JsonRearrangePropertiesAction: AnAction("Rearrange JSON properties")
 		}
 		else
 		{
-			val objects = PsiTreeUtil.findChildrenOfType(file, JsonObject::class.java)
+			val objects = PsiUtils.findChildrenOfType(file, JsonObject::class)
 
 			if (objects.isEmpty())
 				return
@@ -71,7 +68,7 @@ class JsonRearrangePropertiesAction: AnAction("Rearrange JSON properties")
 	 */
 	private fun rearrange(obj: JsonObject)
 	{
-		val properties = PsiTreeUtil.getChildrenOfType(obj, JsonProperty::class.java) ?: return
+		val properties = PsiUtils.getChildrenOfType(obj, JsonProperty::class) ?: return
 
 		if (properties.isEmpty())
 			return
@@ -83,9 +80,15 @@ class JsonRearrangePropertiesAction: AnAction("Rearrange JSON properties")
 		for (i in 0 until properties.size)
 		{
 			val prop = arrangedProperties[i]
+			val value = prop.value
 
-			if (prop.value is JsonObject)
-				this.rearrange(prop.value as JsonObject)
+			if (value is JsonArray)
+				value.valueList
+						.mapNotNull { it as? JsonObject }
+						.forEach { this.rearrange(it) }
+
+			if (value is JsonObject)
+				this.rearrange(value)
 
 			obj.children.elementAt(obj.children.indexOf(properties[i])).replace(prop)
 		}

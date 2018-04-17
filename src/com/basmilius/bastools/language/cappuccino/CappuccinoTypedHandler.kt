@@ -11,6 +11,7 @@ package com.basmilius.bastools.language.cappuccino
 
 import com.basmilius.bastools.core.util.EditorUtils
 import com.basmilius.bastools.language.cappuccino.formatter.CappuccinoFormatterOptions
+import com.intellij.application.options.CodeStyle
 import com.intellij.codeInsight.editorActions.TypedHandlerDelegate
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.EditorModificationUtil
@@ -18,7 +19,6 @@ import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiFile
-import com.intellij.psi.codeStyle.CodeStyleSettingsManager
 
 /**
  * Class CappuccinoTypedHandler
@@ -81,7 +81,7 @@ class CappuccinoTypedHandler: TypedHandlerDelegate()
 		 */
 		fun isWhitespaceRequired(project: Project, char: Char): Boolean
 		{
-			val settings = CodeStyleSettingsManager.getInstance(project).currentSettings
+			val settings = CodeStyle.getSettings(project)
 			val options = settings.getCustomSettings(CappuccinoFormatterOptions::class.java)
 
 			if (options == null || options !is CappuccinoFormatterOptions)

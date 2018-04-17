@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.ui.laf.patch
 
-import com.basmilius.bastools.core.util.StaticPatcher
+import com.basmilius.bastools.core.util.ReflectionUtils
 import com.basmilius.bastools.resource.Icons
 import com.intellij.icons.AllIcons
 
@@ -30,10 +30,10 @@ class IconPatch: IUIPatch
 	 */
 	override fun patch()
 	{
-		StaticPatcher.setFinalStatic(AllIcons.Actions::class, "Close", Icons.Close)
-		StaticPatcher.setFinalStatic(AllIcons.Actions::class, "CloseNew", Icons.Close)
-		StaticPatcher.setFinalStatic(AllIcons.Actions::class, "CloseHovered", Icons.CloseHover)
-		StaticPatcher.setFinalStatic(AllIcons.Actions::class, "CloseNewHovered", Icons.CloseHover)
+		ReflectionUtils.setFinalStatic(AllIcons.Actions::class, "Close", Icons.Close)
+		ReflectionUtils.setFinalStatic(AllIcons.Actions::class, "CloseNew", Icons.Close)
+		ReflectionUtils.setFinalStatic(AllIcons.Actions::class, "CloseHovered", Icons.CloseHover)
+		ReflectionUtils.setFinalStatic(AllIcons.Actions::class, "CloseNewHovered", Icons.CloseHover)
 	}
 
 }

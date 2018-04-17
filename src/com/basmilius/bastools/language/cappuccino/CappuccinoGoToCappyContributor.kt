@@ -9,13 +9,13 @@
 
 package com.basmilius.bastools.language.cappuccino
 
+import com.basmilius.bastools.core.util.PsiUtils
 import com.intellij.codeInsight.navigation.actions.GotoDeclarationHandler
 import com.intellij.openapi.actionSystem.DataContext
 import com.intellij.openapi.editor.Editor
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiManager
 import com.intellij.psi.search.FilenameIndex
-import com.intellij.psi.util.PsiTreeUtil
 import com.jetbrains.php.lang.psi.elements.MethodReference
 import com.jetbrains.php.lang.psi.elements.StringLiteralExpression
 
@@ -42,7 +42,7 @@ class CappuccinoGoToCappyContributor: GotoDeclarationHandler
 
 		val project = editor.project ?: return null
 
-		val renderMethod = PsiTreeUtil.getContextOfType(sourceElement, MethodReference::class.java) ?: return null
+		val renderMethod = PsiUtils.getContextOfType(sourceElement, MethodReference::class) ?: return null
 
 		if (renderMethod.name != "render")
 			return null
@@ -51,7 +51,9 @@ class CappuccinoGoToCappyContributor: GotoDeclarationHandler
 			return null
 
 		val firstParameter = renderMethod.parameterList!!.parameters[0] as? StringLiteralExpression ?: return null
-		val templateName = firstParameter.contents.replace("@([a-z0-9]+)\\/".toRegex(), "") // TODO(Bas): Add support for filesystem namespaces.
+
+		// TODO(Bas): Add support for filesystem namespaces.
+		val templateName = firstParameter.contents.replace("@([a-z0-9]+)\\/".toRegex(), "")
 
 		val cappuccinoFiles = FilenameIndex.getAllFilesByExt(project, "cappy")
 				.filter { it.path.endsWith(templateName) }

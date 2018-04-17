@@ -9,38 +9,36 @@
 
 package com.basmilius.bastools.core.util
 
+import com.intellij.util.ReflectionUtil
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
 import kotlin.reflect.KClass
 
 /**
- * Object StaticPatcher
+ * Object ReflectionUtils
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.core.util
- * @since 1.2.0
+ * @since 1.4.0
  */
-object StaticPatcher
+object ReflectionUtils
 {
 
 	/**
-	 * Sets a field value.
+	 * Sets a field using reflection.
+	 *
+	 * @param clazz KClass<*>
+	 * @param instance Any
+	 * @param fieldType KClass<T>?
+	 * @param fieldName String
+	 * @param value T
 	 *
 	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.2.0
+	 * @since 1.4.0
 	 */
-	fun setFieldValue(obj: Any, fieldName: String, value: Any)
+	fun <T: Any> setField(clazz: KClass<*>, instance: Any, fieldType: KClass<T>?, fieldName: String, value: T)
 	{
-		try
-		{
-			val field = obj.javaClass.getDeclaredField(fieldName)
-			field.isAccessible = true
-			field.set(obj, value)
-		}
-		catch (err: Exception)
-		{
-			err.printStackTrace()
-		}
+		ReflectionUtil.setField(clazz.java, instance, fieldType?.java, fieldName, value)
 	}
 
 	/**
@@ -49,7 +47,7 @@ object StaticPatcher
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.2.0
 	 */
-	fun setFinalStatic (cls: KClass<*>, fieldName: String, newValue: Any)
+	fun setFinalStatic(cls: KClass<*>, fieldName: String, newValue: Any)
 	{
 		setFinalStatic(cls.java, fieldName, newValue)
 	}
@@ -60,7 +58,7 @@ object StaticPatcher
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.2.0
 	 */
-	fun setFinalStatic(cls: Class<*>, fieldName: String, newValue: Any)
+	private fun setFinalStatic(cls: Class<*>, fieldName: String, newValue: Any)
 	{
 		val fields = cls.declaredFields
 
@@ -79,7 +77,7 @@ object StaticPatcher
 	 * @since 1.2.0
 	 */
 	@Throws(Exception::class)
-	fun setFinalStatic(field: Field, newValue: Any)
+	private fun setFinalStatic(field: Field, newValue: Any)
 	{
 		field.isAccessible = true
 

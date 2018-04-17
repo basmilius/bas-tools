@@ -7,8 +7,16 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.component.codeMap
+package com.basmilius.bastools.config
 
-const val CMDisabled = false
-const val CMPixelsPerLine = 2
-const val CMWidth = 90
+import com.intellij.openapi.Disposable
+import javax.swing.JComponent
+
+interface IBTConfigUI: Disposable
+{
+
+	fun initialize()
+
+	fun getComponent(): JComponent
+
+}

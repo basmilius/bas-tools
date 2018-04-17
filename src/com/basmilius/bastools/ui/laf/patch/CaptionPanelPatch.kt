@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.ui.laf.patch
 
-import com.basmilius.bastools.core.util.StaticPatcher
+import com.basmilius.bastools.core.util.ReflectionUtils
 import com.basmilius.bastools.ui.tabs.BTTabsPainter
 import com.intellij.ui.CaptionPanel
 import com.intellij.ui.JBColor
@@ -45,10 +45,17 @@ class CaptionPanelPatch: IUIPatch
 		{
 			val getBorderInsetsMethod = classPopupBorderBaseBorder.getDeclaredMethod("getBorderInsets")
 
-			getBorderInsetsMethod.setBody("{ return com.intellij.util.ui.JBUI.insets(9, 12); }")
+			getBorderInsetsMethod.setBody("{ return com.intellij.util.ui.JBUI.insets(6, 9); }")
 
 			classPopupBorderBaseBorder.toClass()
 		}
+
+		val classSimpleColoredComponent = classPool.get("com.intellij.ui.SimpleColoredComponent")
+		val constructorMethodSimpleColoredComponent = classSimpleColoredComponent.getDeclaredConstructor(arrayOf())
+
+		constructorMethodSimpleColoredComponent.insertAfter("this.myIconTextGap = com.intellij.util.ui.JBUI.scale(6);")
+
+		classSimpleColoredComponent.toClass()
 
 		val classTitlePanel = classPool.get("com.intellij.ui.TitlePanel")
 		val constructorMethod = classTitlePanel.getDeclaredConstructor(arrayOf(
@@ -66,7 +73,6 @@ class CaptionPanelPatch: IUIPatch
 				when (methodCall)
 				{
 					"com.intellij.util.ui.JBUI\$Borders::empty" -> call.replace("{ \$1 = 6; \$2 = 12; \$3 = 12; \$4 = 12; \$_ = \$proceed($$); }")
-					//"com.intellij.util.ui.JBUI\$Fonts::label" -> call.replace("{ \$1 = 18; \$_ = \$proceed($$); }")
 					"javax.swing.JLabel::setHorizontalAlignment" -> call.replace("{ \$1 = javax.swing.SwingConstants.LEFT; \$_ = \$proceed($$); }")
 				}
 			}
@@ -75,16 +81,16 @@ class CaptionPanelPatch: IUIPatch
 
 		classTitlePanel.toClass()
 
-		StaticPatcher.setFinalStatic(JBColor::class, "GRAY", BTTabsPainter.OutlineColor)
-		StaticPatcher.setFinalStatic(JBColor::class, "LIGHT_GRAY", BTTabsPainter.OutlineColor)
+		ReflectionUtils.setFinalStatic(JBColor::class, "GRAY", BTTabsPainter.OutlineColor)
+		ReflectionUtils.setFinalStatic(JBColor::class, "LIGHT_GRAY", BTTabsPainter.OutlineColor)
 
-		StaticPatcher.setFinalStatic(CaptionPanel::class, "CNT_ACTIVE_BORDER_COLOR", BTTabsPainter.OutlineColor)
-		StaticPatcher.setFinalStatic(CaptionPanel::class, "TOP_FLICK_ACTIVE", BTTabsPainter.BackgroundColor)
-		StaticPatcher.setFinalStatic(CaptionPanel::class, "TOP_FLICK_PASSIVE", BTTabsPainter.BackgroundColor)
-		StaticPatcher.setFinalStatic(CaptionPanel::class, "BOTTOM_FLICK_ACTIVE", BTTabsPainter.OutlineColor)
-		StaticPatcher.setFinalStatic(CaptionPanel::class, "BOTTOM_FLICK_PASSIVE", BTTabsPainter.OutlineColor)
-		StaticPatcher.setFinalStatic(CaptionPanel::class, "CNT_ACTIVE_COLOR", BTTabsPainter.BackgroundColor)
-		StaticPatcher.setFinalStatic(CaptionPanel::class, "BND_ACTIVE_COLOR", BTTabsPainter.BackgroundColor)
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "CNT_ACTIVE_BORDER_COLOR", BTTabsPainter.OutlineColor)
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "TOP_FLICK_ACTIVE", BTTabsPainter.BackgroundColor)
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "TOP_FLICK_PASSIVE", BTTabsPainter.BackgroundColor)
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "BOTTOM_FLICK_ACTIVE", BTTabsPainter.OutlineColor)
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "BOTTOM_FLICK_PASSIVE", BTTabsPainter.OutlineColor)
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "CNT_ACTIVE_COLOR", BTTabsPainter.BackgroundColor)
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "BND_ACTIVE_COLOR", BTTabsPainter.BackgroundColor)
 	}
 
 }

@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.ui.laf.patch
 
-import com.basmilius.bastools.core.util.StaticPatcher
+import com.basmilius.bastools.core.util.ReflectionUtils
 import com.basmilius.bastools.ui.tabs.BTTabsPainter
 import com.intellij.ui.JBColor
 import com.intellij.util.ui.UIUtil
@@ -34,19 +34,19 @@ class UIUtilPatch: IUIPatch
 	{
 		val panelBackgroundColor = UIManager.getColor("Panel.background")
 
-		StaticPatcher.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", panelBackgroundColor)
-		StaticPatcher.setFinalStatic(UIUtil::class, "BORDER_COLOR", panelBackgroundColor)
-		StaticPatcher.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_FOREGROUND_COLOR", panelBackgroundColor)
+		ReflectionUtils.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", panelBackgroundColor)
+		ReflectionUtils.setFinalStatic(UIUtil::class, "BORDER_COLOR", panelBackgroundColor)
+		ReflectionUtils.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_FOREGROUND_COLOR", panelBackgroundColor)
 
-		StaticPatcher.setFinalStatic(UIUtil::class, "BORDER_COLOR", JBColor(0xff0000, 0xff0000))
-		StaticPatcher.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", JBColor(0x2c3134, 0x2c3134))
+		ReflectionUtils.setFinalStatic(UIUtil::class, "BORDER_COLOR", JBColor(0xff0000, 0xff0000))
+		ReflectionUtils.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", JBColor(0x2c3134, 0x2c3134))
 
-		StaticPatcher.setFinalStatic(UIUtil::class, "SIDE_PANEL_BACKGROUND", JBColor(0x292d30, 0x292d30))
+		ReflectionUtils.setFinalStatic(UIUtil::class, "SIDE_PANEL_BACKGROUND", JBColor(0x292d30, 0x292d30))
 
-		StaticPatcher.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_FOREGROUND_COLOR", JBColor(0x2c2d32, 0x2c2d32))
-		StaticPatcher.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_BACKGROUND_COLOR", JBColor(0x2c2d32, 0x2c2d32))
+		ReflectionUtils.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_FOREGROUND_COLOR", JBColor(0x2c2d32, 0x2c2d32))
+		ReflectionUtils.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_BACKGROUND_COLOR", JBColor(0x2c2d32, 0x2c2d32))
 
-		StaticPatcher.setFinalStatic(UIUtil::class, "SIDE_PANEL_BACKGROUND", BTTabsPainter.FocusColor)
+		ReflectionUtils.setFinalStatic(UIUtil::class, "SIDE_PANEL_BACKGROUND", BTTabsPainter.FocusColor)
 	}
 
 }

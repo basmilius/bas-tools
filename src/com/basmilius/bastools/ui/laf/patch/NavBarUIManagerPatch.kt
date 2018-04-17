@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.ui.laf.patch
 
-import com.basmilius.bastools.core.util.StaticPatcher
+import com.basmilius.bastools.core.util.ReflectionUtils
 import com.basmilius.bastools.ui.laf.ui.BTUINavBarItemUI
 import com.intellij.ide.navigationToolbar.ui.NavBarUIManager
 
@@ -30,7 +30,7 @@ class NavBarUIManagerPatch: IUIPatch
 	 */
 	override fun patch()
 	{
-		StaticPatcher.setFinalStatic(NavBarUIManager::class, "DARCULA", BTUINavBarItemUI())
+		ReflectionUtils.setFinalStatic(NavBarUIManager::class, "DARCULA", BTUINavBarItemUI())
 	}
 
 }

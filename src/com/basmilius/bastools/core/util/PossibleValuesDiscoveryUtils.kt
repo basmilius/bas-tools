@@ -10,7 +10,6 @@
 package com.basmilius.bastools.core.util
 
 import com.intellij.psi.PsiElement
-import com.intellij.psi.util.PsiTreeUtil
 import com.jetbrains.php.lang.psi.elements.*
 import org.jetbrains.annotations.NotNull
 
@@ -89,7 +88,7 @@ object PossibleValuesDiscoveryUtils
 		}
 
 		val body = ExpressionSemanticUtils.getGroupStatement(callable)
-		for (expression in PsiTreeUtil.findChildrenOfType(body, AssignmentExpression::class.java))
+		for (expression in PsiUtils.findChildrenOfType(body, AssignmentExpression::class))
 		{
 			if (expression is SelfAssignmentExpression)
 				continue
@@ -172,7 +171,7 @@ object PossibleValuesDiscoveryUtils
 		if (callable != null)
 		{
 			val body = ExpressionSemanticUtils.getGroupStatement(callable)
-			for (expression in PsiTreeUtil.findChildrenOfType(body, AssignmentExpression::class.java))
+			for (expression in PsiUtils.findChildrenOfType(body, AssignmentExpression::class))
 			{
 				if (expression is SelfAssignmentExpression)
 					continue
