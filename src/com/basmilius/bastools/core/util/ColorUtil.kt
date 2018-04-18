@@ -192,6 +192,18 @@ object ColorUtil
 	fun Color.toJBColor() = JBColor(this, this)
 
 	/**
+	 * Returns a new {@see Color} with {@see alpha}.
+	 *
+	 * @param alpha Int
+	 *
+	 * @return Color
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun Color.withAlpha(alpha: Int) = Color(this.red, this.green, this.blue, alpha)
+
+	/**
 	 * Returns a tint of {@see this Color} with {@see weight}.
 	 *
 	 * @param weight Int
@@ -201,7 +213,7 @@ object ColorUtil
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	fun Color.withShade (weight: Int) = shade(this, weight)
+	fun Color.withShade(weight: Int) = shade(this, weight)
 
 	/**
 	 * Returns a shade of {@see this Color} with {@see weight}.
@@ -213,6 +225,6 @@ object ColorUtil
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	fun Color.withTint (weight: Int) = tint(this, weight)
+	fun Color.withTint(weight: Int) = tint(this, weight)
 
 }
