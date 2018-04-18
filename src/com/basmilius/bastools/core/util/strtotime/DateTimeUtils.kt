@@ -9,6 +9,7 @@
 
 package com.basmilius.bastools.core.util.strtotime
 
+import com.basmilius.bastools.core.util.ExceptionUtils
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -70,6 +71,7 @@ object DateTimeUtils
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.1.0
 	 */
+	@Suppress("unused")
 	fun registerMatcher(matcher: Matcher)
 	{
 		matchers.add(0, matcher)
@@ -107,7 +109,11 @@ object DateTimeUtils
  */
 fun strtotime(str: String): Long?
 {
-	val date = DateTimeUtils.convert(str) ?: return null
+	ExceptionUtils.dontCare {
+		val date = DateTimeUtils.convert(str) ?: return null
 
-	return date.time / 1000L
+		return date.time / 1000L
+	}
+
+	return null
 }

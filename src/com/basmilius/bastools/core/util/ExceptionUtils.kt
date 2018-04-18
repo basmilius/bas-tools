@@ -34,7 +34,7 @@ object ExceptionUtils
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	fun dontCare(func: Callback)
+	inline fun dontCare(func: Callback)
 	{
 		try
 		{

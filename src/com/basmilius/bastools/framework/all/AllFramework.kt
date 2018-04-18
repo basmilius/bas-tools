@@ -11,6 +11,8 @@ package com.basmilius.bastools.framework.all
 
 import com.basmilius.bastools.framework.base.AbstractFramework
 import com.basmilius.bastools.intention.ComputeConstantValueIntentionAction
+import com.basmilius.bastools.intention.ConvertDateFormatToUnixTimestampIntentionAction
+import com.basmilius.bastools.intention.ConvertUnixTimestampToDateFormatIntentionAction
 import com.intellij.codeInsight.intention.IntentionManager
 import com.intellij.openapi.project.Project
 import com.intellij.util.PlatformUtils
@@ -32,11 +34,16 @@ class AllFramework: AbstractFramework("General Stuff")
 	 */
 	override fun onLoad()
 	{
+		val intentionManager = IntentionManager.getInstance()
+
 		if (PlatformUtils.isPhpStorm())
 		{
 			// TODO(Bas): Figure out if we can port this to an universal PSI thing.
-			IntentionManager.getInstance().addAction(ComputeConstantValueIntentionAction())
+			intentionManager.addAction(ComputeConstantValueIntentionAction())
 		}
+
+		intentionManager.addAction(ConvertDateFormatToUnixTimestampIntentionAction())
+		intentionManager.addAction(ConvertUnixTimestampToDateFormatIntentionAction())
 	}
 
 	/**

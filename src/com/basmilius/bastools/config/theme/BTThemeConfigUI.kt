@@ -13,18 +13,43 @@ import com.basmilius.bastools.config.IBTConfigUI
 import javax.swing.JComponent
 import javax.swing.JPanel
 
+/**
+ * Class BTThemeConfigUI
+ *
+ * @author Bas Milius <bas@mili.us>
+ * @package com.basmilius.bastools.theme
+ * @since 1.4.0
+ */
 class BTThemeConfigUI: IBTConfigUI
 {
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	override fun initialize()
 	{
 	}
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	override fun getComponent(): JComponent
 	{
 		return JPanel()
 	}
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	override fun dispose()
 	{
 	}

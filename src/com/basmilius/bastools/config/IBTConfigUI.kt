@@ -12,11 +12,32 @@ package com.basmilius.bastools.config
 import com.intellij.openapi.Disposable
 import javax.swing.JComponent
 
+/**
+ * Interface IBTConfigUI
+ *
+ * @author Bas Milius <bas@mili.us>
+ * @package com.basmilius.bastools.config
+ * @since 1.4.0
+ */
 interface IBTConfigUI: Disposable
 {
 
+	/**
+	 * Initializes our config ui.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	fun initialize()
 
+	/**
+	 * Gets the root component.
+	 *
+	 * @return {JComponent}
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
 	fun getComponent(): JComponent
 
 }
