@@ -72,7 +72,7 @@ class CaptionPanelPatch: IUIPatch
 
 				when (methodCall)
 				{
-					"com.intellij.util.ui.JBUI\$Borders::empty" -> call.replace("{ \$1 = 6; \$2 = 12; \$3 = 12; \$4 = 12; \$_ = \$proceed($$); }")
+					"com.intellij.util.ui.JBUI\$Borders::empty" -> call.replace("{ \$1 = 6; \$2 = 12; \$3 = 6; \$4 = 12; \$_ = \$proceed($$); }")
 					"javax.swing.JLabel::setHorizontalAlignment" -> call.replace("{ \$1 = javax.swing.SwingConstants.LEFT; \$_ = \$proceed($$); }")
 				}
 			}

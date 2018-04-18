@@ -225,7 +225,7 @@ class MiniCode
 		if (a < 0)
 			a = 0f
 
-		UnpackedColor[3] = (a * 255).toInt()
+		UnpackedColor[3] = (a * 192).toInt()
 		UnpackedColor[0] = (color and 16711680) shr 16
 		UnpackedColor[1] = (color and 65280) shr 8
 		UnpackedColor[2] = (color and 255)

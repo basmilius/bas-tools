@@ -11,6 +11,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="localization" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="sass" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="php-openapi" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="php-openapi-src" level="project" />
   </component>
 </module>

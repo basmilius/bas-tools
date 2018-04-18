@@ -16,6 +16,7 @@ import com.basmilius.bastools.component.codeMap.concurrent.NastyLock
 import com.basmilius.bastools.component.codeMap.renderer.Folds
 import com.basmilius.bastools.component.codeMap.renderer.MiniCode
 import com.basmilius.bastools.component.codeMap.renderer.TaskQueueRunner
+import com.basmilius.bastools.ui.tabs.BTTabsPainter
 import com.intellij.openapi.editor.colors.ColorKey
 import com.intellij.openapi.editor.event.*
 import com.intellij.openapi.fileEditor.TextEditor
@@ -219,6 +220,8 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 			g.drawImage(this.buf, 0, 0, this.buf!!.width, this.buf!!.height, 0, 0, this.buf!!.width, this.buf!!.height, null)
 
 		this.paintSelections(g)
+		this.paintChildren(gfx)
+
 		this.scrollbar.paint(gfx)
 	}
 
@@ -229,6 +232,8 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 	 */
 	override fun paint(gfx: Graphics?)
 	{
+		this.paintChildren(gfx)
+
 		if (this.renderLock.locked)
 		{
 			this.paintLast(gfx)

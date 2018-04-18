@@ -75,7 +75,7 @@ class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerList
 					when(methodCall)
 					{
 						"com.intellij.util.ui.JBUI::emptyInsets" -> call.replace("{ \$_ = com.intellij.util.ui.JBUI.insets(0, 3, 5, 3); }")
-						"com.intellij.ui.SimpleColoredComponent::setIconTextGap" -> call.replace("{ \$1 = com.intellij.util.ui.JBUI.scale(9); \$_ = \$proceed($$); }")
+//						"com.intellij.ui.SimpleColoredComponent::setIconTextGap" -> call.replace("{ \$1 = com.intellij.util.ui.JBUI.scale(9); \$_ = \$proceed($$); }")
 					}
 				}
 

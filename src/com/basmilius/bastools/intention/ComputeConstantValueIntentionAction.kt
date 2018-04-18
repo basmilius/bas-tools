@@ -176,7 +176,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 							result = result.replace(".0", "")
 
 						EditorUtils.writeAction(editor.project!!) {
-							editor.document.replaceString(expression!!.textOffset, expression!!.textOffset + expressionText.length, result)
+							editor.document.replaceString(expression.textOffset, expression.textOffset + expressionText.length, result)
 						}
 					}
 				}
