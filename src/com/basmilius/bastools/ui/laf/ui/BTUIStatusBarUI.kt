@@ -9,6 +9,7 @@
 
 package com.basmilius.bastools.ui.laf.ui
 
+import com.basmilius.bastools.ui.BTUI
 import com.intellij.openapi.wm.impl.status.StatusBarUI
 import com.intellij.ui.JBColor
 import com.intellij.util.ui.JBUI
@@ -103,7 +104,7 @@ class BTUIStatusBarUI: StatusBarUI()
 		{
 			val g2d = graphics.create() as Graphics2D
 			val background = UIUtil.getPanelBackground()
-			val border = JBColor(Color(50, 52, 56), Color(50, 52, 56))
+			val border = BTUI.Colors.OutlineColor.asJBColor()
 
 			g2d.color = background
 			g2d.fillRect(0, 0, width, height)

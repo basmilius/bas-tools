@@ -34,12 +34,10 @@ class UIUtilPatch: IUIPatch
 	{
 		val panelBackgroundColor = UIManager.getColor("Panel.background")
 
-		ReflectionUtils.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", panelBackgroundColor)
-		ReflectionUtils.setFinalStatic(UIUtil::class, "BORDER_COLOR", panelBackgroundColor)
 		ReflectionUtils.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_FOREGROUND_COLOR", panelBackgroundColor)
 
-		ReflectionUtils.setFinalStatic(UIUtil::class, "BORDER_COLOR", JBColor(0xff0000, 0xff0000))
-		ReflectionUtils.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", JBColor(0x2c3134, 0x2c3134))
+		ReflectionUtils.setFinalStatic(UIUtil::class, "BORDER_COLOR", BTUI.Colors.OutlineColor.asJBColor())
+		ReflectionUtils.setFinalStatic(UIUtil::class, "CONTRAST_BORDER_COLOR", BTUI.Colors.OutlineColor.asJBColor())
 
 		ReflectionUtils.setFinalStatic(UIUtil::class, "SIDE_PANEL_BACKGROUND", JBColor(0x292d30, 0x292d30))
 
