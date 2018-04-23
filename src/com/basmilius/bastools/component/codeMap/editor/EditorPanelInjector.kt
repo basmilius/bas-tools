@@ -11,6 +11,7 @@ package com.basmilius.bastools.component.codeMap.editor
 
 import com.basmilius.bastools.component.codeMap.CMWidth
 import com.basmilius.bastools.component.codeMap.renderer.TaskQueueRunner
+import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.impl.EditorImpl
 import com.intellij.openapi.fileEditor.*
 import com.intellij.openapi.project.Project
@@ -18,9 +19,9 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.ui.JBSplitter
 import com.intellij.util.ui.JBUI
 import java.awt.BorderLayout
+import javax.swing.BoxLayout
 import javax.swing.JLayeredPane
 import javax.swing.JPanel
-import javax.swing.ScrollPaneConstants
 
 /**
  * Class EditorPanelInjector
@@ -120,29 +121,28 @@ class EditorPanelInjector(private val project: Project, private val queue: TaskQ
 	private fun inject(editor: TextEditor)
 	{
 		val panel = this.getPanel(editor) ?: return
-		val innerLayout = panel.layout as BorderLayout
 
 		val editorComponent = panel.parent.parent
 		val editorComponentClass = editorComponent.javaClass
-		val editorField = editorComponentClass.superclass.getDeclaredField("a")
+		val editorField = editorComponentClass.superclass.declaredFields
+				.find { it.type == Editor::class.java } ?: return
+
 		editorField.isAccessible = true
 
 		val editorImplementation = editorField.get(editorComponent) as? EditorImpl ?: return
 		val scrollBar = editorImplementation.scrollPane.verticalScrollBar
 		editorImplementation.scrollPane.remove(scrollBar)
 
-		if (innerLayout.getLayoutComponent(BorderLayout.LINE_END) == null)
-		{
-			val codeMapPanel = CodeMapPanel(project, editor, panel, this.queue)
-			panel.add(codeMapPanel, BorderLayout.LINE_END)
+		val codeMapPanel = CodeMapPanel(project, editor, panel, this.queue)
+		val mount = JPanel(BorderLayout())
+		mount.minimumSize = JBUI.size(CMWidth + 18, 10)
 
-			codeMapPanel.border = JBUI.Borders.empty(0, CMWidth - 18, 0, 0)
-			codeMapPanel.add(scrollBar, BorderLayout.LINE_START)
+		mount.add(codeMapPanel, BorderLayout.LINE_START)
+		mount.add(scrollBar, BorderLayout.LINE_END)
 
-			scrollBar.isOpaque = true
+		panel.add(mount, BorderLayout.LINE_END)
 
-			this.panels[editor] = codeMapPanel
-		}
+		this.panels[editor] = codeMapPanel
 	}
 
 	/**
