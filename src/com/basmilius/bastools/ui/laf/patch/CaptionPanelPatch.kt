@@ -10,7 +10,7 @@
 package com.basmilius.bastools.ui.laf.patch
 
 import com.basmilius.bastools.core.util.ReflectionUtils
-import com.basmilius.bastools.ui.tabs.BTTabsPainter
+import com.basmilius.bastools.ui.BTUI
 import com.intellij.ui.CaptionPanel
 import com.intellij.ui.JBColor
 import javassist.ClassClassPath
@@ -81,16 +81,16 @@ class CaptionPanelPatch: IUIPatch
 
 		classTitlePanel.toClass()
 
-		ReflectionUtils.setFinalStatic(JBColor::class, "GRAY", BTTabsPainter.OutlineColor)
-		ReflectionUtils.setFinalStatic(JBColor::class, "LIGHT_GRAY", BTTabsPainter.OutlineColor)
+		ReflectionUtils.setFinalStatic(JBColor::class, "GRAY", BTUI.Colors.OutlineColor.asJBColor())
+		ReflectionUtils.setFinalStatic(JBColor::class, "LIGHT_GRAY", BTUI.Colors.OutlineColor.asJBColor())
 
-		ReflectionUtils.setFinalStatic(CaptionPanel::class, "CNT_ACTIVE_BORDER_COLOR", BTTabsPainter.OutlineColor)
-		ReflectionUtils.setFinalStatic(CaptionPanel::class, "TOP_FLICK_ACTIVE", BTTabsPainter.BackgroundColor)
-		ReflectionUtils.setFinalStatic(CaptionPanel::class, "TOP_FLICK_PASSIVE", BTTabsPainter.BackgroundColor)
-		ReflectionUtils.setFinalStatic(CaptionPanel::class, "BOTTOM_FLICK_ACTIVE", BTTabsPainter.OutlineColor)
-		ReflectionUtils.setFinalStatic(CaptionPanel::class, "BOTTOM_FLICK_PASSIVE", BTTabsPainter.OutlineColor)
-		ReflectionUtils.setFinalStatic(CaptionPanel::class, "CNT_ACTIVE_COLOR", BTTabsPainter.BackgroundColor)
-		ReflectionUtils.setFinalStatic(CaptionPanel::class, "BND_ACTIVE_COLOR", BTTabsPainter.BackgroundColor)
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "CNT_ACTIVE_BORDER_COLOR", BTUI.Colors.OutlineColor.asJBColor())
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "TOP_FLICK_ACTIVE", BTUI.Colors.BackgroundColor.asJBColor())
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "TOP_FLICK_PASSIVE", BTUI.Colors.BackgroundColor.asJBColor())
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "BOTTOM_FLICK_ACTIVE", BTUI.Colors.OutlineColor.asJBColor())
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "BOTTOM_FLICK_PASSIVE", BTUI.Colors.OutlineColor.asJBColor())
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "CNT_ACTIVE_COLOR", BTUI.Colors.BackgroundColor.asJBColor())
+		ReflectionUtils.setFinalStatic(CaptionPanel::class, "BND_ACTIVE_COLOR", BTUI.Colors.BackgroundColor.asJBColor())
 	}
 
 }

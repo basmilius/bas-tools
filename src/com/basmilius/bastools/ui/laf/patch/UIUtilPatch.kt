@@ -10,7 +10,7 @@
 package com.basmilius.bastools.ui.laf.patch
 
 import com.basmilius.bastools.core.util.ReflectionUtils
-import com.basmilius.bastools.ui.tabs.BTTabsPainter
+import com.basmilius.bastools.ui.BTUI
 import com.intellij.ui.JBColor
 import com.intellij.util.ui.UIUtil
 import javax.swing.UIManager
@@ -46,7 +46,7 @@ class UIUtilPatch: IUIPatch
 		ReflectionUtils.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_FOREGROUND_COLOR", JBColor(0x2c2d32, 0x2c2d32))
 		ReflectionUtils.setFinalStatic(UIUtil::class, "AQUA_SEPARATOR_BACKGROUND_COLOR", JBColor(0x2c2d32, 0x2c2d32))
 
-		ReflectionUtils.setFinalStatic(UIUtil::class, "SIDE_PANEL_BACKGROUND", BTTabsPainter.FocusColor)
+		ReflectionUtils.setFinalStatic(UIUtil::class, "SIDE_PANEL_BACKGROUND", BTUI.Colors.BackgroundLightColor.asJBColor())
 	}
 
 }

@@ -7,7 +7,7 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.ui.tabs
+package com.basmilius.bastools.ui.laf.tabs
 
 import com.basmilius.bastools.core.util.ReflectionUtils
 import com.intellij.openapi.application.ex.ApplicationManagerEx
@@ -35,7 +35,7 @@ import java.awt.Rectangle
  * Class BTTabsPainterPatcherComponent
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.ui.tabs
+ * @package com.basmilius.bastools.ui.laf.tabs
  * @since 1.0.0
  */
 class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerListener
@@ -75,7 +75,6 @@ class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerList
 					when(methodCall)
 					{
 						"com.intellij.util.ui.JBUI::emptyInsets" -> call.replace("{ \$_ = com.intellij.util.ui.JBUI.insets(0, 3, 5, 3); }")
-//						"com.intellij.ui.SimpleColoredComponent::setIconTextGap" -> call.replace("{ \$1 = com.intellij.util.ui.JBUI.scale(9); \$_ = \$proceed($$); }")
 					}
 				}
 

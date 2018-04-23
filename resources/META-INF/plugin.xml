@@ -46,7 +46,7 @@
 		</component>
 
 		<component>
-			<implementation-class>com.basmilius.bastools.ui.tabs.BTTabsPainterPatcherComponent</implementation-class>
+			<implementation-class>com.basmilius.bastools.ui.laf.tabs.BTTabsPainterPatcherComponent</implementation-class>
 		</component>
 
 		<component>

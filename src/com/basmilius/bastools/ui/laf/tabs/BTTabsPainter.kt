@@ -7,9 +7,9 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.ui.tabs
+package com.basmilius.bastools.ui.laf.tabs
 
-import com.intellij.ui.JBColor
+import com.basmilius.bastools.ui.BTUI
 import com.intellij.ui.tabs.impl.DefaultEditorTabsPainter
 import com.intellij.ui.tabs.impl.JBEditorTabs
 import com.intellij.util.ui.JBUI
@@ -22,29 +22,13 @@ import java.awt.Rectangle
  * Open Class BTTabsPainter
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.ui.tabs
+ * @package com.basmilius.bastools.ui.laf.tabs
  * @since 1.0.0
  */
 open class BTTabsPainter: DefaultEditorTabsPainter
 {
 
 	private fun Int.scale() = JBUI.scale(this)
-
-	/**
-	 * Companion Object BTTabsPainter
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @package com.basmilius.bastools.ui.tabs
-	 * @since 1.4.0
-	 */
-	companion object
-	{
-
-		val BackgroundColor = JBColor(Color(25, 26, 28), Color(25, 26, 28))
-		val FocusColor = JBColor(Color(32, 33, 36), Color(32, 33, 36))
-		val OutlineColor = JBColor(Color(42, 43, 49), Color(42, 43, 49))
-
-	}
 
 	/**
 	 * BTTabsPainter Constructor.
@@ -75,10 +59,10 @@ open class BTTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun doPaintInactive(g: Graphics2D, effectiveBounds: Rectangle?, x: Int, y: Int, w: Int, h: Int, color: Color?, row: Int, column: Int, vertical: Boolean)
 	{
-		g.color = color ?: BackgroundColor
+		g.color = color ?: BTUI.Colors.BackgroundColor.asJBColor()
 		g.fillRect(x - 1.scale(), y - 1.scale(), w + 2.scale(), h + 2.scale())
 
-		g.color = OutlineColor
+		g.color = BTUI.Colors.OutlineColor.asJBColor()
 		g.stroke = BasicStroke(1f)
 		g.drawLine(x, y + h, x + w, y + h)
 	}
@@ -91,10 +75,10 @@ open class BTTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun doPaintBackground(g: Graphics2D, clip: Rectangle, vertical: Boolean, rectangle: Rectangle)
 	{
-		g.color = BackgroundColor
+		g.color = BTUI.Colors.BackgroundColor.asJBColor()
 		g.fillRect(rectangle.x - 1.scale(), rectangle.y - 1.scale(), rectangle.width + 2.scale(), rectangle.height + 2.scale())
 
-		g.color = OutlineColor
+		g.color = BTUI.Colors.OutlineColor.asJBColor()
 		g.stroke = BasicStroke(1f)
 		g.drawLine(rectangle.x, rectangle.y + rectangle.height, rectangle.x + rectangle.width, rectangle.y + rectangle.height)
 	}
@@ -113,10 +97,10 @@ open class BTTabsPainter: DefaultEditorTabsPainter
 	 */
 	fun fillSelectionAndBorder(g: Graphics2D, x: Int, y: Int, width: Int, height: Int)
 	{
-		g.color = FocusColor
+		g.color = BTUI.Colors.BackgroundLightColor.asJBColor()
 		g.fillRect(x, y, width, height + 1.scale())
 
-		g.color = OutlineColor
+		g.color = BTUI.Colors.OutlineColor.asJBColor()
 		g.stroke = BasicStroke(JBUI.scale(1f))
 		g.drawLine(x - 1.scale(), y + height, x - 1.scale(), y)
 		g.drawLine(x - 1.scale(), y, x + width, y)
@@ -131,7 +115,7 @@ open class BTTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun getBackgroundColor(): Color
 	{
-		return BackgroundColor
+		return BTUI.Colors.BackgroundColor.asJBColor()
 	}
 
 	/**
@@ -142,7 +126,7 @@ open class BTTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun getEmptySpaceColor(): Color
 	{
-		return BackgroundColor
+		return BTUI.Colors.BackgroundColor.asJBColor()
 	}
 
 	/**
@@ -153,7 +137,7 @@ open class BTTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun getDefaultTabColor(): Color
 	{
-		return BackgroundColor
+		return BTUI.Colors.BackgroundColor.asJBColor()
 	}
 
 	/**
@@ -164,7 +148,7 @@ open class BTTabsPainter: DefaultEditorTabsPainter
 	 */
 	override fun getInactiveMaskColor(): Color
 	{
-		return BackgroundColor
+		return BTUI.Colors.BackgroundColor.asJBColor()
 	}
 
 	/**

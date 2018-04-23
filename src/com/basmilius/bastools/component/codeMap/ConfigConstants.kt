@@ -11,4 +11,4 @@ package com.basmilius.bastools.component.codeMap
 
 const val CMDisabled = false
 const val CMPixelsPerLine = 2
-const val CMWidth = 102
+const val CMWidth = 90

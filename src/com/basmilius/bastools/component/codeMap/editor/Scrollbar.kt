@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.component.codeMap.editor
 
-import com.basmilius.bastools.ui.tabs.BTTabsPainter
+import com.basmilius.bastools.ui.BTUI
 import com.intellij.openapi.fileEditor.TextEditor
 import com.intellij.ui.JBColor
 import java.awt.AlphaComposite
@@ -37,7 +37,7 @@ class Scrollbar(val textEditor: TextEditor, private val scrollState: ScrollState
 	private var mouseStart: Int = 0
 	private val defaultCursor = Cursor(Cursor.DEFAULT_CURSOR)
 	private var dragging = false
-	private var visibleRectColor: JBColor = BTTabsPainter.BackgroundColor
+	private var visibleRectColor: JBColor = BTUI.Colors.OutlineColor.asJBColor()
 
 	/**
 	 * Scrollbar Initializer.
@@ -168,7 +168,7 @@ class Scrollbar(val textEditor: TextEditor, private val scrollState: ScrollState
 		val g = gfx as Graphics2D
 
 		g.color = this.visibleRectColor
-		g.composite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.20f)
+		g.composite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3f)
 		g.fillRect(0, this.scrollState.viewportStart - this.scrollState.visibleStart, this.width, this.scrollState.viewportHeight)
 	}
 

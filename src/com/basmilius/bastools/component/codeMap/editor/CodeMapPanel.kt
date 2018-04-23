@@ -16,7 +16,7 @@ import com.basmilius.bastools.component.codeMap.concurrent.NastyLock
 import com.basmilius.bastools.component.codeMap.renderer.Folds
 import com.basmilius.bastools.component.codeMap.renderer.MiniCode
 import com.basmilius.bastools.component.codeMap.renderer.TaskQueueRunner
-import com.basmilius.bastools.ui.tabs.BTTabsPainter
+import com.basmilius.bastools.ui.BTUI
 import com.intellij.openapi.editor.colors.ColorKey
 import com.intellij.openapi.editor.event.*
 import com.intellij.openapi.fileEditor.TextEditor
@@ -27,10 +27,7 @@ import com.intellij.reference.SoftReference
 import com.intellij.ui.JBColor
 import com.intellij.util.ui.JBDimension
 import com.intellij.util.ui.UIUtil
-import java.awt.AlphaComposite
-import java.awt.BorderLayout
-import java.awt.Graphics
-import java.awt.Graphics2D
+import java.awt.*
 import java.awt.event.ComponentAdapter
 import java.awt.event.ComponentEvent
 import java.awt.event.ComponentListener
@@ -215,12 +212,12 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 	private fun paintLast(gfx: Graphics?)
 	{
 		val g = gfx as Graphics2D
+		val buf = this.buf
 
-		if (this.buf != null)
-			g.drawImage(this.buf, 0, 0, this.buf!!.width, this.buf!!.height, 0, 0, this.buf!!.width, this.buf!!.height, null)
+		if (buf != null)
+			g.drawImage(buf, 0, 0, buf.width, buf.height, 0, 0, buf.width, buf.height, null)
 
 		this.paintSelections(g)
-		this.paintChildren(gfx)
 
 		this.scrollbar.paint(gfx)
 	}
@@ -232,8 +229,6 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 	 */
 	override fun paint(gfx: Graphics?)
 	{
-		this.paintChildren(gfx)
-
 		if (this.renderLock.locked)
 		{
 			this.paintLast(gfx)
@@ -248,10 +243,14 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 			return
 		}
 
-		if (this.buf == null || this.buf?.width!! < this.width || this.buf?.height!! < this.height)
-			this.buf = UIUtil.createImage(this.width, this.height, BufferedImage.TYPE_4BYTE_ABGR)
+		var buf = this.buf
 
-		val g = this.buf!!.createGraphics()
+		if (buf == null || buf.width < this.width || buf.height < this.height)
+			buf = UIUtil.createImage(this.width, this.height, BufferedImage.TYPE_4BYTE_ABGR)
+
+		this.buf = buf
+
+		val g = buf.createGraphics()
 
 		g.composite = AlphaComposite.getInstance(AlphaComposite.CLEAR)
 		g.fillRect(0, 0, this.width, this.height)
@@ -261,8 +260,20 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 			g.drawImage(minimap.image, 0, 0, this.scrollstate.documentWidth, this.scrollstate.drawHeight, 0, this.scrollstate.visibleStart, this.scrollstate.documentWidth, this.scrollstate.visibleEnd, null)
 
 		this.paintSelections(gfx as Graphics2D)
-		gfx.drawImage(this.buf, 0, 0, null)
+
+		gfx.drawImage(buf, 0, 0, null)
+
 		this.scrollbar.paint(gfx)
+
+		gfx.composite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER)
+		gfx.color = BTUI.Colors.OutlineColor
+				.copy()
+				.apply {
+					blend(BTUI.Colors.BackgroundLightColor, 50)
+				}
+				.asJBColor()
+		gfx.stroke = BasicStroke(1f)
+		gfx.drawLine(0, 0, 0, this.height)
 	}
 
 	/**
