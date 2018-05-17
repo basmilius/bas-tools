@@ -42,10 +42,14 @@ class BasToolsLaf: DarculaLaf()
 		{
 			val patches = arrayOf(
 					UIUtilPatch::class,
+					DarculaUIUtilPatch::class,
 					IconPatch::class,
 
 					CaptionPanelPatch::class,
+					EditorMarkupModelImplPatch::class,
+					HintHintPatch::class,
 					IdePanePanelPatch::class,
+					IdeTooltipPatch::class,
 					NavBarUIManagerPatch::class,
 					TabsUtilPatch::class,
 					InternalDecoratorPatch::class,

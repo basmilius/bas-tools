@@ -10,11 +10,8 @@
 package com.basmilius.bastools.ui.laf.border
 
 import com.intellij.ide.ui.laf.darcula.ui.DarculaButtonPainter
-import com.intellij.ide.ui.laf.darcula.ui.DarculaButtonUI
 import com.intellij.util.ui.JBUI
-import com.intellij.util.ui.UIUtil
-import java.awt.*
-import javax.swing.JComponent
+import java.awt.Component
 
 /**
  * Class BTUIButtonBorder
@@ -26,42 +23,6 @@ import javax.swing.JComponent
 class BTUIButtonBorder: DarculaButtonPainter()
 {
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.4.0
-	 */
-	override fun getBorderInsets(component: Component): Insets
-	{
-		val btn = component as? JComponent ?: return JBUI.insets(0)
-
-		return when
-		{
-			UIUtil.isHelpButton(btn) -> JBUI.insets(3)
-			DarculaButtonUI.isComboButton(btn) -> JBUI.insets(9)
-			else -> JBUI.insets(9, 18)
-		}
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.4.0
-	 */
-	override fun paintBorder(component: Component, graphics: Graphics, x: Int, y: Int, width: Int, height: Int)
-	{
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.4.0
-	 */
-	override fun paintShadow(g: Graphics2D, r: Rectangle)
-	{
-	}
+	override fun getBorderInsets(p0: Component?) = JBUI.insets(4, 6)
 
 }

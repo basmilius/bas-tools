@@ -71,7 +71,7 @@ abstract class BaseElementVisitor(val problemsHolder: ProblemsHolder, val isOnTh
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.1.0
 	 */
-	fun visitPhpDocTag(@NotNull tag: PhpDocTag)
+	override fun visitPhpDocTag(@NotNull tag: PhpDocTag)
 	{
 		this.visitElement(tag)
 	}

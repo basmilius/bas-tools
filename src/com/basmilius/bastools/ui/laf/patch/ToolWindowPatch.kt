@@ -48,7 +48,7 @@ class ToolWindowPatch: IUIPatch
 				if (call.className != "javax.swing.BorderFactory" || call.methodName != "createEmptyBorder")
 					return
 
-				call.replace("\$_ = javax.swing.BorderFactory.createEmptyBorder(1, 0, 1, 0);")
+				call.replace("\$_ = javax.swing.BorderFactory.createEmptyBorder(1, 3, 1, 3);")
 			}
 
 		})
