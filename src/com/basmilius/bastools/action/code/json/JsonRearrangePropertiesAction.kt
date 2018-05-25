@@ -41,7 +41,7 @@ class JsonRearrangePropertiesAction: AnAction("Rearrange JSON properties")
 		{
 			val selectedPsiTree = PsiUtils.findElementOfClassAtOffset(file, editor.selectionModel.selectionStart, JsonElement::class, false) as? JsonObject ?: return
 
-			EditorUtils.writeAction(file.project, file) {
+			EditorUtils.writeAction(file.project) {
 				this.rearrange(selectedPsiTree)
 			}
 		}
@@ -52,7 +52,7 @@ class JsonRearrangePropertiesAction: AnAction("Rearrange JSON properties")
 			if (objects.isEmpty())
 				return
 
-			EditorUtils.writeAction(file.project, file) {
+			EditorUtils.writeAction(file.project) {
 				objects.forEach { this.rearrange(it) }
 			}
 		}

@@ -212,7 +212,7 @@ class BTUINavBarItemUI: DarculaNavBarUI()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getElementIpad(isPopupElement: Boolean) = JBUI.insets(4, 0)!!
+	override fun getElementIpad(isPopupElement: Boolean) = JBUI.insets(4, 0)
 
 	/**
 	 * {@inheritdoc}

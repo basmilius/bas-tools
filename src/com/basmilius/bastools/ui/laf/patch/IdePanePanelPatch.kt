@@ -45,8 +45,6 @@ class IdePanePanelPatch: IUIPatch
 			{
 				val methodCall = "${call.className}::${call.methodName}"
 
-				println(methodCall)
-
 				if (methodCall != "com.intellij.openapi.wm.impl.IdeBackgroundUtil::getIdeBackgroundColor")
 					return
 

@@ -84,9 +84,6 @@ class CappuccinoTypedHandler: TypedHandlerDelegate()
 			val settings = CodeStyle.getSettings(project)
 			val options = settings.getCustomSettings(CappuccinoFormatterOptions::class.java)
 
-			if (options == null || options !is CappuccinoFormatterOptions)
-				return false
-
 			return when (char)
 			{
 				'%' -> options.SPACES_INSIDE_DELIMITERS

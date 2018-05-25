@@ -13,7 +13,6 @@ import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
-import com.intellij.psi.PsiFile
 
 /**
  * Object EditorUtils
@@ -94,42 +93,9 @@ object EditorUtils
 	 */
 	fun writeAction(project: Project, command: () -> Unit)
 	{
-		val writer = object: WriteCommandAction.Simple<Unit>(project)
-		{
-
-			override fun run()
-			{
-				command()
-			}
-
+		WriteCommandAction.runWriteCommandAction(project) {
+			command()
 		}
-
-		writer.execute()
-	}
-
-	/**
-	 * Executes a write action in a simple way.
-	 *
-	 * @param project Project
-	 * @param file PsiFile
-	 * @param command () -> Unit
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.3.1
-	 */
-	fun writeAction(project: Project, file: PsiFile, command: () -> Unit)
-	{
-		val writer = object: WriteCommandAction.Simple<Unit>(project, file)
-		{
-
-			override fun run()
-			{
-				command()
-			}
-
-		}
-
-		writer.execute()
 	}
 
 }
