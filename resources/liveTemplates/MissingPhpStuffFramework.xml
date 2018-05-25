@@ -1,8 +1,17 @@
 <templateSet group="Missing PHP Stuff">
+
 	<template name="ctor" value="public function __construct($PARAMS_LIST$)&#10;{&#10;&#9;$END$&#10;}" description="Creates a PHP class constructor." toReformat="true" toShortenFQNames="true">
-		<variable name="PARAMS_LIST" expression="" defaultValue="" alwaysStopAt="true" />
+		<variable name="PARAMS_LIST" expression="" defaultValue="" alwaysStopAt="true"/>
 		<context>
-			<option name="PHP Class Member" value="true" />
+			<option name="PHP Class Member" value="true"/>
 		</context>
 	</template>
+
+	<template name="ptor" value="parent::__construct($PARAMS_LIST$);$END$" description="Creates a PHP parent constructor call." toReformat="true" toShortenFQNames="true">
+		<variable name="PARAMS_LIST" expression="" defaultValue="" alwaysStopAt="true"/>
+		<context>
+			<option name="PHP Statement" value="true"/>
+		</context>
+	</template>
+
 </templateSet>
