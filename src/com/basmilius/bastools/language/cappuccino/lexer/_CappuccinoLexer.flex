@@ -25,6 +25,15 @@ import com.basmilius.bastools.language.cappuccino.CappuccinoTokenTypes;
 
 /* Macro Declarations  */
 
+HEX_DIGIT = [0-9abcdefABCDEF_]
+OCTAL_DIGIT = [0-7]
+
+STRING_POSTFIX = [cwd]
+ESCAPE_SEQUENCE = {ESCAPE_SEQUENCE_SPEC_CHAR} | {ESCAPE_SEQUENCE_HEX_OCTAL} | {ESCAPE_SEQUENCE_UNICODE}
+ESCAPE_SEQUENCE_SPEC_CHAR = "\\\'" | "\\\"" | "\\\?" | "\\\\" | "\\0" | "\\a" | "\\b"  | "\\f"  | "\\n"  | "\\r"  | "\\t" | "\\v"
+ESCAPE_SEQUENCE_HEX_OCTAL = ("\\x" {HEX_DIGIT} {HEX_DIGIT}) | ("\\" {OCTAL_DIGIT}) | ("\\" {OCTAL_DIGIT} {OCTAL_DIGIT}) | ("\\" {OCTAL_DIGIT} {OCTAL_DIGIT} {OCTAL_DIGIT})
+ESCAPE_SEQUENCE_UNICODE = ("\\u" {HEX_DIGIT} {HEX_DIGIT} {HEX_DIGIT} {HEX_DIGIT}) | ("\\U" {HEX_DIGIT} {HEX_DIGIT} {HEX_DIGIT} {HEX_DIGIT} {HEX_DIGIT} {HEX_DIGIT} {HEX_DIGIT} {HEX_DIGIT})
+
 CAPPUCCINO_VAR_OPEN = "{{"
 CAPPUCCINO_VAR_CLOSE = "}}"
 
@@ -41,6 +50,8 @@ ANY_CHAR=[.]
 
 DOUBLE_QUOTES_CHARS=(([^\"\\]|("\\"{ANY_CHAR})))
 
+DOUBLE_QUOTED_STRING = \" ( [^\\\"] |{ESCAPE_SEQUENCE})* \" {STRING_POSTFIX}?
+SINGLE_QUOTED_STRING = \' ( [^\\\'] |{ESCAPE_SEQUENCE})* \' {STRING_POSTFIX}?
 
 LNUM=[0-9]+
 DNUM=([0-9]*"."[0-9]+)|([0-9]+"."[0-9]*)
@@ -49,8 +60,6 @@ HNUM="0x"[0-9a-fA-F]+
 TABS_AND_SPACES=[ \t]*
 BACKQUOTE_CHARS=(([^`\\]|("\\"{ANY_CHAR})))
 NEWLINE=("\r"|"\n"|"\r\n")
-
-
 
 /* lexical states */
 
@@ -136,8 +145,8 @@ NEWLINE=("\r"|"\n"|"\r\n")
 	(true|false)                                    {return CappuccinoTokenTypes.BOOLEAN;}
 
 	/* STRING LITERALS */
-    (b?[\"]{DOUBLE_QUOTES_CHARS}*[\"])              {return CappuccinoTokenTypes.DOUBLE_QUOTE;}
-    (b?[']([^'\\]|("\\"{ANY_CHAR}))*['])            {return CappuccinoTokenTypes.SINGLE_QUOTE;}
+    {DOUBLE_QUOTED_STRING}                          {return CappuccinoTokenTypes.DOUBLE_QUOTE;}
+    {SINGLE_QUOTED_STRING}                          {return CappuccinoTokenTypes.SINGLE_QUOTE;}
 
     {LNUM}                                          {return CappuccinoTokenTypes.NUMBER;}
     {DNUM}                                          {return CappuccinoTokenTypes.NUMBER;}

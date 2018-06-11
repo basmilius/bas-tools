@@ -13,10 +13,9 @@ import com.basmilius.bastools.component.basSettings.BasSettingsCodeStyleScheme
 import com.basmilius.bastools.core.util.ApplicationUtils
 import com.basmilius.bastools.core.util.ExceptionUtils
 import com.intellij.openapi.components.ProjectComponent
-import com.intellij.openapi.components.ServiceManager
+import com.intellij.openapi.editor.colors.impl.EditorColorsManagerImpl
 import com.intellij.openapi.project.Project
 import com.intellij.psi.codeStyle.CodeStyleSchemes
-import com.intellij.psi.codeStyle.ProjectCodeStyleSettingsManager
 
 /**
  * Class DefaultProjectComponent
@@ -67,6 +66,7 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 */
 	override fun projectOpened()
 	{
+		this.applyColorSchemeSettings()
 		this.applyCodeStyleSettings()
 		this.applyWorkspacePerUser()
 
@@ -95,6 +95,17 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	}
 
 	/**
+	 * Applies Bas Settings color scheme.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	private fun applyColorSchemeSettings()
+	{
+		EditorColorsManagerImpl.getInstance().globalScheme = EditorColorsManagerImpl.getInstance().getScheme("Bas Settings")
+	}
+
+	/**
 	 * Applies Bas Settings code style.
 	 *
 	 * @author Bas Milius <bas@mili.us>
@@ -117,10 +128,6 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 		CodeStyleSchemes.getInstance().addScheme(bsScheme)
 		CodeStyleSchemes.getInstance().currentScheme = bsScheme
 		CodeStyleSchemes.getInstance().defaultScheme.codeStyleSettings.copyFrom(bsScheme.codeStyleSettings)
-
-//		val projectSettingsManager = ServiceManager.getService(this.project, ProjectCodeStyleSettingsManager::class.java) as ProjectCodeStyleSettingsManager
-//		projectSettingsManager.mainProjectCodeStyle = bsScheme.codeStyleSettings
-//		projectSettingsManager.PREFERRED_PROJECT_CODE_STYLE = "Bas Settings"
 	}
 
 	/**

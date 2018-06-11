@@ -14,8 +14,6 @@ import com.basmilius.bastools.framework.base.AbstractFramework
 import com.basmilius.bastools.framework.columba.ColumbaFramework
 import com.basmilius.bastools.ui.laf.BasToolsLaf
 import com.intellij.openapi.components.ApplicationComponent
-import com.intellij.openapi.util.IconLoader
-import com.intellij.ui.JBColor
 import javax.swing.UIManager
 
 /**
@@ -85,9 +83,6 @@ class BasToolsComponent: ApplicationComponent
 		try
 		{
 			UIManager.setLookAndFeel(BasToolsLaf())
-
-			JBColor.setDark(true)
-			IconLoader.setUseDarkIcons(true)
 
 			Frameworks.forEach { it.onLoad() }
 		}

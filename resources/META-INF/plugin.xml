@@ -11,7 +11,7 @@
 		<![CDATA[For change notes, please go to the GitHub repository.]]>
 	</change-notes>
 
-	<idea-version since-build="181.4203.513"/>
+	<idea-version since-build="182.2757.22"/>
 
 	<depends>com.intellij.modules.lang</depends>
 	<depends>com.intellij.modules.platform</depends>
@@ -24,8 +24,11 @@
 	<extensions defaultExtensionNs="com.intellij">
 
 		<applicationConfigurable groupId="root" groupWeight="0" displayName="Bas Tools" id="BasTools.Config.Root" instance="com.basmilius.bastools.config.root.BTRootConfigurable"/>
+		<applicationConfigurable parentId="BasTools.Config.Root" displayName="CodeMap" id="BasTools.Config.CodeMap" instance="com.basmilius.bastools.config.codeMap.BTCodeMapConfigurable"/>
+		<applicationConfigurable parentId="BasTools.Config.Root" displayName="Presenter" id="BasTools.Config.Presenter" instance="com.basmilius.bastools.config.theme.BTThemeConfigurable"/>
 		<applicationConfigurable parentId="BasTools.Config.Root" displayName="Theme" id="BasTools.Config.Theme" instance="com.basmilius.bastools.config.theme.BTThemeConfigurable"/>
 
+		<applicationService serviceImplementation="com.basmilius.bastools.config.codeMap.BTCodeMapConfigState"/>
 		<applicationService serviceImplementation="com.basmilius.bastools.config.root.BTRootConfigState"/>
 		<applicationService serviceImplementation="com.basmilius.bastools.config.theme.BTThemeConfigState"/>
 
@@ -36,6 +39,8 @@
 
 		<toolWindow id="Color Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.ColorsToolWindow"/>
 		<toolWindow id="Datetime Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.DateTimeToolWindowFactory"/>
+
+		<!--<themeProvider path="/themes/horologium.json"/>-->
 
 	</extensions>
 

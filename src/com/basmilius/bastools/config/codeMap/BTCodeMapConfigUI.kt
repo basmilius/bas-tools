@@ -7,25 +7,21 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.config.root
+package com.basmilius.bastools.config.codeMap
 
 import com.basmilius.bastools.config.IBTConfigUI
-import com.intellij.ui.components.JBTextField
-import java.awt.GridBagLayout
 import javax.swing.JComponent
 import javax.swing.JPanel
 
 /**
- * Class BTRootConfigUI
+ * Class BTCodeMapConfigUI
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.config.root
+ * @package com.basmilius.bastools.config.codeMap
  * @since 1.4.0
  */
-class BTRootConfigUI: IBTConfigUI
+class BTCodeMapConfigUI: IBTConfigUI
 {
-
-	val root: JPanel = JPanel(GridBagLayout())
 
 	/**
 	 * {@inheritdoc}
@@ -35,7 +31,6 @@ class BTRootConfigUI: IBTConfigUI
 	 */
 	override fun initialize()
 	{
-		this.root.add(JBTextField("Hello world!"))
 	}
 
 	/**
@@ -46,7 +41,7 @@ class BTRootConfigUI: IBTConfigUI
 	 */
 	override fun getComponent(): JComponent
 	{
-		return this.root
+		return JPanel()
 	}
 
 	/**

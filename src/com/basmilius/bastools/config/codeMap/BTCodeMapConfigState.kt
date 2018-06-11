@@ -7,7 +7,7 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.config.theme
+package com.basmilius.bastools.config.codeMap
 
 import com.basmilius.bastools.config.BTConfigurable
 import com.intellij.openapi.components.PersistentStateComponent
@@ -16,24 +16,24 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 
 /**
- * Class BTThemeConfigState
+ * Class BTCodeMapConfigState
  *
  * @author Bas Milius <bas@mili.us>
- * @package com.basmilius.bastools.config.theme
+ * @package com.basmilius.bastools.config.codeMap
  * @since 1.4.0
  */
 @State(
-		name = "BTThemeConfigState",
+		name = "BTCodeMapConfigState",
 		storages = [Storage("bas-tools.xml")]
 )
-class BTThemeConfigState: PersistentStateComponent<BTThemeConfigState>
+class BTCodeMapConfigState: PersistentStateComponent<BTCodeMapConfigState>
 {
 
 	/**
-	 * Companion Object BTThemeConfigState
+	 * Companion Object BTCodeMapConfigState
 	 *
 	 * @author Bas Milius <bas@mili.us>
-	 * @package com.basmilius.bastools.config.theme
+	 * @package com.basmilius.bastools.config.root
 	 * @since 1.4.0
 	 */
 	companion object
@@ -42,13 +42,13 @@ class BTThemeConfigState: PersistentStateComponent<BTThemeConfigState>
 		/**
 		 * Gets the instance of this state implementation.
 		 *
-		 * @returns {BTThemeConfigState}
+		 * @returns {BTCodeMapConfigState}
 		 * @author Bas Milius <bas@mili.us>
 		 * @since 1.4.0
 		 */
-		fun getInstance(): BTThemeConfigState
+		fun getInstance(): BTCodeMapConfigState
 		{
-			return BTConfigurable.getStateInstance(BTThemeConfigState::class)
+			return BTConfigurable.getStateInstance(BTCodeMapConfigState::class)
 		}
 
 	}
@@ -67,7 +67,7 @@ class BTThemeConfigState: PersistentStateComponent<BTThemeConfigState>
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun loadState(state: BTThemeConfigState)
+	override fun loadState(state: BTCodeMapConfigState)
 	{
 		XmlSerializerUtil.copyBean(state, this)
 	}

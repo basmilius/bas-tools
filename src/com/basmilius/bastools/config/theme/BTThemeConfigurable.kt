@@ -11,6 +11,13 @@ package com.basmilius.bastools.config.theme
 
 import com.basmilius.bastools.config.BTConfigurable
 
+/**
+ * Class BTThemeConfigurable
+ *
+ * @author Bas Milius <bas@mili.us>
+ * @package com.basmilius.bastools.config.theme
+ * @since 1.4.0
+ */
 class BTThemeConfigurable: BTConfigurable<BTThemeConfigUI, BTThemeConfigState>("Theme")
 {
 
