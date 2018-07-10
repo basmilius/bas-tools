@@ -153,8 +153,8 @@ class CappuccinoBlock(builder: AbstractXmlTemplateFormattingModelBuilder, node: 
 		if (child2 !is ASTBlock)
 			return null
 
-		val leftNode = child1.node
-		val rightNode = child2.node
+		val leftNode = child1.node ?: return null
+		val rightNode = child2.node ?: return null
 		val leftType = leftNode.elementType
 		val rightType = rightNode.elementType
 

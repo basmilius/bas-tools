@@ -81,8 +81,6 @@ class CaptionPanelPatch: IUIPatch
 
 		classTitlePanel.toClass()
 
-		// Figure out what changed..
-//		ReflectionUtils.setFinalStatic(JBColor::class, "GRAY", BTUI.Colors.OutlineColor.asJBColor())
 		ReflectionUtils.setFinalStatic(JBColor::class, "LIGHT_GRAY", BTUI.Colors.OutlineColor.asJBColor())
 
 		ReflectionUtils.setFinalStatic(CaptionPanel::class, "CNT_ACTIVE_BORDER_COLOR", BTUI.Colors.OutlineColor.asJBColor())
