@@ -12,7 +12,6 @@
 		<psi.referenceContributor implementation="com.basmilius.bastools.framework.all.psi.PhpFileReferenceContributor"/>
 
 		<localInspection language="PHP" groupPath="Bas Tools,General Inspections" shortName="CallableValidityInspector" displayName="Validates callables" groupName="Probable Bugs" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.CallableValidityInspector"/>
-		<!--<localInspection groupPath="Bas Tools,General Inspections" shortName="MissingEmptyLineAtFileEndInspector" displayName="Missing empty line" groupName="Code Style" enabledByDefault="true" level="WARNING" implementationClass="com.basmilius.bastools.framework.all.codeInspection.MissingEmptyLineAtFileEndInspector"/>-->
 
 	</extensions>
 
@@ -97,10 +96,6 @@
 		</action>
 
 		<action id="BasTools.NewFile.Cappuccino" class="com.basmilius.bastools.action.code.CappuccinoNewFileAction">
-			<add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
-		</action>
-
-		<action id="BasTools.NewFile.SCSS" class="com.basmilius.bastools.action.code.SCSSNewFileAction">
 			<add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
 		</action>
 
