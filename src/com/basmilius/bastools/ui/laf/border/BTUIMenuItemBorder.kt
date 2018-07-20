@@ -31,7 +31,7 @@ class BTUIMenuItemBorder: DarculaMenuItemBorder()
 	 */
 	override fun getBorderInsets(c: Component): Insets
 	{
-		return JBUI.insets(4, 6)
+		return JBUI.insets(5, 9)
 	}
 
 }

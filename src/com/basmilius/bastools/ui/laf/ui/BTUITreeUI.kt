@@ -29,7 +29,7 @@ import javax.swing.tree.TreePath
  * @package com.basmilius.bastools.ui.laf.ui
  * @since 1.4.0
  */
-class BTUITreeUI: WideSelectionTreeUI(true, Conditions.alwaysFalse())
+open class BTUITreeUI: WideSelectionTreeUI(true, Conditions.alwaysFalse())
 {
 
 	/**
@@ -49,14 +49,14 @@ class BTUITreeUI: WideSelectionTreeUI(true, Conditions.alwaysFalse())
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getCollapsedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, null, 0.8f), 5)
+	override fun getCollapsedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, null, 0.8f), 10)
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getExpandedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, null, 0.8f), 5)
+	override fun getExpandedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, null, 0.8f), 10)
 
 	/**
 	 * {@inheritdoc}

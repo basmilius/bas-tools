@@ -37,7 +37,7 @@ class ToolWindowPatch: IUIPatch
 
 		val classToolWindowHeader = classPool.get("com.intellij.openapi.wm.impl.ToolWindowHeader")
 
-		val constructorMethod = classToolWindowHeader.declaredConstructors.first()
+		val constructorMethod = classToolWindowHeader.declaredConstructors[1]
 		val getPreferredSizeMethod = classToolWindowHeader.getDeclaredMethod("getPreferredSize")
 
 		constructorMethod.instrument(object: ExprEditor()
@@ -48,7 +48,7 @@ class ToolWindowPatch: IUIPatch
 				if (call.className != "javax.swing.BorderFactory" || call.methodName != "createEmptyBorder")
 					return
 
-				call.replace("\$_ = javax.swing.BorderFactory.createEmptyBorder(1, 3, 1, 3);")
+				call.replace("\$_ = javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3);")
 			}
 
 		})
