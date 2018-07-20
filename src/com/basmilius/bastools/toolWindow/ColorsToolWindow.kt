@@ -10,11 +10,9 @@
 package com.basmilius.bastools.toolWindow
 
 import com.intellij.uiDesigner.core.GridConstraints
-import com.intellij.uiDesigner.core.GridLayoutManager
 import java.awt.Dimension
 import javax.swing.JButton
 import javax.swing.JComponent
-import javax.swing.JPanel
 import javax.swing.border.EmptyBorder
 
 class ColorsToolWindow: BaseToolWindowFactory()

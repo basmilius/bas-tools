@@ -28,9 +28,7 @@ public class BTUIStatusBarUIProxy
 	 * Returns the Kotlin version of BTUIStatusBarUI :D.
 	 *
 	 * @param component JComponent
-	 *
 	 * @return BTUIStatusBarUI
-	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */

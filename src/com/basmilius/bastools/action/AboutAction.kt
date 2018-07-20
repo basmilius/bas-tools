@@ -11,7 +11,6 @@ package com.basmilius.bastools.action
 
 import com.basmilius.bastools.core.util.ApplicationUtils
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.project.DumbAwareAction
 import com.intellij.openapi.ui.Messages
 

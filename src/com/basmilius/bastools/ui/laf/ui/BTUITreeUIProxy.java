@@ -28,9 +28,7 @@ public class BTUITreeUIProxy
 	 * Returns the Kotlin version of BTUITreeUI :D.
 	 *
 	 * @param component JComponent
-	 *
 	 * @return BTUITreeUI
-	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */

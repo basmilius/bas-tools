@@ -72,7 +72,7 @@ class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerList
 				{
 					val methodCall = "${call.className}::${call.methodName}"
 
-					when(methodCall)
+					when (methodCall)
 					{
 						"com.intellij.util.ui.JBUI::emptyInsets" -> call.replace("{ \$_ = com.intellij.util.ui.JBUI.insets(0, 3, 5, 3); }")
 					}
@@ -89,7 +89,7 @@ class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerList
 				{
 					val methodCall = "${call.className}::${call.methodName}"
 
-					when(methodCall)
+					when (methodCall)
 					{
 						"com.intellij.ui.tabs.TabsUtil::getTabsHeight" -> call.replace("{ \$_ = com.intellij.util.ui.JBUI.scale(30); }")
 					}

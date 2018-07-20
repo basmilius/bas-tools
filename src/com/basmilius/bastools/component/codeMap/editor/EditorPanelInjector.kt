@@ -13,13 +13,15 @@ import com.basmilius.bastools.component.codeMap.CMWidth
 import com.basmilius.bastools.component.codeMap.renderer.TaskQueueRunner
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.impl.EditorImpl
-import com.intellij.openapi.fileEditor.*
+import com.intellij.openapi.fileEditor.FileEditorManager
+import com.intellij.openapi.fileEditor.FileEditorManagerEvent
+import com.intellij.openapi.fileEditor.FileEditorManagerListener
+import com.intellij.openapi.fileEditor.TextEditor
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.ui.JBSplitter
 import com.intellij.util.ui.JBUI
 import java.awt.BorderLayout
-import javax.swing.BoxLayout
 import javax.swing.JLayeredPane
 import javax.swing.JPanel
 

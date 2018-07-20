@@ -11,7 +11,6 @@ package com.basmilius.bastools.ui.laf.ui
 
 import com.basmilius.bastools.ui.BTUI
 import com.intellij.openapi.wm.impl.status.StatusBarUI
-import com.intellij.ui.JBColor
 import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
 import java.awt.*

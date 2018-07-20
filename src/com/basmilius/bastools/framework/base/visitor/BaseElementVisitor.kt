@@ -12,7 +12,6 @@ package com.basmilius.bastools.framework.base.visitor
 import com.intellij.codeInspection.ProblemsHolder
 import com.jetbrains.php.lang.documentation.phpdoc.psi.tags.PhpDocTag
 import com.jetbrains.php.lang.psi.elements.Declare
-import com.jetbrains.php.lang.psi.elements.PhpEval
 import com.jetbrains.php.lang.psi.elements.PhpPsiElement
 import com.jetbrains.php.lang.psi.visitors.PhpElementVisitor
 import org.jetbrains.annotations.NotNull

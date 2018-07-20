@@ -28,9 +28,7 @@ public class BTUIButtonUIProxy
 	 * Returns the Kotlin version of BTUIButtonUI :D.
 	 *
 	 * @param component JComponent
-	 *
 	 * @return BTUIButtonUI
-	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
