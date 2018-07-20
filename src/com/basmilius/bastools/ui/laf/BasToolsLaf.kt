@@ -41,6 +41,7 @@ class BasToolsLaf: DarculaLaf()
 		fun patch()
 		{
 			val patches = arrayOf(
+					UIUtilInitialPatch::class,
 					UIUtilPatch::class,
 					DarculaUIUtilPatch::class,
 					IconPatch::class,

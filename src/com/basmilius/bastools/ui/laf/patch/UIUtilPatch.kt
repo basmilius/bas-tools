@@ -11,6 +11,7 @@ package com.basmilius.bastools.ui.laf.patch
 
 import com.basmilius.bastools.core.util.ReflectionUtils
 import com.basmilius.bastools.ui.BTUI
+import com.intellij.ui.Gray
 import com.intellij.ui.JBColor
 import com.intellij.util.ui.UIUtil
 import javax.swing.UIManager

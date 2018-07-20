@@ -28,7 +28,7 @@
 		<option name="CARET_COLOR" value="7c7f81"/>
 		<option name="CARET_ROW_COLOR" value="242528"/>
 		<option name="GUTTER_BACKGROUND" value="202124"/>
-		<option name="INDENT_GUIDE" value="31363a"/>
+		<option name="INDENT_GUIDE" value="2A2B31"/>
 		<option name="LINE_NUMBERS_COLOR" value="727d83"/>
 		<option name="METHOD_SEPARATORS_COLOR" value="202124"/>
 		<option name="READONLY_BACKGROUND" value="202124"/>
@@ -37,7 +37,7 @@
 		<option name="SELECTED_INDENT_GUIDE" value="41484d"/>
 		<option name="SELECTED_TEARLINE_COLOR" value="41484d"/>
 		<option name="SELECTION_BACKGROUND" value="243a49"/>
-		<option name="TEARLINE_COLOR" value="31363a"/>
+		<option name="TEARLINE_COLOR" value="2A2B31"/>
 		<option name="WHITESPACES" value="202124"/>
 
 		<!-- Editor hints -->
