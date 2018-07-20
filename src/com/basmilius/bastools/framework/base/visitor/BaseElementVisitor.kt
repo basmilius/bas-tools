@@ -43,7 +43,7 @@ abstract class BaseElementVisitor(val problemsHolder: ProblemsHolder, val isOnTh
 	{
 		when (element)
 		{
-			is PhpEval -> this.visitPhpEval(element)
+//			is PhpEval -> this.visitPhpEval(element)
 			is PhpDocTag -> this.visitPhpDocTag(element)
 			is Declare -> this.visitPhpDeclare(element)
 			else -> this.visitElement(element)
@@ -58,7 +58,7 @@ abstract class BaseElementVisitor(val problemsHolder: ProblemsHolder, val isOnTh
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.1.0
 	 */
-	fun visitPhpDeclare(@NotNull declare: Declare)
+	private fun visitPhpDeclare(@NotNull declare: Declare)
 	{
 		this.visitElement(declare)
 	}

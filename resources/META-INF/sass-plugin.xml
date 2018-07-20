@@ -1,0 +1,11 @@
+<idea-plugin>
+
+	<actions>
+
+		<action id="BasTools.NewFile.SCSS" class="com.basmilius.bastools.action.code.SCSSNewFileAction">
+			<add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
+		</action>
+
+	</actions>
+
+</idea-plugin>
