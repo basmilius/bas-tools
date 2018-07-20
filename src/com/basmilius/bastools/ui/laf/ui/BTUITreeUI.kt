@@ -11,11 +11,9 @@ package com.basmilius.bastools.ui.laf.ui
 
 import com.basmilius.bastools.resource.Icons
 import com.intellij.openapi.util.Conditions
-import com.intellij.ui.JBColor
 import com.intellij.util.IconUtil
 import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.tree.WideSelectionTreeUI
-import java.awt.Color
 import java.awt.Graphics
 import java.awt.Insets
 import java.awt.Rectangle
@@ -51,14 +49,14 @@ class BTUITreeUI: WideSelectionTreeUI(true, Conditions.alwaysFalse())
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getCollapsedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, 0.8), 5)
+	override fun getCollapsedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, null, 0.8f), 5)
 
 	/**
 	 * {@inheritdoc}
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun getExpandedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, 0.8), 5)
+	override fun getExpandedIcon() = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, null, 0.8f), 5)
 
 	/**
 	 * {@inheritdoc}

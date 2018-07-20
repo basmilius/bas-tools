@@ -156,7 +156,7 @@ class BasToolsLaf: DarculaLaf()
 	 */
 	private fun uiDefaultsMenu(defaults: UIDefaults)
 	{
-		defaults["Menu.arrowIcon"] = BTUIDefaultMenuArrowIcon(IconUtil.scale(Icons.ChevronRight, 0.75))
+		defaults["Menu.arrowIcon"] = BTUIDefaultMenuArrowIcon(IconUtil.scale(Icons.ChevronRight, null, 0.75f))
 		defaults["Menu.border"] = BTUIMenuItemBorder()
 		defaults["Menu.maxGutterIconWidth"] = JBUI.scale(24)
 		defaults["Menu.submenuPopupOffsetY"] = JBUI.scale(-1)
