@@ -12,6 +12,7 @@ package com.basmilius.bastools.component.presenter.shortcuts
 import com.intellij.openapi.Disposable
 import com.intellij.openapi.actionSystem.*
 import com.intellij.openapi.actionSystem.ex.AnActionListener
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.keymap.MacKeymapUtil
 import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.util.Disposer
@@ -98,7 +99,7 @@ class Presenter: Disposable
 				.filterIsInstance<ActionGroup>()
 				.forEach { fillParentNames(it, it.templatePresentation.text!!) }
 
-		actionManager.addAnActionListener(object: AnActionListener
+		val listener = object: AnActionListener
 		{
 			var currentAction: ActionData? = null
 
@@ -128,11 +129,11 @@ class Presenter: Disposable
 				}
 			}
 
-			override fun beforeEditorTyping(c: Char, dataContext: DataContext?)
-			{
-			}
+		}
 
-		}, this)
+		ApplicationManager.getApplication().messageBus
+				.connect(this)
+				.subscribe(AnActionListener.TOPIC, listener)
 	}
 
 	/**

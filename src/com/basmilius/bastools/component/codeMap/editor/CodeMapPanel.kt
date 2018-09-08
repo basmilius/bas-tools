@@ -60,7 +60,13 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 
 	private val componentListener: ComponentListener
 	private val documentListener: DocumentListener
-	private val selectionListener: SelectionListener = SelectionListener { repaint() }
+	private val selectionListener: SelectionListener = object: SelectionListener
+	{
+		override fun selectionChanged(e: SelectionEvent)
+		{
+			repaint()
+		}
+	}
 
 	/**
 	 * Returns TRUE if code map should be disabled.
@@ -94,7 +100,7 @@ class CodeMapPanel(private val project: Project, private val textEditor: TextEdi
 		documentListener = object: DocumentListener
 		{
 
-			override fun documentChanged(documentEvent: DocumentEvent?)
+			override fun documentChanged(documentEvent: DocumentEvent)
 			{
 				updateImage()
 			}

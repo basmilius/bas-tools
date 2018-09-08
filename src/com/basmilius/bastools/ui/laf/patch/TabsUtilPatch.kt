@@ -11,6 +11,7 @@ package com.basmilius.bastools.ui.laf.patch
 
 import com.basmilius.bastools.core.util.ReflectionUtils
 import com.intellij.ui.tabs.TabsUtil
+import com.intellij.util.ui.JBValue
 
 /**
  * Class TabsUtilPatch
@@ -29,8 +30,8 @@ class TabsUtilPatch: IUIPatch
 	 */
 	override fun patch()
 	{
-		ReflectionUtils.setFinalStatic(TabsUtil::class, "TAB_VERTICAL_PADDING", 9)
-		ReflectionUtils.setFinalStatic(TabsUtil::class, "TABS_BORDER", 3)
+		ReflectionUtils.setFinalStatic(TabsUtil::class, "TAB_VERTICAL_PADDING", JBValue.Float(9f))
+		ReflectionUtils.setFinalStatic(TabsUtil::class, "TABS_BORDER", JBValue.Float(3f))
 	}
 
 }

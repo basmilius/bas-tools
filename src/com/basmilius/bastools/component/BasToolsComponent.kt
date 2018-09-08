@@ -13,7 +13,7 @@ import com.basmilius.bastools.framework.all.AllFramework
 import com.basmilius.bastools.framework.base.AbstractFramework
 import com.basmilius.bastools.framework.columba.ColumbaFramework
 import com.basmilius.bastools.ui.laf.BasToolsLaf
-import com.intellij.openapi.components.ApplicationComponent
+import com.intellij.openapi.components.BaseComponent
 import javax.swing.UIManager
 
 /**
@@ -23,7 +23,7 @@ import javax.swing.UIManager
  * @package com.basmilius.bastools.component
  * @since 1.1.0
  */
-class BasToolsComponent: ApplicationComponent
+class BasToolsComponent: BaseComponent
 {
 
 	/**

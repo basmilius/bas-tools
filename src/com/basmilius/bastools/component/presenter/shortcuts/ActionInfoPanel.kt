@@ -103,11 +103,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 
 		hint.addListener(object: JBPopupListener
 		{
-			override fun beforeShown(lightweightWindowEvent: LightweightWindowEvent?)
-			{
-			}
-
-			override fun onClosed(lightweightWindowEvent: LightweightWindowEvent?)
+			override fun onClosed(lightweightWindowEvent: LightweightWindowEvent)
 			{
 				phase = Phase.HIDDEN
 			}

@@ -72,7 +72,7 @@ class CappuccinoBlockReference(private val project: Project, source: CappuccinoB
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 */
-	override fun isReferenceTo(element: PsiElement?): Boolean
+	override fun isReferenceTo(element: PsiElement): Boolean
 	{
 		val resolved = this.resolve() ?: return false
 		val parent = resolved.parent as? CappuccinoBlockTag ?: return false

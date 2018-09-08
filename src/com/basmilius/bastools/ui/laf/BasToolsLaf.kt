@@ -113,7 +113,7 @@ class BasToolsLaf: DarculaLaf()
 		val defaults = super.getDefaults()
 
 		defaults.forEach { key, value ->
-//			System.out.println("$key => $value")
+			System.out.println("$key => $value")
 		}
 
 		return defaults

@@ -37,8 +37,8 @@ class ToolWindowPatch: IUIPatch
 
 		val classToolWindowHeader = classPool.get("com.intellij.openapi.wm.impl.ToolWindowHeader")
 
-		val constructorMethod = classToolWindowHeader.declaredConstructors[1]
-		val getPreferredSizeMethod = classToolWindowHeader.getDeclaredMethod("getPreferredSize")
+		val constructorMethod = classToolWindowHeader.declaredConstructors[0]
+//		val getPreferredSizeMethod = classToolWindowHeader.getDeclaredMethod("getPreferredSize")
 
 		constructorMethod.instrument(object: ExprEditor()
 		{
@@ -53,18 +53,18 @@ class ToolWindowPatch: IUIPatch
 
 		})
 
-		getPreferredSizeMethod.instrument(object: ExprEditor()
-		{
-
-			override fun edit(call: MethodCall)
-			{
-				if (call.className != "com.intellij.ui.tabs.TabsUtil" || call.methodName != "getTabsHeight")
-					return
-
-				call.replace("\$_ = com.intellij.util.ui.JBUI.scale(31);")
-			}
-
-		})
+//		getPreferredSizeMethod.instrument(object: ExprEditor()
+//		{
+//
+//			override fun edit(call: MethodCall)
+//			{
+//				if (call.className != "com.intellij.ui.tabs.TabsUtil" || call.methodName != "getTabsHeight")
+//					return
+//
+//				call.replace("\$_ = com.intellij.util.ui.JBUI.scale(31);")
+//			}
+//
+//		})
 
 		classToolWindowHeader.toClass()
 	}

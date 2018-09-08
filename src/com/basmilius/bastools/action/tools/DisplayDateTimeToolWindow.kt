@@ -36,11 +36,8 @@ class DisplayDateTimeToolWindow: AnAction("Show Date Time Tool Window")
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.1.0
 	 */
-	override fun actionPerformed(aae: AnActionEvent?)
+	override fun actionPerformed(aae: AnActionEvent)
 	{
-		if (aae === null)
-			return
-
 		val project = aae.project ?: return
 		val toolWindowManager = ToolWindowManager.getInstance(project)
 		val toolWindow = toolWindowManager.getToolWindow("Datetime Tools") as? ToolWindowImpl ?: return
