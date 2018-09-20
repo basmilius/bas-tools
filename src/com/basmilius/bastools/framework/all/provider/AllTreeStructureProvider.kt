@@ -34,58 +34,38 @@ class AllTreeStructureProvider: TreeStructureProvider
 	override fun modify(parent: AbstractTreeNode<*>, children: Collection<AbstractTreeNode<*>>, settings: ViewSettings): Collection<AbstractTreeNode<*>>
 	{
 		val nodes = ArrayList<AbstractTreeNode<*>>()
-		val poFiles = ArrayList<AbstractTreeNode<*>>()
 
 		for (child in children)
 		{
-			// Remove .mo-files that have associated .po-files.
 			if (child is PsiFileNode && child.virtualFile?.extension == "mo")
-			{
-				val associatedPoFiles = children
-						.filter { it is PsiFileNode && it.virtualFile?.extension == "po" && it.virtualFile?.nameWithoutExtension == child.virtualFile?.nameWithoutExtension }
-						.map { it as PsiFileNode }
-
-				if (associatedPoFiles.isNotEmpty())
+				if (children.filter { it is PsiFileNode && it.virtualFile?.extension == "pot" && child.virtualFile!!.nameWithoutExtension.startsWith(it.virtualFile!!.nameWithoutExtension + "-") }.map { it as PsiFileNode }.isNotEmpty())
 					continue
-			}
 
-			// Add associated .mo-files under their linked .po-file.
 			if (child is PsiFileNode && child.virtualFile?.extension == "po")
-			{
-				val associatedMoFiles = children
-						.filter { it is PsiFileNode && it.virtualFile?.extension == "mo" && it.virtualFile?.nameWithoutExtension == child.virtualFile?.nameWithoutExtension }
-						.map { it as PsiFileNode }
-
-				if (associatedMoFiles.isNotEmpty())
-				{
-					nodes.add(NestingTreeNode(child, associatedMoFiles))
-
+				if (children.filter { it is PsiFileNode && it.virtualFile?.extension == "pot" && child.virtualFile!!.nameWithoutExtension.startsWith(it.virtualFile!!.nameWithoutExtension + "-") }.map { it as PsiFileNode }.isNotEmpty())
 					continue
-				}
-			}
 
-			// Adds associated .po-files under their likely .pot-file.
 			if (child is PsiFileNode && child.virtualFile?.extension == "pot")
 			{
-				val associatedPoFiles = children
-						.filter { it is PsiFileNode && it.virtualFile?.nameWithoutExtension!!.startsWith("${child.virtualFile?.nameWithoutExtension}-") }
+				val associatedMoFiles = children
+						.filter { it is PsiFileNode && it.virtualFile?.extension == "mo" && it.virtualFile!!.nameWithoutExtension.startsWith(child.virtualFile!!.nameWithoutExtension + "-") }
 						.map { it as PsiFileNode }
 
-				if (associatedPoFiles.isNotEmpty())
-				{
-					nodes.add(NestingTreeNode(child, associatedPoFiles))
-					poFiles.addAll(associatedPoFiles)
+				val associatedPoFiles = children
+						.filter { it is PsiFileNode && it.virtualFile?.extension == "po" && it.virtualFile!!.nameWithoutExtension.startsWith(child.virtualFile!!.nameWithoutExtension + "-") }
+						.map { it as PsiFileNode }
 
-					continue
-				}
+				val sub = ArrayList<PsiFileNode>()
+				sub.addAll(associatedPoFiles)
+				sub.addAll(associatedMoFiles)
+
+				nodes.add(NestingTreeNode(child, sub))
+
+				continue
 			}
 
 			nodes.add(child)
 		}
-
-		// Remove .po-files that are grouped into .pot-files from the main tree structure.
-		for (poFile in poFiles)
-			nodes.remove(poFile)
 
 		return nodes
 	}

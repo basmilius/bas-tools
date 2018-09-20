@@ -18,7 +18,7 @@
 			<option name="Cappuccino" value="true"/>
 		</context>
 	</template>
-	<template name="emb" value="{% embed $TEMPLATE$ %}&#10;    $END$&#10;{% endembed %}&#10;" description="embed 'template'...endembed" toReformat="true">
+	<template name="emb" value="{% embed &quot;$TEMPLATE$&quot; %}&#10;    $END$&#10;{% endembed %}&#10;" description="embed &quot;template&quot;...endembed" toReformat="true">
 		<variable name="TEMPLATE" expression="" defaultValue="" alwaysStopAt="true"/>
 		<context>
 			<option name="Cappuccino" value="true"/>
@@ -37,7 +37,7 @@
 			<option name="Cappuccino" value="true"/>
 		</context>
 	</template>
-	<template name="from" value="{% from '$TEMPLATE$' import $END$ %}&#10;" description="from 'template' import..." toReformat="true">
+	<template name="from" value="{% from &quot;$TEMPLATE$&quot; import $END$ %}&#10;" description="from &quot;template&quot; import..." toReformat="true">
 		<variable name="TEMPLATE" expression="" defaultValue="" alwaysStopAt="true"/>
 		<context>
 			<option name="Cappuccino" value="true"/>
@@ -49,13 +49,13 @@
 			<option name="Cappuccino" value="true"/>
 		</context>
 	</template>
-	<template name="imp" value="{% import '$TEMPLATE$'$END$ %}" description="import 'template'" toReformat="true">
+	<template name="imp" value="{% import &quot;$TEMPLATE$&quot;$END$ %}" description="import &quot;template&quot;" toReformat="true">
 		<variable name="TEMPLATE" expression="" defaultValue="" alwaysStopAt="true"/>
 		<context>
 			<option name="Cappuccino" value="true"/>
 		</context>
 	</template>
-	<template name="inc" value="{% include '$TEMPLATE$'$END$ %}" description="include 'template'" toReformat="true">
+	<template name="inc" value="{% include &quot;$TEMPLATE$&quot;$END$ %}" description="include &quot;template&quot;" toReformat="true">
 		<variable name="TEMPLATE" expression="" defaultValue="" alwaysStopAt="true"/>
 		<context>
 			<option name="Cappuccino" value="true"/>

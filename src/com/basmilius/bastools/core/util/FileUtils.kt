@@ -11,6 +11,7 @@ package com.basmilius.bastools.core.util
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.roots.ProjectFileIndex
+import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.psi.PsiFile
 import com.intellij.psi.PsiFileSystemItem
 import com.intellij.psi.PsiManager
@@ -25,9 +26,9 @@ import com.intellij.psi.PsiManager
 object FileUtils
 {
 
-	val TYPE_ALL = 0
-	val TYPE_DIRECTORY = 2
-	val TYPE_FILE = 1
+	const val TYPE_ALL = 0
+	const val TYPE_DIRECTORY = 2
+	const val TYPE_FILE = 1
 
 	/**
 	 * Gets all the project files.
@@ -42,7 +43,9 @@ object FileUtils
 	fun getProjectFiles(project: Project): Array<String>
 	{
 		val files = ArrayList<String>()
-		val projectDir = project.baseDir
+		val projectPath = project.basePath ?: return files.toTypedArray()
+		val projectDir = LocalFileSystem.getInstance().findFileByPath(projectPath) ?: return files.toTypedArray()
+
 		val fileIndex = ProjectFileIndex.SERVICE.getInstance(project)
 
 		fileIndex.iterateContentUnderDirectory(projectDir) {
@@ -100,7 +103,7 @@ object FileUtils
 	{
 		val files = HashMap<String, PsiFileSystemItem>()
 		val project = baseFile.project
-		val projectDirectory = project.baseDir
+		val projectDirectory = project.basePath
 		val directory = baseFile.containingDirectory ?: baseFile.containingFile.containingDirectory ?: return files
 		val originDirectory = directory.virtualFile
 		val fileIndex = ProjectFileIndex.SERVICE.getInstance(project)
@@ -113,9 +116,7 @@ object FileUtils
 				val psiDirectory = psiManager.findDirectory(originDirectory)
 
 				if (psiDirectory != null)
-				{
-					files.put(".", psiDirectory)
-				}
+					files["."] = psiDirectory
 			}
 
 			fileIndex.iterateContentUnderDirectory(originDirectory) {
@@ -126,9 +127,7 @@ object FileUtils
 					val psiFile = psiManager.findFile(it)
 
 					if (psiFile != null)
-					{
-						files.put(relativePath, psiFile)
-					}
+						files[relativePath] = psiFile
 				}
 
 				if ((fileType == TYPE_ALL || fileType == TYPE_DIRECTORY) && it.isDirectory && !relativePath.startsWith(".idea/") && it.path != originDirectory.path)
@@ -136,9 +135,7 @@ object FileUtils
 					val psiDirectory = psiManager.findDirectory(it)
 
 					if (psiDirectory != null)
-					{
-						files.put(relativePath, psiDirectory)
-					}
+						files[relativePath] = psiDirectory
 				}
 
 				true

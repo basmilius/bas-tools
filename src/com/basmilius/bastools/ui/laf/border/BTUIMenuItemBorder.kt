@@ -21,7 +21,7 @@ import java.awt.Insets
  * @package com.basmilius.bastools.ui.laf.border
  * @since 1.4.0
  */
-class BTUIMenuItemBorder: DarculaMenuItemBorder()
+open class BTUIMenuItemBorder: DarculaMenuItemBorder()
 {
 
 	/**

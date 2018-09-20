@@ -12,6 +12,7 @@ package com.basmilius.bastools.ui
 import com.basmilius.bastools.core.util.MathUtil
 import com.intellij.ui.JBColor
 import java.awt.Color
+import javax.swing.plaf.ColorUIResource
 
 /**
  * Class BTColor.
@@ -70,6 +71,16 @@ data class BTColor(var red: Int, var green: Int, var blue: Int, var alpha: Int =
 
 		return color
 	}
+
+	/**
+	 * Returns our color as {@see ColorUIResource}.
+	 *
+	 * @return {Color}
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun asColorUIResource(): ColorUIResource = ColorUIResource(this.asColor())
 
 	/**
 	 * Returns our color as {@see JBColor}.

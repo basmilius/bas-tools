@@ -12,7 +12,7 @@ package com.basmilius.bastools.component
 import com.basmilius.bastools.framework.all.AllFramework
 import com.basmilius.bastools.framework.base.AbstractFramework
 import com.basmilius.bastools.framework.columba.ColumbaFramework
-import com.basmilius.bastools.ui.laf.BasToolsLaf
+import com.basmilius.bastools.ui.laf.BTLaF
 import com.intellij.openapi.components.BaseComponent
 import javax.swing.UIManager
 
@@ -44,7 +44,7 @@ class BasToolsComponent: BaseComponent
 		 */
 		init
 		{
-			BasToolsLaf.patch()
+			BTLaF.patch()
 		}
 
 		/**
@@ -82,7 +82,7 @@ class BasToolsComponent: BaseComponent
 	{
 		try
 		{
-			UIManager.setLookAndFeel(BasToolsLaf())
+			UIManager.setLookAndFeel(BTLaF())
 
 			Frameworks.forEach { it.onLoad() }
 		}

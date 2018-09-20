@@ -40,7 +40,9 @@
 		<toolWindow id="Color Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.ColorsToolWindow"/>
 		<toolWindow id="Datetime Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.DateTimeToolWindowFactory"/>
 
-		<themeProvider id="8ac50e6a-56f8-49a1-8fb0-aadb08c406bf" path="/themes/Horologium.theme.json"/>
+		<!--<themeProvider id="8ac50e6a-56f8-49a1-8fb0-aadb08c406bf" path="/themes/Horologium.theme.json"/>-->
+
+		<defaultLiveTemplatesProvider implementation="com.basmilius.bastools.language.java.liveTemplates.MissingJavaStuffTemplatesProvider"/>
 	</extensions>
 
 	<application-components>

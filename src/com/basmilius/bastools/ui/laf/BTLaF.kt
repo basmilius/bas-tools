@@ -10,6 +10,7 @@
 package com.basmilius.bastools.ui.laf
 
 import com.basmilius.bastools.resource.Icons
+import com.basmilius.bastools.ui.BTUI
 import com.basmilius.bastools.ui.laf.border.BTUIButtonBorder
 import com.basmilius.bastools.ui.laf.border.BTUIMenuItemBorder
 import com.basmilius.bastools.ui.laf.icon.BTUIDefaultMenuArrowIcon
@@ -21,16 +22,17 @@ import com.intellij.util.IconUtil
 import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.JBUI
 import javax.swing.UIDefaults
+import javax.swing.plaf.ColorUIResource
 import kotlin.reflect.full.createInstance
 
 /**
- * Class BasToolsLaf
+ * Class BTLaF
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.laf
  * @since 1.0.0
  */
-class BasToolsLaf: DarculaLaf()
+class BTLaF: DarculaLaf()
 {
 
 	companion object
@@ -45,6 +47,8 @@ class BasToolsLaf: DarculaLaf()
 					UIUtilPatch::class,
 					DarculaUIUtilPatch::class,
 					IconPatch::class,
+
+					WelcomeScreenColorsPatch::class,
 
 					CaptionPanelPatch::class,
 					EditorMarkupModelImplPatch::class,
@@ -161,6 +165,7 @@ class BasToolsLaf: DarculaLaf()
 		defaults["Menu.border"] = BTUIMenuItemBorder()
 		defaults["Menu.maxGutterIconWidth"] = JBUI.scale(24)
 		defaults["Menu.submenuPopupOffsetY"] = JBUI.scale(-1)
+		defaults["MenuBar.borderColor"] = ColorUIResource(BTUI.Colors.BackgroundColor.asColor())
 		defaults["MenuItem.border"] = BTUIMenuItemBorder()
 		defaults["MenuItem.maxGutterIconWidth"] = JBUI.scale(24)
 	}
