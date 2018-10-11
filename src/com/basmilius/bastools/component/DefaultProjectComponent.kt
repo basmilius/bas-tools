@@ -70,8 +70,8 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 		this.applyCodeStyleSettings()
 		this.applyWorkspacePerUser()
 
-		ApplicationUtils.withComponent(BasToolsComponent::class) {
-			it.withFrameworks {
+		ApplicationUtils.withComponent(BasToolsComponent::class) { cmp ->
+			cmp.withFrameworks {
 				it.onProjectOpened(this.project)
 			}
 		}
@@ -87,8 +87,8 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	{
 		this.unloadWorkspacePerUser()
 
-		ApplicationUtils.withComponent(BasToolsComponent::class) {
-			it.withFrameworks {
+		ApplicationUtils.withComponent(BasToolsComponent::class) { cmp ->
+			cmp.withFrameworks {
 				it.onProjectClosed(this.project)
 			}
 		}

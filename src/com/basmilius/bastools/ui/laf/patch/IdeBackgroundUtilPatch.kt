@@ -10,18 +10,18 @@
 package com.basmilius.bastools.ui.laf.patch
 
 import com.basmilius.bastools.ui.BTUI
-import com.intellij.ide.IdeTooltipManager
+import com.intellij.openapi.wm.impl.AltStateManager
 import javassist.ClassClassPath
 import javassist.ClassPool
 
 /**
- * Class IdeTooltipPatch
+ * Class IdeBackgroundUtilPatch
  *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.ui.laf.patch
- * @since 1.4.0
+ * @since 1.4.1
  */
-class IdeTooltipPatch: IUIPatch
+class IdeBackgroundUtilPatch: IUIPatch
 {
 
 	/**
@@ -32,11 +32,11 @@ class IdeTooltipPatch: IUIPatch
 	override fun patch()
 	{
 		val classPool = ClassPool(true)
-		classPool.insertClassPath(ClassClassPath(IdeTooltipManager::class.java))
+		classPool.insertClassPath(ClassClassPath(AltStateManager::class.java))
 
-		val classIdeTooltip = classPool.get("com.intellij.ide.IdeTooltip")
-		val getBorderColorMethod = classIdeTooltip.getDeclaredMethod("getBorderColor")
-		val color = BTUI.Colors.OutlineColor
+		val classIdeTooltip = classPool.get("com.intellij.openapi.wm.impl.IdeBackgroundUtil")
+		val getBorderColorMethod = classIdeTooltip.getDeclaredMethod("getIdeBackgroundColor")
+		val color = BTUI.Colors.BackgroundColor
 
 		getBorderColorMethod.setBody("{ return new java.awt.Color(${color.red}, ${color.green}, ${color.blue}); }")
 

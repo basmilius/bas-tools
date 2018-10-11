@@ -48,12 +48,10 @@ class BTLaF: DarculaLaf()
 					DarculaUIUtilPatch::class,
 					IconPatch::class,
 
-					WelcomeScreenColorsPatch::class,
-
 					CaptionPanelPatch::class,
 					EditorMarkupModelImplPatch::class,
 					HintHintPatch::class,
-					IdePanePanelPatch::class,
+					IdeBackgroundUtilPatch::class,
 					IdeTooltipPatch::class,
 					NavBarUIManagerPatch::class,
 					TabsUtilPatch::class,

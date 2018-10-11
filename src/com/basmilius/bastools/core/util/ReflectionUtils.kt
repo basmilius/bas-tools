@@ -25,6 +25,24 @@ object ReflectionUtils
 {
 
 	/**
+	 * Gets a field using reflection.
+	 *
+	 * @param instanceClass KClass<*>
+	 * @param instance Any
+	 * @param fieldClass KClass<*>
+	 * @param fieldName String
+	 *
+	 * @return T
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	fun <T: Any> getField(instanceClass: KClass<*>, instance: Any, fieldClass: KClass<T>, fieldName: String): T
+	{
+		return ReflectionUtil.getField(instanceClass.java, instance, fieldClass.java, fieldName)
+	}
+
+	/**
 	 * Sets a field using reflection.
 	 *
 	 * @param clazz KClass<*>

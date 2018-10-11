@@ -150,7 +150,7 @@ class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerList
 	 */
 	private fun patchPainter(tabs: JBEditorTabs)
 	{
-		val painter = ReflectionUtil.getField(JBEditorTabs::class.java, tabs, JBEditorTabsPainter::class.java, "myDarkPainter")
+		val painter = ReflectionUtils.getField(JBEditorTabs::class, tabs, JBEditorTabsPainter::class, "myDefaultPainter")
 
 		if (painter is BTTabsPainter)
 			return
@@ -167,7 +167,7 @@ class BTTabsPainterPatcherComponent: ApplicationComponent, FileEditorManagerList
 			result
 		}) as BTTabsPainter
 
-		ReflectionUtils.setField(JBEditorTabs::class, tabs, JBEditorTabsPainter::class, "myDarkPainter", proxy)
+		ReflectionUtils.setField(JBEditorTabs::class, tabs, JBEditorTabsPainter::class, "myDefaultPainter", proxy)
 	}
 
 	/**
