@@ -56,7 +56,9 @@ class BTLaF: DarculaLaf()
 					NavBarUIManagerPatch::class,
 					TabsUtilPatch::class,
 					InternalDecoratorPatch::class,
-					ToolWindowPatch::class
+					ToolWindowPatch::class,
+
+					PluginManagerConfigurableNewPatch::class
 			)
 
 			this.logger.debug("Performing ${patches.size} ui patches..")
