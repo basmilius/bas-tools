@@ -45,7 +45,6 @@ class BTLaF: DarculaLaf()
 			val patches = arrayOf(
 					UIUtilInitialPatch::class,
 					UIUtilPatch::class,
-					DarculaUIUtilPatch::class,
 					IconPatch::class,
 
 					CaptionPanelPatch::class,
@@ -98,7 +97,7 @@ class BTLaF: DarculaLaf()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	override fun getName() = "BasTools Darcula"
+	override fun getName() = "BasTools Dark"
 
 	/**
 	 * {@inheritdoc}
@@ -106,22 +105,6 @@ class BTLaF: DarculaLaf()
 	 * @since 1.0.0
 	 */
 	override fun getPrefix() = "bastools"
-
-	/**
-	 * {@inheritdoc}
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.4.0
-	 */
-	override fun getDefaults(): UIDefaults
-	{
-		val defaults = super.getDefaults()
-
-		defaults.forEach { key, value ->
-			System.out.println("$key => $value")
-		}
-
-		return defaults
-	}
 
 	/**
 	 * {@inheritdoc}

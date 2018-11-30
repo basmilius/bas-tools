@@ -16,12 +16,17 @@
 	<HTMLCodeStyleSettings>
 		<option name="HTML_DO_NOT_INDENT_CHILDREN_OF" value="html,thead,tbody,tfoot" />
 	</HTMLCodeStyleSettings>
-	<JSCodeStyleSettings>
+	<JSCodeStyleSettings version="0">
 		<option name="ENFORCE_TRAILING_COMMA" value="Remove" />
 		<option name="IMPORTS_WRAP" value="0" />
 		<option name="SPACES_WITHIN_IMPORTS" value="true" />
 		<option name="FUNCTION_EXPRESSION_BRACE_STYLE" value="2" />
 	</JSCodeStyleSettings>
+	<LessCodeStyleSettings>
+		<option name="HEX_COLOR_LOWER_CASE" value="true" />
+		<option name="HEX_COLOR_LONG_FORMAT" value="true" />
+		<option name="BRACE_PLACEMENT" value="1" />
+	</LessCodeStyleSettings>
 	<PHPCodeStyleSettings>
 		<option name="ALIGN_PHPDOC_PARAM_NAMES" value="true" />
 		<option name="PHPDOC_BLANK_LINE_BEFORE_TAGS" value="true" />
@@ -33,7 +38,12 @@
 		<option name="FORCE_SHORT_DECLARATION_ARRAY_STYLE" value="true" />
 		<option name="NAMESPACE_BRACE_STYLE" value="2" />
 	</PHPCodeStyleSettings>
-	<TypeScriptCodeStyleSettings>
+	<ScssCodeStyleSettings>
+		<option name="HEX_COLOR_LOWER_CASE" value="true" />
+		<option name="HEX_COLOR_LONG_FORMAT" value="true" />
+		<option name="BRACE_PLACEMENT" value="1" />
+	</ScssCodeStyleSettings>
+	<TypeScriptCodeStyleSettings version="0">
 		<option name="USE_PUBLIC_MODIFIER" value="true" />
 		<option name="ENFORCE_TRAILING_COMMA" value="Remove" />
 		<option name="IMPORTS_WRAP" value="0" />
@@ -102,7 +112,6 @@
 		<option name="WHILE_ON_NEW_LINE" value="true" />
 		<option name="CATCH_ON_NEW_LINE" value="true" />
 		<option name="FINALLY_ON_NEW_LINE" value="true" />
-		<option name="SPACE_BEFORE_METHOD_PARENTHESES" value="false" />
 		<indentOptions>
 			<option name="USE_TAB_CHARACTER" value="true" />
 			<option name="SMART_TABS" value="true" />
@@ -124,7 +133,6 @@
 		<option name="CATCH_ON_NEW_LINE" value="true" />
 		<option name="FINALLY_ON_NEW_LINE" value="true" />
 		<option name="SPECIAL_ELSE_IF_TREATMENT" value="true" />
-		<option name="SPACE_BEFORE_METHOD_PARENTHESES" value="false" />
 		<indentOptions>
 			<option name="USE_TAB_CHARACTER" value="true" />
 			<option name="SMART_TABS" value="true" />
@@ -166,7 +174,6 @@
 		<option name="WHILE_ON_NEW_LINE" value="true" />
 		<option name="CATCH_ON_NEW_LINE" value="true" />
 		<option name="FINALLY_ON_NEW_LINE" value="true" />
-		<option name="SPACE_BEFORE_METHOD_PARENTHESES" value="false" />
 		<indentOptions>
 			<option name="USE_TAB_CHARACTER" value="true" />
 			<option name="SMART_TABS" value="true" />
