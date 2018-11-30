@@ -97,7 +97,7 @@ class BTLaF: DarculaLaf()
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	override fun getName() = "BasTools Dark"
+	override fun getName() = "Darcula"
 
 	/**
 	 * {@inheritdoc}
@@ -105,6 +105,22 @@ class BTLaF: DarculaLaf()
 	 * @since 1.0.0
 	 */
 	override fun getPrefix() = "bastools"
+
+	/**
+	 * {@inheritdoc}
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.4.0
+	 */
+	override fun getDefaults(): UIDefaults
+	{
+		val defaults = super.getDefaults()
+
+//		defaults.forEach { key, value ->
+//			System.out.println("$key => $value")
+//		}
+
+		return defaults
+	}
 
 	/**
 	 * {@inheritdoc}
