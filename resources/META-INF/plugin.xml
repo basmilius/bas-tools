@@ -65,9 +65,9 @@
 			<implementation-class>com.basmilius.bastools.watcher.SassWatcherProjectComponent</implementation-class>
 		</component>
 
-		<component>
-			<implementation-class>com.basmilius.bastools.component.codeMap.CodeMapComponent</implementation-class>
-		</component>
+		<!--<component>-->
+			<!--<implementation-class>com.basmilius.bastools.component.codeMap.CodeMapComponent</implementation-class>-->
+		<!--</component>-->
 
 	</project-components>
 
