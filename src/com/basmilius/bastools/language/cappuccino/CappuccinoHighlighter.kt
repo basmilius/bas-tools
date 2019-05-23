@@ -13,10 +13,12 @@ import com.basmilius.bastools.language.cappuccino.lexer.CappuccinoLexerAdapter
 import com.intellij.lexer.Lexer
 import com.intellij.openapi.editor.colors.EditorColorsScheme
 import com.intellij.openapi.editor.colors.TextAttributesKey
+import com.intellij.openapi.editor.ex.util.LayerDescriptor
 import com.intellij.openapi.editor.ex.util.LayeredLexerEditorHighlighter
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.fileTypes.FileTypes
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase
+import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.tree.IElementType
@@ -52,7 +54,7 @@ class CappuccinoHighlighter(project: Project?, virtualFile: VirtualFile?, colors
 		if (fileType == null)
 			fileType = FileTypes.PLAIN_TEXT
 
-		this.registerLayer(CappuccinoTokenTypes.TEMPLATE_HTML_TEXT, com.intellij.openapi.editor.ex.util.LayerDescriptor(com.intellij.openapi.fileTypes.SyntaxHighlighterFactory.getSyntaxHighlighter(fileType!!, project, virtualFile), ""))
+		this.registerLayer(CappuccinoTokenTypes.TEMPLATE_HTML_TEXT, LayerDescriptor(SyntaxHighlighterFactory.getSyntaxHighlighter(fileType!!, project, virtualFile)!!, ""))
 	}
 
 	/**
@@ -86,10 +88,10 @@ class CappuccinoHighlighter(project: Project?, virtualFile: VirtualFile?, colors
 				fillMap(Keys, CappuccinoTokenTypes.OPERATORS, CappuccinoHighlighterData.OPERATION_SIGN)
 				fillMap(Keys, CappuccinoTokenTypes.STRING_LITERALS, CappuccinoHighlighterData.STRING)
 				fillMap(Keys, CappuccinoTokenTypes.PARENTHS, CappuccinoHighlighterData.BRACKETS)
-				Keys.put(CappuccinoTokenTypes.COMMENT, CappuccinoHighlighterData.COMMENT)
-				Keys.put(CappuccinoTokenTypes.NUMBER, CappuccinoHighlighterData.NUMBER)
-				Keys.put(CappuccinoTokenTypes.BAD_CHARACTER, CappuccinoHighlighterData.BAD_CHARACTER)
-				Keys.put(CappuccinoTokenTypes.IDENTIFIER, CappuccinoHighlighterData.IDENTIFIER)
+				Keys[CappuccinoTokenTypes.COMMENT] = CappuccinoHighlighterData.COMMENT
+				Keys[CappuccinoTokenTypes.NUMBER] = CappuccinoHighlighterData.NUMBER
+				Keys[CappuccinoTokenTypes.BAD_CHARACTER] = CappuccinoHighlighterData.BAD_CHARACTER
+				Keys[CappuccinoTokenTypes.IDENTIFIER] = CappuccinoHighlighterData.IDENTIFIER
 			}
 
 		}

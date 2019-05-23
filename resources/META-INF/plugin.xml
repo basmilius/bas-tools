@@ -31,8 +31,8 @@
 		<applicationService serviceImplementation="com.basmilius.bastools.config.root.BTRootConfigState"/>
 		<applicationService serviceImplementation="com.basmilius.bastools.config.theme.BTThemeConfigState"/>
 
-<!--		<bundledColorScheme id="Bas Settings" path="./colors/Bas Settings"/>-->
-<!--		<bundledInspectionProfile id="Bas Settings" path="./inspection/Bas Settings"/>-->
+		<bundledColorScheme id="Bas Settings" path="./colors/Bas Settings"/>
+		<bundledInspectionProfile id="Bas Settings" path="./inspection/Bas Settings"/>
 
 		<iconProvider implementation="com.basmilius.bastools.provider.BasToolsIconProvider"/>
 
@@ -50,9 +50,9 @@
 			<implementation-class>com.basmilius.bastools.component.BasToolsComponent</implementation-class>
 		</component>
 
-<!--		<component>-->
-<!--			<implementation-class>com.basmilius.bastools.ui.laf.tabs.BTTabsPainterPatcherComponent</implementation-class>-->
-<!--		</component>-->
+		<!--		<component>-->
+		<!--			<implementation-class>com.basmilius.bastools.ui.laf.tabs.BTTabsPainterPatcherComponent</implementation-class>-->
+		<!--		</component>-->
 
 		<component>
 			<implementation-class>com.basmilius.bastools.component.presenter.shortcuts.ShortcutPresenter</implementation-class>
@@ -63,7 +63,7 @@
 	<project-components>
 
 		<!--<component>-->
-			<!--<implementation-class>com.basmilius.bastools.component.codeMap.CodeMapComponent</implementation-class>-->
+		<!--<implementation-class>com.basmilius.bastools.component.codeMap.CodeMapComponent</implementation-class>-->
 		<!--</component>-->
 
 	</project-components>
