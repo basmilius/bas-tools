@@ -10,6 +10,7 @@
 package com.basmilius.bastools.framework.identity
 
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.PsiFile
 
@@ -35,9 +36,9 @@ object IdentityFramework
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.0.0
 	 */
-	fun getSourcesRoot(project: Project): VirtualFile
+	fun getSourcesRoot(project: Project): VirtualFile?
 	{
-		val projectRoot = project.baseDir
+		val projectRoot = project.guessProjectDir() ?: return null
 		val srcDirectory = projectRoot.findChild("src")
 		return if (srcDirectory != null && srcDirectory.exists() && srcDirectory.isDirectory) srcDirectory else projectRoot
 	}
@@ -60,10 +61,13 @@ object IdentityFramework
 		val projectRoot = IdentityFramework.getSourcesRoot(project)
 		val identityFiles = arrayOf("wp-admin", "wp-content", "wp-includes", "wp-content/themes/idty", "wp-content/themes/idty/IdentityFramework.php", "wp-config.php")
 
+		if (projectRoot == null)
+			return false
+
 		identityFiles
 				.map { projectRoot.findFileByRelativePath(it) }
 				.filterNot { it != null && it.exists() }
-				.forEach { return false }
+				.forEach { _ -> return false }
 
 		theseAreIdentityProjects.add(project)
 
@@ -80,7 +84,7 @@ object IdentityFramework
 	 */
 	fun isChildOf(project: Project, file: PsiFile, dir: String): Boolean
 	{
-		val sourcesRoot: VirtualFile = this.getSourcesRoot(project)
+		val sourcesRoot: VirtualFile = this.getSourcesRoot(project) ?: return false
 		val directoryRoot: String = sourcesRoot.path + dir
 
 		return file.virtualFile.path.startsWith(directoryRoot)

@@ -103,13 +103,13 @@ class Presenter: Disposable
 		{
 			var currentAction: ActionData? = null
 
-			override fun beforeActionPerformed(action: AnAction, dataContext: DataContext, event: AnActionEvent?)
+			override fun beforeActionPerformed(action: AnAction, dataContext: DataContext, event: AnActionEvent)
 			{
 				currentAction = null
 
 				val actionId = ActionManager.getInstance().getId(action) ?: return
 
-				if (!movingActions.contains(actionId) && !typingActions.contains(actionId) && event != null)
+				if (!movingActions.contains(actionId) && !typingActions.contains(actionId))
 				{
 					val project = event.project
 					val text = event.presentation.text
@@ -118,7 +118,7 @@ class Presenter: Disposable
 				}
 			}
 
-			override fun afterActionPerformed(action: AnAction, dataContext: DataContext, event: AnActionEvent?)
+			override fun afterActionPerformed(action: AnAction, dataContext: DataContext, event: AnActionEvent)
 			{
 				val actionData = currentAction
 				val actionId = ActionManager.getInstance().getId(action)

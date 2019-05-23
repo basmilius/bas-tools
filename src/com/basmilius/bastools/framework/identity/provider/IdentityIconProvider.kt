@@ -60,7 +60,7 @@ class IdentityIconProvider: IconProvider(), FileIconProvider
 			{
 				val projectRoot = IdentityFramework.getSourcesRoot(project)
 
-				if (psi.virtualFile.path == projectRoot.path)
+				if (psi.virtualFile.path == projectRoot?.path)
 					return Icons.IdeeMedia
 
 				if (psi.parent != null && (psi.name == "plugins" || psi.parent!!.name == "plugins"))

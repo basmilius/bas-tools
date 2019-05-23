@@ -44,7 +44,7 @@ class BasToolsComponent: BaseComponent
 		 */
 		init
 		{
-			BTLaF.patch()
+//			BTLaF.patch()
 		}
 
 		/**
@@ -82,7 +82,7 @@ class BasToolsComponent: BaseComponent
 	{
 		try
 		{
-			UIManager.setLookAndFeel(BTLaF())
+//			UIManager.setLookAndFeel(BTLaF())
 
 			Frameworks.forEach { it.onLoad() }
 		}
