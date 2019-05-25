@@ -33,7 +33,7 @@ class AboutAction: DumbAwareAction("About Bas Tools")
 	override fun actionPerformed(aae: AnActionEvent)
 	{
 		ApplicationUtils.invokeLater {
-			Messages.showMessageDialog(aae.project, "Bas Tools 1.4.0, go to basmilius.com for more information about this plugin.", "Bas Tools", Messages.getInformationIcon())
+			Messages.showMessageDialog(aae.project, "Bas Tools 1.5.0, go to basmilius.com for more information about this plugin.", "Bas Tools", Messages.getInformationIcon())
 		}
 	}
 

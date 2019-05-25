@@ -68,7 +68,8 @@ class JsonRearrangePropertiesAction: AnAction("Rearrange JSON properties")
 	 */
 	private fun rearrange(obj: JsonObject)
 	{
-		val properties = PsiUtils.getChildrenOfType(obj, JsonProperty::class) ?: return
+		val propertiesRaw = PsiUtils.getChildrenOfType(obj, JsonProperty::class) ?: return
+		val properties = propertiesRaw.filterNotNull()
 
 		if (properties.isEmpty())
 			return

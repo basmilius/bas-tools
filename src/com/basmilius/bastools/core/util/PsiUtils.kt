@@ -12,6 +12,7 @@ package com.basmilius.bastools.core.util
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFile
 import com.intellij.psi.util.PsiTreeUtil
+import org.jetbrains.annotations.Nullable
 import kotlin.reflect.KClass
 
 /**
@@ -85,7 +86,7 @@ object PsiUtils
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	fun <T: PsiElement> getChildrenOfType(element: PsiElement?, clazz: KClass<T>): Array<out T>?
+	fun <T: PsiElement> getChildrenOfType(element: PsiElement?, clazz: KClass<T>): Array<out @Nullable T?>?
 	{
 		return PsiTreeUtil.getChildrenOfType(element, clazz.java)
 	}
