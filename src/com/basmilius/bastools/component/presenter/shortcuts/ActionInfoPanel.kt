@@ -63,12 +63,10 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 	 */
 	enum class Phase
 	{
-
 		FADING_IN,
 		SHOWN,
 		FADING_OUT,
 		HIDDEN
-
 	}
 
 	/**
@@ -89,7 +87,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 
 		add(labelsPanel, BorderLayout.CENTER)
 
-		val emptyBorder = JBEmptyBorder(6, 12, 6, 12)
+		val emptyBorder = JBEmptyBorder(9, 12, 9, 12)
 		border = emptyBorder
 
 		hint = with(JBPopupFactory.getInstance().createComponentPopupBuilder(this, this) as ComponentPopupBuilderImpl) {
