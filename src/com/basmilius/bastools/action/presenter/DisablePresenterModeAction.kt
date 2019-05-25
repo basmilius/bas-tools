@@ -21,7 +21,7 @@ import com.intellij.openapi.project.DumbAwareAction
  * @package com.basmilius.bastools.action.presenter
  * @since 1.4.0
  */
-class DisablePresenterModeAction: DumbAwareAction("Enable Presenter Mode")
+class DisablePresenterModeAction: DumbAwareAction("Disable Presenter Mode")
 {
 
 	/**
