@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.core.util.strtotime
 
-import com.basmilius.bastools.core.util.ExceptionUtils
+import com.basmilius.bastools.core.util.dontCare
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -109,7 +109,7 @@ object DateTimeUtils
  */
 fun strtotime(str: String): Long?
 {
-	ExceptionUtils.dontCare {
+	dontCare {
 		val date = DateTimeUtils.convert(str) ?: return null
 
 		return date.time / 1000L

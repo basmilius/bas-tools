@@ -24,25 +24,6 @@ object ApplicationUtils
 {
 
 	/**
-	 * Deferred run.
-	 *
-	 * @param timeout Long
-	 * @param func Closure
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.0.0
-	 */
-	fun deferRun(timeout: Long, func: () -> Unit)
-	{
-		val thread = Thread {
-			Thread.sleep(timeout)
-
-			func()
-		}
-		thread.start()
-	}
-
-	/**
 	 * Gets an ApplicationComponent instance.
 	 *
 	 * @param cls KClass
@@ -66,19 +47,6 @@ object ApplicationUtils
 	fun invokeLater(func: () -> Unit)
 	{
 		ApplicationManager.getApplication().invokeLater(func)
-	}
-
-	/**
-	 * Runs a write action at application level.
-	 *
-	 * @param func Closure
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.4.0
-	 */
-	fun runWriteAction(func: () -> Unit)
-	{
-		ApplicationManager.getApplication().runWriteAction(func)
 	}
 
 	/**

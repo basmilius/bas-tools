@@ -11,7 +11,8 @@ package com.basmilius.bastools.component
 
 import com.basmilius.bastools.component.basSettings.BasSettingsCodeStyleScheme
 import com.basmilius.bastools.core.util.ApplicationUtils
-import com.basmilius.bastools.core.util.ExceptionUtils
+import com.basmilius.bastools.core.util.EditorUtils
+import com.basmilius.bastools.core.util.dontCare
 import com.intellij.openapi.components.ProjectComponent
 import com.intellij.openapi.project.Project
 import com.intellij.psi.codeStyle.CodeStyleSchemes
@@ -131,8 +132,8 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 		val workspacePerUserFilename = "workspace.$username.xml"
 		val workspacePerUser = workspace.parent.findChild(workspacePerUserFilename)
 
-		ExceptionUtils.dontCare {
-			ApplicationUtils.runWriteAction {
+		dontCare {
+			EditorUtils.writeAction(this.project) {
 				if (workspacePerUser != null && workspacePerUser.exists())
 				{
 					val contents = workspacePerUser.contentsToByteArray()
@@ -165,8 +166,8 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 
 		val workspace = workspacePerUser.parent.findChild("workspace.xml")
 
-		ExceptionUtils.dontCare {
-			ApplicationUtils.runWriteAction {
+		dontCare {
+			EditorUtils.writeAction(this.project) {
 				if (workspace != null && workspace.exists())
 					workspace.delete(this)
 

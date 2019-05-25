@@ -34,8 +34,8 @@
 
 		<iconProvider implementation="com.basmilius.bastools.provider.BasToolsIconProvider"/>
 
-		<toolWindow id="Color Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.ColorsToolWindow"/>
-		<toolWindow id="Datetime Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.DateTimeToolWindowFactory"/>
+<!--		<toolWindow id="Color Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.ColorsToolWindow"/>-->
+<!--		<toolWindow id="Datetime Tools" anchor="right" icon="/icons/clock.png" factoryClass="com.basmilius.bastools.toolWindow.DateTimeToolWindowFactory"/>-->
 
 		<defaultLiveTemplatesProvider implementation="com.basmilius.bastools.language.java.liveTemplates.MissingJavaStuffTemplatesProvider"/>
 
@@ -120,7 +120,7 @@
 			<add-to-group group-id="NavBarToolBar" anchor="last"/>
 			<add-to-group group-id="BasTools.Main.QuickNav"/>
 
-			<action id="BasTools.QuickNav.ToolWindowDateTimeHelpers" class="com.basmilius.bastools.action.tools.DisplayDateTimeToolWindow" text="Show Date Time Tool Window" icon="/icons/clock.png"/>
+<!--			<action id="BasTools.QuickNav.ToolWindowDateTimeHelpers" class="com.basmilius.bastools.action.tools.DisplayDateTimeToolWindow" text="Show Date Time Tool Window" icon="/icons/clock.png"/>-->
 			<action id="BasTools.QuickNav.ShowColorPicker" class="com.basmilius.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="/icons/color.png"/>
 			<action id="BasTools.QuickNav.ShowColorPipette" class="com.basmilius.bastools.action.editor.ShowColorPipetteAction" text="Show Color Pipette" icon="/icons/dropper.png"/>
 		</group>

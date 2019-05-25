@@ -13,12 +13,14 @@ import com.basmilius.bastools.core.util.ReflectionUtils
 import com.basmilius.bastools.resource.Icons
 import com.basmilius.bastools.theme.tabs.BTEditorTabPainter
 import com.basmilius.bastools.theme.ui.icon.BTUIDefaultMenuArrowIcon
+import com.intellij.ide.ui.LafManager
 import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.openapi.diagnostic.logger
 import com.intellij.ui.tabs.JBTabPainter
 import com.intellij.util.IconUtil
 import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.JBUI
+import javax.swing.UIDefaults
 import javax.swing.UIManager
 
 /**
@@ -31,35 +33,54 @@ import javax.swing.UIManager
 object BTTheme
 {
 
-	val logger = logger("BTTheme")
+	private val logger = logger("BTTheme")
+	private const val themeName = "Bas Tools"
 
-	fun isUsed(): Boolean = LafManagerImpl.getInstance().currentLookAndFeel?.name == "Bas Tools"
+	fun isUsed(): Boolean = LafManagerImpl.getInstance().currentLookAndFeel?.name == themeName
 
 	fun apply()
 	{
 		patch()
-		overrideUIDefaults()
 	}
 
-	fun patch()
+	fun initLafListener()
+	{
+		fun onLafChanged(manager: LafManager)
+		{
+			val laf = manager.currentLookAndFeel ?: return
+
+			if (laf.name != themeName)
+				return
+
+			overrideUIDefaults(UIManager.getLookAndFeelDefaults())
+		}
+
+		LafManagerImpl.getInstance().addLafManagerListener {
+			onLafChanged(it)
+		}
+
+		onLafChanged(LafManagerImpl.getInstance())
+	}
+
+	private fun patch()
 	{
 		logger.info("Applying BTTheme patches...")
 		ReflectionUtils.setCompanionVal(JBTabPainter::class, "EDITOR", BTEditorTabPainter())
 	}
 
-	fun overrideUIDefaults()
+	private fun overrideUIDefaults(defaults: UIDefaults = UIManager.getDefaults())
 	{
 		logger.info("Applying BTTheme ui overrides...")
 
-		UIManager.getDefaults()["Menu.arrowIcon"] = BTUIDefaultMenuArrowIcon(IconUtil.scale(Icons.ChevronRight, null, 0.75f))
+		defaults["Menu.arrowIcon"] = BTUIDefaultMenuArrowIcon(IconUtil.scale(Icons.ChevronRight, null, 0.75f))
 
-		UIManager.getDefaults()["Tree.collapsedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, null, .8f), 10)
-		UIManager.getDefaults()["Tree.collapsedSelectedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, null, .8f), 10)
-		UIManager.getDefaults()["Tree.expandedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, null, .8f), 10)
-		UIManager.getDefaults()["Tree.expandedSelectedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, null, .8f), 10)
+		defaults["Tree.collapsedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, null, .8f), 10)
+		defaults["Tree.collapsedSelectedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, null, .8f), 10)
+		defaults["Tree.expandedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, null, .8f), 10)
+		defaults["Tree.expandedSelectedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronDown, null, .8f), 10)
 
-		UIManager.getDefaults()["ToolWindow.HeaderTab.verticalPadding"] = 9
-		UIManager.getDefaults()["TabbedPane.tabInsets"] = JBInsets.JBInsetsUIResource(JBUI.insets(6, 12))
+		defaults["ToolWindow.HeaderTab.verticalPadding"] = 9
+		defaults["TabbedPane.tabInsets"] = JBInsets.JBInsetsUIResource(JBUI.insets(6, 12))
 	}
 
 }

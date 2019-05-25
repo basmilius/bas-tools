@@ -10,8 +10,8 @@
 package com.basmilius.bastools.action.editor
 
 import com.basmilius.bastools.core.util.EditorUtils
-import com.basmilius.bastools.core.util.ExceptionUtils
 import com.basmilius.bastools.core.util.JUtils
+import com.basmilius.bastools.core.util.processDontCare
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.fileEditor.FileEditorManager
@@ -46,7 +46,7 @@ class ShowColorPickerAction: AnAction("Show Color Picker")
 		val color = ColorPicker.showDialog(root, "Pick a Color", JBColor.CYAN, false, null, false) ?: return
 		val editor = FileEditorManager.getInstance(project).selectedTextEditor ?: return
 
-		ExceptionUtils.executeIgnore {
+		processDontCare {
 			EditorUtils.insertOrReplaceMultiCaret(editor, project, "#" + ColorUtil.toHex(color))
 		}
 	}
