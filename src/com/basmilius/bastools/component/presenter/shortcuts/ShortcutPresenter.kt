@@ -9,10 +9,7 @@
 
 package com.basmilius.bastools.component.presenter.shortcuts
 
-import com.intellij.openapi.components.ApplicationComponent
-import com.intellij.openapi.components.PersistentStateComponent
-import com.intellij.openapi.components.State
-import com.intellij.openapi.components.Storage
+import com.intellij.openapi.components.*
 import com.intellij.openapi.project.Project
 import com.intellij.util.xmlb.XmlSerializerUtil
 
@@ -23,8 +20,8 @@ import com.intellij.util.xmlb.XmlSerializerUtil
  * @package com.basmilius.bastools.component.presenter.shortcuts
  * @since 1.1.0
  */
-@State(name = "ShortcutPresenter", storages = arrayOf(Storage(file = "shortcut-presenter.xml")))
-class ShortcutPresenter: ApplicationComponent, PersistentStateComponent<ShortcutPresenterState>
+@State(name = "ShortcutPresenter", storages = [Storage(file = "shortcut-presenter.xml")])
+class ShortcutPresenter: BaseComponent, PersistentStateComponent<ShortcutPresenterState>
 {
 
 	val configuration = ShortcutPresenterState()

@@ -13,7 +13,6 @@ import com.basmilius.bastools.component.basSettings.BasSettingsCodeStyleScheme
 import com.basmilius.bastools.core.util.ApplicationUtils
 import com.basmilius.bastools.core.util.ExceptionUtils
 import com.intellij.openapi.components.ProjectComponent
-import com.intellij.openapi.editor.colors.impl.EditorColorsManagerImpl
 import com.intellij.openapi.project.Project
 import com.intellij.psi.codeStyle.CodeStyleSchemes
 
@@ -66,7 +65,6 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 */
 	override fun projectOpened()
 	{
-		this.applyColorSchemeSettings()
 		this.applyCodeStyleSettings()
 		this.applyWorkspacePerUser()
 
@@ -92,17 +90,6 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 				it.onProjectClosed(this.project)
 			}
 		}
-	}
-
-	/**
-	 * Applies Bas Settings color scheme.
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.4.0
-	 */
-	private fun applyColorSchemeSettings()
-	{
-		EditorColorsManagerImpl.getInstance().globalScheme = EditorColorsManagerImpl.getInstance().getScheme("Bas Settings")
 	}
 
 	/**

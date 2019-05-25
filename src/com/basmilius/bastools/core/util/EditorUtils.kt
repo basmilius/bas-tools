@@ -13,6 +13,7 @@ import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.util.Computable
 
 /**
  * Object EditorUtils
@@ -49,7 +50,7 @@ object EditorUtils
 	@Throws(Exception::class)
 	fun insertOrReplaceMultiCaret(editor: Editor, project: Project, str: String)
 	{
-		EditorUtils.writeAction(project) {
+		writeAction(project) {
 			val document = editor.document
 			val caret = editor.caretModel
 			val selection = editor.selectionModel
@@ -93,9 +94,7 @@ object EditorUtils
 	 */
 	fun writeAction(project: Project, command: () -> Unit)
 	{
-		WriteCommandAction.runWriteCommandAction(project) {
-			command()
-		}
+		WriteCommandAction.runWriteCommandAction(project, Computable { command() })
 	}
 
 }

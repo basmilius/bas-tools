@@ -13,6 +13,9 @@ import com.intellij.util.ReflectionUtil
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
 import kotlin.reflect.KClass
+import kotlin.reflect.full.companionObject
+import kotlin.reflect.full.declaredMemberProperties
+import kotlin.reflect.jvm.javaField
 
 /**
  * Object ReflectionUtils
@@ -95,7 +98,7 @@ object ReflectionUtils
 	 * @since 1.2.0
 	 */
 	@Throws(Exception::class)
-	private fun setFinalStatic(field: Field, newValue: Any)
+	fun setFinalStatic(field: Field, newValue: Any)
 	{
 		field.isAccessible = true
 
@@ -109,6 +112,24 @@ object ReflectionUtils
 		modifiersField.isAccessible = false
 
 		field.isAccessible = false
+	}
+
+	fun setFieldType(field: Field, newType: Any)
+	{
+		val typeField = Field::class.java.getDeclaredField("type")
+		typeField.isAccessible = true
+		typeField.set(field, newType)
+	}
+
+	fun setCompanionVal(clazz: KClass<*>, field: String, newValue: Any)
+	{
+		val companion = clazz.companionObject ?: return
+		val properties = companion.declaredMemberProperties
+		val property = properties.find { it.name == field } ?: return
+		val javaField = property.javaField ?: return
+
+		setFieldType(javaField, newValue::class.java)
+		setFinalStatic(javaField, newValue)
 	}
 
 }

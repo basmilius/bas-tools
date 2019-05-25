@@ -13,22 +13,25 @@
 			"textForeground": "#CFD0D2",
 			"caretForeground": "#CFD0D2",
 			"inactiveBackground": "#202124",
-
 			"acceleratorForeground": "#5D666C",
 			"acceleratorSelectionForeground": "#5D666C",
-
 			"selectionBackground": "#004FA9",
 			"selectionForeground": "#FFFFFF",
 			"selectionBackgroundInactive": "#004FA9",
 			"selectionInactiveBackground": "#004FA9",
 			"selectionForegroundInactive": "#FFFFFF",
 			"selectionInactiveForeground": "#FFFFFF",
-
 			"borderColor": "#2A2B31",
 			"disabledBorderColor": "#202124",
 			"focusedBorderColor": "#2A2B31",
-
 			"separatorColor": "#2A2B31"
+		},
+		"BT": {
+			"Tabs": {
+				"Background": "#191A1C",
+				"Outline": "#2A2B31",
+				"Selected": "#202124"
+			}
 		},
 		"ActionButton": {
 			"hoverBackground": "#212227",
@@ -43,12 +46,12 @@
 		"Button": {
 			"default": {
 				"endBackground": "#365880",
-				"endBorderColor": "#3e6492",
-				"focusColor": "#2b4666",
-				"focusedBorderColor": "#3e6492",
-				"foreground": "#aebccc",
+				"endBorderColor": "#3E6492",
+				"focusColor": "#2B4666",
+				"focusedBorderColor": "#3E6492",
+				"foreground": "#AEBCCC",
 				"startBackground": "#365880",
-				"startBorderColor": "#3e6492"
+				"startBorderColor": "#3E6492"
 			},
 			"arc": 2,
 			"disabledBorderColor": "#202124",
@@ -56,15 +59,15 @@
 			"endBackground": "#202124",
 			"endBorderColor": "#2A2B31",
 			"focusedBorderColor": "#2A2B31",
-			"foreground": "#a5a6a7",
+			"foreground": "#A5A6A7",
 			"startBackground": "#202124",
 			"startBorderColor": "#2A2B31",
 			"shadowWidth": 0
 		},
 		"CheckBox": {
-			"background": "#202124",
+			"background": "#191A1C",
 			"disabledText": "#777777",
-			"foreground": "#a5a6a7",
+			"foreground": "#A5A6A7",
 			"select": "#FF0000"
 		},
 		"CheckBoxMenuItem": {
@@ -93,17 +96,96 @@
 		},
 		"EditorTabs": {
 			"borderColor": "#191A1C",
-			"hoverBackground": "#191a1c",
+			"hoverBackground": "#202124",
+			"hoverInactiveBackground": "#191A1C",
 			"inactiveMaskColor": "#FF0000",
 			"selectedBackground": "#202124",
-			"selectedForeground": "#a5a6a7",
+			"selectedForeground": "#A5A6A7",
 			"underlineColor": "#202124",
 			"underlineHeight": 0,
 			"underlinedTabBackground": "#202124"
 		},
+		"HelpTooltip": {
+			"backgroundColor": "#474A4C",
+			"textColor": "#BFBFBF",
+			"shortcutTextColor": "#878787",
+			"borderColor": "#636569",
+			"verticalGap": "4",
+			"horizontalGap": "10",
+			"maxWidth": "250",
+			"xOffset": "1",
+			"yOffset": "1",
+			"defaultTextBorderInsets": "10,10,10,16",
+			"smallTextBorderInsets": "5,8,4,8",
+			"fontSizeDelta": "0"
+		},
+		"MemoryIndicator": {
+			"allocatedBackground": "#212227",
+			"usedBackground": "#2A2B31"
+		},
+		"Menu": {
+			"border": "6,9,6,9",
+			"borderColor": "#2A2B31",
+			"maxGutterIconWidth": 24,
+			"submenuPopupOffsetY": -1
+		},
+		"MenuBar": {
+			"border": "6,9,6,9",
+			"borderColor": "#191A1C",
+			"maxGutterIconWidth": 24
+		},
+		"MenuItem": {
+			"border": "6,9,6,9",
+			"maxGutterIconWidth": 24
+		},
+		"NavBar": {
+			"borderColor": "#2A2B31"
+		},
+		"Popup": {
+			"Header": {
+				"activeBackground": "#2A2B31",
+				"inactiveBackground": "#2A2B31"
+			},
+			"borderColor": "#2A2B31",
+			"inactiveBorderColor": "#2A2B31"
+		},
+		"ProgressBar": {
+			"trackColor": "#2A2B31",
+			"progressColor": "#004FA9",
+			"indeterminateStartColor": "#004FA9",
+			"indeterminateEndColor": "#4C83C2",
+			"failedColor": "#3D1723",
+			"failedEndColor": "#63454E",
+			"passedColor": "#173D31",
+			"passedEndColor": "#45635A"
+		},
+		"SearchEverywhere": {
+			"Advertiser": {},
+			"Header": {},
+			"List": {},
+			"SearchField": {},
+			"Tab": {
+				"selectedBackground": "#2A2B31"
+			}
+		},
+		"Separator": {
+			"separatorColor": "#2A2B31"
+		},
+		"TabbedPane": {
+			"tabHeight": 36
+		},
+		"Tooltip": {},
+		"ToolWindow": {
+			"Header": {
+				"background": "#202124",
+				"borderColor": "#2A2B31",
+				"inactiveBackground": "#202124"
+			}
+		},
 		"Tree": {
 			"rowHeight": 30
 		},
+		"window": "#191A1C",
 		"Window": {
 			"border": "1,1,1,1,#2A2B31"
 		}

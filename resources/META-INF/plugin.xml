@@ -2,7 +2,7 @@
 
 	<name>Bas Tools</name>
 	<id>com.basmilius.bastools</id>
-	<version>1.4.0</version>
+	<version>1.5.0</version>
 	<vendor email="bas@mili.us" url="https://www.basmilius.com">Bas Milius</vendor>
 
 	<description><![CDATA[Adds enhanced features to JetBrains IDE's]]></description>
@@ -23,11 +23,9 @@
 	<extensions defaultExtensionNs="com.intellij">
 
 		<applicationConfigurable groupId="root" groupWeight="0" displayName="Bas Tools" id="BasTools.Config.Root" instance="com.basmilius.bastools.config.root.BTRootConfigurable"/>
-		<applicationConfigurable parentId="BasTools.Config.Root" displayName="CodeMap" id="BasTools.Config.CodeMap" instance="com.basmilius.bastools.config.codeMap.BTCodeMapConfigurable"/>
 		<applicationConfigurable parentId="BasTools.Config.Root" displayName="Presenter" id="BasTools.Config.Presenter" instance="com.basmilius.bastools.config.theme.BTThemeConfigurable"/>
 		<applicationConfigurable parentId="BasTools.Config.Root" displayName="Theme" id="BasTools.Config.Theme" instance="com.basmilius.bastools.config.theme.BTThemeConfigurable"/>
 
-		<applicationService serviceImplementation="com.basmilius.bastools.config.codeMap.BTCodeMapConfigState"/>
 		<applicationService serviceImplementation="com.basmilius.bastools.config.root.BTRootConfigState"/>
 		<applicationService serviceImplementation="com.basmilius.bastools.config.theme.BTThemeConfigState"/>
 
@@ -50,23 +48,11 @@
 			<implementation-class>com.basmilius.bastools.component.BasToolsComponent</implementation-class>
 		</component>
 
-		<!--		<component>-->
-		<!--			<implementation-class>com.basmilius.bastools.ui.laf.tabs.BTTabsPainterPatcherComponent</implementation-class>-->
-		<!--		</component>-->
-
 		<component>
 			<implementation-class>com.basmilius.bastools.component.presenter.shortcuts.ShortcutPresenter</implementation-class>
 		</component>
 
 	</application-components>
-
-	<project-components>
-
-		<!--<component>-->
-		<!--<implementation-class>com.basmilius.bastools.component.codeMap.CodeMapComponent</implementation-class>-->
-		<!--</component>-->
-
-	</project-components>
 
 	<actions>
 

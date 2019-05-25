@@ -1,5 +1,5 @@
 /*
- * Copyright © 2018 Bas Milius <bas@mili.us> - All rights reserved.
+ * Copyright © 2019 Bas Milius <bas@mili.us> - All rights reserved.
  *
  * This file is part of Bas Tools, a plugin for the IntelliJ Platform.
  *
@@ -7,7 +7,7 @@
  * LICENSE file that was distributed with this source code.
  */
 
-package com.basmilius.bastools.ui
+package com.basmilius.bastools.theme
 
 import com.basmilius.bastools.core.util.MathUtil
 import com.intellij.ui.JBColor
