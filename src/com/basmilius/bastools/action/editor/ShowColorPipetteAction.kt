@@ -9,11 +9,8 @@
 
 package com.basmilius.bastools.action.editor
 
-import com.basmilius.bastools.core.util.EditorUtils
-import com.basmilius.bastools.core.util.JUtils
-import com.basmilius.bastools.core.util.processDontCare
+import com.basmilius.bastools.core.util.*
 import com.basmilius.bastools.ui.DefaultColorPipette
-import com.intellij.codeInsight.hint.HintManager
 import com.intellij.openapi.Disposable
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -62,25 +59,16 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	override fun actionPerformed(aae: AnActionEvent)
 	{
 		this.project = aae.project
-		val root = JUtils.getRootComponent(aae.project)
 
-		if (this.project == null || root == null)
-			return
+		val project = this.project ?: return
+		val root = JUtils.getRootComponent(project) ?: return
 
-		this.editor = FileEditorManager.getInstance(this.project!!).selectedTextEditor
+		this.editor = FileEditorManager.getInstance(project).selectedTextEditor
 
-		if (this.editor == null)
-			return
+		val editor = this.editor ?: return
+		val pipette = getPipetteIfAvailable(DefaultColorPipette(root, this), this) ?: return showErrorHint(editor, "Could launch color pipette because no implementation could launch.")
 
-		val pipette = getPipetteIfAvailable(DefaultColorPipette(root, this), this)
-
-		if (pipette == null)
-		{
-			HintManager.getInstance().showErrorHint(this.editor!!, "Could not insert color, no pipette implementation found!")
-			return
-		}
-
-		pipette.setInitialColor(ColorUtil.fromHex("#000000"))
+		pipette.setInitialColor(Color.BLACK)
 		pipette.show().addWindowListener(this)
 	}
 
@@ -125,21 +113,9 @@ class ShowColorPipetteAction: AnAction("Show Color Pipette"), ColorListener, Dis
 	 */
 	override fun windowClosed(e: WindowEvent)
 	{
-		if (this.editor == null)
-			return
-
-		if (this.project == null)
-			return
-
-		val currentColor = this.currentColor
 		val editor = this.editor ?: return
 		val project = this.project ?: return
-
-		if (currentColor == null)
-		{
-			HintManager.getInstance().showInformationHint(editor, "Could not insert color, you didn't select a color!")
-			return
-		}
+		val currentColor = this.currentColor ?: return showInfoHint(editor, "Could not insert color because no color was selected.")
 
 		editor.selectionModel.removeSelection()
 

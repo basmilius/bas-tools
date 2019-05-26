@@ -9,14 +9,12 @@
 
 package com.basmilius.bastools.core.util
 
-import com.intellij.openapi.progress.ProgressIndicator
 import com.intellij.openapi.progress.ProgressManager
-import com.intellij.openapi.progress.Task
 
 typealias Callback = () -> Unit
 
 /**
- * We don't care what happends.
+ * We don't care if an exception occurs.
  *
  * @param func Closure
  *
@@ -35,7 +33,7 @@ inline fun dontCare(func: Callback)
 }
 
 /**
- * Runs a Runnable and ignores the exception.
+ * Runs a function and ignores the exception.
  *
  * @param func Closure
  *
@@ -44,21 +42,9 @@ inline fun dontCare(func: Callback)
  */
 inline fun processDontCare(crossinline func: Callback)
 {
-	ProgressManager.getInstance().run(object: Task.Backgroundable(null, "Bas Tools Process")
-	{
-
-		override fun run(progressIndicator: ProgressIndicator)
-		{
-			try
-			{
-				func()
-			}
-			catch (e: Exception)
-			{
-				e.printStackTrace()
-			}
-
+	ProgressManager.getInstance().run {
+		dontCare {
+			func()
 		}
-
-	})
+	}
 }

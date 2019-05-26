@@ -37,11 +37,8 @@ class ShowColorPickerAction: AnAction("Show Color Picker")
 	 */
 	override fun actionPerformed(aae: AnActionEvent)
 	{
-		val project = aae.project
-		val root = JUtils.getRootComponent(aae.project)
-
-		if (project == null || root == null)
-			return
+		val project = aae.project ?: return
+		val root = JUtils.getRootComponent(project) ?: return
 
 		val color = ColorPicker.showDialog(root, "Pick a Color", JBColor.CYAN, false, null, false) ?: return
 		val editor = FileEditorManager.getInstance(project).selectedTextEditor ?: return

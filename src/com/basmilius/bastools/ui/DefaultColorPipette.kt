@@ -57,7 +57,9 @@ class DefaultColorPipette(parent: JComponent, colorListener: ColorListener): Col
 	 */
 	init
 	{
-		myTimer = UIUtil.createNamedTimer("DefaultColorPipette", 5) { _ -> updatePipette() }
+		myTimer = UIUtil.createNamedTimer("DefaultColorPipette", 5) {
+			updatePipette()
+		}
 	}
 
 	/**
