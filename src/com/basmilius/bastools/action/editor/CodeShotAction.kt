@@ -10,8 +10,10 @@
 package com.basmilius.bastools.action.editor
 
 import com.basmilius.bastools.core.util.CodeFragmentPictureUtils
+import com.basmilius.bastools.core.util.dontCare
+import com.basmilius.bastools.core.util.showErrorHint
+import com.basmilius.bastools.core.util.showInfoHint
 import com.intellij.codeInsight.hint.EditorFragmentComponent
-import com.intellij.codeInsight.hint.HintManager
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.LangDataKeys
@@ -45,10 +47,7 @@ class CodeShotAction: AnAction("Code Shot"), ClipboardOwner
 		val selectionModel = editor.selectionModel
 
 		if (selectionModel.blockSelectionStarts.size >= 2)
-		{
-			HintManager.getInstance().showErrorHint(editor, "CodeShot is not available with multiple selections at this moment.")
-			return
-		}
+			return showErrorHint(editor, "CodeShot is not available with multiple selections at the moment.")
 
 		val start = selectionModel.selectionStart
 		val end = selectionModel.selectionEnd
@@ -59,22 +58,16 @@ class CodeShotAction: AnAction("Code Shot"), ClipboardOwner
 
 		val fragment = EditorFragmentComponent.createEditorFragmentComponent(editor, startLine, endLine, false, false)
 
-		try
-		{
+		dontCare {
 			val clipboard = Toolkit.getDefaultToolkit().systemClipboard
 			val picture = CodeFragmentPictureUtils.createBufferedImage(fragment)
 			val transferable = CodeFragmentPictureUtils.TransferableImage(picture)
 
 			clipboard.setContents(transferable, this)
 		}
-		catch (err: Exception)
-		{
-			err.printStackTrace()
-		}
 
 		selectionModel.setSelection(start, end)
-
-		HintManager.getInstance().showInformationHint(editor, "Successfully took a CodeShot!")
+		showInfoHint(editor, "Successfully took a CodeShot and saved it to your clipboard!")
 	}
 
 	/**

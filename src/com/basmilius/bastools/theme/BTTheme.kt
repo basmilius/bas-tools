@@ -10,6 +10,7 @@
 package com.basmilius.bastools.theme
 
 import com.basmilius.bastools.core.util.ReflectionUtils
+import com.basmilius.bastools.core.util.dontCare
 import com.basmilius.bastools.resource.Icons
 import com.basmilius.bastools.theme.tabs.BTEditorTabPainter
 import com.basmilius.bastools.theme.ui.icon.BTUIDefaultMenuArrowIcon
@@ -38,8 +39,7 @@ object BTTheme
 
 	fun isUsed(): Boolean = LafManagerImpl.getInstance().currentLookAndFeel?.name == themeName
 
-	fun apply()
-	{
+	fun apply() = dontCare {
 		patch()
 	}
 
