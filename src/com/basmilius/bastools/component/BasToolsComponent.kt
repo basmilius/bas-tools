@@ -81,7 +81,9 @@ class BasToolsComponent: BaseComponent
 	{
 		try
 		{
+			BTTheme.initFileListener()
 			BTTheme.initLafListener()
+
 			Frameworks.forEach { it.onLoad() }
 		}
 		catch (e: Exception)

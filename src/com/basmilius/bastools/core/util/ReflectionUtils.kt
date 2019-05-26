@@ -15,6 +15,7 @@ import java.lang.reflect.Modifier
 import kotlin.reflect.KClass
 import kotlin.reflect.full.companionObject
 import kotlin.reflect.full.declaredMemberProperties
+import kotlin.reflect.full.memberProperties
 import kotlin.reflect.jvm.javaField
 
 /**

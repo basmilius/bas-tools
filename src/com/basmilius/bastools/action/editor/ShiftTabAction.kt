@@ -30,6 +30,21 @@ abstract class ShiftTabAction(private val orientation: Orientation): DumbAwareAc
 {
 
 	/**
+	 * Enum Class Orientation
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @package com.basmilius.bastools.action.textEditor.ShiftTabAction
+	 * @since 1.1.0
+	 */
+	enum class Orientation
+	{
+		LEFT,
+		RIGHT,
+		UP,
+		DOWN
+	}
+
+	/**
 	 * {@inheritdoc}
 	 *
 	 * @author Bas Milius <bas@mili.us>
@@ -39,13 +54,10 @@ abstract class ShiftTabAction(private val orientation: Orientation): DumbAwareAc
 	{
 		val project = aae.project ?: return
 		val fileEditorManager = FileEditorManagerEx.getInstanceEx(project)
-		val file = aae.getData(CommonDataKeys.VIRTUAL_FILE)
+		val file = aae.getData(CommonDataKeys.VIRTUAL_FILE) ?: return
 		val windowManager = ToolWindowManager.getInstance(project)
 
 		if (!windowManager.isEditorComponentActive)
-			return
-
-		if (file == null)
 			return
 
 		val index = this.getCurrentSplitIndex(fileEditorManager)
@@ -102,22 +114,6 @@ abstract class ShiftTabAction(private val orientation: Orientation): DumbAwareAc
 	private fun getCurrentSplitIndex(fileEditorManagerEx: FileEditorManagerEx): Int
 	{
 		return fileEditorManagerEx.windows.indexOfFirst { it == fileEditorManagerEx.currentWindow }
-	}
-
-	/**
-	 * Enum Class Orientation
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @package com.basmilius.bastools.action.textEditor.ShiftTabAction
-	 * @since 1.1.0
-	 */
-	enum class Orientation
-	{
-
-		LEFT,
-		RIGHT,
-		UP,
-		DOWN
 	}
 
 }
