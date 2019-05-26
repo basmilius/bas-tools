@@ -11,8 +11,8 @@ package com.basmilius.bastools.intention
 
 import com.basmilius.bastools.core.util.EditorUtils
 import com.basmilius.bastools.core.util.PsiUtils
+import com.basmilius.bastools.core.util.showInfoHint
 import com.basmilius.math.Expression
-import com.intellij.codeInsight.hint.HintManager
 import com.intellij.codeInsight.intention.IntentionAction
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
@@ -194,7 +194,7 @@ class ComputeConstantValueIntentionAction: IntentionAction
 		if (run)
 		{
 			val pluralValueValues = if (caretModel.caretCount > 1) "Values" else "Value"
-			HintManager.getInstance().showInformationHint(editor, "Computed Constant $pluralValueValues!")
+			showInfoHint(editor, "Computed Constant $pluralValueValues!")
 		}
 
 		return true
