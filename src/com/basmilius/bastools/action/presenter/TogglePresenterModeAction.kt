@@ -10,7 +10,7 @@
 package com.basmilius.bastools.action.presenter
 
 import com.basmilius.bastools.component.presenter.shortcuts.ShortcutPresenter
-import com.basmilius.bastools.core.util.ApplicationUtils
+import com.basmilius.bastools.core.util.withApplicationComponent
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.DumbAwareAction
 
@@ -30,14 +30,11 @@ class TogglePresenterModeAction: DumbAwareAction("Toggle Presenter Mode")
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun actionPerformed(aae: AnActionEvent)
-	{
-		ApplicationUtils.withComponent(ShortcutPresenter::class) {
-			when (it.isEnabled())
-			{
-				true -> it.disable()
-				false -> it.enable()
-			}
+	override fun actionPerformed(aae: AnActionEvent) = withApplicationComponent(ShortcutPresenter::class) {
+		when (it.isEnabled())
+		{
+			true -> it.disable()
+			false -> it.enable()
 		}
 	}
 

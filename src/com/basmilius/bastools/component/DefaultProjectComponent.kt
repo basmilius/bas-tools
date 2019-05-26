@@ -10,9 +10,9 @@
 package com.basmilius.bastools.component
 
 import com.basmilius.bastools.component.basSettings.BasSettingsCodeStyleScheme
-import com.basmilius.bastools.core.util.ApplicationUtils
 import com.basmilius.bastools.core.util.EditorUtils
 import com.basmilius.bastools.core.util.dontCare
+import com.basmilius.bastools.core.util.withApplicationComponent
 import com.intellij.openapi.components.ProjectComponent
 import com.intellij.openapi.project.Project
 import com.intellij.psi.codeStyle.CodeStyleSchemes
@@ -69,8 +69,8 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 		this.applyCodeStyleSettings()
 		this.applyWorkspacePerUser()
 
-		ApplicationUtils.withComponent(BasToolsComponent::class) { cmp ->
-			cmp.withFrameworks {
+		withApplicationComponent(BasToolsComponent::class) { bt ->
+			bt.withFrameworks {
 				it.onProjectOpened(this.project)
 			}
 		}
@@ -86,8 +86,8 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	{
 		this.unloadWorkspacePerUser()
 
-		ApplicationUtils.withComponent(BasToolsComponent::class) { cmp ->
-			cmp.withFrameworks {
+		withApplicationComponent(BasToolsComponent::class) { bt ->
+			bt.withFrameworks {
 				it.onProjectClosed(this.project)
 			}
 		}

@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.component.presenter.shortcuts
 
-import com.basmilius.bastools.core.util.ApplicationUtils
+import com.basmilius.bastools.core.util.getApplicationComponent
 import com.intellij.openapi.keymap.KeymapManager
 import com.intellij.openapi.util.SystemInfo
 
@@ -72,4 +72,4 @@ fun getDefaultAlternativeKeymap() = getCurrentOSKind().getAlternativeKind()?.let
  * @author Bas Milius <bas@mili.us>
  * @since 1.1.0
  */
-fun getShortcutPresenter(): ShortcutPresenter? = ApplicationUtils.getComponent(ShortcutPresenter::class)
+fun getShortcutPresenter(): ShortcutPresenter? = getApplicationComponent(ShortcutPresenter::class)

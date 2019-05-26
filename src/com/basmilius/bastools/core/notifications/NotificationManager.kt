@@ -9,7 +9,7 @@
 
 package com.basmilius.bastools.core.notifications
 
-import com.basmilius.bastools.core.util.ApplicationUtils
+import com.basmilius.bastools.core.util.invokeLater
 import com.intellij.notification.NotificationDisplayType
 import com.intellij.notification.NotificationGroup
 import com.intellij.notification.NotificationType
@@ -40,7 +40,7 @@ object NotificationManager
 	 */
 	fun notify(project: Project, content: String, type: NotificationType)
 	{
-		ApplicationUtils.invokeLater {
+		invokeLater {
 			val notification = BTNotificationGroup.createNotification(content, type)
 			Notifications.Bus.notify(notification, project)
 		}
@@ -59,7 +59,7 @@ object NotificationManager
 	 */
 	fun notify(project: Project, title: String, content: String, type: NotificationType)
 	{
-		ApplicationUtils.invokeLater {
+		invokeLater {
 			val notification = BTNotificationGroup.createNotification(title, content, type, null)
 			Notifications.Bus.notify(notification, project)
 		}

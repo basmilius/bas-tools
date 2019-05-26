@@ -10,7 +10,7 @@
 package com.basmilius.bastools.action.presenter
 
 import com.basmilius.bastools.component.presenter.shortcuts.ShortcutPresenter
-import com.basmilius.bastools.core.util.ApplicationUtils
+import com.basmilius.bastools.core.util.withApplicationComponent
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.DumbAwareAction
 
@@ -30,11 +30,8 @@ class EnablePresenterModeAction: DumbAwareAction("Enable Presenter Mode")
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun actionPerformed(aae: AnActionEvent)
-	{
-		ApplicationUtils.withComponent(ShortcutPresenter::class) {
-			it.enable()
-		}
+	override fun actionPerformed(aae: AnActionEvent) = withApplicationComponent(ShortcutPresenter::class) {
+		it.enable()
 	}
 
 	/**
@@ -43,11 +40,8 @@ class EnablePresenterModeAction: DumbAwareAction("Enable Presenter Mode")
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.4.0
 	 */
-	override fun update(aae: AnActionEvent)
-	{
-		ApplicationUtils.withComponent(ShortcutPresenter::class) {
-			aae.presentation.isEnabled = !it.isEnabled()
-		}
+	override fun update(aae: AnActionEvent) = withApplicationComponent(ShortcutPresenter::class) {
+		aae.presentation.isEnabled = !it.isEnabled()
 	}
 
 }
