@@ -24,7 +24,7 @@ import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.ui.tabs.JBTabPainter
 import com.intellij.ui.tabs.newImpl.JBEditorTabsBorder
-import com.intellij.ui.tabs.newImpl.SameHeightTabs
+import com.intellij.ui.tabs.newImpl.SingleHeightTabs
 import com.intellij.util.IconUtil
 import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.JBUI
@@ -102,7 +102,7 @@ object BTTheme
 	private fun patchEditorTabs(source: FileEditorManager)
 	{
 		val currentEditor = source.selectedEditor ?: return
-		val tabbedContainer = currentEditor.component.parent?.parent?.parent?.parent as SameHeightTabs? ?: return
+		val tabbedContainer = currentEditor.component.parent?.parent?.parent?.parent as SingleHeightTabs? ?: return
 		val tabsBorder = tabbedContainer.border as JBEditorTabsBorder
 
 		tabsBorder.thickness = if (isUsed()) 0 else 1

@@ -54,10 +54,10 @@ class BTEditorTabPainter: JBDefaultTabPainter(EditorTabTheme())
 		g.paint2DLine(x, y, x + w, y, LinePainter2D.StrokeType.INSIDE, JBUI.scale(1).toDouble(), JBColor.namedColor("BT.Tabs.Outline", Color.WHITE))
 	}
 
-	override fun paintSelectedTab(position: JBTabsPosition, g: Graphics2D, rect: Rectangle, tabColor: Color?, active: Boolean, hovered: Boolean)
+	override fun paintSelectedTab(position: JBTabsPosition, g: Graphics2D, rect: Rectangle, borderThickness: Int, tabColor: Color?, active: Boolean, hovered: Boolean)
 	{
 		if (!BTTheme.isUsed())
-			return super.paintSelectedTab(position, g, rect, tabColor, active, hovered)
+			return super.paintSelectedTab(position, g, rect, borderThickness, tabColor, active, hovered)
 
 		g.fill2DRect(rect, JBColor.namedColor("BT.Tabs.Selected", Color.WHITE))
 
