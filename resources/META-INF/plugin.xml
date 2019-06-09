@@ -54,6 +54,14 @@
 
 	</application-components>
 
+	<project-components>
+
+		<component>
+			<implementation-class>com.basmilius.bastools.component.BTSafeSyncFixComponent</implementation-class>
+		</component>
+
+	</project-components>
+
 	<actions>
 
 		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
