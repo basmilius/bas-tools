@@ -9,13 +9,16 @@
 
 package com.basmilius.bastools.theme
 
+import com.basmilius.bastools.core.notifications.NotificationManager
 import com.basmilius.bastools.core.util.ReflectionUtils
 import com.basmilius.bastools.core.util.dontCare
 import com.basmilius.bastools.resource.Icons
 import com.basmilius.bastools.theme.tabs.BTEditorTabPainter
+import com.basmilius.bastools.theme.tabs.BTEditorTabPainterAdapter
 import com.basmilius.bastools.theme.ui.icon.BTUIDefaultMenuArrowIcon
 import com.intellij.ide.ui.LafManager
 import com.intellij.ide.ui.laf.LafManagerImpl
+import com.intellij.notification.NotificationType
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.diagnostic.logger
 import com.intellij.openapi.fileEditor.FileEditorManager
@@ -23,8 +26,10 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener
 import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.ui.tabs.JBTabPainter
+import com.intellij.ui.tabs.newImpl.EditorTabPainterAdapter
+import com.intellij.ui.tabs.newImpl.JBEditorTabs
 import com.intellij.ui.tabs.newImpl.JBEditorTabsBorder
-import com.intellij.ui.tabs.newImpl.SingleHeightTabs
+import com.intellij.ui.tabs.newImpl.TabPainterAdapter
 import com.intellij.util.IconUtil
 import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.JBUI
@@ -43,6 +48,8 @@ object BTTheme
 
 	private val logger = logger("BTTheme")
 	private const val themeName = "Bas Tools"
+
+	private var isFancyTabsEnabled: Boolean = true
 
 	fun isUsed(): Boolean = LafManagerImpl.getInstance().currentLookAndFeel?.name == themeName
 
@@ -68,7 +75,12 @@ object BTTheme
 		}
 
 		LafManagerImpl.getInstance().addLafManagerListener {
-			val project = ProjectManager.getInstance().openProjects[0]
+			val projects = ProjectManager.getInstance().openProjects
+
+			if (projects.count() == 0)
+				return@addLafManagerListener
+
+			val project = projects[0]
 			val editorManager = FileEditorManager.getInstance(project)
 
 			onLafChanged(it)
@@ -80,8 +92,7 @@ object BTTheme
 
 	private fun patch()
 	{
-		logger.info("Applying BTTheme patches...")
-		ReflectionUtils.setCompanionVal(JBTabPainter::class, "EDITOR", BTEditorTabPainter())
+		// NOTE: No patches at this moment.
 	}
 
 	private fun overrideUIDefaults(defaults: UIDefaults = UIManager.getDefaults())
@@ -101,11 +112,30 @@ object BTTheme
 
 	private fun patchEditorTabs(source: FileEditorManager)
 	{
-		val currentEditor = source.selectedEditor ?: return
-		val tabbedContainer = currentEditor.component.parent?.parent?.parent?.parent as SingleHeightTabs? ?: return
-		val tabsBorder = tabbedContainer.border as JBEditorTabsBorder
+		if (!this.isFancyTabsEnabled)
+			return
 
-		tabsBorder.thickness = if (isUsed()) 0 else 1
+		try
+		{
+			val currentEditor = source.selectedEditor ?: return
+			val tabbedContainer = currentEditor.component.parent?.parent?.parent?.parent as JBEditorTabs? ?: return
+			val tabsBorder = tabbedContainer.border as JBEditorTabsBorder
+
+			val currentPainter = ReflectionUtils.getField(JBEditorTabs::class, tabbedContainer, TabPainterAdapter::class, "myTabPainterAdapter")
+
+			if (isUsed() && currentPainter !is BTEditorTabPainterAdapter)
+				ReflectionUtils.setField(JBEditorTabs::class, tabbedContainer, TabPainterAdapter::class, "myTabPainterAdapter", BTEditorTabPainterAdapter())
+			else if (!isUsed() && currentPainter !is EditorTabPainterAdapter)
+				ReflectionUtils.setField(JBEditorTabs::class, tabbedContainer, TabPainterAdapter::class, "myTabPainterAdapter", EditorTabPainterAdapter())
+
+			tabsBorder.thickness = if (isUsed()) 0 else 1
+		}
+		catch (err: NoClassDefFoundError)
+		{
+			this.isFancyTabsEnabled = false
+
+			NotificationManager.notify("Bas Tools", "Fancy tabs are disabled because of an error: ${err.message}", NotificationType.WARNING)
+		}
 	}
 
 	class FileEditorListener: FileEditorManagerListener

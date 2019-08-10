@@ -31,6 +31,41 @@ object NotificationManager
 	/**
 	 * Displays a notification message.
 	 *
+	 * @param content Contents of the notification.
+	 * @param type Notification type.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
+	 */
+	fun notify(content: String, type: NotificationType)
+	{
+		invokeLater {
+			val notification = BTNotificationGroup.createNotification(content, type)
+			Notifications.Bus.notify(notification)
+		}
+	}
+
+	/**
+	 * Displays a notification message.
+	 *
+	 * @param title Title of the notification.
+	 * @param content Contents of the notification.
+	 * @param type Notification type.
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.0.0
+	 */
+	fun notify(title: String, content: String, type: NotificationType)
+	{
+		invokeLater {
+			val notification = BTNotificationGroup.createNotification(title, content, type, null)
+			Notifications.Bus.notify(notification)
+		}
+	}
+
+	/**
+	 * Displays a notification message.
+	 *
 	 * @param project Project that should be notified.
 	 * @param content Contents of the notification.
 	 * @param type Notification type.

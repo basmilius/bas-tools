@@ -96,11 +96,7 @@
 		},
 		"EditorTabs": {
 			"borderColor": "#191A1C",
-			"hoverBackground": "#202124",
-			"hoverInactiveBackground": "#191A1C",
-			"inactiveMaskColor": "#FF0000",
-			"selectedBackground": "#202124",
-			"selectedForeground": "#A5A6A7",
+			"hoverMaskColor": "#202124",
 			"underlineColor": "#202124",
 			"underlineHeight": 0,
 			"underlinedTabBackground": "#202124"

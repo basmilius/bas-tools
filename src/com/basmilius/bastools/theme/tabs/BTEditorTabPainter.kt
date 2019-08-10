@@ -14,10 +14,10 @@ import com.intellij.openapi.rd.fill2DRect
 import com.intellij.openapi.rd.paint2DLine
 import com.intellij.ui.JBColor
 import com.intellij.ui.paint.LinePainter2D
+import com.intellij.ui.scale.JBUIScale
 import com.intellij.ui.tabs.JBTabsPosition
 import com.intellij.ui.tabs.newImpl.JBDefaultTabPainter
 import com.intellij.ui.tabs.newImpl.themes.EditorTabTheme
-import com.intellij.util.ui.JBUI
 import java.awt.*
 
 /**
@@ -47,14 +47,19 @@ class BTEditorTabPainter: JBDefaultTabPainter(EditorTabTheme())
 			return super.paintTab(position, g, rect, borderThickness, tabColor, hovered)
 
 		val x = rect.x.toDouble()
-		val y = rect.height.toDouble() - JBUI.scale(1)
+		val y = rect.height.toDouble() - JBUIScale.scale(1)
 		val w = rect.width.toDouble()
 
 		g.fill2DRect(rect, JBColor.namedColor("BT.Tabs.Background", Color.WHITE))
-		g.paint2DLine(x, y, x + w, y, LinePainter2D.StrokeType.INSIDE, JBUI.scale(1).toDouble(), JBColor.namedColor("BT.Tabs.Outline", Color.WHITE))
+		g.paint2DLine(x, y, x + w, y, LinePainter2D.StrokeType.INSIDE, JBUIScale.scale(1).toDouble(), JBColor.namedColor("BT.Tabs.Outline", Color.WHITE))
 	}
 
 	override fun paintSelectedTab(position: JBTabsPosition, g: Graphics2D, rect: Rectangle, borderThickness: Int, tabColor: Color?, active: Boolean, hovered: Boolean)
+	{
+		this.paintSelectedTab(position, g, rect, borderThickness, tabColor, active, hovered, false)
+	}
+
+	fun paintSelectedTab(position: JBTabsPosition, g: Graphics2D, rect: Rectangle, borderThickness: Int, tabColor: Color?, active: Boolean, hovered: Boolean, first: Boolean)
 	{
 		if (!BTTheme.isUsed())
 			return super.paintSelectedTab(position, g, rect, borderThickness, tabColor, active, hovered)
@@ -62,10 +67,12 @@ class BTEditorTabPainter: JBDefaultTabPainter(EditorTabTheme())
 		g.fill2DRect(rect, JBColor.namedColor("BT.Tabs.Selected", Color.WHITE))
 
 		g.color = JBColor.namedColor("BT.Tabs.Outline", Color.WHITE)
-		g.stroke = BasicStroke(JBUI.scale(1f))
-		g.drawLine(rect.x, rect.y + rect.height, rect.x, rect.y)
-		g.drawLine(rect.x, rect.y, rect.x + rect.width - JBUI.scale(1), rect.y)
-		g.drawLine(rect.x + rect.width - JBUI.scale(1), rect.y, rect.x + rect.width - JBUI.scale(1), rect.y + rect.height)
+		g.stroke = BasicStroke(JBUIScale.scale(1f))
+
+		if (!first)
+			g.drawLine(rect.x, rect.y + rect.height, rect.x, rect.y)
+		g.drawLine(rect.x, rect.y, rect.x + rect.width - JBUIScale.scale(1), rect.y)
+		g.drawLine(rect.x + rect.width - JBUIScale.scale(1), rect.y, rect.x + rect.width - JBUIScale.scale(1), rect.y + rect.height)
 	}
 
 	override fun underlineRectangle(position: JBTabsPosition, rect: Rectangle, thickness: Int): Rectangle = if (BTTheme.isUsed()) Rectangle(0, 0, 0, 0) else super.underlineRectangle(position, rect, thickness)

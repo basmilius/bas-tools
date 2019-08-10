@@ -22,10 +22,10 @@ import com.intellij.ui.JBColor
 import com.intellij.ui.awt.RelativePoint
 import com.intellij.ui.components.panels.NonOpaquePanel
 import com.intellij.ui.popup.ComponentPopupBuilderImpl
+import com.intellij.ui.scale.JBUIScale
 import com.intellij.util.Alarm
 import com.intellij.util.ui.Animator
 import com.intellij.util.ui.JBEmptyBorder
-import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
 import java.awt.*
 import javax.swing.JLabel
@@ -293,7 +293,7 @@ class ActionInfoPanel(project: Project, textFragments: List<Pair<String, Font?>>
 		fun setFontSize(size: Float)
 		{
 			for (label in labels)
-				label.font = label.font.deriveFont(JBUI.scale(size))
+				label.font = label.font.deriveFont(JBUIScale.scale(size))
 
 			val maxAscent = labels.map { it.getFontMetrics(it.font).maxAscent }.max() ?: 0
 
