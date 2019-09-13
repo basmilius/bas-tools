@@ -13,7 +13,6 @@ import com.basmilius.bastools.core.notifications.NotificationManager
 import com.basmilius.bastools.core.util.ReflectionUtils
 import com.basmilius.bastools.core.util.dontCare
 import com.basmilius.bastools.resource.Icons
-import com.basmilius.bastools.theme.tabs.BTEditorTabPainter
 import com.basmilius.bastools.theme.tabs.BTEditorTabPainterAdapter
 import com.basmilius.bastools.theme.ui.icon.BTUIDefaultMenuArrowIcon
 import com.intellij.ide.ui.LafManager
@@ -25,11 +24,10 @@ import com.intellij.openapi.fileEditor.FileEditorManager
 import com.intellij.openapi.fileEditor.FileEditorManagerListener
 import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.ui.tabs.JBTabPainter
-import com.intellij.ui.tabs.newImpl.EditorTabPainterAdapter
-import com.intellij.ui.tabs.newImpl.JBEditorTabs
-import com.intellij.ui.tabs.newImpl.JBEditorTabsBorder
-import com.intellij.ui.tabs.newImpl.TabPainterAdapter
+import com.intellij.ui.tabs.impl.EditorTabPainterAdapter
+import com.intellij.ui.tabs.impl.JBEditorTabs
+import com.intellij.ui.tabs.impl.JBEditorTabsBorder
+import com.intellij.ui.tabs.impl.TabPainterAdapter
 import com.intellij.util.IconUtil
 import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.JBUI
@@ -52,10 +50,6 @@ object BTTheme
 	private var isFancyTabsEnabled: Boolean = true
 
 	fun isUsed(): Boolean = LafManagerImpl.getInstance().currentLookAndFeel?.name == themeName
-
-	fun apply() = dontCare {
-		patch()
-	}
 
 	fun initFileListener()
 	{
@@ -88,11 +82,6 @@ object BTTheme
 		}
 
 		onLafChanged(LafManagerImpl.getInstance())
-	}
-
-	private fun patch()
-	{
-		// NOTE: No patches at this moment.
 	}
 
 	private fun overrideUIDefaults(defaults: UIDefaults = UIManager.getDefaults())

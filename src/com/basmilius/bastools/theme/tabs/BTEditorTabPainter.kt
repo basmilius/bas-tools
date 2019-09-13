@@ -16,8 +16,8 @@ import com.intellij.ui.JBColor
 import com.intellij.ui.paint.LinePainter2D
 import com.intellij.ui.scale.JBUIScale
 import com.intellij.ui.tabs.JBTabsPosition
-import com.intellij.ui.tabs.newImpl.JBDefaultTabPainter
-import com.intellij.ui.tabs.newImpl.themes.EditorTabTheme
+import com.intellij.ui.tabs.impl.JBDefaultTabPainter
+import com.intellij.ui.tabs.impl.themes.EditorTabTheme
 import java.awt.*
 
 /**
@@ -41,10 +41,10 @@ class BTEditorTabPainter: JBDefaultTabPainter(EditorTabTheme())
 		g.paint2DLine(from, to, LinePainter2D.StrokeType.INSIDE, thickness.toDouble(), JBColor.namedColor("BT.Tabs.Outline", Color.WHITE))
 	}
 
-	override fun paintTab(position: JBTabsPosition, g: Graphics2D, rect: Rectangle, borderThickness: Int, tabColor: Color?, hovered: Boolean)
+	override fun paintTab(position: JBTabsPosition, g: Graphics2D, rect: Rectangle, borderThickness: Int, tabColor: Color?, active: Boolean, hovered: Boolean)
 	{
 		if (!BTTheme.isUsed())
-			return super.paintTab(position, g, rect, borderThickness, tabColor, hovered)
+			return super.paintTab(position, g, rect, borderThickness, tabColor, active, hovered)
 
 		val x = rect.x.toDouble()
 		val y = rect.height.toDouble() - JBUIScale.scale(1)
@@ -71,6 +71,7 @@ class BTEditorTabPainter: JBDefaultTabPainter(EditorTabTheme())
 
 		if (!first)
 			g.drawLine(rect.x, rect.y + rect.height, rect.x, rect.y)
+
 		g.drawLine(rect.x, rect.y, rect.x + rect.width - JBUIScale.scale(1), rect.y)
 		g.drawLine(rect.x + rect.width - JBUIScale.scale(1), rect.y, rect.x + rect.width - JBUIScale.scale(1), rect.y + rect.height)
 	}

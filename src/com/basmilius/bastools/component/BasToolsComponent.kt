@@ -36,17 +36,6 @@ class BasToolsComponent: BaseComponent
 	{
 
 		/**
-		 * BasToolsComponent Initializer.
-		 *
-		 * @author Bas Milius <bas@mili.us>
-		 * @since 1.4.0
-		 */
-		init
-		{
-			BTTheme.apply()
-		}
-
-		/**
 		 * Gets a list with registred frameworks.
 		 *
 		 * @author Bas Milius <bas@mili.us>

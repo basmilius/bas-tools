@@ -10,9 +10,9 @@
 package com.basmilius.bastools.theme.tabs
 
 import com.intellij.ui.tabs.JBTabPainter
-import com.intellij.ui.tabs.newImpl.JBTabsImpl
-import com.intellij.ui.tabs.newImpl.TabLabel
-import com.intellij.ui.tabs.newImpl.TabPainterAdapter
+import com.intellij.ui.tabs.impl.JBTabsImpl
+import com.intellij.ui.tabs.impl.TabLabel
+import com.intellij.ui.tabs.impl.TabPainterAdapter
 import java.awt.Graphics
 import java.awt.Graphics2D
 import java.awt.Rectangle
@@ -44,7 +44,7 @@ class BTEditorTabPainterAdapter: TabPainterAdapter
 		if (isSelected)
 			painter.paintSelectedTab(tabs.tabsPosition, g2d, rect, tabs.borderThickness, info.tabColor, active = false, hovered = false, first = isFirst)
 		else
-			painter.paintTab(tabs.tabsPosition, g2d, rect, tabs.borderThickness, info.tabColor, false)
+			painter.paintTab(tabs.tabsPosition, g2d, rect, tabs.borderThickness, info.tabColor, active = false, hovered = false)
 	}
 
 }

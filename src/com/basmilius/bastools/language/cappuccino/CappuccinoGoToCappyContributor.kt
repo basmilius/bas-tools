@@ -41,7 +41,6 @@ class CappuccinoGoToCappyContributor: GotoDeclarationHandler
 			return null
 
 		val project = editor.project ?: return null
-
 		val renderMethod = PsiUtils.getContextOfType(sourceElement, MethodReference::class) ?: return null
 
 		if (renderMethod.name != "render")
@@ -50,9 +49,10 @@ class CappuccinoGoToCappyContributor: GotoDeclarationHandler
 		if (renderMethod.parameterList == null)
 			return null
 
-		val firstParameter = renderMethod.parameterList!!.parameters[0] as? StringLiteralExpression ?: return null
+		if (sourceElement.parent is MethodReference)
+			return null
 
-		// TODO(Bas): Add support for filesystem namespaces.
+		val firstParameter = renderMethod.parameterList!!.parameters[0] as? StringLiteralExpression ?: return null
 		val templateName = firstParameter.contents.replace("@([a-z0-9]+)\\/".toRegex(), "")
 
 		val cappuccinoFiles = FilenameIndex.getAllFilesByExt(project, "cappy")

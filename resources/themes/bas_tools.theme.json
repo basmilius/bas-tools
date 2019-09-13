@@ -94,6 +94,9 @@
 		"ComboPopup": {
 			"border": "1,1,1,1,#2A2B31"
 		},
+		"Editor": {
+			"background": "#191A1C"
+		},
 		"EditorTabs": {
 			"borderColor": "#191A1C",
 			"hoverMaskColor": "#202124",
