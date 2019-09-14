@@ -63,10 +63,6 @@ class CallableValidityInspector: BaseInspection("CallableValidityInspector")
 			val functionName = reference.name
 			val parameters = reference.parameters
 
-			for (parameter in parameters)
-			{
-			}
-
 			if (parameters.size == 1 && functionName == "is_callable")
 			{
 				val processed = HashSet<PsiElement>()

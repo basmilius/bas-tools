@@ -14,6 +14,8 @@ import com.intellij.openapi.vfs.VirtualFile
 /**
  * Class Entry
  *
+ * @param predicate {(VirtualFile) -> Boolean}
+ *
  * @author Bas Milius <bas@mili.us>
  * @package com.basmilius.bastools.fileGroups
  * @since 1.5.0
@@ -29,24 +31,106 @@ open class Entry(private val predicate: (VirtualFile) -> Boolean)
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.5.0
 	 */
-	fun isMatch(file: VirtualFile?) = file != null && this.predicate(file)
+	open fun isMatch(file: VirtualFile?) = file != null && this.predicate(file)
 
 	/**
-	 * Class ExactMatch
+	 * Class Directory
+	 *
+	 * @param predicate {(VirtualFile) -> Boolean}
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.fileGroups.Entry
 	 * @since 1.5.0
 	 */
-	class ExactMatch(val name: String): Entry({ it.name == name })
+	open class Directory(predicate: (VirtualFile) -> Boolean) : Entry(predicate)
+	{
+
+		/**
+		 * {@inheritdoc}
+		 *
+		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.5.0
+		 */
+		override fun isMatch(file: VirtualFile?): Boolean
+		{
+			return file != null && file.isDirectory && super.isMatch(file)
+		}
+
+		/**
+		 * Class ContainsChild
+		 *
+		 * @param name {String}
+		 * @param deep {Boolean}
+		 *
+		 * @author Bas Milius <bas@mili.us>
+		 * @package com.basmilius.bastools.fileGroups.Entry.File
+		 * @since 1.5.0
+		 */
+		open class ContainsChild(name: String, deep: Boolean = false) : Directory({
+			if (deep)
+				it.findChild(name) != null
+			else
+				it.children.any { child -> child.name == name }
+		})
+
+	}
 
 	/**
-	 * Class LooseMatch
+	 * Class File
+	 *
+	 * @param predicate {(VirtualFile) -> Boolean}
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.fileGroups.Entry
 	 * @since 1.5.0
 	 */
-	class LooseMatch(val name: String): Entry({ it.nameWithoutExtension == name })
+	open class File(predicate: (VirtualFile) -> Boolean) : Entry(predicate)
+	{
+
+		/**
+		 * {@inheritdoc}
+		 *
+		 * @author Bas Milius <bas@mili.us>
+		 * @since 1.5.0
+		 */
+		override fun isMatch(file: VirtualFile?): Boolean
+		{
+			return file != null && !file.isDirectory && super.isMatch(file)
+		}
+
+		/**
+		 * Class ExactMatch
+		 *
+		 * @param name {String}
+		 *
+		 * @author Bas Milius <bas@mili.us>
+		 * @package com.basmilius.bastools.fileGroups.Entry.File
+		 * @since 1.5.0
+		 */
+		class ExactMatch(name: String) : File({ it.name == name })
+
+		/**
+		 * Class ExtensionlessExactMatch
+		 *
+		 * @param name {String}
+		 *
+		 * @author Bas Milius <bas@mili.us>
+		 * @package com.basmilius.bastools.fileGroups.Entry.File
+		 * @since 1.5.0
+		 */
+		class ExtensionlessExactMatch(name: String) : File({ it.nameWithoutExtension == name })
+
+		/**
+		 * Class StartsWithMatch
+		 *
+		 * @param needle {String}
+		 *
+		 * @author Bas Milius <bas@mili.us>
+		 * @package com.basmilius.bastools.fileGroups.Entry.File
+		 * @since 1.5.0
+		 */
+		class StartsWithMatch(needle: String) : File({ it.name.startsWith(needle) })
+
+	}
 
 }

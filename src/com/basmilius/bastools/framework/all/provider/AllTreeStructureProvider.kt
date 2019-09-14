@@ -10,8 +10,8 @@
 package com.basmilius.bastools.framework.all.provider
 
 import com.basmilius.bastools.fileGroups.AnyNode
-import com.basmilius.bastools.fileGroups.Group
 import com.basmilius.bastools.fileGroups.PsiNode
+import com.basmilius.bastools.fileGroups.TreeNode
 import com.basmilius.bastools.fileGroups.group.JsonFilesGroup
 import com.basmilius.bastools.fileGroups.group.PoopFilesGroup
 import com.intellij.ide.projectView.TreeStructureProvider
@@ -58,6 +58,18 @@ class AllTreeStructureProvider: TreeStructureProvider
 		return nodes
 	}
 
+	/**
+	 * Checks for gettext files and groups them under their .pot-file.
+	 *
+	 * @param nodes {ArrayList<AnyNode>}
+	 * @param child {AnyNode}
+	 * @param children {Collection<AnyNode>}
+	 *
+	 * @return Boolean
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.5.0
+	 */
 	private fun checkGetText(nodes: ArrayList<AnyNode>, child: AnyNode, children: Collection<AnyNode>): Boolean
 	{
 		if (child is PsiFileNode && (child.virtualFile?.extension == "mo" || child.virtualFile?.extension == "po"))
@@ -81,6 +93,20 @@ class AllTreeStructureProvider: TreeStructureProvider
 		return false
 	}
 
+	/**
+	 * Checks for file groups and creates them when needed.
+	 *
+	 * @param nodes {ArrayList<AnyNode>}
+	 * @param parent {AnyNode}
+	 * @param child {AnyNode}
+	 * @param children {Collection<AnyNode>}
+	 * @param settings {ViewSettings}
+	 *
+	 * @return Boolean
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.5.0
+	 */
 	private fun checkGroups(nodes: ArrayList<AnyNode>, parent: AnyNode, child: AnyNode, children: Collection<AnyNode>, settings: ViewSettings): Boolean
 	{
 		var didSomething = false
@@ -92,7 +118,7 @@ class AllTreeStructureProvider: TreeStructureProvider
 
 			val childIsEligible = child is PsiNode && group.isEntryEligible(child.virtualFile)
 			val hasExistingGroupNode = nodes
-					.filterIsInstance<Group.TreeNode>()
+					.filterIsInstance<TreeNode>()
 					.any{ it.group.name == group.name }
 
 			if (childIsEligible && !hasExistingGroupNode)
@@ -103,7 +129,7 @@ class AllTreeStructureProvider: TreeStructureProvider
 					nodes.add(node)
 			}
 
-			didSomething = didSomething || (group.removeFromTree && child !is Group.TreeNode && childIsEligible)
+			didSomething = didSomething || (group.removeFromTree && child !is TreeNode && childIsEligible)
 		}
 
 		return didSomething

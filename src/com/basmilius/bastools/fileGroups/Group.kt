@@ -9,10 +9,11 @@
 
 package com.basmilius.bastools.fileGroups
 
-import com.intellij.ide.projectView.PresentationData
-import com.intellij.ide.projectView.ProjectViewNode
 import com.intellij.ide.projectView.ViewSettings
-import com.intellij.openapi.project.Project
+import com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode
+import com.intellij.ide.projectView.impl.nodes.PsiFileNode
+import com.intellij.openapi.project.guessProjectDir
+import com.intellij.openapi.project.impl.ProjectManagerImpl
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.ui.SimpleTextAttributes
 import javax.swing.Icon
@@ -93,7 +94,33 @@ abstract class Group(val name: String, val icon: Icon, val entries: ArrayList<En
 	 * @author Bas Milius <bas@mili.us>
 	 * @since 1.5.0
 	 */
-	open fun isEntryEligible(file: VirtualFile?) = file != null && this.entries.any { it.isMatch(file) }
+	open fun isEntryEligible(file: VirtualFile?): Boolean
+	{
+		if (file == null)
+			return false
+
+		if (this.isEntryExcluded(file))
+			return false
+
+		return this.entries.any { it.isMatch(file) }
+	}
+
+	/**
+	 * Returns TRUE if the given {@see file} is excluded.
+	 *
+	 * @param file {VirtualFile?}
+	 *
+	 * @return Boolean
+	 *
+	 * @author Bas Milius <bas@mili.us>
+	 * @since 1.5.0
+	 */
+	open fun isEntryExcluded(file: VirtualFile?): Boolean
+	{
+		val excludedUrls = (ProjectManagerImpl.getInstance() as ProjectManagerImpl).allExcludedUrls
+
+		return file == null || excludedUrls.any { file.url.startsWith(it) }
+	}
 
 	/**
 	 * Returns TRUE when this group should be available.
@@ -110,13 +137,13 @@ abstract class Group(val name: String, val icon: Icon, val entries: ArrayList<En
 	abstract fun isAvailable(parent: AnyNode, child: AnyNode, children: Collection<AnyNode>): Boolean
 
 	/**
-	 * Class TreeNode
+	 * Class Recursive
 	 *
 	 * @author Bas Milius <bas@mili.us>
 	 * @package com.basmilius.bastools.fileGroups.Group
 	 * @since 1.5.0
 	 */
-	class TreeNode(project: Project, settings: ViewSettings, val group: Group, private val nodes: MutableList<PsiNode>, private val actAs: VirtualFile? = null): ProjectViewNode<String>(project, group.name, settings)
+	abstract class Recursive(name: String, icon: Icon, entries: ArrayList<Entry>, removeFromTree: Boolean = true, additionalText: String? = null, weight: Number = 0) : Group(name, icon, entries, removeFromTree, additionalText, weight)
 	{
 
 		/**
@@ -125,39 +152,35 @@ abstract class Group(val name: String, val icon: Icon, val entries: ArrayList<En
 		 * @author Bas Milius <bas@mili.us>
 		 * @since 1.5.0
 		 */
-		override fun contains(file: VirtualFile) = this.nodes.any { it.virtualFile == file }
-
-		/**
-		 * {@inheritdoc}
-		 *
-		 * @author Bas Milius <bas@mili.us>
-		 * @since 1.5.0
-		 */
-		override fun update(presentation: PresentationData)
+		override fun getEligibleEntries(children: Collection<AnyNode>): MutableList<PsiNode>
 		{
-			presentation.addText(this.group.name, SimpleTextAttributes.REGULAR_ATTRIBUTES)
-			if (this.group.additionalText != null)
-				presentation.addText("  ${this.group.additionalText}", SimpleTextAttributes.GRAYED_ATTRIBUTES)
+			val entries = arrayListOf<PsiNode>()
 
-			presentation.presentableText = "zzz-${this.group.weight}-${this.group.name}"
-			presentation.setIcon(this.group.icon)
+			for (child in children)
+			{
+				if (child !is PsiNode)
+					continue
+
+				val project = child.project ?: continue
+				val projectDir = project.guessProjectDir() ?: continue
+				val virtualFile = child.virtualFile ?: continue
+
+				if (child is PsiFileNode && this.isEntryEligible(virtualFile))
+				{
+					child.presentation.addText("${virtualFile.name}  ", SimpleTextAttributes.REGULAR_ATTRIBUTES)
+					child.presentation.addText(virtualFile.parent.path.replace(projectDir.path.trimEnd('/', '\\'), ""), SimpleTextAttributes.GRAYED_ITALIC_ATTRIBUTES)
+					entries.add(child)
+					continue
+				}
+
+				if (child is PsiDirectoryNode)
+				{
+					entries.addAll(this.getEligibleEntries(child.children))
+				}
+			}
+
+			return entries
 		}
-
-		/**
-		 * {@inheritdoc}
-		 *
-		 * @author Bas Milius <bas@mili.us>
-		 * @since 1.5.0
-		 */
-		override fun getChildren() = this.nodes
-
-		/**
-		 * {@inheritdoc}
-		 *
-		 * @author Bas Milius <bas@mili.us>
-		 * @since 1.5.0
-		 */
-		override fun getVirtualFile() = this.actAs
 
 	}
 

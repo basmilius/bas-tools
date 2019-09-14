@@ -25,22 +25,19 @@ import com.intellij.openapi.project.guessProjectDir
  * @since 1.5.0
  */
 class PoopFilesGroup: Group(name = "Poop files", icon = Icons.Poop, weight = 99999, entries = arrayListOf(
-		Entry.ExactMatch(".env"),
-		Entry.ExactMatch(".gitignore"),
-		Entry.ExactMatch(".gitmodules"),
-		Entry.ExactMatch(".htaccess"),
-		Entry.ExactMatch("composer.json"),
-		Entry.ExactMatch("composer.lock"),
-		Entry.ExactMatch("nginx.conf"),
-		Entry.ExactMatch("package.json"),
-		Entry.ExactMatch("package-lock.json"),
-		Entry.ExactMatch("postcss.config.js"),
-		Entry.ExactMatch("webpack.config.js"),
-		Entry.ExactMatch("yarn.lock"),
-		Entry.LooseMatch("CODE_OF_CONDUCT"),
-		Entry.LooseMatch("CONTRIBUTORS"),
-		Entry.LooseMatch("LICENSE"),
-		Entry.LooseMatch("README")
+		Entry.File.StartsWithMatch("."),
+		Entry.File.ExactMatch("composer.json"),
+		Entry.File.ExactMatch("composer.lock"),
+		Entry.File.ExactMatch("nginx.conf"),
+		Entry.File.ExactMatch("package.json"),
+		Entry.File.ExactMatch("package-lock.json"),
+		Entry.File.ExactMatch("postcss.config.js"),
+		Entry.File.ExactMatch("webpack.config.js"),
+		Entry.File.ExactMatch("yarn.lock"),
+		Entry.File.ExtensionlessExactMatch("CODE_OF_CONDUCT"),
+		Entry.File.ExtensionlessExactMatch("CONTRIBUTORS"),
+		Entry.File.ExtensionlessExactMatch("LICENSE"),
+		Entry.File.ExtensionlessExactMatch("README")
 ))
 {
 
