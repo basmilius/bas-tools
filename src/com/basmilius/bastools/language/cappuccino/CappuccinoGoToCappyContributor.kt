@@ -56,7 +56,7 @@ class CappuccinoGoToCappyContributor: GotoDeclarationHandler
 		val templateName = firstParameter.contents.replace("@([a-z0-9]+)\\/".toRegex(), "")
 
 		val cappuccinoFiles = FilenameIndex.getAllFilesByExt(project, "cappy")
-				.filter { it.path.endsWith(templateName) }
+				.filter { it.path.endsWith(templateName) || it.path.endsWith("$templateName.cappy") }
 				.mapNotNull { PsiManager.getInstance(project).findFile(it) }
 
 		return cappuccinoFiles.toTypedArray()
