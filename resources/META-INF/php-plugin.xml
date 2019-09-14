@@ -64,6 +64,7 @@
 		<quoteHandler fileType="Cappuccino" className="com.basmilius.bastools.language.cappuccino.CappuccinoQuoteHandler"/>
 		<targetElementEvaluator language="Cappuccino" implementationClass="com.basmilius.bastools.language.cappuccino.editor.CappuccinoTargetElementEvaluator"/>
 		<typedHandler implementation="com.basmilius.bastools.language.cappuccino.CappuccinoTypedHandler"/>
+		<editorNotificationProvider implementation="com.basmilius.bastools.language.cappuccino.CappuccinoGeneratedTemplateNotification"/>
 
 		<internalFileTemplate name="Cappuccino File"/>
 
