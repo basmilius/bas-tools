@@ -10,9 +10,11 @@
 package com.basmilius.bastools.action
 
 import com.basmilius.bastools.core.util.invokeLater
+import com.basmilius.bastools.resource.Icons
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.DumbAwareAction
 import com.intellij.openapi.ui.Messages
+import com.intellij.util.IconUtil
 
 /**
  * Class AboutAction
@@ -33,7 +35,7 @@ class AboutAction: DumbAwareAction("About Bas Tools")
 	override fun actionPerformed(aae: AnActionEvent)
 	{
 		invokeLater {
-			Messages.showMessageDialog(aae.project, "Bas Tools 1.5.0, go to basmilius.com for more information about this plugin.", "Bas Tools", Messages.getInformationIcon())
+			Messages.showMessageDialog(aae.project, "Bas Tools 1.5.0, go to basmilius.com for more information about this plugin.", "Bas Tools", IconUtil.scale(Icons.BasTools, null, 2f))
 		}
 	}
 
