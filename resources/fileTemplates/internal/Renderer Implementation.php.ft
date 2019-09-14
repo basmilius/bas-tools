@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ${NAMESPACE};
 #end
 
-use Columba\Router\AbstractRenderer;
+use Columba\Router\Renderer\AbstractRenderer;
 
 #parse("PHP Class Doc Comment.php")
 final class ${NAME} extends AbstractRenderer

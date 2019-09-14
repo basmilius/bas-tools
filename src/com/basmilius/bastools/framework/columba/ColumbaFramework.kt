@@ -32,12 +32,12 @@ class ColumbaFramework: AbstractFramework("Columba by Bas Milius")
 	 */
 	override fun onLoad()
 	{
-		if (PlatformUtils.isPhpStorm())
-		{
-			ClassCreationType.BUNDLED.add(ClassCreationType("Router", Icons.BasTools, "Router"))
-			ClassCreationType.BUNDLED.add(ClassCreationType("Renderer implementation", Icons.BasTools, "Renderer Implementation"))
-			ClassCreationType.BUNDLED.add(ClassCreationType("Response implementation", Icons.BasTools, "Response Implementation"))
-		}
+		if (!PlatformUtils.isPhpStorm())
+			return
+
+		ClassCreationType.BUNDLED.add(ClassCreationType("Router", Icons.BasTools, "Router"))
+		ClassCreationType.BUNDLED.add(ClassCreationType("Renderer implementation", Icons.BasTools, "Renderer Implementation"))
+		ClassCreationType.BUNDLED.add(ClassCreationType("Response implementation", Icons.BasTools, "Response Implementation"))
 	}
 
 	/**

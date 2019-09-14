@@ -66,20 +66,13 @@
 
 		<group id="BasTools.Main" text="Bas Tools" description="Tools by Bas Milius">
 			<add-to-group group-id="MainMenu" anchor="after" relative-to-action="CodeMenu"/>
-
 			<group id="BasTools.Main.QuickNav" popup="true" text="Quick Actions" icon="/icons/quick_actions.png"/>
-
 			<separator/>
-
 			<group id="BasTools.Main.ShiftTab"/>
-
 			<separator/>
-
 			<group id="BasTools.Main.Code"/>
-
 			<separator/>
-
-			<action id="BasTools.Action.About" class="com.basmilius.bastools.action.AboutAction" text="About Bas Tools" icon="/icons/bas_tools.png"/>
+			<action id="BasTools.Action.About" class="com.basmilius.bastools.action.AboutAction" text="About Bas Tools" icon="/META-INF/pluginIcon.svg"/>
 		</group>
 
 		<group id="BasTools.Code" text="Code" popup="true" icon="/icons/code.png">
@@ -110,15 +103,12 @@
 			<action id="BasTools.Action.ShiftTabRight" class="com.basmilius.bastools.action.editor.ShiftTabRightAction" text="Shift Tab Right" icon="/icons/shift_tab_right.png">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD6" keymap="$default"/>
 			</action>
-
 			<action id="BasTools.Action.ShiftTabLeft" class="com.basmilius.bastools.action.editor.ShiftTabLeftAction" text="Shift Tab Left" icon="/icons/shift_tab_left.png">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD4" keymap="$default"/>
 			</action>
-
 			<action id="BasTools.Action.ShiftTabDown" class="com.basmilius.bastools.action.editor.ShiftTabDownAction" text="Shift Tab Down" icon="/icons/shift_tab_down.png">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD2" keymap="$default"/>
 			</action>
-
 			<action id="BasTools.Action.ShiftTabUp" class="com.basmilius.bastools.action.editor.ShiftTabUpAction" text="Shift Tab Up" icon="/icons/shift_tab_up.png">
 				<keyboard-shortcut first-keystroke="ctrl NUMPAD8" keymap="$default"/>
 			</action>
@@ -128,7 +118,6 @@
 			<add-to-group group-id="NavBarToolBar" anchor="last"/>
 			<add-to-group group-id="BasTools.Main.QuickNav"/>
 
-<!--			<action id="BasTools.QuickNav.ToolWindowDateTimeHelpers" class="com.basmilius.bastools.action.tools.DisplayDateTimeToolWindow" text="Show Date Time Tool Window" icon="/icons/clock.png"/>-->
 			<action id="BasTools.QuickNav.ShowColorPicker" class="com.basmilius.bastools.action.editor.ShowColorPickerAction" text="Show Color Picker" icon="/icons/color.png"/>
 			<action id="BasTools.QuickNav.ShowColorPipette" class="com.basmilius.bastools.action.editor.ShowColorPipetteAction" text="Show Color Pipette" icon="/icons/dropper.png"/>
 		</group>

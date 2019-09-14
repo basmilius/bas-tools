@@ -125,7 +125,9 @@
 		"Menu": {
 			"border": "6,9,6,9",
 			"borderColor": "#2A2B31",
+			"foreground": "#a3a3a4",
 			"maxGutterIconWidth": 24,
+			"menuPopupOffsetX": -1,
 			"submenuPopupOffsetY": -1
 		},
 		"MenuBar": {
@@ -158,20 +160,45 @@
 			"passedColor": "#173D31",
 			"passedEndColor": "#45635A"
 		},
+		"ScrollBar": {
+			"hoverThumbBorderColor": "#3d4044",
+			"hoverThumbColor": "#313337",
+			"thumbBorderColor": "#313337",
+			"thumbColor": "#252729",
+			"Transparent": {
+				"hoverThumbBorderColor": "#3d4044",
+				"hoverThumbColor": "#313337",
+				"thumbBorderColor": "#313337",
+				"thumbColor": "#252729"
+			}
+		},
 		"SearchEverywhere": {
 			"Advertiser": {},
 			"Header": {},
 			"List": {},
 			"SearchField": {},
 			"Tab": {
-				"selectedBackground": "#2A2B31"
+				"selectedBackground": "#2A2B31",
+				"selectedForeground": "#a3a3a4"
 			}
 		},
 		"Separator": {
 			"separatorColor": "#2A2B31"
 		},
+		"StatusBar": {
+			"borderColor": "#2A2B31",
+			"hoverBackground": "#202124"
+		},
 		"TabbedPane": {
-			"tabHeight": 36
+			"underlineColor": "#004FA9"
+		},
+		"Table": {
+			"gridColor": "#2A2B31",
+			"stripeColor": "#202124"
+		},
+		"TableHeader": {
+			"background": "#202124",
+			"bottomSeparatorColor": "#2A2B31"
 		},
 		"Tooltip": {},
 		"ToolWindow": {

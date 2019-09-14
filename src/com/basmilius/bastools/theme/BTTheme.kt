@@ -11,7 +11,6 @@ package com.basmilius.bastools.theme
 
 import com.basmilius.bastools.core.notifications.NotificationManager
 import com.basmilius.bastools.core.util.ReflectionUtils
-import com.basmilius.bastools.core.util.dontCare
 import com.basmilius.bastools.resource.Icons
 import com.basmilius.bastools.theme.tabs.BTEditorTabPainterAdapter
 import com.basmilius.bastools.theme.ui.icon.BTUIDefaultMenuArrowIcon

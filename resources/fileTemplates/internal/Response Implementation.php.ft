@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace ${NAMESPACE};
 #end
 
-use Columba\Router\AbstractResponse;
+use Columba\Router\Context;
+use Columba\Router\Response\AbstractResponse;
 
 #parse("PHP Class Doc Comment.php")
 final class ${NAME} extends AbstractResponse
@@ -14,7 +15,7 @@ final class ${NAME} extends AbstractResponse
 	/**
 	 * {@inheritdoc}
 	 */
-	public function print (${DS}data): void
+	protected abstract function respond(Context ${DS}context, ${DS}value): string
 	{
 		// TODO: Return ${DS}data to the browser somhow.
 	}
