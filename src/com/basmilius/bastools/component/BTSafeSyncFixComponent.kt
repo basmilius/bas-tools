@@ -55,7 +55,7 @@ class BTSafeSyncFixComponent(project: Project) : FileDocumentManagerListener, Pr
 
 		invokeLater (timeout = 1000) {
 			VirtualFileManager.getInstance().asyncRefresh {
-				System.out.println(String.format("File saved and Virtual File System synced! (%s)", file.name))
+				println(String.format("File saved and Virtual File System synced! (%s)", file.name))
 			}
 		}
 	}
