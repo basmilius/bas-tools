@@ -9,7 +9,6 @@ import com.intellij.psi.PsiManager
 import com.intellij.ui.EditorNotificationPanel
 import com.intellij.ui.EditorNotifications
 import com.intellij.util.ui.UIUtil
-import com.jetbrains.php.lang.PhpFileType
 import com.jetbrains.php.lang.psi.PhpFileImpl
 import com.jetbrains.php.lang.psi.elements.impl.ClassReferenceImpl
 import com.jetbrains.php.lang.psi.elements.impl.PhpClassImpl

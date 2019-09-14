@@ -16,7 +16,6 @@ import com.intellij.psi.ElementManipulators
 import com.intellij.psi.LiteralTextEscaper
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiLanguageInjectionHost
-import java.lang.StringBuilder
 
 /**
  * Class CappuccinoVerbatimStatement

@@ -15,10 +15,7 @@ import com.basmilius.bastools.fileGroups.Group
 import com.basmilius.bastools.fileGroups.PsiNode
 import com.basmilius.bastools.resource.Icons
 import com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode
-import com.intellij.ide.projectView.impl.nodes.PsiFileNode
 import com.intellij.openapi.project.guessProjectDir
-import com.intellij.openapi.project.impl.ProjectManagerImpl
-import com.intellij.ui.SimpleTextAttributes
 
 /**
  * Class JsonFilesGroup

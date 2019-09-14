@@ -12,7 +12,6 @@ package com.basmilius.bastools.framework.all.provider
 import com.basmilius.bastools.fileGroups.AnyNode
 import com.basmilius.bastools.fileGroups.PsiNode
 import com.basmilius.bastools.fileGroups.TreeNode
-import com.basmilius.bastools.fileGroups.group.JsonFilesGroup
 import com.basmilius.bastools.fileGroups.group.PoopFilesGroup
 import com.intellij.ide.projectView.TreeStructureProvider
 import com.intellij.ide.projectView.ViewSettings
