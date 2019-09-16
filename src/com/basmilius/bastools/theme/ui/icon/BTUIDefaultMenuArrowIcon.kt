@@ -24,9 +24,9 @@ import javax.swing.Icon
  * @since 1.4.0
  */
 class BTUIDefaultMenuArrowIcon(icon: Icon): BTUIMenuArrowIcon(
-		if (invert) IconUtil.brighter(icon, 2)!! else IconUtil.darker(icon, 2)!!,
-		IconUtil.brighter(icon, 8)!!,
-		if (invert) IconUtil.darker(icon, 2)!! else IconUtil.brighter(icon, 2)!!
+		if (invert) IconUtil.brighter(icon, 2) else IconUtil.darker(icon, 2),
+		if (invert) IconUtil.brighter(icon, 8) else IconUtil.darker(icon, 8),
+		if (invert) IconUtil.darker(icon, 2) else IconUtil.brighter(icon, 2)
 )
 {
 

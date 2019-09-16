@@ -29,8 +29,9 @@
 		<applicationService serviceImplementation="com.basmilius.bastools.config.root.BTRootConfigState"/>
 		<applicationService serviceImplementation="com.basmilius.bastools.config.theme.BTThemeConfigState"/>
 
-		<bundledColorScheme id="Bas Settings" path="./colors/Bas Settings"/>
-		<bundledInspectionProfile id="Bas Settings" path="./inspection/Bas Settings"/>
+		<bundledColorScheme id="Bas Tools" path="./colors/Bas Tools"/>
+		<bundledColorScheme id="Bas Tools Light" path="./colors/Bas Tools Light"/>
+		<bundledInspectionProfile id="Bas Tools" path="./inspection/Bas Settings"/>
 
 		<iconProvider implementation="com.basmilius.bastools.provider.BasToolsIconProvider"/>
 
@@ -40,6 +41,8 @@
 		<defaultLiveTemplatesProvider implementation="com.basmilius.bastools.language.java.liveTemplates.MissingJavaStuffTemplatesProvider"/>
 
 		<themeProvider id="a8d73149-88f3-4b6d-be10-979c6dd9f166" path="/themes/bas_tools.theme.json"/>
+		<themeProvider id="a8d73149-88f3-4b6d-be10-979c6dd9f167" path="/themes/bas_tools_black.theme.json"/>
+		<themeProvider id="a8d73149-88f3-4b6d-be10-979c6dd9f168" path="/themes/bas_tools_light.theme.json"/>
 	</extensions>
 
 	<application-components>

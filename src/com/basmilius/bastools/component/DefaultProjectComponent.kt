@@ -9,13 +9,11 @@
 
 package com.basmilius.bastools.component
 
-import com.basmilius.bastools.component.basSettings.BasSettingsCodeStyleScheme
 import com.basmilius.bastools.core.util.EditorUtils
 import com.basmilius.bastools.core.util.dontCare
 import com.basmilius.bastools.core.util.withApplicationComponent
 import com.intellij.openapi.components.ProjectComponent
 import com.intellij.openapi.project.Project
-import com.intellij.psi.codeStyle.CodeStyleSchemes
 
 /**
  * Class DefaultProjectComponent
@@ -66,7 +64,6 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 	 */
 	override fun projectOpened()
 	{
-		this.applyCodeStyleSettings()
 		this.applyWorkspacePerUser()
 
 		withApplicationComponent(BasToolsComponent::class) { bt ->
@@ -91,31 +88,6 @@ class DefaultProjectComponent(private val project: Project): ProjectComponent
 				it.onProjectClosed(this.project)
 			}
 		}
-	}
-
-	/**
-	 * Applies Bas Settings code style.
-	 *
-	 * @author Bas Milius <bas@mili.us>
-	 * @since 1.0.0
-	 */
-	private fun applyCodeStyleSettings()
-	{
-		try
-		{
-			val oldSettings = CodeStyleSchemes.getInstance().findPreferredScheme("Bas Settings")
-			if (oldSettings.name === "Bas Settings" && !oldSettings.isDefault)
-				CodeStyleSchemes.getInstance().deleteScheme(oldSettings)
-		}
-		catch (e: Exception)
-		{
-			e.printStackTrace()
-		}
-
-		val bsScheme = BasSettingsCodeStyleScheme()
-		CodeStyleSchemes.getInstance().addScheme(bsScheme)
-		CodeStyleSchemes.getInstance().currentScheme = bsScheme
-		CodeStyleSchemes.getInstance().defaultScheme.codeStyleSettings.copyFrom(bsScheme.codeStyleSettings)
 	}
 
 	/**

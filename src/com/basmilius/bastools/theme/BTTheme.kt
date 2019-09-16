@@ -14,7 +14,6 @@ import com.basmilius.bastools.core.util.ReflectionUtils
 import com.basmilius.bastools.resource.Icons
 import com.basmilius.bastools.theme.tabs.BTEditorTabPainterAdapter
 import com.basmilius.bastools.theme.ui.icon.BTUIDefaultMenuArrowIcon
-import com.intellij.ide.ui.LafManager
 import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.notification.NotificationType
 import com.intellij.openapi.application.ApplicationManager
@@ -32,6 +31,7 @@ import com.intellij.util.ui.JBInsets
 import com.intellij.util.ui.JBUI
 import javax.swing.UIDefaults
 import javax.swing.UIManager
+import kotlin.ClassCastException
 
 /**
  * Class BTTheme
@@ -48,7 +48,7 @@ object BTTheme
 
 	private var isFancyTabsEnabled: Boolean = true
 
-	fun isUsed(): Boolean = LafManagerImpl.getInstance().currentLookAndFeel?.name == themeName
+	fun isUsed(): Boolean = LafManagerImpl.getInstance().currentLookAndFeel?.name?.startsWith(themeName) ?: false
 
 	fun initFileListener()
 	{
@@ -57,11 +57,9 @@ object BTTheme
 
 	fun initLafListener()
 	{
-		fun onLafChanged(manager: LafManager)
+		fun onLafChanged()
 		{
-			val laf = manager.currentLookAndFeel ?: return
-
-			if (laf.name != themeName)
+			if (!isUsed())
 				return
 
 			overrideUIDefaults(UIManager.getLookAndFeelDefaults())
@@ -76,11 +74,11 @@ object BTTheme
 			val project = projects[0]
 			val editorManager = FileEditorManager.getInstance(project)
 
-			onLafChanged(it)
+			onLafChanged()
 			patchEditorTabs(editorManager)
 		}
 
-		onLafChanged(LafManagerImpl.getInstance())
+		onLafChanged()
 	}
 
 	private fun overrideUIDefaults(defaults: UIDefaults = UIManager.getDefaults())
@@ -88,6 +86,8 @@ object BTTheme
 		logger.info("Applying BTTheme ui overrides...")
 
 		defaults["Menu.arrowIcon"] = BTUIDefaultMenuArrowIcon(IconUtil.scale(Icons.ChevronRight, null, 0.75f))
+		defaults["Menu.disabledArrowIcon"] = BTUIDefaultMenuArrowIcon(IconUtil.scale(Icons.ChevronRight, null, 0.75f))
+		defaults["Menu.invertedArrowIcon"] = BTUIDefaultMenuArrowIcon(IconUtil.scale(Icons.ChevronRight, null, 0.75f))
 
 		defaults["Tree.collapsedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, null, .8f), 10)
 		defaults["Tree.collapsedSelectedIcon"] = IconUtil.darker(IconUtil.scale(Icons.ChevronRight, null, .8f), 10)
@@ -118,15 +118,22 @@ object BTTheme
 
 			tabsBorder.thickness = if (isUsed()) 0 else 1
 		}
-		catch (err: NoClassDefFoundError)
+		catch (err: Exception)
 		{
-			this.isFancyTabsEnabled = false
+			when (err)
+			{
+				is NoClassDefFoundError,
+				is ClassCastException ->
+				{
+					this.isFancyTabsEnabled = false
 
-			NotificationManager.notify("Bas Tools", "Fancy tabs are disabled because of an error: ${err.message}", NotificationType.WARNING)
+					NotificationManager.notify("Bas Tools", "Fancy tabs are disabled because of an error: ${err.message}", NotificationType.WARNING)
+				}
+			}
 		}
 	}
 
-	class FileEditorListener: FileEditorManagerListener
+	class FileEditorListener : FileEditorManagerListener
 	{
 
 		override fun fileOpened(source: FileEditorManager, file: VirtualFile) = patchEditorTabs(source)

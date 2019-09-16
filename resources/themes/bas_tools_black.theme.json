@@ -1,5 +1,5 @@
 {
-	"name": "Bas Tools Dark",
+	"name": "Bas Tools Black",
 	"dark": true,
 	"author": "Bas Milius",
 	"editorScheme": "/colors/Bas Tools.xml",
@@ -7,8 +7,8 @@
 	},
 	"ui": {
 		"*": {
-			"background": "#191A1C",
-			"textBackground": "#191A1C",
+			"background": "#0A0A0B",
+			"textBackground": "#0A0A0B",
 			"foreground": "#CFD0D2",
 			"textForeground": "#CFD0D2",
 			"caretForeground": "#CFD0D2",
@@ -28,7 +28,7 @@
 		},
 		"BT": {
 			"Tabs": {
-				"Background": "#191A1C",
+				"Background": "#0A0A0B",
 				"Outline": "#2A2B31",
 				"Selected": "#202124"
 			}
@@ -65,7 +65,7 @@
 			"shadowWidth": 0
 		},
 		"CheckBox": {
-			"background": "#191A1C",
+			"background": "#0A0A0B",
 			"disabledText": "#777777",
 			"foreground": "#A5A6A7",
 			"select": "#FF0000"
@@ -95,10 +95,10 @@
 			"border": "1,1,1,1,#2A2B31"
 		},
 		"Editor": {
-			"background": "#191A1C"
+			"background": "#0A0A0B"
 		},
 		"EditorTabs": {
-			"borderColor": "#191A1C",
+			"borderColor": "#0A0A0B",
 			"hoverMaskColor": "#202124",
 			"underlineColor": "#202124",
 			"underlineHeight": 0,
@@ -132,7 +132,7 @@
 		},
 		"MenuBar": {
 			"border": "6,9,6,9",
-			"borderColor": "#191A1C",
+			"borderColor": "#0A0A0B",
 			"maxGutterIconWidth": 24
 		},
 		"MenuItem": {
@@ -203,15 +203,15 @@
 		"Tooltip": {},
 		"ToolWindow": {
 			"Header": {
-				"background": "#202124",
+				"background": "#0A0A0B",
 				"borderColor": "#2A2B31",
-				"inactiveBackground": "#202124"
+				"inactiveBackground": "#0A0A0B"
 			}
 		},
 		"Tree": {
 			"rowHeight": 30
 		},
-		"window": "#191A1C",
+		"window": "#0A0A0B",
 		"Window": {
 			"border": "1,1,1,1,#2A2B31"
 		}
