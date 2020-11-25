@@ -1,5 +1,6 @@
 bas-tools.zip
 .idea/
+.gradle/
 /build
 
 *.class
