@@ -1,0 +1,18 @@
+<templateSet group="Bas Tools: Java">
+
+    <template name="ctor" value="public $className$($PARAMS_LIST$)&#10;{&#10;  $END$&#10;}&#10;" description="Creates a Java class constructor." toReformat="true" toShortenFQNames="true">
+        <variable name="className" expression="className()" defaultValue="" alwaysStopAt="true"/>
+        <variable name="PARAMS_LIST" expression="methodParameters()" defaultValue="" alwaysStopAt="true"/>
+        <context>
+            <option name="JAVA_DECLARATION" value="true"/>
+        </context>
+    </template>
+
+    <template name="ptor" value="super($PARAMS_LIST$);$END$" description="Creates a Java super call." toReformat="true" toShortenFQNames="true">
+        <variable name="PARAMS_LIST" expression="methodParameters()" defaultValue="" alwaysStopAt="true"/>
+        <context>
+            <option name="JAVA_STATEMENT" value="true"/>
+        </context>
+    </template>
+
+</templateSet>

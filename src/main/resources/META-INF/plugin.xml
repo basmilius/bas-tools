@@ -1,0 +1,128 @@
+<idea-plugin>
+
+    <id>dev.bas.bas-tools</id>
+    <name>Bas Tools</name>
+    <vendor email="bas@mili.us" url="https://bas.dev">Bas Milius</vendor>
+
+    <description><![CDATA[
+    <p>
+        Enhances the IDE with three new themes and a few utility functions.
+    </p>
+
+    <p><br/></p>
+
+    <p>
+        <strong>Themes</strong>
+    </p>
+    <ul>
+        <li>Dark</li>
+        <li>Black</li>
+        <li>White</li>
+    </ul>
+
+    <p><br/></p>
+
+    <p>
+        <strong>Code Shot</strong><br/>
+        Take shots of your code and share them by pasting it in any application as an image. Code
+        shot is available as an action in the toolbar on the right.
+    </p>
+
+    <p><br/></p>
+
+    <p>
+        <strong>Arrange Json Properties</strong><br/>
+        Sort JSON properties alphabetically with just one click.
+    </p>
+
+    <p><br/></p>
+
+    <p>
+        <strong>Quick Actions</strong><br/>
+        Quickly pick a color with the color pipette and color picker actions in the toolbar.
+    </p>
+    ]]></description>
+
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
+
+    <idea-version since-build="201.*" until-build="204.*"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <!-- Color Schemes -->
+        <bundledColorScheme id="Bas Tools Dark" path="/colors/dark"/>
+        <bundledColorScheme id="Bas Tools Black" path="/colors/black"/>
+        <bundledColorScheme id="Bas Tools White" path="/colors/white"/>
+
+        <!-- Live Templates -->
+        <defaultLiveTemplates file="/liveTemplates/java.xml"/>
+        <defaultLiveTemplates file="/liveTemplates/php.xml"/>
+
+        <!-- Themes -->
+        <themeProvider id="2b1a5b3f-d147-4527-8db1-0c610537be7e" path="/themes/black.theme.json"/>
+        <themeProvider id="eb747e31-de1e-46e1-84c4-f0d86189cb58" path="/themes/white.theme.json"/>
+        <themeProvider id="447f0ebe-0400-4ca3-8417-9b1275336930" path="/themes/dark.theme.json"/>
+
+    </extensions>
+
+    <actions>
+
+        <group id="BasTools.Main" text="Bas Tools" description="All the tools and features provided by bas-tools.">
+            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="CodeMenu"/>
+            <group id="BasTools.Main.QuickNav" popup="true" text="Quick Actions" icon="/icons/share.svg"/>
+            <separator/>
+            <group id="BasTools.Main.ShiftTab"/>
+            <separator/>
+            <group id="BasTools.Main.Code"/>
+            <separator/>
+            <action id="BasTools.Action.About" class="dev.bas.feature.AboutAction" text="About Bas Tools" icon="/icons/basTools.svg"/>
+        </group>
+
+        <group id="BasTools.Code" text="Code" popup="true" icon="/icons/code.svg">
+            <add-to-group group-id="BasTools.Main.Code"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+
+            <group id="BasTools.Code.ActualCodeTools"/>
+            <separator/>
+            <group id="BasTools.Code.OtherTools"/>
+        </group>
+
+        <group id="BasTools.QuickNav" text="Bas Tools Quicklinks" description="Quick actions provided by bas-tools.">
+            <add-to-group group-id="NavBarToolBar" anchor="last"/>
+            <add-to-group group-id="BasTools.Main.QuickNav"/>
+
+            <action id="BasTools.QuickNav.ShowColorPicker" class="dev.bas.feature.quickActions.ShowColorPickerAction" text="Color Picker" icon="/icons/swatchbook.svg"/>
+            <action id="BasTools.QuickNav.ShowColorPipette" class="dev.bas.feature.quickActions.ShowColorPipetteAction" text="Show Color Pipette" icon="/icons/eyeDropper.svg"/>
+        </group>
+
+        <group id="BasTools.ShiftTab" popup="true" text="Shift Tab" icon="/icons/shiftTabRight.svg">
+            <add-to-group group-id="BasTools.Main.ShiftTab"/>
+
+            <action id="BasTools.Action.ShiftTabRight" class="dev.bas.feature.shiftTab.ShiftTabRightAction" text="Shift Tab Right" icon="/icons/shiftTabRight.svg">
+                <keyboard-shortcut first-keystroke="ctrl NUMPAD6" keymap="$default"/>
+            </action>
+            <action id="BasTools.Action.ShiftTabLeft" class="dev.bas.feature.shiftTab.ShiftTabLeftAction" text="Shift Tab Left" icon="/icons/shiftTabUp.svg">
+                <keyboard-shortcut first-keystroke="ctrl NUMPAD4" keymap="$default"/>
+            </action>
+            <action id="BasTools.Action.ShiftTabDown" class="dev.bas.feature.shiftTab.ShiftTabDownAction" text="Shift Tab Down" icon="/icons/shiftTabDown.svg">
+                <keyboard-shortcut first-keystroke="ctrl NUMPAD2" keymap="$default"/>
+            </action>
+            <action id="BasTools.Action.ShiftTabUp" class="dev.bas.feature.shiftTab.ShiftTabUpAction" text="Shift Tab Up" icon="/icons/shiftTabUp.svg">
+                <keyboard-shortcut first-keystroke="ctrl NUMPAD8" keymap="$default"/>
+            </action>
+        </group>
+
+        <action id="BasTools.Main.Action.Editor.CodeShot" class="dev.bas.feature.codeShot.CodeShotAction" text="Code Shot" icon="/icons/centercode.svg">
+            <add-to-group group-id="NavBarToolBar" anchor="last"/>
+            <add-to-group group-id="BasTools.Code.OtherTools"/>
+            <keyboard-shortcut first-keystroke="ctrl NUMPAD5" keymap="$default"/>
+        </action>
+
+        <action id="BasTools.Main.Code.JsonArrange" icon="/icons/sortSizeUpAlt.svg" class="dev.bas.feature.code.RearrangeJsonPropertiesAction">
+            <add-to-group group-id="BasTools.Code.ActualCodeTools"/>
+        </action>
+
+    </actions>
+
+</idea-plugin>
