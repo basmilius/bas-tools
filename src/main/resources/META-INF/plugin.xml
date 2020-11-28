@@ -43,6 +43,13 @@
     </p>
     ]]></description>
 
+    <change-notes><![CDATA[
+    <p>
+        <strong>.env variables</strong><br/>
+        You may now use BT_* prefixed .env variables in file templates.
+    </p>
+    ]]></change-notes>
+
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.platform</depends>
 
@@ -54,6 +61,9 @@
         <bundledColorScheme id="Bas Tools Dark" path="/colors/dark"/>
         <bundledColorScheme id="Bas Tools Black" path="/colors/black"/>
         <bundledColorScheme id="Bas Tools White" path="/colors/white"/>
+
+        <!-- File Templates -->
+        <defaultTemplatePropertiesProvider implementation="dev.bas.feature.code.TemplatePropertiesProvider"/>
 
         <!-- Live Templates -->
         <defaultLiveTemplates file="/liveTemplates/java.xml"/>
