@@ -46,7 +46,7 @@
     <change-notes><![CDATA[
     <p>
         <strong>.env variables</strong><br/>
-        You may now use BT_* prefixed .env variables in file templates.
+        You can now use BT_* prefixed .env variables in file templates.
     </p>
     ]]></change-notes>
 
