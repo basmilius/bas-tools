@@ -13,7 +13,7 @@ class AboutAction : AnAction("About Bas Tools") {
         invokeLater {
             Messages.showMessageDialog(
                 e.project,
-                "Bas Tools 2.0, go to basmilius.com for more information about this plugin.",
+                "Bas Tools 2.1, go to basmilius.com for more information about this plugin.",
                 "Bas Tools",
                 IconUtil.scale(BTIcons.BasTools, null, 2f)
             )

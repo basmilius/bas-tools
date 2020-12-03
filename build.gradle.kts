@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.intellij") version "0.4.26"
+    id("org.jetbrains.intellij") version "0.6.5"
     kotlin("jvm") version "1.4.0"
 }
 
@@ -15,5 +15,6 @@ dependencies {
 }
 
 intellij {
+    alternativeIdePath = "/Users/bas/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/203.5981.118/PhpStorm 2020.3 EAP.app/Contents"
     updateSinceUntilBuild = false
 }
