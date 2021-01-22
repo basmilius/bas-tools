@@ -63,7 +63,7 @@
         <bundledColorScheme id="Bas Tools White" path="/colors/white"/>
 
         <!-- File Templates -->
-        <defaultTemplatePropertiesProvider implementation="dev.bas.feature.code.TemplatePropertiesProvider"/>
+        <defaultTemplatePropertiesProvider order="last" implementation="dev.bas.feature.code.TemplatePropertiesProvider"/>
 
         <!-- Live Templates -->
         <defaultLiveTemplates file="/liveTemplates/java.xml"/>

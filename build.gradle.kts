@@ -15,6 +15,6 @@ dependencies {
 }
 
 intellij {
-    alternativeIdePath = "/Users/bas/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/203.5981.118/PhpStorm 2020.3 EAP.app/Contents"
+    alternativeIdePath = "/Users/bas/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/203.7148.26/PhpStorm 2020.3 EAP.app/Contents"
     updateSinceUntilBuild = false
 }
