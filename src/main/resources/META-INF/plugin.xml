@@ -45,8 +45,8 @@
 
     <change-notes><![CDATA[
     <p>
-        <strong>.env variables</strong><br/>
-        You can now use BT_* prefixed .env variables in file templates.
+        <strong>Support for 2021.1 eaps</strong><br/>
+        You can now install Bas Tools on 2021.1 IDE's.
     </p>
     ]]></change-notes>
 
