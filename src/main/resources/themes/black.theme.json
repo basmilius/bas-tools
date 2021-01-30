@@ -18,8 +18,8 @@
     },
     "ui": {
         "*": {
-            "background": "#191A1C",
-            "textBackground": "#191A1C",
+            "background": "#161719",
+            "textBackground": "#161719",
             "foreground": "#CFD0D2",
             "textForeground": "#CFD0D2",
             "caretForeground": "#CFD0D2",
@@ -39,7 +39,7 @@
         },
         "BT": {
             "Tabs": {
-                "Background": "#191A1C",
+                "Background": "#161719",
                 "Outline": "#2A2B31",
                 "Selected": "#202124"
             }
@@ -76,7 +76,7 @@
             "shadowWidth": 0
         },
         "CheckBox": {
-            "background": "#191A1C",
+            "background": "#161719",
             "disabledText": "#777777",
             "foreground": "#A5A6A7",
             "select": "#FF0000"
@@ -106,11 +106,11 @@
             "border": "1,1,1,1,#2A2B31"
         },
         "Editor": {
-            "background": "#191A1C"
+            "background": "#161719"
         },
         "EditorTabs": {
-            "borderColor": "#191A1C",
-            "hoverMaskColor": "#202124",
+            "borderColor": "#161719",
+            "hoverBackground": "#202124",
             "underlineColor": "#202124",
             "underlineHeight": 1,
             "underlinedTabBackground": "#202124",
@@ -144,7 +144,7 @@
         },
         "MenuBar": {
             "border": "6,9,6,9",
-            "borderColor": "#191A1C",
+            "borderColor": "#161719",
             "maxGutterIconWidth": 24
         },
         "MenuItem": {
@@ -223,7 +223,7 @@
         "Tree": {
             "rowHeight": 30
         },
-        "window": "#191A1C",
+        "window": "#161719",
         "Window": {
             "border": "1,1,1,1,#2A2B31"
         }
