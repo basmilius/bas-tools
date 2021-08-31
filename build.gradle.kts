@@ -1,6 +1,6 @@
 plugins {
     id("org.jetbrains.intellij") version "0.6.5"
-    kotlin("jvm") version "1.4.21"
+    kotlin("jvm") version "1.5.21"
 }
 
 group = "dev.bas"
@@ -17,5 +17,5 @@ dependencies {
 
 intellij {
     updateSinceUntilBuild = false
-    version = "211.4961.33-EAP-SNAPSHOT"
+    version = "212.5080.55"
 }
